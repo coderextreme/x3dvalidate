@@ -1,0 +1,9 @@
+{
+  "name": "x3dvalidate",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "*",
+    "jsonlint": "*"
+  }
+}
