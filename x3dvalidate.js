@@ -5,3 +5,5 @@ process.argv.shift();
 var files = process.argv;
 
 validate(files);
+
+module.exports = validate;
