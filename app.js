@@ -1,4 +1,4 @@
-var validate = require('./validate.js')
+var validate = require('./index.js')
 
 process.argv.shift();
 process.argv.shift();
