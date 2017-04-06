@@ -6,6 +6,6 @@ git clone https://github.com/coderextreme/x3dvalidate
 cp file.json x3dvalidate
 cd x3dvalidate
 npm install
-node validate.js file.json
+node app.js file.json
 ```
 
