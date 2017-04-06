@@ -20,9 +20,8 @@ function setVersion(version) {
 	return version;
 }
 
-function validateJSON() {
+function validateJSON(files) {
 
-	var files = process.argv;
 	for (var f in files) {
 		var file = files[f];
 		try {  
@@ -53,7 +52,5 @@ function validateJSON() {
 	}
 }
 
-process.argv.shift();
-process.argv.shift();
 
-validateJSON();
+module.exports = validateJSON
