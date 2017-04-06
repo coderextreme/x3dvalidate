@@ -6,7 +6,7 @@ git clone https://github.com/coderextreme/x3dvalidate
 cp file.json x3dvalidate
 cd x3dvalidate
 npm install
-node app.js file.json
+node x3dvalidate.js file.json
 ```
 
 JavaScript usage:
@@ -20,5 +20,18 @@ var files = process.argv;
 
 validate(files);
 
+```
+
+Referring to this project in package.json:
+
+```js
+{
+  "name": "usevalidate",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "x3dvalidate": "git://github.com/coderextreme/x3dvalidate.git"
+  }
+}
 ```
 
