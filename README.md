@@ -9,3 +9,16 @@ npm install
 node app.js file.json
 ```
 
+JavaScript usage:
+
+```js
+var validate = require('x3dvalidate')
+
+process.argv.shift();
+process.argv.shift();
+var files = process.argv;
+
+validate(files);
+
+```
+
