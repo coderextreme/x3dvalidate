@@ -1,5 +1,5 @@
 var fs = require('fs');
-let jsonlint = require('jsonlint');
+var jsonlint = require('jsonlint');
 
 var validate = {};
 
