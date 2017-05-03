@@ -1,5 +1,4 @@
 var fs = require('fs');
-var jsonlint = require('jsonlint');
 var http = require('http');
 
 var validate = {};
@@ -44,10 +43,10 @@ function loadSchema(json, file) {
 		  res.on('end', () => {
 		    try {
 		      console.log("MetaSchema received");
-		      var metaschemajson = jsonlint.parse(rawData);
+		      var metaschemajson = JSON.parse(rawData);
 		      ajv.addMetaSchema(metaschemajson);
 		      console.log("MetaSchema added");
-		      var schemajson = jsonlint.parse(schema);
+		      var schemajson = JSON.parse(schema);
 		      console.log("Schema", version, "parsed");
 		      ajv.addSchema(schemajson);
 		      console.log("Schema", version, "added");
@@ -99,7 +98,7 @@ function validateJSON(files) {
 			if (typeof str === 'undefined') {
 				throw("Read nothing, or possbile error");
 			}
-			var json = jsonlint.parse(str);
+			var json = JSON.parse(str);
 			var version = json.X3D["@version"];
 			if (!validate[version]) {
 				loadSchema(json, file);  // loads schema.
