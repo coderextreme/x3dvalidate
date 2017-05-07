@@ -37,7 +37,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
  *
  */
 function PropertyToJson(string) {
-	debug("property input "+string+" "+typeof string);
 	return string.split(/ > /);
 }
 
