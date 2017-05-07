@@ -79,9 +79,22 @@ function doValidate(json, file) {
 			// error += " errs: " + JSON.stringify(errs, null, 2) + "\r\n";
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
-				dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ");
+				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
+	
 				error += " dataPath: " + dataPath+ "\r\n";
-				error += " parentObject: " + JSON.stringify(selectObjectFromJson(json, dataPath)) + "\r\n";
+				var selectedObject = selectObjectFromJson(json, dataPath);
+				error += " value: " + JSON.stringify(selectedObject,
+					function(k, v) {
+					    var v2 = JSON.parse(JSON.stringify(v));
+					    if (typeof v2 === 'object') {
+						    for (var o in v2) {
+					    		if (typeof v2[o] === 'object') {
+								    v2[o] = "|elided|";
+							}
+					            }
+					    }
+					    return v2;
+					}) + "\r\n";
 				error += " message: " + errs[e].message + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
