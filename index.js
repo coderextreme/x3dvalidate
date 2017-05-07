@@ -80,7 +80,6 @@ function doValidate(json, file) {
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
 				dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ");
-	
 				error += " dataPath: " + dataPath+ "\r\n";
 				error += " parentObject: " + JSON.stringify(selectObjectFromJson(json, dataPath)) + "\r\n";
 				error += " message: " + errs[e].message + "\r\n";
