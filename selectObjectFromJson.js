@@ -30,23 +30,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
 */
 
 
-/**
- * convert a property to JSON
- * 
- * change this to return string if you also modify MFStringToProperty()
- *
- */
-function PropertyToJson(string) {
-	return string.split(/ > /);
-}
-
-function debug(str) {
-	console.log(str);
-}
-
-function stringify(str) {
-	return JSON.stringify(str);
-}
 
 /**
  * selectObjectFromJson() --  get an object in a node internally.
@@ -58,7 +41,7 @@ function selectObjectFromJson(node, selectorField) {
 	var skipDescendants = 0; // number of descendents to skip
 	var selectedValue = node;
 	var higherValue = selectedValue;
-	var selector  = PropertyToJson(selectorField);
+	var selector  = selectorField.split(/ > /);
 	var depth = (selector.length - skipDescendants);
 	for (var index = 0; index < depth; index++) {
 		higherValue = selectedValue;
