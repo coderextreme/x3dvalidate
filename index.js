@@ -1,6 +1,7 @@
 var fs = require('fs');
 var http = require('http');
 var jsonlint = require('jsonlint');
+var selectObjectFromJson = require('./selectObjectFromJson');
 
 var validate = {};
 
@@ -79,7 +80,8 @@ function doValidate(json, file) {
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
 	
-				error += " dataPath: " + (errs[e].dataPath.replace(/[\.\[\]']+/g, " > ")) + "\r\n";
+				error += " dataPath: " + (errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ")) + "\r\n";
+				error += " parentObject: " + JSON.stringify(selectObjectFromJson(json, (errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ")))) + "\r\n";
 				error += " message: " + errs[e].message + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
