@@ -75,10 +75,11 @@ function doValidate(json, file) {
 		if (!valid) {
 			var errs = validate[version].errors;
 			var error = ""
-			error += " errs: " + JSON.stringify(errs, null, 2) + "\r\n";
+			// error += " errs: " + JSON.stringify(errs, null, 2) + "\r\n";
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
-				error += " dataPath: " + errs[e].dataPath + "\r\n";
+	
+				error += " dataPath: " + (errs[e].dataPath.replace(/[\.\[\]']+/g, "/")) + "\r\n";
 				error += " message: " + errs[e].message + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
