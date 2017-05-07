@@ -61,7 +61,7 @@ function selectObjectFromJson(node, selectorField) {
 	var higherValue = selectedValue;
 	var selector  = PropertyToJson(selectorField);
 	var depth = (selector.length - skipDescendants);
-	for (var index = 0; index < depth - 1; index++) {
+	for (var index = 0; index < depth; index++) {
 		higherValue = selectedValue;
 		selectedValue = selectedValue[selector[index]];
 		if (typeof selectedValue === 'undefined') {
