@@ -119,34 +119,33 @@ function exchangeajvmessage(msg) {
 	var object = json;
 	var k=0;
 	var flag=false;
-	var begin,value;
+	var begin,value,values=[],m=0;
 	for (i=0; i < msg.length ; i++) {
 		newString+=msg[i];
-		if (object[newString]=="(*)" && !flag) {
+		if ( newString=="" && object[newString].prototype.keys()[0]=="(*)" && !flag) {
 			object=object[newString];
 			flag=true;
-			value=newString;
-			newString="";
-			begin=i-3;
+			begin=i;
 		}
 		if (flag) {
 			if (msg[i]==' ') {
-				value+=newString;
 				newString="";
 			}
-			
-
+			value+=msg[i];
 		}
 		if (object[newString]!=undefined) {
 			object=object[newString];
 			newString="";
 			i++;
 			k++;
+			values.push(value);
 			flag=false;
+			m=i;
 		}
 	}
-	return object['en'] + '' + ',to stand X3D json validation requirements.';
+	return object['en'] + '' + ',to stand X3D json validation requirements.'+ values[0]+ ' ' + values[1];
 }
-
+//alx:
+console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
 
 module.exports = validateJSON
