@@ -1,0 +1,173 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CpeRadioPlusSticker.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A smartbridges radio box, produced as a MV4204 class project. Total height 6 inches."
+          },
+          {
+            "@name":"creator",
+            "@content":"Mark Sullivan"
+          },
+          {
+            "@name":"created",
+            "@content":"6 August 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 October 2015"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/WISP/CpeRadioPlusSticker.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"CpeRadioPlusSticker",
+              "@position":[0,0,0.50]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"RadioBox",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.15,0.15,0.02]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"StickerforRadioFace",
+                    "@translation":[0,0,0.00901],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"Sticker for front of radio"
+                                  }
+                                ],
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"CpeRadio",
+                                      "@url":["aBO.gif","https://savage.nps.edu/Savage/CommunicationsAndSensors/WISP/aBO.gif"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@DEF":"RadioSticker",
+                                "@coordIndex":[3,2,1,0],
+                                "@solid":false,
+                                "@texCoordIndex":[0,1,2,3],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-0.075,-0.075,0.001,-0.075,0.075,0.001,0.075,0.075,0.001,0.075,-0.075,0.001]
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@point":[1,0,1,1,0,1,0,0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.028,-0.082,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.6,0.6,0.6]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.015,
+                                "@radius":0.012
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

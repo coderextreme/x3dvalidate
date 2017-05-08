@@ -1,0 +1,101 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"OahuAuthoringToolbox.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Different choices of Oahu scenes plus various author-assist prototypes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Claude Hutton"
+          },
+          {
+            "@name":"translator",
+            "@content":"Okino Polytrans, Xeena VRML importer"
+          },
+          {
+            "@name":"created",
+            "@content":"12 October 2002"
+          },
+          {
+            "@name":"translated",
+            "@content":"6 November 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"6 November 2002"
+          },
+          {
+            "@name":"assistance",
+            "@content":"John Locke and Matt Pritchard NPS - thank you!"
+          },
+          {
+            "@name":"subject",
+            "@content":"Oahu terrain imagery"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/Hawaii/OahuAuthoringToolbox.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"http://www.okino.com"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"ViewpointsGroup"
+            }
+          },
+          { "Switch":
+            {
+              "@whichChoice":0,
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["OahuCadrgIITSEC2002.wrl","https://savage.nps.edu/Savage/Locations/Hawaii/OahuCadrgIITSEC2002.wrl","OahuCadrgIITSEC2002.x3d","https://savage.nps.edu/Savage/Locations/Hawaii/OahuCadrgIITSEC2002.x3d"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"DeadReckoningComparisons.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Compare different dead-reckoning algorithms to see relative effects of velocity and acceleration on animation smoothness."
+          },
+          {
+            "@name":"creator",
+            "@content":"Brian Hittner"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"created",
+            "@content":"11 June 2003"
+          },
+          {
+            "@name":"translated",
+            "@content":"12 June 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 August 2003"
+          },
+          {
+            "@name":"version",
+            "@content":"1.0"
+          },
+          {
+            "@name":"reference",
+            "@content":"DeadReckoningComparisons/Project4.java"
+          },
+          {
+            "@name":"reference",
+            "@content":"vrml97.jar"
+          },
+          {
+            "@name":"reference",
+            "@content":"DeadReckoningComparisons/README.TXT"
+          },
+          {
+            "@name":"warning",
+            "@content":"CLASSPATH needs to include location of DeadReckoningComparisons/Project4.jar"
+          },
+          {
+            "@name":"subject",
+            "@content":"dead reckoning"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/DeadReckoningComparisons.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Dead Reckoning Comparisons",
+              "@position":[0.0,0.0,15.0]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"SpherePosition",
+                    "-children":[
+                      { "Group":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1.0,0.1,0.1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"Clock",
+                          "@cycleInterval":5.0,
+                          "@loop":true
+                        }
+                      },
+                      {
+                        "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                      },
+                      { "Script":
+                        {
+                          "@DEF":"Movement",
+                          "@url":["DeadReckoningComparisons/Project4.class","http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/DeadReckoningComparisons/Project4.class"],
+                          "field": [
+                            {
+                              "@name":"set_time",
+                              "@accessType":"inputOnly",
+                              "@type":"SFFloat"
+                            },
+                            {
+                              "@name":"position_changed",
+                              "@accessType":"outputOnly",
+                              "@type":"SFVec3f"
+                            },
+                            {
+                              "@name":"text_changed",
+                              "@accessType":"outputOnly",
+                              "@type":"MFString"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-4.0,0.0,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"myMessage",
+                                "@string":["Test String"]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_time",
+              "@toNode":"Movement"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"Movement",
+              "@toField":"translation",
+              "@toNode":"SpherePosition"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"text_changed",
+              "@fromNode":"Movement",
+              "@toField":"string",
+              "@toNode":"myMessage"
+            }
+          }
+        ]
+    }
+  }
+}

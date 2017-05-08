@@ -1,0 +1,286 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SoundLoadSensorTest.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"UsingLoadSensor to test when AudioClip loading is complete"
+          },
+          {
+            "@name":"created",
+            "@content":"19 July 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 September 2013"
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly and Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright 2006, Daly Realism and Don Brutzman"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/SoundLoadSensorTest.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Sound location y-value is 1.6 in order to match typical avatar height (in meters)"
+          },
+          { "Sound":
+            {
+              "@DEF":"SomeSound",
+              "@location":[0,1.6,0],
+              "@maxBack":100,
+              "@maxFront":100,
+              "@minBack":10,
+              "@minFront":10,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@DEF":"WaterSounds",
+                    "@description":"Running Water",
+                    "@url":["aqua.wav","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/aqua.wav"]
+                  }
+                }
+            }
+          },
+          { "LoadSensor":
+            {
+              "@DEF":"ReportWhenLoaded",
+              "-watchList":[
+                { "AudioClip":
+                  {
+                    "@USE":"WaterSounds"
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"loadTime",
+              "@fromNode":"ReportWhenLoaded",
+              "@toField":"startTime",
+              "@toNode":"WaterSounds"
+            }
+          },
+          {
+            "#comment":"send completion report to console"
+          },
+          { "Script":
+            {
+              "@DEF":"ConsoleReport",
+              "field": [
+                {
+                  "@name":"loadComplete",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"loadTime",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"function initialize ()",
+"{",
+"\tBrowser.println ('Script initialize() complete');",
+"}",
+"function loadComplete (value)",
+"{",
+"\tBrowser.println ('LoadSensor AudioClip isLoaded=' + value);",
+"}",
+"function loadTime (value)",
+"{",
+"\tBrowser.println ('LoadSensor AudioClip loadTime=' + value);",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isLoaded",
+              "@fromNode":"ReportWhenLoaded",
+              "@toField":"loadComplete",
+              "@toNode":"ConsoleReport"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"loadTime",
+              "@fromNode":"ReportWhenLoaded",
+              "@toField":"loadTime",
+              "@toNode":"ConsoleReport"
+            }
+          },
+          {
+            "#comment":"show visible indication of load waiting, complete"
+          },
+          { "Transform":
+            {
+              "@DEF":"PivotTextSigns",
+              "-children":[
+                {
+                  "#comment":"First sign indicates waiting..."
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["LoadSensor waiting for AudioClip..."],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.7,
+                                "@style":"ITALIC"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0.878431,0.262745,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Second sign indicates completed, initially rotated 90 degrees out of view"
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["LoadSensor reports AudioClip loading complete."],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.7,
+                                      "@style":"ITALIC"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@emissiveColor":[0,0.278431,0.027451]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"SignRotationInterpolator",
+              "@key":[0,1],
+              "@keyValue":[0,1,0,0,0,1,0,-1.57]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"SignRotationClock",
+              "@cycleInterval":0.8
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"loadTime",
+              "@fromNode":"ReportWhenLoaded",
+              "@toField":"startTime",
+              "@toNode":"SignRotationClock"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"SignRotationClock",
+              "@toField":"set_fraction",
+              "@toNode":"SignRotationInterpolator"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"SignRotationInterpolator",
+              "@toField":"rotation",
+              "@toNode":"PivotTextSigns"
+            }
+          }
+        ]
+    }
+  }
+}

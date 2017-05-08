@@ -1,0 +1,232 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Log.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Burning log illustrates the use of an IndexedFaceSet and Color nodes to build a flaming log where the flame color varies across the flame polygons."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/log.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0233.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Log.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, Andrea L. Ames, David R. Nadeau, John L. Moreland"],
+              "@title":"Burning log"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@position":[0.0,0.0,6.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0.0,0.0,1.0,-1.57],
+              "@translation":[0.0,-0.4,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,0.3,0.0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":2.9,
+                          "@radius":0.4
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"Flames",
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@colorIndex":[3,4,5,0,0,1,2,0,3,4,5,0,0,1,2,0],
+                    "@coordIndex":[0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1],
+                    "@solid":false,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[-0.7,0.0,0.0,-0.8,1.5,0.0,-1.0,0.0,0.0,-0.5,0.0,0.01,-0.7,1.2,0.01,-0.9,0.0,0.01,-0.1,0.0,0.0,-0.2,1.6,0.0,-0.4,0.0,0.0,0.3,0.0,0.01,0.2,1.0,0.01,0.0,0.0,0.0]
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[1.0,1.0,0.0,1.0,0.0,0.0,1.0,0.7,0.0,0.8,0.5,0.0,1.0,0.1,0.0,1.0,0.8,0.0]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.0,1.3,1.0],
+              "@translation":[0.8,0.0,0.02],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Flames"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.0,0.5,1.0],
+              "@translation":[1.1,0.0,0.04],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Flames"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.0,1.1,1.0],
+              "@translation":[-0.3,0.0,0.06],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Flames"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.0,0.4,1.0],
+              "@translation":[-0.1,0.0,0.08],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Flames"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.0,1.1,1.0],
+              "@translation":[0.8,0.0,0.1],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Flames"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,749 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RoomDirect.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"X3D Follower example"
+          },
+          {
+            "@name":"creator",
+            "@content":"Herbert Stocker"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"18 April 2006"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 December 2011"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/room-direct.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Stocker_06_Followers.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.hersto.com/Publications/Followers"
+          },
+          {
+            "@name":"requires",
+            "@content":"X3D version 3.2 or greater"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Follower Chaser Damper"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/followers.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Followers/RoomDirect.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Selection",
+              "@url":["urn:inet:blaxxun.com:node:Selection","originals/bitmanagement-nodes.x3d#Selection","http://www.web3d.org/x3d/content/examples/Basic/Followers/originals/bitmanagement-nodes.x3d#Selection","originals/bitmanagement-nodes.wrl#Selection","http://www.web3d.org/x3d/content/examples/Basic/Followers/originals/bitmanagement-nodes.wrl#Selection"],
+              "field": [
+                {
+                  "@name":"select",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"addChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"bboxCenter",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"removeChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"children",
+                  "@accessType":"inputOutput",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"proxy",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"bboxSize",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"collide",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.1,0.2,0.3]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"inside",
+              "@fieldOfView":0.785,
+              "@orientation":[-1.0,-0.0,0.0,0.105],
+              "@position":[-0.0,1.7,7.985]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"outside",
+              "@fieldOfView":0.785,
+              "@orientation":[-1.0,0.0,0.0,0.105],
+              "@position":[0.0,2.068,13.879]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@avatarSize":[0.25,1.2,0.75],
+              "@headlight":false
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@intensity":0.5
+            }
+          },
+          { "PointLight":
+            {
+              "@location":[2.5,1.0,0.0],
+              "@radius":20.0
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@direction":[0.0,-1.0,0.0]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@intensity":0.5
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchFloor",
+                    "@description":"Touch to move picture here"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-textureTransform":
+                            { "TextureTransform":
+                              {
+                                "@scale":[17.0,17.0]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["floor.png","http://www.web3d.org/x3d/content/examples/Basic/Followers/floor.png"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[10.0,0.1,10.0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchWallFront",
+                    "@description":"Touch to move picture here"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,1.5,-5.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"ShWall",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.0567,
+                                      "@diffuseColor":[0.52,0.51,0.45],
+                                      "@emissiveColor":[0.28,0.27,0.24],
+                                      "@shininess":0.53,
+                                      "@specularColor":[0.76,0.78,0.54]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[10.0,3.0,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchWallLeft",
+                    "@description":"Touch to move picture here"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,-1.571],
+                    "@translation":[-5.0,1.5,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"ShWall"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchWallRight",
+                    "@description":"Touch to move picture here"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,1.571],
+                    "@translation":[5.0,1.5,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"ShWall"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchRoof",
+                    "@description":"Touch to move picture here"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,3.0,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.0567,
+                                      "@diffuseColor":[0.522,0.451,0.447],
+                                      "@emissiveColor":[0.306,0.235,0.176],
+                                      "@shininess":0.53,
+                                      "@specularColor":[0.761,0.541,0.584]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[10.0,0.1,10.0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Selection",
+              "fieldValue": [
+                {
+                  "@name":"select",
+                  "@value":false
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"TransInd",
+                        "@scale":[3.5,3.0,3.0],
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@scale":[0.223,0.341,0.5],
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-texture":
+                                            { "ImageTexture":
+                                              {
+                                                "@url":["Photo.jpg","http://www.web3d.org/x3d/content/examples/Basic/Followers/Photo.jpg"]
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "IndexedFaceSet":
+                                        {
+                                          "@coordIndex":[0,1,2,3,-1,4,5,6,7,-1,4,0,3,7,-1,5,1,0,4,-1,6,2,1,5,-1,7,3,2,6,-1],
+                                          "@solid":false,
+                                          "@texCoordIndex":[0,1,2,3,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1],
+                                          "-texCoord":
+                                            { "TextureCoordinate":
+                                              {
+                                                "@DEF":"SquareTextureCoordinatePoints",
+                                                "@point":[0,0,1,0,1,1,0,1]
+                                              }
+                                            },
+                                          "-coord":
+                                            { "Coordinate":
+                                              {
+                                                "@point":[-1.0,-1.0,0.03,1.0,-1.0,0.03,1.0,1.0,0.03,-1.0,1.0,0.03,-1.0,-1.0,0.0,1.0,-1.0,0.0,1.0,1.0,0.0,-1.0,1.0,0.0]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-texture":
+                                            { "ImageTexture":
+                                              {
+                                                "@url":["Shadow.png","http://www.web3d.org/x3d/content/examples/Basic/Followers/Shadow.png"]
+                                              }
+                                            },
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0.321569,0.713726,1]
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "IndexedFaceSet":
+                                        {
+                                          "@coordIndex":[0,1,2,3,-1],
+                                          "-texCoord":
+                                            { "TextureCoordinate":
+                                              {
+                                                "@USE":"SquareTextureCoordinatePoints"
+                                              }
+                                            },
+                                          "-coord":
+                                            { "Coordinate":
+                                              {
+                                                "@point":[-1.15,-1.15,0.01,1.15,-1.15,0.01,1.15,1.15,0.01,-1.15,1.15,0.01]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"Worker",
+              "field": [
+                {
+                  "@name":"set_hitPoint",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"touchedWallLeft",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"indPos",
+                  "@accessType":"outputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"touchedWallRight",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"cRoomDepth",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":9.9
+                },
+                {
+                  "@name":"cPaintingWidth",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":1.561
+                },
+                {
+                  "@name":"cFloorY",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":0.05
+                },
+                {
+                  "@name":"cPaintingHeight",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":2.046
+                },
+                {
+                  "@name":"touchedWallFront",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"touchedFloor",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"touchedRoof",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"indOri",
+                  "@accessType":"outputOnly",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"cRoomHeight",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":2.9
+                },
+                {
+                  "@name":"cRoomWidth",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":9.9
+                },
+                {
+                  "@name":"lastHitPoint",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0.0,0.0,0.0]
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_hitPoint(hp)",
+"{",
+"    lastHitPoint= hp;",
+"}",
+"",
+"function touchedFloor(t)",
+"{",
+"    indPos= CheckGroundRoof(lastHitPoint);",
+"    indOri= new SFRotation(-1, 0, 0, 1.571);",
+"}",
+"",
+"function touchedWallLeft(t)",
+"{",
+"    indPos= CheckLeftRightWall(CheckHeight(lastHitPoint));",
+"    indOri= new SFRotation(0, 1, 0, 1.5705);",
+"}",
+"",
+"function touchedWallRight(t)",
+"{",
+"    indPos= CheckLeftRightWall(CheckHeight(lastHitPoint));",
+"    indOri= new SFRotation(0, -1, 0, 1.5705);",
+"}",
+"",
+"function touchedWallFront(t)",
+"{",
+"    indPos= CheckFrontWall(CheckHeight(lastHitPoint));",
+"    indOri= new SFRotation(0, 1, 0, 0);",
+"}",
+"",
+"function touchedRoof(t)",
+"{",
+"    indPos= CheckGroundRoof(lastHitPoint);",
+"    indOri= (new SFRotation(1, 0, 0, 1.57));//.multiply(new SFRotation(0, 1, 0, 3.14159));",
+"}",
+"",
+"function CheckGroundRoof(pos)",
+"{",
+"return new SFVec3f( Limit(pos.x, -cRoomWidth/2 + cPaintingWidth/2, cRoomWidth/2 - cPaintingWidth/2)",
+"                  , pos.y",
+"                  , Limit(pos.z, -cRoomDepth/2 + cPaintingHeight/2, cRoomDepth/2 - cPaintingHeight/2)",
+"                  );",
+"}",
+"",
+"function CheckHeight(pos)",
+"{",
+"return new SFVec3f( pos.x",
+"                  , Limit(pos.y, cFloorY + cPaintingHeight/2, cFloorY + cRoomHeight - cPaintingHeight/2)",
+"                  , pos.z",
+"                  );",
+"}",
+"",
+"function CheckLeftRightWall(pos)",
+"{",
+"    return new SFVec3f( pos.x",
+"                      , pos.y",
+"                      , Limit(pos.z, -cRoomDepth/2 + cPaintingWidth/2, cRoomDepth/2 - cPaintingWidth/2)",
+"                      );",
+"}",
+"",
+"function CheckFrontWall(pos)",
+"{",
+"    return new SFVec3f( Limit(pos.x, -cRoomWidth/2 + cPaintingWidth/2, cRoomWidth/2 - cPaintingWidth/2)",
+"                      , pos.y",
+"                      , pos.z",
+"                      );",
+"}",
+"function Limit(x, min, max)",
+"{",
+"    return Min(Max(x, min), max);",
+"}",
+"",
+"function Max(a, b)",
+"{",
+"    return a > b? a:b;",
+"}",
+"",
+"function Min(a, b)",
+"{",
+"    return a > b? b:a;",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"hitPoint_changed",
+              "@fromNode":"TouchFloor",
+              "@toField":"set_hitPoint",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"hitPoint_changed",
+              "@fromNode":"TouchWallLeft",
+              "@toField":"set_hitPoint",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"hitPoint_changed",
+              "@fromNode":"TouchWallRight",
+              "@toField":"set_hitPoint",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"hitPoint_changed",
+              "@fromNode":"TouchWallFront",
+              "@toField":"set_hitPoint",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"hitPoint_changed",
+              "@fromNode":"TouchRoof",
+              "@toField":"set_hitPoint",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"TouchFloor",
+              "@toField":"touchedFloor",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"TouchWallLeft",
+              "@toField":"touchedWallLeft",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"TouchWallRight",
+              "@toField":"touchedWallRight",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"TouchWallFront",
+              "@toField":"touchedWallFront",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"TouchRoof",
+              "@toField":"touchedRoof",
+              "@toNode":"Worker"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"indPos",
+              "@fromNode":"Worker",
+              "@toField":"translation",
+              "@toNode":"TransInd"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"indOri",
+              "@fromNode":"Worker",
+              "@toField":"rotation",
+              "@toNode":"TransInd"
+            }
+          }
+        ]
+    }
+  }
+}

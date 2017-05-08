@@ -1,0 +1,102 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure03.06ResizedCylinder.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 3.6, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch03/03fig06.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"6 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"Resized Cylinder: a cylinder with a large radius and a short height"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter03-Shapes/Figure03.06ResizedCylinder.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Default view 0 0 10"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Farther view 0 0 20",
+              "@position":[0,0,20]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Cylinder":
+                  {
+                    "@height":1,
+                    "@radius":4
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[1,0,0],
+                          "@shininess":0.8
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

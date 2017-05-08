@@ -1,0 +1,464 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestViewpointJump.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Conformance Test for Viewpoint: immediate switching (jump=true) and smooth animation (jump=false). Press PgUp/PgDn or touch geometry to change viewpoints."
+          },
+          {
+            "@name":"warning",
+            "@content":"CosmoPlayer 2.1.1 fails when \"Animate transition between viewpoints\" option is turned off. First, try this test by opening the Control Panel, selecting \"Animate transition between viewpoints\". Use Page Down key to switch between viewpoints. You should smoothly transition between viewpoints. Next, turn the \"Animate transition bewtween viewpoints\" option off. Use Page Down key to switch between viewpoints. You should see a jump to the objects labeled \"jump=true\" and an animated transition to the objects labeled \"jump=false\"."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"25 July 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#Viewpoint"
+          },
+          {
+            "@name":"subject",
+            "@content":"Viewpoint conformance test"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestViewpointJump.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Initial viewpoint, default jump (jump true)",
+              "@position":[0,0,7.5]
+            }
+          },
+          {
+            "#comment":"default value for field is jump='true'"
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"ConeView",
+              "@description":"Red Cone (jump true)",
+              "@orientation":[0,-1,0,1],
+              "@position":[-4.6,1.4,1.9]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"SphereView",
+              "@description":"Blue Sphere (jump false)",
+              "@jump":false,
+              "@orientation":[0,1,0,0.7572],
+              "@position":[4.7,-1.2,3.3]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"CubeView",
+              "@description":"Magenta Cube (jump true)",
+              "@orientation":[0,-1,0,1.0529],
+              "@position":[-6.1,-1.5,2.7]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"CylinderView",
+              "@description":"White Cylinder (jump false)",
+              "@jump":false,
+              "@orientation":[0,1,0,1],
+              "@position":[5.6,1.4,2.8]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Geometry",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Box",
+                    "@translation":[-1.5,-1.5,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[1,1,1]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["Magenta Cube Viewpoint","jump=true"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.25
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.4,0.8,0.6],
+                                                  "@shininess":0.8
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"BoxTouchSensor",
+                          "@description":"click to bind this viewpoint"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"BoxTouchSensor",
+                          "@toField":"set_bind",
+                          "@toNode":"CubeView"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Sphere",
+                    "@translation":[1.5,-1.5,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.5
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["Blue Sphere Viewpoint","jump=false"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.25
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.4,0.8,0.6],
+                                                  "@shininess":0.8
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"SphereTouchSensor",
+                          "@description":"click for blue sphere viewpoint"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"SphereTouchSensor",
+                          "@toField":"set_bind",
+                          "@toNode":"SphereView"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Cone",
+                    "@translation":[-1.5,1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.5,
+                                "@height":1
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0,0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["Red Cone Viewpoint","jump=true"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.25
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.4,0.8,0.6],
+                                                  "@shininess":0.8
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"ConeTouchSensor",
+                          "@description":"click for red cone viewpoint"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"ConeTouchSensor",
+                          "@toField":"set_bind",
+                          "@toNode":"ConeView"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Cylinder",
+                    "@translation":[1.5,1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1,
+                                "@radius":0.5
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["White Cylinder Viewpoint","jump=false"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.25
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.4,0.8,0.6],
+                                                  "@shininess":0.8
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"CylinderTouchSensor",
+                          "@description":"click for white cylinder viewpoint"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"CylinderTouchSensor",
+                          "@toField":"set_bind",
+                          "@toNode":"CylinderView"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

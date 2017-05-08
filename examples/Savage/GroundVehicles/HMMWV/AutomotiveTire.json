@@ -1,0 +1,1092 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AutomotiveTire.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"White Wall Tire for Wheeled Vehicles"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey D Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"12 November 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Reversible Tire with White Walls for wheeled vehicles"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/HMMWV/AutomotiveTire.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.455896,0.749706,0.904409]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0.2,-0.1,0.15],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@DEF":"Tire",
+                                "@beginCap":false,
+                                "@convex":false,
+                                "@creaseAngle":3.14,
+                                "@crossSection":[0.71,0.00,0.71,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-0.92,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.71,0.38,0.71,0.00],
+                                "@endCap":false,
+                                "@spine":[2.00,0.0,0.00,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.00,0.0,2.00,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.00,0.0,0.00,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.00,0.0,-2.00,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.00,0.0,0.00]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.1,0.1,0.1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Knob",
+                          "@rotation":[0,1,0,-0.385],
+                          "@translation":[2.275,0.76,1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.4,0.2,0.2]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.1,0.1,0.1]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.16],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.32],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.48],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.64],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.8],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.96],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.12],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.28],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.44],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.6],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.76],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.92],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.08],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.24],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.4],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.56],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.72],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.88],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.04],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.2],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.36],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.52],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.68],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.84],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.16],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.32],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.48],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.64],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.8],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.96],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.12],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.28],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.44],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.6],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.76],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.92],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,6.08],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.2,-0.1,0.15],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"Knob2",
+                          "@rotation":[0,1,0,-0.385],
+                          "@translation":[2.275,-0.76,1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.4,0.2,0.2]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.1,0.1,0.1]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.16],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.32],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.48],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.64],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.8],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.96],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.12],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.28],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.44],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.6],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.76],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.92],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.08],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.24],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.4],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.56],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.72],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,2.88],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.04],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.2],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.36],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.52],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.68],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.84],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.16],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.32],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.48],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.64],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.8],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,4.96],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.12],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.28],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.44],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.6],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.76],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,5.92],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,6.08],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Knob2"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

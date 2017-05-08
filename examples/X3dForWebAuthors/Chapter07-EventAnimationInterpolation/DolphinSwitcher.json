@@ -1,0 +1,160 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"DolphinSwitcher.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Switch among 3 different dolphin poses"
+          },
+          {
+            "@name":"creator",
+            "@content":"Chris Lang"
+          },
+          {
+            "@name":"created",
+            "@content":"1 August 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Biologics/Dolphin/DolphinSwitcher.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/DolphinSwitcher.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundColor":[1,1,1],
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Dolphin switcher, 2m away",
+              "@position":[0,0,2]
+            }
+          },
+          {
+            "#comment":"Modify the whichChoice value in this Switch to 0, 1 or 2 to see the various versions of the model. Select whichChoice= -1 to show nothing."
+          },
+          { "Switch":
+            {
+              "@DEF":"Switch",
+              "@whichChoice":2,
+              "-children":[
+                {
+                  "#comment":"whichChoice values are 0, 1, 2 for these three children"
+                },
+                { "Group":
+                  {
+                    "@DEF":"CurvedUpwardPose",
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["DolphinPose02.x3d","https://savage.nps.edu/Savage/Biologics/Dolphin/DolphinPose02.x3d"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"NeutralPose",
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["DolphinPose01.x3d","https://savage.nps.edu/Savage/Biologics/Dolphin/DolphinPose01.x3d"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"CurvedDownwardPose",
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["DolphinPose03.x3d","https://savage.nps.edu/Savage/Biologics/Dolphin/DolphinPose03.x3d"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "IntegerSequencer":
+            {
+              "@DEF":"Sequencer",
+              "@key":[0,0.25,0.5,0.75,1],
+              "@keyValue":[0,1,2,1,0]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Time",
+              "@cycleInterval":4,
+              "@loop":true
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Sequencer",
+              "@toField":"whichChoice",
+              "@toNode":"Switch"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Time",
+              "@toField":"set_fraction",
+              "@toNode":"Sequencer"
+            }
+          }
+        ]
+    }
+  }
+}

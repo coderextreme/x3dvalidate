@@ -1,0 +1,290 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"OmniExamples.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"4 June 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"warning",
+            "@content":"Intentional explicit renaming of external prototypes shows ProtoInstance naming flexibility."
+          },
+          {
+            "@name":"description",
+            "@content":"Omni Directional Antenna Domes. Several are shown in the process of transmitting and receiving."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/OmniDirectional/OmniExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Note explicit renaming of external prototypes."
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"UHFReceiver",
+              "@appinfo":"Omnidirectional hemispherical receiver.",
+              "@url":["OmniReceiverPrototype.x3d#OmniReceiver","https://savage.nps.edu/Savage/CommunicationsAndSensors/OmniDirectional/OmniReceiverPrototype.x3d#OmniReceiver","OmniReceiverPrototype.wrl#OmniReceiver","https://savage.nps.edu/Savage/CommunicationsAndSensors/OmniDirectional/OmniReceiverPrototype.wrl#OmniReceiver"],
+              "field": [
+                {
+                  "@name":"frequency",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"units Hertz",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"diffuseColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"emissiveColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"shininess",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"ambientIntensity",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"UHFTransmitter",
+              "@appinfo":"Omnidirectional hemispherical transmitter.",
+              "@url":["OmniTransmitterPrototype.x3d#OmniTransmitter","https://savage.nps.edu/Savage/CommunicationsAndSensors/OmniDirectional/OmniTransmitterPrototype.x3d#OmniTransmitter","OmniTransmitterPrototype.wrl#OmniTransmitter","https://savage.nps.edu/Savage/CommunicationsAndSensors/OmniDirectional/OmniTransmitterPrototype.wrl#OmniTransmitter"],
+              "field": [
+                {
+                  "@name":"frequency",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"units Hertz",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"diffuseColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"emissiveColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"shininess",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"ambientIntensity",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Viewable geometry for this scene"
+          },
+          { "WorldInfo":
+            {
+              "@info":["Produce wireframe or transparent beam cylinders"],
+              "@title":"BeamCylinderPrototype"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Signals",
+              "@position":[15,5,100]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.57079],
+              "@groundColor":[1,0.8,0.6,0.6,0.4,0.2],
+              "@skyAngle":[0.2],
+              "@skyColor":[1,1,1,0.2,0.2,1]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@scale":[5,5,5],
+                    "@translation":[-20,0,-25],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"UHFReceiver",
+                          "fieldValue": [
+                            {
+                              "@name":"frequency",
+                              "@value":3500000
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[5,5,5],
+                    "@translation":[-15,0,-25],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"UHFTransmitter",
+                          "fieldValue": [
+                            {
+                              "@name":"frequency",
+                              "@value":40000
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[25,25,25],
+                    "@translation":[-150,0,-60],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"UHFReceiver",
+                          "fieldValue": [
+                            {
+                              "@name":"frequency",
+                              "@value":35000000
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[25,25,25],
+                    "@translation":[70,0,70],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"UHFTransmitter",
+                          "fieldValue": [
+                            {
+                              "@name":"frequency",
+                              "@value":35000000
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[5,5,5],
+                    "@translation":[250,0,40],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"UHFReceiver",
+                          "fieldValue": [
+                            {
+                              "@name":"frequency",
+                              "@value":40000
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[5,5,5],
+                    "@translation":[260,0,-60],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"UHFReceiver",
+                          "fieldValue": [
+                            {
+                              "@name":"frequency",
+                              "@value":3500000
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

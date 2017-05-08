@@ -1,0 +1,216 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloWorldSignedDecrypted.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple X3D example with XML digital signature for author authentication, also used for example combined with encryption"
+          },
+          {
+            "@name":"created",
+            "@content":"2 July 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"6 July 2008"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Mike Bailey"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3dSecurityReadMe.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"keystore/SelectSigningKeyPair.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"keystore/PublicPrivatePair_certificateChain.cer"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Security/HelloWorldSignedEncryptedResult.xml"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Security/HelloWorldSigned.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Security/HelloWorldSignedDecrypted.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D security, XML signature authentication, public private key pair, XML encryption, secret key"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Example scene to illustrate X3D tags and attributes."
+          },
+          { "Group":
+            {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@centerOfRotation":[0,-1,0],
+                    "@description":"Hello world!",
+                    "@fieldOfView":0.7854,
+                    "@jump":true,
+                    "@orientation":[0,0,1,0],
+                    "@position":[0,-1,7],
+                    "@retainUserOffsets":false
+                  }
+                },
+                { "Transform":
+                  {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
+                    "@center":[0,0,0],
+                    "@rotation":[0,1,0,3],
+                    "@scale":[1,1,1],
+                    "@scaleOrientation":[0,0,1,0],
+                    "@translation":[0,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":1,
+                                "@solid":true
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.2,
+                                      "@diffuseColor":[0,0.5,1],
+                                      "@emissiveColor":[0,0,0],
+                                      "@shininess":0.2,
+                                      "@specularColor":[0,0,0],
+                                      "@transparency":0
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@repeatS":true,
+                                      "@repeatT":true,
+                                      "@url":["../earth-topo.png","../earth-topo.jpg","../earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
+                    "@center":[0,0,0],
+                    "@rotation":[0,0,1,0],
+                    "@scale":[1,1,1],
+                    "@scaleOrientation":[0,0,1,0],
+                    "@translation":[0,-2,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@maxExtent":0.0,
+                                "@solid":false,
+                                "@string":["Hello","world!"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@family":["SERIF"],
+                                      "@horizontal":true,
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@leftToRight":true,
+                                      "@size":1.0,
+                                      "@spacing":1.0,
+                                      "@style":"PLAIN",
+                                      "@topToBottom":true
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.2,
+                                      "@diffuseColor":[0.1,0.5,1],
+                                      "@emissiveColor":[0,0,0],
+                                      "@shininess":0.2,
+                                      "@specularColor":[0,0,0],
+                                      "@transparency":0
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

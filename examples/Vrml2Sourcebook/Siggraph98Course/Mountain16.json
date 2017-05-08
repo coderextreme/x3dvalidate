@@ -1,0 +1,137 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Mountain16.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Low-resolution mountain."
+          },
+          {
+            "@name":"creator",
+            "@content":"John L. Moreland"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/mount16.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0201.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Mountain16.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["copyright (c) 1997, John L. Moreland"],
+              "@title":"Low-res Mountain"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@orientation":[1.0,0.0,0.0,-0.2],
+              "@position":[1.2,0.9,4.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "@height":[0.019608,0.031373,0.043137,0.05098,0.054902,0.054902,0.066667,0.062745,0.062745,0.062745,0.058824,0.054902,0.047059,0.047059,0.035294,0.031373,0.035294,0.035294,0.039216,0.054902,0.062745,0.066667,0.070588,0.070588,0.070588,0.070588,0.098039,0.129412,0.086275,0.078431,0.066667,0.043137,0.039216,0.05098,0.058824,0.07451,0.066667,0.062745,0.054902,0.062745,0.058824,0.066667,0.145098,0.27451,0.227451,0.168627,0.07451,0.05098,0.035294,0.058824,0.070588,0.07451,0.062745,0.058824,0.047059,0.039216,0.054902,0.058824,0.211765,0.356863,0.32549,0.223529,0.07451,0.05098,0.054902,0.070588,0.07451,0.078431,0.054902,0.047059,0.035294,0.027451,0.086275,0.129412,0.231373,0.372549,0.321569,0.231373,0.082353,0.058824,0.054902,0.066667,0.082353,0.07451,0.035294,0.023529,0.027451,0.058824,0.454902,0.517647,0.239216,0.121569,0.094118,0.078431,0.058824,0.058824,0.062745,0.066667,0.07451,0.047059,0.023529,0.027451,0.129412,0.47451,0.815686,0.701961,0.317647,0.054902,0.035294,0.05098,0.066667,0.066667,0.066667,0.062745,0.066667,0.05098,0.031373,0.082353,0.27451,0.780392,0.956863,0.827451,0.25098,0.054902,0.035294,0.047059,0.062745,0.058824,0.078431,0.078431,0.058824,0.054902,0.113725,0.07451,0.282353,0.858824,0.945098,0.745098,0.203922,0.031373,0.027451,0.031373,0.043137,0.062745,0.070588,0.094118,0.109804,0.117647,0.192157,0.282353,0.231373,0.517647,0.92549,0.929412,0.423529,0.027451,0.031373,0.05098,0.058824,0.066667,0.058824,0.082353,0.160784,0.223529,0.329412,0.329412,0.458824,0.733333,0.901961,0.858824,0.607843,0.164706,0.054902,0.047059,0.062745,0.062745,0.058824,0.090196,0.180392,0.254902,0.243137,0.164706,0.443137,0.768627,0.796078,0.772549,0.701961,0.298039,0.290196,0.152941,0.098039,0.066667,0.05098,0.066667,0.101961,0.152941,0.086275,0.094118,0.341176,0.611765,0.662745,0.584314,0.596078,0.470588,0.396078,0.282353,0.137255,0.058824,0.047059,0.054902,0.062745,0.070588,0.058824,0.066667,0.152941,0.388235,0.368627,0.47451,0.439216,0.380392,0.32549,0.164706,0.058824,0.05098,0.035294,0.05098,0.058824,0.062745,0.066667,0.07451,0.133333,0.192157,0.172549,0.098039,0.290196,0.27451,0.133333,0.105882,0.054902,0.047059,0.035294,0.043137,0.05098,0.054902,0.062745,0.066667,0.054902,0.082353,0.098039,0.07451,0.098039,0.078431,0.062745,0.062745,0.054902,0.039216],
+                    "@xDimension":16,
+                    "@xSpacing":0.16,
+                    "@zDimension":16,
+                    "@zSpacing":0.16
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

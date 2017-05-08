@@ -1,0 +1,340 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SliderExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"12 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"This example uses an external proto SliderProto to generate a slider that produces integer values."
+          },
+          {
+            "@name":"warning",
+            "@content":"needs troubleshooting."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Slider",
+              "@url":["SliderPrototype.x3d#Slider","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.x3d#Slider","SliderPrototype.wrl#Slider","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.wrl#Slider"],
+              "field": [
+                {
+                  "@name":"height",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"radius",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"min",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"max",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_min",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_max",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_value",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"value_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ScaledSFFloat",
+              "@url":["SliderPrototype.x3d#ScaledSFFloat","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.x3d#ScaledSFFloat","SliderPrototype.wrl#ScaledSFFloat","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.wrl#ScaledSFFloat"],
+              "field": [
+                {
+                  "@name":"oldMin",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"oldMax",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"newMin",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"newMax",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_oldMin",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_oldMax",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_newMin",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_newMax",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_value",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"value_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SingleTypeConversion",
+              "@url":["SliderPrototype.x3d#SingleTypeConversion","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.x3d#SingleTypeConversion","SliderPrototype.wrl#SingleTypeConversion","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.wrl#SingleTypeConversion"],
+              "field": [
+                {
+                  "@name":"SFBoolValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"SFFloatValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"SFInt32Value",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"SFStringValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"SFBoolResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"SFFloatResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"SFInt32Result",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"SFStringResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"MFStringResult",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Slider Example"
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,0,1,-1.57079],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Slider",
+                    "@DEF":"Slider",
+                    "fieldValue": [
+                      {
+                        "@name":"min",
+                        "@value":0
+                      },
+                      {
+                        "@name":"max",
+                        "@value":24
+                      },
+                      {
+                        "@name":"height",
+                        "@value":5
+                      },
+                      {
+                        "@name":"radius",
+                        "@value":0.1
+                      },
+                      {
+                        "@name":"value",
+                        "@value":12
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@DEF":"VALUE_TEXT",
+                          "@string":["Value"]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"SingleTypeConversion",
+              "@DEF":"Converter"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ScaledSFFloat",
+              "@DEF":"Scaler",
+              "fieldValue": [
+                {
+                  "@name":"oldMin",
+                  "@value":0
+                },
+                {
+                  "@name":"oldMax",
+                  "@value":24
+                },
+                {
+                  "@name":"newMin",
+                  "@value":0
+                },
+                {
+                  "@name":"newMax",
+                  "@value":1
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Slider",
+              "@toField":"SFInt32Value",
+              "@toNode":"Converter"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"SFFloatResult",
+              "@fromNode":"Converter",
+              "@toField":"set_value",
+              "@toNode":"Scaler"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"MFStringResult",
+              "@fromNode":"Converter",
+              "@toField":"set_string",
+              "@toNode":"VALUE_TEXT"
+            }
+          }
+        ]
+    }
+  }
+}

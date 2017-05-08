@@ -1,0 +1,335 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Squisher.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Squishy ball world illustrates the use of orientation, color, and position interpolators. The world contains left, center, and right balls. The left and right balls swing back and forth, pivoting about a common point above the center ball. Each time the left and right balls swing inward, striking the center ball, the center ball squishes and turns red."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/squisher.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0157.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Squisher.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"To make this effect, two orientation interpolators swing the left and right balls back and forth. A position interpolator's output is used as a scale value to squish the center ball. Finally, a color interpolator repeatedly turns the center ball red, then blue."
+          },
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, David R. Nadeau"],
+              "@title":"Squishy ball"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Entry",
+              "@description":"Entry view",
+              "@position":[0.0,1.6,10.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Background":
+            {
+            }
+          },
+          { "Transform":
+            {
+              "@center":[0.0,4.0,0.0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Squishee",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"Coloree"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Stick",
+                    "@translation":[0.0,2.0,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":4.0,
+                                "@radius":0.1
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Swingee1",
+              "@center":[0.0,4.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Ball",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.0,0.5,1.0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"Stick"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Swingee2",
+              "@center":[0.0,4.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Ball"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"Stick"
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":2.0,
+              "@loop":true,
+              "@startTime":1.0
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"Swinger1",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[0.0,0.0,1.0,-0.5,0.0,0.0,1.0,-0.2,0.0,0.0,1.0,-0.5]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"Swinger1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Swinger1",
+              "@toField":"set_rotation",
+              "@toNode":"Swingee1"
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"Swinger2",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[0.0,0.0,1.0,0.5,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.5]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"Swinger2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Swinger2",
+              "@toField":"set_rotation",
+              "@toNode":"Swingee2"
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"Squisher",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[1.0,1.0,1.0,0.5,1.4,1.4,1.0,1.0,1.0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"Squisher"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Squisher",
+              "@toField":"set_scale",
+              "@toNode":"Squishee"
+            }
+          },
+          { "ColorInterpolator":
+            {
+              "@DEF":"Colorer",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[0.0,0.5,1.0,1.0,0.0,0.0,0.0,0.5,1.0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"Colorer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Colorer",
+              "@toField":"set_diffuseColor",
+              "@toNode":"Coloree"
+            }
+          }
+        ]
+    }
+  }
+}

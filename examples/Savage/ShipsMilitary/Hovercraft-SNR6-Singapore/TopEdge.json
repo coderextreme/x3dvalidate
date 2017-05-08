@@ -1,0 +1,213 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TopEdge.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Another sketch of top edge"
+          },
+          {
+            "@name":"created",
+            "@content":"1 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"18 October 2004"
+          },
+          {
+            "@name":"creator",
+            "@content":"Tay Yeong Kiang Winston"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-SNR6-Singapore/TopEdge.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"Front",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"CFront",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,1.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.240602,
+                                            "@diffuseColor":[0.526888,0.525905,0.603564],
+                                            "@shininess":0.636364,
+                                            "@specularColor":[0.651092,0.441837,0.42173],
+                                            "@transparency":0.285714
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[1.9,2.4,0.1]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"BFrame",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.25,
+                                      "@diffuseColor":[0.315152,0.07457,0.0],
+                                      "@shininess":0.036364,
+                                      "@specularColor":[0.508861,0.684007,0.326263]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[2,0.4,0.4]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,2.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"BFrame"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.8,1.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"RFrame",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.25,
+                                            "@diffuseColor":[0.315152,0.07457,0.0],
+                                            "@shininess":0.036364,
+                                            "@specularColor":[0.508861,0.684007,0.326263]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.4,2.5,0.4]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.8,1.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"RFrame"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[2,0,0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"CFront"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-2,0,0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"CFront"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"CoordinateAxes",
+              "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+            }
+          }
+        ]
+    }
+  }
+}

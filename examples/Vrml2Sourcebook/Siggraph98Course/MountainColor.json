@@ -1,0 +1,150 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MountainColor.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple colored mountain illustrates the use of an ElevationGrid to build a colored mountain. Use a very small grid so the code is easy to read and modify."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/cmount.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0223.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0236.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0240.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/MountainColor.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, Andrea L. Ames, David R. Nadeau, John L. Moreland"],
+              "@title":"Simple colored mountain"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@orientation":[1.0,0.0,0.0,-0.2],
+              "@position":[4.5,4.0,15.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "@height":[0.0,0.0,0.5,1.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.5,0.5,0.0,0.0,0.0,0.0,0.0,0.5,0.5,3.0,1.0,0.5,0.0,1.0,0.0,0.0,0.5,2.0,4.5,2.5,1.0,1.5,0.5,1.0,2.5,3.0,4.5,5.5,3.5,3.0,1.0,0.0,0.5,2.0,2.0,2.5,3.5,4.0,2.0,0.5,0.0,0.0,0.0,0.5,1.5,1.0,2.0,3.0,1.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,1.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0],
+                    "@solid":false,
+                    "@xDimension":9,
+                    "@zDimension":9,
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.5,0.1,0.2,0.6,0.0,0.0,0.5,0.1,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.5,0.4,0.0,0.0,0.5,0.1,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.5,0.1,0.0,0.5,0.1,0.5,0.4,0.0,0.2,0.6,0.0,0.0,0.5,0.1,0.0,0.3,1.0,0.2,0.6,0.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.5,0.1,0.4,0.3,0.1,0.7,0.7,0.7,0.5,0.4,0.0,0.2,0.6,0.1,0.3,0.6,0.6,0.0,0.5,0.1,0.2,0.6,0.0,0.5,0.4,0.0,0.5,0.4,0.0,0.7,0.7,0.7,0.8,0.8,0.8,0.5,0.5,0.7,0.5,0.5,0.7,0.2,0.6,0.0,0.0,0.3,1.0,0.0,0.5,0.1,0.2,0.6,0.1,0.2,0.6,0.1,0.2,0.6,0.1,0.5,0.5,0.7,0.7,0.7,0.7,0.5,0.4,0.0,0.0,0.5,0.1,0.0,0.3,1.0,0.0,0.5,0.1,0.0,0.3,1.0,0.0,0.5,0.1,0.2,0.6,0.1,0.2,0.6,0.0,0.5,0.4,0.0,0.5,0.5,0.7,0.2,0.6,0.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.5,0.1,0.5,0.4,0.0,0.2,0.6,0.0,0.0,0.5,0.1,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.3,1.0,0.0,0.5,0.1,0.0,0.3,1.0,0.0,0.3,1.0]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

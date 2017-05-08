@@ -1,0 +1,801 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BooleanSequencerExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This example shows how to use the BooleanSequencer prototype in an animated scenario."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Estuko Lippi, Jeff Weekley, Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"10 August 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#ScalarInterpolator"
+          },
+          {
+            "@name":"subject",
+            "@content":"boolean sequencer"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"HUDGroup",
+              "-children":[
+                { "ProximitySensor":
+                  {
+                    "@DEF":"WhereSensor",
+                    "@size":[1000,1000,1000]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"BillboardWhereTransform",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-0.03],
+                          "@translation":[0,0,-12],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"BillboardPlaneTransform",
+                                      "-children":[
+                                        { "TouchSensor":
+                                          {
+                                            "@DEF":"Toucher",
+                                            "@description":"Click text to start clock and run multiple BooleanSequencers"
+                                          }
+                                        },
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0,1,1]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["Click text to start clock, run","multiple BooleanSequencers","","","","See Viewpoint description","for bound Viewpoint number"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@justify":["MIDDLE","MIDDLE"]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"position_changed",
+                    "@fromNode":"WhereSensor",
+                    "@toField":"set_translation",
+                    "@toNode":"BillboardWhereTransform"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"orientation_changed",
+                    "@fromNode":"WhereSensor",
+                    "@toField":"set_rotation",
+                    "@toNode":"BillboardWhereTransform"
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":10
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Toucher",
+              "@toField":"set_startTime",
+              "@toNode":"Clock"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"FrontUpViewpoint",
+              "@description":"View 0, Front Up"
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView1",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"LeftViewpoint",
+                    "@description":"View 1, Left",
+                    "@orientation":[0,1,0,-1.57],
+                    "@position":[-10,0,0]
+                  }
+                },
+                { "BooleanSequencer":
+                  {
+                    "@DEF":"LeftViewBinder",
+                    "@key":[0,0.1,0.25],
+                    "@keyValue":[false,true,false]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"LeftViewBinder"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"LeftViewBinder",
+                    "@toField":"set_bind",
+                    "@toNode":"LeftViewpoint"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView2",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"BackViewpoint",
+                    "@description":"View 2, Back",
+                    "@orientation":[0,1,0,-3.14],
+                    "@position":[0,0,-10]
+                  }
+                },
+                { "BooleanSequencer":
+                  {
+                    "@DEF":"BackViewBinder",
+                    "@key":[0,0.375,0.475],
+                    "@keyValue":[false,true,false]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"BackViewBinder"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"BackViewBinder",
+                    "@toField":"set_bind",
+                    "@toNode":"BackViewpoint"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView3",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"RightViewpoint",
+                    "@description":"View 3, Right",
+                    "@orientation":[0,1,0,1.57],
+                    "@position":[10,0,0]
+                  }
+                },
+                { "BooleanSequencer":
+                  {
+                    "@DEF":"RightViewBinder",
+                    "@key":[0,0.5,0.6],
+                    "@keyValue":[false,true,false]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"RightViewBinder"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"RightViewBinder",
+                    "@toField":"set_bind",
+                    "@toNode":"RightViewpoint"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView4",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"TopViewpoint",
+                    "@description":"View 4, Top",
+                    "@orientation":[1,0,0,-1.57],
+                    "@position":[0,10,0]
+                  }
+                },
+                { "BooleanSequencer":
+                  {
+                    "@DEF":"TopViewBinder",
+                    "@key":[0.625,0.725],
+                    "@keyValue":[true,false]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"TopViewBinder"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"TopViewBinder",
+                    "@toField":"set_bind",
+                    "@toNode":"TopViewpoint"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView5",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"FrontDownViewpoint",
+                    "@description":"View 5, Front Down",
+                    "@orientation":[1,0,0,-3.14],
+                    "@position":[0,0,-10]
+                  }
+                },
+                { "BooleanSequencer":
+                  {
+                    "@DEF":"FrontDownViewBinder",
+                    "@key":[0.75,0.85],
+                    "@keyValue":[true,false]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"FrontDownViewBinder"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"FrontDownViewBinder",
+                    "@toField":"set_bind",
+                    "@toNode":"FrontDownViewpoint"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView6",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"BottomViewpoint",
+                    "@description":"View 6, Bottom",
+                    "@orientation":[1,0,0,1.57],
+                    "@position":[0,-10,0]
+                  }
+                },
+                { "BooleanSequencer":
+                  {
+                    "@DEF":"BottomViewBinder",
+                    "@key":[0.875,0.975],
+                    "@keyValue":[true,false]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"BottomViewBinder"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"BottomViewBinder",
+                    "@toField":"set_bind",
+                    "@toNode":"BottomViewpoint"
+                  }
+                }
+              ]
+            }
+          },
+          { "Switch":
+            {
+              "@DEF":"DebugSwitch",
+              "@whichChoice":0,
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "Script":
+                        {
+                          "@DEF":"Debug",
+                          "field": [
+                            {
+                              "@name":"setFraction",
+                              "@accessType":"inputOnly",
+                              "@type":"SFFloat"
+                            },
+                            {
+                              "@name":"setFrontUpViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setLeftViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setBackViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setRightViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setTopViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setFrontDownViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setBottomViewBind",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setFrontUpBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setLeftBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setBackBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setRightBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setTopBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setFrontDownBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"setBottomBSOutput",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            }
+                          ],
+                          "#sourceText":[
+"ecmascript:",
+"",
+"function setFraction(value, timeStamp)",
+"{",
+"\tBrowser.print ('fraction =' + value);",
+"}",
+"",
+"function setFrontUpViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('FrontUpView bind:' + value);",
+"}",
+"",
+"function setLeftViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('LeftView bind:' + value);",
+"}",
+"",
+"function setBackViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('BackView bind:' + value);",
+"}",
+"",
+"function setRightViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('RightView bind:' + value);",
+"}",
+"",
+"function setTopViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('TopView bind:' + value);",
+"}",
+"",
+"function setFrontDownViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('FrontDownView bind:' + value);",
+"}",
+"",
+"function setBottomViewBind(value, timeStamp)",
+"{",
+"\tBrowser.print ('BottomView bind:' + value);",
+"}",
+"",
+"function setFrontUpBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for FrontUpViewpoint:' + value);",
+"}",
+"",
+"function setLeftBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for LeftViewpoint:' + value);",
+"}",
+"",
+"function setBackBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for BackViewpoint:' + value);",
+"}",
+"",
+"function setRightBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for RightViewpoint:' + value);",
+"}",
+"",
+"function setTopBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for TopViewpoint:' + value);",
+"}",
+"",
+"function setFrontDownBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for FrontDownViewpoint:' + value);",
+"}",
+"",
+"function setBottomBSOutput(value, timeStamp)",
+"{",
+"\tBrowser.print ('BooleanSequencer output for BottomViewpoint:' + value);",
+"}"
+]
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"fraction_changed",
+                          "@fromNode":"Clock",
+                          "@toField":"setFraction",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"FrontUpViewpoint",
+                          "@toField":"setFrontUpViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"LeftViewpoint",
+                          "@toField":"setLeftViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"BackViewpoint",
+                          "@toField":"setBackViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"RightViewpoint",
+                          "@toField":"setRightViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"TopViewpoint",
+                          "@toField":"setTopViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"FrontDownViewpoint",
+                          "@toField":"setFrontDownViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isBound",
+                          "@fromNode":"BottomViewpoint",
+                          "@toField":"setBottomViewBind",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"LeftViewBinder",
+                          "@toField":"setLeftBSOutput",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"BackViewBinder",
+                          "@toField":"setBackBSOutput",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"RightViewBinder",
+                          "@toField":"setRightBSOutput",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"TopViewBinder",
+                          "@toField":"setTopBSOutput",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"FrontDownViewBinder",
+                          "@toField":"setFrontDownBSOutput",
+                          "@toNode":"Debug"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"BottomViewBinder",
+                          "@toField":"setBottomBSOutput",
+                          "@toNode":"Debug"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[2,0.1,0.35]
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-1,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.2
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,1,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.2
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Cone":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

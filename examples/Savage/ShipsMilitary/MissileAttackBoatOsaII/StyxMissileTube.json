@@ -1,0 +1,160 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"StyxMissileTube.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Model of OSA-II missile boat missile launcher."
+          },
+          {
+            "@name":"creator",
+            "@content":"Scott Rosetti, LT USNR"
+          },
+          {
+            "@name":"created",
+            "@content":"20 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 November 2015"
+          },
+          {
+            "@name":"subject",
+            "@content":"Osa-II, missile boat, patrol craft, SAVAGE, X3D"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/MissileAttackBoatOsaII/StyxMissileTube.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"LAUNCHER",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.8,
+                                "@radius":0.28
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-0.9,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,1,1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.28
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,1,1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.315,
+                                      "@height":0.2
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

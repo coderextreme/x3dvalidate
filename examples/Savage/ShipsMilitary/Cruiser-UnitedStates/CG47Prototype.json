@@ -1,0 +1,383 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CG47Prototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype for a Ticonderoga Class cruiser"
+          },
+          {
+            "@name":"creator",
+            "@content":"Patrick Sullivan"
+          },
+          {
+            "@name":"created",
+            "@content":"30 July 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Cruiser-UnitedStates/CG47Prototype.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"Prototypes, FFG7, Oliver Perry Frigate"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"HullNumber",
+              "@url":["../../../Savage/ModelDetailing/HullNumbers/HullNumberPrototype.x3d#HullNumber","https://savage.nps.edu/Savage/ModelDetailing/HullNumbers/HullNumberPrototype.x3d#HullNumber"],
+              "field": [
+                {
+                  "@name":"FirstNumber",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[0-9] (-1 will prevent rendering)",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"SecondNumber",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[0-9] (-1 will prevent rendering)",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CG",
+              "@appinfo":"Prototype of a US Cruiser",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ISIC",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"URL for the ISIC seal that is found on the side of most navy ships (e.g. \"../../ShipCrests/COMDESRON31/DESRON31.x3d\")",
+                      "@type":"MFString",
+                      "@value":["none"]
+                    },
+                    {
+                      "@name":"HullNumber1",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The first (or only) digit of the ship's hull number [0-9]. Note -1 for no number",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    },
+                    {
+                      "@name":"HullNumber2",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The second digit of the ship's hull number [0-9]. Note: -1 for no number",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    },
+                    {
+                      "@name":"StarboardBowWeapon",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"URL for the model that represents the weapon at this location. [example \"http://www.web3d.org/content/examples/Savage/Weapons/50Cal.x3d\")",
+                      "@type":"MFString",
+                      "@value":["none"]
+                    },
+                    {
+                      "@name":"PortBowWeapon",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"URL for the model that represents the weapon at this location. [example \"http://www.web3d.org/content/examples/Savage/Weapons/50Cal.x3d\")",
+                      "@type":"MFString",
+                      "@value":["none"]
+                    },
+                    {
+                      "@name":"StarboardFlightDeckWeapon",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"URL for the model that represents the weapon at this location. [example \"http://www.web3d.org/content/examples/Savage/Weapons/50Cal.x3d\")",
+                      "@type":"MFString",
+                      "@value":["none"]
+                    },
+                    {
+                      "@name":"PortFlightDeckWeapon",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"URL for the model that represents the weapon at this location. [example \"http://www.web3d.org/content/examples/Savage/Weapons/50Cal.x3d\")",
+                      "@type":"MFString",
+                      "@value":["none"]
+                    },
+                    {
+                      "@name":"SternFlightDeckWeapon",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"URL for the model that represents the weapon at this location. [example \"http://www.web3d.org/content/examples/Savage/Weapons/50Cal.x3d\")",
+                      "@type":"MFString",
+                      "@value":["none"]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "-children":[
+                          {
+                            "#comment":"Ship Model"
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"CGShipModel",
+                              "-children":[
+                                { "Inline":
+                                  {
+                                    "@url":["../../../Savage/ShipsMilitary/Cruiser-UnitedStates/CG47.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Cruiser-UnitedStates/CG47.x3d"]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "#comment":"Hull Numbers"
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"StarboardBowHullNumber",
+                              "@rotation":[0.721,0.678,-0.141,0.523],
+                              "@translation":[74.514,5.007,2.192],
+                              "-children":[
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"HullNumber",
+                                    "@DEF":"ShipNumber",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"FirstNumber",
+                                            "@protoField":"HullNumber1"
+                                          },
+                                          {
+                                            "@nodeField":"SecondNumber",
+                                            "@protoField":"HullNumber2"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"PortBowHullNumber",
+                              "@rotation":[0.025,0.99,-0.139,2.794],
+                              "@translation":[74.514,5.007,-2.197],
+                              "-children":[
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"HullNumber",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"FirstNumber",
+                                            "@protoField":"HullNumber1"
+                                          },
+                                          {
+                                            "@nodeField":"SecondNumber",
+                                            "@protoField":"HullNumber2"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "#comment":"ISIC Seals"
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"StarboardSeal",
+                              "@translation":[19.032,9.298,5.717],
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "-children":[
+                                      { "Inline":
+                                        {
+                                          "@DEF":"ISICSeal",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"url",
+                                                  "@protoField":"ISIC"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"PortSeal",
+                              "@rotation":[0,1,0,3.14],
+                              "@translation":[19.032,9.298,-5.546],
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "-children":[
+                                      { "Inline":
+                                        {
+                                          "@USE":"ISICSeal"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "#comment":"Weapon Placements"
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"StarboardBowWeapon",
+                              "@rotation":[0,1,0,3.14],
+                              "@translation":[32.363,6.138,7.115],
+                              "-children":[
+                                { "Inline":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"url",
+                                            "@protoField":"StarboardBowWeapon"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"PortBowWeapon",
+                              "@translation":[32.363,6.138,-6.694],
+                              "-children":[
+                                { "Inline":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"url",
+                                            "@protoField":"PortBowWeapon"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"StarboardFlightDeckWeapon",
+                              "@rotation":[0,1,0,3.14],
+                              "@translation":[-66.615,3.709,5.961],
+                              "-children":[
+                                { "Inline":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"url",
+                                            "@protoField":"StarboardFlightDeckWeapon"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"PortFlightDeckWeapon",
+                              "@translation":[-66.615,3.709,-5.631],
+                              "-children":[
+                                { "Inline":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"url",
+                                            "@protoField":"PortFlightDeckWeapon"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"SternFlightDeckWeapon",
+                              "@rotation":[0,1,0,1.57],
+                              "@translation":[-86.633,4.148,4.785],
+                              "-children":[
+                                { "Inline":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"url",
+                                            "@protoField":"SternFlightDeckWeapon"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}

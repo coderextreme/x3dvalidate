@@ -1,0 +1,270 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ViewpointSequencerExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Animate through a set of Viewpoints and repeat"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"11 December 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 November 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Viewpoint Tour"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"ViewpointSequencer",
+              "@appinfo":"Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene",
+              "@url":["../../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","../../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"],
+              "field": [
+                {
+                  "@name":"viewpoints",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Viewpoint USE nodes that are sequentially bound",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"interval",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"number of seconds between viewpoint shifts",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"whether ViewpointSequencer is enabled or not",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_enabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"whether ViewpointSequencer is enabled or not",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"previous",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"bind previous Viewpoint in list",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"next",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"bind next Viewpoint in list",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toggleMessage",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Select message to toggle ViewpointSequencer",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"toggleMessageFontSize",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Font size for toggleMessage text",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"toggleMessageColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Color for toggleMessage text",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"enable console output",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===============Example=============="
+          },
+          { "Group":
+            {
+              "@DEF":"Viewpoints",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"View0",
+                    "@description":"View zero (+Y axis)",
+                    "@orientation":[1,0,0,-1.57],
+                    "@position":[0,10,0]
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@DEF":"View1",
+                    "@description":"View one (+Z axis)"
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@DEF":"View2",
+                    "@description":"View two (+X axis)",
+                    "@orientation":[0,1,0,1.57],
+                    "@position":[10,0,0]
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@DEF":"View3",
+                    "@description":"View three (-Z axis)",
+                    "@orientation":[0,1,0,3.14],
+                    "@position":[0,0,-10]
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@DEF":"View4",
+                    "@description":"View four (-X axis)",
+                    "@orientation":[0,1,0,-1.57],
+                    "@position":[-10,0,0]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"ViewpointSequencer",
+                    "fieldValue": [
+                      {
+                        "@name":"viewpoints",
+                        "-children":[
+                          { "Viewpoint":
+                            {
+                              "@USE":"View0"
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@USE":"View1"
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@USE":"View2"
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@USE":"View3"
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@USE":"View4"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"interval",
+                        "@value":2
+                      },
+                      {
+                        "@name":"enabled",
+                        "@value":false
+                      },
+                      {
+                        "@name":"traceEnabled",
+                        "@value":true
+                      }
+                    ],
+                    "-children":[
+                      {
+                        "#comment":"initially enabled is off, scene provides selectable text to activate"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                    "@DEF":"BackdropBox",
+                    "@size":[0.2,0.4,0.6]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[1,0.4,0.2]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"CoordinateAxes",
+              "@url":["../../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","../../Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","../../Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+            }
+          }
+        ]
+    }
+  }
+}

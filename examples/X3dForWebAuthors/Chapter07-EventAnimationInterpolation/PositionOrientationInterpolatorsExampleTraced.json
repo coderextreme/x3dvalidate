@@ -1,0 +1,521 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PositionOrientationInterpolatorsExampleTraced.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Demonstrate use of PositionInterpolator and OrientationInterpolator to animate object motion, with console output tracing added for PositionInterpolator and ROUTE events."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"5 August 2011"
+          },
+          {
+            "@name":"modified",
+            "@content":"29 October 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"Chapter07-EventAnimationInterpolation-EventTracing.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"PositionOrientationInterpolatorsExampleTracedConsole.txt"
+          },
+          {
+            "@name":"MovingImage",
+            "@content":"PositionOrientationInterpolatorsExample.mp4"
+          },
+          {
+            "@name":"reference",
+            "@content":"PositionOrientationInterpolatorsExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright Don Brutzman and Leonard Daly 2007"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/WaypointInterpolatorExample.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/PositionOrientationInterpolatorsExampleTraced.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Animation demo",
+              "@orientation":[1,0,0,-0.588003],
+              "@position":[0,8,12]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@centerOfRotation":[5,0.1,5],
+              "@description":"View from above",
+              "@orientation":[1,0,0,-1.570796],
+              "@position":[0,15,0]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Pointer",
+              "@translation":[1,0,1],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.5,
+                                "@height":1.5
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"ConeMaterial",
+                                      "@diffuseColor":[0.427451,1,0.160784]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"Floor",
+              "-geometry":
+                { "Box":
+                  {
+                    "@size":[12,0.05,12]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0.262745,0.941176]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"note that final value equals first value in keyValue array in order to support smooth looping"
+          },
+          {
+            "#comment":"first drive around the location"
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"PositionAnimator",
+              "@key":[0,0.2,0.25,0.45,0.5,0.7,0.75,0.95,1],
+              "@keyValue":[-4,0,-4,-4,0,4,-4,0,4,4,0,4,4,0,4,4,0,-4,4,0,-4,-4,0,-4,-4,0,-4]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                {
+                  "#comment":"======= PositionInterpolator Trace =============================================="
+                },
+                { "Script":
+                  {
+                    "@DEF":"Trace_PositionInterpolator_PositionAnimator",
+                    "@mustEvaluate":true,
+                    "field": [
+                      {
+                        "@name":"reportInterval",
+                        "@accessType":"initializeOnly",
+                        "@appinfo":"Sampling frequency in seconds (0 means all values)",
+                        "@type":"SFTime",
+                        "@value":1.0
+                      },
+                      {
+                        "@name":"value_changed",
+                        "@accessType":"inputOnly",
+                        "@type":"SFVec3f"
+                      },
+                      {
+                        "@name":"key",
+                        "@accessType":"inputOnly",
+                        "@type":"MFFloat"
+                      },
+                      {
+                        "@name":"keyValue",
+                        "@accessType":"inputOnly",
+                        "@type":"MFVec3f"
+                      },
+                      {
+                        "@name":"timeStampPreviousReport",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFTime",
+                        "@value":-1
+                      }
+                    ],
+                    "-children":[
+                      {
+                        "#comment":"Trace ROUTEd values on X3D browser console"
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"    function value_changed (eventValue, timeStamp) {",
+"      if (timeStamp - timeStampPreviousReport >= reportInterval) {",
+"        Browser.print ('Trace_PositionInterpolator_PositionAnimator type=SFVec3f value_changed=' + eventValue.toString() + '\n');",
+"        timeStampPreviousReport = timeStamp;",
+"      }",
+"    }",
+"    function key (eventValue) {",
+"      Browser.print ('Trace_PositionInterpolator_PositionAnimator type=MFFloat key=' + eventValue.toString() + '\n');",
+"    }",
+"    function keyValue (eventValue) {",
+"      Browser.print ('Trace_PositionInterpolator_PositionAnimator type=MFVec3f keyValue=' + eventValue.toString() + '\n');",
+"    }"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"PositionAnimator",
+                    "@toField":"value_changed",
+                    "@toNode":"Trace_PositionInterpolator_PositionAnimator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"key",
+                    "@fromNode":"PositionAnimator",
+                    "@toField":"key",
+                    "@toNode":"Trace_PositionInterpolator_PositionAnimator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"keyValue",
+                    "@fromNode":"PositionAnimator",
+                    "@toField":"keyValue",
+                    "@toNode":"Trace_PositionInterpolator_PositionAnimator"
+                  }
+                },
+                {
+                  "#comment":"======= PositionInterpolator Trace block complete ====================================================="
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"PositionAnimator",
+              "@toField":"translation",
+              "@toNode":"Pointer"
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                {
+                  "#comment":"======= ROUTE Trace =============================================="
+                },
+                { "Script":
+                  {
+                    "@DEF":"Trace_ROUTE_PositionAnimator.value_changed_TO_Pointer.translation",
+                    "@mustEvaluate":true,
+                    "-children":[
+                      {
+                        "#comment":"Trace ROUTEd values on X3D browser console"
+                      }
+                    ],
+                    "field": [
+                      {
+                        "@name":"reportInterval",
+                        "@accessType":"initializeOnly",
+                        "@appinfo":"Sampling frequency in seconds (0 means all values)",
+                        "@type":"SFTime",
+                        "@value":1.0
+                      },
+                      {
+                        "@name":"traceValue",
+                        "@accessType":"inputOnly",
+                        "@type":"SFVec3f"
+                      },
+                      {
+                        "@name":"timeStampPreviousReport",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFTime",
+                        "@value":-1
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"    function traceValue (eventValue, timeStamp) {",
+"      // input eventValue received for trace field",
+"      if (timeStamp - timeStampPreviousReport >= reportInterval) {",
+"        Browser.print ('Trace_ROUTE_PositionAnimator.value_changed_TO_Pointer.translation type=SFVec3f value=' + eventValue.toString() + '\n');",
+"        timeStampPreviousReport = timeStamp;",
+"      }",
+"    }",
+"    function timeOfDay (someTime) {",
+"      hh = Math.floor (someTime /(60*60)) % 24;",
+"      mm = Math.floor (someTime / 60)     % 60;",
+"      ss = Math.floor (someTime)          % 60;",
+"      if (hh < 9) hour   = '0' + hh;",
+"      else        hour   =       hh;",
+"      if (mm < 9) minute = '0' + mm;",
+"      else        minute =       mm;",
+"      if (ss < 9) second = '0' + ss;",
+"      else        second =       ss;",
+"      return '(' + hour + ':' + minute + ':' + second + ' GMT)';",
+"    }"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"PositionAnimator",
+                    "@toField":"traceValue",
+                    "@toNode":"Trace_ROUTE_PositionAnimator.value_changed_TO_Pointer.translation"
+                  }
+                },
+                {
+                  "#comment":"======= ROUTE Trace block complete ====================================================="
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"then rotate the pointer to match next direction while paused at each position"
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"OrientationAnimator",
+              "@key":[0,0.2,0.25,0.45,0.5,0.7,0.75,0.95,1],
+              "@keyValue":[0,1,0,0,0,1,0,0,0,1,0,1.57,0,1,0,1.57,0,1,0,3.14,0,1,0,3.14,0,1,0,4.71,0,1,0,4.71,0,1,0,6.283]
+            }
+          },
+          {
+            "#comment":"final rotation value is 2pi rather than 0 so that rotation animation is smooth, not flip-flopping"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"OrientationAnimator",
+              "@toField":"set_rotation",
+              "@toNode":"Pointer"
+            }
+          },
+          {
+            "#comment":"put TimeSensor clock last so that animation design pattern and ROUTE events flow upward"
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"AnimationClock",
+              "@cycleInterval":10,
+              "@loop":true
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"AnimationClock",
+              "@toField":"set_fraction",
+              "@toNode":"PositionAnimator"
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                {
+                  "#comment":"======= ROUTE Trace =============================================="
+                },
+                { "Script":
+                  {
+                    "@DEF":"Trace_ROUTE_AnimationClock.fraction_changed_TO_PositionAnimator.set_fraction",
+                    "@mustEvaluate":true,
+                    "-children":[
+                      {
+                        "#comment":"Trace ROUTEd values on X3D browser console"
+                      }
+                    ],
+                    "field": [
+                      {
+                        "@name":"reportInterval",
+                        "@accessType":"initializeOnly",
+                        "@appinfo":"Sampling frequency in seconds (0 means all values)",
+                        "@type":"SFTime",
+                        "@value":1.0
+                      },
+                      {
+                        "@name":"traceValue",
+                        "@accessType":"inputOnly",
+                        "@type":"SFFloat"
+                      },
+                      {
+                        "@name":"timeStampPreviousReport",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFTime",
+                        "@value":-1
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"    function traceValue (eventValue, timeStamp) {",
+"      // input eventValue received for trace field",
+"      if (timeStamp - timeStampPreviousReport >= reportInterval) {",
+"        Browser.print ('Trace_ROUTE_AnimationClock.fraction_changed_TO_PositionAnimator.set_fraction type=SFFloat value=' + eventValue + '\n');",
+"        timeStampPreviousReport = timeStamp;",
+"      }",
+"    }",
+"    function timeOfDay (someTime) {",
+"      hh = Math.floor (someTime /(60*60)) % 24;",
+"      mm = Math.floor (someTime / 60)     % 60;",
+"      ss = Math.floor (someTime)          % 60;",
+"      if (hh < 9) hour   = '0' + hh;",
+"      else        hour   =       hh;",
+"      if (mm < 9) minute = '0' + mm;",
+"      else        minute =       mm;",
+"      if (ss < 9) second = '0' + ss;",
+"      else        second =       ss;",
+"      return '(' + hour + ':' + minute + ':' + second + ' GMT)';",
+"    }"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"AnimationClock",
+                    "@toField":"traceValue",
+                    "@toNode":"Trace_ROUTE_AnimationClock.fraction_changed_TO_PositionAnimator.set_fraction"
+                  }
+                },
+                {
+                  "#comment":"======= ROUTE Trace block complete ====================================================="
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"AnimationClock",
+              "@toField":"set_fraction",
+              "@toNode":"OrientationAnimator"
+            }
+          },
+          {
+            "#comment":"notice that explanatory Text is placed later in scene although it is graphically located above driving plane"
+          },
+          { "Transform":
+            {
+              "@translation":[0,4,0],
+              "-children":[
+                { "Billboard":
+                  {
+                    "@axisOfRotation":[0,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Animation using PositionInterpolator","and OrientationInterpolator"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.6
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

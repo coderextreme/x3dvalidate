@@ -1,0 +1,160 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Inline.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Inline example that loads Hello World example."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"12 October 2013"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 October 2015"
+          },
+          {
+            "@name":"info",
+            "@content":"X3D profile in this scene must be suffient to support Inline scene in order to properly set up the X3D player."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"../HelloWorld.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#InlinesPrototypes"
+          },
+          {
+            "@name":"reference",
+            "@content":"InlineKelpForest.x3d"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright Don Brutzman and Leonard Daly 2007"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/Inline.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"The following url is an ordered list of multiple addresses that support the following use cases."
+          },
+          {
+            "#comment":"Use case: (1a) .x3d on local disk or (1b) web server query looks on local server"
+          },
+          {
+            "#comment":"Use case: (2) Older VRML97 browser unable to read X3D, reads .wrl version instead (backwards compatibility)"
+          },
+          {
+            "#comment":"Use case: (3) local copy not available, retrieve from permanent server address"
+          },
+          {
+            "#comment":"Use case: (4) combination of cases (2) and (3), VRML97 on remote server"
+          },
+          {
+            "#comment":"TODO consider simpler scene to illustrate Inline, also consider adding Viewpoint"
+          },
+          { "Inline":
+            {
+              "@DEF":"HelloWorldInline",
+              "@url":["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"]
+            }
+          },
+          {
+            "#comment":"Background nodes in the parent scene are automatically bound before any Background nodes from child Inline scenes"
+          },
+          { "Background":
+            {
+              "@skyColor":[0.560784,0.654902,1]
+            }
+          },
+          {
+            "#comment":"Viewpoints in the parent and children scenes appear in order of definition, allowing authors to predict results"
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"ViewFartherBack",
+              "@centerOfRotation":[0,-1,0],
+              "@description":"Hello world!",
+              "@position":[0,-1,9]
+            }
+          },
+          {
+            "#comment":"This box encloses the world but not the text found in the Inline scene HelloWorld.x3d"
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                    "@size":[2.1,2.1,2.21]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[1,1,1],
+                          "@transparency":0.5
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ScriptSyntaxExampleTest.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"8 January 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 March 2016"
+          },
+          {
+            "@name":"description",
+            "@content":"Script node syntax example, testing sample values of various types with simple escaping of apostrophe and quotation mark characters, with results shown on Browser console output."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/ScriptSyntaxExampleTest.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.txt"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Script":
+            {
+              "@DEF":"myScript",
+              "@url":["NoSuchScript1.js","http://www.web3d.org/x3d/content/examples/Basic/development/NoSuchScript2.class.ignore"],
+              "field": [
+                {
+                  "@name":"someSFBool",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"someMFInt32",
+                  "@accessType":"outputOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"someMFFloats",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFFloat",
+                  "@value":[0.0,1.0,2.0]
+                },
+                {
+                  "@name":"someStringField",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString",
+                  "@value":"hello"
+                },
+                {
+                  "@name":"stringTest1",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["'","apostrophe"]
+                },
+                {
+                  "@name":"stringTest2",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Quote &quot; character","More Text"]
+                },
+                {
+                  "@name":"someInitializedRotation",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFRotation",
+                  "@value":[0,1,0,0]
+                },
+                {
+                  "@name":"someInitializedTime",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFTime",
+                  "@value":0
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"// Preferred style for inlined script code is contained CDATA",
+"// in order to simplify use of characters < > \" \" ' ' etc. in source code",
+"",
+"// When inlined script code appears in url instead, XML special characters",
+"// must be carefully 'escaped' or an incorrect translation will result.",
+"",
+"// url appears before contained code when translating to VRML encoding,",
+"// so that external (possibly updated) code scripts can take precedence",
+"",
+"function someSFBool (value, timestamp)",
+"{",
+"\tBrowser.println ('someSFBool input event=' + value);",
+"\tsomeMFInt32 = 0; // set outputOnly event, for example",
+"}",
+"function initialize (value)",
+"{",
+"\tBrowser.println ('    someMFFloats=' + someMFFloats);",
+"\tBrowser.println ('someStringField=' + someStringField);",
+"\tBrowser.println ('    stringTest1=' + stringTest1);",
+"\tBrowser.println ('    stringTest2=' + stringTest2);",
+"}"
+]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"Select text to view source documentation",
+              "@url":["ScriptSyntaxExampleTest.html","http://www.web3d.org/x3d/content/examples/Basic/development/ScriptSyntaxExampleTest.html"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Script node syntax example,","select this text to view source"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.4,0.1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"selectable Text to show Anchor description"
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[11,2,0.001]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

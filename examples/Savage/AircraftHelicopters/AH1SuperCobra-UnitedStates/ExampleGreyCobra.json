@@ -1,0 +1,238 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExampleGreyCobra.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Instantiates an example of the Super Cobra AH-1Z Helicopter's prototype in Grey Color."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"16 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 March 2004"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/ExampleGreyCobra.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/ah-1.htm"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"SuperCobra",
+              "@url":["../../AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.x3d#SuperCobra","https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.x3d#SuperCobra","../../AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.wrl#SuperCobra","https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.wrl#SuperCobra"],
+              "field": [
+                {
+                  "@name":"tailBoomColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"tailRotorDriveShaftColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"horizontalStabilizerColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"fuselageColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"cockpitColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"cowlingColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"helicopterName",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"inFlight",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"Sensor",
+                    "@description":"start flight mode"
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"SuperCobra",
+                    "@DEF":"ExampleHelicopter",
+                    "fieldValue": [
+                      {
+                        "@name":"tailBoomColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.5,0.5,0.5]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"tailRotorDriveShaftColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.5,0.5,0.5]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"horizontalStabilizerColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.5,0.5,0.5]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"fuselageColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.6,0.6,0.6]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"cockpitColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.6,0.6,0.6]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"cowlingColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.5,0.5,0.5]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"helicopterName",
+                        "@value":"\"Grey Cobra\""
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"Sensor",
+              "@toField":"inFlight",
+              "@toNode":"ExampleHelicopter"
+            }
+          }
+        ]
+    }
+  }
+}

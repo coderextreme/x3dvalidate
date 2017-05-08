@@ -1,0 +1,254 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloTaiwan.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Hello World: Hello Taiwan in Traditional Chinese, 您 好 臺 灣"
+          },
+          {
+            "@name":"creator",
+            "@content":"Ben Cheng and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"7 June 2013"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 October 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"Hello World Example"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/realtime-3d/news/internationalization-x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Traditional_Chinese_characters"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwan.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwanBsContact.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwanH3Dviewer.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwanInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwanView3dscene.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwanX3DOM.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloTaiwanXj3D.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Taiwan"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B"
+          },
+          {
+            "@name":"Image",
+            "@content":"Flag_of_the_Republic_of_China.svg"
+          },
+          {
+            "@name":"Image",
+            "@content":"Flag_of_the_Republic_of_China.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/File:Flag_of_the_Republic_of_China.svg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Traditional_Chinese_characters"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloTaiwan.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"Hello Taiwan!! 您好，臺灣!!"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Hello Taiwan!! 您好，臺灣!!",
+              "@position":[0,1,6]
+            }
+          },
+          {
+            "#comment":"character entities: \"&#24744;&#22909;&#65292;&#33274;&#28771;"
+          },
+          { "Transform":
+            {
+              "@translation":[2,1,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["您","好","臺","灣","您好，臺灣"],
+                          "-children":[
+                            {
+                              "#comment":"\"&#24744;\" \"&#22909;\" \"&#33274;\" \"&#28771;\""
+                            }
+                          ],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@horizontal":false,
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLDITALIC"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"TextAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-0.5,-1.25,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Hello Taiwan !!"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLDITALIC"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"TextAppearance"
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-0.4,2.6,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Taiwan Wikipedia page",
+                          "@url":["http://en.wikipedia.org/wiki/Taiwan"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[4.5,3,0.0001]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@url":["Flag_of_the_Republic_of_China.png","http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorld/Flag_of_the_Republic_of_China.png"]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

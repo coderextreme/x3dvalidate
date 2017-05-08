@@ -1,0 +1,30 @@
+{ "should" : { "be" :     { "" : 							"needs to be"
+			    ,"equal" : { "to" : { "constant" : 				"needs to be equal to the constant"
+                                             ,"one of the allowed values" : 		"needs to be equal to one of the allowed values"
+                                           }
+                                  }
+                                         
+                            ,"multiple of" : 						"needs to be multiple of"
+			  }
+               ,"have" :  { "" : 							"needs to have"
+                            ,"property matching pattern" : 				"needs to have property matching pattern"
+                          }
+               ,"match" : { "exactly one schema in oneOf" : 				"needs to match exactly one schema in oneOf"
+			    ,"format" : 						"needs to match format"
+			    ,"pattern" : 						"needs to match the pattern"
+			    ,"some schema in anyOf" : 					"needs to match some of the schema in anyOf"
+			  }
+	       ,"NOT" :   {  "be" : 							"must NOT be"
+			     ,"be valid": 						"must NOT be valid"
+			     ,"have" : { "" : 						"must NOT have"
+					 , "additional properties" : 			"must NOT have additional json properties"
+					 , "duplicate items (items ## ..." : 		"must NOT have duplicate items (items ## ..."
+					 , "... than ..." : 				"must NOT have ... than ..."
+					 , "more than ..." : 				"must NOT have more than ..."
+                                       }
+			  }
+		,"pass" : {  "... keyword validation" :					"needs to pass ... keyword validation"
+			    ,"\"switch\" keyword validation" : 				"needs to pass \"switch\" keyword validation"     
+			  }
+	     }
+}

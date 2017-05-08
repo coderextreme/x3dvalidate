@@ -1,0 +1,106 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure17.11bGreyTextureGreenMaterialStripedCylinder.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 17.11b, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch17/17fig11b.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"28 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"A tree image texture mapped, with pixel transparencies, on a rectangular face to create a tree."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/Figure17.11bGreyTextureGreenMaterialStripedCylinder.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Cylinder view note interactions of greyscale texture and green emissiveColor material",
+              "@orientation":[1,0,0,-0.4],
+              "@position":[0,4,8]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,1,0]
+                        }
+                      },
+                    "-texture":
+                      { "ImageTexture":
+                        {
+                          "@url":["lines_g.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/lines_g.jpg"]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Cylinder":
+                  {
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"default Cylinder dimensions used"
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"LPD-Superstructure.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This is an LPD-17 Landing Platform Dock amphibious support ship. This model is being developed for inclusion in the SAVAGE project. Information for this model was obtained from Jane's Online Fighting Ship catalog and the FAS website at www.FAS.org"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"28 Jan 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 May 2001"
+          },
+          {
+            "@name":"identifier",
+            "@content":"LPD-Superstructure.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Info obtained at http://www.fas.org"
+          },
+          {
+            "@name":"reference",
+            "@content":"Informat also obtained from Jane's Online Fighting Ship catalog"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/LandingPlatformDock-LPD/LPD-Superstructure.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "LOD":
+            {
+              "@range":[1000],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"LPD superstructure",
+                    "@position":[-20,0,140]
+                  }
+                },
+                { "WorldInfo":
+                  {
+                    "@info":["null node"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@convex":false,
+                          "@creaseAngle":1.57,
+                          "@crossSection":[-19.7,-14,19.7,-14,19.7,8.44,14,8.44,14,14,-19.7,14,-19.7,-14],
+                          "@orientation":[0,0,1,0,0,0,1,0],
+                          "@scale":[1,1,1,1],
+                          "@solid":false,
+                          "@spine":[-36.5,0,0,-36.5,14.02,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@DEF":"HullGray",
+                                "@diffuseColor":[0.8,0.8,0.8]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-8.5,7,-5.5],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@USE":"HullGray"
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[17,14,2]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-8.5,7,6],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@USE":"HullGray"
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[17,14,2]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.57,
+                          "@crossSection":[-22,-12.4,22,-12.4,22,12.4,-22,12.4,-22,-12.4],
+                          "@orientation":[0,0,1,0,0,0,1,0],
+                          "@scale":[1,1,1,1],
+                          "@solid":false,
+                          "@spine":[22,0,0,22,14.001,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@USE":"HullGray"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-88,0.25,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@USE":"HullGray"
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[64,0.5,32]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"ForwardAntennaEnclosure",
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.57,
+                          "@crossSection":[-0.5,-1.5,0.5,-1.5,1.5,-0.5,1.5,0.5,0.5,1.5,-0.5,1.5,-1.5,0.5,-1.5,-0.5,-0.5,-1.5],
+                          "@orientation":[0,0,1,0,0,0,1,0.1],
+                          "@scale":[3,3,1.25,1.25],
+                          "@solid":false,
+                          "@spine":[30,12,0,30,28,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@USE":"HullGray"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"RearAntennaEnclosure",
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.57,
+                          "@crossSection":[-0.5,-1.5,0.5,-1.5,1.5,-0.5,1.5,0.5,0.5,1.5,-0.5,1.5,-1.5,0.5,-1.5,-0.5,-0.5,-1.5],
+                          "@orientation":[0,0,1,0,0,0,1,0.1],
+                          "@scale":[2.75,2.75,1,1],
+                          "@solid":false,
+                          "@spine":[-30,12,0,-30,30,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@USE":"HullGray"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

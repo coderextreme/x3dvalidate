@@ -1,0 +1,253 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SignalILOVE.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Signal flags with message I LOVE"
+          },
+          {
+            "@name":"creator",
+            "@content":"Georgios Stavritis"
+          },
+          {
+            "@name":"created",
+            "@content":"1 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 March 2009"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/SignalILOVE.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@translation":[0,1.2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["e-icon.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/e-icon.gif"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[1,1,0.01]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,2.4,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["v-icon.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/v-icon.gif"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[1,1,0.01]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,3.6,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["o-icon.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/o-icon.gif"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[1,1,0.01]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,4.8,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["l-icon.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/1-icon.gif"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[1,1,0.01]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,6,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["i-icon.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/i-icon.gif"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[1,1,0.01]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.5,3,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[0.02,7,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.9,0.9,0.9]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

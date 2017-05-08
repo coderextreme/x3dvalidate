@@ -1,0 +1,255 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RifleM24Example.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Animation example from RifleM24 Prototype. Clicking trigger fires and sound."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"created",
+            "@content":"31 Decmember 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/SmallArms/RifleM24Example.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"Rifle M24"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"RifleM24",
+              "@appinfo":"Rifle M24",
+              "@url":["RifleM24Prototype.x3d#RifleM24","https://savage.nps.edu/Savage/Weapons/SmallArms/RifleM24Prototype.x3d#RifleM24","RifleM24Prototype.wrl#RifleM24","https://savage.nps.edu/Savage/Weapons/SmallArms/RifleM24Prototype.wrl#RifleM24"],
+              "field": [
+                {
+                  "@name":"trigger",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"input true to fire",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"fire",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"output true when fired",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"animationStartTime",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"trigger animation",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.604,0.753,0.804]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"RifleM24",
+                    "@DEF":"rifleM24"
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"FireScript",
+                    "field": [
+                      {
+                        "@name":"fire",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"enabled",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"function enabled (value, timeStamp)",
+"{",
+"        //print ('enabled value =' + value);",
+"        if (value == true)",
+"           fire = value;",
+"}"
+]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"FireTouchSensor",
+                    "@description":"click to shoot"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isOver",
+                    "@fromNode":"FireTouchSensor",
+                    "@toField":"enabled",
+                    "@toNode":"FireScript"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"FireTouchSensor",
+                    "@toField":"animationStartTime",
+                    "@toNode":"rifleM24"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fire",
+                    "@fromNode":"FireScript",
+                    "@toField":"trigger",
+                    "@toNode":"rifleM24"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Target",
+              "@rotation":[0.58,0.58,0.58,2.09],
+              "@translation":[50,-1,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["Target.gif","Target.jpg","https://savage.nps.edu/Savage/Weapons/SmallArms/Target.gif","https://savage.nps.edu/Savage/Weapons/SmallArms/Target.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,3,0],
+                          "@creaseAngle":1.75,
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0.00,1.30,0,2.5,1.30,0,2.5,-1.30,0,0.00,-1.30,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Anchor":
+            {
+              "@DEF":"About",
+              "@description":"Federation of American Scientists (FAS) page",
+              "@parameter":["target=_blank"],
+              "@url":["http://www.fas.org/man/dod-101/sys/land/m14.htm"],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"AboutRifleM24",
+                    "@translation":[-0.5,-0.4,-0.3],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0,0.545]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["About RifleM24"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.25,
+                                      "@style":"BOLD"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

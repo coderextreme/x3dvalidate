@@ -1,0 +1,144 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SRN6.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.hovercraft-museum.org/srn6-tech.html"
+          },
+          {
+            "@name":"created",
+            "@content":"1 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 October 2011"
+          },
+          {
+            "@name":"creator",
+            "@content":"Tay Yeong Kiang Winston"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/SRN6.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Data of metal materials obtained from: http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsExamples.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Data of glass materials obtained from: http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/GlassExamples.wrl"
+          },
+          {
+            "@name":"description",
+            "@content":"Combines the individual modules of the Hovercraft modules into the complete module by Inline calling."
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["LowerBody.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/LowerBody.x3d","LowerBody.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/LowerBody.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,2.3,0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["UpperBody.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/UpperBody.x3d","UpperBody.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/UpperBody.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,5.2,0]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,5.2,-8.2],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["Rotor.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Rotor.x3d","Rotor.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Rotor.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,2,-9],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["Fin.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Fin.x3d","Fin.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Fin.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,5.5,7],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["Radar.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Radar.x3d","Radar.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Radar.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          }
+        ]
+    }
+  }
+}

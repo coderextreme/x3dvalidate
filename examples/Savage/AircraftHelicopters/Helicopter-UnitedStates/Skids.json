@@ -1,0 +1,168 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Skids.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This file defines skids that are inlined to create a helicopter"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu (adapted from the original skids.wrl created for vrtp demo helicopter)"
+          },
+          {
+            "@name":"created",
+            "@content":"12 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 October 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/Helicopter-UnitedStates/Skids.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/Helicopter-UnitedStates/SkidTube.wrl"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,1.2],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"SKID",
+                          "@url":["SkidTube.wrl","https://savage.nps.edu/Savage/AircraftHelicopters/Helicopter-UnitedStates/SkidTube.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1.0,0.0,0.0,5.498],
+                    "@translation":[1.1,0.3,0.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SUPPORT",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"GRAY",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.5,0.5,0.5]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@bottom":false,
+                                "@height":0.7,
+                                "@radius":0.07,
+                                "@top":false
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1.0,0.0,0.0,5.498],
+                    "@translation":[-0.7,0.3,0.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SUPPORT"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-1.2],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"SKID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1.0,0.0,0.0,0.785],
+                    "@translation":[1.1,0.3,-0.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SUPPORT"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1.0,0.0,0.0,0.785],
+                    "@translation":[-0.7,0.3,-0.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SUPPORT"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

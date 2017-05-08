@@ -1,0 +1,255 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Example18.x3d"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"26 June 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D working group"
+          },
+          {
+            "@name":"description",
+            "@content":"VRML 97 specification example: another example of animating the camera by depicting an elevator to ease access to a multi-storey building. For this example, a 2 storey building is shown and it is assumed that the elevator is already at the ground floor. To go up, the user just steps onto the elevator platform. A ProximitySensor fires and starts the elevator up automatically. Additional features such as call buttons for outside the elevator, elevator doors, and floor selector buttons could be added to make the elevator easier to use."
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/exampleD_18.wrl"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"VRML 97, ISO/IEC 14772-1, Part 1: Functional specification and UTF-8 encoding, D.18 Elevator"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/documents/specifications/14772/V2.0/part1/examples.html#D.18"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example18.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@translation":[0.0,0.0,-3.5],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cone":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.0,1.0,0.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,4.0,-3.5],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cone":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1.0,0.0,0.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,8.0,-3.5],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cone":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.0,0.0,1.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"ETransform",
+                    "-children":[
+                      { "Viewpoint":
+                        {
+                          "@DEF":"EViewpoint",
+                          "@description":"Viewpoint",
+                          "@jump":false
+                        }
+                      },
+                      { "ProximitySensor":
+                        {
+                          "@DEF":"EProximity",
+                          "@size":[2.0,5.0,5.0]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,-1.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[2.0,0.2,5.0]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"ElevatorPI",
+              "@key":[0.0,1.0],
+              "@keyValue":[0.0,0.0,0.0,0.0,8.0,0.0]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TS",
+              "@cycleInterval":10.0
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"enterTime",
+              "@fromNode":"EProximity",
+              "@toField":"startTime",
+              "@toNode":"TS"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TS",
+              "@toField":"set_bind",
+              "@toNode":"EViewpoint"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"ElevatorPI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"ElevatorPI",
+              "@toField":"translation",
+              "@toNode":"ETransform"
+            }
+          }
+        ]
+    }
+  }
+}

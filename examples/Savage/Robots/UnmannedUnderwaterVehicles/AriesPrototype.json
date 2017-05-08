@@ -1,0 +1,2265 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AriesPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Model of the Acoustic Radio Interactive Exploratory Server (ARIES), an operational NPS-designed Unmanned Underwater Vehicle (AUV). Expose position, rotation, sonars, thrusters, fins, etc. as a reusable prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman NPS, aboard RV Gyre in Gulf of Mexico off Gulfport MS 1999; Jane Wu Rolands and Associates 2001, Duane Davis NPS 2003"
+          },
+          {
+            "@name":"created",
+            "@content":"30 July 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 December 2014"
+          },
+          {
+            "@name":"photo",
+            "@content":"AriesHoistCloseup.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"AriesFlyerMarch2001.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"organic_mcmONR2002.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"AriesSchematic.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"AriesSchematic.ppt"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Produce wireframe or transparent beam cones."
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamCone",
+              "@appinfo":"Produce wireframe or transparent beam cones. Typical uses include propeller/thruster water flow or line-of-sight sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: beam with apex at (0 0 0) and base of radius 1 in x-z plane at (1 0 0).",
+              "@url":["../../CommunicationsAndSensors/Beam/BeamConePrototype.x3d#BeamCone","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamConePrototype.x3d#BeamCone","../../CommunicationsAndSensors/Beam/BeamConePrototype.wrl#BeamCone","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamConePrototype.wrl#BeamCone"],
+              "field": [
+                {
+                  "@name":"name",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"BeamCone name aids tracing",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamHeightDegrees",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"degrees across vertical y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"beamWidthDegrees",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"degrees across horizontal z axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"flag to turn on Script tracing",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Aries",
+              "@appinfo":"Acoustic Radio Interactive Exploratory Server (ARIES) is an operational NPS-designed Unmanned Underwater Vehicle (AUV)",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"hullName",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"can be overridden at instantiation time only",
+                      "@type":"SFString",
+                      "@value":"Aries"
+                    },
+                    {
+                      "@name":"hullColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"hull color for this UUV instance",
+                      "@type":"SFColor",
+                      "@value":[0.9,0.9,0.9]
+                    },
+                    {
+                      "@name":"planeColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"plane color for this UUV instance",
+                      "@type":"SFColor",
+                      "@value":[0.1,0.1,0.8]
+                    },
+                    {
+                      "@name":"translation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"rotation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"set_portRpm",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_stbdRpm",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_forwardRudders",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_afterRudders",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_forwardPlanes",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_afterPlanes",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_forwardVerticalThruster",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_afterVerticalThruster",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_forwardLateralThruster",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_afterLateralThruster",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_ST725Range",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"meters along sonar axis",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_ST725Bearing",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"degrees about vertical axis",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_ST725Intensity",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"signal-to-noise ratio decibels",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_ST1000Range",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"meters along sonar axis",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_ST1000Bearing",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"degrees about vertical axis",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_ST1000Intensity",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"signal-to-noise ratio decibels",
+                      "@type":"SFFloat"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"AriesTransform",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"translation"
+                              },
+                              {
+                                "@nodeField":"rotation",
+                                "@protoField":"rotation"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"ST725",
+                              "@translation":[0.9,-0.12,-0.03],
+                              "-children":[
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"BeamCone",
+                                    "@DEF":"ST725BeamCone",
+                                    "fieldValue": [
+                                      {
+                                        "@name":"name",
+                                        "@value":"ST725BeamCone"
+                                      },
+                                      {
+                                        "@name":"defaultRange",
+                                        "@value":1
+                                      },
+                                      {
+                                        "@name":"beamHeightDegrees",
+                                        "@value":24
+                                      },
+                                      {
+                                        "@name":"beamWidthDegrees",
+                                        "@value":1
+                                      },
+                                      {
+                                        "@name":"solid",
+                                        "@value":true
+                                      },
+                                      {
+                                        "@name":"wireframe",
+                                        "@value":false
+                                      },
+                                      {
+                                        "@name":"contactColor",
+                                        "@value":[1,0,0]
+                                      },
+                                      {
+                                        "@name":"noContactColor",
+                                        "@value":[0.3,0.05,0.05]
+                                      },
+                                      {
+                                        "@name":"transparency",
+                                        "@value":0.2
+                                      },
+                                      {
+                                        "@name":"traceEnabled",
+                                        "@value":false
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"ST1000",
+                              "@translation":[0.7,0.12,0.05],
+                              "-children":[
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"BeamCone",
+                                    "@DEF":"ST1000BeamCone",
+                                    "fieldValue": [
+                                      {
+                                        "@name":"name",
+                                        "@value":"ST1000BeamCone"
+                                      },
+                                      {
+                                        "@name":"defaultRange",
+                                        "@value":1
+                                      },
+                                      {
+                                        "@name":"beamHeightDegrees",
+                                        "@value":1
+                                      },
+                                      {
+                                        "@name":"beamWidthDegrees",
+                                        "@value":1
+                                      },
+                                      {
+                                        "@name":"solid",
+                                        "@value":true
+                                      },
+                                      {
+                                        "@name":"wireframe",
+                                        "@value":false
+                                      },
+                                      {
+                                        "@name":"contactColor",
+                                        "@value":[1,0.8,0]
+                                      },
+                                      {
+                                        "@name":"noContactColor",
+                                        "@value":[0.4,0.3,0.05]
+                                      },
+                                      {
+                                        "@name":"transparency",
+                                        "@value":0.2
+                                      },
+                                      {
+                                        "@name":"traceEnabled",
+                                        "@value":false
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"SONAR_STEERING_AND_DETECTS",
+                              "field": [
+                                {
+                                  "@name":"set_ST725Range",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_ST725Bearing",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_ST725Intensity",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_ST1000Range",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_ST1000Bearing",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_ST1000Intensity",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"ST725Rotation",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"ST1000Rotation",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"ST725Contact",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"ST1000Contact",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"ST725Range_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"ST1000Range_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"ST725Intensity",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"ST1000Intensity",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"set_ST725Range",
+                                      "@protoField":"set_ST725Range"
+                                    },
+                                    {
+                                      "@nodeField":"set_ST725Bearing",
+                                      "@protoField":"set_ST725Bearing"
+                                    },
+                                    {
+                                      "@nodeField":"set_ST725Intensity",
+                                      "@protoField":"set_ST725Intensity"
+                                    },
+                                    {
+                                      "@nodeField":"set_ST1000Range",
+                                      "@protoField":"set_ST1000Range"
+                                    },
+                                    {
+                                      "@nodeField":"set_ST1000Bearing",
+                                      "@protoField":"set_ST1000Bearing"
+                                    },
+                                    {
+                                      "@nodeField":"set_ST1000Intensity",
+                                      "@protoField":"set_ST1000Intensity"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function degreeToRadian( value )",
+"{",
+"   return value * Math.PI / 180;",
+"}",
+"",
+"function set_ST725Range (value, timeStamp)",
+"{",
+"   if ((value > 0) && (value < 30.0))",
+"   {",
+"      ST725Contact = true;",
+"      ST725Range_changed = value;",
+"   }",
+"   else",
+"   {",
+"      ST725Contact = false;",
+"      if ( value < 0 )",
+"         ST725Range_changed = 0.0;",
+"      else",
+"         ST725Range_changed = 30.0;",
+"   }",
+"}",
+"function set_ST725Bearing (value, timeStamp)",
+"{",
+"   ST725Rotation = new SFRotation(0, 1, 0, degreeToRadian(value));",
+"}",
+"function set_ST725Intensity (value, timeStamp)",
+"{",
+"   ST725Intensity = new SFFloat(value);",
+"}",
+"",
+"function set_ST1000Range (value, timeStamp)",
+"{",
+"   if ((value > 0) && (value < 30.0))",
+"   {",
+"      ST1000Contact = true;",
+"      ST1000Range_changed = value;",
+"   }",
+"   else",
+"   {",
+"      ST1000Contact = false;",
+"      if ( value < 0 )",
+"         ST1000Range_changed = 0.0;",
+"      else",
+"         ST1000Range_changed = 30.0;",
+"   }",
+"}",
+"function set_ST1000Bearing (value, timeStamp)",
+"{",
+"   ST1000Rotation = new SFRotation(0, 1, 0, degreeToRadian(value));",
+"}",
+"function set_ST1000Intensity (value, timeStamp)",
+"{",
+"   ST1000Intensity = new SFFloat(value);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-children":[
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST725Rotation",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"rotation",
+                                    "@toNode":"ST725"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST1000Rotation",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"rotation",
+                                    "@toNode":"ST1000"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST725Contact",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"contact",
+                                    "@toNode":"ST725BeamCone"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST1000Contact",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"contact",
+                                    "@toNode":"ST1000BeamCone"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST725Range_changed",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"range",
+                                    "@toNode":"ST725BeamCone"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST1000Range_changed",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"range",
+                                    "@toNode":"ST1000BeamCone"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST725Intensity",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"transparency",
+                                    "@toNode":"ST725BeamCone"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"ST1000Intensity",
+                                    "@fromNode":"SONAR_STEERING_AND_DETECTS",
+                                    "@toField":"transparency",
+                                    "@toNode":"ST1000BeamCone"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "LOD":
+                            {
+                              "@range":[400],
+                              "-children":[
+                                {
+                                  "#comment":"### hack job! need to update actual numbers instead of scaling"
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"PRIMARY_AUV_GEOMETRY",
+                                    "@scale":[1,1.3,1],
+                                    "-children":[
+                                      {
+                                        "#comment":"positive rotation about y-axis rotates rudders to port"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"FORWARD_RUDDERS",
+                                          "@translation":[0.6223,0,0],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0.13335,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@DEF":"PLANE_SHAPE",
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@DEF":"PlaneMaterial",
+                                                                  "IS": {
+                                                                      "connect": [
+                                                                        {
+                                                                          "@nodeField":"diffuseColor",
+                                                                          "@protoField":"planeColor"
+                                                                        }
+                                                                      ]
+                                                                  }
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"creaseAngle for sharp edges"
+                                                        }
+                                                      ],
+                                                      "-geometry":
+                                                        { "IndexedFaceSet":
+                                                          {
+                                                            "@coordIndex":[0,3,2,1,-1,4,5,6,7,-1,0,1,5,4,-1,1,2,6,5,-1,2,3,7,6,-1,0,3,7,4,-1],
+                                                            "@creaseAngle":3.14159,
+                                                            "-children":[
+                                                              {
+                                                                "#comment":"indices for point values range [0..7]"
+                                                              }
+                                                            ],
+                                                            "-coord":
+                                                              { "Coordinate":
+                                                                {
+                                                                  "@point":[0.0635,0,-0.0127,0.0381,0.1778,-0.0127,-0.0381,0.1778,-0.0127,-0.0889,0,-0.0127,0.0635,0,0.0127,0.0381,0.1778,0.0127,-0.0381,0.1778,0.0127,-0.0889,0,0.0127]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,3.14159267],
+                                                "@translation":[0,-0.13335,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "#comment":"positive rotation about y-axis rotates rudder to port"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"AFTER_RUDDERS",
+                                          "@translation":[-0.7747,0,0],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0.13335,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,3.14159267],
+                                                "@translation":[0,-0.13335,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"FORWARD_PLANES",
+                                          "@translation":[0.6223,0,0],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57079],
+                                                "@translation":[0,0,0.20955],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,-1.57079],
+                                                "@translation":[0,0,-0.20955],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"AFTER_PLANES",
+                                          "@translation":[-0.7747,0,0],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57079],
+                                                "@translation":[0,0,0.20955],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,-1.57079],
+                                                "@translation":[0,0,-0.20955],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@USE":"PLANE_SHAPE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Script":
+                                        {
+                                          "@DEF":"PLANE_SURFACES",
+                                          "field": [
+                                            {
+                                              "@name":"set_forwardRudders",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"set_afterRudders",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"set_forwardPlanes",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"set_afterPlanes",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardRuddersRotation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFRotation"
+                                            },
+                                            {
+                                              "@name":"afterRuddersRotation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFRotation"
+                                            },
+                                            {
+                                              "@name":"forwardPlanesRotation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFRotation"
+                                            },
+                                            {
+                                              "@name":"afterPlanesRotation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFRotation"
+                                            }
+                                          ],
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"set_forwardRudders",
+                                                  "@protoField":"set_forwardRudders"
+                                                },
+                                                {
+                                                  "@nodeField":"set_afterRudders",
+                                                  "@protoField":"set_afterRudders"
+                                                },
+                                                {
+                                                  "@nodeField":"set_forwardPlanes",
+                                                  "@protoField":"set_forwardPlanes"
+                                                },
+                                                {
+                                                  "@nodeField":"set_afterPlanes",
+                                                  "@protoField":"set_afterPlanes"
+                                                }
+                                              ]
+                                          },
+                                          "#sourceText":[
+"ecmascript:",
+"",
+"function set_forwardRudders (value, timeStamp) {",
+"   forwardRuddersRotation = new SFRotation(0, 1, 0, value);",
+"}",
+"",
+"function set_afterRudders (value, timeStamp) {",
+"   afterRuddersRotation = new SFRotation(0, 1, 0, value);",
+"}",
+"",
+"function set_forwardPlanes (value, timeStamp) {",
+"   forwardPlanesRotation = new SFRotation(0, 0, 1, value);",
+"}",
+"",
+"function set_afterPlanes (value, timeStamp) {",
+"   afterPlanesRotation = new SFRotation(0, 0, 1, value);",
+"}"
+]
+                                        }
+                                      },
+                                      { "Group":
+                                        {
+                                          "-children":[
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"forwardRuddersRotation",
+                                                "@fromNode":"PLANE_SURFACES",
+                                                "@toField":"rotation",
+                                                "@toNode":"FORWARD_RUDDERS"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"afterRuddersRotation",
+                                                "@fromNode":"PLANE_SURFACES",
+                                                "@toField":"rotation",
+                                                "@toNode":"AFTER_RUDDERS"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"forwardPlanesRotation",
+                                                "@fromNode":"PLANE_SURFACES",
+                                                "@toField":"rotation",
+                                                "@toNode":"FORWARD_PLANES"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"afterPlanesRotation",
+                                                "@fromNode":"PLANE_SURFACES",
+                                                "@toField":"rotation",
+                                                "@toNode":"AFTER_PLANES"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"FORWARD_VERTICAL_THRUSTER",
+                                          "@translation":[0.3302,0,0],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "@DEF":"VERTICAL_THRUSTER_SHAPE",
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "@DEF":"THRUSTER_APPEARANCE",
+                                                      "-material":
+                                                        { "Material":
+                                                          {
+                                                            "@diffuseColor":[0.2,0.2,0.2]
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                "-geometry":
+                                                  { "Cylinder":
+                                                    {
+                                                      "@height":0.29,
+                                                      "@radius":0.0635,
+                                                      "@side":false
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"FORWARD_VERTICAL_BEAMCONE",
+                                                "@rotation":[0,0,1,1.57079],
+                                                "@translation":[0,0.145,0],
+                                                "-children":[
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"BeamCone",
+                                                      "@DEF":"ForwardVerticalBeamCone",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"name",
+                                                          "@value":"ForwardVerticalBeamCone"
+                                                        },
+                                                        {
+                                                          "@name":"defaultRange",
+                                                          "@value":1
+                                                        },
+                                                        {
+                                                          "@name":"beamHeightDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"beamWidthDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"solid",
+                                                          "@value":false
+                                                        },
+                                                        {
+                                                          "@name":"wireframe",
+                                                          "@value":true
+                                                        },
+                                                        {
+                                                          "@name":"noContactColor",
+                                                          "@value":[0,0.8,0.4]
+                                                        },
+                                                        {
+                                                          "@name":"transparency",
+                                                          "@value":0
+                                                        },
+                                                        {
+                                                          "@name":"traceEnabled",
+                                                          "@value":false
+                                                        }
+                                                      ],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"range -1.0..0..1.0m <==> -24V..0..24V"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"AFTER_VERTICAL_THRUSTER",
+                                          "@translation":[-0.4953,0,0],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "@USE":"VERTICAL_THRUSTER_SHAPE"
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"AFTER_VERTICAL_BEAMCONE",
+                                                "@rotation":[0,0,1,1.57079],
+                                                "@translation":[0,0.145,0],
+                                                "-children":[
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"BeamCone",
+                                                      "@DEF":"AfterVerticalBeamCone",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"name",
+                                                          "@value":"AfterVerticalBeamCone"
+                                                        },
+                                                        {
+                                                          "@name":"defaultRange",
+                                                          "@value":1
+                                                        },
+                                                        {
+                                                          "@name":"beamHeightDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"beamWidthDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"solid",
+                                                          "@value":false
+                                                        },
+                                                        {
+                                                          "@name":"wireframe",
+                                                          "@value":true
+                                                        },
+                                                        {
+                                                          "@name":"noContactColor",
+                                                          "@value":[0,0.8,0.4]
+                                                        },
+                                                        {
+                                                          "@name":"transparency",
+                                                          "@value":0
+                                                        },
+                                                        {
+                                                          "@name":"traceEnabled",
+                                                          "@value":false
+                                                        }
+                                                      ],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"range -1.0..0..1.0m <==> -24V..0..24V"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"FORWARD_LATERAL_THRUSTER",
+                                          "@rotation":[1,0,0,1.57079],
+                                          "@translation":[0.4699,0,0],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "@DEF":"LATERAL_THRUSTER_SHAPE",
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "@USE":"THRUSTER_APPEARANCE"
+                                                    }
+                                                  },
+                                                "-geometry":
+                                                  { "Cylinder":
+                                                    {
+                                                      "@height":0.44,
+                                                      "@radius":0.0635,
+                                                      "@side":false
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"FORWARD_LATERAL_BEAMCONE",
+                                                "@rotation":[0,0,1,1.57079],
+                                                "@translation":[0,0.145,0],
+                                                "-children":[
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"BeamCone",
+                                                      "@DEF":"ForwardLateralBeamCone",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"name",
+                                                          "@value":"ForwardLateralBeamCone"
+                                                        },
+                                                        {
+                                                          "@name":"defaultRange",
+                                                          "@value":1
+                                                        },
+                                                        {
+                                                          "@name":"beamHeightDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"beamWidthDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"solid",
+                                                          "@value":false
+                                                        },
+                                                        {
+                                                          "@name":"wireframe",
+                                                          "@value":true
+                                                        },
+                                                        {
+                                                          "@name":"noContactColor",
+                                                          "@value":[0,0.8,0.4]
+                                                        },
+                                                        {
+                                                          "@name":"transparency",
+                                                          "@value":0
+                                                        },
+                                                        {
+                                                          "@name":"traceEnabled",
+                                                          "@value":false
+                                                        }
+                                                      ],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"range -1.0..0..1.0m <==> -24V..0..24V"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"AFTER_LATERAL_THRUSTER",
+                                          "@rotation":[1,0,0,1.57079],
+                                          "@translation":[-0.6223,0,0],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "@USE":"LATERAL_THRUSTER_SHAPE"
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"AFTER_LATERAL_BEAMCONE",
+                                                "@rotation":[0,0,1,1.57079],
+                                                "@translation":[0,0.145,0],
+                                                "-children":[
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"BeamCone",
+                                                      "@DEF":"AfterLateralBeamCone",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"name",
+                                                          "@value":"AfterLateralBeamCone"
+                                                        },
+                                                        {
+                                                          "@name":"defaultRange",
+                                                          "@value":1
+                                                        },
+                                                        {
+                                                          "@name":"beamHeightDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"beamWidthDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"solid",
+                                                          "@value":false
+                                                        },
+                                                        {
+                                                          "@name":"wireframe",
+                                                          "@value":true
+                                                        },
+                                                        {
+                                                          "@name":"noContactColor",
+                                                          "@value":[0,0.8,0.4]
+                                                        },
+                                                        {
+                                                          "@name":"transparency",
+                                                          "@value":0
+                                                        },
+                                                        {
+                                                          "@name":"traceEnabled",
+                                                          "@value":false
+                                                        }
+                                                      ],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"range -1.0..0..1.0m <==> -24V..0..24V"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Script":
+                                        {
+                                          "@DEF":"THRUSTER_CONES",
+                                          "field": [
+                                            {
+                                              "@name":"set_forwardVerticalThruster",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"set_afterVerticalThruster",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"set_forwardLateralThruster",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"set_afterLateralThruster",
+                                              "@accessType":"inputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardVerticalThrusterBeamTranslation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFVec3f"
+                                            },
+                                            {
+                                              "@name":"forwardVerticalThrusterBeamRange",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"afterVerticalThrusterBeamTranslation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFVec3f"
+                                            },
+                                            {
+                                              "@name":"afterVerticalThrusterBeamRange",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardLateralThrusterBeamTranslation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFVec3f"
+                                            },
+                                            {
+                                              "@name":"forwardLateralThrusterBeamRange",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"afterLateralThrusterBeamTranslation",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFVec3f"
+                                            },
+                                            {
+                                              "@name":"afterLateralThrusterBeamRange",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            }
+                                          ],
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"set_forwardVerticalThruster",
+                                                  "@protoField":"set_forwardVerticalThruster"
+                                                },
+                                                {
+                                                  "@nodeField":"set_afterVerticalThruster",
+                                                  "@protoField":"set_afterVerticalThruster"
+                                                },
+                                                {
+                                                  "@nodeField":"set_forwardLateralThruster",
+                                                  "@protoField":"set_forwardLateralThruster"
+                                                },
+                                                {
+                                                  "@nodeField":"set_afterLateralThruster",
+                                                  "@protoField":"set_afterLateralThruster"
+                                                }
+                                              ]
+                                          },
+                                          "#sourceText":[
+"ecmascript:",
+"",
+"function set_forwardVerticalThruster (value, timeStamp) {",
+"   if (value >= 0)",
+"      forwardVerticalThrusterBeamTranslation = new SFVec3f(0, .145, 0);",
+"   else",
+"      forwardVerticalThrusterBeamTranslation = new SFVec3f(0, -0.145 + value, 0);",
+"",
+"   forwardVerticalThrusterBeamRange = value;",
+"}",
+"",
+"function set_afterVerticalThruster (value, timeStamp) {",
+"   if (value >= 0)",
+"      afterVerticalThrusterBeamTranslation = new SFVec3f(0, .145, 0);",
+"   else",
+"      afterVerticalThrusterBeamTranslation = new SFVec3f(0, -0.145 + value, 0);",
+"",
+"   afterVerticalThrusterBeamRange = value;",
+"}",
+"",
+"function set_forwardLateralThruster (value, timeStamp) {",
+"   if (value >= 0)",
+"      forwardLateralThrusterBeamTranslation = new SFVec3f(0, .21, 0);",
+"   else",
+"      forwardLateralThrusterBeamTranslation = new SFVec3f(0, -0.21 + value, 0);",
+"",
+"   forwardLateralThrusterBeamRange = value;",
+"}",
+"",
+"function set_afterLateralThruster (value, timeStamp) {",
+"   if (value >= 0)",
+"      afterLateralThrusterBeamTranslation = new SFVec3f(0, .21, 0);",
+"   else",
+"      afterLateralThrusterBeamTranslation = new SFVec3f(0, -0.21 + value, 0);",
+"",
+"   afterLateralThrusterBeamRange = value;",
+"}"
+]
+                                        }
+                                      },
+                                      { "Group":
+                                        {
+                                          "-children":[
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"forwardVerticalThrusterBeamTranslation",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"translation",
+                                                "@toNode":"FORWARD_VERTICAL_BEAMCONE"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"forwardVerticalThrusterBeamRange",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"range",
+                                                "@toNode":"ForwardVerticalBeamCone"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"afterVerticalThrusterBeamTranslation",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"translation",
+                                                "@toNode":"AFTER_VERTICAL_BEAMCONE"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"afterVerticalThrusterBeamRange",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"range",
+                                                "@toNode":"AfterVerticalBeamCone"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"forwardLateralThrusterBeamTranslation",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"translation",
+                                                "@toNode":"FORWARD_LATERAL_BEAMCONE"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"forwardLateralThrusterBeamRange",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"range",
+                                                "@toNode":"ForwardLateralBeamCone"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"afterLateralThrusterBeamTranslation",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"translation",
+                                                "@toNode":"AFTER_LATERAL_BEAMCONE"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"afterLateralThrusterBeamRange",
+                                                "@fromNode":"THRUSTER_CONES",
+                                                "@toField":"range",
+                                                "@toNode":"AfterLateralBeamCone"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Shape":
+                                        {
+                                          "@DEF":"HULL",
+                                          "-appearance":
+                                            { "Appearance":
+                                              {
+                                                "@DEF":"HULL_APPEARANCE",
+                                                "-material":
+                                                  { "Material":
+                                                    {
+                                                      "@DEF":"HullMaterial",
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"diffuseColor",
+                                                              "@protoField":"hullColor"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                          "-geometry":
+                                            { "IndexedFaceSet":
+                                              {
+                                                "@coordIndex":[0,26,34,33,32,31,25,1,-1,1,25,31,32,33,34,26,0,-1,1,25,29,28,2,-1,2,28,29,25,1,-1,2,28,35,36,37,38,27,3,-1,3,27,38,37,36,35,28,2,-1,3,27,30,26,0,-1,0,26,30,27,3,-1,0,4,1,-1,0,1,4,-1,1,5,2,-1,1,2,5,-1,2,6,3,-1,2,3,6,-1,3,7,0,-1,3,0,7,-1,7,0,8,-1,7,8,0,-1,8,0,9,-1,8,9,0,-1,9,0,4,-1,9,4,0,-1,4,1,10,-1,4,10,1,-1,10,1,11,-1,10,11,1,-1,11,1,5,-1,11,5,1,-1,5,2,12,-1,5,12,2,-1,12,2,13,-1,12,13,2,-1,13,2,6,-1,13,6,2,-1,6,3,14,-1,6,14,3,-1,14,3,15,-1,14,15,3,-1,15,3,7,-1,15,7,3,-1,4,10,16,-1,10,4,16,-1,10,11,16,-1,11,10,16,-1,11,5,17,-1,5,11,17,-1,5,12,18,-1,12,5,18,-1,12,13,19,-1,13,12,19,-1,13,6,19,-1,6,13,19,-1,6,14,20,-1,14,6,20,-1,14,15,20,-1,15,14,20,-1,15,7,21,-1,7,15,21,-1,7,8,22,-1,8,7,22,-1,8,9,23,-1,9,8,23,-1,9,4,23,-1,4,9,23,-1,4,16,23,-1,16,4,23,-1,11,17,16,-1,17,11,16,-1,5,18,17,-1,18,5,17,-1,12,19,18,-1,19,12,18,-1,6,20,19,-1,20,6,19,-1,20,15,21,-1,15,20,21,-1,21,7,22,-1,7,21,22,-1,22,8,23,-1,8,22,23,-1,23,16,24,-1,16,23,24,-1,16,17,24,-1,17,16,24,-1,17,18,24,-1,18,17,24,-1,18,19,24,-1,19,18,24,-1,19,20,24,-1,20,19,24,-1,20,21,24,-1,21,20,24,-1,21,22,24,-1,22,21,24,-1,22,23,24,-1,23,22,24,-1,25,26,30,29,-1,29,30,26,25,-1,27,28,29,30,-1,30,29,28,27,-1,31,32,36,35,-1,35,36,32,31,-1,32,33,37,36,-1,36,37,33,32,-1,34,38,37,33,-1,33,37,38,34,-1],
+                                                "@creaseAngle":2.2,
+                                                "-children":[
+                                                  {
+                                                    "#comment":"Bow Cowling [0..24], Stern Cowling [25..30], Rudder Post [31..38]"
+                                                  }
+                                                ],
+                                                "-coord":
+                                                  { "Coordinate":
+                                                    {
+                                                      "@point":[0.6985,0.13335,-0.20955,0.6985,0.13335,0.20955,0.6985,-0.13335,0.20955,0.6985,-0.13335,-0.20955,1.05,0.085,0,1.05,0,0.1143,1.05,-0.085,0,1.05,0,-0.1143,1.05,0.04572,-0.098985,1.05,0.079188,-0.05715,1.05,0.079188,0.05715,1.05,0.04572,0.098985,1.05,-0.04572,0.098985,1.05,-0.079188,0.05715,1.05,-0.079188,-0.05715,1.05,-0.04572,-0.098985,1.1,0.04064,0.02032,1.1,0.02032,0.06096,1.1,-0.02032,0.06096,1.1,-0.04064,0.02032,1.1,-0.04064,-0.02032,1.1,-0.02032,-0.06096,1.1,0.02032,-0.06096,1.1,0.04064,-0.02032,1.11,0,0,-0.6985,0.13335,0.20955,-0.6985,0.13335,-0.20955,-0.6985,-0.13335,-0.20955,-0.6985,-0.13335,0.20955,-1.1303,0,0.20955,-1.1303,0,-0.20955,-0.6985,0.13335,0.0635,-0.8509,0.13335,0.0635,-0.8509,0.13335,-0.0635,-0.6985,0.13335,-0.0635,-0.6985,-0.13335,0.0635,-0.8509,-0.13335,0.0635,-0.8509,-0.13335,-0.0635,-0.6985,-0.13335,-0.0635]
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                        }
+                                      },
+                                      {
+                                        "#comment":"original translation -1.1557 0 .09525"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"STARTBOARD_SCREW_BEAMCONE_AND_SHAFT",
+                                          "@translation":[-1.3,0,0.3],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@DEF":"STARTBOARD_THRUSTER_BODY",
+                                                "@rotation":[0,0,1,1.57],
+                                                "@translation":[0.15,0,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@DEF":"THRUSTER_BODY_APPEARANCE",
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[0.9,0.9,0.9]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":0.16,
+                                                            "@radius":0.08
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@DEF":"THRUSTER_INNERBODY_APPEARANCE",
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[0.2,0.2,0.2]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":0.22,
+                                                            "@radius":0.06
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"STARBOARD_THRUSTER_BRACKET",
+                                                "@rotation":[0,0,1,1.57],
+                                                "@translation":[0.2,0,-0.05],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[0.9,0.9,0.9]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Box":
+                                                          {
+                                                            "@size":[0.02,0.05,0.2]
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"STARBOARD_SCREW_BEAMCONE",
+                                                "@rotation":[0,1,0,3.14],
+                                                "-children":[
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"BeamCone",
+                                                      "@DEF":"StarboardScrewBeamCone",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"name",
+                                                          "@value":"StarboardScrewBeamCone"
+                                                        },
+                                                        {
+                                                          "@name":"defaultRange",
+                                                          "@value":1
+                                                        },
+                                                        {
+                                                          "@name":"beamHeightDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"beamWidthDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"solid",
+                                                          "@value":false
+                                                        },
+                                                        {
+                                                          "@name":"wireframe",
+                                                          "@value":true
+                                                        },
+                                                        {
+                                                          "@name":"noContactColor",
+                                                          "@value":[0,0.8,0.4]
+                                                        },
+                                                        {
+                                                          "@name":"transparency",
+                                                          "@value":0
+                                                        },
+                                                        {
+                                                          "@name":"traceEnabled",
+                                                          "@value":false
+                                                        }
+                                                      ],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"range values -1..0..1m <==> -700..0..700 RPM"
+                                                        }
+                                                      ],
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"range",
+                                                              "@protoField":"set_stbdRpm"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Group":
+                                              {
+                                                "@DEF":"SHAFT",
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,0,1,1.57079],
+                                                      "@translation":[0.0281,0,0],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "@DEF":"SCREW_SHAFT",
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "@DEF":"SCREW_APPEARANCE",
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@diffuseColor":[0.226,0.197,0]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Cylinder":
+                                                                {
+                                                                  "@bottom":false,
+                                                                  "@height":0.0762,
+                                                                  "@radius":0.008,
+                                                                  "@top":false
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,0,1,1.57079],
+                                                      "@translation":[-0.015,0,0],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "@DEF":"SHAFT_END_CAP",
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "@USE":"SCREW_APPEARANCE"
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Cone":
+                                                                {
+                                                                  "@bottom":false,
+                                                                  "@bottomRadius":0.008,
+                                                                  "@height":0.01
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "#comment":"original translation -1.1557 0 .09525"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"STARBOARD_SCREW",
+                                          "@translation":[-1.3,0,0.3],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@DEF":"STARBOARD_BLADE",
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,-0.39],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "@USE":"SCREW_APPEARANCE"
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "IndexedFaceSet":
+                                                                {
+                                                                  "@coordIndex":[0,1,2,3,4,5,6,7,-1,0,7,6,5,4,3,2,1,-1],
+                                                                  "-coord":
+                                                                    { "Coordinate":
+                                                                      {
+                                                                        "@DEF":"BLADE_COORDINATES",
+                                                                        "@point":[0,0,-0.00508,0,0.02540,-0.02032,0,0.04572,-0.01524,0,0.05080,-0.00508,0,0.05080,0.00508,0,0.04572,0.01524,0,0.02540,0.02032,0,0,0.00508]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57079],
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@USE":"STARBOARD_BLADE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,3.14159267],
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@USE":"STARBOARD_BLADE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,-1.57079],
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@USE":"STARBOARD_BLADE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "#comment":"original translation -1.1557 0 -0.09525"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"PORT_SCREW_BEAMCONE_AND_SHAFT",
+                                          "@translation":[-1.3,0,-0.3],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@DEF":"PORT_THRUSTER_BODY",
+                                                "@rotation":[0,0,1,1.57],
+                                                "@translation":[0.15,0,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@USE":"THRUSTER_BODY_APPEARANCE"
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":0.16,
+                                                            "@radius":0.08
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@USE":"THRUSTER_INNERBODY_APPEARANCE"
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":0.22,
+                                                            "@radius":0.05
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"PORT_THRUSTER_BRACKET",
+                                                "@rotation":[0,0,1,1.57],
+                                                "@translation":[0.2,0,0.05],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[0.9,0.9,0.9]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Box":
+                                                          {
+                                                            "@size":[0.02,0.05,0.2]
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"PORT_SCREW_BEAMCONE",
+                                                "@rotation":[0,1,0,3.14],
+                                                "-children":[
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"BeamCone",
+                                                      "@DEF":"PortScrewBeamCone",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"name",
+                                                          "@value":"PortScrewBeamCone"
+                                                        },
+                                                        {
+                                                          "@name":"defaultRange",
+                                                          "@value":1
+                                                        },
+                                                        {
+                                                          "@name":"beamHeightDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"beamWidthDegrees",
+                                                          "@value":8
+                                                        },
+                                                        {
+                                                          "@name":"solid",
+                                                          "@value":false
+                                                        },
+                                                        {
+                                                          "@name":"wireframe",
+                                                          "@value":true
+                                                        },
+                                                        {
+                                                          "@name":"noContactColor",
+                                                          "@value":[0,0.8,0.4]
+                                                        },
+                                                        {
+                                                          "@name":"transparency",
+                                                          "@value":0
+                                                        },
+                                                        {
+                                                          "@name":"traceEnabled",
+                                                          "@value":false
+                                                        }
+                                                      ],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"range values -1..0..1 m <==> -700..0..700 RPM"
+                                                        },
+                                                        {
+                                                          "#comment":"Greenish blue for sea water flow"
+                                                        }
+                                                      ],
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"range",
+                                                              "@protoField":"set_portRpm"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Group":
+                                              {
+                                                "@USE":"SHAFT"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "#comment":"original translation -1.1557 0 -0.09525"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"PORT_SCREW",
+                                          "@translation":[-1.3,0,-0.3],
+                                          "-children":[
+                                            { "Group":
+                                              {
+                                                "@DEF":"PORT_BLADE",
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,0.39],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "@USE":"SCREW_APPEARANCE"
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "IndexedFaceSet":
+                                                                {
+                                                                  "@coordIndex":[0,1,2,3,4,5,6,7,-1,0,7,6,5,4,3,2,1,-1],
+                                                                  "-children":[
+                                                                    {
+                                                                      "#comment":"This blade has reversed pitch"
+                                                                    }
+                                                                  ],
+                                                                  "-coord":
+                                                                    { "Coordinate":
+                                                                      {
+                                                                        "@USE":"BLADE_COORDINATES"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57079],
+                                                "-children":[
+                                                  { "Group":
+                                                    {
+                                                      "@USE":"PORT_BLADE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,3.14159267],
+                                                "-children":[
+                                                  { "Group":
+                                                    {
+                                                      "@USE":"PORT_BLADE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,-1.57079],
+                                                "-children":[
+                                                  { "Group":
+                                                    {
+                                                      "@USE":"PORT_BLADE"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "-children":[
+                                      {
+                                        "#comment":"Medium-resolution LOD level"
+                                      },
+                                      {
+                                        "#comment":"size is full length, height, width"
+                                      }
+                                    ],
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "@USE":"HULL_APPEARANCE"
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "Box":
+                                        {
+                                          "@size":[2.2,0.26,0.42]
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-children":[
+                                { "Viewpoint":
+                                  {
+                                    "@DEF":"HULLNAME_VIEWPOINT",
+                                    "@description":"Aries Prototype",
+                                    "@position":[0,0,4],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"description",
+                                            "@protoField":"hullName"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Port Bow",
+                                    "@orientation":[0,1,0,2.356],
+                                    "@position":[8,0,-8]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Bow",
+                                    "@orientation":[0,1,0,1.572],
+                                    "@position":[10,0,0]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Starboard Bow",
+                                    "@orientation":[0,1,0,0.785],
+                                    "@position":[8,0,8]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Port Beam",
+                                    "@orientation":[0,1,0,3.14159267],
+                                    "@position":[0,0,-10]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Port Astern",
+                                    "@orientation":[0,1,0,3.926],
+                                    "@position":[-8,0,-8]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Astern",
+                                    "@orientation":[0,1,0,-1.4],
+                                    "@position":[-10,0,0]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Starboard Astern",
+                                    "@orientation":[0,1,0,-0.783],
+                                    "@position":[-10,0,10]
+                                  }
+                                },
+                                { "Viewpoint":
+                                  {
+                                    "@description":"Looking down from 25m above Aries",
+                                    "@orientation":[1,0,0,-1.57],
+                                    "@position":[0,25,0]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Aries AUV"
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Aries",
+                    "fieldValue": [
+                      {
+                        "@name":"translation",
+                        "@value":[0,0.4,0]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Viewable geometry is anchored text that links to an example that showing the usage of AriesPrototype"
+          },
+          { "Anchor":
+            {
+              "@description":"AriesExample",
+              "@parameter":["target=_blank"],
+              "@url":["AriesExample.x3d","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesExample.x3d","AriesExample.wrl","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,1],
+                                "@emissiveColor":[0,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["AriesPrototype","is a prototype definition file","","click on text to view","AriesExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

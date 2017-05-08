@@ -1,0 +1,107 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CallSign.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Brazilian Naval Academy Training Ship"
+          },
+          {
+            "@name":"creator",
+            "@content":"Claudio Coreixas"
+          },
+          {
+            "@name":"created",
+            "@content":"20 October 2009"
+          },
+          {
+            "@name":"modified",
+            "@content":"6 January 2010"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.en.mar.mil.br"
+          },
+          {
+            "@name":"subject",
+            "@content":"ships parts"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-NavalAcademy-Brazil/CallSign.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@rotation":[0,0,1,-0.59],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"callSign",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["CallSign.jpg","https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-NavalAcademy-Brazil/CallSign.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@DEF":"brassIFS",
+                          "@convex":false,
+                          "@coordIndex":[0,1,2,3,-1],
+                          "@creaseAngle":1.5,
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,0.07,0,0,0.07,0.14,0,0,0.14,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure17.14bMovieTextureWhirlpool.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 17.14b, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch17/17fig14b.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"28 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"A swirling whirlpool created using a movie texture."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/Figure17.14bMovieTextureWhirlpool.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"MovieTexture whirlpool",
+              "@orientation":[1,0,0,-0.758],
+              "@position":[0,6,6]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.7,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[10,0.01,10]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["wellwall.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/wellwall.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@beginCap":false,
+                          "@creaseAngle":1.57,
+                          "@crossSection":[0.4,0,0.4,-0.7,-0.4,-0.7,-0.4,0],
+                          "@endCap":false,
+                          "@spine":[2.00,0.0,0.00,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.00,0.0,2.00,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.00,0.0,0.00,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.00,0.0,-2.00,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.00,0.0,0.00]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "MovieTexture":
+                              {
+                                "@loop":true,
+                                "@url":["wrlpool.mpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/wrlpool.mpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@ccw":false,
+                          "@coordIndex":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[2.00,0.6,0.00,1.85,0.6,0.67,1.41,0.6,1.41,0.67,0.6,1.85,0.00,0.6,2.00,-0.67,0.6,1.85,-1.41,0.6,1.41,-1.85,0.6,0.67,-2.00,0.6,0.00,-1.85,0.6,-0.67,-1.41,0.6,-1.41,-0.67,0.6,-1.85,0.00,0.6,-2.00,0.67,0.6,-1.85,1.41,0.6,-1.41,1.85,0.6,-0.67,2.00,0.6,0.00]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

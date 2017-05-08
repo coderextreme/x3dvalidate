@@ -1,0 +1,95 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SideBoards.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Sponsor Board to surround the stadium pitches"
+          },
+          {
+            "@name":"creator",
+            "@content":"Beth Welliver"
+          },
+          {
+            "@name":"created",
+            "@content":"7 March 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 April 2008"
+          },
+          {
+            "@name":"reference",
+            "@content":"Sponsor artwork from US Soccer Website: http://ussoccer.com/sponsors/index.jsp.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SoccerComplex/SideBoards.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@translation":[-10,-0.5,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"sideBoard",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@DEF":"sideBoardArtwork",
+                                "@url":["sponsorBoardArtwork.jpg","https://savage.nps.edu/Savage/Buildings/SoccerComplex/sponsorBoardArtwork.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@DEF":"sideBoardSection",
+                          "@size":[20,1,0.01]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

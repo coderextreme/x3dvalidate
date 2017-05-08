@@ -1,0 +1,427 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "-children":[
+          {
+            "#comment":"NURBS component or Full profile needed to use CoordinateDouble node"
+          },
+          {
+            "#comment":"Geometry2D component or Full profile needed to use TriangleSet2D node"
+          }
+        ],
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":1
+          },
+          {
+            "@name":"Geometry2D",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RenderingComponentExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Examples showing use of new X3D Rendering component nodes (IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet LineSet TriangleFanSet TriangleSet TriangleStripSet), implemented as prototypes for backwards compatibility with VRML 97."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Ken Curtin, Duane Davis, Christos Kalogrias"
+          },
+          {
+            "@name":"created",
+            "@content":"17 November 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 November 2015"
+          },
+          {
+            "@name":"TODO",
+            "@content":"Extract, move TriangleStripSet example to X3dSpecifications directory"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"RenderingComponentPrototypes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/TriangleStripSetFigure.x3d"
+          },
+          {
+            "@name":"info",
+            "@content":"X3dToVrml97.xslt translation stylesheet automatically invokes these prototypes upon encountering any new Rendering nodes."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/stylesheets/X3dToVrml97.xslt"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Rendering component nodes (IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet LineSet TriangleFanSet TriangleSet TriangleStripSet)"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"set viewpoint 35 meters along positive z axis",
+              "@position":[0,-5,35]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[1,1,1],
+              "@skyColor":[1,1,1]
+            }
+          },
+          {
+            "#comment":"new node tests follow"
+          },
+          { "Transform":
+            {
+              "@DEF":"TestCoordinateDoubleColorRGBA",
+              "@translation":[0,5,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-2,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@coordIndex":[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-1.0,1,1.0,1.0,1,1.0,1.0,1,-1.0,-1.0,1,-1.0,-1.0,-1,1.0,1.0,-1,1.0,1.0,-1,-1.0,-1.0,-1,-1.0]
+                                    }
+                                  },
+                                "-color":
+                                  { "ColorRGBA":
+                                    {
+                                      "@color":[0.9,0.9,0.9,0,1,0,0,0,0,1,0,0,0,0,1,0,0.5,0.5,0,0,0,0.5,0.5,0,0.5,0,0.5,0,0.37,0.93,0.87,0],
+                                      "-metadata":
+                                        { "MetadataString":
+                                          {
+                                            "@name":"example 2",
+                                            "@value":["test metadata child"]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[2,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@coordIndex":[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7],
+                                "-coord":
+                                  { "CoordinateDouble":
+                                    {
+                                      "@point":[-1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,-1.0,-1.0,1.0,-1.0,-1.0,-1.0,1.0,1.0,-1.0,1.0,1.0,-1.0,-1.0,-1.0,-1.0,-1.0],
+                                      "-metadata":
+                                        { "MetadataString":
+                                          {
+                                            "@name":"example 1",
+                                            "@value":["test metadata child"]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@color":[0.9,0.9,0.9,1,0,0,0,1,0,0,0,1,0.5,0.5,0,0,0.5,0.5,0.5,0,0.5,0.37,0.93,0.87]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TestOrderedTriangleNodes",
+              "@translation":[-5,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "TriangleSet2D":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"DefaultAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TestTriangleFanSet",
+                    "@translation":[0,-6,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "TriangleFanSet":
+                              {
+                                "@colorPerVertex":false,
+                                "@fanCount":[6,6],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[0,0,0,-0.5,-2,0.5,-1.5,-2,1,-2.5,-1.5,0.5,-2.5,-0.5,0,-2.5,1,0.5,0,0,0,-2.5,1,0.5,0.5,2,0,1.5,1.5,0.5,2.5,0.5,0,-0.5,-2,0.5]
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@DEF":"FanColors",
+                                      "@color":[0.5,0.1,0.5,0.8,0.3,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "TriangleStripSet":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"DefaultAppearance"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TestIndexedTriangleNodes",
+              "@translation":[5,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedTriangleSet":
+                              {
+                                "@index":[11,10,9,8,7,6,5,4,3,2,1,0],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-6,0.5,-0.5,1.5,-3.5,-0.5,0,0,1,-6,0.5,-0.5,0,0,1,2.0,2.0,-0.5,0,0,1,1.5,-3.5,-0.5,2.0,2.0,-0.5,-6,0.5,-0.5,1.5,-3.5,-0.5,2.0,2.0,-0.5]
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@color":[1,0,0,0,0,1,0,1,0,1,0,0,0,1,0,0.9,0.9,0.9,0,1,0,0,0,1,0.9,0.9,0.9,1,0,0,0.9,0.9,0.9,0,0,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-6,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedTriangleFanSet":
+                              {
+                                "@colorPerVertex":false,
+                                "@index":[0,1,2,3,4,5,-1,0,5,6,7,8,1,-1],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[0,0,0,-0.5,-2,0.5,-1.5,-2,1,-2.5,-1.5,0.5,-2.5,-0.5,0,-2.5,1,0.5,0.5,2,0,1.5,1.5,0.5,2.5,0.5,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.5,0.1,0.5]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-10,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedTriangleStripSet":
+                              {
+                                "@index":[0,1,2,3,4,5,6,7,8,9,10,11,12,-1],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-4.0,-1.0,-0.5,-4.5,-2.0,-0.5,-3.0,-0.5,0,-2.5,-1.5,-0.5,-2.0,-0.5,-1,-1.5,-1.5,-0.5,-0.5,0.5,-0.5,0,0,0,1,0.5,-0.5,1.5,-2.0,-1,2.5,-2.0,-0.5,2.5,-2.5,-0.5,3.5,-2.0,-1.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.3,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TestLineSet",
+              "@translation":[0,-15,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[-3.0,1.0,1.0,3.0,1.0,1.0,3.0,1.0,-1.0,-3.0,1.0,-1.0,-3.0,-1.0,1.0,3.0,-1.0,1.0,3.0,-1.0,-1.0,-3.0,-1.0,-1.0]
+                              }
+                            },
+                          "-color":
+                            { "ColorRGBA":
+                              {
+                                "@color":[1,1,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0.5,0.5,0,0,0,0.5,0.5,0,0.5,0,0.5,0,0.37,0.93,0.87,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

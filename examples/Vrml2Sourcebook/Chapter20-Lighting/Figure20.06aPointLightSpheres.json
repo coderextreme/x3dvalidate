@@ -1,0 +1,118 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure20.06aPointLightSpheres.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 20.6a, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch20/20fig06a.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"7 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 March 2012"
+          },
+          {
+            "@name":"description",
+            "@content":"A sphere world illuminated by a point light in the center. Also see Figures 20.4, 20.6a, 20.6b, 20.7, 20.8 for comparison."
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure20.04HeadlightSpheres.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure20.06bPointLightSpheresIntensity.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure20.07PointLightSpheresAttenuation.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure20.08PointLightSpheresSmallRadius.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter20-Lighting/Figure20.06aPointLightSpheres.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"PointLight at center of spheres. Note that light rays pass through geometry.",
+              "@position":[0,0,30]
+            }
+          },
+          {
+            "#comment":"Note headlight turned off in NavigationInfo. Most browsers allow user toggling headlight also."
+          },
+          {
+            "#comment":"This NavigationInfo node is bound at runtime and overrides the NavigationInfo headlight setting within the Inlined scene."
+          },
+          { "NavigationInfo":
+            {
+              "@headlight":false
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "PointLight":
+                  {
+                    "@radius":12
+                  }
+                },
+                { "Inline":
+                  {
+                    "@bboxSize":[16,16,16],
+                    "@url":["Figure20.04HeadlightSpheres.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter20-Lighting/Figure20.04HeadlightSpheres.x3d","Figure20.04HeadlightSpheres.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter20-Lighting/Figure20.04HeadlightSpheres.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

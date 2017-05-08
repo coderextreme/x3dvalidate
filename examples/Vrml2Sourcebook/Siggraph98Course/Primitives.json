@@ -1,0 +1,382 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Primitives.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"The Primitives on Pedestals scene highlights the geometry primitives, placing each one above a Gothic pedestal. Of note is that the pedestal itself is built using only the geometry primitive nodes."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 February 2014"
+          },
+          {
+            "@name":"Image",
+            "@content":"Primitives.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/prim.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0030.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Primitives.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, David R. Nadeau"],
+              "@title":"VRML Primitives"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@orientation":[0.0,1.0,0.0,0.52],
+              "@position":[5.0,1.6,8.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@headlight":false,
+              "@type":["WALK","ANY"]
+            }
+          },
+          { "Background":
+            {
+              "@skyAngle":[1.37,1.57,1.77],
+              "@skyColor":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.5,0.0,0.0,0.0]
+            }
+          },
+          { "PointLight":
+            {
+              "@ambientIntensity":0.2,
+              "@color":[0.7,0.7,0.7],
+              "@location":[0.0,8.0,10.0]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3.0,0.0,0.0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"Pedestal",
+                    "@url":["pedestal.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/pedestal.x3d","pedestal.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/pedestal.wrl"]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.375,0.375,0.375],
+                    "@translation":[0.0,2.5,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,0.2,0.2]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-1.0,0.0,0.0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Pedestal"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.375,0.375,0.375],
+                    "@translation":[0.0,2.5,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.0,1.0,0.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cone":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[1.0,0.0,0.0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Pedestal"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.375,0.375,0.375],
+                    "@translation":[0.0,2.5,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.0,0.8,1.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[3.0,0.0,0.0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Pedestal"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.375,0.375,0.375],
+                    "@translation":[0.0,2.5,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,0.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[5.0,0.0,0.0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Pedestal"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.375,0.375,0.375],
+                    "@translation":[0.0,2.2,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,1.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Text"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":2.0,
+                                      "@style":"BOLD"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-textureTransform":
+                      { "TextureTransform":
+                        {
+                          "@scale":[20.0,20.0]
+                        }
+                      },
+                    "-material":
+                      { "Material":
+                        {
+                          "@ambientIntensity":0.1
+                        }
+                      },
+                    "-texture":
+                      { "ImageTexture":
+                        {
+                          "@url":["stone2.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/stone2.jpg"]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@coordIndex":[0,1,2,3,-1],
+                    "@solid":false,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[-10.0,0.0,10.0,10.0,0.0,10.0,10.0,0.0,-10.0,-10.0,0.0,-10.0]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,380 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TumbleGroup.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Tumble group: this file contains a Prototype declaration to manage a group of shapes, tumbling them in X, Y, and Z directions."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"Loader.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"One.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Two.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Three.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Boxes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/tumgrp.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0465.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0469.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/TumbleGroup.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"TumbleGroup",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"xTumbleInterval",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":3.0
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"ProtoInstance needs to initialize children with a fieldValue"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"zTumbleInterval",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":5.0
+                    },
+                    {
+                      "@name":"translation",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"yTumbleInterval",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"XRot",
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"YRot",
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "@DEF":"ZRot",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"translation",
+                                            "@protoField":"translation"
+                                          },
+                                          {
+                                            "@nodeField":"children",
+                                            "@protoField":"children"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"XClock",
+                        "@loop":true,
+                        "@startTime":1.0,
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"xTumbleInterval"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"YClock",
+                        "@loop":true,
+                        "@startTime":1.0,
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"yTumbleInterval"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"ZClock",
+                        "@loop":true,
+                        "@startTime":1.0,
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"zTumbleInterval"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"XRotIt",
+                        "@key":[0.0,0.25,0.5,0.75,1.0],
+                        "@keyValue":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.57,1.0,0.0,0.0,3.14,1.0,0.0,0.0,4.71,1.0,0.0,0.0,6.28]
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"YRotIt",
+                        "@key":[0.0,0.25,0.5,0.75,1.0],
+                        "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.57,0.0,1.0,0.0,3.14,0.0,1.0,0.0,4.71,0.0,1.0,0.0,6.28]
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"ZRotIt",
+                        "@key":[0.0,0.25,0.5,0.75,1.0],
+                        "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.57,0.0,0.0,1.0,3.14,0.0,0.0,1.0,4.71,0.0,0.0,1.0,6.28]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"XClock",
+                        "@toField":"set_fraction",
+                        "@toNode":"XRotIt"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"YClock",
+                        "@toField":"set_fraction",
+                        "@toNode":"YRotIt"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"ZClock",
+                        "@toField":"set_fraction",
+                        "@toNode":"ZRotIt"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"XRotIt",
+                        "@toField":"set_rotation",
+                        "@toNode":"XRot"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"YRotIt",
+                        "@toField":"set_rotation",
+                        "@toNode":"YRot"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"ZRotIt",
+                        "@toField":"set_rotation",
+                        "@toNode":"ZRot"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Display scene instructions for viewing an example scene with a corresponding prototype instance"
+          },
+          { "Background":
+            {
+              "@skyColor":[0,0.333333,0.66667]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"select text to view parent scene",
+              "@url":["Loader.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Loader.x3d","Loader.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Loader.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["The TumbleGroup.x3d scene holds","a prototype declaration","","Select this text to view example usage","in Loader.x3d scene"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.9,0.4]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Invisible box behind text makes selection easier"
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[12,5,0.1]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

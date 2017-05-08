@@ -1,0 +1,280 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NavigationInfoStack.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Attempt to control NavigationInfo speed and stack."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"13 June 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/NavigationInfoStack.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"NavigationInfoStackGroup",
+              "-children":[
+                { "NavigationInfo":
+                  {
+                    "@DEF":"NavInfoDefault"
+                  }
+                },
+                {
+                  "#comment":"=========="
+                },
+                { "NavigationInfo":
+                  {
+                    "@DEF":"NavInfo10mps",
+                    "@speed":10
+                  }
+                },
+                { "BooleanTrigger":
+                  {
+                    "@DEF":"NavSpeed10BooleanTrigger"
+                  }
+                },
+                { "ProximitySensor":
+                  {
+                    "@DEF":"NavSpeed10ProximitySensor",
+                    "@size":[200,200,200]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"triggerTrue",
+                    "@fromNode":"NavSpeed10BooleanTrigger",
+                    "@toField":"set_bind",
+                    "@toNode":"NavInfo10mps"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"exitTime",
+                    "@fromNode":"NavSpeed10ProximitySensor",
+                    "@toField":"set_triggerTime",
+                    "@toNode":"NavSpeed10BooleanTrigger"
+                  }
+                },
+                {
+                  "#comment":"=========="
+                },
+                { "NavigationInfo":
+                  {
+                    "@DEF":"NavInfo100mps",
+                    "@speed":100
+                  }
+                },
+                { "ProximitySensor":
+                  {
+                    "@DEF":"NavSpeed100ProximitySensor",
+                    "@size":[2000,2000,2000]
+                  }
+                },
+                { "BooleanTrigger":
+                  {
+                    "@DEF":"NavSpeed100BooleanTrigger"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"triggerTrue",
+                    "@fromNode":"NavSpeed100BooleanTrigger",
+                    "@toField":"set_bind",
+                    "@toNode":"NavInfo100mps"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"exitTime",
+                    "@fromNode":"NavSpeed100ProximitySensor",
+                    "@toField":"set_triggerTime",
+                    "@toNode":"NavSpeed100BooleanTrigger"
+                  }
+                },
+                {
+                  "#comment":"=========="
+                },
+                { "NavigationInfo":
+                  {
+                    "@DEF":"NavInfo1000mps",
+                    "@speed":1000
+                  }
+                },
+                { "ProximitySensor":
+                  {
+                    "@DEF":"NavSpeed1000ProximitySensor",
+                    "@size":[20000,20000,20000]
+                  }
+                },
+                { "BooleanTrigger":
+                  {
+                    "@DEF":"NavSpeed1000BooleanTrigger"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"triggerTrue",
+                    "@fromNode":"NavSpeed1000BooleanTrigger",
+                    "@toField":"set_bind",
+                    "@toNode":"NavInfo1000mps"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"exitTime",
+                    "@fromNode":"NavSpeed1000ProximitySensor",
+                    "@toField":"set_triggerTime",
+                    "@toNode":"NavSpeed1000BooleanTrigger"
+                  }
+                },
+                {
+                  "#comment":"=========="
+                },
+                { "Script":
+                  {
+                    "@DEF":"NavSpeedMonitorScript",
+                    "field": [
+                      {
+                        "@name":"speed1Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"speed10Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"speed100Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"speed1000Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"traceEnabled",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFBool",
+                        "@value":true
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"function speed1Bound (value, timestamp)",
+"{",
+"\ttracePrint ('NavInfoDefault (1 mps) bound');",
+"}",
+"function speed10Bound (value, timestamp)",
+"{",
+"\ttracePrint ('NavInfo10mps bound');",
+"}",
+"function speed100Bound (value, timestamp)",
+"{",
+"\ttracePrint ('NavInfo100mps bound');",
+"}",
+"function speed1000Bound (value, timestamp)",
+"{",
+"\ttracePrint ('NavInfo1000mps bound');",
+"}",
+"function alwaysPrint (text)",
+"{",
+"\tBrowser.print ('[NavSpeedMonitorScript] ' + text);",
+"}",
+"function tracePrint (text)",
+"{",
+"\tif (traceEnabled) Browser.print ('[NavSpeedMonitorScript] ' + text);",
+"}"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isBound",
+                    "@fromNode":"NavInfoDefault",
+                    "@toField":"speed1Bound",
+                    "@toNode":"NavSpeedMonitorScript"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isBound",
+                    "@fromNode":"NavInfo10mps",
+                    "@toField":"speed10Bound",
+                    "@toNode":"NavSpeedMonitorScript"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isBound",
+                    "@fromNode":"NavInfo100mps",
+                    "@toField":"speed100Bound",
+                    "@toNode":"NavSpeedMonitorScript"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isBound",
+                    "@fromNode":"NavInfo1000mps",
+                    "@toField":"speed1000Bound",
+                    "@toNode":"NavSpeedMonitorScript"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

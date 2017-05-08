@@ -1,0 +1,180 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SurfaceTransponderBuoy.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Surface Transponder Buoy for the WHOI REMUS AUV"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"31 October 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"31 January 2010"
+          },
+          {
+            "@name":"subject",
+            "@content":"Surfface Transponder Buoy for the WHOI REMUS AUV"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/SurfaceTransponderBuoy.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.85,0.8,0.9]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"Float",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.25,
+                                      "@radius":0.45
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,1,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-0.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.5,
+                                      "@radius":0.2
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"ShinyBlack",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.15,0.2,0.225],
+                                            "@shininess":0.33,
+                                            "@specularColor":[0.25,0.3,0.325]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TopRing",
+                          "@translation":[0,0.1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.125,
+                                      "@radius":0.35
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"ShinyBlack"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@scale":[0.75,0.75,0.75],
+                          "@translation":[0,0.125,0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["../../AmphibiousVehicles/AAV/RearAntenna.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/RearAntenna.x3d","../../AmphibiousVehicles/AAV/RearAntenna.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/RearAntenna.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

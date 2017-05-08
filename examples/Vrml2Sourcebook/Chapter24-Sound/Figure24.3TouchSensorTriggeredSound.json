@@ -1,0 +1,124 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure24.3TouchSensorTriggeredSound.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 24.3, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch24/24fig03.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"24 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"A world with sound triggered by touching a white ball, with an emitter marker marking the range of audible sound."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter24-Sound/Figure24.3TouchSensorTriggeredSound.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"click white ball for tone, markers indicate min/max range of sound",
+              "@position":[0,1,20]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"20m distance, audible range circles at 5m and 10m",
+              "@position":[0,1,20]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["WALK","EXAMINE","ANY"]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Sound":
+                  {
+                    "@minBack":5,
+                    "@minFront":5,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"Source",
+                          "@description":"tone1",
+                          "@url":["tone1.wav","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter24-Sound/tone1.wav"]
+                        }
+                      }
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["Figure24.1EmitterMarkers.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter24-Sound/Figure24.1EmitterMarkers.x3d","Figure24.1EmitterMarkers.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter24-Sound/Figure24.1EmitterMarkers.wrl"]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"Touch",
+                    "@description":"touch to start"
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Touch",
+              "@toField":"set_startTime",
+              "@toNode":"Source"
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PineTrees.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Trees for soccer complex"
+          },
+          {
+            "@name":"creator",
+            "@content":"Capt Beth Welliver"
+          },
+          {
+            "@name":"created",
+            "@content":"18 March 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SoccerComplex/PineTrees.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"SingleTree",
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@bottom":false,
+                          "@height":3,
+                          "@radius":0.35,
+                          "@solid":false,
+                          "@top":false
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.160784,0.039216,0],
+                                "@emissiveColor":[0.160784,0.078431,0],
+                                "@specularColor":[0.121569,0.07451,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@height":7
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.2,0.027451],
+                                      "@emissiveColor":[0.003922,0.101961,0],
+                                      "@specularColor":[0,0.239216,0.031373]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.2,0.8,1],
+              "@translation":[-1.6,-0.3,-0.5],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"SingleTree"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.2,0.5,1],
+              "@translation":[-1.3,-0.5,1.4],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"SingleTree"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

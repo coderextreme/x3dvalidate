@@ -1,0 +1,191 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure22.4BackgroundBinding.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 22.4, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch22/22fig04.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"22 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"Backgrounds bound and unbound by touching a red cube or a blue sphere."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter22-Background/Figure22.4BackgroundBinding.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Note that navigation mode doesn't matter much here, since you cannot approach the backround, it always stays at maximum (horizon) distance"
+          },
+          {
+            "#comment":"At least EXAMINE mode lets you easily look up/down/around."
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Background":
+                  {
+                    "@groundAngle":[1.309,1.570796],
+                    "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+                    "@skyAngle":[1.309,1.571],
+                    "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+                  }
+                },
+                { "Background":
+                  {
+                    "@DEF":"AlternateBackground1",
+                    "@groundAngle":[1.309,1.570796],
+                    "@groundColor":[0.1,0.1,0,0.5,0.25,0.2,0.6,0.6,0.2],
+                    "@skyAngle":[1.309,1.571],
+                    "@skyColor":[1,0,0,1,0.4,0,1,1,0]
+                  }
+                },
+                { "Background":
+                  {
+                    "@DEF":"AlternateBackground2",
+                    "@groundAngle":[1.309,1.570796],
+                    "@groundColor":[0,0,0.1,0,0.1,0.3,0.3,0.3,0.6],
+                    "@skyAngle":[1.309,1.571],
+                    "@skyColor":[1,0,0.8,0.5,0,0.8,0,0,0.8]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Shapes to act as buttons"
+          },
+          { "Transform":
+            {
+              "@translation":[2,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchBox",
+                    "@description":"Alternate reddish-orange background"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0,0.8]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchSphere",
+                    "@description":"Alternate blueish-purple background"
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TouchBox",
+              "@toField":"set_bind",
+              "@toNode":"AlternateBackground1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TouchSphere",
+              "@toField":"set_bind",
+              "@toNode":"AlternateBackground2"
+            }
+          }
+        ]
+    }
+  }
+}

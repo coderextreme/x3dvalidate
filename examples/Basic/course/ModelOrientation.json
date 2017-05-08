@@ -1,0 +1,253 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ModelOrientation.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"15 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"X Y Z axis arrows and labels of X3D coordinate system to illustrate default entity center of gravity at 0 0 0, with default nose orientation pointing along the +X-axis. Ground vehicles have their position raised to allow bottom to touch the ground."
+          },
+          {
+            "@name":"Image",
+            "@content":"ModelOrientation.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"../X3dSceneAuthoringHints.html#CoordinateSystems"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/course/ModelOrientation.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Default model orientation: nose +X axis, up +Y axis, right-hand side +Z axis"
+            }
+          },
+          {
+            "#comment":"Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"
+          },
+          {
+            "#comment":"Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"
+          },
+          { "Transform":
+            {
+              "@scale":[2,2,2],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"CoordinateAxes",
+                    "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.2,1.6,1.6],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,0,-1,1.57],
+                    "@scale":[0.25,0.25,0.25],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":8,
+                                "@radius":0.4425,
+                                "@top":false
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"Cammi",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.45,0.55,0.55]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,4.9,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.4425,
+                                      "@height":1.8
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Cammi"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-4.1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.2,
+                                      "@height":0.66
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.15,0.15,0.15],
+                                            "@shininess":0.66,
+                                            "@specularColor":[0.22,0.22,0.22]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TailFin",
+                          "@translation":[0.175,-4.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "IndexedFaceSet":
+                                    {
+                                      "@coordIndex":[0,1,2,3,4,5,-1],
+                                      "@solid":false,
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[0,0.4,0,0.25,0,0,0.75,0,0,0.75,1,0,0,1.65,0,0,0.4,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Cammi"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"TailFin"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.14],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"TailFin"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,-1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"TailFin"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

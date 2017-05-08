@@ -1,0 +1,681 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AnimatedViewpointRecorderPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Record camera position and orientation as user navigates, then filter values and produce output, both into the console output window and as a replayable node group. Future work: further filtering."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Ken Curtin, Duane Davis, Christos Kalogrias"
+          },
+          {
+            "@name":"created",
+            "@content":"24 October 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"AnimatedViewpointRecorderExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"AnimatedViewpointRecorderSample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.realism.com/Web3D/Examples#WhereAmI"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.realism.com/vrml/Example/WhereAmI/WhereAmI_Proto.wrl"
+          },
+          {
+            "@name":"subject",
+            "@content":"recording animated viewpoint tour"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/AnimatedViewpointRecorderPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"AnimatedViewpointRecorder",
+              "@appinfo":"AnimatedViewpointRecorder captures view position and orientation tour to create a guided tour animation. The recording output goes to the browser console where the .x3d (or .x3dv) output can be cut/pasted for further use.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"start",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Set start=true to commence recording viewpoint position/orientation.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"stop",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Set stop=true to finish recording viewpoint position/orientation. Resulting VRML is added to scene resulting X3D and VRML is output to console.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"samplingInterval",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"default 0.1 seconds",
+                      "@type":"SFTime",
+                      "@value":0.1
+                    },
+                    {
+                      "@name":"outputX3D",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"whether to output .x3d syntax on browser console",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"outputClassicVRML",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"whether to output .x3d syntax on browser console",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"filterDeadTime",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"TODO not yet implemented",
+                      "@type":"SFBool",
+                      "@value":false
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Group":
+                            {
+                              "@DEF":"NewViewpointGroup"
+                            }
+                          },
+                          {
+                            "#comment":"it's a big old world out there!"
+                          },
+                          { "ProximitySensor":
+                            {
+                              "@DEF":"WhereSensor",
+                              "@size":[1000000000,1000000000,1000000000]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"RecordingScript",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"start",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"stop",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"samplingInterval",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"seconds",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"outputX3D",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"whether to output .x3d syntax on browser console",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"outputClassicVRML",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"whether to output .x3d syntax on browser console",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"recordingInProgress",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"persistent state variable",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"set_position",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"set_orientation",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"positionArray",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFVec3f"
+                                },
+                                {
+                                  "@name":"positionTimeArray",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFTime"
+                                },
+                                {
+                                  "@name":"orientationArray",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFRotation"
+                                },
+                                {
+                                  "@name":"orientationTimeArray",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFTime"
+                                },
+                                {
+                                  "@name":"filterDeadTime",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"not yet implemented",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"newViewpointGroup",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Group":
+                                      {
+                                        "@USE":"NewViewpointGroup"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"numberOfToursCreated",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"persistent holding variable",
+                                  "@type":"SFInt32",
+                                  "@value":0
+                                },
+                                {
+                                  "@name":"precedingPosition",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"persistent holding variable",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"precedingOrientation",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"persistent holding variable",
+                                  "@type":"SFRotation",
+                                  "@value":[0,1,0,0]
+                                },
+                                {
+                                  "@name":"precedingPositionSampleTime",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"persistent holding variable",
+                                  "@type":"SFTime",
+                                  "@value":0
+                                },
+                                {
+                                  "@name":"precedingOrientationSampleTime",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"persistent holding variable",
+                                  "@type":"SFTime",
+                                  "@value":0
+                                },
+                                {
+                                  "@name":"r",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"normalization factor",
+                                  "@type":"SFFloat",
+                                  "@value":1
+                                },
+                                {
+                                  "@name":"positionEventsReceived",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"track output of ProximitySensor",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                },
+                                {
+                                  "@name":"orientationEventsReceived",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"track output of ProximitySensor",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"start",
+                                      "@protoField":"start"
+                                    },
+                                    {
+                                      "@nodeField":"stop",
+                                      "@protoField":"stop"
+                                    },
+                                    {
+                                      "@nodeField":"samplingInterval",
+                                      "@protoField":"samplingInterval"
+                                    },
+                                    {
+                                      "@nodeField":"outputX3D",
+                                      "@protoField":"outputX3D"
+                                    },
+                                    {
+                                      "@nodeField":"outputClassicVRML",
+                                      "@protoField":"outputClassicVRML"
+                                    },
+                                    {
+                                      "@nodeField":"filterDeadTime",
+                                      "@protoField":"filterDeadTime"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"   positionArray        = new MFVec3f ();",
+"   orientationArray     = new MFRotation ();",
+"   positionTimeArray    = new MFTime ();",
+"   orientationTimeArray = new MFTime ();",
+"",
+"      positionEventsReceived = false;",
+"   orientationEventsReceived = false;",
+"}",
+"",
+"function roundoff (value, digits)",
+"{",
+"\tresolution = 1;",
+"\tfor (i = 1; i <= digits; i++ )",
+"\t{",
+"\t\tresolution *= 10;",
+"\t}",
+"\treturn Math.round (value*resolution) / resolution; // round to resolution",
+"}",
+"function filterPositions()",
+"{",
+"    // TODO",
+"}",
+"",
+"function filterOrientations()",
+"{",
+"    // TODO",
+"}",
+"",
+"function set_position (eventValue, timestamp)",
+"{",
+"// Browser.print ('position=' + eventValue);",
+"   // we are counting on an initialization eventValue being sent by ProximitySensor",
+"   positionEventsReceived = true;",
+"   if ( positionArray.length == 0 )",
+"   {",
+"   \tpositionArray[0]     = eventValue; // initialize",
+"   \tpositionTimeArray[0] = timestamp;  // initialize",
+"   }",
+"   precedingPositionSampleTime = positionTimeArray[ positionArray.length - 1 ];",
+"",
+"   // seconds duration since last valid sample",
+"   if ( (timestamp - precedingPositionSampleTime) > samplingInterval )",
+"   {",
+"\t// append values to each array",
+"\tpositionArray[positionArray.length] = eventValue;",
+"\tpositionTimeArray[positionTimeArray.length] = timestamp;",
+"   }",
+"   precedingPosition = eventValue;",
+"}",
+"",
+"function set_orientation (eventValue, timestamp)",
+"{",
+"   // we are counting on an initialization eventValue being sent by ProximitySensor",
+"   orientationEventsReceived = true;",
+"   if ( orientationArray.length == 0 )",
+"   {",
+"     r = Math.sqrt (eventValue.x*eventValue.x + eventValue.y*eventValue.y + eventValue.z*eventValue.z);",
+"//   Browser.print ('orientation=' + eventValue.toString() + ', r=' + r + '\n'); // trace",
+"     if (r != 0)",
+"     {",
+"        eventValue.x = eventValue.x / r;",
+"        eventValue.y = eventValue.y / r;",
+"        eventValue.z = eventValue.z / r;",
+"     }",
+"   \t orientationArray[0]     = eventValue; // initialize",
+"   \t orientationTimeArray[0] = timestamp;  // initialize",
+"   }",
+"   precedingOrientationSampleTime = orientationTimeArray[ orientationTimeArray.length - 1 ];",
+"",
+"   // append sample values to each array",
+"   if ( (timestamp - precedingOrientationSampleTime) > samplingInterval )",
+"   {",
+"     orientationTimeArray[orientationTimeArray.length] = timestamp;",
+"\t // normalize SFRotation axis if needed",
+"     r = Math.sqrt (eventValue.x*eventValue.x + eventValue.y*eventValue.y + eventValue.z*eventValue.z);",
+"//    Browser.print ('orientation=' + eventValue.toString() + ', r=' + r + '\n'); // trace",
+"     if (r != 0)",
+"     {",
+"        eventValue.x = eventValue.x / r;",
+"        eventValue.y = eventValue.y / r;",
+"        eventValue.z = eventValue.z / r;",
+"        // auto append to array, no need to allocate",
+"        orientationArray[orientationArray.length] = eventValue;",
+"     }",
+"     else // illegal zero-magnitude axis returned by browser, so just use previous rotation",
+"     {",
+"        // auto append to array, no need to allocate",
+"        orientationArray[orientationArray.length] = precedingOrientation;",
+"     }",
+"   }",
+"   precedingOrientation = eventValue;",
+"}",
+"",
+"function start (eventValue, timestamp)",
+"{",
+"\tif (eventValue == false) return; // only accept start if eventValue == true",
+"\tif (recordingInProgress == true) return; // ignore repeated starts while already running",
+"\trecordingInProgress  = true;",
+"    // arrays need to be reinitialized from previous run",
+"\tinitialize();",
+"",
+"    Browser.print ('    <!-- start recording ' + numberOfToursCreated + ' -->\n\n');",
+"}",
+"",
+"function stop (eventValue, timestamp)",
+"{",
+"\tif (eventValue == false) return; // only accept stop  if eventValue == true",
+"\tif (recordingInProgress == false)",
+"\t{",
+"\t   Browser.print ('    <!-- stopped recording without first starting. -->\n\n');",
+"       return;",
+"\t}",
+"",
+"    // ensure legal array lengths in case some events were never sent due to not moving",
+"    if (positionEventsReceived == false)",
+"    {",
+"       Browser.print ('<!-- warning:  no position values received! no action taken. -->\n\n');",
+"       return;",
+"    }",
+"    if (orientationEventsReceived == false)",
+"    {",
+"       Browser.print ('<!-- warning:  no orientation values received! no action taken. -->\n');",
+"       return;",
+"    }",
+"\trecordingInProgress = false;",
+"",
+"\t// preceding last values were at last sampleInterval (either set_position or set_orientation)",
+"\t// add one more to each array since they are not sent values by sensor when not changing",
+"       positionArray[   positionArray.length] = precedingPosition;",
+"    orientationArray[orientationArray.length] = precedingOrientation;",
+"       positionTimeArray[   positionTimeArray.length] = timestamp;",
+"    orientationTimeArray[orientationTimeArray.length] = timestamp;",
+"",
+"    if (positionArray.length != positionTimeArray.length)",
+"    {",
+"       Browser.print ('<!-- internal error:  positionArray.length (' + positionArray.length + ') != positionTimeArray.length (' + positionTimeArray.length + ') -->\n');",
+"    }",
+"    if (orientationArray.length != orientationTimeArray.length)",
+"    {",
+"       Browser.print ('<!-- internal error:  orientationArray.length (' + orientationArray.length + ') != orientationTimeArray.length (' + orientationTimeArray.length + ') -->\n');",
+"    }",
+"",
+"   filterPositions();",
+"   filterOrientations();",
+"",
+"   // iff events are sent simultaneously, could use either array with start/stop times synchronized",
+"   // however that might be a bad assumption...  so reset start times to match",
+"   if (positionTimeArray[0] > orientationTimeArray[0])    positionTimeArray[0] = orientationTimeArray[0];",
+"   if (positionTimeArray[0] < orientationTimeArray[0]) orientationTimeArray[0] = positionTimeArray[0];",
+"",
+"   startTime = positionTimeArray[0];",
+"   stopTime  = positionTimeArray[positionTimeArray.length-1];",
+"   interval  = stopTime - startTime;",
+"",
+"   x3dString =",
+"   '    <!-- ********** start recorded Animated Tour ' + numberOfToursCreated + ' using .x3d syntax ********** -->\n' +",
+"   '    <Group>\n' +",
+"   '      <Viewpoint DEF=\\\"AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '\\\" description=\\\"Animated Tour ' + numberOfToursCreated + '\\\"\n' +",
+"   '         position=\\\"'    + positionArray[0].x + ' '    + positionArray[0].y + ' '    + positionArray[0].z + '\\\" \n' +",
+"   '         orientation=\\\"' + orientationArray[0].x + ' ' + orientationArray[0].y + ' ' + orientationArray[0].z + ' ' + orientationArray[0].angle + '\\\"/>\n' +",
+"   '      <!-- samplingInterval=' + samplingInterval + ' seconds, default TimeSensor loop=true -->\n' +",
+"   '      <TimeSensor DEF=\\\"AnimatedViewpointRecorderTimer' + numberOfToursCreated + '\\\" cycleInterval=\\\"' + interval + '\\\"\n' +",
+"   '        enabled=\\\"true\\\" loop=\\\"true\\\"/>\n' +",
+"   '      <PositionInterpolator DEF=\\\"AnimatedViewpointRecorderPosition' + numberOfToursCreated + '\\\" key=\\\"\n' ;",
+"   for (counter = 0; counter < positionTimeArray.length; counter++)",
+"   {",
+"    x3dString = x3dString +  roundoff(((positionTimeArray[counter] - positionTimeArray[0]) / interval),5) + ' \n';",
+"   }",
+"   x3dString = x3dString + '\\\"      keyValue=\\\"\n';",
+"   for (counter = 0; counter < positionArray.length; counter++)",
+"   {",
+"      x3dString = x3dString +   positionArray[counter].x + ' ' + positionArray[counter].y + ' ' + positionArray[counter].z + ', \n';",
+"   }",
+"   x3dString = x3dString + '         \\\"/>\n' +",
+"   '      <OrientationInterpolator DEF=\\\"AnimatedViewpointRecorderOrientation' + numberOfToursCreated + '\\\" key=\\\"\n';",
+"   for (counter = 0; counter < orientationTimeArray.length; counter++)",
+"   {",
+"    x3dString = x3dString +   roundoff(((orientationTimeArray[counter] - orientationTimeArray[0]) / interval),5) + ' \n';",
+"   }",
+"   x3dString = x3dString +   '\\\"      keyValue=\\\"\n';",
+"   for (counter = 0; counter < orientationArray.length; counter++)",
+"   {",
+"      var r = Math.sqrt(orientationArray[counter].x*orientationArray[counter].x + orientationArray[counter].y*orientationArray[counter].y + orientationArray[counter].z*orientationArray[counter].z); // normalize",
+"      if (r == 0) r = 1; // avoid divide by zero",
+"      x3dString = x3dString + (orientationArray[counter].x / r) + ' ' + (orientationArray[counter].y / r) + ' ' + (orientationArray[counter].z / r) + ' ' + orientationArray[counter].angle + ', \n';",
+"   }",
+"   x3dString = x3dString + '         \\\"/>\n' +",
+"   '      <Group>\n' +",
+"   '        <ROUTE fromField=\\\"bindTime\\\" fromNode=\\\"AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '\\\"\n' +",
+"   '          toField=\\\"startTime\\\" toNode=\\\"AnimatedViewpointRecorderTimer' + numberOfToursCreated + '\\\"/>\n' +",
+"   '        <ROUTE fromField=\\\"fraction_changed\\\" fromNode=\\\"AnimatedViewpointRecorderTimer' + numberOfToursCreated + '\\\"\n' +",
+"   '          toField=\\\"set_fraction\\\" toNode=\\\"AnimatedViewpointRecorderPosition' + numberOfToursCreated + '\\\"/>\n' +",
+"   '        <ROUTE fromField=\\\"fraction_changed\\\" fromNode=\\\"AnimatedViewpointRecorderTimer' + numberOfToursCreated + '\\\"\n' +",
+"   '          toField=\\\"set_fraction\\\" toNode=\\\"AnimatedViewpointRecorderOrientation' + numberOfToursCreated + '\\\"/>\n' +",
+"   '        <ROUTE fromField=\\\"value_changed\\\" fromNode=\\\"AnimatedViewpointRecorderPosition' + numberOfToursCreated + '\\\"\n' +",
+"   '          toField=\\\"position\\\" toNode=\\\"AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '\\\"/>\n' +",
+"   '        <ROUTE fromField=\\\"value_changed\\\"\n' +",
+"   '          fromNode=\\\"AnimatedViewpointRecorderOrientation' + numberOfToursCreated + '\\\" toField=\\\"orientation\\\" toNode=\\\"AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '\\\"/>\n' +",
+"   '      </Group>\n' +",
+"   '    </Group>\n';",
+"",
+"   if (outputX3D) Browser.print (x3dString);",
+"",
+"   vrmlString =",
+"      '# ********** start recorded Animated Tour ' + numberOfToursCreated + ' using .x3dv syntax ********** \n' +",
+"      'Group {\n' +",
+"      '  children [\n' +",
+"      '      DEF AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + ' Viewpoint {\n' +",
+"      '        description \\\"Animated Tour ' + numberOfToursCreated + '\\\"\n' +",
+"      '        orientation ' + orientationArray[0].x + ' ' + orientationArray[0].y + ' ' + orientationArray[0].z + ' ' + orientationArray[0].angle + '\n' +",
+"      '        position ' + positionArray[0].x + ' '    + positionArray[0].y + ' '    + positionArray[0].z + '\n' +",
+"      '      }\n' +",
+"      '      DEF AnimatedViewpointRecorderTimer' + numberOfToursCreated + ' TimeSensor {\n' +",
+"      '        cycleInterval ' + interval +  '\n' +",
+"      '        loop TRUE\n' +",
+"      '      }\n' +",
+"      '      DEF AnimatedViewpointRecorderPosition' + numberOfToursCreated + ' PositionInterpolator {\n' +",
+"      '        key [\n';",
+"   for (counter = 0; counter < positionTimeArray.length; counter++)",
+"   {",
+"      vrmlString = vrmlString + roundoff(((positionTimeArray[counter] - positionTimeArray[0]) / interval),5) + ' \n';",
+"   }",
+"   vrmlString = vrmlString + '         ]\n' +",
+"      '        keyValue [\n';",
+"   for (counter = 0; counter < positionArray.length; counter++)",
+"   {",
+"      vrmlString = vrmlString +   positionArray[counter].x + ' ' + positionArray[counter].y + ' ' + positionArray[counter].z + ', \n';",
+"   }",
+"   vrmlString = vrmlString + '         ]\n' +",
+"      '      }\n' +",
+"      '      DEF AnimatedViewpointRecorderOrientation' + numberOfToursCreated + ' OrientationInterpolator {\n' +",
+"      '        key [\n';",
+"   for (counter = 0; counter < orientationTimeArray.length; counter++)",
+"   {",
+"    vrmlString = vrmlString +   roundoff(((orientationTimeArray[counter] - orientationTimeArray[0]) / interval),5) + ' \n';",
+"   }",
+"   vrmlString = vrmlString + '         ]\n' +",
+"      '        keyValue [\n';",
+"   for (counter = 0; counter < orientationArray.length; counter++)",
+"   {",
+"      vrmlString = vrmlString + orientationArray[counter].x + ' ' + orientationArray[counter].y + ' ' + orientationArray[counter].z + ' ' + orientationArray[counter].angle + ', \n';",
+"   }",
+"   vrmlString = vrmlString + '         ]\n' +",
+"      '      }\n' +",
+"      '      Group {\n' +",
+"      '         ROUTE AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '.bindTime TO AnimatedViewpointRecorderTimer' + numberOfToursCreated + '.startTime\n' +",
+"      '         ROUTE AnimatedViewpointRecorderTimer' + numberOfToursCreated + '.fraction_changed TO AnimatedViewpointRecorderPosition' + numberOfToursCreated + '.set_fraction\n' +",
+"      '         ROUTE AnimatedViewpointRecorderTimer' + numberOfToursCreated + '.fraction_changed TO AnimatedViewpointRecorderOrientation' + numberOfToursCreated + '.set_fraction\n' +",
+"      '         ROUTE AnimatedViewpointRecorderPosition' + numberOfToursCreated + '.value_changed TO AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '.position\n' +",
+"      '         ROUTE AnimatedViewpointRecorderOrientation' + numberOfToursCreated + '.value_changed TO AnimatedViewpointRecorderViewpoint' + numberOfToursCreated + '.orientation\n' +",
+"      '      }\n' +",
+"      '   ]\n' +",
+"      '}\n';",
+"",
+"   Browser.print ('\n');",
+"   if (outputClassicVRML) Browser.print (vrmlString);",
+"",
+"   numberOfToursCreated++;",
+"   // TODO",
+"   // newNode = new SFNode(vrmlString);",
+"   // newViewpointGroup.children[numberOfToursCreated] = newNode;",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "@DEF":"RouteHolder",
+                              "-children":[
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"position_changed",
+                                    "@fromNode":"WhereSensor",
+                                    "@toField":"set_position",
+                                    "@toNode":"RecordingScript"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"orientation_changed",
+                                    "@fromNode":"WhereSensor",
+                                    "@toField":"set_orientation",
+                                    "@toNode":"RecordingScript"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"recordingInProgress",
+                                    "@fromNode":"RecordingScript",
+                                    "@toField":"enabled",
+                                    "@toNode":"WhereSensor"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Background":
+            {
+              "@groundColor":[0.2,0.4,0.2],
+              "@skyColor":[0.2,0.2,0.4]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Animated Viewpoint Recorder",
+              "@position":[0,0,14]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"AnimatedViewpointRecorder Example",
+              "@url":["AnimatedViewpointRecorderExample.x3d","https://savage.nps.edu/Savage/Tools/Authoring/AnimatedViewpointRecorderExample.x3d","AnimatedViewpointRecorderExample.wrl","https://savage.nps.edu/Savage/Tools/Authoring/AnimatedViewpointRecorderExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["AnimatedViewpointRecorderPrototype","is a prototype definition file","","Click this text to see","AnimatedViewpointRecorderExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":1.2
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.6,0.8,0.4]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"WolverineScene.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Wolverine is an M1A1 tank chassis with a deployable Heavy Assualt Bridge(HAB). Original M1A1 model authored by Scott Tufts."
+          },
+          {
+            "@name":"creator",
+            "@content":"Nick Wittwer"
+          },
+          {
+            "@name":"created",
+            "@content":"15 February 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"WolverineConstructionReport.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/m1.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/wolverine.htm"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/wol3.jpg"
+          },
+          {
+            "@name":"drawing",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/wolverine.htm"
+          },
+          {
+            "@name":"subject",
+            "@content":"Wolverine, HAB, Heavy Assault Bridge, AVLB, M1A1 Main Battle Tank, Abrams, MBT,"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"license",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/X3dSceneAuthoringHints.html#license"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/Wolverine/WolverineScene.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"Viewpoints",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Side",
+                    "@position":[0,2,10]
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@description":"Side and back",
+                    "@orientation":[1,0,0,-0.35],
+                    "@position":[-15,3.5,17]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Scene",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"River",
+                    "@translation":[-18.15,-6,-20],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[20,4,60]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "MovieTexture":
+                                    {
+                                      "@loop":true,
+                                      "@url":["wrlpool.mpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/wrlpool.mpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Land",
+                    "@translation":[2,-5,-20],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[20,4,60]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["plants12.jpg","https://savage.nps.edu/Savage/GroundVehicles/Wolverine/plants12.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-39.5,0,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"Land"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "DirectionalLight":
+                  {
+                    "@direction":[0.7071,0.7071,0]
+                  }
+                },
+                { "Background":
+                  {
+                    "@backUrl":["mount.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+                    "@frontUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+                    "@groundAngle":[1.309,1.570796],
+                    "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+                    "@leftUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+                    "@rightUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+                    "@skyAngle":[1.309,1.571],
+                    "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"WolverineInline",
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"Wolverine",
+                    "@url":["Wolverine.x3d","https://savage.nps.edu/Savage/GroundVehicles/Wolverine/Wolverine.x3d","Wolverine.wrl","https://savage.nps.edu/Savage/GroundVehicles/Wolverine/Wolverine.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

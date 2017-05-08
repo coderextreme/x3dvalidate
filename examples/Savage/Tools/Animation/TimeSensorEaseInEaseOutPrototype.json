@@ -1,0 +1,308 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TimeSensorEaseInEaseOutPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Time sensor ease-in ease-out design pattern, implemented as a reusable prototype node."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and MV4204 class"
+          },
+          {
+            "@name":"created",
+            "@content":"4 April 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"TimeSensorEaseInEaseOutExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"TimeDelaySensorPrototype.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"TimeSensorEaseInEaseOut"
+          },
+          {
+            "@name":"info",
+            "@content":"X3D v3.1 or greater"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/TimeSensorEaseInEaseOutPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"TimeSensorEaseInEaseOut",
+              "@appinfo":"TimeSensorEaseInEaseOut is a TimeSensor node with gradual start and stop rates",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"enabled",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"whether sensor is active",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"repeat indefinitely when loop=true, repeat only once when loop=false",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"cycleInterval",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"loop duration in seconds",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"fraction_changed",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"fraction_changed sends values in range [0,1] showing time progress in the current cycle",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"isActive true/false events are sent when TimeSensor starts/stops running",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"isPaused",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"isPaused true/false events are sent when TimeSensor is paused/resumed",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"when current time exceeds startTime, isActive becomes true and sensor becomes active",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"stopTime",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"when current time exceeds stopTime, isActive becomes false and sensor becomes inactive",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"pauseTime",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"when current time exceeds pauseTime, isPaused becomes false and sensor becomes paused",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"resumeTime",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"when current time exceeds resumeTime, isPaused becomes false and sensor resumes running",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"cycleTime",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"cycleTime sends a time event at startTime, and also at the beginning of each new cycle",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"elapsedTime",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"elapsed time since TimeSensor activated/running, cumulative in seconds, not counting any paused time",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"time",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"absolute time (since January 1, 1970) for each event loop",
+                      "@type":"SFTime"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "TimeSensor":
+                            {
+                              "@DEF":"TimeDelayClock",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"enabled",
+                                      "@protoField":"enabled"
+                                    },
+                                    {
+                                      "@nodeField":"loop",
+                                      "@protoField":"loop"
+                                    },
+                                    {
+                                      "@nodeField":"cycleInterval",
+                                      "@protoField":"cycleInterval"
+                                    },
+                                    {
+                                      "@nodeField":"isActive",
+                                      "@protoField":"isActive"
+                                    },
+                                    {
+                                      "@nodeField":"isPaused",
+                                      "@protoField":"isPaused"
+                                    },
+                                    {
+                                      "@nodeField":"startTime",
+                                      "@protoField":"startTime"
+                                    },
+                                    {
+                                      "@nodeField":"stopTime",
+                                      "@protoField":"stopTime"
+                                    },
+                                    {
+                                      "@nodeField":"pauseTime",
+                                      "@protoField":"pauseTime"
+                                    },
+                                    {
+                                      "@nodeField":"resumeTime",
+                                      "@protoField":"resumeTime"
+                                    },
+                                    {
+                                      "@nodeField":"cycleTime",
+                                      "@protoField":"cycleTime"
+                                    },
+                                    {
+                                      "@nodeField":"elapsedTime",
+                                      "@protoField":"elapsedTime"
+                                    },
+                                    {
+                                      "@nodeField":"time",
+                                      "@protoField":"time"
+                                    }
+                                  ],
+                                  "-children":[
+                                    {
+                                      "#comment":"fraction_changed is handled by ScalarInterpolator"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ScalarInterpolator":
+                            {
+                              "@DEF":"PiecewiseLinearDelayFilter",
+                              "@key":[0,0.1,0.9,1],
+                              "@keyValue":[0,0.03,0.97,1],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"value_changed",
+                                      "@protoField":"fraction_changed"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"TimeDelayClock",
+                              "@toField":"set_fraction",
+                              "@toNode":"PiecewiseLinearDelayFilter"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"======================================"
+          },
+          {
+            "#comment":"Example use"
+          },
+          { "Anchor":
+            {
+              "@description":"TimeSensorEaseInEaseOut Example",
+              "@url":["TimeSensorEaseInEaseOutExample.x3d","https://savage.nps.edu/Savage/Tools/Animation/TimeSensorEaseInEaseOutExample.x3d","TimeSensorEaseInEaseOutExample.wrl","https://savage.nps.edu/Savage/Tools/Animation/TimeSensorEaseInEaseOutExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["TimeSensorEaseInEaseOutPrototype","defines a prototype","","Click text to see","TimeSensorEaseInEaseOutExample scene"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.7
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Example08.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"27 June 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D working group"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/exampleD_8.wrl"
+          },
+          {
+            "@name":"description",
+            "@content":"VRML 97 specification example: Anchor examples."
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"VRML 97, ISO/IEC 14772-1, Part 1: Functional specification and UTF-8 encoding, D.8 Anchor"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/documents/specifications/14772/V2.0/part1/examples.html#D.8"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example08.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Anchor":
+            {
+              "@description":"example link",
+              "@parameter":["target=name_of_frame"],
+              "@url":["http://somehost/somefile.html"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"DefaultAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"another example link",
+              "@url":["http://www.school.edu/vrml/someScene.wrl#OverView"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"DefaultAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Doorway Viewpoint added."
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Doorway",
+              "@description":"Example view"
+            }
+          },
+          {
+            "#comment":"Error in the VRML 97 specification example: the following Anchor url did not point to a Viewpoint. Doorway Viewpoint needed."
+          },
+          { "Anchor":
+            {
+              "@description":"Doorway viewpoint",
+              "@url":["#Doorway"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

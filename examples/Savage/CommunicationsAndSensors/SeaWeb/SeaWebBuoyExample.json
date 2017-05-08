@@ -1,0 +1,639 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SeaWebBuoyExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"An example scene with 2 SeaWeb buoys."
+          },
+          {
+            "@name":"creator",
+            "@content":"Oliver Tan and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"7 June 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 June 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"SeaWeb, buoy, repeater"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "-children":[
+      {
+        "#comment":"Issue in Xj3D: org.web3d.vrml.lang.InvalidFieldConnectionException: The source field(TransmissionDuration2.triggerValue) type SFInt32 and destination field(SeaWebBuoyInstance1.set_transmissionDuration) type SFTime don't match. Line: 92 Column: 143"
+      }
+    ],
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"SeaWebBuoy",
+              "@url":["SeaWebBuoyPrototype.x3d#SeaWebBuoy","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.x3d#SeaWebBuoy","SeaWebBuoyPrototype.wrl#SeaWebBuoy","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.wrl#SeaWebBuoy"],
+              "field": [
+                {
+                  "@name":"set_position",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Position of buoy.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"position",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Position of buoy.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"set_targetPosition",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Position of target of transmission.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"targetPosition",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Position of target of transmission.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"set_targetIdNumber",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Id number of target.",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"targetIdNumber",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Id number of target.",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_enabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Enable buoy for transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"enabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Enable buoy for transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_activated",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Start transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"activated",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Start transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_transmissionDuration",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Duration in seconds needed to transmit message (does not include transmissionTimeDelay or propagation delay).",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"transmissionDuration",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Duration in seconds needed to transmit message (does not include transmissionTimeDelay or propagation delay).",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_transmissionTimeDelay",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Time delay before transmission begins.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"transmissionTimeDelay",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Time delay before transmission begins.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_directionalTransmission",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"directionalTransmission",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_buoyType",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"buoyType",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"set_textMessage",
+                  "@accessType":"inputOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"textMessage",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"textMessageColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"set_description",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"SeaWeb buoys: click to test communications",
+              "@fieldOfView":0.9,
+              "@position":[0,0,35]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"SeaWebBuoy",
+              "@DEF":"SeaWebBuoyInstance1",
+              "fieldValue": [
+                {
+                  "@name":"position",
+                  "@value":[-10,0,0]
+                },
+                {
+                  "@name":"targetPosition",
+                  "@value":[10,0,0]
+                },
+                {
+                  "@name":"enabled",
+                  "@value":true
+                },
+                {
+                  "@name":"activated",
+                  "@value":false
+                },
+                {
+                  "@name":"transmissionDuration",
+                  "@value":5
+                },
+                {
+                  "@name":"transmissionTimeDelay",
+                  "@value":2
+                },
+                {
+                  "@name":"directionalTransmission",
+                  "@value":false
+                },
+                {
+                  "@name":"buoyType",
+                  "@value":"Racom"
+                },
+                {
+                  "@name":"textMessage",
+                  "@value":["Message left-to-right"]
+                },
+                {
+                  "@name":"textMessageColor",
+                  "@value":[1,0,0]
+                },
+                {
+                  "@name":"description",
+                  "@value":"SeaWeb Racom Buoy"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@value":true
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"SeaWebBuoy",
+              "@DEF":"SeaWebBuoyInstance2",
+              "fieldValue": [
+                {
+                  "@name":"position",
+                  "@value":[10,0,0]
+                },
+                {
+                  "@name":"targetPosition",
+                  "@value":[-10,0,0]
+                },
+                {
+                  "@name":"enabled",
+                  "@value":true
+                },
+                {
+                  "@name":"activated",
+                  "@value":false
+                },
+                {
+                  "@name":"transmissionDuration",
+                  "@value":5
+                },
+                {
+                  "@name":"transmissionTimeDelay",
+                  "@value":0.5
+                },
+                {
+                  "@name":"directionalTransmission",
+                  "@value":true
+                },
+                {
+                  "@name":"buoyType",
+                  "@value":"Telesonar"
+                },
+                {
+                  "@name":"textMessage",
+                  "@value":["Message right-to-left"]
+                },
+                {
+                  "@name":"textMessageColor",
+                  "@value":[0,1,0]
+                },
+                {
+                  "@name":"description",
+                  "@value":"SeaWeb Telesonar Buoy"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@value":true
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[1,0,0,-0.15],
+              "@translation":[0,1,25],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-4.5,-3,0],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "@axisOfRotation":[0,0,0],
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"TextAppearance",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.8,0.8,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["Single 4 seconds","left-right transmission","with 2 second delay"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.4
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"TransparentAppearance",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@transparency":1
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[3.4,1.3,0.01]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "TouchSensor":
+                                    {
+                                      "@DEF":"SingleTransmissionTextTouch",
+                                      "@description":"SingleTransmissionText"
+                                    }
+                                  },
+                                  { "IntegerTrigger":
+                                    {
+                                      "@DEF":"TransmissionDuration2",
+                                      "@integerKey":4
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"isActive",
+                                      "@fromNode":"SingleTransmissionTextTouch",
+                                      "@toField":"set_boolean",
+                                      "@toNode":"TransmissionDuration2"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"triggerValue",
+                                      "@fromNode":"TransmissionDuration2",
+                                      "@toField":"set_transmissionDuration",
+                                      "@toNode":"SeaWebBuoyInstance1"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"isActive",
+                                      "@fromNode":"SingleTransmissionTextTouch",
+                                      "@toField":"set_activated",
+                                      "@toNode":"SeaWebBuoyInstance1"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-3,0],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "@axisOfRotation":[0,0,0],
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"TextAppearance"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["Single 1 second","right-left transmission"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.4
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"TransparentAppearance"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[3.2,1,0.01]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "TouchSensor":
+                                    {
+                                      "@DEF":"SingleTransmissionTextTouch2",
+                                      "@description":"SingleTransmissionText2"
+                                    }
+                                  },
+                                  { "IntegerTrigger":
+                                    {
+                                      "@DEF":"TransmissionDuration1",
+                                      "@integerKey":1
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"isActive",
+                                      "@fromNode":"SingleTransmissionTextTouch2",
+                                      "@toField":"set_boolean",
+                                      "@toNode":"TransmissionDuration1"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"triggerValue",
+                                      "@fromNode":"TransmissionDuration1",
+                                      "@toField":"set_transmissionDuration",
+                                      "@toNode":"SeaWebBuoyInstance2"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"isActive",
+                                      "@fromNode":"SingleTransmissionTextTouch2",
+                                      "@toField":"set_activated",
+                                      "@toNode":"SeaWebBuoyInstance2"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[4.5,-3,0],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "@axisOfRotation":[0,0,0],
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"TextAppearance"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@string":["Single 3 second"," right-left transmission"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.4
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"TransparentAppearance"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[3.2,1,0.01]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "IntegerTrigger":
+                                    {
+                                      "@DEF":"TransmissionDurationRL2",
+                                      "@integerKey":3
+                                    }
+                                  },
+                                  { "TouchSensor":
+                                    {
+                                      "@DEF":"Single3SecRLTransmissionTextTouch",
+                                      "@description":"Single3SecRLTransmissionText"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"isActive",
+                                      "@fromNode":"Single3SecRLTransmissionTextTouch",
+                                      "@toField":"set_boolean",
+                                      "@toNode":"TransmissionDurationRL2"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"triggerValue",
+                                      "@fromNode":"TransmissionDurationRL2",
+                                      "@toField":"set_transmissionDuration",
+                                      "@toNode":"SeaWebBuoyInstance2"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"isActive",
+                                      "@fromNode":"Single3SecRLTransmissionTextTouch",
+                                      "@toField":"set_activated",
+                                      "@toNode":"SeaWebBuoyInstance2"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

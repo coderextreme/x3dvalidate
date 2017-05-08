@@ -1,0 +1,114 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SeaStarHighResolutionExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example instance of a SeaStar high-resolution prototype using default settings."
+          },
+          {
+            "@name":"creator",
+            "@content":"Charles Adams"
+          },
+          {
+            "@name":"created",
+            "@content":"19 December 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 March 2009"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright (c) c h a productions 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Sea star, high resolution",
+              "@orientation":[1,0,0,-1.57],
+              "@position":[0,0.2,0]
+            }
+          },
+          {
+            "#comment":"note mismatch between filename SeaStarHighResolutionPrototype.x3d and prototype name SeaStar"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SeaStar",
+              "@url":["SeaStarHighResolutionPrototype.x3d#SeaStar","http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionPrototype.x3d#SeaStar","http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionPrototype.wrl#SeaStar","SeaStarHighResolutionPrototype.wrl#SeaStar"],
+              "field": [
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"Appearance",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"SeaStar",
+              "fieldValue": [
+                {
+                  "@name":"Appearance",
+                  "-children":[
+                    { "Appearance":
+                      {
+                        "-material":
+                          { "Material":
+                            {
+                              "@diffuseColor":[1,0.490196,0.380392]
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

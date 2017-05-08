@@ -1,0 +1,168 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExtendedPylon.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Michael Collins"
+          },
+          {
+            "@name":"created",
+            "@content":"21 March 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 April 2004"
+          },
+          {
+            "@name":"description",
+            "@content":"Extended pylon for torpedo, fuel tank and helfire mod. Configurations include fuel tank and torpedo or helfire four missile rack. Possible future missions include transport of AUV into hostile waters for recon and mapping."
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/sh-60.htm"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/SH60-Seahawk-UnitedStates/ExtendedPylon.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.2],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57],
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@coordIndex":[0,7,2,3,6,5,-1,0,5,8,3,2,9,-1,0,9,1,7,-1,9,2,7,1,-1,5,6,3,8,-1],
+                                            "@creaseAngle":10,
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[0.0,0.0,0.0,0.3,0,0,1,0,0,1,5,0,0.3,5.0,0,0,5,0,0.3,5,0.1,0.3,0,0.1,0.3,5,-0.1,0.3,0,-0.1]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57],
+                          "@scale":[1,0.6,1],
+                          "@translation":[0.5,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,3.2],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@coordIndex":[0,7,2,3,6,5,-1,0,5,8,3,2,9,-1,0,9,1,7,-1,9,2,7,1,-1,5,6,3,8,-1],
+                                            "@creaseAngle":10,
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[0.0,0.0,0.0,0.3,0,0,2,0.5,0,2,4,0,0.3,5.0,0,0,5,0,0.3,5,0.1,0.3,0,0.1,0.3,5,-0.1,0.3,0,-0.1]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          }
+        ]
+    }
+  }
+}

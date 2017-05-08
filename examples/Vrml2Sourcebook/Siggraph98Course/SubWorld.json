@@ -1,0 +1,365 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SubWorld.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Multiple sounds example: submarine world with sounds. This world illustrates the use of multiple sounds and their ellipsoids to arrange so that different sounds are heard at different points in the world."
+          },
+          {
+            "@name":"creator",
+            "@content":"John L. Moreland"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/subworld.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0350.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/SubWorld.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1998, John L. Moreland"],
+              "@title":"Submarine world with sounds"
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE","ALL"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Above",
+              "@orientation":[1.0,0.0,0.0,-0.7],
+              "@position":[0.0,10.0,19.0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Surface",
+              "@position":[0.0,0.0,20.0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Below",
+              "@position":[0.0,-3.0,20.0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Middle",
+              "@position":[0.0,-3.0,0.0]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-textureTransform":
+                            { "TextureTransform":
+                              {
+                                "@DEF":"WaterTT",
+                                "@scale":[0.3,0.3]
+                              }
+                            },
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.254,0.494,0.8965],
+                                "@emissiveColor":[0.254,0.494,0.8965],
+                                "@transparency":0.5
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["water.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/water.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,3,0],
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[20.0,0.0,20.0,20.0,0.0,-20.0,-20.0,0.0,-20.0,-20.0,0.0,20.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Sub",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[10.0,-2.0,0.0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["Sub.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Sub.x3d","Sub.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Sub.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.0,0.3,0.7,0.0,0.2,0.3,0.0,0.0,0.3],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0.0,0.2,0.9,0.0,0.3,0.8,0.254,0.494,0.8965]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TS",
+              "@cycleInterval":8.0,
+              "@loop":true
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"OI",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14159,0.0,1.0,0.0,6.283]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"OI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"OI",
+              "@toField":"set_rotation",
+              "@toNode":"Sub"
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TS2",
+              "@cycleInterval":90.0,
+              "@loop":true
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"OI2",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14159,0.0,1.0,0.0,6.283]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"Churn",
+              "field": [
+                {
+                  "@name":"one_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_rotation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFRotation"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"\t\tfunction set_rotation( rot, et )",
+"\t\t{",
+"\t\t\tone_changed = rot[3];",
+"\t\t}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS2",
+              "@toField":"set_fraction",
+              "@toNode":"OI2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"OI2",
+              "@toField":"set_rotation",
+              "@toNode":"Churn"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"one_changed",
+              "@fromNode":"Churn",
+              "@toField":"set_rotation",
+              "@toNode":"WaterTT"
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[40.0,9.0,40.0],
+              "@translation":[0.0,8.0,0.0],
+              "-children":[
+                { "Sound":
+                  {
+                    "@maxBack":1.0,
+                    "@maxFront":1.0,
+                    "@spatialize":false,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@loop":true,
+                          "@url":["air.wav","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/air.wav"]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[25.0,1.0,25.0],
+              "-children":[
+                { "Sound":
+                  {
+                    "@maxBack":1.0,
+                    "@maxFront":1.0,
+                    "@spatialize":false,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@loop":true,
+                          "@url":["paddle.wav","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/paddle.wav"]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[40.0,9.0,40.0],
+              "@translation":[0.0,-8.0,0.0],
+              "-children":[
+                { "Sound":
+                  {
+                    "@maxBack":1.0,
+                    "@maxFront":1.0,
+                    "@spatialize":false,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@loop":true,
+                          "@url":["water.wav","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/water.wav"]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,346 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BeamCylinderExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"25 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 December 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Produce wireframe or transparent beam cylinders."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0,0.3,0.5]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@info":["Produce wireframe or transparent beam cylinders"],
+              "@title":"BeamCylinderPrototype"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"BeamCylinder example",
+              "@position":[5,0,10]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamCylinder",
+              "@appinfo":"Produce wireframe or transparent beam cylinders. Typical uses include propeller/thruster water flow or line-of-sight sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: beam with apex at (0 0 0) and base of radius 1 in x-z plane at (1 0 0).",
+              "@url":["BeamCylinderPrototype.x3d#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","BeamCylinderPrototype.wrl#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder"],
+              "field": [
+                {
+                  "@name":"name",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Assigning a name to a BeamCylinder aids tracing",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamHeight",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across vertical y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"beamWidth",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across horizontal z axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Viewable geometry for this scene"
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"BeamCylinder",
+                    "@DEF":"BeamCylinderInstance",
+                    "fieldValue": [
+                      {
+                        "@name":"name",
+                        "@value":"BeamCylinderInstance"
+                      },
+                      {
+                        "@name":"defaultRange",
+                        "@value":10
+                      },
+                      {
+                        "@name":"beamHeight",
+                        "@value":1
+                      },
+                      {
+                        "@name":"beamWidth",
+                        "@value":0.5
+                      },
+                      {
+                        "@name":"transparency",
+                        "@value":0.2
+                      },
+                      {
+                        "@name":"wireframe",
+                        "@value":true
+                      },
+                      {
+                        "@name":"solid",
+                        "@value":true
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[5,-3,0],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.8,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["Touch text to toggle contact-mode rendering"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.6
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "TouchSensor":
+                              {
+                                "@description":"Hover over text to activate contact mode"
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"transparent Box as text-selection assist"
+                                  }
+                                ],
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[9,1,0.001]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@transparency":1
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TextTouch",
+                          "@description":"touch text to toggle contactColor noContactColor"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isOver",
+                          "@fromNode":"TextTouch",
+                          "@toField":"contact",
+                          "@toNode":"BeamCylinderInstance"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimationGroup",
+              "-children":[
+                { "TimeSensor":
+                  {
+                    "@DEF":"Clock",
+                    "@cycleInterval":10,
+                    "@loop":true
+                  }
+                },
+                { "ScalarInterpolator":
+                  {
+                    "@DEF":"RangeInterpolator",
+                    "@key":[0,0.4,0.4,0.5,0.5,0.9,0.9,1],
+                    "@keyValue":[0.01,10,0,0,-0.01,-10,0,0]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"RangeInterpolator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"RangeInterpolator",
+                    "@toField":"range",
+                    "@toNode":"BeamCylinderInstance"
+                  }
+                },
+                {
+                  "#comment":"=========="
+                },
+                { "ScalarInterpolator":
+                  {
+                    "@DEF":"TransparencyInterpolator",
+                    "@key":[0,0.4,0.4,0.5,0.5,0.9,0.9,1],
+                    "@keyValue":[0,1,1,1,0,1,1,1]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"TransparencyInterpolator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"TransparencyInterpolator",
+                    "@toField":"transparency",
+                    "@toNode":"BeamCylinderInstance"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

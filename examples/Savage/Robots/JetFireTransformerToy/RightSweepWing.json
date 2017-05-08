@@ -1,0 +1,107 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RightSweepWing.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Right Sweep Wing"
+          },
+          {
+            "@name":"creator",
+            "@content":"Kreg L. Kelly"
+          },
+          {
+            "@name":"created",
+            "@content":"22 September 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 March 2016"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/JetFireTransformerToy/RightSweepWing.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.5702],
+              "@groundColor":[0.5,0.3,0.3,0.5,0.3,0.3,0.5,0.4,0.4],
+              "@skyAngle":[1.309,1.572],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"Main Wing"
+                      }
+                    ],
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.8,0.8]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,3,4,5,6,7,8,-1,0,1,9,10,11,12,13,14,15,-1,1,2,9,-1,9,10,3,2,-1,10,11,4,3,-1,11,12,5,4,-1,12,13,6,5,-1,13,14,7,6,-1,14,15,8,7,-1,15,0,8,-1],
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[5.72,0,0,2.035,0,0,1.705,0.11,-0.55,0,0.1375,-0.99,0,0.1375,-1.925,0.88,0.1375,-1.87,1.045,0.0275,-2.2,5.665,0.0275,-1.1,5.775,0.055,-0.55,1.705,0,-0.55,0,0,-0.99,0,0,-1.925,0.88,0,-1.87,1.045,0,-2.2,5.665,0,-1.1,5.775,0,-0.55]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

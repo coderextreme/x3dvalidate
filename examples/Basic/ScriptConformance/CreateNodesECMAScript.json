@@ -1,0 +1,127 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CreateNodesECMAScript.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This example shows how to use createX3DFromString to create nodes"
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D Specification"
+          },
+          {
+            "@name":"translated",
+            "@content":"23 February 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 February 2005"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D ECMAScript Script Authoring Interface (SAI)"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/CreateNodesECMAScript.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-19777-1-X3DLanguageBindings-ECMAScript/Part1/examples.html#CreateNodes"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"HOLDER",
+              "@translation":[-2.0,0.0,0.0]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"SC",
+              "field": [
+                {
+                  "@name":"children",
+                  "@accessType":"outputOnly",
+                  "@type":"MFNode",
+                  "-children":[
+                    {
+                      "#comment":"initialization nodes (if any) go here"
+                    }
+                  ]
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize() ",
+"{",
+"    // Create nodes directly in the parent scene",
+"    shape = Browser.currentScene.createNode('Shape');",
+"    box = Browser.currentScene.createNode('Box');",
+"    shape.geometry = box;",
+"    Browser.currentScene.RootNodes[0] = shape;",
+"",
+"    // Create children using the createX3DFromString service",
+"    vrmlCmd = 'PROFILE Interchange  Shape { geometry Sphere{} }'",
+"    tmpScene = Browser.createX3DFromString(vrmlCmd);",
+"    nodes = tmpScene.rootNodes;",
+"",
+"    // Nodes must be removed before adding to another scene",
+"    for(i=0; i < nodes.length; i++) {",
+"        tmpScene.removeRootNode(nodes[i]);",
+"    }",
+"",
+"    children = nodes;",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"children",
+              "@fromNode":"SC",
+              "@toField":"children",
+              "@toNode":"HOLDER"
+            }
+          }
+        ]
+    }
+  }
+}

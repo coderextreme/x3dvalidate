@@ -1,0 +1,214 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure05.11NestedArchways.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 5.11, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch05/05fig11.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"8 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 October 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"Nesting coordinate systems."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter05-PositioningShapes/Figure05.11NestedArchways.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"View Arch",
+              "@orientation":[1,0,0,-0.2],
+              "@position":[0,6,20]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Default viewpoint at (0 0 10) has poor visibility on ground plane visibility, higher viewpoint preferred."
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Floor",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"GREY_SPECULAR_SHINY",
+                          "-material":
+                            { "Material":
+                              {
+                                "@shininess":0.8,
+                                "@specularColor":[0.8,0.8,0.8]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[25,0.1,25]
+                        }
+                      }
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"Archway",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"LEFT_COLUMN",
+                          "@translation":[-2,3,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"COLUMN",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"GREY_SPECULAR_SHINY"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":6,
+                                      "@radius":0.3
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"RIGHT_COLUMN",
+                          "@translation":[2,3,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"COLUMN"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"ARCHWAY_SPAN",
+                          "@translation":[0,6.05,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"GREY_SPECULAR_SHINY"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[4.6,0.4,0.6]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0,-2],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"LEFT_COLUMN"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"RIGHT_COLUMN"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"ARCHWAY_SPAN"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0,3],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"Archway"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

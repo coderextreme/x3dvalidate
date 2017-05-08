@@ -1,0 +1,104 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure23.3aExponentialFogVisibility100.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 23.3, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch23/23fig03a.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"22 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"An exponential-fog world with a visibility range of 100m. Compare Figures 23.3a, 3b and 3c."
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure23.3bExponentialFogVisibility40.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure23.3cExponentialFogVisibility20.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter23-Fog/Figure23.3aExponentialFogVisibility100.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Seven pairs of columns",
+              "@position":[0,3,32]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["FLY","EXAMINE","ANY"]
+            }
+          },
+          { "Fog":
+            {
+              "@fogType":"EXPONENTIAL",
+              "@visibilityRange":100
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0,0,0],
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["Figure23.1FogTestWorld.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter23-Fog/Figure23.1FogTestWorld.x3d","Figure23.1FogTestWorld.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter23-Fog/Figure23.1FogTestWorld.wrl"]
+            }
+          }
+        ]
+    }
+  }
+}

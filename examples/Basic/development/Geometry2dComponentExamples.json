@@ -1,0 +1,554 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geometry2D",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Geometry2dComponentExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Examples showing native use of X3D Geometry2D component nodes (Arc2D ArcClose2D Circle2D Disk2D Polyline2D Polypoint2D Rectangle2D TriangleSet2D), implemented as prototypes for backwards compatibility with VRML 97. Also provides Unfilled ProtoInstance versions of some nodes since FillProperties not possible in VRML 97. 2D nodes are considered particularly helpful for CADPart geometry and building user interfaces such as Heads-Up Displays (HUDs)."
+          },
+          {
+            "@name":"creator",
+            "@content":"Christos Kalogrias, Don Brutzman, Ken Curtin, Duane Davis"
+          },
+          {
+            "@name":"created",
+            "@content":"16 November 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 June 2016"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesBsContact.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesCobweb.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesFreeWRL.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesH3dViewer.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesOctagaVS.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesView3dScene.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"Geometry2dComponentExamplesX3DOM.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"Geometry2dComponentExternProtos.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Geometry2dComponentPrototypes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry2D.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"Geometry2D component nodes (Arc2D ArcClose2D Circle2D Disk2D Polyline2D Polypoint2D Rectangle2D TriangleSet2D)"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"===================="
+          },
+          { "Background":
+            {
+              "@groundColor":[0.3,0.3,0.3],
+              "@skyColor":[0.3,0.3,0.3]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Geometry2D Component Examples",
+              "@position":[0,0,12]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Top row"
+          },
+          { "Transform":
+            {
+              "@translation":[-6,2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"ArcClose2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "ArcClose2D":
+                        {
+                          "@endAngle":3.0,
+                          "@startAngle":0.7
+                        }
+                      },
+                    "-children":[
+                      {
+                        "#comment":"default radius='1'"
+                      }
+                    ],
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0,1],
+                                "@emissiveColor":[0,0,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Arc2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Arc2D":
+                        {
+                        }
+                      },
+                    "-children":[
+                      {
+                        "#comment":"default radius='1' startAngle='0'"
+                      }
+                    ],
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TransparentBackdropForTouchSensor",
+                    "@translation":[0,0,-0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Rectangle2D":
+                              {
+                              }
+                            },
+                          "-children":[
+                            {
+                              "#comment":"default"
+                            }
+                          ],
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0,0],
+                                      "@transparency":1
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Circle2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Circle2D":
+                        {
+                        }
+                      },
+                    "-children":[
+                      {
+                        "#comment":"default radius='1'"
+                      }
+                    ],
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,0,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"TransparentBackdropForTouchSensor"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[6,2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Disk2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Disk2D":
+                        {
+                          "@innerRadius":0.5
+                        }
+                      },
+                    "-children":[
+                      {
+                        "#comment":"default outerRadius='1'"
+                      }
+                    ],
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Bottom row"
+          },
+          { "Transform":
+            {
+              "@translation":[-6,-2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Rectangle2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Rectangle2D":
+                        {
+                          "@size":[1,2]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,-2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Polyline2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Polyline2D":
+                        {
+                          "@lineSegments":[-1,0,-0.5,1,0,0,0.5,1,1,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0,0],
+                                "@emissiveColor":[1,0.5,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"TransparentBackdropForTouchSensor"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,-2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Polypoint2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Polypoint2D":
+                        {
+                          "@point":[-1,0,-0.5,1,0,0,0.5,1,1,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.1,0.4,-0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Rectangle2D":
+                              {
+                                "@DEF":"BackDrop",
+                                "@size":[2.8,2]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0,0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-0.15,0.2],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["PolyPoint2D","5 points"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.25,
+                                            "@style":"BOLD"
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[6,-2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"TriangleSet2D"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "TriangleSet2D":
+                        {
+                          "@vertices":[0,0,1,1,-1,1,0,0,1,-0.5,1,0.5,0,0,-2,-1,-1,-2]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-fillProperties":
+                            { "FillProperties":
+                              {
+                                "@DEF":"TestFillProperties"
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@DEF":"TestLineProperties",
+                                "@linewidthScaleFactor":1,
+                                "-metadata":
+                                  { "MetadataString":
+                                    {
+                                      "@name":"test LineProperties metadata child",
+                                      "@DEF":"TestLinePropertiesMetaData"
+                                    }
+                                  }
+                              }
+                            },
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

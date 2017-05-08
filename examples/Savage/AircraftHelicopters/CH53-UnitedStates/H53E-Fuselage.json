@@ -1,0 +1,175 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"H53E-Fuselage.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"H-53E fuselage body created by extrusion. Dimensions in proportion with fuselage."
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Terry D. Norbraten, USN"
+          },
+          {
+            "@name":"created",
+            "@content":"15 March 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 August 2010"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/h-53.htm"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/ch-53-2.jpg"
+          },
+          {
+            "@name":"subject",
+            "@content":"CH-53E Sea Stallion Fuselage"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/CH53-UnitedStates/H53E-Fuselage.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"Fuselage",
+              "-children":[
+                { "Transform":
+                  {
+                    "@scale":[0.9,0.6,1],
+                    "@translation":[0,1.54,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Upper",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.137,
+                                      "@diffuseColor":[0.569,0.58,0.58],
+                                      "@specularColor":[0.671,0.459,0.439]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@creaseAngle":0.9,
+                                "@crossSection":[-0.7,-0.7,-0.7,0,-0.682842,0.119746,-0.661911,0.222491,-0.646716,0.267878,-0.60622,0.349389,-0.554784,0.426368,-0.494975,0.494975,-0.426368,0.554784,-0.349389,0.60622,-0.267878,0.646716,-0.181606,0.675717,-0.0908031,0.693779,0,0.7,0.0908031,0.693779,0.181606,0.675717,0.267878,0.646716,0.349389,0.60622,0.426368,0.554784,0.494975,0.494975,0.554784,0.426368,0.60622,0.349389,0.646716,0.267878,0.661911,0.222491,0.678596,0.145589,0.7,0,0.7,-0.7,-0.7,-0.7],
+                                "@spine":[0,0,3.5,0,0,0,0,0,-3.5]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Shape":
+                  {
+                    "@DEF":"Main",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.569,0.58,0.58],
+                                "@specularColor":[0.671,0.459,0.439]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":0.9,
+                          "@crossSection":[1,1,1.07512,0.928603,1.12076,0.805833,1.12663,-0.791435,1.06777,-0.940862,1,-1,0.928603,-1.07512,0.805833,-1.12076,-0.791435,-1.12663,-0.940862,-1.06777,-1,-1,-1.07512,-0.928603,-1.12076,-0.805833,-1.12663,0.791435,-1.06777,0.940862,-1,1,-0.928603,1.07512,-0.805833,1.12076,0.791435,1.12663,0.940862,1.06777,1,1],
+                          "@endCap":false,
+                          "@solid":false,
+                          "@spine":[0,0,3.5,0,0,-3.5]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Cockpit",
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Windscreen",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.569,0.58,0.58],
+                                "@specularColor":[0.671,0.459,0.439]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":0.628,
+                          "@crossSection":[-1.12372,-8.71754e-5,-1.09727,0.0286393,-1.06684,0.0579294,-1.03271,0.0876118,-0.99515,0.117515,-0.954441,0.147469,-0.910862,0.177301,-0.86469,0.206841,-0.791178,0.250228,-0.713395,0.291993,-0.632278,0.33156,-0.548765,0.36835,-0.463794,0.401786,-0.378302,0.431289,-0.321481,0.448488,-0.265123,0.463511,-0.209505,0.476188,-0.154906,0.486346,-0.101604,0.493815,-0.0498761,0.498423,0,0.5,0.0510009,0.498348,0.103921,0.493507,0.158464,0.485666,0.214336,0.475009,0.27124,0.461724,0.328883,0.445997,0.386969,0.428015,0.445202,0.407965,0.532183,0.374418,0.617835,0.337267,0.701163,0.297141,0.78117,0.254669,0.856859,0.210482,0.927235,0.165208,0.970709,0.134733,1.01108,0.104241,1.04806,0.0739204,1.08135,0.0439562,1.11066,0.0145355,1.12372,8.71754e-5,1.12663,-0.791435,1.06777,-0.940862,1,-1,0.928603,-1.07512,0.805833,-1.12076,-0.791435,-1.12663,-0.940862,-1.06777,-1,-1,-1.07512,-0.928603,-1.12076,-0.805833,-1.12372,-8.71754e-5],
+                          "@endCap":false,
+                          "@scale":[0.1,0.1,0.2691,0.2691,0.3509,0.3509,0.4164,0.4164,0.4764,0.4764,0.5364,0.5364,0.6018,0.6018,0.6727,0.6727,0.7655,0.7655,0.8909,0.8909,1,1],
+                          "@solid":false,
+                          "@spine":[0,0,4.9,0,0,4.89164,0,0,4.86985,0,0,4.83847,0,0,4.79594,0,0,4.73777,0,0,4.65368,0,0,4.53478,0,0,4.32927,0,0,3.94638,0,0,3.5]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

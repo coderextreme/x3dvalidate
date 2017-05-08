@@ -1,0 +1,248 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Nested.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Multiple nested sensors: this world illustrates the use of nested sensors where one sensor covers shapes in an inner Transform group, and another sensor covers shapes in an outer Transform group."
+          },
+          {
+            "@name":"creator",
+            "@content":"John L. Moreland"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/nested.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0172.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Nested.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1998, John L. Moreland"],
+              "@title":"Nested sensors"
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@orientation":[1.0,0.0,0.0,-0.25],
+              "@position":[0.0,1.0,2.0]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TopTf",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Segment1Tf",
+                    "@center":[0.0,-0.25,0.0],
+                    "@translation":[0.0,0.25,0.0],
+                    "-children":[
+                      { "SphereSensor":
+                        {
+                          "@DEF":"Segment1Ss"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Block",
+                          "@scale":[0.1,0.5,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"Appear",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1.0,1.0,0.0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.5
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,0.25,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Appear"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.05
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Segment2Tf",
+                          "@center":[0.0,0.25,0.0],
+                          "-children":[
+                            { "SphereSensor":
+                              {
+                                "@DEF":"Segment2Ss"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.0,0.5,0.0],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"Block"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"rotation_changed",
+              "@fromNode":"Segment1Ss",
+              "@toField":"set_rotation",
+              "@toNode":"Segment1Tf"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"rotation_changed",
+              "@fromNode":"Segment2Ss",
+              "@toField":"set_rotation",
+              "@toNode":"Segment2Tf"
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Box":
+                  {
+                    "@size":[2.0,0.02,2.0]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

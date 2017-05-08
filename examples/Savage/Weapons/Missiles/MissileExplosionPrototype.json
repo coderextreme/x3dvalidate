@@ -1,0 +1,287 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MissileExplosionPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple prototype for an Anti-Ship Missile (ASM) explosion."
+          },
+          {
+            "@name":"creator",
+            "@content":"James Harney"
+          },
+          {
+            "@name":"created",
+            "@content":"25 August 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.planetnine.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Cruiser-UnitedStates/Cruiser.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"www.specialoperations.com/multimedia/sounds.html/exp03.au"
+          },
+          {
+            "@name":"reference",
+            "@content":"See url \"soundpermissions.html\" for copyright info and use on missile1.au and exp03.au that are converted to missile1.wav and exp03.wav for use in this file/model"
+          },
+          {
+            "@name":"accessRights",
+            "@content":"soundpermissions.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"explosion.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/Missiles/MissileExplosionPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"ASMEXPLOSION",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"STARTEXPLOSION",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"THETIME",
+                      "@accessType":"inputOnly",
+                      "@type":"SFTime"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"EXPLOSION",
+                        "@scale":[0.05,0.05,0.05],
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                    "@DEF":"EXPSHAPE",
+                                    "@radius":25
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-children":[
+                                      {
+                                        "#comment":"explosion.png is from the Pearl Harbor scene from www.planetnine.com."
+                                      }
+                                    ],
+                                    "-texture":
+                                      { "ImageTexture":
+                                        {
+                                          "@DEF":"explosion",
+                                          "@url":["explosion.png","https://savage.nps.edu/Savage/Weapons/Missiles/explosion.png"]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          },
+                          {
+                            "#comment":"Note, explosion delay is hard coded into script. Must modify if you don't want a 28 sec delay to start."
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"TimeFilter",
+                              "field": [
+                                {
+                                  "@name":"setStart",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"startEventTime",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"InputTime",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFTime"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"setStart",
+                                      "@protoField":"STARTEXPLOSION"
+                                    },
+                                    {
+                                      "@nodeField":"InputTime",
+                                      "@protoField":"THETIME"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"",
+"function setStart ( value, InputTime ) {",
+"                         ",
+"\tstartEventTime = InputTime + 28 ;",
+"\t",
+"}"
+]
+                            }
+                          },
+                          {
+                            "#comment":"Used with permission. See soundpermissions.html for details."
+                          },
+                          { "Sound":
+                            {
+                              "@maxBack":50000,
+                              "@maxFront":50000,
+                              "-source":
+                                { "AudioClip":
+                                  {
+                                    "@DEF":"IMPACT",
+                                    "@description":"Explosion",
+                                    "@url":["EXP03.wav","https://savage.nps.edu/Savage/Weapons/Missiles/EXP03.wav"]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"EXPCLOCK",
+                        "@cycleInterval":16
+                      }
+                    },
+                    { "PositionInterpolator":
+                      {
+                        "@DEF":"EXPINTERP",
+                        "@key":[0,0.25,0.5,1],
+                        "@keyValue":[1,1,1,2.5,2.5,2.5,3,3,3,0.01,0.01,0.01]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"startEventTime",
+                        "@fromNode":"TimeFilter",
+                        "@toField":"set_startTime",
+                        "@toNode":"EXPCLOCK"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"startEventTime",
+                        "@fromNode":"TimeFilter",
+                        "@toField":"set_startTime",
+                        "@toNode":"IMPACT"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"EXPCLOCK",
+                        "@toField":"set_fraction",
+                        "@toNode":"EXPINTERP"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"EXPINTERP",
+                        "@toField":"set_scale",
+                        "@toNode":"EXPLOSION"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.604,0.753,0.804]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"Multiple Explosion Example",
+              "@parameter":["target=_blank"],
+              "@url":["MultipleExplosionExample.wrl","../../Weapons/Missiles/MultipleExplosionExample.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/MultipleExplosionExample.wrl","MultipleExplosionExample.x3d","../../Weapons/Missiles/MultipleExplosionExample.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/MultipleExplosionExample.x3d"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["MissileExplosionPrototype","is a prototype declaration file","","To see an example scene","click on this text and view","MissileExplosionExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

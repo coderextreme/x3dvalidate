@@ -1,0 +1,259 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"DungeonRoom.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Dungeon room: this world illustrates the use of Inlines to pull in pieces of a a dungeon room contained in other files. The entire room is then used in larger structures."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau, John L. Moreland, Michael M. Heck"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/droom.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0389.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/DungeonRoom.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Dungeon room",
+              "@position":[0,1.6,10]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,0.0,2.5],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"Floor",
+                    "@url":["DungeonFloor.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/DungeonFloor.x3d","DungeonFloor.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/DungeonFloor.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,0.0,-2.5],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Floor"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,3.5,2.5],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Floor"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,3.5,-2.5],
+              "-children":[
+                { "Inline":
+                  {
+                    "@USE":"Floor"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-5.0,0.0,0.0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"Wall",
+                          "@url":["DungeonWall.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/DungeonWall.x3d","DungeonWall.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/DungeonWall.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"Wall"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,1.57],
+                    "@translation":[0.0,2.25,0.0],
+                    "-children":[
+                      { "PointLight":
+                        {
+                          "@attenuation":[0.0,0.6,0.0],
+                          "@color":[1.0,0.4,0.2],
+                          "@intensity":0.8,
+                          "@location":[0.0,0.25,0.2],
+                          "@radius":10.0
+                        }
+                      },
+                      { "Inline":
+                        {
+                          "@DEF":"Torch",
+                          "@url":["Torches.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Torches.x3d","Torches.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Torches.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[5.0,0.0,0.0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"Wall"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"Wall"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,-1.57],
+                    "@translation":[0.0,2.25,0.0],
+                    "-children":[
+                      { "PointLight":
+                        {
+                          "@attenuation":[0.0,0.6,0.0],
+                          "@color":[1.0,0.4,0.2],
+                          "@intensity":0.8,
+                          "@location":[0.0,0.25,0.2],
+                          "@radius":10.0
+                        }
+                      },
+                      { "Inline":
+                        {
+                          "@USE":"Torch"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

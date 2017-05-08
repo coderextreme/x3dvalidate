@@ -1,0 +1,428 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"LauncherPod.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Launcher Pod for MLRS 270"
+          },
+          {
+            "@name":"created",
+            "@content":"25 January 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 March 2004"
+          },
+          {
+            "@name":"creator",
+            "@content":"Suat Kursat GUN"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/MLRS270/LauncherPod.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"launcherPod",
+              "@scale":[0.75,0.5,0.5],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"skidGroup",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"skid",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"mainApp",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.2,0.3,0.2],
+                                            "@shininess":0.125
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[7,0.3,0.1]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"sideSkidTrans",
+                          "@rotation":[0,0,1,1.57],
+                          "@scale":[0.3,0.5,0.5],
+                          "@translation":[-3,-1,-0.07],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"skid"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-2,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"skid"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[1.5,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"sideSkidTrans"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[3,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"sideSkidTrans"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[4.5,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"sideSkidTrans"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[6,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"sideSkidTrans"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,0.523],
+                          "@scale":[0.6,0.5,0.5],
+                          "@translation":[-1.6,-1,0.05],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"skid"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,-0.523],
+                          "@scale":[0.55,0.5,0.5],
+                          "@translation":[1.63,-1,0.05],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"skid"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57],
+                          "@translation":[0,0.1,-0.15],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"skid"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57],
+                          "@translation":[0,-2.1,-0.15],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"skid"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,3.14],
+                    "@translation":[0,-2,-3.2],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"skidGroup"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"upperSkidGroup",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.43,1,1],
+                                "@translation":[0,0.15,-1.5],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "@translation":[0,0,-1],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"skid"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "@translation":[0,0,0.5],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"skid"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "@translation":[0,0,-3],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"skid"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "@translation":[0,0,3],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"skid"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-2.3,0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"upperSkidGroup"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,1.57],
+                          "@translation":[0,-0.5,-0.6],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"tubes",
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@DEF":"tube",
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@DEF":"tubeApp",
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.2,0.3,0.2],
+                                                              "@shininess":0.125
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":6.8,
+                                                        "@radius":0.5
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,0,-1],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"tube"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,0,-2],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"tube"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,1.57],
+                          "@translation":[0,-1.5,-0.6],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"tubes"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

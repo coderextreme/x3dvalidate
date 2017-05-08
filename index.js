@@ -79,7 +79,7 @@ function doValidate(json, file) {
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
 				error += " dataPath: " + errs[e].dataPath + "\r\n";
-				error += " message: " + errs[e].message + "\r\n";
+				error += " message: " + exchangeajvmessage(errs[e].message) + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
 			}
@@ -111,6 +111,23 @@ function validateJSON(files) {
 			console.error("Error reading", file, e);
 		}
 	}
+}
+function exchangeajvmessage(msg) {
+	var str = fs.readFileSync("wordMap2.json").toString();
+	var json = jsonlint.parse(str);
+	var newString="";
+	var object = json;
+	var k=0;
+	for (i=0; i < msg.length ; i++) {
+		newString+=msg[i];
+		if (object[newString]!=undefined) {
+			object=object[newString];
+			newString="";
+			i++;
+			k++;
+		}
+	}
+return object['en'];
 }
 
 

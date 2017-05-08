@@ -1,0 +1,114 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure19.21NormalSquare.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 19.21, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch19/19fig21.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"4 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 March 2012"
+          },
+          {
+            "@name":"description",
+            "@content":"A square face and four normals. Also see Figures 19.21 and 19.22 for comparison."
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure19.22NormalSquareShaded.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter19-NormalsShading/Figure19.21NormalSquare.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Normal square, solid=false means visible on both sides",
+              "@position":[0,0,4]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@DEF":"Square",
+                    "@coordIndex":[0,1,2,3],
+                    "@normalIndex":[0,1,2,3],
+                    "@solid":false,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[-1,-1,0,1,-1,0,1,1,0,-1,1,0]
+                        }
+                      },
+                    "-normal":
+                      { "Normal":
+                        {
+                          "@vector":[0,0,1,0,0,1,0,0,1,0,0,1]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.6,0.6,0.8]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

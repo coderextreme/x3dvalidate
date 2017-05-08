@@ -1,0 +1,158 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"KelpTankWaterSurface.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Moving water surface for KelpTank - initial view is perpendicular, rotate viewpoint up to see motion. Cycle time is 5.5 seconds to match pump, with slight time lag to indicate inertia of quasi-steady-state equilibrium.."
+          },
+          {
+            "@name":"creator",
+            "@content":"Todd Gagnon"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"created",
+            "@content":"9 June 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"20 December 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"6 June 2012"
+          },
+          {
+            "@name":"reference",
+            "@content":"KelpTank.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/KelpTankWaterSurface.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["DTG of last update: 091030Jun98 Added: Updated: comment out PointLight Modeled by: Todd Gagnon"],
+              "@title":"surface1.4.wrl"
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":1.0,
+                                      "@diffuseColor":[0.03,0.12,0.24],
+                                      "@emissiveColor":[0.0,0.16,0.36],
+                                      "@shininess":0.35,
+                                      "@specularColor":[0.2,0.5,0.8],
+                                      "@transparency":0.15
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,1,6,7,-1,1,2,5,6,-1,2,3,4,5,-1,11,12,9,10,-1,12,13,8,9,-1,13,0,7,8,-1],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@DEF":"SURFACE",
+                                      "@point":[0.0,0.0,0.0,2.5,0.0,1.0,4.5,0.0,3.0,7.625,0.0,3.0,10.25,0.0,0.375,10.25,0.0,-4.375,6.375,0.0,-8.0,0.0,0.0,-8.0,-5.5,0.0,-8.0,-10.5,0.0,-2.875,-10.5,0.0,0.25,-7.625,0.0,3.0,-4.5,0.0,3.0,-2.5,0.0,1.0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"SURFACEClock",
+              "@cycleInterval":5.5,
+              "@loop":true
+            }
+          },
+          { "CoordinateInterpolator":
+            {
+              "@DEF":"SURFACEHeight",
+              "@key":[0.0,0.2,0.45,0.7,0.95],
+              "@keyValue":[0.0,0.0,0.0,2.5,0.05,1.0,4.5,0.1,3.0,7.625,0.15,3.0,10.25,0.15,0.375,10.25,0.15,-4.375,6.375,0.1,-8.0,0.0,0.0,-8.0,-5.5,-0.1,-8.0,-10.5,-0.15,-2.875,-10.5,-0.15,0.25,-7.625,-0.15,3.0,-4.5,-0.1,3.0,-2.5,-0.05,1.0,0.0,0.0,0.0,2.5,0.0,1.0,4.5,0.0,3.0,7.625,0.0,3.0,10.25,0.0,0.375,10.25,0.0,-4.375,6.375,0.0,-8.0,0.0,0.0,-8.0,-5.5,0.0,-8.0,-10.5,0.0,-2.875,-10.5,0.0,0.25,-7.625,0.0,3.0,-4.5,0.0,3.0,-2.5,0.0,1.0,0.0,-0.0,0.0,2.5,-0.05,1.0,4.5,-0.1,3.0,7.625,-0.15,3.0,10.25,-0.15,0.375,10.25,-0.15,-4.375,6.375,-0.1,-8.0,0.0,-0.0,-8.0,-5.5,0.1,-8.0,-10.5,0.15,-2.875,-10.5,0.15,0.25,-7.625,0.15,3.0,-4.5,0.1,3.0,-2.5,0.05,1.0,0.0,0.0,0.0,2.5,0.0,1.0,4.5,0.0,3.0,7.625,0.0,3.0,10.25,0.0,0.375,10.25,0.0,-4.375,6.375,0.0,-8.0,0.0,0.0,-8.0,-5.5,0.0,-8.0,-10.5,0.0,-2.875,-10.5,0.0,0.25,-7.625,0.0,3.0,-4.5,0.0,3.0,-2.5,0.0,1.0,0.0,0.0,0.0,2.5,0.05,1.0,4.5,0.1,3.0,7.625,0.15,3.0,10.25,0.15,0.375,10.25,0.15,-4.375,6.375,0.1,-8.0,0.0,0.0,-8.0,-5.5,-0.1,-8.0,-10.5,-0.15,-2.875,-10.5,-0.15,0.25,-7.625,-0.15,3.0,-4.5,-0.1,3.0,-2.5,-0.05,1.0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"SURFACEClock",
+              "@toField":"set_fraction",
+              "@toNode":"SURFACEHeight"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"SURFACEHeight",
+              "@toField":"set_point",
+              "@toNode":"SURFACE"
+            }
+          }
+        ]
+    }
+  }
+}

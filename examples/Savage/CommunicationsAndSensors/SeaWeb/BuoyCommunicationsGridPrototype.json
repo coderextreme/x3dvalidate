@@ -1,0 +1,1295 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BuoyCommunicationsGridPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Takes a communication-message input from a traversing vehicle (such as an AUV or submarine), then sets up the route/relay time delays, directions, animation and visualization of SeaWeb buoy communications among each other, all the way to the SeaWeb RACOM RF-relay buoy at the surface."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and MV4205 class"
+          },
+          {
+            "@name":"created",
+            "@content":"8 June 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 June 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Buoy, SeaWeb"
+          },
+          {
+            "@name":"reference",
+            "@content":"BuoyCommunicationsGridExampleRoutingTable.xls"
+          },
+          {
+            "@name":"warning",
+            "@content":"Under development, need to check timing and routing table"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/BuoyCommunicationsGridPrototype.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"=========="
+          },
+          {
+            "#comment":"ExternProtoDeclare statements precede the scene elements utilizing them"
+          },
+          {
+            "#comment":"=========="
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamCylinder",
+              "@appinfo":"Produce wireframe or transparent beam cylinders. Typical uses include propeller/thruster water flow or line-of-sight sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: beam with apex at (0 0 0) and base of radius 1 in x-z plane at (1 0 0).",
+              "@url":["../../CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","../../CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder"],
+              "field": [
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamHeight",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across vertical y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"beamWidth",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across horizontal z axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CameraCompass36",
+              "@appinfo":"Circular set of compass bearings that follow the active viewpoint set at 360/36 = 10 degree intervals. North = +X axis East = +Z axis up = +Y axis.",
+              "@url":["../../../Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.x3d#CameraCompass36","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.x3d#CameraCompass36","../../../Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.wrl#CameraCompass36","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.wrl#CameraCompass36"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"positionOffsetFromCamera",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"markerColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"labelColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CrossHair",
+              "@appinfo":"The CrossHair prototype provides a heads-up display (HUD) crosshair showing center of screen useful for assessing NavigationInfo lookAt point",
+              "@url":["../../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_enabled",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"markerColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"positionOffsetFromCamera",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"DvdController",
+              "@url":["../../../Savage/Tools/HeadsUpDisplays/DvdControllerPrototype.x3d#DvdController","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/DvdControllerPrototype.x3d#DvdController","../../../Savage/Tools/HeadsUpDisplays/DvdControllerPrototype.wrl#DvdController","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/DvdControllerPrototype.wrl#DvdController"],
+              "field": [
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Short description of what is animated by this DvdController.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"playEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Whether or not play mode is enabled including during startup.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"displayMode",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Initializes how control buttons and slider are displayed. The control buttons include DIS control (i.e. Master Ghost Local) and Playback control (i.e. Reset to Start Fast Rewind Rewind Pause Play Fast Forward Reset to End). Possible values are (case sensitive): ALL DIS_ONLY PLAYBACK_ONLY SLIDER_ONLY DIS_PLAYBACK DIS_SLIDER PLAYBACK_SLIDER and NONE.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"setDisplayMode",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Sets how control buttons and slider are displayed. The control buttons include DIS control (i.e. Master Ghost Local) and Playback control (i.e. Reset to Start Fast Rewind Rewind Pause Play Fast Forward Reset to End). Possible values are (case sensitive): ALL DIS_ONLY PLAYBACK_ONLY SLIDER_ONLY DIS_PLAYBACK DIS_SLIDER PLAYBACK_SLIDER and NONE.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"buttonColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Default button color.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"selectedButtonColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Button color when selected by user.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"labelColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Default label color.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"selectedLabelColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Label color when selected by user.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"locationOffset",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Modified screen location and distance (for size).",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"clockEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"cycleInterval",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Time for complete loop cycle in seconds.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_cycleInterval",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"cycleInterval_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"speedFactor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Factor used to determine the speed increase/decrease for Fast Rewind and Fast Forward action.",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"isActive",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"startTime_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"stopTime_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"time_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"fraction_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"secondsElapsed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"isMaster",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"isMaster isRemote and isLocal are booleans represent a 3-way toggle. Only one of them can have a true value at any time.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"isRemote",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"isMaster isRemote and isLocal are booleans represent a 3-way toggle. Only one of them can have a true value at any time.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"isLocal",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"isMaster isRemote and isLocal are booleans represent a 3-way toggle. Only one of them can have a true value at any time.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"isPaused",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"isPaused and isRunning always have opposite values. When isPaused is true isRunning will be false and vice versa.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"isRunning",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"isPaused and isRunning always have opposite values. When isPaused is true isRunning will be false and vice versa.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Enable/disable console output for troubleshooting.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"testTimeVal",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"GridXZ",
+              "@appinfo":"Line grid authoring tool to enable precise measurement of objects in 3D space - fixed position. Oriented along XZ plane size 20m by 20m.",
+              "@url":["../../../Savage/Tools/Authoring/GridXZPrototype.x3d#GridXZ","https://savage.nps.edu/Savage/Tools/Authoring/GridXZPrototype.x3d#GridXZ","../../../Savage/Tools/Authoring/GridXZPrototype.wrl#GridXZ","https://savage.nps.edu/Savage/Tools/Authoring/GridXZPrototype.wrl#GridXZ"],
+              "field": [
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"labelColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"default unscaled size: 10m by 10m",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"originLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"WestLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"-X axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"NorthWestLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"NorthLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"-Z axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"NorthEastLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"EastLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"+X axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"SouthEastLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"SouthLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"+Z axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"SouthWestLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"labelsOffset",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"label location offset (in meters) to improve readability",
+                  "@type":"SFVec3f"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SeaWebBuoy",
+              "@url":["../../CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.x3d#SeaWebBuoy","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.x3d#SeaWebBuoy","../../../Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.wrl#SeaWebBuoy","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.wrl#SeaWebBuoy"],
+              "field": [
+                {
+                  "@name":"set_position",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Position of buoy.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"position",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Position of buoy.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"set_targetPosition",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Position of target of transmission.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"targetPosition",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Position of target of transmission.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"targetIdNumber",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Id number of target.",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_targetIdNumber",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Id number of target.",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_enabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Enable buoy for transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"enabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Enable buoy for transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_activated",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Start transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"activated",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Start transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_transmissionDuration",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Duration in seconds needed to transmit message (does not include transmissionTimeDelay or propagation delay).",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"transmissionDuration",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Duration in seconds needed to transmit message (does not include transmissionTimeDelay or propagation delay).",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"transmissionTimeDelay",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Time delay before transmission begins.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_transmissionTimeDelay",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Time delay before transmission begins.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_directionalTransmission",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"directionalTransmission",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_buoyType",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"buoyType",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"set_textMessage",
+                  "@accessType":"inputOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"textMessage",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"textMessageColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"set_description",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_soundSpeedInWater",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Sound speed in water default value 1500 m/s",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"soundSpeedInWater",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Sound speed in water default value 1500 m/s",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ViewPositionOrientation",
+              "@appinfo":"ViewPositionOrientation prototype provides local position and orientation as user navigates with optional console output",
+              "@url":["../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Whether or not ViewPositionOrientation sends output to console.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Output internal trace messages for debugging this node - developer use only can be ignored.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_traceEnabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Ability to turn output tracing on/off at runtime.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"position_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output local position.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"orientation_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output local orientation.",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"outputViewpointString",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"MFString value of new Viewpoint for example: <Viewpoint position=\"20 15 20\" orientation=\"-0.516 0.83 0.212 0.9195\"/>",
+                  "@type":"MFString"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"WaypointInterpolator",
+              "@appinfo":"Reads waypoints and legSpeeds/legDurations/defaultSpeed to provide a customizable position/orientation interpolator.",
+              "@url":["../../../Savage/Tools/Animation/WaypointInterpolatorPrototype.x3d#WaypointInterpolator","https://savage.nps.edu/Savage/Tools/Animation/WaypointInterpolatorPrototype.x3d#WaypointInterpolator","../../../Savage/Tools/Animation/WaypointInterpolatorPrototype.wrl#WaypointInterpolator","https://savage.nps.edu/Savage/Tools/Animation/WaypointInterpolatorPrototype.wrl#WaypointInterpolator"],
+              "-children":[
+                {
+                  "#comment":"Priority of use: legSpeeds (m/sec), legDurations (seconds), defaultSpeed (m/sec)"
+                },
+                {
+                  "#comment":"interpolation fields"
+                },
+                {
+                  "#comment":"display-related fields"
+                }
+              ],
+              "field": [
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Short description of what is animated by this WaypointInterpolator.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"waypoints",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Waypoints being traversed with interpolation of intermediate positions and orientations.",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"add_waypoint",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Add another single waypoint to array of waypoints recalculate interpolator values.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"set_waypoints",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Replace all waypoints recalculate interpolator values.",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"pitchUpDownForVerticalWaypoints",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Whether to pitch child geometry (such as a vehicle) up or down to match vertical slope",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"legSpeeds",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Units m/sec. If used array lengths for legSpeeds and legDurations must be one less than number of waypoints.",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"legDurations",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Units in seconds. If used array lengths for legSpeeds and legDurations must be one less than number of waypoints.",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"defaultSpeed",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Units m/sec.",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"turningRate",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"turningRate (degrees/second) also determines standoff distance prior to waypoint where turn commences. If 0 turns are instantaneous.",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"totalDuration",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output calculation summing all leg durations, useful for setting TimeSensor cycleInterval. Units in seconds.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_fraction",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"exposed PositionInterpolator and OrientationInterpolator setting",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"position_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"exposed PositionInterpolator setting",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"orientation_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"exposed OrientationInterpolator setting",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"lineColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"default color for non-active line segments",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"highlightSegmentColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"highlightSegmentColors must contain two color values for each endpoint of the highlight segment.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1.0 is completely transparent, 0.0 is completely opaque.",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"labelDisplayMode",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"allowed values: none; waypoints (produce labels at each waypoint); or interpolation (produce single moving label at interpolator time course speed location)",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"heightLabel",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"allowed values: altitude depth (negate Y value) none",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"labelOffset",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"heightLabel relative location",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"labelFontSize",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"heightLabel text size",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"labelColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"heightLabel text color",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"enable console output to trace script computations and prototype progress",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"outputInitializationComputations",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Output the number of waypoints totalDistance and totalDuration to console upon initialization",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"verticalDropLineColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"default color for vertical drop-line segments",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"verticalDropLineTransparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1.0 is completely transparent, 0.0 is completely opaque.",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"=========="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"BuoyCommunicationsGrid",
+              "@appinfo":"BuoyCommunicationsGrid prototype takes a communication-message input from a traversing vehicle (such as an AUV or submarine) then sets up the route/relay time delays directions animation and visualization of SeaWeb buoy communications among each other all the way to the SeaWeb RACOM RF-relay buoy at the surface.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"buoyArray",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"array of SeaWebBuoy nodes index starting at 0",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"Example: <ProtoInstance USE=\"SeaWebBuoy0\"/> <ProtoInstance USE=\"SeaWebBuoy1\"/> <ProtoInstance USE=\"SeaWebBuoy2\"/>"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"buoyCommunicationsRoutingTable",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"2D array of routing connectivity for buoys consisting either of index of next buoy in line -1 for same buoy or else 0 for no route connection. legal values range [-1..n-1] for n buoys.",
+                      "@type":"MFInt32",
+                      "@value":[-1,2,2,2,5,6,6,6,5,6,6,6,5,6,6,6,1,-1,3,3,5,6,7,7,5,6,7,7,5,6,7,7,2,2,-1,4,6,6,7,8,6,6,7,8,6,6,7,8,3,3,3,-1,7,7,7,8,7,7,7,8,7,7,7,8,1,2,2,2,-1,6,6,6,9,10,10,10,9,10,10,10,1,2,3,3,5,-1,7,7,9,10,11,11,9,10,11,11,2,2,3,4,6,6,-1,8,10,10,11,12,10,10,11,12,3,3,3,4,7,7,7,-1,11,11,11,12,11,11,11,12,5,6,6,6,5,6,6,6,-1,10,10,10,13,14,14,14,5,6,7,7,5,6,7,7,9,-1,11,11,13,14,15,15,6,6,7,8,6,6,7,8,10,10,-1,12,14,14,15,16,7,7,7,8,7,7,7,8,11,11,11,-1,15,15,15,16,9,10,10,10,9,10,10,10,9,10,10,10,-1,14,14,14,9,10,11,11,9,10,11,11,9,10,11,11,13,-1,15,15,10,10,11,12,10,10,11,12,10,10,11,12,14,14,-1,16,11,11,11,12,11,11,11,12,11,11,11,12,15,15,15,-1]
+                    },
+                    {
+                      "@name":"set_senderPosition",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"set position of entity sending the message",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"senderPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"position of entity sending the message",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"set_receiverPosition",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"set position of entity receiving the message",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"receiverPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"position of entity receiving the message",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"set_textMessage",
+                      "@accessType":"inputOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"textMessage",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"sendMessage",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"send it! (note: maybe should rename as 'activate')",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"BuoyCommunicationsGridScript",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"buoyArray",
+                            "@accessType":"initializeOnly",
+                            "@appinfo":"array of SeaWebBuoy nodes index starting at 0",
+                            "@type":"MFNode",
+                            "-children":[
+                              {
+                                "#comment":"Example: <ProtoInstance USE=\"SeaWebBuoy0\"/> <ProtoInstance USE=\"SeaWebBuoy1\"/> <ProtoInstance USE=\"SeaWebBuoy2\"/>"
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"buoyCommunicationsRoutingTable",
+                            "@accessType":"initializeOnly",
+                            "@appinfo":"2D array of routing connectivity for buoys -1 for no connection range [0..n-1] for n buoys.",
+                            "@type":"MFInt32"
+                          },
+                          {
+                            "@name":"set_senderPosition",
+                            "@accessType":"inputOnly",
+                            "@appinfo":"set position of entity sending the message",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"senderPosition",
+                            "@accessType":"initializeOnly",
+                            "@appinfo":"position of entity sending the message",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"set_receiverPosition",
+                            "@accessType":"inputOnly",
+                            "@appinfo":"set position of entity receiving the message",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"receiverPosition",
+                            "@accessType":"initializeOnly",
+                            "@appinfo":"position of entity receiving the message",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"set_textMessage",
+                            "@accessType":"inputOnly",
+                            "@type":"MFString"
+                          },
+                          {
+                            "@name":"textMessage",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFString"
+                          },
+                          {
+                            "@name":"sendMessage",
+                            "@accessType":"inputOnly",
+                            "@appinfo":"send it!",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"traceEnabled",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":true
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"buoyArray",
+                                "@protoField":"buoyArray"
+                              },
+                              {
+                                "@nodeField":"buoyCommunicationsRoutingTable",
+                                "@protoField":"buoyCommunicationsRoutingTable"
+                              },
+                              {
+                                "@nodeField":"set_senderPosition",
+                                "@protoField":"set_senderPosition"
+                              },
+                              {
+                                "@nodeField":"senderPosition",
+                                "@protoField":"senderPosition"
+                              },
+                              {
+                                "@nodeField":"set_receiverPosition",
+                                "@protoField":"set_receiverPosition"
+                              },
+                              {
+                                "@nodeField":"receiverPosition",
+                                "@protoField":"receiverPosition"
+                              },
+                              {
+                                "@nodeField":"set_textMessage",
+                                "@protoField":"set_textMessage"
+                              },
+                              {
+                                "@nodeField":"textMessage",
+                                "@protoField":"textMessage"
+                              },
+                              {
+                                "@nodeField":"sendMessage",
+                                "@protoField":"sendMessage"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function alwaysPrint (text)",
+"{",
+"\tBrowser.print ('[BuoyCommunicationsGrid]' + text);",
+"}",
+"function tracePrint (text)",
+"{",
+"\tif (traceEnabled) Browser.print ('[BuoyCommunicationsGrid]' + text);",
+"}",
+"function set_senderPosition (value, timestamp)",
+"{",
+"\tsenderPosition = value;",
+"}",
+"function set_receiverPosition (value, timestamp)",
+"{",
+"\treceiverPosition = value;",
+"}",
+"function set_textMessage (value, timestamp)",
+"{",
+"\ttextMessage = value;",
+"}",
+"function distance (p1, p2) // inputs:  SFVec3f, output: float",
+"{",
+"\t// square root of sum of sum of squares",
+"\tdx = (p1.x - p2.x);",
+"\tdy = (p1.y - p2.y);",
+"\tdz = (p1.z - p2.z);",
+"\td = Math.sqrt (dx*dx + dy*dy + dz*dz);",
+"//\ttracePrint ('distance (' + p1 + ',' + p2 + ') =' + d);",
+"\treturn d;",
+"}",
+"function timeSoundTravels (distance) // input: float meters, output: float seconds",
+"{",
+"\t// speed of sound in water = 1500 m/s",
+"\ttimeInterval = distance / 1500;",
+"\ttracePrint ('sound travels' + Math.round(distance) + ' meters in' +",
+"\t'timeInterval=' + Math.round(timeInterval*1000)/1000 + ' seconds');",
+"\treturn timeInterval;",
+"}",
+"function routingTableIndex (senderNodeIndex, destinationNodeIndex)",
+"{",
+"\tif ((     senderNodeIndex < 0) || (     senderNodeIndex >= buoyArray.length) ||",
+"\t    (destinationNodeIndex < 0) || (destinationNodeIndex >= buoyArray.length))",
+"\t   alwaysPrint ('routingTableIndex () error, input index out of bounds:  senderNodeIndex=' + senderNodeIndex +",
+"\t', destinationNodeIndex=' + destinationNodeIndex);",
+"\tnewIndex = buoyArray.length*senderNodeIndex  + destinationNodeIndex;",
+"\treturn newIndex;",
+"}",
+"function findClosestBuoyIndex (position)",
+"{",
+"\tclosestBuoyIndex = 0;  // initialize",
+"\tclosestDistance  = distance (position, buoyArray[0].position);",
+"//\ttracePrint ('distance(position, buoyArray[0].position)=' + Math.round(closestDistance));",
+"\tif (buoyArray.length == 1) return closestBuoyIndex;",
+"",
+"\tfor (i=1; i < buoyArray.length; i++) // start comparison loop at second buoy",
+"\t{",
+"\t\td = distance (position, buoyArray[i].position);",
+"\t//\ttracePrint ('distance(position, buoyArray[' + i + '].position)=' + d);",
+"\t\tif (d < closestDistance)",
+"\t\t{",
+"\t\t\tclosestBuoyIndex = i;",
+"\t\t\tclosestDistance  = d;",
+"\t\t//\ttracePrint ('  closestBuoyIndex=' + closestBuoyIndex);",
+"\t\t}",
+"\t}",
+"\ttracePrint ('closest distance(position, buoyArray[' + closestBuoyIndex + '].position)=' + Math.round(closestDistance));",
+"\treturn closestBuoyIndex;",
+"}",
+"function initialize ()",
+"{",
+"\tn = buoyArray.length;",
+"\ttracePrint ('initialize() buoyArray.length=' + buoyArray.length);",
+"\ttracePrint ('initialize() buoyCommunicationsRoutingTable=' + buoyCommunicationsRoutingTable);",
+"\ttracePrint ('initialize() buoyCommunicationsRoutingTable.length=' + buoyCommunicationsRoutingTable.length);",
+"",
+"\t// check that routing table is a properly sized square array",
+"\tif (buoyCommunicationsRoutingTable.length != n*n)",
+"\t{",
+"\t\talwaysPrint ('initialize() invalid buoyCommunicationsRoutingTable.length=' + buoyCommunicationsRoutingTable.length +",
+"\t\t\t   ', should = (' + n + '*' + n + ') =' + (n*n));",
+"\t}",
+"\ttracePrint ('initialize() square table check complete');",
+"\t// check for routing table loop from node to itself",
+"\tfor (i=0; i < n; i++)",
+"\t{",
+"\t//\ttracePrint ('initialize() buoyCommunicationsRoutingTable[routingTableIndex(' + i + ',' + i + ')]=' + buoyCommunicationsRoutingTable[routingTableIndex(i,i)] );",
+"\t\tif (buoyCommunicationsRoutingTable[routingTableIndex(i,i)] != -1)",
+"\t\talwaysPrint ('initialize() invalid buoyCommunicationsRoutingTable[' + i + ']=' +",
+"\t\t\t             buoyCommunicationsRoutingTable[i] +",
+"\t\t' rather than -1, since node (' + i +",
+"\t\t') cannot route to itself');",
+"\t}",
+"\ttracePrint ('initialize() self route check complete');",
+"\t// check routing table values are legal",
+"\tfor (i=0; i < n; i++)",
+"\t{",
+"\t\tfor (j=0; j < n; j++)",
+"\t\t{",
+"\t\t\tk = buoyCommunicationsRoutingTable[routingTableIndex (i, j)];",
+"\t\t//\ttracePrint ('initialize() routingTableIndex (' + i + ',' + j + ') =' + k);",
+"\t\t\tif ((buoyCommunicationsRoutingTable[k] < -1) ||",
+"\t\t\t    (buoyCommunicationsRoutingTable[k] >= buoyCommunicationsRoutingTable.length))",
+"\t\t\t\talwaysPrint ('initialize() *** invalid buoyCommunicationsRoutingTable[' + i + ',' + j + ']=' +",
+"\t\t\t\t     buoyCommunicationsRoutingTable[k]);",
+"\t\t}",
+"\t}",
+"\t// TODO:  check for other routing table loops?",
+"",
+"\ttracePrint ('initialize() complete');",
+"}",
+"function sendMessage (value, timestamp)",
+"{",
+"\tif (value != true)",
+"\t{",
+"\t\tif (value != false) tracePrint ('sendMessage() exiting, passed value=' + value);",
+"\t\treturn;",
+"\t}",
+"\t// run-time setup happens here!   execution of all buoys occurs upon returning.",
+"\t// prepare the scene graph for a message sequence, then start it.",
+"",
+"\t// first find shortest distances and thus closest buoys to sender and receiver",
+"\tsenderNodeIndex      = findClosestBuoyIndex(senderPosition);",
+"\tdestinationNodeIndex = findClosestBuoyIndex(receiverPosition);",
+"\ttracePrint ('     senderNodeIndex=' +      senderNodeIndex + ' (' + senderPosition   + ')');",
+"\ttracePrint ('destinationNodeIndex=' + destinationNodeIndex + ' (' + receiverPosition + ')');",
+"",
+"\t// TODO:  sound beam from sender to senderNode or receiver (whichever is closest)",
+"",
+"\tif (senderNodeIndex == destinationNodeIndex)",
+"\t{",
+"\t\ttracePrint ('senderNode and destinationNode are the same, no message sent');",
+"\t\ttracePrint ('=============================================');",
+"\t\treturn;",
+"\t}",
+"\ttransmissionDuration  = 1;",
+"\ttracePrint ('transmissionDuration=' + transmissionDuration);",
+"",
+"\t// compute path (sequence of buoy IDs) from closest buoy to SeaWeb buoy",
+"\t// compute full buoy-to-buoy routing paths for current sender-receiver combination",
+"",
+"\thopCount = 0;",
+"\tmaxHopCount = buoyArray.length - 1;",
+"\tnextNodeIndex = -2;",
+"\tnodePath = new MFInt32();",
+"\tnodePath[nodePath.length] = senderNodeIndex;",
+"\tnodePathString ='sender, buoys' + senderNodeIndex;",
+"\tcurrentNodeIndex = senderNodeIndex;",
+"",
+"\td  = distance (senderPosition, buoyArray[senderNodeIndex].position);",
+"\tdt = timeSoundTravels (d);",
+"\taccumulatedRange = d;",
+"\taccumulatedDelay = 2 * (dt + transmissionDuration);",
+"\ttracePrint ('distance=' + Math.round(d) + ', accumulatedRange=' + Math.round(accumulatedRange)",
+"\t\t+ ', accumulatedDelay=' + Math.round(accumulatedDelay*1000)/1000);",
+"",
+"\twhile ((nextNodeIndex != -1) && (hopCount <= maxHopCount))",
+"\t{",
+"\t\ttracePrint ('=====');",
+"\t\ttableIndex = routingTableIndex (currentNodeIndex, destinationNodeIndex);",
+"\t\tnextNodeIndex = buoyCommunicationsRoutingTable[tableIndex];",
+"\t\ttracePrint ('currentNodeIndex=' + currentNodeIndex + ', nextNodeIndex=' + nextNodeIndex + ', tableIndex=' + tableIndex);",
+"",
+"\t\t// check if dead end - incomplete communication path",
+"\t\tif (nextNodeIndex < 0)",
+"\t\t{",
+"\t\t\talwaysPrint ('*** hit a dead end! no further routing possible.');",
+"\t\t\treturn nextNodeIndex;",
+"\t\t\t// consider not animating any buoys, i.e. whether or not partial routing allowed",
+"\t\t}",
+"\t\thopCount++;",
+"\t//\ttracePrint ('hopCount=' + hopCount + ', maxHopCount=' + maxHopCount);",
+"",
+"\t\t// communicate from currentNodeIndex buoy to nextNodeIndex buoy",
+"\t\t// by sending initialization values to each buoy in path:",
+"\t\t// message, target buoy ID/position, and then compute distance/time to travel",
+"\t\t// to set time delay of each buoy prior to start of each transmission.",
+"",
+"\t\tbuoyArray[currentNodeIndex].textMessage = textMessage;",
+"\t\tbuoyArray[currentNodeIndex].targetIdNumber = nextNodeIndex;",
+"\t\tbuoyArray[currentNodeIndex].targetPosition = buoyArray[nextNodeIndex].position;",
+"\t\td  = distance (\tbuoyArray[currentNodeIndex].position, buoyArray[nextNodeIndex].position);",
+"\t\tdt = timeSoundTravels (d);",
+"\t\taccumulatedRange += d;",
+"\t\taccumulatedDelay += 2 * (dt + transmissionDuration);",
+"\t\tbuoyArray[currentNodeIndex].range  = d;",
+"\t\tbuoyArray[currentNodeIndex].transmissionDuration  = transmissionDuration;",
+"\t\tbuoyArray[currentNodeIndex].transmissionTimeDelay = accumulatedDelay;",
+"\t\tbuoyArray[currentNodeIndex].set_activated = true;",
+"",
+"\t\t// set up for next time through loop:",
+"\t\tcurrentNodeIndex = nextNodeIndex;",
+"\t\tnodePath[nodePath.length] = nextNodeIndex;",
+"\t\tnodePathString +=',' + nextNodeIndex;",
+"\t\ttracePrint ('distance=' + Math.round(d) + ', accumulatedRange=' + Math.round(accumulatedRange)",
+"\t\t\t+ ', accumulatedDelay=' + Math.round(accumulatedDelay*1000)/1000);",
+"",
+"\t\tif (nextNodeIndex == destinationNodeIndex) break;",
+"\t}",
+"\ttracePrint ('====='); // last node to destination follows",
+"\ttracePrint ('destinationNodeIndex=' + destinationNodeIndex + ' to receiver');",
+"\tbuoyArray[currentNodeIndex].textMessage = textMessage;",
+"\tbuoyArray[currentNodeIndex].targetIdNumber = -2;",
+"\tbuoyArray[currentNodeIndex].targetPosition = receiverPosition;",
+"\td  = distance (\tbuoyArray[destinationNodeIndex].position, receiverPosition);",
+"\tdt = timeSoundTravels (d);",
+"\taccumulatedRange += d;",
+"\taccumulatedDelay += 2 * (dt + transmissionDuration);",
+"\tbuoyArray[currentNodeIndex].range  = d;",
+"\tbuoyArray[currentNodeIndex].transmissionDuration  = transmissionDuration;",
+"\tbuoyArray[destinationNodeIndex].transmissionTimeDelay = accumulatedDelay ;",
+"\tbuoyArray[destinationNodeIndex].set_activated = true;",
+"",
+"\ttracePrint ('distance=' + Math.round(d) + ', accumulatedRange=' + Math.round(accumulatedRange)",
+"\t\t+ ', accumulatedDelay=' + Math.round(accumulatedDelay*1000)/1000);",
+"",
+"\ttracePrint ('=====');",
+"\ttracePrint ('path destination found, buoy hopCount=' + hopCount + ', nodePath=' + nodePathString + ', receiver');",
+"\tfor (i=0; i < nodePath.length; i++)",
+"\t{",
+"\t\tj = nodePath[i];",
+"\t\ttracePrint ('node=' + nodePath[i]",
+"\t\t\t+ ', buoyArray[' + nodePath[i] + '].transmissionTimeDelay=' + Math.round(buoyArray[nodePath[i]].transmissionTimeDelay*1000)/1000);",
+"\t}",
+"\ttracePrint ('=============================================');",
+"",
+"\t// TODO: do we need to trigger the RACOM radio at this point?",
+"}"
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"=========="
+          },
+          {
+            "#comment":"Viewable geometry for this scene is anchored text that links to an example showing ExternProtoDeclare usage of a BuoyCommunicationsGridPrototype."
+          },
+          { "WorldInfo":
+            {
+              "@info":["A BuoyCommunicationsGrid prototype"],
+              "@title":"BuoyCommunicationsGridPrototype"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"BuoyCommunicationsGrid prototype definition",
+              "@position":[0,0,15]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"BuoyCommunicationsGrid Example",
+              "@url":["BuoyCommunicationsGridExample.x3d","../../../Savage/CommunicationsAndSensors/SeaWeb/BuoyCommunicationsGridExample.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/BuoyCommunicationsGridExample.x3d","BuoyCommunicationsGridExample.wrl","../../../Savage/CommunicationsAndSensors/SeaWeb/BuoyCommunicationsGridExample.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/BuoyCommunicationsGridExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,1],
+                                "@emissiveColor":[0,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["BuoyCommunicationsGridPrototype","is a Prototype definition file.","","To see an example scene","click this text and view","BuoyCommunicationsGridExample."],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ScriptNodeFieldControl-EcmaScript.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Script node interface between VRML and EcmaScript: this conformance example tests field-based VRML-EcmaScript functionality."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"30 November 1997"
+          },
+          {
+            "@name":"translated",
+            "@content":"13 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/ScriptConformance/ScriptNodeFieldControl-EcmaScript.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/Script/ScriptNodeFieldControl-EcmaScript.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"VRML 97 Specification, Annex C, ECMAScript scripting reference"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/javascript.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/javascript.html#AccessingFields"
+          },
+          {
+            "@name":"reference",
+            "@content":"Makefile"
+          },
+          {
+            "@name":"reference",
+            "@content":"Makefile.out"
+          },
+          {
+            "@name":"reference",
+            "@content":"ScriptNodeFieldControl-EcmaScript-VrmlConsoleOutput.txt"
+          },
+          {
+            "@name":"reference",
+            "@content":"ScriptNodeFieldControl-EcmaScriptSnapshots.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"ScriptNodeFieldControl-Java.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"VRML X3D EcmaScript Script conformance"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"View test",
+              "@position":[0,0,12]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"ClickTextToTest",
+                    "@description":"Click text to test"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TextPosition",
+                    "-children":[
+                      {
+                        "#comment":"TextPosition translation is modified by InterfaceScriptNode."
+                      },
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"MessageToUser",
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.8
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"TextMaterial",
+                                      "@diffuseColor":[0.8,0.2,0.2],
+                                      "@shininess":0.9
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"InterfaceScriptNode",
+                    "@directOutput":true,
+                    "-children":[
+                      {
+                        "#comment":"No default values are allowed for eventIn or eventOut."
+                      }
+                    ],
+                    "field": [
+                      {
+                        "@name":"startTime",
+                        "@accessType":"inputOnly",
+                        "@type":"SFTime"
+                      },
+                      {
+                        "@name":"sceneText",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFNode",
+                        "-children":[
+                          { "Text":
+                            {
+                              "@USE":"MessageToUser"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"sceneTransform",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFNode",
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@USE":"TextPosition"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"sceneMaterial",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFNode",
+                        "-children":[
+                          { "Material":
+                            {
+                              "@USE":"TextMaterial"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tDEBUG = true;",
+"\tmode  = 1;",
+"\tif (DEBUG) Browser.print ('initialize ():');",
+"",
+"\tsceneText.string = new MFString (",
+"\t  'EcmaScript initialize () with field control',",
+" \t  'has reinitialized the changedText node.',",
+" \t  '',",
+" \t  'Please click text for additional results.');",
+"\tsceneTransform.translation = new SFVec3f ( 0, 3, 0 );",
+"\tsceneMaterial.diffuseColor = new SFColor ( 0.8, 0.8, 0.2 );",
+"\tif (DEBUG) Browser.print ('sceneText.string           =' + sceneText.string);",
+"\tif (DEBUG) Browser.print ('sceneTransform.translation =' + sceneTransform.translation);",
+"\tif (DEBUG) Browser.print ('sceneMaterial.diffuseColor =' + sceneMaterial.diffuseColor);",
+"}",
+"function startTime (value, timestamp)",
+"{",
+"\tif (DEBUG) Browser.print ('==============================');",
+"\tif (DEBUG) Browser.print ('touchEvent startTime = ' + value);",
+"",
+"\tmode = (mode + 1) % 3;",
+"\tif (DEBUG) Browser.print ('mode = ' + mode);",
+"\tswitch (mode)",
+"\t{",
+"\t  case 0:\t// pre-initialize error messsage",
+"\t\tsceneText.string = new MFString (",
+"\t\t  'Default text in VRML scene will be replaced by',",
+" \t\t  'EcmaScript initialize() in Script using field control.',",
+" \t\t  'This text appears first, if EcmaScript initialization fails.',",
+" \t\t  '');",
+" \t\tsceneTransform.translation = new SFVec3f ( 0, 1, 0 );",
+"\t\tsceneMaterial.diffuseColor = new SFColor ( 0.8, 0.2, 0.2 ); ",
+"\t  \tbreak;",
+"",
+"\t  case 1:\t// post-initialize ready-to-click message",
+"\t\tinitialize ();",
+"\t\tbreak;",
+"",
+"\t  case 2:\t// post-click all-done message",
+"\t\tsceneText.string = new MFString (",
+"\t\t  'User click on text seen by EcmaScript',",
+" \t\t  'function via Script node eventIn.',",
+" \t\t  'Text & position successfully changed',",
+" \t\t  'via field control.  Test passed.');",
+"\t \tsceneTransform.translation = new SFVec3f ( 0, -1, 0 );",
+"\t \tsceneMaterial.diffuseColor = new SFColor ( 0.2, 0.8, 0.2 );",
+"\t\tbreak;",
+"\t}",
+"\t\t",
+"\tif (mode != 1)",
+"\t{",
+"\t \tif (DEBUG) Browser.print ('sceneText.string           = ' + sceneText.string);",
+"\t \tif (DEBUG) Browser.print ('sceneTransform.translation = ' + sceneTransform.translation);",
+"\t \tif (DEBUG) Browser.print ('sceneMaterial.diffuseColor = ' + sceneMaterial.diffuseColor);",
+"\t \tif (DEBUG) Browser.print ();",
+" \t}",
+"}",
+"function shutdown()",
+"{",
+"\tif (DEBUG) Browser.print ('==============================');",
+"  \tif (DEBUG) Browser.print ('script shutdown.');",
+"\tif (DEBUG) Browser.print ('==============================');",
+"}"
+]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"ClickTextToTest",
+              "@toField":"startTime",
+              "@toNode":"InterfaceScriptNode"
+            }
+          }
+        ]
+    }
+  }
+}

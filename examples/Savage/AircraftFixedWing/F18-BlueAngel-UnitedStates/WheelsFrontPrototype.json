@@ -1,0 +1,897 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"WheelsFrontPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This prototype performs raising and lowering front wheels and axle. The clickable axle triggers an animation based on the boolean."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi, Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"11 July 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/WheelsFrontPrototype.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"front wheels prototype, gear up and down"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"WheelsFront",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"gearup",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"boolean eventIn: true = wheels up false = wheels down.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"animationStartTime",
+                      "@accessType":"inputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"gearupOut",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"traceEnabled",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"WheelsFrontAxleTransform",
+                              "@center":[0,3,0],
+                              "-children":[
+                                { "Group":
+                                  {
+                                    "-children":[
+                                      {
+                                        "#comment":"wheels axis connecting to fuselage"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"WheelTransform",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@scale":[0.3,0.3,0.3],
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,1.571],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "@DEF":"wheel",
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@DEF":"black1",
+                                                                        "@diffuseColor":[0,0,0],
+                                                                        "@shininess":0.125,
+                                                                        "@specularColor":[0.2,0.2,0.2]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@creaseAngle":3.14,
+                                                                  "@crossSection":[0.00,1.30,0.494,1.196,0.923,0.923,1.196,0.494,1.30,0.00,1.196,-0.494,0.923,-0.923,0.494,-1.196,0.00,-1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                        { "Shape":
+                                                          {
+                                                            "@DEF":"inside_wheel",
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@DEF":"white1",
+                                                                        "@diffuseColor":[1,1,1]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@crossSection":[0.00,1.30,0.10,1.30,0.10,0.00,0.10,-1.30,0.00,-1.30,0.00,0.00,0.00,1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,1.571],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@USE":"white1"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@crossSection":[-0.10,1.30,0.00,1.30,0.00,0.00,0.00,-1.30,-0.10,-1.30,-0.10,0.00,-0.10,1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,1.571],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@diffuseColor":[0,0.25,0.5]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@crossSection":[-0.30,1.30,-0.10,1.30,-0.10,0.00,-0.10,-1.30,-0.30,-1.30,-0.30,0.00,-0.30,1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0,0.30],
+                                                "-children":[
+                                                  { "Inline":
+                                                    {
+                                                      "@DEF":"Hub",
+                                                      "@url":["Hub.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F18/Hub.wrl","Hub.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F18/Hub.x3d"]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0,-0.30],
+                                                "-children":[
+                                                  { "Inline":
+                                                    {
+                                                      "@USE":"Hub"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "TouchSensor":
+                                              {
+                                                "@DEF":"WheelTouchSensor",
+                                                "@description":"click to retract"
+                                              }
+                                            },
+                                            { "TimeSensor":
+                                              {
+                                                "@DEF":"Clock",
+                                                "@cycleInterval":0.5,
+                                                "@enabled":false,
+                                                "@loop":true
+                                              }
+                                            },
+                                            { "OrientationInterpolator":
+                                              {
+                                                "@DEF":"WheelInterpolator",
+                                                "@key":[0,0.5,1.0],
+                                                "@keyValue":[0,0,1,0.0,0,0,1,3.14,0,0,1,6.28]
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"isOver",
+                                                "@fromNode":"WheelTouchSensor",
+                                                "@toField":"set_enabled",
+                                                "@toNode":"Clock"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"fraction_changed",
+                                                "@fromNode":"Clock",
+                                                "@toField":"set_fraction",
+                                                "@toNode":"WheelInterpolator"
+                                              }
+                                            },
+                                            { "ROUTE":
+                                              {
+                                                "@fromField":"value_changed",
+                                                "@fromNode":"WheelInterpolator",
+                                                "@toField":"set_rotation",
+                                                "@toNode":"WheelTransform"
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@scale":[0.3,0.3,0.3],
+                                                "@translation":[0,0,1.5],
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,1.571],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "@DEF":"wheel2",
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@DEF":"black",
+                                                                        "@diffuseColor":[0,0,0],
+                                                                        "@shininess":0.125,
+                                                                        "@specularColor":[0.2,0.2,0.2]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@creaseAngle":3.14,
+                                                                  "@crossSection":[0.00,1.30,0.494,1.196,0.923,0.923,1.196,0.494,1.30,0.00,1.196,-0.494,0.923,-0.923,0.494,-1.196,0.00,-1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                        { "Shape":
+                                                          {
+                                                            "@DEF":"inside_wheel2",
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@DEF":"white",
+                                                                        "@diffuseColor":[1,1,1]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@crossSection":[0.00,1.30,0.10,1.30,0.10,0.00,0.10,-1.30,0.00,-1.30,0.00,0.00,0.00,1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,1.571],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@USE":"white"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@crossSection":[-0.10,1.30,0.00,1.30,0.00,0.00,0.00,-1.30,-0.10,-1.30,-0.10,0.00,-0.10,1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@rotation":[0,1,0,1.571],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@diffuseColor":[0,0.25,0.5]
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Extrusion":
+                                                                {
+                                                                  "@crossSection":[-0.30,1.30,-0.10,1.30,-0.10,0.00,-0.10,-1.30,-0.30,-1.30,-0.30,0.00,-0.30,1.30],
+                                                                  "@spine":[0,0,1.30,0,0.494,1.196,0,0.923,0.923,0,1.196,0.494,0,1.30,0.00,0,1.196,-0.494,0,0.923,-0.923,0,0.494,-1.196,0,0.00,-1.30,0,-0.494,-1.196,0,-0.923,-0.923,0,-1.196,-0.494,0,-1.30,0,0,-1.196,0.494,0,-0.923,0.923,0,-0.494,1.196,0,0.00,1.30]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0,1.80],
+                                                "-children":[
+                                                  { "Inline":
+                                                    {
+                                                      "@USE":"Hub"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0,1.20],
+                                                "-children":[
+                                                  { "Inline":
+                                                    {
+                                                      "@USE":"Hub"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Group":
+                                  {
+                                    "-children":[
+                                      { "Transform":
+                                        {
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0.55,0.75],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@DEF":"axis",
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@ambientIntensity":0.3,
+                                                                  "@diffuseColor":[0.3,0.3,0.3],
+                                                                  "@shininess":0.20,
+                                                                  "@specularColor":[0.50,0.50,0.60]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":1,
+                                                            "@radius":0.08
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57],
+                                                "@scale":[0.7,0.7,0.7],
+                                                "@translation":[0,0,1],
+                                                "-children":[
+                                                  {
+                                                    "#comment":"Axis for wheelsFront"
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@USE":"axis"
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@radius":0.1
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57],
+                                                "@scale":[0.7,0.7,0.7],
+                                                "@translation":[0,0,0.75],
+                                                "-children":[
+                                                  {
+                                                    "#comment":"Joint"
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@USE":"axis"
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":0.4,
+                                                            "@radius":0.15
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@scale":[0.7,0.7,0.7],
+                                                "@translation":[0,1.5,0.75],
+                                                "-children":[
+                                                  {
+                                                    "#comment":"main axle for front wheels"
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@DEF":"mainAxle",
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[1.0,1.0,1.0]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":3,
+                                                            "@radius":0.25
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[0,0,-1,1.05],
+                                                "@scale":[0.7,0.7,0.7],
+                                                "@translation":[0.68,1.5,0.75],
+                                                "-children":[
+                                                  {
+                                                    "#comment":"assistant axle for front wheels"
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@USE":"mainAxle"
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@radius":0.2
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@rotation":[0,0,-1,1.05],
+                                                "@scale":[0.7,0.7,0.7],
+                                                "@translation":[1.8,2.15,0.75],
+                                                "-children":[
+                                                  {
+                                                    "#comment":"assistant axle for front wheels"
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "@USE":"mainAxle"
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@radius":0.3
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Script":
+                                  {
+                                    "@DEF":"GearUpDownScript",
+                                    "field": [
+                                      {
+                                        "@name":"gearup",
+                                        "@accessType":"inputOnly",
+                                        "@appinfo":"eventIn: boolean true: wheels up false: wheels down",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"gearupOut",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"keyValue",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFRotation"
+                                      },
+                                      {
+                                        "@name":"kV1",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFRotation"
+                                      },
+                                      {
+                                        "@name":"kV2",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFRotation"
+                                      },
+                                      {
+                                        "@name":"kV3",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFRotation"
+                                      },
+                                      {
+                                        "@name":"set_fraction",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFFloat"
+                                      },
+                                      {
+                                        "@name":"animationStartTime",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"clockStartTime",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"traceEnabled",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFBool"
+                                      }
+                                    ],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"gearup",
+                                            "@protoField":"gearup"
+                                          },
+                                          {
+                                            "@nodeField":"animationStartTime",
+                                            "@protoField":"animationStartTime"
+                                          },
+                                          {
+                                            "@nodeField":"gearupOut",
+                                            "@protoField":"gearupOut"
+                                          },
+                                          {
+                                            "@nodeField":"traceEnabled",
+                                            "@protoField":"traceEnabled"
+                                          }
+                                        ]
+                                    },
+                                    "#sourceText":[
+"ecmascript:",
+"",
+"function gearup(value, timeStamp) {",
+"  ",
+" if (value == true)       //Gear UP",
+" {",
+"      \ttracePrint ('[GearUp] ' );",
+"      \ttracePrint ('value = ' + value);",
+"      \tgearupOut = true;    \t",
+"      ",
+"      \tkV1 = new SFRotation (new SFVec3f (0, 0, 1), 0.0);  ",
+"     \tkV2 = new SFRotation (new SFVec3f (0, 0, 1), 0.79);",
+"      \tkV3 = new SFRotation(new SFVec3f (0, 0, 1), 1.70);",
+"      \tkeyValue = new MFRotation(kV1, kV2, kV3);  ",
+"      \t//tracePrint ('[keyValue = ]' + keyValue);      ",
+"  ",
+" }",
+" else        //Gear Down",
+" {",
+"      \ttracePrint ('[GearDown] ' );",
+"      \ttracePrint ('value = ' + value);",
+"      \tgearupOut = true;",
+"     \t",
+"      \tkeyValue = new MFRotation(kV3, kV2, kV1);  ",
+"      \t//tracePrint ('[keyValue = ]' + keyValue);             ",
+" }",
+" ",
+"}",
+"",
+"function set_fraction (value, timeStamp)",
+"{",
+"\t//tracePrint('time fraction = ' + value);",
+"}",
+"",
+"function animationStartTime(value, timeStamp)",
+"{\t",
+"\ttracePrint('The Start Time is: ' + value);",
+"\tclockStartTime = value;",
+"}",
+"",
+"function tracePrint (outputString)",
+"{",
+"\tif (traceEnabled) Browser.print ('[WheelsFrontPrototype] ' + outputString);",
+"}"
+]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@description":"Front Wheels Side View Point"
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@description":"Front Wheels View Point",
+                              "@orientation":[0.2,-0.97,0.138,1.1899],
+                              "@position":[-3.1,-0.1,2.3]
+                            }
+                          },
+                          { "OrientationInterpolator":
+                            {
+                              "@DEF":"GearUpDownInterpolator",
+                              "@key":[0,0.5,1.0],
+                              "@keyValue":[0,0,1,0.0,0,0,1,0.79,0,0,1,1.70]
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"ClockAxleGearUpDown",
+                              "@cycleInterval":4
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"clockStartTime",
+                              "@fromNode":"GearUpDownScript",
+                              "@toField":"set_startTime",
+                              "@toNode":"ClockAxleGearUpDown"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"gearupOut",
+                              "@fromNode":"GearUpDownScript",
+                              "@toField":"set_enabled",
+                              "@toNode":"ClockAxleGearUpDown"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"keyValue",
+                              "@fromNode":"GearUpDownScript",
+                              "@toField":"set_keyValue",
+                              "@toNode":"GearUpDownInterpolator"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"ClockAxleGearUpDown",
+                              "@toField":"set_fraction",
+                              "@toNode":"GearUpDownInterpolator"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"ClockAxleGearUpDown",
+                              "@toField":"set_fraction",
+                              "@toNode":"GearUpDownScript"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"value_changed",
+                              "@fromNode":"GearUpDownInterpolator",
+                              "@toField":"set_rotation",
+                              "@toNode":"WheelsFrontAxleTransform"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================="
+          },
+          { "Background":
+            {
+              "@skyColor":[0.7,0.7,0.7]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"WheelsFrontExample",
+              "@parameter":["target=_blank"],
+              "@url":["WheelsFrontExample.wrl","../../AircraftFixedWing/F18-BlueAngel-UnitedStates/WheelsFrontExample.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/WheelsFrontExample.wrl","WheelsFrontExample.x3d","../../AircraftFixedWing/F18-BlueAngel-UnitedStates/WheelsFrontExample.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/WheelsFrontExample.x3d"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["WheelsFrontPrototype","is a prototype definition file","","To see an example scene","click on this text and view","WheelsFrontExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

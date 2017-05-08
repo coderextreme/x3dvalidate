@@ -1,0 +1,278 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PortGuardRail.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Forward Port Guardrail for the LCAC"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"5 July 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"5 July 2001"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/lcac.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"lsd-44_990829-N-9593R-002.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/lsd-44_990829-N-9593R-002.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"lcac-kb97_8.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/lcac-kb97_8.jpg"
+          },
+          {
+            "@name":"photo",
+            "@content":"lcac-dvic076.jpg"
+          },
+          {
+            "@name":"subject",
+            "@content":"LCAC Guardrail"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/PortGuardRail.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Rail",
+                    "@rotation":[1,0,0,1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@creaseAngle":1,
+                                "@crossSection":[0.1,0.00,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.00,-0.10,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.10,-0.00,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.00,0.10,0.038,0.092,0.071,0.071,0.092,0.038,0.10,0.00],
+                                "@spine":[0,0,-0.25,2,0,-0.25,3,0,-0.5,3.2,0,-0.475,3.425,0,-0.3,3.5,0,0,3.425,0,0.3,3.2,0,0.475,3,0,0.5,0,0,0.25,-3,0,0.5,-3.2,0,0.475,-3.425,0,0.3,-3.5,0,0,-3.425,0,-0.3,-3.2,0,-0.475,-3,0,-0.5,-2,0,-0.25,0,0,-0.25]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"Metal",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.85,0.9,0.95],
+                                      "@shininess":0.6,
+                                      "@specularColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Post",
+                    "@translation":[1,-0.5,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Metal"
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.7,
+                                "@radius":0.2
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"PostBase",
+                          "@translation":[0,-0.85,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Metal"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.2,
+                                      "@radius":0.4
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"PostTwo",
+                    "@translation":[-1,-0.5,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Metal"
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.7,
+                                "@radius":0.2
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"PostTwoBase",
+                          "@translation":[0,-0.85,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Metal"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.2,
+                                      "@radius":0.4
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"OutsidePost",
+                    "@translation":[2,-0.55,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Metal"
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.9,
+                                "@radius":0.1
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"OutsidePostTwo",
+                    "@translation":[-2,-0.55,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Metal"
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.9,
+                                "@radius":0.1
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

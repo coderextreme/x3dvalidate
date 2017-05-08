@@ -1,0 +1,143 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          },
+          {
+            "@name":"Geospatial",
+            "@level":1
+          },
+          {
+            "@name":"H-Anim",
+            "@level":1
+          },
+          {
+            "@name":"NURBS",
+            "@level":3
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HeaderProfileComponentMetaExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple scene demonstrating X3D header, profile, component and meta-tag definitions. The component tags raise the support level from Immersive profile to include other components included in the X3D 3.0 Full profile."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"11 October 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 October 2011"
+          },
+          {
+            "@name":"reference",
+            "@content":"Separate example newScene.x3d presents other example meta tags for potential use, authors can delete unused name-value pairs."
+          },
+          {
+            "@name":"reference",
+            "@content":"newScene.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"../Chapter15-Metadata/MetadataExamples.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright 2006, Daly Realism and Don Brutzman"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01-TechnicalOverview/HeaderProfileComponentMetaExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Scene graph nodes are added here"
+          },
+          { "Background":
+            {
+              "@groundColor":[0.2,0.4,0.6],
+              "@skyColor":[0.2,0.4,0.6]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@string":["HeaderProfileComponentMetaExample.x3d","shows example use of","header, profile, component and meta tags"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@justify":["MIDDLE","MIDDLE"],
+                          "@size":0.6
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.6,0.8,1]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

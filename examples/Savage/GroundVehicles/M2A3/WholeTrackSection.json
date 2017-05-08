@@ -1,0 +1,305 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"WholeTrackSection.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"section of track for M2A3 Bradley"
+          },
+          {
+            "@name":"creator",
+            "@content":"LTC Rene' Burgess"
+          },
+          {
+            "@name":"created",
+            "@content":"22 March 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 August 2003"
+          },
+          {
+            "@name":"subject",
+            "@content":"track section M2A3 Bradley"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/M2A3/WholeTrackSection.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"TRACK",
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1,
+                                "@radius":0.1
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"TRACK_METAL",
+                                      "@diffuseColor":[0.33,0.35,0.37],
+                                      "@shininess":0.9
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":1,
+                                      "@radius":0.1
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@USE":"TRACK_METAL"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":1,
+                                      "@radius":0.1
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@USE":"TRACK_METAL"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"RUBBER_PADS",
+                          "@translation":[0,0,0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.15,0.8,1]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@USE":"TRACK_METAL"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.1,0,0.25],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.1,0.5,0.35]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@DEF":"BLACK",
+                                                  "@diffuseColor":[0.1,0.1,0.1]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.1,0,-0.25],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.1,0.5,0.35]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@USE":"BLACK"
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TEETH",
+                          "@rotation":[0,1,0,0.785],
+                          "@translation":[-0.1,0,0.25],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.3,0.15,0.3]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@USE":"TRACK_METAL"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.785],
+                          "@translation":[-0.1,0,0.75],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.3,0.15,0.3]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@USE":"TRACK_METAL"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

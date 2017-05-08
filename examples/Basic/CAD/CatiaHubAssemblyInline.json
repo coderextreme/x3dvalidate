@@ -1,0 +1,192 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"CADGeometry",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CatiaHubAssemblyInline.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"CatiaHubAssembly model demonstrating external referencing of geometry files using Prototype with Inline."
+          },
+          {
+            "@name":"creator",
+            "@content":"Hyokwang Lee, PartDB Co., Ltd."
+          },
+          {
+            "@name":"translator",
+            "@content":"Xj3D, http://www.xj3d.org"
+          },
+          {
+            "@name":"created",
+            "@content":"25 July 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-X3DAbstractSpecification/Part01/components/CADGeometry.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D CAD CADInterchange profile"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubAssemblyInline.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"CATIA V5 R18 and PartDB Converter with Xj3D"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Hello CatiaHubAssemblyInline",
+              "@position":[0,0,1]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"RootTransform",
+              "-children":[
+                { "CADAssembly":
+                  {
+                    "@name":"Hub_Assembly",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"TransformCatiaHubDiscWithHoles",
+                          "-children":[
+                            { "CADAssembly":
+                              {
+                                "@name":"disc_with_holes",
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"CatiaHubDiscWithHoles",
+                                      "@url":["CatiaHubDiscWithHoles.x3d","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubDiscWithHoles.x3d","CatiaHubDiscWithHoles.wrl","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubDiscWithHoles.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TransformCatiaHubCap",
+                          "@translation":[0,0,0.030],
+                          "-children":[
+                            { "CADAssembly":
+                              {
+                                "@name":"cap",
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"CatiaHubCap",
+                                      "@url":["CatiaHubCap.x3d","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubCap.x3d","CatiaHubCap.wrl","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubCap.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TransformCatiaHubGasket",
+                          "-children":[
+                            { "CADAssembly":
+                              {
+                                "@name":"sleeve_sub_assembly",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Transform",
+                                      "@translation":[0,0,0.050],
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"CatiaHubGasket",
+                                            "@url":["CatiaHubGasket.x3d","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubGasket.x3d","CatiaHubGasket.wrl","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubGasket.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TransformCatiaHubBushing",
+                          "@translation":[0,0,0.085],
+                          "-children":[
+                            { "CADAssembly":
+                              {
+                                "@name":"cylinder",
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"CatiaHubBushing",
+                                      "@url":["CatiaHubBushing.x3d","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubBushing.x3d","CatiaHubBushing.wrl","http://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubBushing.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

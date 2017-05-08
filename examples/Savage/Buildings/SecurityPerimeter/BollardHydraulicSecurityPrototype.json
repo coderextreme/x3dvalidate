@@ -1,0 +1,610 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BollardHydraulicSecurityPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Rising/retractable security bollard"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and MV4205 Advanced XML class"
+          },
+          {
+            "@name":"created",
+            "@content":"30 May 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.atgaccess.com"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development, initial functionality completed. TODO: add SMALL metadata. TODO: how to string together multiple bollards - add fields for spacing and count?"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"BollardHydraulicSecurity",
+              "@appinfo":"A security bollard can be raised or lowered to prevent vehicle access by blocking a road. Usually multiple bollards are installed side by side raised and lowered together.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"radius",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0.2
+                    },
+                    {
+                      "@name":"height",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"textureUrl",
+                      "@accessType":"inputOutput",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"diffuseColor",
+                      "@accessType":"inputOutput",
+                      "@type":"SFColor",
+                      "@value":[1,1,0]
+                    },
+                    {
+                      "@name":"raise",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Command to raise the bollard.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"lower",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Command to lower the bollard.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"isRaised",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Notification event sent when bollard is fully raised.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"isLowered",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Notification event sent when bollard is fully lowered.",
+                      "@type":"SFBool"
+                    }
+                  ],
+                  "-children":[
+                    {
+                      "#comment":"TODO: add TimeDelaySensor nodes to report completion by the following output fields"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"BollardTransform",
+                        "-children":[
+                          {
+                            "#comment":"first Cylinder displays only the sides, with an optional texture applied"
+                          },
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "Cylinder":
+                                  {
+                                    "@bottom":false,
+                                    "@top":false,
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"radius",
+                                            "@protoField":"radius"
+                                          },
+                                          {
+                                            "@nodeField":"height",
+                                            "@protoField":"height"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@DEF":"CylinderMaterial",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"diffuseColor",
+                                                  "@protoField":"diffuseColor"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      },
+                                    "-texture":
+                                      { "ImageTexture":
+                                        {
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"url",
+                                                  "@protoField":"textureUrl"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          },
+                          {
+                            "#comment":"second Cylinder displays only the top and bottom, which do not have the optional texture applied"
+                          },
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "Cylinder":
+                                  {
+                                    "@side":false,
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"radius",
+                                            "@protoField":"radius"
+                                          },
+                                          {
+                                            "@nodeField":"height",
+                                            "@protoField":"height"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@USE":"CylinderMaterial"
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment":"only the first node in a prototype body is rendered, the others are carried along for the ride"
+                    },
+                    { "PositionInterpolator":
+                      {
+                        "@DEF":"HeightInterpolator",
+                        "@key":[0,1],
+                        "@keyValue":[0,-0.5,0,0,0.5,0]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"HeightInterpolator",
+                        "@toField":"set_translation",
+                        "@toNode":"BollardTransform"
+                      }
+                    },
+                    {
+                      "#comment":"========= setup ==========="
+                    },
+                    {
+                      "#comment":"this Script initializes our PositionInterpolator to proper start/stop heights. Also initializes BollardTransform translation to the correct height."
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"HeightTypeConversion",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"height",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"initialTranslation",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"PI",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "PositionInterpolator":
+                                {
+                                  "@USE":"HeightInterpolator"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"height",
+                                "@protoField":"height"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\t// set initial Transform translation value to the correct height",
+"\tinitialTranslation = new SFVec3f (0, -(height / 2), 0); // output event",
+"\tfinalTranslation   = new SFVec3f (0,  (height / 2), 0);",
+"//\tBrowser.print ('initialTranslation=' + initialTranslation);",
+"",
+"\t// customize PositionInterpolator to move correct vertical distance",
+"\tPI.keyValue = new MFVec3f (initialTranslation, finalTranslation);",
+"//\tBrowser.print ('PI.keyValue=' + PI.keyValue);",
+"}"
+]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"initialTranslation",
+                        "@fromNode":"HeightTypeConversion",
+                        "@toField":"set_translation",
+                        "@toNode":"BollardTransform"
+                      }
+                    },
+                    {
+                      "#comment":"========= raise ==========="
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"RaiseBollardClock",
+                        "@cycleInterval":5
+                      }
+                    },
+                    {
+                      "#comment":"alternative approach (shown below) replaces this script with a BooleanFilter plus TimeTrigger (to convert SFBool to SFTime)"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ClockScript",
+                        "field": [
+                          {
+                            "@name":"raise",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"startRaising",
+                            "@accessType":"outputOnly",
+                            "@type":"SFTime"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"raise",
+                                "@protoField":"raise"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function raise (value, timestamp)",
+"{",
+"\tstartRaising = timestamp;",
+"}"
+]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"RaiseBollardClock",
+                        "@toField":"set_fraction",
+                        "@toNode":"HeightInterpolator"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"startRaising",
+                        "@fromNode":"ClockScript",
+                        "@toField":"startTime",
+                        "@toNode":"RaiseBollardClock"
+                      }
+                    },
+                    {
+                      "#comment":"========= lower ==========="
+                    },
+                    { "ScalarInterpolator":
+                      {
+                        "@DEF":"FractionReverser",
+                        "@key":[0,1],
+                        "@keyValue":[1,0]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"LowerBollardClock",
+                        "@cycleInterval":5
+                      }
+                    },
+                    { "TimeTrigger":
+                      {
+                        "@DEF":"LowerTimeTrigger"
+                      }
+                    },
+                    { "BooleanFilter":
+                      {
+                        "@DEF":"StartLoweringFilter",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_boolean",
+                                "@protoField":"lower"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"FractionReverser",
+                        "@toField":"set_fraction",
+                        "@toNode":"HeightInterpolator"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"LowerBollardClock",
+                        "@toField":"set_fraction",
+                        "@toNode":"FractionReverser"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"triggerTime",
+                        "@fromNode":"LowerTimeTrigger",
+                        "@toField":"set_startTime",
+                        "@toNode":"LowerBollardClock"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"inputTrue",
+                        "@fromNode":"StartLoweringFilter",
+                        "@toField":"set_boolean",
+                        "@toNode":"LowerTimeTrigger"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Viewpoint":
+            {
+              "@description":"Bollard view",
+              "@position":[0,0,6]
+            }
+          },
+          {
+            "#comment":"test locally during development, once complete we split this out into a separate Example scene."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"BollardHydraulicSecurity",
+              "@DEF":"Bollard",
+              "fieldValue": [
+                {
+                  "@name":"height",
+                  "@value":0.85
+                },
+                {
+                  "@name":"radius",
+                  "@value":0.2
+                },
+                {
+                  "@name":"textureUrl",
+                  "@value":["fan.png"]
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"GroundLevel",
+              "-geometry":
+                { "Box":
+                  {
+                    "@size":[10,0.01,10]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"RaiseInterface",
+              "@translation":[-2,-1,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Click to","raise"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.3
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[3,2,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"ClickToRaiseBollard",
+                    "@description":"click to raise bollard"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"ClickToRaiseBollard",
+                    "@toField":"raise",
+                    "@toNode":"Bollard"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"LowerInterface",
+              "@translation":[2,-1,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Click to","lower"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.3
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[3,2,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"ClickToLowerBollard",
+                    "@description":"click tolower bollard"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"ClickToLowerBollard",
+                    "@toField":"lower",
+                    "@toNode":"Bollard"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

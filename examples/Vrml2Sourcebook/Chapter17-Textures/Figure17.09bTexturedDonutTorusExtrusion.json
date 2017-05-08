@@ -1,0 +1,107 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure17.09bTexturedDonutTorusExtrusion.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 17.9b, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch17/17fig09b.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"26 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"A donut-icing texture image texture mapped to a chocolate donut"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/Figure17.09bTexturedDonutTorusExtrusion.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Yum yum, textured icing on an extursion-torus donut. With chocolate and sprinkles.",
+              "@orientation":[1,0,0,-0.78],
+              "@position":[0,6,6]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Looking up from below",
+              "@orientation":[1,0,0,0.78],
+              "@position":[0,-6,6]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "ImageTexture":
+                        {
+                          "@url":["icing.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/icing.jpg"]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@beginCap":false,
+                    "@creaseAngle":1.57,
+                    "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                    "@endCap":false,
+                    "@spine":[2.00,0.0,0.00,1.85,0.0,-0.77,1.41,0.0,-1.41,0.77,0.0,-1.85,0.00,0.0,-2.00,-0.77,0.0,-1.85,-1.41,0.0,-1.41,-1.85,0.0,-0.77,-2.00,0.0,0.00,-1.85,0.0,0.77,-1.41,0.0,1.41,-0.77,0.0,1.85,0.00,0.0,2.00,0.77,0.0,1.85,1.41,0.0,1.41,1.85,0.0,0.77,2.00,0.0,0.00]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

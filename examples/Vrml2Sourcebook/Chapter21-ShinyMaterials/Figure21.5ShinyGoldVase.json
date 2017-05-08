@@ -1,0 +1,116 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure21.5ShinyGoldVase.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 21.5, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch21/21fig05.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"22 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"A shiny gold vase."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter21-ShinyMaterials/Figure21.5ShinyGoldVase.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Very shiny grey vase",
+              "@orientation":[1,0,0,0],
+              "@position":[0,2,6]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "PointLight":
+                  {
+                    "@intensity":0.2,
+                    "@location":[3,3,3]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.57,
+                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,-0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
+                          "@endCap":false,
+                          "@scale":[1.8,1.8,1.95,1.95,2.0,2.0,1.95,1.95,1.8,1.8,1.5,1.5,1.2,1.2,1.05,1.05,1.0,1.0,1.05,1.05,1.15,1.15],
+                          "@solid":false,
+                          "@spine":[0,0.0,0,0,0.4,0,0,0.8,0,0,1.2,0,0,1.6,0,0,2.0,0,0,2.4,0,0,2.8,0,0,3.2,0,0,3.6,0,0,4.0,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.4,
+                                "@diffuseColor":[0.22,0.15,0],
+                                "@shininess":0.16,
+                                "@specularColor":[0.71,0.70,0.56]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

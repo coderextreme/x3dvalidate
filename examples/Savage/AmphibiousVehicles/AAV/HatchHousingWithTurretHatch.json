@@ -1,0 +1,413 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HatchHousingWithTurretHatch.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Turret Housing with windows, Turret Hatch and Hinge Assembly for the AAVP7A1 - click and drag hatch to open."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"30 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/HatchHousingWithTurretHatch.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,-1,0,1.57],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"TurretRing",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"TurretRingsection",
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.15,0.66,0.25]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@crossSection":[0,1,-0.4,0.9,-0.7,0.7,-0.9,0.4,-1,0,-0.7,0,-0.6,0.3,-0.3,0.6,0,0.7,0,1],
+                                            "@scale":[1,1,1,1,0.8,0.8,0.75,0.75,0.7475,0.7475,0.7475,0.7475],
+                                            "@solid":false,
+                                            "@spine":[0,-0.0625,0,0,0,0,0,0.125,0,0,0.15,0,0,0.1525,0,0,0.155,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-0.85,0.085,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,0.6],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@DEF":"Glass",
+                                                              "@diffuseColor":[0.8,0.8,0.5],
+                                                              "@emissiveColor":[0.8,0.8,0.8]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.175,0.025,0.45]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,-1,0,0.79],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,0.6],
+                                            "@translation":[-0.85,0.085,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@USE":"Glass"
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.175,0.025,0.45]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,1.57],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"TurretRingsection"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,-1,0,1.57],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"TurretRingsection"
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-0.85,0.085,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,0.6],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.15,0.66,0.25]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.175,0.025,0.45]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,3.14],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.15,0.66,0.25]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@crossSection":[0,1,-0.4,0.9,-0.7,0.7,-0.9,0.4,-1,0,-0.7,0,-0.6,0.3,-0.3,0.6,0,0.7,0,1],
+                                            "@scale":[1,1,1,1,0.8,0.8,0.75,0.75,0.7475,0.7475,0.7475,0.7475],
+                                            "@solid":false,
+                                            "@spine":[0,-0.0625,0,0,0,0,0,0.125,0,0,0.15,0,0,0.1525,0,0,0.155,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,-1,0,0.79],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,0.6],
+                                            "@translation":[-0.85,0.085,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@USE":"Glass"
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.175,0.025,0.45]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"MainTurretWindow",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,0.1125],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[0.45,0.25,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.33,0.33,0.75]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.15,0.66,0.25]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,1.57],
+                                      "@translation":[0.625,0.25,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.175,0.025,0.45]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.8,0.5],
+                                                        "@emissiveColor":[0.8,0.8,0.8]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"TurretHatch",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"HatchCylinder",
+                    "@translation":[0.1125,0.0125,-0.66],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.1416],
+                          "@scale":[1.66,1.66,1.66],
+                          "@translation":[0,0.14,0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["TurretHatch.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/TurretHatch.x3d","TurretHatch.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/TurretHatch.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

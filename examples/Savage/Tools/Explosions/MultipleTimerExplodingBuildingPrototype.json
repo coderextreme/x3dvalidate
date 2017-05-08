@@ -1,0 +1,475 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MultipleTimerExplodingBuildingPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A simple exploding structure, experimenting with the \"Hello World\" of explosions - click on the silver chimney to trigger the explosion."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"Image",
+            "@content":"MultipleTimerExplodingBuildingExampleIntermediateAnimation.png"
+          },
+          {
+            "@name":"MovingImage",
+            "@content":"MultipleTimerExplodingBuildingVideo.mov"
+          },
+          {
+            "@name":"reference",
+            "@content":"Exploding building schematic layout diagram:"
+          },
+          {
+            "@name":"reference",
+            "@content":"ExplodingBuildingLayout.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"ExplodingBuildingLargeExample.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Rotation calculations performed using the Dizzy utility from Vapour Technologies by James Smith."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.vapourtech.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"DIS-Java-VRML Working Group"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/WorkingGroups/vrtp/dis-java-vrml"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Explosions/MultipleTimerExplodingBuildingPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"Exploder",
+              "@appinfo":"Prototype to explode different pieces and parts in different ways.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"geometry",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"geometry node, to be used inside a Shape",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"initialization node (if any) goes here"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"material",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Material node for this geometry, to be used inside a Shape",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"initialization node (if any) goes here"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"initialPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"starting point",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"finalPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"finish point",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"initialOrientation",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"starting point orientation",
+                      "@type":"SFRotation",
+                      "@value":[0,1,0,0]
+                    },
+                    {
+                      "@name":"finalOrientation",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"finish point orientation",
+                      "@type":"SFRotation",
+                      "@value":[0,1,0,0]
+                    },
+                    {
+                      "@name":"set_fraction",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"animation input",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"animation trigger",
+                      "@type":"SFTime",
+                      "@value":0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"LocationTransform",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"initialPosition"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"RotationTransform",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"rotation",
+                                      "@protoField":"initialOrientation"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "@DEF":"AnimatedShape",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"geometry",
+                                            "@protoField":"geometry"
+                                          }
+                                        ]
+                                    },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "@DEF":"AnimatedShapeAppearance",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"material",
+                                                  "@protoField":"material"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ProtoAnimationScript",
+                        "field": [
+                          {
+                            "@name":"initialPosition",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"finalPosition",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"initialOrientation",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"finalOrientation",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"runTime",
+                            "@accessType":"outputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"position_changeds",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f"
+                          },
+                          {
+                            "@name":"rotationValues",
+                            "@accessType":"outputOnly",
+                            "@type":"MFRotation"
+                          }
+                        ],
+                        "-children":[
+                          {
+                            "#comment":"<field accessType='outputOnly' name='fraction_changed' type='SFFloat'/>"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"initialPosition",
+                                "@protoField":"initialPosition"
+                              },
+                              {
+                                "@nodeField":"finalPosition",
+                                "@protoField":"finalPosition"
+                              },
+                              {
+                                "@nodeField":"initialOrientation",
+                                "@protoField":"initialOrientation"
+                              },
+                              {
+                                "@nodeField":"finalOrientation",
+                                "@protoField":"finalOrientation"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tdx = finalPosition.x - initialPosition.x;",
+"\tdy = finalPosition.y - initialPosition.y;",
+"\tdz = finalPosition.z - initialPosition.z;",
+"//\tBrowser.print ('dx=' + dx + ', dy=' + dy + ', dz=' + dz);",
+"\tdistance = Math.sqrt (dx*dx + dy*dy + dz*dz);",
+"\trunTime = distance/20;",
+"//\tBrowser.print ('runTime = ' + runTime);",
+"//\tBrowser.print ('distance          =' + distance);",
+"\tquarterPoint   = initialPosition.add (new SFVec3f (  dx/4,   dy/4 + 0.707*distance,     dz/4));",
+"\thalfwaypoint   = initialPosition.add (new SFVec3f (  dx/2,   dy/2 +       distance,     dz/2));",
+"\tthree4thsPoint = initialPosition.add (new SFVec3f (3*dx/4, 3*dy/4 + 0.707*distance/2, 3*dz/4));",
+"\tposition_changeds = new MFVec3f (initialPosition, initialPosition, quarterPoint, halfwaypoint, three4thsPoint, finalPosition);",
+"//\tBrowser.print ('position_changeds    =' + position_changeds);",
+"\trotationValues = new MFRotation (initialOrientation, finalOrientation);",
+"//\tBrowser.print ('initialPosition   =' + initialPosition);",
+"//\tBrowser.print ('finalPosition     =' + finalPosition);",
+"//\tBrowser.print ('position_changeds    =' + position_changeds);",
+"//\tBrowser.print ('initialOrientation=' + initialOrientation);",
+"//\tBrowser.print ('finalOrientation  =' + finalOrientation);",
+"//\tBrowser.print ('rotationValues=' + rotationValues);",
+"}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"ProtoTimeSensor",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"startTime",
+                                "@protoField":"startTime"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "PositionInterpolator":
+                      {
+                        "@DEF":"ProtoPositionInterpolatorCalculated",
+                        "@key":[0,0.2,0.4,0.6,0.8,1],
+                        "@keyValue":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_fraction",
+                                "@protoField":"set_fraction"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"ProtoOrientationInterpolatorCalculated",
+                        "@key":[0,1],
+                        "@keyValue":[0,1,0,0,0,1,0,0],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_fraction",
+                                "@protoField":"set_fraction"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"ProtoPositionInterpolatorCalculated",
+                        "@toField":"translation",
+                        "@toNode":"LocationTransform"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"ProtoOrientationInterpolatorCalculated",
+                        "@toField":"rotation",
+                        "@toNode":"RotationTransform"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"position_changeds",
+                        "@fromNode":"ProtoAnimationScript",
+                        "@toField":"keyValue",
+                        "@toNode":"ProtoPositionInterpolatorCalculated"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"rotationValues",
+                        "@fromNode":"ProtoAnimationScript",
+                        "@toField":"keyValue",
+                        "@toNode":"ProtoOrientationInterpolatorCalculated"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"runTime",
+                        "@fromNode":"ProtoAnimationScript",
+                        "@toField":"cycleInterval",
+                        "@toNode":"ProtoTimeSensor"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"ProtoTimeSensor",
+                        "@toField":"set_fraction",
+                        "@toNode":"ProtoPositionInterpolatorCalculated"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"ProtoTimeSensor",
+                        "@toField":"set_fraction",
+                        "@toNode":"ProtoOrientationInterpolatorCalculated"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Viewpoint":
+            {
+              "@description":"Multiple Timer Exploding Building",
+              "@position":[0,0,12]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.57],
+              "@groundColor":[0.6,0.9,0.6,0.6,0.9,0.6],
+              "@skyColor":[0.6,0.6,0.9]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"MultipleTimerExplodingBuildingExample",
+              "@parameter":["target=_blank"],
+              "@url":["MultipleTimerExplodingBuildingExample.x3d","https://savage.nps.edu/Savage/Tools/Explosions/MultipleTimerExplodingBuildingExample.x3d","MultipleTimerExplodingBuildingExample.wrl","https://savage.nps.edu/Savage/Tools/Explosions/MultipleTimerExplodingBuildingExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["MultipleTimerExplodingBuildingPrototype","is a prototype definition file","","Click this text to see","MultipleTimerExplodingBuildingExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.2,0.2,0.8]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

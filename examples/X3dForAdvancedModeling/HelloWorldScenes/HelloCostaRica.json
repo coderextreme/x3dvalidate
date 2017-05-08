@@ -1,0 +1,289 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloCostaRica.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Hello World: ¡Pura vida! Hello Costa Rica in Spanish, Hola Costa Rica en español"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and Sarah Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"3 July 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 July 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"Hello World Example Costa Rica Spanish"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/realtime-3d/news/internationalization-x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://en.wikipedia.org/wiki/Spanish_orthography"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRica.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaBsContact.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaFreeWrl.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaH3Dviewer.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaView3dscene.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaX3DOM.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HelloCostaRicaXj3D.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://en.wikipedia.org/wiki/Costa_Rica"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://es.wikipedia.org/wiki/Costa_Rica"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://es.wikipedia.org/wiki/Pura_vida_(frase)"
+          },
+          {
+            "@name":"Image",
+            "@content":"Flag_of_Costa_Rica.svg"
+          },
+          {
+            "@name":"Image",
+            "@content":"Flag_of_Costa_Rica.svg.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://en.wikipedia.org/wiki/Costa_Rica#/media/File:Flag_of_Costa_Rica.svg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloCostaRica.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"¡Hola Costa Rica: Pura Vida!"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Hola",
+              "@centerOfRotation":[1.2,0.25,0],
+              "@description":"¡Hola Costa Rica: Pura Vida!",
+              "@position":[1.2,0.25,8]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4,1,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"Pura Vida page on Wikipedia",
+                    "@parameter":["target=blank"],
+                    "@url":["https://es.wikipedia.org/wiki/Pura_vida_(frase)"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["¡Pura vida!"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@style":"BOLDITALIC"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"TextAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[4.5,1.2,0.001]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@transparency":1
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-0.5,-1.25,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[1.8,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Hola Costa Rica en español"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@style":"BOLDITALIC"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"TextAppearance"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-0.4,2.2,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Costa Rica Wikipedia page",
+                          "@url":["http://en.wikipedia.org/wiki/Costa_Rica"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@DEF":"FlagAspectRatio",
+                                      "@size":[5,3,0.0001]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@url":["Flag_of_Costa_Rica.svg.png","http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorld/Flag_of_Costa_Rica.svg.png"]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"UnderwayDDG.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Ryan Ernst, Naval Postgraduate School"
+          },
+          {
+            "@name":"instructor",
+            "@content":"Jeff Weekly, Naval Postgraduate School"
+          },
+          {
+            "@name":"created",
+            "@content":"13 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/SH60B-Seahawk-UnitedStates/UnderwayDDG.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"CS3204 class final project: SH-60B Scene"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"DDG underway in the ocean."
+          },
+          { "Group":
+            {
+              "@DEF":"UnderwayDDG",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":1.0,
+                                "@diffuseColor":[0.5882,0.5882,0.5882],
+                                "@shininess":0.145
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["DDG.jpg","https://savage.nps.edu/Savage/AircraftHelicopters/SH60B-Seahawk-UnitedStates/DDG.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[5,0,6,-1,1,6,0,-1,6,1,7,-1,2,7,1,-1,7,2,8,-1,3,8,2,-1,8,3,9,-1,4,9,3,-1,10,5,11,-1,6,11,5,-1,11,6,12,-1,7,12,6,-1,12,7,13,-1,8,13,7,-1,13,8,14,-1,9,14,8,-1,15,10,16,-1,11,16,10,-1,16,11,17,-1,12,17,11,-1,17,12,18,-1,13,18,12,-1,18,13,19,-1,14,19,13,-1,20,15,21,-1,16,21,15,-1,21,16,22,-1,17,22,16,-1,22,17,23,-1,18,23,17,-1,23,18,24,-1,19,24,18,-1],
+                          "@texCoordIndex":[15,10,16,-1,11,16,10,-1,16,11,17,-1,12,17,11,-1,17,12,18,-1,13,18,12,-1,18,13,19,-1,14,19,13,-1,20,15,21,-1,16,21,15,-1,21,16,22,-1,17,22,16,-1,22,17,23,-1,18,23,17,-1,23,18,24,-1,19,24,18,-1,25,20,26,-1,21,26,20,-1,26,21,27,-1,22,27,21,-1,27,22,28,-1,23,28,22,-1,28,23,29,-1,24,29,23,-1,30,25,31,-1,26,31,25,-1,31,26,32,-1,27,32,26,-1,32,27,33,-1,28,33,27,-1,33,28,34,-1,29,34,28,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[-100,0,97.97,-50,0,97.97,0,0,97.97,50,0,97.97,100,0,97.97,-100,0,48.98,-50,0,48.98,0,0,48.98,50,0,48.98,100,0,48.98,-100,0,0,-50,0,0,0,0,0,50,0,0,100,0,0,-100,0,-48.98,-50,0,-48.98,0,0,-48.98,50,0,-48.98,100,0,-48.98,-100,0,-97.97,-50,0,-97.97,0,0,-97.97,50,0,-97.97,100,0,-97.97]
+                              }
+                            },
+                          "-texCoord":
+                            { "TextureCoordinate":
+                              {
+                                "@point":[0,0,0.25,0,0.5,0,0.75,0,1,0,0,0,0.25,0,0.5,0,0.75,0,1,0,0,0,0.25,0,0.5,0,0.75,0,1,0,0,0.25,0.25,0.25,0.5,0.25,0.75,0.25,1,0.25,0,0.5,0.25,0.5,0.5,0.5,0.75,0.5,1,0.5,0,0.75,0.25,0.75,0.5,0.75,0.75,0.75,1,0.75,0,1,0.25,1,0.5,1,0.75,1,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure26.7DungeonViewpointsAndFieldsOfView.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 26.7, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch26/26fig07.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"4 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"This Viewpoint series does not move the user but rather increases the field of view (FOV) very widely, producing an interesting effect. Numerous additional viewpoints follow."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter26-Viewpoint/Figure26.7DungeonViewpointsAndFieldsOfView.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Forward view",
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"10 degree FOV corner view",
+              "@fieldOfView":0.1745,
+              "@orientation":[0,1,0,0.611],
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"20 degree FOV corner view",
+              "@fieldOfView":0.3491,
+              "@orientation":[0,1,0,0.611],
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"45 degree FOV (default value) corner view",
+              "@orientation":[0,1,0,0.611],
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"60 degree FOV corner view",
+              "@fieldOfView":1.047,
+              "@orientation":[0,1,0,0.611],
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"90 degree FOV corner view",
+              "@fieldOfView":1.57,
+              "@orientation":[0,1,0,0.611],
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"135 degree FOV corner view",
+              "@fieldOfView":2.42,
+              "@orientation":[0,1,0,0.611],
+              "@position":[0,1.6,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Click door for next dungeon room",
+              "@fieldOfView":1.05,
+              "@position":[0,2,10]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@avatarSize":[0.5,1.6,0.5],
+              "@headlight":false,
+              "@speed":2,
+              "@type":["WALK","EXAMINE","ANY"]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["../Chapter25-LevelOfDetail/Figure25.12DungeonRoomsWithSlidingDoors.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.12DungeonRoomsWithSlidingDoors.x3d","../Chapter25-LevelOfDetail/Figure25.12DungeonRoomsWithSlidingDoors.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.12DungeonRoomsWithSlidingDoors.wrl"]
+            }
+          }
+        ]
+    }
+  }
+}

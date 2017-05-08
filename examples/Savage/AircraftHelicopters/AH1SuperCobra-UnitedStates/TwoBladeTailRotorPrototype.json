@@ -1,0 +1,541 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TwoBladeTailRotorPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototypes a two-blade tail rotor and its shaft for a helicopter."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"21 March 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 January 2015"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/TwoBladeTailRotorPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"TwoBladeTailRotor",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"rotationOn",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"enable or disable rotor rotation",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"TailRotor",
+                        "-children":[
+                          {
+                            "#comment":"Tail Rotor Shaft"
+                          },
+                          { "Transform":
+                            {
+                              "@rotation":[1.0,0.0,0.0,1.57],
+                              "@translation":[0.0,0.0,-0.1],
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "@DEF":"Gray",
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0.75,0.75,0.75]
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@height":0.2,
+                                          "@radius":0.02
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Switch":
+                            {
+                              "@DEF":"RotationSwitch",
+                              "@whichChoice":0,
+                              "-children":[
+                                { "Group":
+                                  {
+                                    "@DEF":"TwoBlades",
+                                    "-children":[
+                                      {
+                                        "#comment":"put top blade on"
+                                      },
+                                      {
+                                        "#comment":"Rotate 15 degree along y"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@rotation":[0,1,0,0.26],
+                                          "@translation":[-0.05,0.0,0.0],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "@DEF":"DarkGray",
+                                                      "-material":
+                                                        { "Material":
+                                                          {
+                                                            "@diffuseColor":[0.2,0.2,0.2]
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                "-geometry":
+                                                  { "Extrusion":
+                                                    {
+                                                      "@DEF":"TopTailRotor",
+                                                      "@convex":false,
+                                                      "@creaseAngle":0.8,
+                                                      "@crossSection":[0.00,0.00,0.03,-0.005,0.05,-0.007,0.07,-0.009,0.09,-0.01,0.11,-0.009,0.12,-0.007,0.13,-0.005,0.135,0.0,0.13,0.005,0.12,0.007,0.11,0.009,0.09,0.01,0.07,0.009,0.05,0.007,0.03,0.005],
+                                                      "@solid":false,
+                                                      "@spine":[-0.015,0.02,0.0,-0.015,0.82,0.0]
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "#comment":"put bottom blade on"
+                                      },
+                                      {
+                                        "#comment":"Rotate -15 degree along y"
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@rotation":[0,1,0,-0.26],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "@USE":"DarkGray"
+                                                    }
+                                                  },
+                                                "-geometry":
+                                                  { "Extrusion":
+                                                    {
+                                                      "@DEF":"BottomTailRotor",
+                                                      "@convex":false,
+                                                      "@creaseAngle":0.8,
+                                                      "@crossSection":[0.00,0.00,0.03,-0.005,0.05,-0.007,0.07,-0.009,0.09,-0.01,0.11,-0.009,0.12,-0.007,0.13,-0.005,0.135,0.0,0.13,0.005,0.12,0.007,0.11,0.009,0.09,0.01,0.07,0.009,0.05,0.007,0.03,0.005],
+                                                      "@solid":false,
+                                                      "@spine":[0.065,-0.02,0.0,0.065,-0.82,0.0]
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "LOD":
+                                  {
+                                    "@range":[50,200],
+                                    "-children":[
+                                      { "Group":
+                                        {
+                                          "@USE":"TwoBlades"
+                                        }
+                                      },
+                                      { "Group":
+                                        {
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@rotation":[1,0,0,1.57],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[0.2,0.2,0.2],
+                                                                  "@transparency":0.75
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@height":0.1,
+                                                            "@radius":0.82
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "WorldInfo":
+                                        {
+                                          "@title":"null"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"BladeRotationOnOffScript",
+                              "field": [
+                                {
+                                  "@name":"rotationOn",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"clockEnabled",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"switchChoice",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFInt32"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"rotationOn",
+                                      "@protoField":"rotationOn"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function rotationOn(value, timeStamp) {",
+"   if (value == true)",
+"   {",
+"      clockEnabled = true;",
+"      switchChoice = 1;",
+"   }",
+"   else",
+"   {",
+"      clockEnabled = false;",
+"      switchChoice = 0;",
+"   }",
+"}"
+]
+                            }
+                          },
+                          {
+                            "#comment":"Animation Clock"
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"TailRotorClock",
+                              "@cycleInterval":0.5,
+                              "@enabled":false,
+                              "@loop":true
+                            }
+                          },
+                          {
+                            "#comment":"Animation Path"
+                          },
+                          { "OrientationInterpolator":
+                            {
+                              "@DEF":"TailRotorPath",
+                              "@key":[0.0,0.25,0.5,0.75,1.0],
+                              "@keyValue":[0.00,0.00,1.00,0.00,0.00,0.00,1.00,1.57,0.00,0.00,1.00,3.14,0.00,0.00,1.00,4.712,0.00,0.00,1.00,6.284]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"clockEnabled",
+                        "@fromNode":"BladeRotationOnOffScript",
+                        "@toField":"set_enabled",
+                        "@toNode":"TailRotorClock"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"switchChoice",
+                        "@fromNode":"BladeRotationOnOffScript",
+                        "@toField":"whichChoice",
+                        "@toNode":"RotationSwitch"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"TailRotorClock",
+                        "@toField":"set_fraction",
+                        "@toNode":"TailRotorPath"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"TailRotorPath",
+                        "@toField":"set_rotation",
+                        "@toNode":"TailRotor"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "WorldInfo":
+            {
+              "@title":"TwoBladeTailRotor Prototype"
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.4,0.4,0.6]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Toggle Blade Status",
+              "@position":[0,0,12]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"At a distance",
+              "@position":[0,0,50]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TwoBladeTailRotor",
+              "@DEF":"ExampleTailRotor"
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,2.5,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"ExampleBladeRotationToggle",
+                    "@description":"Toggle blade rotation on/off"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@DEF":"ToggleStatusColor",
+                                "@diffuseColor":[0.8,0.8,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Select Text to Toggle","Blade Rotation On/Off"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[8.5,2.0,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"ExampleSelection",
+              "field": [
+                {
+                  "@name":"armed",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32",
+                  "@value":-1
+                },
+                {
+                  "@name":"toggleEnabled",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"statusColor",
+                  "@accessType":"outputOnly",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"status",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function toggleEnabled(value, ts) {",
+"   if (armed == -1)",
+"   {",
+"      toggleEnabled = false;",
+"      armed = 0;",
+"   }",
+"",
+"   if (armed == 0)",
+"   {",
+"      armed = 1;",
+"",
+"      if (toggleEnabled == false)",
+"      {",
+"         status = true;",
+"         statusColor = new SFColor(0, 0.8, 0);",
+"         toggleEnabled = true;",
+"      }",
+"      else",
+"      {",
+"         status = false;",
+"         statusColor = new SFColor(0.8, 0.8, 0);",
+"         toggleEnabled = false;",
+"      }",
+"   }",
+"   else",
+"   {",
+"      armed = 0;",
+"      return;",
+"   }",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"ExampleBladeRotationToggle",
+              "@toField":"toggleEnabled",
+              "@toNode":"ExampleSelection"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"statusColor",
+              "@fromNode":"ExampleSelection",
+              "@toField":"diffuseColor",
+              "@toNode":"ToggleStatusColor"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"status",
+              "@fromNode":"ExampleSelection",
+              "@toField":"rotationOn",
+              "@toNode":"ExampleTailRotor"
+            }
+          }
+        ]
+    }
+  }
+}

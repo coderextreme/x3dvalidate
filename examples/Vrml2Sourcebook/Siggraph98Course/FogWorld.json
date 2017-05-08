@@ -1,0 +1,277 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"FogWorld.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Scene geometry to support illustrating fog effects in test scenes."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau, John L. Moreland, Michael M. Heck"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/fogworld.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Fog1.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Fog2.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Fog3.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Fog4.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Fog5.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0327.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0331.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/FogWorld.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@translation":[0.0,-1.6,0.0],
+              "-children":[
+                { "DirectionalLight":
+                  {
+                    "@ambientIntensity":1.0,
+                    "@direction":[0.0,-1.0,-1.0],
+                    "@intensity":0.2
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.5,
+                                "@diffuseColor":[0.2,0.8,0.2]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[50.0,0.01,50.0]
+                        }
+                      }
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"ColumnPair",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[-4.0,3.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"Column",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1.0,0.8,0.5]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":6.0,
+                                      "@radius":0.3
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[4.0,3.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"Column"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-8.0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"ColumnPair"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,8.0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"ColumnPair"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-16.0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"ColumnPair"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,16.0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"ColumnPair"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-24.0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"ColumnPair"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,24.0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"ColumnPair"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

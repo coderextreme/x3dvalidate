@@ -1,0 +1,115 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestRegularExpressionChecks.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Conformance test for regular expression checks. Tests are performed by build.xml target processScenes.regularExpressionChecks."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"19 March 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"19 March 2012"
+          },
+          {
+            "@name":"reference",
+            "@content":"../build.xml"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D regular expression conformance test"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestRegularExpressionChecks.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[1,0.768627,0.321569]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@string":["This scene is a","conformance test for","regular expression checks"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@justify":["MIDDLE","MIDDLE"]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.4,0.8,0.6],
+                          "@shininess":0.8
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"MergedFloatsTest",
+              "@key":[0,0.250.5,0.75,1],
+              "@keyValue":[0,1,2,3,4,5]
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"LeadingZerosTest",
+              "@key":[0,0.25,0.5,0.75,1],
+              "@keyValue":[0,01,2,3,4,5]
+            }
+          }
+        ]
+    }
+  }
+}

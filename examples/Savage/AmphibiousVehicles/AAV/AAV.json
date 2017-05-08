@@ -1,0 +1,302 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AAV.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"The AAV is a fully-tracked Amphibious Assault Vehicle (Patrol), aka AAV7PA1 and LVTP7."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"1 June 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"19 December 2014"
+          },
+          {
+            "@name":"photo",
+            "@content":"AAV1.jpg"
+          },
+          {
+            "@name":"photo",
+            "@content":"aav3.jpg"
+          },
+          {
+            "@name":"photo",
+            "@content":"capex7.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"aavp7a1.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/aavp7a1.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.technogap.com/aavp7a1.htm"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/AAV.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"AAV AAV7PA1 LVTP7"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.15,0.2,0.8]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"AAV from behind",
+              "@orientation":[0,-1,0,1.57],
+              "@position":[-12,2.7,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"AAV from ahead",
+              "@orientation":[0,1,0,1.57],
+              "@position":[12,2.7,0]
+            }
+          },
+          { "LOD":
+            {
+              "@range":[500,2000],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"AAVGroup",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"AAV",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"FullTrack",
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.5,0.5,0.5],
+                                "@translation":[-1.5,-1,-0.3],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["FullTrack.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/FullTrack.x3d","FullTrack.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/FullTrack.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Chassis",
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["Chassis.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/Chassis.x3d","Chassis.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/Chassis.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"ChassisHatch",
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.9,0.9,0.9],
+                                "@translation":[0.4,1.74,-1],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["ChassisHatch.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/ChassisHatch.x3d","ChassisHatch.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/ChassisHatch.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Turret",
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.5,0.5,0.5],
+                                "@translation":[-0.65,2.5,1.33],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["Turret.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/Turret.x3d","Turret.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/Turret.wrl"]
+                                    }
+                                  },
+                                  { "CylinderSensor":
+                                    {
+                                      "@DEF":"TurretCylinderSensor",
+                                      "@description":"click and drag to rotate turret",
+                                      "@maxAngle":3.14,
+                                      "@minAngle":-3.14
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RearLeftAntennaINLINE",
+                                "@scale":[0.6,0.6,0.6],
+                                "@translation":[-5.3,1.425,-1.633],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"RearAntenna",
+                                      "@url":["RearAntenna.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/RearAntenna.x3d","RearAntenna.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/RearAntenna.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RearRightAntennaINLINE",
+                                "@scale":[0.6,0.6,0.6],
+                                "@translation":[-5.3,1.425,1.633],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"RearAntenna"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RightAAVHeadLight",
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.85,0.85,0.85],
+                                "@translation":[2.15,1.575,-1.2],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"HeadLights",
+                                      "@url":["HeadLights.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/HeadLights.x3d","HeadLights.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/HeadLights.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"LeftAAVHeadLight",
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.85,0.85,0.85],
+                                "@translation":[2.15,1.575,1],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"HeadLights"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"ForwardAntenna",
+                                "@scale":[0.6,0.5,0.6],
+                                "@translation":[-3.6,1.6,1.666],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["ForwardAntenna.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/ForwardAntenna.x3d","ForwardAntenna.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/ForwardAntenna.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Shape":
+                  {
+                    "@DEF":"MediumRangeBox",
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5.5,2.5,3]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.15,0.65,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "WorldInfo":
+                  {
+                    "@info":["null node"]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"rotation_changed",
+              "@fromNode":"TurretCylinderSensor",
+              "@toField":"set_rotation",
+              "@toNode":"Turret"
+            }
+          }
+        ]
+    }
+  }
+}

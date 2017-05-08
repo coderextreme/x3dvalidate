@@ -1,0 +1,176 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NurbsPositionInterpolatorExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example of animating a ball along a NurbsCurve."
+          },
+          {
+            "@name":"creator",
+            "@content":"Charles Adams"
+          },
+          {
+            "@name":"created",
+            "@content":"26 February 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://edocs.nps.edu/npspubs/scholarly/theses/2003/Jun/03Jun_Adams.pdf"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development, needs to be upgraded to final version of X3D NURBS nodes"
+          },
+          {
+            "@name":"subject",
+            "@content":"NURBS Position Interpolator"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/NURBS/NurbsPositionInterpolatorExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"NurbsPositionInterpolator path",
+              "@position":[11,4.6,18]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"ts",
+              "@cycleInterval":4,
+              "@loop":true
+            }
+          },
+          { "NurbsPositionInterpolator":
+            {
+              "@DEF":"npi",
+              "@knot":[0,0.25,0.5,0.75,1],
+              "@order":4,
+              "-controlPoint":
+                { "Coordinate":
+                  {
+                    "@point":[4,6,0,7,12,0,11,6,0,15,2,0,20,6,0]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"ball",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "NurbsCurve":
+                  {
+                    "@DEF":"nc",
+                    "@order":4,
+                    "@tessellation":30,
+                    "-controlPoint":
+                      { "Coordinate":
+                        {
+                          "@point":[4,6,0,7,12,0,11,6,0,15,2,0,20,6,0]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@emissiveColor":[1,1,1]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"ts",
+              "@toField":"set_fraction",
+              "@toNode":"npi"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"npi",
+              "@toField":"set_translation",
+              "@toNode":"ball"
+            }
+          }
+        ]
+    }
+  }
+}

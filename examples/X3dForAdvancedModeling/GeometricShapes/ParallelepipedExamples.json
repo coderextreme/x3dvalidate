@@ -1,0 +1,312 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ParallelepipedExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example use of external prototype declaration for Parallelepiped, which is a 3D figure formed by six parallelograms."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"25 November 2011"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"ParallelepipedPrototype.x3d"
+          },
+          {
+            "@name":"Image",
+            "@content":"ParallelepipedVertexIndices.png"
+          },
+          {
+            "@name":"drawing",
+            "@content":"GeometricShapes.vsd"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Parallelepiped"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://upload.wikimedia.org/wikipedia/commons/f/f6/Parallelepiped.svg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Parallelepiped.svg/500px-Parallelepiped.svg.png"
+          },
+          {
+            "@name":"subject",
+            "@content":"parallelopiped rhomboid geometry polyhedron"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/ParallelepipedExamples.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Parallelepiped",
+              "@appinfo":"Parallelepiped is a 3D figure formed by six parallelograms; also sometimes referred to as a rhomboid",
+              "@url":["ParallelepipedPrototype.x3d#Parallelepiped","http://X3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/ParallelepipedPrototype.x3d#Parallelepiped","ParallelepipedPrototype.wrl#Parallelepiped","http://X3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/ParallelepipedPrototype.wrl#Parallelepiped"],
+              "field": [
+                {
+                  "@name":"point",
+                  "@accessType":"inputOutput",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"colorPerVertex",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"normalPerVertex",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"colorIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"normalIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"texCoordIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"color",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"normal",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"texCoord",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"================================================================================"
+          },
+          { "Background":
+            {
+              "@skyColor":[0.905882,1,0.858824]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Parellelopiped examples",
+              "@orientation":[1,0,0,-0.46365],
+              "@position":[0,5,10]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-4,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"Parallelepiped",
+                          "fieldValue": [
+                            {
+                              "@name":"point",
+                              "@value":[-0.5,1,-0.5,0.5,1,-0.5,0.5,1,0.5,-0.5,1,0.5,0,0,0,1,0,0,1,0,1,0,0,1]
+                            }
+                          ]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"BlueAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.698039,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"Parallelepiped",
+                          "fieldValue": [
+                            {
+                              "@name":"point",
+                              "@value":[-0.5,1,0,0.5,1,0,0.5,1,1,-0.5,1,1,0,0,0,1,0,0,1,0,1,0,0,1]
+                            }
+                          ]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"BlueAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"Parallelepiped",
+                          "@DEF":"ParallelepipedBox",
+                          "fieldValue": [
+                            {
+                              "@name":"point",
+                              "@value":[0,1,0,1,1,0,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,0,1]
+                            }
+                          ]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"BlueAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"Parallelepiped",
+                          "fieldValue": [
+                            {
+                              "@name":"point",
+                              "@value":[0.5,1,0,1.5,1,0,1.5,1,1,0.5,1,1,0,0,0,1,0,0,1,0,1,0,0,1]
+                            }
+                          ]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"BlueAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"Parallelepiped",
+                          "fieldValue": [
+                            {
+                              "@name":"point",
+                              "@value":[0.5,1,0.5,1.5,1,0.5,1.5,1,1.5,0.5,1,1.5,0,0,0,1,0,0,1,0,1,0,0,1]
+                            }
+                          ]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"BlueAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

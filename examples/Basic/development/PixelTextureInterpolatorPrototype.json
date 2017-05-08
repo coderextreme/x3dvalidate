@@ -1,0 +1,277 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PixelTextureInterpolatorPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Create Script prototype to modify a PixelTexture as an image morph"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"14 April 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development"
+          },
+          {
+            "@name":"subject",
+            "@content":"2D image PixelTexture morph"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/PixelTextureInterpolatorPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"PixelTextureInterpolator",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"set_fraction",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"key",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"keyValue",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFImage"
+                    },
+                    {
+                      "@name":"traceEnabled",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"enable console output to trace script computations and prototype progress",
+                      "@type":"SFBool",
+                      "@value":true
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"First node determines node type of prototype"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ImageInterpolatorScript",
+                        "@url":["PixelTextureInterpolator.js","https://savage.nps.edu/Savage/Tools/Authoring/PixelTextureInterpolator.js"],
+                        "field": [
+                          {
+                            "@name":"set_fraction",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"key",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFFloat"
+                          },
+                          {
+                            "@name":"keyValue",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFNode",
+                            "-children":[
+                              {
+                                "#comment":"initialization nodes (if any) go here"
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFImage"
+                          },
+                          {
+                            "@name":"traceEnabled",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_fraction",
+                                "@protoField":"set_fraction"
+                              },
+                              {
+                                "@nodeField":"key",
+                                "@protoField":"key"
+                              },
+                              {
+                                "@nodeField":"keyValue",
+                                "@protoField":"keyValue"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              },
+                              {
+                                "@nodeField":"traceEnabled",
+                                "@protoField":"traceEnabled"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"Subsequent nodes do not render, but still must be a valid X3D subgraph"
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"renderable scene graph begins here"
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "PixelTexture":
+                        {
+                          "@DEF":"PixelColors",
+                          "@image":[2,4,3,16711680,16776960,30464,16711799,255,16742144,65399,8947848]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"set of images, interpolated as a 2D morph"
+          },
+          { "ProtoInstance":
+            {
+              "@name":"PixelTextureInterpolator",
+              "@DEF":"PixelTextureInterpolatorExample",
+              "fieldValue": [
+                {
+                  "@name":"key",
+                  "@value":[0,0.25,0.5,0.75,1]
+                },
+                {
+                  "@name":"keyValue",
+                  "-children":[
+                    {
+                      "#comment":"rotate two image values in each PixelTexture"
+                    },
+                    { "PixelTexture":
+                      {
+                        "@image":[2,4,3,16711680,16776960,30464,16711799,255,16742144,65399,8947848]
+                      }
+                    },
+                    { "PixelTexture":
+                      {
+                        "@image":[2,4,3,30464,16711799,255,16742144,65399,8947848,16711680,16776960]
+                      }
+                    },
+                    { "PixelTexture":
+                      {
+                        "@image":[2,4,3,255,16742144,65399,8947848,16711680,16776960,30464,16711799]
+                      }
+                    },
+                    { "PixelTexture":
+                      {
+                        "@image":[2,4,3,65399,8947848,16711680,16776960,30464,16711799,255,16742144]
+                      }
+                    },
+                    {
+                      "#comment":"last PixelTexture matches first, would like to DEF and USE within a fieldValue initialization"
+                    },
+                    { "PixelTexture":
+                      {
+                        "@image":[2,4,3,16711680,16776960,30464,16711799,255,16742144,65399,8947848]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@value":true
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Time",
+              "@cycleInterval":4
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"PixelTextureInterpolatorExample",
+              "@toField":"image",
+              "@toNode":"PixelColors"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Time",
+              "@toField":"set_fraction",
+              "@toNode":"PixelTextureInterpolatorExample"
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,458 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Amraam.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"F16, Fighting Falcon, Turkish Air Force (TUAF) AIM120 AMRAAM missile"
+          },
+          {
+            "@name":"creator",
+            "@content":"Murat ONDER, LTJG, Turkish Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"13 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"drawing",
+            "@content":"AmraamDrawing.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"Amraam1.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"Amraam2.jpg"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@rotation":[0,0,1,-1.57],
+              "@translation":[3,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,-2.775,0],
+                    "-children":[
+                      {
+                        "#comment":"AIM120 - AMRAAM BODY TRANSFORM"
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"AMRAAM_BODY",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"BODY_COLOR",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,1,1],
+                                                  "@shininess":0.7,
+                                                  "@specularColor":[1,1,1]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":5.56,
+                                            "@radius":0.25905
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[1,2.5,1],
+                    "-children":[
+                      {
+                        "#comment":"AMRAAM CONE TRANSFORM"
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"AMRAAM_CONE",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,1,1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":1.785,
+                                      "@crossSection":[0.267,0.000,0.231,-0.134,0.134,-0.231,0.0,-0.267,-0.134,-0.231,-0.231,-0.134,-0.267,0.000,-0.231,0.134,-0.134,0.231,0.0,0.267,0.134,0.231,0.231,0.134,0.267,0.0],
+                                      "@scale":[1.00,1.00,0.87,0.87,0.70,0.70,0.50,0.50,0.25,0.25,0.01,0.01],
+                                      "@spine":[0.00,0.00,0.00,0.00,0.10,0.00,0.00,0.20,0.00,0.00,0.30,0.00,0.00,0.40,0.00,0.00,0.50,0.00]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"AMRAAM BANDS TRANSFORM"
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"BANDS",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,-3.2,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.1,
+                                            "@radius":0.26
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,0,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,-5.1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.1,
+                                            "@radius":0.26
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,0,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"BOOSTER PART TRANSFORM"
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"BOOSTER",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,-5.91,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"BODY_COLOR"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.69,
+                                            "@radius":0.25905
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"BOOSTERFIN",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[0.25905,-6.27,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@DEF":"BFIN",
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"FIN_COLOR",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.9,0.9,0.9]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "IndexedFaceSet":
+                                                {
+                                                  "@coordIndex":[0,1,2,3,4,5,-1],
+                                                  "@solid":false,
+                                                  "-coord":
+                                                    { "Coordinate":
+                                                      {
+                                                        "@point":[0,0,0,0,1,0,0.2,1,0,0.9,0.2,0,0.9,0,0,0,0,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,1.57],
+                                      "@translation":[0,-6.27,-0.25905],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"BFIN"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,3.14],
+                                      "@translation":[-0.25905,-6.27,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"BFIN"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,-1.57],
+                                      "@translation":[0,-6.27,0.25905],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"BFIN"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"MIDDLE FINS TRANSFORM"
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"MIDFIN",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0.24,-3.02,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"MID_FIN",
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@coordIndex":[0,1,2,3,-1],
+                                            "@solid":false,
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[0,0,0,0,1,0,0.65,0,0,0,0,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"FINCOLOR",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.9,0.9,0.9]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,1.57],
+                                "@translation":[0,-3.02,-0.24],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"MID_FIN"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,-1.57],
+                                "@translation":[0,-3.02,0.24],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"MID_FIN"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,3.14],
+                                "@translation":[-0.24,-3.02,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"MID_FIN"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

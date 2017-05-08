@@ -1,0 +1,665 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BooleanSequencerPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"BooleanSequencer is modeled after ScalarInterpolator and generates true or false values."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Estuko Lippi, Jeff Weekley, Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"7 August 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#ScalarInterpolator"
+          },
+          {
+            "@name":"subject",
+            "@content":"boolean sequencer"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"BooleanSequencer",
+              "ProtoInterface": {
+                  "-children":[
+                    {
+                      "#comment":"Regular interpolator-style input"
+                    },
+                    {
+                      "#comment":"Regular interpolator-style output"
+                    },
+                    {
+                      "#comment":"Utility methods"
+                    }
+                  ],
+                  "field": [
+                    {
+                      "@name":"set_fraction",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"typical range [0..1]",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_key",
+                      "@accessType":"inputOnly",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"key",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.",
+                      "@type":"MFFloat",
+                      "-children":[
+                        {
+                          "#comment":"NULL initialization value"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"key_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"set_keyValue",
+                      "@accessType":"inputOnly",
+                      "@type":"MFBool"
+                    },
+                    {
+                      "@name":"keyValue",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Array of true|false values. Must have the same number of keys as keyValues.",
+                      "@type":"MFBool",
+                      "-children":[
+                        {
+                          "#comment":"NULL initialization value"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"keyValue_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"MFBool"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"previous",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"next",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "ScalarInterpolator":
+                            {
+                              "@DEF":"KeyHolder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"key",
+                                      "@protoField":"key"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Anchor":
+                            {
+                              "@DEF":"KeyValueHolder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"keyValue"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"SequencerScript",
+                              "@directOutput":true,
+                              "-children":[
+                                {
+                                  "#comment":"Regular interpolator-style input"
+                                },
+                                {
+                                  "#comment":"Regular interpolator-style output"
+                                },
+                                {
+                                  "#comment":"Utility methods"
+                                },
+                                {
+                                  "#comment":"Script-specific interfaces, not needed for node definition"
+                                }
+                              ],
+                              "field": [
+                                {
+                                  "@name":"set_fraction",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"typical range [0..1]",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_key",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"keyHolderNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ScalarInterpolator":
+                                      {
+                                        "@USE":"KeyHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"key_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"set_keyValue",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Array of true or false values. Must have the same number of keys as keyValues.",
+                                  "@type":"MFBool"
+                                },
+                                {
+                                  "@name":"keyValueHolderNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Anchor":
+                                      {
+                                        "@USE":"KeyValueHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"keyValue_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFBool"
+                                },
+                                {
+                                  "@name":"value_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"previous",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"next",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                },
+                                {
+                                  "@name":"keyValueArray",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"NULL initialization value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"previousFraction",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat",
+                                  "@value":0.0
+                                },
+                                {
+                                  "@name":"nextIndex",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFInt32",
+                                  "@value":0
+                                },
+                                {
+                                  "@name":"valid",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"recheckValidity",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                },
+                                {
+                                  "@name":"forward",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"leftToRight",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"key",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFFloat",
+                                  "-children":[
+                                    {
+                                      "#comment":"NULL initialization value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"keyValue",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"NULL initialization value"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"set_fraction",
+                                      "@protoField":"set_fraction"
+                                    },
+                                    {
+                                      "@nodeField":"set_key",
+                                      "@protoField":"set_key"
+                                    },
+                                    {
+                                      "@nodeField":"key_changed",
+                                      "@protoField":"key_changed"
+                                    },
+                                    {
+                                      "@nodeField":"set_keyValue",
+                                      "@protoField":"set_keyValue"
+                                    },
+                                    {
+                                      "@nodeField":"keyValue_changed",
+                                      "@protoField":"keyValue_changed"
+                                    },
+                                    {
+                                      "@nodeField":"value_changed",
+                                      "@protoField":"value_changed"
+                                    },
+                                    {
+                                      "@nodeField":"previous",
+                                      "@protoField":"previous"
+                                    },
+                                    {
+                                      "@nodeField":"next",
+                                      "@protoField":"next"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"var key, keyValue;",
+"",
+"function initialize()",
+"{",
+"\tkey      = keyHolderNode.key;",
+"\tkeyValue = keyValueHolderNode.description;",
+"\ttracePrint('key =' + key);",
+"\ttracePrint('keyValue =' + keyValue);",
+"\tkeyValueToKeyValueArray ();",
+"\ttracePrint('keyValueArray =' + keyValueArray);",
+"",
+"\tforward = true;",
+"\ttracePrint('Initializing a new BooleanSequencer.  key.length=' + key.length + '; keyValueArray.length=' + keyValueArray.length);",
+"\tvalidityCheck();",
+"}",
+"",
+"function keyValueToKeyValueArray ()",
+"{",
+"\ttracePrint('keyValueToKeyValueArray starting');",
+"\tindex = 0;",
+"\tcomplete = false;",
+"\tnextString = keyValue.toLowerCase();",
+"\ttracePrint('initial nextString=' + nextString);",
+"\ttokenCount=0;",
+"\twhile ((complete != true) && (nextString.length > 0))",
+"\t{",
+"\t\ttracePrint('nextString=' + nextString);",
+"\t\twhile ((nextString.substring(0,1) == ' ') || (nextString.substring(0,1) == ','))",
+"\t\t       nextString = nextString.slice(1);",
+"\t\ttracePrint('deblanked nextString=' + nextString);",
+"\t\tif (nextString.length == 0)",
+"\t\t{",
+"\t\t\ttracePrint ('nextString.length == 0');",
+"\t\t\tcomplete = true;",
+"\t\t}",
+"\t\tif (nextString.length < 4)",
+"\t\t{",
+"\t\t\talwaysPrint ('*** illegal keyValue input=' + nextString);",
+"\t\t\tvalid = false;",
+"\t\t\tcomplete = true;",
+"\t\t}",
+"\t\telse if (nextString.substring(0,4) =='true')",
+"\t\t{",
+"\t\t\tkeyValueArray[keyValueArray.length] = 1; // append",
+"\t\t\tnewString = nextString.slice(4);",
+"\t\t\tnextString = newString;",
+"\t\t\ttokenCount++;",
+"\t\t\ttracePrint('found true, nextString=' + nextString + ', tokenCount=' + tokenCount);",
+"\t\t}",
+"\t\telse if (nextString.length < 5)",
+"\t\t{",
+"\t\t\talwaysPrint ('*** illegal keyValue input=' + nextString);",
+"\t\t\tvalid = false;",
+"\t\t\tcomplete = true;",
+"\t\t}",
+"\t\telse if (nextString.substring(0,5) =='false')",
+"\t\t{",
+"\t\t\tkeyValueArray[keyValueArray.length] = 0; // append",
+"\t\t\tnewString = nextString.slice(5);",
+"\t\t\tnextString = newString;",
+"\t\t\ttokenCount++;",
+"\t\t\ttracePrint('found false, nextString=' + nextString + ', tokenCount=' + tokenCount);",
+"\t\t}",
+"\t\ttracePrint('  intermediate keyValueArray=' + keyValueArray);",
+"\t}",
+"\ttracePrint('keyValueToKeyValueArray complete');",
+"}",
+"",
+"function set_fraction(value, timeStamp)",
+"{",
+"\tif (recheckValidity) validityCheck();",
+"",
+"\tif (!valid) return; //BooleanSequencer ignored",
+"",
+"\ttracePrint('fraction =' + value);",
+"\t//Bounds checking",
+"\tif (value < 0)",
+"\t{",
+"\t\talwaysPrint('*** warning: fraction is less than 0.  fraction reset to 0 ***');",
+"\t\tvalue = 0;",
+"\t}",
+"\telse if (value > 1)",
+"\t{",
+"\t\talwaysPrint('*** warning: fraction is greater than 1.  fraction reset to 1 ***');",
+"\t\tvalue = 1;",
+"\t}",
+"",
+"\t//Check animation direction",
+"\tif (value < previousFraction && forward == true)",
+"\t{",
+"\t\tforward = false;",
+"\t\tnextIndex = nextIndex - 1;",
+"\t\ttracePrint('Animate backward');",
+"\t}",
+"\telse if (value > previousFraction && forward == false)",
+"\t{",
+"\t\tforward = true;",
+"\t\t//nextIndex = 0;",
+"\t\ttracePrint('Animate forward');",
+"\t}",
+"",
+"\tpreviousFraction = value;",
+"",
+"\tif (forward == true)",
+"\t{",
+"\t\tfor (i = nextIndex; i < key.length; i++)",
+"\t\t{",
+"\t\t\tif (value < key[i])",
+"\t\t\t\treturn;",
+"",
+"\t\t\tnextIndex = i + 1;",
+"\t\t\ttracePrint('nextIndex =' + nextIndex);",
+"\t\t\tif (nextIndex < key.length)",
+"\t\t\t{",
+"\t\t\t\tif (value <= key[nextIndex])",
+"\t\t\t\t{",
+"\t\t\t\t\t//Fire event",
+"\t\t\t\t\tif (keyValueArray[nextIndex-1] == 0)",
+"\t\t\t\t\t\tvalue_changed = false;",
+"\t\t\t\t\telse",
+"\t\t\t\t\t\tvalue_changed = true;",
+"\t\t\t\t\ttracePrint('value_changed eventOut is:' + value_changed);",
+"\t\t\t\t}",
+"\t\t\t}",
+"\t\t\telse if (nextIndex == key.length)",
+"\t\t\t{",
+"\t\t\t\t//Fire event",
+"\t\t\t\tif (keyValueArray[nextIndex-1] == 0)",
+"\t\t\t\t\tvalue_changed = false;",
+"\t\t\t\telse",
+"\t\t\t\t\tvalue_changed = true;",
+"\t\t\t\ttracePrint('value_changed eventOut is:' + value_changed);",
+"\t\t\t}",
+"\t\t\telse //nextIndex > key.length",
+"\t\t\t{",
+"\t\t\t\t//nextIndex = 0;",
+"\t\t\t\tbreak;",
+"\t\t\t}",
+"\t\t}",
+"\t}",
+"\telse //backward",
+"\t{",
+"\t\tfor (i = nextIndex; i > 0; i--)",
+"\t\t{",
+"\t\t\tif (value >= key[i])",
+"\t\t\t\treturn;",
+"",
+"\t\t\tnextIndex = i - 1;",
+"\t\t\ttracePrint('nextIndex =' + nextIndex);",
+"\t\t\tif (nextIndex >= 0)",
+"\t\t\t{",
+"\t\t\t\tif (value >= key[nextIndex])",
+"\t\t\t\t{",
+"\t\t\t\t\t//Fire event",
+"\t\t\t\t\tif (keyValueArray[nextIndex] == 0)",
+"\t\t\t\t\t\tvalue_changed = false;",
+"\t\t\t\t\telse",
+"\t\t\t\t\t\tvalue_changed = true;",
+"\t\t\t\t\ttracePrint('value_changed eventOut is:' + value_changed);",
+"\t\t\t\t}",
+"\t\t\t}",
+"\t\t\telse //nextIndex < 0",
+"\t\t\t{",
+"\t\t\t\t//nextIndex = key.length;",
+"\t\t\t\tbreak;",
+"\t\t\t}",
+"\t\t}",
+"\t}",
+"}",
+"",
+"function set_key(value, timeStamp)",
+"{",
+"\tkey = value;",
+"\tkeyHolderNode.key  = key;",
+"\trecheckValidity = true;",
+"}",
+"",
+"function set_keyValue(value, timeStamp)",
+"{",
+"\tkeyValue = value;",
+"\tkeyValueHolderNode.description = keyValue;",
+"\trecheckValidity = true;",
+"\tkeyValueToKeyValueArray ();",
+"\tkeyValue_changed = keyValue;",
+"}",
+"",
+"function validityCheck()",
+"{",
+"\t//Check if key & keyValueArray array length matches",
+"\tif (key.length != keyValueArray.length)",
+"\t{",
+"\t\talwaysPrint('*** error: key and keyValue arrays must be of the same length.  BooleanSequencer ignored ***');",
+"\t\tvalid = false;",
+"\t\treturn;",
+"\t}",
+"",
+"\t//Check if key array has values in the range of [0..1] in an increasing order",
+"\tif (key[0] < 0 || key[0] > 1)",
+"\t{",
+"\t\talwaysPrint('*** error: key[0] value is NOT in the range of [0..1].  BooleanSequencer ignored ***');",
+"\t\tvalid = false;",
+"\t\treturn;",
+"\t}",
+"\tfor (i = 1; i < key.length; i++)",
+"\t{",
+"\t\tif (key[i] < 0 || key[i] > 1)",
+"\t\t{",
+"\t\t\talwaysPrint('*** error: key[' + i + '] value is NOT in the range of [0..1].  BooleanSequencer ignored ***');",
+"\t\t\tvalid = false;",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"\t\tif (key[i] <= key [i-1])",
+"\t\t{",
+"\t\t\talwaysPrint('*** error: values for key[] array must be listed in an increasing order.  BooleanSequencer ignored ***');",
+"\t\t\tvalid = false;",
+"\t\t\treturn;",
+"\t\t}",
+"\t}",
+"\trecheckValidity = false;",
+"\tkey_changed = key;",
+"\treturn;",
+"}",
+"function previous (SFBoolValue, timestamp)",
+"{",
+"\tnextIndex = nextIndex - 1;",
+"\tif (nextIndex == 0) nextIndex = key.length - 1;",
+"}",
+"function next (SFBoolValue, timestamp)",
+"{",
+"\tnextIndex = nextIndex + 1;",
+"\tif (nextIndex == key.length) nextIndex = 0;",
+"}",
+"",
+"function tracePrint(outputString)",
+"{",
+"\tif (traceEnabled) Browser.print ('[ BooleanSequencer ]' + outputString);",
+"}",
+"",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[ BooleanSequencer ]' + outputString);",
+"}"
+]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===============Example=============="
+          },
+          { "Anchor":
+            {
+              "@description":"BooleanSequencerExample",
+              "@parameter":["target=_blank"],
+              "@url":["BooleanSequencerExample.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.x3d","BooleanSequencerExample.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["BooleanSequencerPrototype","defines a prototype","","Click on this text to see","BooleanSequencerExample"," scene"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

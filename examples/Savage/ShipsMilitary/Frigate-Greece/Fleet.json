@@ -1,0 +1,119 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Fleet.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Copyright [2001] By George Stavritis"
+          },
+          {
+            "@name":"translator",
+            "@content":"Part of S-Type Frigate, Hellenic Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"28 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"The task force of 3 frigates"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/Fleet.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"View the fleet from an aircraft",
+              "@orientation":[0,1,0,0.4],
+              "@position":[20,10,100]
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@frontUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[1,1,1,0.1,0.1,0.5,0.4,0.25,0.2,0.1,0.6,0.1],
+              "@leftUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@rightUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-100,0,400],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["onefrigate.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/onefrigate.x3d","onefrigate.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/onefrigate.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,0,60],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["onefrigate.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/onefrigate.x3d","onefrigate.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/onefrigate.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[25,0,150],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["onefrigate.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/onefrigate.x3d","onefrigate.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/onefrigate.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,913 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Fan.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Fan with Cowling, Shaft and Control Surfaces for the LCAC"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"13 June 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/lcac.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.surfpac.navy.mil/acu5/lcac.htm"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/Fan.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"subject",
+            "@content":"LCAC Propellor"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Scale verified by http://www.surfpac.navy.mil/acu5/lcac.htm"
+          },
+          { "Background":
+            {
+              "@skyColor":[0.2,0.66,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"LCAC Fan from Aft"
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Fan",
+              "@rotation":[1,0,0,1.57],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Cowling",
+                    "-children":[
+                      { "LOD":
+                        {
+                          "@range":[80],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,0.758],
+                                "@scale":[1,6,1],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-texture":
+                                              { "ImageTexture":
+                                                {
+                                                  "@url":["CowlingPaint.jpg","https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/CowlingPaint.jpg"]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@beginCap":false,
+                                            "@convex":false,
+                                            "@creaseAngle":12.56,
+                                            "@crossSection":[0.1,0.00,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.00,-0.10,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.10,-0.00,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.00,0.10,0.038,0.092,0.071,0.071,0.092,0.038,0.10,0.00],
+                                            "@endCap":false,
+                                            "@spine":[2.00,0.0,0.00,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.00,0.0,2.00,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.00,0.0,0.00,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.00,0.0,-2.00,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.00,0.0,0.00]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,0.758],
+                                "@scale":[1,6,1],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.9,0.9,0.9]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@beginCap":false,
+                                            "@convex":false,
+                                            "@creaseAngle":12.56,
+                                            "@crossSection":[0.1,0.00,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.00,-0.10,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.10,-0.00,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.00,0.10,0.038,0.092,0.071,0.071,0.092,0.038,0.10,0.00],
+                                            "@endCap":false,
+                                            "@spine":[2.00,0.0,0.00,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.00,0.0,2.00,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.00,0.0,0.00,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.00,0.0,-2.00,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.00,0.0,0.00]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "LOD":
+                        {
+                          "@range":[80],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"Grate",
+                                "@translation":[0,0.5025,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.05,
+                                            "@radius":2
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@transparency":0.6
+                                                }
+                                              },
+                                            "-texture":
+                                              { "ImageTexture":
+                                                {
+                                                  "@url":["grate.jpg","https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/grate.jpg"]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"NoGrate",
+                                "@translation":[0,0.5025,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.05,
+                                            "@radius":2
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@transparency":0.6
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "LOD":
+                        {
+                          "@range":[60],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Strut",
+                                      "@rotation":[0,0,1,1.57],
+                                      "@translation":[0,0.05,0.4],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@DEF":"SurfaceOne",
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "IndexedFaceSet":
+                                                      {
+                                                        "@coordIndex":[0,1,2,3,4,-1],
+                                                        "@solid":false,
+                                                        "-coord":
+                                                          { "Coordinate":
+                                                            {
+                                                              "@point":[0,0,-0.25,0.4,0,-0.25,0.3,0,1.5,0.1,0,1.5,0,0,-0.25]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.25,0.5,0.95]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@DEF":"SurfaceTwo",
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "IndexedFaceSet":
+                                                      {
+                                                        "@coordIndex":[0,1,2,3,4,-1],
+                                                        "@solid":false,
+                                                        "-coord":
+                                                          { "Coordinate":
+                                                            {
+                                                              "@point":[0,-0.01,-0.25,0.4,-0.01,-0.25,0.3,-0.01,1.5,0.1,-0.01,1.5,0,-0.01,-0.25]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.25,0.5,0.95]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@DEF":"SideOne",
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "IndexedFaceSet":
+                                                      {
+                                                        "@coordIndex":[0,1,2,3,4,-1],
+                                                        "@solid":false,
+                                                        "-coord":
+                                                          { "Coordinate":
+                                                            {
+                                                              "@point":[0.3,0,1.5,0.4,0,-0.25,0.4,-0.01,-0.25,0.3,-0.01,1.5,0.3,0,1.5]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.25,0.5,0.95]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@DEF":"SideTwo",
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "IndexedFaceSet":
+                                                      {
+                                                        "@coordIndex":[0,1,2,3,4,-1],
+                                                        "@solid":false,
+                                                        "-coord":
+                                                          { "Coordinate":
+                                                            {
+                                                              "@point":[0,0,-0.25,0,-0.01,-0.25,0.4,-0.01,-0.25,0.4,0,-0.25,0,0,-0.25]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.25,0.5,0.95]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@DEF":"SideThree",
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "IndexedFaceSet":
+                                                      {
+                                                        "@coordIndex":[0,1,2,3,4,-1],
+                                                        "@solid":false,
+                                                        "-coord":
+                                                          { "Coordinate":
+                                                            {
+                                                              "@point":[0,0,-0.25,0,-0.01,-0.25,0.1,-0.01,1.5,0.1,0,1.5,0,0,-0.25]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.25,0.75,0.25]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"StrutTwo",
+                                      "@rotation":[0,1,0,1.26],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"Strut"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"StrutThree",
+                                      "@rotation":[0,1,0,2.51],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"Strut"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"StrutFour",
+                                      "@rotation":[0,1,0,3.77],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"Strut"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"StrutFive",
+                                      "@rotation":[0,-1,0,1.26],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"Strut"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "LOD":
+                        {
+                          "@range":[80,120],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"RearGrate",
+                                "@rotation":[1,0,0,3.14],
+                                "@translation":[0,-1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                            "@bottom":false,
+                                            "@bottomRadius":2,
+                                            "@height":1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@transparency":0.6
+                                                }
+                                              },
+                                            "-texture":
+                                              { "ImageTexture":
+                                                {
+                                                  "@url":["RearGrate.jpg","https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/RearGrate.jpg"]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RearNoGrate",
+                                "@rotation":[1,0,0,3.14],
+                                "@translation":[0,-1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                            "@bottom":false,
+                                            "@bottomRadius":2,
+                                            "@height":1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.6,0.6,0.6],
+                                                  "@transparency":0.6
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"PropellorLOD",
+                    "@translation":[0,-0.3,0],
+                    "-children":[
+                      { "LOD":
+                        {
+                          "@range":[40],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"Propellor",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,-1,1.57],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@DEF":"Blade",
+                                            "@rotation":[0,-1,0,0.79],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.25,0]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Extrusion":
+                                                      {
+                                                        "@creaseAngle":1.785,
+                                                        "@crossSection":[1,0,0.3,0.28,-0.1,0.38,-0.4,0.35,-0.7,0.2,-0.8,0.1,-0.85,0,-0.8,-0.15,-0.4,-0.28,0,-0.21,0.3,-0.14,0.6,-0.08,1,0],
+                                                        "@scale":[0.2,0.2,0.185,0.185,0.166,0.166,0.133,0.133,0.11667,0.11667,0.105,0.105,0.095,0.095,0.088,0.088,0.076,0.076],
+                                                        "@solid":false,
+                                                        "@spine":[0,0.1667,0,0,0.333,0,0,0.4667,0,0,0.666,0,0,1,0,0,1.1667,0,0,1.333,0,0,1.666,0,0,2,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,1.57],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"Blade"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,3.14],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"Blade"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,4.71],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"Blade"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "OrientationInterpolator":
+                                    {
+                                      "@DEF":"PropSpin",
+                                      "@key":[0.0,0.5,1.0],
+                                      "@keyValue":[0.0,1.0,0.0,0.00,0.0,1.0,0.0,3.14,0.0,1.0,0.0,6.28]
+                                    }
+                                  },
+                                  { "TimeSensor":
+                                    {
+                                      "@DEF":"Clock",
+                                      "@cycleInterval":2,
+                                      "@loop":true
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.0125,
+                                            "@radius":1.75
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.8,0.25,0],
+                                                  "@transparency":0.5
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Shaft",
+                    "@translation":[0,-0.3,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,-1.9167,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":4,
+                                      "@radius":0.1667
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,3.14],
+                          "@translation":[0,0.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":1.785,
+                                      "@crossSection":[0.267,0.000,0.231,-0.134,0.134,-0.231,0.0,-0.267,-0.134,-0.231,-0.231,-0.134,-0.267,0.000,-0.231,0.134,-0.134,0.231,0.0,0.267,0.134,0.231,0.231,0.134,0.267,0.0],
+                                      "@scale":[1,1,1,1,1,1,1,1,0.95,0.95,0.88,0.88,0.76,0.76,0.48,0.48],
+                                      "@spine":[0,0,0,0,0.1,0,0,0.2,0,0,0.3,0,0,0.4,0,0,0.5,0,0,0.6,0,0,0.7,0]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.1,0.1,0.2]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"NoseCone",
+                          "@translation":[0,0.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,1,1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":1.785,
+                                      "@crossSection":[0.267,0.000,0.231,-0.134,0.134,-0.231,0.0,-0.267,-0.134,-0.231,-0.231,-0.134,-0.267,0.000,-0.231,0.134,-0.134,0.231,0.0,0.267,0.134,0.231,0.231,0.134,0.267,0.0],
+                                      "@scale":[1,1,1,1,1,1,1,1,0.95,0.95,0.88,0.88,0.76,0.76,0.48,0.48],
+                                      "@spine":[0,0,0,0,0.1,0,0,0.2,0,0,0.3,0,0,0.4,0,0,0.5,0,0,0.6,0,0,0.7,0]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"PropellorControlSurfaces",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0.58,0.58,0.58,2.09],
+                          "@scale":[4,1,1],
+                          "@translation":[-1,0.825,-1.75],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.15,0.8,0.8]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":1.785,
+                                      "@crossSection":[0.1,0,0.03,0.028,-0.01,0.038,-0.04,0.035,-0.07,0.02,-0.08,0.01,-0.085,0,-0.08,-0.015,-0.04,-0.028,0,-0.021,0.03,-0.014,0.06,-0.008,0.1,0],
+                                      "@solid":false,
+                                      "@spine":[0,0,0,0,0.1667,0,0,0.333,0,0,0.4667,0,0,0.666,0,0,1,0,0,1.1667,0,0,1.333,0,0,1.666,0,0,3,0,0,3.5,0]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0.58,0.58,0.58,2.09],
+                          "@scale":[4,1,1],
+                          "@translation":[1,0.825,-1.75],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.15,0.8,0.8]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":1.785,
+                                      "@crossSection":[0.1,0,0.03,0.028,-0.01,0.038,-0.04,0.035,-0.07,0.02,-0.08,0.01,-0.085,0,-0.08,-0.015,-0.04,-0.028,0,-0.021,0.03,-0.014,0.06,-0.008,0.1,0],
+                                      "@solid":false,
+                                      "@spine":[0,0,0,0,0.1667,0,0,0.333,0,0,0.4667,0,0,0.666,0,0,1,0,0,1.1667,0,0,1.333,0,0,1.666,0,0,3,0,0,3.5,0]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"PropSpin"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"PropSpin",
+              "@toField":"rotation",
+              "@toNode":"Propellor"
+            }
+          }
+        ]
+    }
+  }
+}

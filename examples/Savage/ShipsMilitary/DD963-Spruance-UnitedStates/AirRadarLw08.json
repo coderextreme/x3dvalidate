@@ -1,0 +1,213 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AirRadarLw08.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Copyright [2001] By George Stavritis"
+          },
+          {
+            "@name":"created",
+            "@content":"20 October 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"Revised By",
+            "@content":"Josh Hansen"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/DD963-Spruance-UnitedStates/AirRadarLw08.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Navigation radar zw06"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@backUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@frontUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[1,1,1,0.1,0.1,0.5,0.4,0.25,0.2,0.1,0.6,0.1],
+              "@leftUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@rightUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Air Radar",
+              "@orientation":[1,0,0,0],
+              "@position":[0,0,6]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Column",
+                    "@center":[0,0,0.5],
+                    "@rotation":[0,0,1,1.54],
+                    "@scale":[0.4,0.4,1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[-4,-2,-4.5,-1,-4.5,1,-4,2,-3,3,3,3,4,2,4.5,1,4.5,-1,4,-2,3,-3,-3,-3,-4,-2],
+                                "@scale":[0.1,0.1,0.7,0.7,1,1,0.8,0.8,0.2,0.2],
+                                "@spine":[0,0,-0.5,0,0,0,0,0,0.4,0,0,0.1,0,0,-0.2]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.1,0,0],
+                                      "@emissiveColor":[0.1,0,0],
+                                      "@shininess":0.3,
+                                      "@transparency":0.1
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-3.2,1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.5,0.3,1.5]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0,0,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,2],
+                          "@scale":[0.5,1,0.5],
+                          "@translation":[0,-2.8,1.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@height":0.5
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0,0,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"Clock",
+                    "@cycleInterval":8,
+                    "@loop":true
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"ColumnPath",
+                    "@key":[0.0,0.25,0.50,0.75,1.0],
+                    "@keyValue":[0,1,0,0,0,1,0,1.57,0,1,0,3.14,0,1,0,4.71,0,1,0,6.18]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"ColumnPath"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"ColumnPath",
+              "@toField":"set_rotation",
+              "@toNode":"Column"
+            }
+          }
+        ]
+    }
+  }
+}

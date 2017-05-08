@@ -1,0 +1,360 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"jumpcut_anchor.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.nist.gov/vrml.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"
+          },
+          {
+            "@name":"creator",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/members.html"
+          },
+          {
+            "@name":"disclaimer",
+            "@content":"This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."
+          },
+          {
+            "@name":"info",
+            "@content":"Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"
+          },
+          {
+            "@name":"translator",
+            "@content":"Michael Kass NIST, Don Brutzman NPS"
+          },
+          {
+            "@name":"translated",
+            "@content":"21 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 February 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"Test jumpcut transition with an Anchor node. An Anchor node, with a url field of \"Top_View\" (corresponding to the name of Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry. The viewer should see a cubic geometry with the word TOP displayed."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/jumpcut_anchor.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Front_View",
+              "@description":"Front View"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Top_View",
+              "@description":"Top View",
+              "@orientation":[1,0,0,-1.57],
+              "@position":[0,10,0]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.57],
+              "@groundColor":[0,0.5,0,0,0.5,0],
+              "@skyColor":[0,0,1]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"select to change viewpoints to Top View",
+              "@url":["#Top_View"],
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["front.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/front.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,1,2,3,-1],
+                                "@texCoordIndex":[0,1,2,3,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@DEF":"UnitCube",
+                                      "@point":[-1,-1,1,1,-1,1,1,1,1,-1,1,1,1,1,-1,-1,1,-1,-1,-1,-1,1,-1,-1]
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@DEF":"SquareTexCoord",
+                                      "@point":[0,0,1,0,1,1,0,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["right.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/right.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[1,7,4,2,-1],
+                                "@texCoordIndex":[0,1,2,3,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"UnitCube"
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@USE":"SquareTexCoord"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["rear.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/rear.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[7,6,5,4,-1],
+                                "@texCoordIndex":[0,1,2,3,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"UnitCube"
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@USE":"SquareTexCoord"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["left.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/left.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,3,5,6,-1],
+                                "@texCoordIndex":[1,2,3,0,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"UnitCube"
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@USE":"SquareTexCoord"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["top.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/top.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[3,2,4,5,-1],
+                                "@texCoordIndex":[0,1,2,3,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"UnitCube"
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@USE":"SquareTexCoord"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bottom.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/bottom.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,6,7,1,-1],
+                                "@texCoordIndex":[3,0,1,2,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"UnitCube"
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@USE":"SquareTexCoord"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

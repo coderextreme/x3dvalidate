@@ -1,0 +1,754 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Castle.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A fairy-tale castle atop a green hill with a blue sky behind. There are no animations or fun things to click on... building those is up to you."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/castle.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0000.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Castle.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"This world illustrates how far you can go using the primitive geometry nodes: Box, Cone, and Cylinder. An entire fairy-tale castle is built by translating and rotating these shapes into position."
+          },
+          {
+            "#comment":"Things to experiment with..."
+          },
+          {
+            "#comment":"Change the color scheme to make the castle an evil lair."
+          },
+          {
+            "#comment":"Add texture maps to make the castle walls look like they are built from stone."
+          },
+          {
+            "#comment":"Make the castle door an anchor. Clicking on the door leads to another world describing the castle interior."
+          },
+          {
+            "#comment":"Add panorama cloud and mountain textures to the Background node."
+          },
+          {
+            "#comment":"In Nintendo 64 style, add platforms that rise and fall and cannons that rise up when you approach. You can build these using PositionInterpolators and TimeSensors to run the animations, and ProximitySensors to trigger the actions."
+          },
+          { "WorldInfo":
+            {
+              "@info":["copyright (c) 1997, David R. Nadeau"],
+              "@title":"Fairy-tale Castle"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@orientation":[1.0,0.0,0.0,0.35]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@speed":40.0
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,-1.6,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.0,0.0,0.0],
+                                "@emissiveColor":[0.0,0.5,0.0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[2000.0,0.01,2000.0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Castle",
+              "@translation":[0.0,-1.6,-200.0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0.0,20.0,0.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"CastleColor",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.5,
+                                      "@diffuseColor":[1.0,1.0,1.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@bottom":false,
+                                "@height":40.0,
+                                "@radius":50.0
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,52.0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0.0,10.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CastleColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[30.0,20.0,6.0]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,5.0,3.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.4,0.1,0.0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[10.0,10.0,0.5]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-15.0,0.0,3.0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"EntryTower",
+                                "@translation":[0.0,15.0,0.0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CastleColor"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@bottom":false,
+                                            "@height":30.0,
+                                            "@radius":5.0,
+                                            "@top":false
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"EntryRoof",
+                                "@translation":[0.0,40.0,0.0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"RoofColor",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@ambientIntensity":0.5,
+                                                  "@diffuseColor":[1.0,0.0,0.0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                            "@bottomRadius":8.0,
+                                            "@height":20.0
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[15.0,0.0,3.0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"EntryTower"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"EntryRoof"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-15.0,40.0,-5.0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0.0,30.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CastleColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":60.0,
+                                      "@radius":25.0
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,100.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CastleColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":80.0,
+                                      "@radius":15.0,
+                                      "@top":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,170.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"MainRoofCone",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"RoofColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":23.0,
+                                      "@height":60.0
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[20.0,40.0,15.0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0.0,50.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CastleColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":100.0,
+                                      "@radius":15.0,
+                                      "@top":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,130.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"MainRoofCone"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,30.0,15.0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"SmallSubTower",
+                                "@translation":[0.0,25.0,0.0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CastleColor"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@bottom":false,
+                                            "@height":30.0,
+                                            "@radius":5.0,
+                                            "@top":false
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"SmallSubBase",
+                                "@rotation":[1.0,0.0,0.0,3.14159],
+                                "@translation":[0.0,5.0,0.0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CastleColor"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                            "@bottom":false,
+                                            "@bottomRadius":5.0,
+                                            "@height":10.0
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"SmallSubRoof",
+                                "@translation":[0.0,50.0,0.0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"RoofColor"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                            "@bottomRadius":8.0,
+                                            "@height":20.0
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[50.0,20.0,0.0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"LargeSubTower",
+                          "@translation":[0.0,60.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CastleColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":80.0,
+                                      "@radius":10.0,
+                                      "@top":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"LargeSubBase",
+                          "@rotation":[1.0,0.0,0.0,3.14159],
+                          "@translation":[0.0,10.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CastleColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottom":false,
+                                      "@bottomRadius":10.0,
+                                      "@height":20.0
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"LargeSubRoof",
+                          "@translation":[0.0,120.0,0.0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"RoofColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":15.0,
+                                      "@height":40.0
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[10.0,40.0,0.0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubTower"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubBase"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubRoof"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-35.36,20.0,35.36],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"LargeSubTower"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"LargeSubBase"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"LargeSubRoof"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-7.07,40.0,7.07],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubTower"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubBase"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubRoof"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,20.0,-50.0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"LargeSubTower"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"LargeSubBase"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"LargeSubRoof"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.0,40.0,-10.0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubTower"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubBase"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"SmallSubRoof"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

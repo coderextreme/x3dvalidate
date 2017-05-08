@@ -1,0 +1,807 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"FilterExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Contains examples for the prototypes defined in the FilterPrototypes.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, James Harney, Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"18 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 February 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/FilterPrototypes.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"filter"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/FilterExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"FilterBooleanPassTrueEvents",
+              "@url":["FilterPrototypes.wrl#FilterBooleanPassTrueEvents","https://savage.nps.edu/Savage/Tools/Authoring/FilterPrototypes.wrl#FilterBooleanPassTrueEvents","FilterPrototypes.x3d#FilterBooleanPassTrueEvents","https://savage.nps.edu/Savage/Tools/Authoring/FilterPrototypes.x3d#FilterBooleanPassTrueEvents"],
+              "field": [
+                {
+                  "@name":"setBoolean",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"trueEventOut",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"trueEventTime",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"FilterBooleanPassFalseEvents",
+              "@url":["FilterPrototypes.wrl#FilterBooleanPassFalseEvents","https://savage.nps.edu/Savage/Tools/Authoring/FilterPrototypes.wrl#FilterBooleanPassFalseEvents","FilterPrototypes.x3d#FilterBooleanPassFalseEvents","https://savage.nps.edu/Savage/Tools/Authoring/FilterPrototypes.x3d#FilterBooleanPassFalseEvents"],
+              "field": [
+                {
+                  "@name":"setBoolean",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"falseEventOut",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"falseEventTime",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SingleTypeConversion",
+              "@url":["SingleTypeConversionPrototype.wrl#SingleTypeConversion","https://savage.nps.edu/Savage/Tools/Authoring/SingleTypeConversionPrototype.wrl#SingleTypeConversion","SingleTypeConversionPrototype.x3d#SingleTypeConversion","https://savage.nps.edu/Savage/Tools/Authoring/SingleTypeConversionPrototype.x3d#SingleTypeConversion"],
+              "field": [
+                {
+                  "@name":"decimalPlaces",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"decimalPlaces is the number of significant digits after the decimal point. The -1 value indicates no round off.",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"setDecimalPlaces",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"BooleanValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"FloatValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"IntegerValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"TimeValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"BooleanResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"FloatResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"IntegerResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"TimeResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"StringResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"StringsResult",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SliderFloat",
+              "@url":["../../../Savage/Tools/Animation/SliderFloatPrototype.wrl#SliderFloat","https://savage.nps.edu/Savage/Tools/Animation/SliderFloatPrototype.wrl#SliderFloat","../../../Savage/Tools/Animation/SliderFloatPrototype.x3d#SliderFloat","https://savage.nps.edu/Savage/Tools/Animation/SliderFloatPrototype.x3d#SliderFloat"],
+              "field": [
+                {
+                  "@name":"layoutDirection",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"height",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"radius",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"barRadius",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"sliderBarColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"sliderBallColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"sliderEndColor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"min",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"max",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"setMin",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"setMax",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"setValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"valueChanged",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"isDragged",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"dragEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"setDragEnabled",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"dragEnabledChanged",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"clickEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"setClickEnabled",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"clickEnabledChanged",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Filter Examples",
+              "@position":[0,0,15]
+            }
+          },
+          { "Billboard":
+            {
+              "@axisOfRotation":[0,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,4,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["FilterBooleanPassTrueEvents","FilterBooleanPassFalseEvents:","","drag slider to test examples"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.8
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,1,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["BooleanSequencer:","key {0 0.25 0.5 0.75 1} keyValue {0 1 0 1 0}"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.6
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "BooleanSequencer":
+                        {
+                          "@DEF":"BooleanGenerator",
+                          "@key":[0,0.25,0.5,0.75,1],
+                          "@keyValue":[false,true,false,true,false]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-4,-1,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Fraction:"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@size":0.6
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[3,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@DEF":"BooleanFractionText",
+                                      "@string":["N/A"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@size":0.6
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[6,0.15,0],
+                          "-children":[
+                            { "ProtoInstance":
+                              {
+                                "@name":"SliderFloat",
+                                "@DEF":"Slider",
+                                "fieldValue": [
+                                  {
+                                    "@name":"layoutDirection",
+                                    "@value":"horizontal"
+                                  },
+                                  {
+                                    "@name":"min",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"max",
+                                    "@value":1
+                                  },
+                                  {
+                                    "@name":"height",
+                                    "@value":4
+                                  }
+                                ]
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"valueChanged",
+                                "@fromNode":"Slider",
+                                "@toField":"set_fraction",
+                                "@toNode":"BooleanGenerator"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "ProtoInstance":
+                        {
+                          "@name":"SingleTypeConversion",
+                          "@DEF":"BooleanFractionRoundOff",
+                          "fieldValue": [
+                            {
+                              "@name":"decimalPlaces",
+                              "@value":2
+                            }
+                          ]
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"valueChanged",
+                          "@fromNode":"Slider",
+                          "@toField":"FloatValue",
+                          "@toNode":"BooleanFractionRoundOff"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"StringsResult",
+                          "@fromNode":"BooleanFractionRoundOff",
+                          "@toField":"set_string",
+                          "@toNode":"BooleanFractionText"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-5,-3,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["PassTrueEvents:"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@size":0.6
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[3.85,0.15,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@DEF":"TrueLightMaterial",
+                                            "@diffuseColor":[0.45,0.45,0.45],
+                                            "@emissiveColor":[0.45,0.45,0.45]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.2
+                                    }
+                                  }
+                              }
+                            },
+                            { "Script":
+                              {
+                                "@DEF":"TrueScript",
+                                "field": [
+                                  {
+                                    "@name":"setTrue",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFBool"
+                                  },
+                                  {
+                                    "@name":"colorChanged",
+                                    "@accessType":"outputOnly",
+                                    "@type":"SFColor"
+                                  }
+                                ],
+                                "#sourceText":[
+"ecmascript:",
+"",
+"var r, g, b;",
+"function initialize()",
+"{",
+"\tr = 0;",
+"\tg = 0;",
+"\tb = 0;",
+"}",
+"",
+"function setTrue(value, timeStamp)",
+"{",
+"\tif ( r >= 0.5)",
+"\t\tr = 0.25;",
+"\telse",
+"\t\tr = r + 0.25;",
+"",
+"\tif ( b >= 0.5)",
+"\t\tb = 0.25;",
+"\telse",
+"\t\tb = b + 0.25;",
+"",
+"\tcolorChanged = new SFColor(r, g, b);",
+"}"
+]
+                              }
+                            },
+                            { "ProtoInstance":
+                              {
+                                "@name":"FilterBooleanPassTrueEvents",
+                                "@DEF":"TrueEventFilter"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"value_changed",
+                                "@fromNode":"BooleanGenerator",
+                                "@toField":"setBoolean",
+                                "@toNode":"TrueEventFilter"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"trueEventOut",
+                                "@fromNode":"TrueEventFilter",
+                                "@toField":"setTrue",
+                                "@toNode":"TrueScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"colorChanged",
+                                "@fromNode":"TrueScript",
+                                "@toField":"diffuseColor",
+                                "@toNode":"TrueLightMaterial"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"colorChanged",
+                                "@fromNode":"TrueScript",
+                                "@toField":"emissiveColor",
+                                "@toNode":"TrueLightMaterial"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-3,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["PassFalseEvents:"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@size":0.6
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[4,0.15,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@DEF":"FalseLightMaterial",
+                                            "@diffuseColor":[0.45,0.45,0.45],
+                                            "@emissiveColor":[0.45,0.45,0.45]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.2
+                                    }
+                                  }
+                              }
+                            },
+                            { "Script":
+                              {
+                                "@DEF":"FalseScript",
+                                "field": [
+                                  {
+                                    "@name":"setFalse",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFBool"
+                                  },
+                                  {
+                                    "@name":"colorChanged",
+                                    "@accessType":"outputOnly",
+                                    "@type":"SFColor"
+                                  }
+                                ],
+                                "#sourceText":[
+"ecmascript:",
+"",
+"var r, g, b;",
+"function initialize()",
+"{",
+"\tr = 0;",
+"\tg = 0;",
+"\tb = 0;",
+"}",
+"",
+"function setFalse(value, timeStamp)",
+"{",
+"\tif ( g >= 0.5)",
+"\t\tg = 0.25;",
+"\telse",
+"\t\tg = r + 0.25;",
+"",
+"\tif ( b >= 0.5)",
+"\t\tb = 0.25;",
+"\telse",
+"\t\tb = b + 0.25;",
+"",
+"\tcolorChanged = new SFColor(r, g, b);",
+"}"
+]
+                              }
+                            },
+                            { "ProtoInstance":
+                              {
+                                "@name":"FilterBooleanPassFalseEvents",
+                                "@DEF":"FalseEventFilter"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"value_changed",
+                                "@fromNode":"BooleanGenerator",
+                                "@toField":"setBoolean",
+                                "@toNode":"FalseEventFilter"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"falseEventOut",
+                                "@fromNode":"FalseEventFilter",
+                                "@toField":"setFalse",
+                                "@toNode":"FalseScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"colorChanged",
+                                "@fromNode":"FalseScript",
+                                "@toField":"diffuseColor",
+                                "@toNode":"FalseLightMaterial"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"colorChanged",
+                                "@fromNode":"FalseScript",
+                                "@toField":"emissiveColor",
+                                "@toNode":"FalseLightMaterial"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

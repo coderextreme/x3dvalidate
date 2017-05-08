@@ -1,0 +1,158 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Exhaust.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 25.1, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Exhaust."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/DDG-ArleighBurke-UnitedStates/Exhaust.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Torch (high detail)",
+              "@position":[0,0,2]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"EXHAUST",
+              "@scale":[0.5,0.5,0.5],
+              "@translation":[0,0,0.2],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Flames",
+                    "-children":[
+                      {
+                        "#comment":"No appearance, use emissive shading"
+                      }
+                    ],
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,-1,3,4,5,-1,6,7,8,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0.25,0.0,0.00,0.15,1.0,0.10,0.05,0.0,0.15,0.18,0.0,0.05,0.00,1.2,0.05,-0.10,0.0,0.05,-0.00,0.0,0.15,-0.13,0.8,0.10,-0.25,0.0,0.00]
+                              }
+                            },
+                          "-color":
+                            { "Color":
+                              {
+                                "@color":[1.0,0.0,0.0,0.9,0.5,0,1.0,0.0,0.0,0.9,0.3,0,1.0,1.0,0.0,0.9,0.3,0,0.7,0.1,0.2,0.9,0.8,0,1.0,0.0,0.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,1.57],
+                    "@scale":[0.9,0.9,1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"Flames"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,-1.57],
+                    "@scale":[0.9,0.9,1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"Flames"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"EXHAUSTCLOCK",
+              "@loop":true
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"EXHINT",
+              "@key":[0,0.5,1],
+              "@keyValue":[0.1,0.1,0.1,0.5,0.5,0.5,1,1,1]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"EXHAUSTCLOCK",
+              "@toField":"set_fraction",
+              "@toNode":"EXHINT"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"EXHINT",
+              "@toField":"set_scale",
+              "@toNode":"EXHAUST"
+            }
+          }
+        ]
+    }
+  }
+}

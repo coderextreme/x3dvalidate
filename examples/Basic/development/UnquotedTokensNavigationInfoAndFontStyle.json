@@ -1,0 +1,114 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"UnquotedTokensNavigationInfoAndFontStyle.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This scene tests whether enclosing \"quote marks\" can be omitted for three tokenized fields in X3D. The X3dToVrml97.xsl translator does this for FontStyle family, FontStyle justify and NavigationInfo type."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"23 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 January 2004"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/UnquotedTokensNavigationInfoAndFontStyle.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/UnquotedTokensNavigationInfoAndFontStyle.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"note that ordinary XML encoding of a Strings attribute is type=' \"EXAMINE\" \"ANY\"' or'"
+          },
+          { "Transform":
+            {
+              "@translation":[-5,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"\\\" (backslash quote) escapes a quote mark so that it is a rendered character, instead of a line terminator."
+                      }
+                    ],
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["This scene tests whether enclosing\" 21 \" \\\"quote marks\\\" can be omitted for\" 22 \" three tokenized fields in X3D.\" 23 \"\" 24 \"Inspect translated VRML source to see\" 25 \"\" 26 \"NavigationInfo { \" 27 \" type [ \\\"EXAMINE\\\" \\\"ANY\\\" ]\" 28 \"}\" 29 \"FontStyle {\" 30 \" family [ \\\"TYPEWRITER\\\" \\\"SANS\\\" ]\" 31 \" justify [ \\\"BEGIN\\\" \\\"MIDDLE\\\" ]\" 32 \"}"],
+                          "-children":[
+                            {
+                              "#comment":"Again note that ordinary XML encoding is a variation of family=\""TYPEWRITER" SANS\" justify='\"BEGIN\" \"MIDDLE\"'"
+                            }
+                          ],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@family":["TYPEWRITER","SANS"],
+                                "@justify":["BEGIN","MIDDLE"],
+                                "@size":0.5,
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0.7,0.6]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

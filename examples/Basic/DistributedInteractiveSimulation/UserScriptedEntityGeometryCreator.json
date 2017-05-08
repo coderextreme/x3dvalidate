@@ -1,0 +1,161 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"UserScriptedEntityGeometryCreator.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example scene for DISEntityManager, setting up a Script to process new arrivals"
+          },
+          {
+            "@name":"creator",
+            "@content":"Alan Hudson and Justin Couch"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"4 March 2005"
+          },
+          {
+            "@name":"translated",
+            "@content":"8 January 2009"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 January 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"UserScriptedEntityGeometryCreatorOriginal.x3dv"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.xj3d.org/extensions/DIS_examples.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/message_boards/viewtopic.php?p=1349&sid=fd84816e9177c37051f6b525ca1150ea"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/dis.html#DISEntityManager"
+          },
+          {
+            "@name":"subject",
+            "@content":"IEEE Distributed Interactive Simulation DIS"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development"
+          },
+          {
+            "@name":"error",
+            "@content":"missing script source"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://bugzilla.xj3d.org/show_bug.cgi?id=561"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/UserScriptedEntityGeometryCreator.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Xj3D, http://www.xj3d.org"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "DISEntityManager":
+            {
+              "@DEF":"EntityManager"
+            }
+          },
+          {
+            "#comment":"TODO how does the DISEntityManager know what to send to the EntityHolder?"
+          },
+          { "Group":
+            {
+              "@DEF":"EntityHolder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"addedEntities",
+              "@fromNode":"EntityManager",
+              "@toField":"addChildren",
+              "@toNode":"EntityHolder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"removedEntities",
+              "@fromNode":"EntityManager",
+              "@toField":"removeChildren",
+              "@toNode":"EntityHolder"
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"EntityProcessor",
+              "@directOutput":true,
+              "@url":["EntityProcessor.class","http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/EntityProcessor.class"],
+              "field": [
+                {
+                  "@name":"addedEntities",
+                  "@accessType":"inputOutput",
+                  "@type":"MFNode"
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"addedEntities",
+              "@fromNode":"EntityManager",
+              "@toField":"addedEntities",
+              "@toNode":"EntityProcessor"
+            }
+          }
+        ]
+    }
+  }
+}

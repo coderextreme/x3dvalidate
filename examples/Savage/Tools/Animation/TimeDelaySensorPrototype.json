@@ -1,0 +1,315 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TimeDelaySensorPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Time delay sensor design pattern, implemented as a reusable prototype node."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and MV4204 class"
+          },
+          {
+            "@name":"created",
+            "@content":"29 August 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"TimeDelaySensorExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/concepts.html#4.6.8"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#CoordinateInterpolator"
+          },
+          {
+            "@name":"subject",
+            "@content":"TimeDelaySensor"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/TimeDelaySensorPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"TimeDelaySensor",
+              "@appinfo":"TimeSensor functionality commences after delayInterval pause",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"description",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"describe the purpose of this sensor",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"enabled",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"whether sensor is active",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"when current time exceeds startTime, isActive becomes true and sensor becomes active",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"delayInterval",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"seconds",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"delayCompleteTime",
+                      "@accessType":"outputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"traceEnabled",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "TimeSensor":
+                            {
+                              "@DEF":"TimeDelayClock",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"startTime",
+                                      "@protoField":"startTime"
+                                    },
+                                    {
+                                      "@nodeField":"enabled",
+                                      "@protoField":"enabled"
+                                    },
+                                    {
+                                      "@nodeField":"cycleInterval",
+                                      "@protoField":"delayInterval"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"TimeDelayScript",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"description",
+                                  "@accessType":"inputOutput",
+                                  "@appinfo":"describe the purpose of this sensor",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"set_fraction",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"delayCompleteTime",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"LocalTimeDelayClock",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "TimeSensor":
+                                      {
+                                        "@USE":"TimeDelayClock"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"priorDelayInterval",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFTime",
+                                  "@value":1
+                                },
+                                {
+                                  "@name":"delayStarted",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"description"
+                                    },
+                                    {
+                                      "@nodeField":"delayCompleteTime",
+                                      "@protoField":"delayCompleteTime"
+                                    },
+                                    {
+                                      "@nodeField":"traceEnabled",
+                                      "@protoField":"traceEnabled"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"//  inputOnly events are handled by functions,",
+"//  initializeOnly fields are variable objects,",
+"//  outputOnly events are handled by setting values",
+"",
+"function initialize ()",
+"{",
+"\tpriorDelayInterval = LocalTimeDelayClock.cycleInterval;",
+"\ttracePrint ('initial delayInterval=' + priorDelayInterval + ' seconds');",
+"}",
+"function tracePrint (outputString)",
+"{",
+"\tif (traceEnabled) Browser.print ('[TimeDelaySensor] ' + outputString);",
+"}",
+"function set_description (newDescription)",
+"{",
+"    description = newDescription;",
+"}",
+"function set_fraction (currentFraction, timestamp)  // from LocalTimeDelayClock",
+"{",
+"\tif (priorDelayInterval != LocalTimeDelayClock.cycleInterval)",
+"\t{",
+"\t\tpriorDelayInterval = LocalTimeDelayClock.cycleInterval;",
+"\t\ttracePrint ('changed delayInterval=' + priorDelayInterval + ' seconds');",
+"\t}",
+"\tif (!delayStarted)",
+"\t{",
+"\t\tdelayStarted = true;",
+"\t\ttracePrint ('delay start time=' + timestamp);",
+"\t}",
+"\ttracePrint ('set_fraction=' + currentFraction);",
+"\tif (currentFraction >= 1.0)",
+"\t{",
+"\t\tdelayCompleteTime = timestamp;  // send output event",
+"\t\ttracePrint ('delayCompleteTime=' + delayCompleteTime);",
+"\t\tdelayStarted = false;",
+"\t}",
+"}"
+]
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"TimeDelayClock",
+                              "@toField":"set_fraction",
+                              "@toNode":"TimeDelayScript"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"======================================"
+          },
+          {
+            "#comment":"Example use"
+          },
+          { "Anchor":
+            {
+              "@description":"TimeDelaySensor Example",
+              "@url":["TimeDelaySensorExample.x3d","https://savage.nps.edu/Savage/Tools/Animation/TimeDelaySensorExample.x3d","TimeDelaySensorExample.wrl","https://savage.nps.edu/Savage/Tools/Animation/TimeDelaySensorExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["TimeDelaySensorPrototype","defines a prototype","","Click text to see","TimeDelaySensorExample scene"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.7
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

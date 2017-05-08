@@ -1,0 +1,111 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RadioCommunicationsObserver.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and Dave Laflam"
+          },
+          {
+            "@name":"created",
+            "@content":"19 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"4 July 2004"
+          },
+          {
+            "@name":"description",
+            "@content":"Show how to reference ReceiverPdu SignalPdu and TransmitterPdu for radio communications"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://faculty.nps.edu/brutzman/vrtp/mil/navy/nps/dis/RadioCommunicationsObserver.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/RadioCommunicationsObserver.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-15,0,0],
+                    "-children":[
+                      { "ReceiverPdu":
+                        {
+                          "@whichGeometry":0
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "SignalPdu":
+                        {
+                          "@whichGeometry":0
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[15,0,0],
+                    "-children":[
+                      { "TransmitterPdu":
+                        {
+                          "@whichGeometry":0
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

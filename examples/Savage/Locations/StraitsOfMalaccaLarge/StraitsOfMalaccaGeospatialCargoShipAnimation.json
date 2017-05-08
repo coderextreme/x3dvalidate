@@ -1,0 +1,121 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"StraitsOfMalaccaGeospatialCargoShipAnimation.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo"
+          },
+          {
+            "@name":"created",
+            "@content":"17 July 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 June 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Cargo Ship Animation through Waypoints in Geospatial coordinate system."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/StraitsOfMalaccaLarge/StraitsOfMalaccaGeospatialCargoShipAnimation.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.3,0.3,0.9]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"StraitsOfMalaccaLarge",
+              "@url":["StraitsOfMalaccaLarge.x3d","https://savage.nps.edu/Savage/Locations/StraitsOfMalaccaLarge/StraitsOfMalaccaLarge.x3d"]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"StraitsOfMalaccaWayPoints",
+              "@url":["StraitsOfMalaccaWayPoints.x3d","https://savage.nps.edu/Savage/Locations/StraitsOfMalaccaLarge/StraitsOfMalaccaWayPoints.x3d"]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0.3471685463819618,100.89750038406439,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"CoordinateAxes",
+                          "@scale":[50000,50000,50000],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["../../Tools/Authoring/CoordinateAxesNSEW.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[0.3471685463819618,100.89750038406439,0],
+                          "@geoSystem":["GD"]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

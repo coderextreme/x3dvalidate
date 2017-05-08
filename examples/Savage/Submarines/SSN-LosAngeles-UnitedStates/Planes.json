@@ -1,0 +1,102 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Planes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Fairwater and Stern Planes for 688 Submarine"
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Ken Curtin"
+          },
+          {
+            "@name":"created",
+            "@content":"10 August 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"5 December 2003"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/ssn-688.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.combatindex.com/store/3d/ssn688_model.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"Fairwater Planes, Stern Planes, 688, Submarine"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Submarines/SSN-LosAngeles-UnitedStates/Planes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0.1,0.1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":3,
+                          "@crossSection":[0,0,0.972,0.414,2.622,0.69,4.002,0.828,5.382,0.966,6.762,0.966,8.142,0.759,8.694,0.69,9.108,0.552,9.384,0.207,9.522,0,9.384,-0.207,9.108,-0.552,8.694,-0.69,8.142,-0.759,6.762,-0.966,5.382,-0.966,4.002,-0.828,2.622,-0.69,0.972,-0.414,0,0],
+                          "@scale":[0.24,0.2,0.62,0.5,0.24,0.2],
+                          "@spine":[0,0,0,0,6.5,0,0,13,0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,247 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"IntegerSequencerRoadSignSwitcher.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Switch among different road signs using IntegerSequencer"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"2 January 2009"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter09-EventUtilitiesScripting/IntegerSequencerRoadSignSwitcher.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundColor":[0.2,0.2,0.2],
+              "@skyColor":[0.2,0.2,0.2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Road sign switcher, 6m away",
+              "@position":[0,0,6]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"Frame",
+              "-children":[
+                {
+                  "#comment":"Box framee scaled to be wider, taller and thinner than Box holding image"
+                }
+              ],
+              "-geometry":
+                { "Box":
+                  {
+                    "@size":[3.5,2.7,0.05]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@ambientIntensity":0,
+                          "@diffuseColor":[0,0,0],
+                          "@emissiveColor":[1,0.442751,0],
+                          "@shininess":0.05102,
+                          "@specularColor":[0.475676,0.475676,0.475676],
+                          "-children":[
+                            {
+                              "#comment":"Universal Media Library: Neon 13"
+                            }
+                          ]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"Modify the whichChoice value in this Switch to 0, 1, 2 or 3 to see the various versions of the model. Select whichChoice= -1 to show nothing."
+          },
+          { "Switch":
+            {
+              "@DEF":"Switch",
+              "@whichChoice":0,
+              "-children":[
+                {
+                  "#comment":"whichChoice values are 0, 1, 2, 3 for these four children"
+                },
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"Box size scaled to match aspect ratio of original images"
+                      }
+                    ],
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@DEF":"SignHolder",
+                          "@size":[3.072,2.304,0.1]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-children":[
+                            {
+                              "#comment":"each image size reduced from 1-1.5M down to 150-200KB using GIMP for faster downloading, quality still looks good"
+                            }
+                          ],
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["RoadSignRoadWorkAhead.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/RoadSignRoadWorkAhead.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@USE":"SignHolder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["RoadSignExpectDelays.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/RoadSignExpectDelays.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@USE":"SignHolder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["RoadSignMondayThruFriday.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/RoadSignMondayThruFriday.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@USE":"SignHolder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["RoadSign7amTo5pm.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/RoadSign7amTo5pm.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "IntegerSequencer":
+            {
+              "@DEF":"Sequencer",
+              "@key":[0,0.25,0.5,0.75,1],
+              "@keyValue":[0,1,2,3,0]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Time",
+              "@cycleInterval":8,
+              "@loop":true
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Sequencer",
+              "@toField":"whichChoice",
+              "@toNode":"Switch"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Time",
+              "@toField":"set_fraction",
+              "@toNode":"Sequencer"
+            }
+          }
+        ]
+    }
+  }
+}

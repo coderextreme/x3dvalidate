@@ -1,0 +1,169 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RotorDisk.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This file defines a rotor disk that is inlined to create the main rotor group for a helicopter"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu (adapted from the original rotordisk.wrl created for vrtp demo helicopter)"
+          },
+          {
+            "@name":"created",
+            "@content":"8 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 March 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/Helicopter-UnitedStates/RotorDisk.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"MAIN_ROTOR",
+                    "-children":[
+                      {
+                        "#comment":"No rotation or translation, used to group for animation"
+                      },
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"SHAFT_SHAPE",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"GRAY",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.75,0.75,0.75]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":1.50,
+                                      "@radius":0.08,
+                                      "@top":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"ROTOR_DISK_SHAPE",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"SEMI_TRANSPARENT_WHITE",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1.0,1.0,1.0],
+                                            "@transparency":0.5
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.04,
+                                      "@radius":5.5
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"CLOCK",
+                          "@cycleInterval":2.0,
+                          "@loop":true
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF":"MAIN_ROTOR_PATH",
+                          "@key":[0.0,1.0],
+                          "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.142]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK",
+              "@toField":"set_fraction",
+              "@toNode":"MAIN_ROTOR_PATH"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"MAIN_ROTOR_PATH",
+              "@toField":"set_rotation",
+              "@toNode":"MAIN_ROTOR"
+            }
+          }
+        ]
+    }
+  }
+}

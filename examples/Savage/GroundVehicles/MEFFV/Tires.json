@@ -1,0 +1,210 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Tires.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Tires for MEFFV"
+          },
+          {
+            "@name":"creator",
+            "@content":"Converted from Jeffrey D Weekley's Automotive Tire by Sean Hynes"
+          },
+          {
+            "@name":"created",
+            "@content":"12 September 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"22 October 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/MEFFV/Tires.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.455896,0.749706,0.904409]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TIRESET",
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,-1,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@scale":[0.45,0.45,0.45],
+                                "@translation":[0.0,0.0,5.0],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"TIREI",
+                                      "@url":["Tire.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/MEFFV/Tire.wrl","Tire.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/MEFFV/Tire.x3d"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,-1,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@scale":[0.45,0.45,0.45],
+                                "@translation":[0.0,0.0,2.5],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"TIREI"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,-1,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@scale":[0.45,0.45,0.45],
+                                "@translation":[0.0,0.0,-1.3],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"TIREI"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,-1,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@scale":[0.45,0.45,0.45],
+                                "@translation":[0.0,0.0,-3.8],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"TIREI"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-6,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"TIRESET"
+                  }
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Front Wheels View",
+              "@orientation":[0,0,-1,0],
+              "@position":[0,1,15]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Lower Rear Wheels View",
+              "@orientation":[0,1,0,3.14],
+              "@position":[0,0,-15]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Port Side View",
+              "@orientation":[0,1,0,1.57],
+              "@position":[15,4,0]
+            }
+          }
+        ]
+    }
+  }
+}

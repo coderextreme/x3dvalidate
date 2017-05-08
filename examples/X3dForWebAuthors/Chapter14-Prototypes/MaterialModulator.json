@@ -1,0 +1,401 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MaterialModulator.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Mimic a Material node and modulate fields as an animation effect"
+          },
+          {
+            "@name":"hint",
+            "@content":"Learning suggestion for authors: try changing the modulation script so that it goes from [0 ... 1] and then [1 ... 0] alternating, rather than abruptly shifting from 1 immediately back to 0."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"10 March 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"18 January 2017"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D prototype requiring Script inputOutput fields"
+          },
+          {
+            "@name":"Image",
+            "@content":"MaterialModulator.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/MaterialModulator.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"MaterialModulator",
+              "@appinfo":"mimic a Material node and modulate fields as an animation effect",
+              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/MaterialModulatorIndex.html",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"enabled",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value true",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"diffuseColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value 0.8 0.8 0.8",
+                      "@type":"SFColor",
+                      "@value":[0.8,0.8,0.8]
+                    },
+                    {
+                      "@name":"emissiveColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value 0 0 0",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"specularColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value 0 0 0",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"transparency",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value 0.0",
+                      "@type":"SFFloat",
+                      "@value":0.0
+                    },
+                    {
+                      "@name":"shininess",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value 0.2",
+                      "@type":"SFFloat",
+                      "@value":0.2
+                    },
+                    {
+                      "@name":"ambientIntensity",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"default value 0.2",
+                      "@type":"SFFloat",
+                      "@value":0.2
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@DEF":"MaterialNode",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"diffuseColor",
+                                "@protoField":"diffuseColor"
+                              },
+                              {
+                                "@nodeField":"emissiveColor",
+                                "@protoField":"emissiveColor"
+                              },
+                              {
+                                "@nodeField":"specularColor",
+                                "@protoField":"specularColor"
+                              },
+                              {
+                                "@nodeField":"transparency",
+                                "@protoField":"transparency"
+                              },
+                              {
+                                "@nodeField":"shininess",
+                                "@protoField":"shininess"
+                              },
+                              {
+                                "@nodeField":"ambientIntensity",
+                                "@protoField":"ambientIntensity"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"Only first node (the node type) is renderable, others are along for the ride"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"MaterialModulatorScript",
+                        "field": [
+                          {
+                            "@name":"enabled",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"diffuseColor",
+                            "@accessType":"inputOutput",
+                            "@type":"SFColor"
+                          },
+                          {
+                            "@name":"newColor",
+                            "@accessType":"outputOnly",
+                            "@type":"SFColor"
+                          },
+                          {
+                            "@name":"clockTrigger",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"enabled",
+                                "@protoField":"enabled"
+                              },
+                              {
+                                "@nodeField":"diffuseColor",
+                                "@protoField":"diffuseColor"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"function initialize ()",
+"{",
+"    newColor = diffuseColor; // start with correct color",
+"}",
+"function clockTrigger (timeValue)",
+"{",
+"    if (!enabled) return;",
+"    red   = newColor.r;",
+"    green = newColor.g;",
+"    blue  = newColor.b;",
+"    ",
+"    // note different modulation rates for each color component, % is modulus operator",
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
+"\tif (enabled)",
+"\t{",
+"\t\tBrowser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
+"\t}",
+"}",
+"function set_enabled (newValue)",
+"{",
+"\tenabled = newValue;",
+"}"
+]
+                      }
+                    },
+                    {
+                      "#comment":"Clock tickles Script to wake up and compute a new value"
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"newColor",
+                        "@fromNode":"MaterialModulatorScript",
+                        "@toField":"diffuseColor",
+                        "@toNode":"MaterialNode"
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"ModulationClock",
+                        "@cycleInterval":0.1,
+                        "@loop":true,
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"enabled",
+                                "@protoField":"enabled"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"cycleTime",
+                        "@fromNode":"ModulationClock",
+                        "@toField":"clockTrigger",
+                        "@toNode":"MaterialModulatorScript"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Rendered geometry for the ProtoInstance now follows prototype declaration"
+          },
+          { "Transform":
+            {
+              "@translation":[0,1,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "ProtoInstance":
+                              {
+                                "@name":"MaterialModulator",
+                                "@DEF":"MaterialModulatorInstance",
+                                "fieldValue": [
+                                  {
+                                    "@name":"enabled",
+                                    "@value":true
+                                  },
+                                  {
+                                    "@name":"diffuseColor",
+                                    "@value":[0.5,0.1,0.1]
+                                  }
+                                ]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["enable/disable","MaterialModulator"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@family":["SANS"],
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.9,0.9,0.9]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[8,2,0.001]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Toggle text to enable/disable MaterialModulator"
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"TouchTextInterface",
+                    "@description":"Select to enable/disable MaterialModulator"
+                  }
+                },
+                { "BooleanToggle":
+                  {
+                    "@DEF":"EventToggler"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"TouchTextInterface",
+                    "@toField":"set_boolean",
+                    "@toNode":"EventToggler"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"toggle",
+                    "@fromNode":"EventToggler",
+                    "@toField":"enabled",
+                    "@toNode":"MaterialModulatorInstance"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

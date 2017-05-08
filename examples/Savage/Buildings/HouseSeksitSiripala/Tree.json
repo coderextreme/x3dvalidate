@@ -1,0 +1,137 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Tree.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Tree"
+          },
+          {
+            "@name":"creator",
+            "@content":"Seksit Siripala"
+          },
+          {
+            "@name":"created",
+            "@content":"12 September 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/HouseSeksitSiripala/Tree.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":""
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.2,0.1,0.0]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Cylinder":
+                  {
+                    "@radius":0.5
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,1.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"part",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.2,0.7,0.3]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Cone":
+                        {
+                          "@bottomRadius":1.5
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,2.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"part"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,3.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"part"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Cover.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Wooden cover for kitchen storage lockers."
+          },
+          {
+            "@name":"creator",
+            "@content":"Baris Aktop"
+          },
+          {
+            "@name":"created",
+            "@content":"9 September 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/HouseBarisAktop/Cover.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"cover1",
+                    "@center":[0.35,0,0],
+                    "@translation":[0.35,0.4,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"wood",
+                                      "@url":["wood.jpg","https://savage.nps.edu/Savage/Buildings/HouseBarisAktop/wood.jpg"]
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.6,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.695,0.8,0.03]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.3,0.3,0.04],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.03
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.6,0]
+                                          }
+                                        },
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@USE":"wood"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "CylinderSensor":
+                              {
+                                "@DEF":"coveropen",
+                                "@description":"click and drag to rotate",
+                                "@maxAngle":1.57
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"rotation_changed",
+                                "@fromNode":"coveropen",
+                                "@toField":"set_rotation",
+                                "@toNode":"cover1"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"cover2",
+                    "@center":[-0.35,0,0],
+                    "@translation":[-0.35,0.4,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"wood"
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.6,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.695,0.8,0.03]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.3,0.3,0.04],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.03
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.6,0]
+                                          }
+                                        },
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@USE":"wood"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "CylinderSensor":
+                              {
+                                "@DEF":"coveropen2",
+                                "@description":"click and drag to rotate",
+                                "@maxAngle":0,
+                                "@minAngle":-1.57
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"rotation_changed",
+                                "@fromNode":"coveropen2",
+                                "@toField":"set_rotation",
+                                "@toNode":"cover2"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

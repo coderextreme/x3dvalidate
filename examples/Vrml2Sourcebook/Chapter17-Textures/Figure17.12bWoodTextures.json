@@ -1,0 +1,285 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure17.12bWoodTextures.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 17.12b, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch17/17fig12b.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"28 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"Six different wood types created by coloring a grayscale wood texture."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/Figure17.12bWoodTextures.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Wood greyscale texture with different colors",
+              "@position":[1.75,0,5]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.35,0.23]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@DEF":"WOOD",
+                                "@url":["wood_g.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter17-Textures/wood_g.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@DEF":"SQUARE",
+                          "@coordIndex":[0,1,2,3],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,1,0,0,0,0,1.1,0,0,1.1,1,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.25,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0.45,0.23]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"WOOD"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"SQUARE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[2.5,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0.55,0.23]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"WOOD"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"SQUARE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0.65,0.53]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"WOOD"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"SQUARE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.25,-1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0.55,0.43]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"WOOD"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"SQUARE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[2.5,-1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0.55,0.53]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"WOOD"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"SQUARE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

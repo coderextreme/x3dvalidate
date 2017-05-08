@@ -1,0 +1,137 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CoordinateAxesLines.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"13 October 2013"
+          },
+          {
+            "@name":"modified",
+            "@content":"24 February 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"X Y Z axis lines (red green blue, respectively) in X3D coordinate system, providing a simple reusable widget."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxesNSEW.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxesLines.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"See X3dForWebAuthors/Chapter06-GeometryPointsLinesPolygons to learn more about IndexedLineSet, Coordinate and Color nodes"
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedLineSet":
+                  {
+                    "@colorIndex":[0,1,2],
+                    "@colorPerVertex":false,
+                    "@coordIndex":[0,1,-1,0,2,-1,0,3,-1],
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[0,0,0,1,0,0,0,1,0,0,0,1]
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[1,0,0,0,1,0,0.2,0.2,1]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Oblique view",
+              "@orientation":[-0.59028,0.76927,0.2445,0.987861],
+              "@position":[6,6,6]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"View from X axis",
+              "@orientation":[0,1,0,1.570796],
+              "@position":[10,0,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"View from Y axis",
+              "@orientation":[1,0,0,-1.570796],
+              "@position":[0,10,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"View from Z axis"
+            }
+          }
+        ]
+    }
+  }
+}

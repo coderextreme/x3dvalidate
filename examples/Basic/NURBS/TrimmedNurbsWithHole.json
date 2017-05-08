@@ -1,0 +1,294 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":4
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TrimmedNurbsWithHole.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Scene contains a single NurbsTrimmedSurface node which has two Contour2D child nodes, defining a trimmed outer boundary to the patch and an interior hole in the patch. Scene also contains unit-length line segments defining x-y-z coordinate axes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Vincent Marchetti"
+          },
+          {
+            "@name":"created",
+            "@content":"10 February 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"NURBS example NurbsTrimmedSurface Contour2D NurbsCurve2D"
+          },
+          {
+            "@name":"Image",
+            "@content":"TrimmedNurbsWithHole.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/TrimmedNurbsWithHoleXj3d.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/trimmed_nurbs_with_hole.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/NURBS/TrimmedNurbsWithHole.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Python language scripts using Numpy, SciPy libraries http://numpy.scipy.org"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"TODO instantReality Forum Issue",
+            "@content":"http://forum.instantreality.org"
+          },
+          {
+            "@name":"TODO BS Contact BitManagement Bug Report",
+            "@content":"http://www.bitmanagement.de/en/contact"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Trimmed Nurbs With Hole",
+              "@orientation":[-0.77676,0.60251,0.18337,0.74685],
+              "@position":[2,3,4]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,1,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,0,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,0,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,1,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,0,1]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-children":[
+                {
+                  "#comment":"Instant Reality options: meshGenerationType=\"dynamic\" or advancedStatic or simpleStatic"
+                }
+              ],
+              "-geometry":
+                { "NurbsTrimmedSurface":
+                  {
+                    "@solid":false,
+                    "@uDimension":3,
+                    "@uKnot":[0,0,0,1,1,1],
+                    "@vDimension":2,
+                    "@vKnot":[0,0,2,2],
+                    "@vOrder":2,
+                    "@weight":[1,0.946042343528,1,1,0.946042343528,1],
+                    "-controlPoint":
+                      { "Coordinate":
+                        {
+                          "@point":[1.5,-1.1102e-16,-8.6600e-01,1.4191e+00,6.4809e-01,-8.1927e-01,1.0800e+00,1.2262e+00,-8.6600e-01,5.0000e-01,-5.5511e-17,8.6600e-01,4.7302e-01,3.2404e-01,8.1927e-01,2.8999e-01,6.1312e-01,8.6600e-01]
+                        }
+                      },
+                    "-trimmingContour":[
+                      { "Contour2D":
+                        {
+                          "-children":[
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[0,0,1,0,1,1.5],
+                                "@knot":[0,0,0.5,1,1],
+                                "@order":2,
+                                "@weight":[1,1,1]
+                              }
+                            },
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[1,1.5,7.1000e-01,1.4200e+00,5.0000e-01,2],
+                                "@knot":[0,0,0,1,1,1],
+                                "@weight":[1,0.71,1]
+                              }
+                            },
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[5.0000e-01,2,0,2,0,0],
+                                "@knot":[0,0,0.5,1,1],
+                                "@order":2,
+                                "@weight":[1,1,1]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Contour2D":
+                        {
+                          "-children":[
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[7.5000e-01,1.5,5.3033e-01,8.8388e-01,5.0000e-01,1.2500e+00,1.7678e-01,8.8388e-01,2.5000e-01,1.5,1.7678e-01,1.2374e+00,5.0000e-01,1.7500e+00,5.3033e-01,1.2374e+00,7.5000e-01,1.5],
+                                "@knot":[0,0,0,0.25,0.25,0.5,0.5,0.75,0.75,1,1,1],
+                                "@weight":[1,0.707106781187,1,0.707106781187,1,0.707106781187,1,0.707106781187,1]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"ksh_appearance_1",
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0,1]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

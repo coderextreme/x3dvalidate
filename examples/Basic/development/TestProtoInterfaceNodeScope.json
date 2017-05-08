@@ -1,0 +1,234 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestProtoInterfaceNodeScope.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Test override of color values in prototypes and scripts. Color code: red = left-most default prototype interface, yellow = middle ProtoInstance fieldValue, green = Script initialization of middle ProtoInstance, blue = right-side default prototype instance."
+          },
+          {
+            "@name":"creator",
+            "@content":"Alan Hudson, Don Brutzman"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"created",
+            "@content":"4 January 2006"
+          },
+          {
+            "@name":"translated",
+            "@content":"5 January 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright (c) Web3D Consortium Inc. 2006"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestProtoInterfaceNodeScope.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"MyProto",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"material",
+                      "@accessType":"inputOutput",
+                      "@type":"SFNode",
+                      "-children":[
+                        { "Material":
+                          {
+                            "@diffuseColor":[1,0,0]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"material",
+                                      "@protoField":"material"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                        "-geometry":
+                          { "Box":
+                            {
+                              "@DEF":"ProtoBox"
+                            }
+                          }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"LeftTransform",
+              "@translation":[-2.5,0.0,0.0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"MyProto",
+                    "@DEF":"P1"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"MiddleTransform",
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"MyProto",
+                    "@DEF":"P2",
+                    "fieldValue": [
+                      {
+                        "@name":"material",
+                        "-children":[
+                          { "Material":
+                            {
+                              "@diffuseColor":[0.7,0.7,0]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"SC",
+                    "@directOutput":true,
+                    "field": [
+                      {
+                        "@name":"proto1",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFNode",
+                        "-children":[
+                          { "ProtoInstance":
+                            {
+                              "@name":"MyProto",
+                              "@USE":"P2"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize() {",
+"\tBrowser.print('Changing color on middle box to green');",
+"\tproto1.material.diffuseColor = new SFColor(0,1,0);",
+"}"
+]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"RightTransform",
+              "@translation":[2.5,0.0,0.0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"MyProto",
+                    "@DEF":"P3",
+                    "fieldValue": [
+                      {
+                        "@name":"material",
+                        "-children":[
+                          { "Material":
+                            {
+                              "@diffuseColor":[0,0,1]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Switch":
+            {
+              "@whichChoice":-1,
+              "-children":[
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"To test protected scope of nodes DEF'ed inside a prototype body, add: <Box USE=\"ProtoBox\"/>"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

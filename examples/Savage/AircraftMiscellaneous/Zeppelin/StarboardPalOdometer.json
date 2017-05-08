@@ -1,0 +1,185 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"StarboardPalOdometer.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Selcuk OZTURK"
+          },
+          {
+            "@name":"description",
+            "@content":"Starboard Pal Odometer."
+          },
+          {
+            "@name":"created",
+            "@content":"16 September 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2012"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftMiscellaneous/Zeppelin/StarboardPalOdometer.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@scale":[1,1,0.1],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"SCALE",
+              "@rotation":[0,0,1,-0.7],
+              "-children":[
+                { "Transform":
+                  {
+                    "@scale":[1,1,0.1],
+                    "@translation":[0,0.8,0.1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,1,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.1,
+                                "@height":0.2
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[1,1,0.1],
+                    "@translation":[0,0.3,0.1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,1,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.8,
+                                "@radius":0.04
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"Clock",
+                    "@cycleInterval":0.2,
+                    "@loop":true
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"MovePath",
+                    "@key":[0,0.5,1],
+                    "@keyValue":[0,0,1,0.1,0,0,1,0,0,0,1,-0.1]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"Clock",
+                    "@toField":"set_fraction",
+                    "@toNode":"MovePath"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"MovePath",
+                    "@toField":"set_rotation",
+                    "@toNode":"SCALE"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

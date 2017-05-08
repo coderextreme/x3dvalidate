@@ -1,0 +1,352 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExtrusionCrossSectionExampleTorus.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"31 August 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"19 October 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Torus example demonstrating cross-section prototype for Extrusion node that also draws spine line plus oriented, scaled cross sections at each spine point."
+          },
+          {
+            "@name":"hint",
+            "@content":"Utilize ExtrusionCrossSection ProtoInstance as a Shape node (with containerField=\"children\") rather than an Extrusion node (with containerField=\"geometry\")."
+          },
+          {
+            "@name":"reference",
+            "@content":"ExtrusionExampleShip.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"ExtrusionCrossSectionExampleShip.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"ExtrusionCrossSectionPrototype.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Vrml2Sourcebook/Chapter30-Scripts/Figure30.5ScriptTorusBuilder.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"VRML 97 Specification, 6.18 Extrusion"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#Extrusion"
+          },
+          {
+            "@name":"Image",
+            "@content":"VRML 97 Specification, Figure 6.6"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/Images/Extrusion.gif"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://realism.com/Web3D/Examples/Extrusion/_frame.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.brown.edu/~gss/vrml/drawpoly.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"ExtrusionXj3dGoldberg1999.java"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://web3d.metrolink.com/cgi-bin/cvsweb.cgi/x3d/src/com/sun/j3d/loaders/vrml97/impl/Attic/Extrusion.java"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionExampleTorus.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Utilize ExtrusionCrossSection ProtoInstance as a Shape node (with containerField=\"children\") rather than an Extrusion node (with containerField=\"geometry\")."
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ExtrusionCrossSection",
+              "@appinfo":"Shape prototype for Extrusion node that also draws spine line plus oriented scaled cross sections at each spine point",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionPrototype.x3d",
+              "@url":["ExtrusionCrossSectionPrototype.x3d#ExtrusionCrossSection","http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionPrototype.x3d#ExtrusionCrossSection","ExtrusionCrossSectionPrototype.wrl#ExtrusionCrossSection","http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionPrototype.wrl#ExtrusionCrossSection"],
+              "-children":[
+                {
+                  "#comment":"run-time eventIn Extrusion-modification interfaces for VRML 97 compatibility"
+                }
+              ],
+              "field": [
+                {
+                  "@name":"name",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion name",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"crossSection",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"spine",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"orientation",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFRotation"
+                },
+                {
+                  "@name":"beginCap",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"endCap",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"ccw",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"convex",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"creaseAngle",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"spineColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"emissiveColor of spine",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"crossSectionColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"diffuseColor of crossSection",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"crossSectionTransparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"transparency of crossSection",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"extrusionColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"diffuseColor of extrusion hull",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"extrusionTransparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"transparency of extrusion hull",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"extrusionImageTexture",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Image to apply to Extrusion",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"extrusionTextureTransform",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"TextureTransform coordinates of image applied to Extrusion",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"set_crossSection",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"set_spine",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"set_scale",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"set_orientation",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFRotation"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Whether to provide initialization trace statements showing node construction",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Example instance adapted from Figure15.12Torus.x3d"
+          },
+          {
+            "#comment":"http://www.web3d.org/x3d/content/examples/Basic/Vrml2Sourcebook/Chapter15-Extrusion/Figure15.12Torus.x3d"
+          },
+          { "Viewpoint":
+            {
+              "@description":"Torus crossSections, spine and hull",
+              "@orientation":[-0.351,0.926,0.14,0.81],
+              "@position":[10,5,10]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ExtrusionCrossSection",
+              "fieldValue": [
+                {
+                  "@name":"name",
+                  "@value":"Torus"
+                },
+                {
+                  "@name":"crossSection",
+                  "@value":[0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1]
+                },
+                {
+                  "@name":"spine",
+                  "@value":[2.00,0.0,0.00,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.00,0.0,2.00,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.00,0.0,0.00,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.00,0.0,-2.00,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.00,0.0,0.00]
+                },
+                {
+                  "@name":"beginCap",
+                  "@value":false
+                },
+                {
+                  "@name":"endCap",
+                  "@value":false
+                },
+                {
+                  "@name":"creaseAngle",
+                  "@value":1.57
+                },
+                {
+                  "@name":"spineColor",
+                  "@value":[1,1,1]
+                },
+                {
+                  "@name":"crossSectionColor",
+                  "@value":[0.8,0.8,0]
+                },
+                {
+                  "@name":"crossSectionTransparency",
+                  "@value":0.1
+                },
+                {
+                  "@name":"extrusionColor",
+                  "@value":[1,0,1]
+                },
+                {
+                  "@name":"extrusionTransparency",
+                  "@value":0.8
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@value":false
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[4,4,4],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"CoordinateAxes",
+                    "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

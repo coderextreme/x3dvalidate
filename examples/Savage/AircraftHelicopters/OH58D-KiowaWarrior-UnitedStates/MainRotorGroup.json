@@ -1,0 +1,142 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MainRotorGroup.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This file defines a main rotor group that is inlined to create a helicopter"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu (adapted from the original mainrotorgroup.wrl created for vrpt demo helicopter)"
+          },
+          {
+            "@name":"created",
+            "@content":"8 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"revised by",
+            "@content":"Del Beilstein"
+          },
+          {
+            "@name":"reference",
+            "@content":"MastMountedSight.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"RotorDisk.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"Cowling.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/MainRotorGroup.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0.0,0.4,0.25,0.2,0.6,0.60,0.6],
+              "@skyAngle":[0.785,1.571],
+              "@skyColor":[0.0,0.2,0.7,0.0,0.5,1.0,1.0,1.0,1.0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Distant_view",
+              "@description":"Distant view of MMS"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Close_up_view",
+              "@description":"Close up view of MMS",
+              "@jump":false,
+              "@position":[0,2,3]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0,1.57],
+                    "@scale":[0.6,0.6,0.6],
+                    "@translation":[0.0,0.1,0.0],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["MastMountedSight.x3d","https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/MastMountedSight.x3d","MastMountedSight.wrl","https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/MastMountedSight.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["RotorDisk.x3d","https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/RotorDisk.x3d","RotorDisk.wrl","https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/RotorDisk.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,-0.01],
+                    "@translation":[-3.0,-1.35,0.3],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["Cowling.x3d","https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/Cowling.x3d","Cowling.wrl","https://savage.nps.edu/Savage/AircraftHelicopters/OH58D-KiowaWarrior-UnitedStates/Cowling.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

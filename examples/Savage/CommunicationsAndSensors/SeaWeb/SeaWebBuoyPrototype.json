@@ -1,0 +1,1501 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SeaWebBuoyPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A prototype of a SeaWeb buoy."
+          },
+          {
+            "@name":"creator",
+            "@content":"Oliver Tan and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"3 June 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Buoy, SeaWeb"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"AcousticTransmissionCylinder",
+              "@appinfo":"AcousticTransmissionCylinder visualizes the pulse width of cylindrical propagation with has a receding inner radius and a (maximum outer radius .",
+              "@url":["AcousticTransmissionCylinderPrototype.x3d#AcousticTransmissionCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/AcousticTransmissionCylinderPrototype.x3d#AcousticTransmissionCylinder","AcousticTransmissionCylinderPrototype.wrl#AcousticTransmissionCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/AcousticTransmissionCylinderPrototype.wrl#AcousticTransmissionCylinder"],
+              "field": [
+                {
+                  "@name":"startTransmission",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Upon receipt of a boolean true event start a single (not continuous) transmission",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"startContinuousTransmissions",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Upon receipt of a boolean true event start continuous transmissions",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Propagation range in meters",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Default propagation range in meters",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"transmissionPropagationSpeed",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Speed in meters / second",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_transmissionDuration",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Duration in seconds",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"transmissionDuration",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Duration in seconds",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"height",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Height of cylinder in meters",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_color",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Color of cylinder",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"color",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Default color of cylinder",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamCount",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"number of segmented sections in 360-degree cylindrical beam",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"set_beamCount",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Number of segmented sections in 360-degree cylindrical beam",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamCylinder",
+              "@appinfo":"Produce wireframe or transparent beam cylinders. Typical uses include propeller/thruster water flow or line-of-sight sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: beam with apex at (0 0 0) and base of radius 1 in x-z plane at (1 0 0).",
+              "@url":["../../CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","../../CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder"],
+              "field": [
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamHeight",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across vertical y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"beamWidth",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across horizontal z axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"FlyingText",
+              "@appinfo":"Visualize message transfer between two points as flying text",
+              "@url":["../../../Savage/Tools/Animation/FlyingTextPrototype.x3d#FlyingText","https://savage.nps.edu/Savage/Tools/Animation/FlyingTextPrototype.x3d#FlyingText","../../../Savage/Tools/Animation/FlyingTextPrototype.wrl#FlyingText","https://savage.nps.edu/Savage/Tools/Animation/FlyingTextPrototype.wrl#FlyingText"],
+              "field": [
+                {
+                  "@name":"waypoints",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"set_waypoints",
+                  "@accessType":"inputOnly",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"timeIntervals",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"set_timeIntervals",
+                  "@accessType":"inputOnly",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"textMessage",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"set_textMessage",
+                  "@accessType":"inputOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"visible",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_visible",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"loop",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"axisOfRotation",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"timeSensorEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"startTime",
+                  "@accessType":"inputOutput",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_startTime",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"stopTime",
+                  "@accessType":"inputOutput",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"set_stopTime",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"textDiffuseColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"fontStyle",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"TimeDelaySensor",
+              "@appinfo":"TimeSensor functionality commences after delayInterval pause",
+              "@url":["../../../Savage/Tools/Animation/TimeDelaySensorPrototype.x3d#TimeDelaySensor","https://savage.nps.edu/Savage/Tools/Animation/TimeDelaySensorPrototype.x3d#TimeDelaySensor","../../../Savage/Tools/Animation/TimeDelaySensorPrototype.wrl#TimeDelaySensor","https://savage.nps.edu/Savage/Tools/Animation/TimeDelaySensorPrototype.wrl#TimeDelaySensor"],
+              "field": [
+                {
+                  "@name":"startTime",
+                  "@accessType":"inputOutput",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"delayInterval",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"seconds",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"delayCompleteTime",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"SeaWebBuoy",
+              "@appinfo":"SeaWeb acoustic-radio gateway communications buoy",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"set_position",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Position of buoy.",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"position",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Position of buoy.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"set_targetPosition",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Position of target of transmission.",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"targetPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Position of target of transmission.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"set_targetIdNumber",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Id number of target.",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"targetIdNumber",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Id number of target.",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    },
+                    {
+                      "@name":"set_enabled",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Enable buoy for transmission.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"enabled",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Enable buoy for transmission.",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"set_activated",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Start transmission.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"activated",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Start transmission.",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"set_transmissionDuration",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Duration in seconds needed to transmit message (does not include transmissionTimeDelay or propagation delay).",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"transmissionDuration",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Duration in seconds needed to transmit message (does not include transmissionTimeDelay or propagation delay).",
+                      "@type":"SFFloat",
+                      "@value":5
+                    },
+                    {
+                      "@name":"set_transmissionTimeDelay",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Time delay before transmission begins.",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"transmissionTimeDelay",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Time delay before transmission begins.",
+                      "@type":"SFTime",
+                      "@value":2
+                    },
+                    {
+                      "@name":"set_directionalTransmission",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"directionalTransmission",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"set_buoyType",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"buoyType",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                      "@type":"SFString",
+                      "@value":"Racom"
+                    },
+                    {
+                      "@name":"set_soundSpeedInWater",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Sound speed in water default value 1500 m/s",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"soundSpeedInWater",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Sound speed in water default value 1500 m/s",
+                      "@type":"SFFloat",
+                      "@value":1500
+                    },
+                    {
+                      "@name":"set_textMessage",
+                      "@accessType":"inputOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"textMessage",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"textMessageColor",
+                      "@accessType":"inputOutput",
+                      "@type":"SFColor",
+                      "@value":[0.1,0.7,0.7]
+                    },
+                    {
+                      "@name":"set_description",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"description",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFString",
+                      "@value":"SeaWeb Buoy"
+                    },
+                    {
+                      "@name":"traceEnabled",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Viewpoint":
+                            {
+                              "@DEF":"SeaWebBuoyViewpoint",
+                              "@description":"SeaWeb Buoy",
+                              "@position":[0,0,15]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"RepeaterBuoyTransform",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"set_translation",
+                                      "@protoField":"set_position"
+                                    },
+                                    {
+                                      "@nodeField":"translation",
+                                      "@protoField":"position"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                { "Switch":
+                                  {
+                                    "@DEF":"BuoyGeometrySwitch",
+                                    "@whichChoice":0,
+                                    "-children":[
+                                      { "Inline":
+                                        {
+                                          "@DEF":"RacomBuoy",
+                                          "@url":["RacomBuoy.x3d","../../../Savage/CommunicationsAndSensors/SeaWeb/RacomBuoy.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/RacomBuoy.x3d","RacomBuoy.wrl","../../../Savage/CommunicationsAndSensors/SeaWeb/RacomBuoy.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/RacomBuoy.wrl"]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@translation":[0,-7,0],
+                                          "-children":[
+                                            { "Inline":
+                                              {
+                                                "@DEF":"TelesonarRepeater",
+                                                "@url":["TelesonarRepeater.x3d","../../../Savage/CommunicationsAndSensors/SeaWeb/TelesonarRepeater.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/TelesonarRepeater.x3d","TelesonarRepeater.wrl","../../../Savage/CommunicationsAndSensors/SeaWeb/TelesonarRepeater.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/TelesonarRepeater.wrl"]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Switch":
+                                  {
+                                    "@DEF":"TransmissionGeometrySwitch",
+                                    "@whichChoice":0,
+                                    "-children":[
+                                      { "ProtoInstance":
+                                        {
+                                          "@name":"AcousticTransmissionCylinder",
+                                          "@DEF":"AcousticTransmissionCylinderInstance",
+                                          "fieldValue": [
+                                            {
+                                              "@name":"defaultRange",
+                                              "@value":1000
+                                            },
+                                            {
+                                              "@name":"transmissionPropagationSpeed",
+                                              "@value":1500
+                                            },
+                                            {
+                                              "@name":"height",
+                                              "@value":1
+                                            },
+                                            {
+                                              "@name":"color",
+                                              "@value":[1,1,0.2]
+                                            }
+                                          ],
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"transmissionDuration",
+                                                  "@protoField":"transmissionDuration"
+                                                },
+                                                {
+                                                  "@nodeField":"set_transmissionDuration",
+                                                  "@protoField":"set_transmissionDuration"
+                                                },
+                                                {
+                                                  "@nodeField":"traceEnabled",
+                                                  "@protoField":"traceEnabled"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"BeamCylinderRotation",
+                                          "-children":[
+                                            { "ProtoInstance":
+                                              {
+                                                "@name":"BeamCylinder",
+                                                "@DEF":"BeamCylinderInstance",
+                                                "fieldValue": [
+                                                  {
+                                                    "@name":"defaultRange",
+                                                    "@value":0
+                                                  },
+                                                  {
+                                                    "@name":"beamHeight",
+                                                    "@value":1
+                                                  },
+                                                  {
+                                                    "@name":"beamWidth",
+                                                    "@value":0.5
+                                                  },
+                                                  {
+                                                    "@name":"transparency",
+                                                    "@value":0.2
+                                                  },
+                                                  {
+                                                    "@name":"wireframe",
+                                                    "@value":true
+                                                  },
+                                                  {
+                                                    "@name":"solid",
+                                                    "@value":true
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"FlyingTextTransform",
+                                    "@translation":[0,2,0],
+                                    "-children":[
+                                      { "ProtoInstance":
+                                        {
+                                          "@name":"FlyingText",
+                                          "@DEF":"FlyingTextInstance",
+                                          "fieldValue": [
+                                            {
+                                              "@name":"visible",
+                                              "@value":false
+                                            }
+                                          ],
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"set_textMessage",
+                                                  "@protoField":"set_textMessage"
+                                                },
+                                                {
+                                                  "@nodeField":"textMessage",
+                                                  "@protoField":"textMessage"
+                                                },
+                                                {
+                                                  "@nodeField":"textDiffuseColor",
+                                                  "@protoField":"textMessageColor"
+                                                },
+                                                {
+                                                  "@nodeField":"traceEnabled",
+                                                  "@protoField":"traceEnabled"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"TextLabelTransform",
+                                    "@translation":[0,-2,0],
+                                    "-children":[
+                                      { "Billboard":
+                                        {
+                                          "@axisOfRotation":[0,0,0],
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "-material":
+                                                        { "Material":
+                                                          {
+                                                            "IS": {
+                                                                "connect": [
+                                                                  {
+                                                                    "@nodeField":"diffuseColor",
+                                                                    "@protoField":"textMessageColor"
+                                                                  }
+                                                                ]
+                                                            }
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                "-geometry":
+                                                  { "Text":
+                                                    {
+                                                      "@DEF":"TextLabel",
+                                                      "-fontStyle":
+                                                        { "FontStyle":
+                                                          {
+                                                            "@justify":["MIDDLE","MIDDLE"]
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"BeamCylinderAnimation"
+                            }
+                          },
+                          { "ScalarInterpolator":
+                            {
+                              "@DEF":"BeamCylinderInterpolator",
+                              "@key":[0,0.5,0.999,1],
+                              "@keyValue":[0,10,10,0]
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"BeamCylinderAnimation",
+                              "@toField":"set_fraction",
+                              "@toNode":"BeamCylinderInterpolator"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"value_changed",
+                              "@fromNode":"BeamCylinderInterpolator",
+                              "@toField":"range",
+                              "@toNode":"BeamCylinderInstance"
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"TimeDelaySensor",
+                              "@DEF":"DelayTimer"
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"RepeaterBuoyControlScript",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"set_position",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Position of buoy.",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"position",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Position of buoy.",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"set_targetPosition",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Position of target of transmission.",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"targetPosition",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Position of target of transmission.",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"targetIdNumber",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Id number of target.",
+                                  "@type":"SFInt32"
+                                },
+                                {
+                                  "@name":"set_targetIdNumber",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Id number of target.",
+                                  "@type":"SFInt32"
+                                },
+                                {
+                                  "@name":"set_enabled",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Enable buoy for transmission.",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"enabled",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Enable buoy for transmission.",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"set_activated",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Start transmission.",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"activated",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Start transmission.",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"activationTime",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"Start transmission.",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"set_transmissionDuration",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Duration in seconds needed to transmit message",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"transmissionDuration",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Duration in seconds needed to transmit message",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"transmissionTimeDelay",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Time delay before transmission begins.",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"set_transmissionTimeDelay",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Time delay before transmission begins.",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"directionalTransmission",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"set_directionalTransmission",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Select between directional (true) or omni-directional (false) transmission.",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"delayCompleted",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"acousticTransmissionCylinder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ProtoInstance":
+                                      {
+                                        "@name":"AcousticTransmissionCylinder",
+                                        "@USE":"AcousticTransmissionCylinderInstance"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"beamCylinderInterpolator",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ScalarInterpolator":
+                                      {
+                                        "@USE":"BeamCylinderInterpolator"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"flyingText",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ProtoInstance":
+                                      {
+                                        "@name":"FlyingText",
+                                        "@USE":"FlyingTextInstance"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"geometrySwitch",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"BuoyGeometrySwitch"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"transmissionGeometrySwitch",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"TransmissionGeometrySwitch"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"delayTimer",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ProtoInstance":
+                                      {
+                                        "@name":"TimeDelaySensor",
+                                        "@USE":"DelayTimer"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"set_buoyType",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"buoyType",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Determine which buoy type to use. \"Racom\" for Racom Buoy. \"Telesonar\" for Telesonar Repeater.",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"set_soundSpeedInWater",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Sound speed in water default value 1500 m/s",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"soundSpeedInWater",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"Sound speed in water default value 1500 m/s",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_description",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"description",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"propagationDistance",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"propagationDuration",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"activeDuration",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"totalDuration",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"beamRotation",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"TextLabelNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Text":
+                                      {
+                                        "@USE":"TextLabel"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"SeaWebBuoyViewpointNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Viewpoint":
+                                      {
+                                        "@USE":"SeaWebBuoyViewpoint"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"set_position",
+                                      "@protoField":"set_position"
+                                    },
+                                    {
+                                      "@nodeField":"position",
+                                      "@protoField":"position"
+                                    },
+                                    {
+                                      "@nodeField":"set_targetPosition",
+                                      "@protoField":"set_targetPosition"
+                                    },
+                                    {
+                                      "@nodeField":"targetPosition",
+                                      "@protoField":"targetPosition"
+                                    },
+                                    {
+                                      "@nodeField":"targetIdNumber",
+                                      "@protoField":"targetIdNumber"
+                                    },
+                                    {
+                                      "@nodeField":"set_targetIdNumber",
+                                      "@protoField":"set_targetIdNumber"
+                                    },
+                                    {
+                                      "@nodeField":"set_enabled",
+                                      "@protoField":"set_enabled"
+                                    },
+                                    {
+                                      "@nodeField":"enabled",
+                                      "@protoField":"enabled"
+                                    },
+                                    {
+                                      "@nodeField":"set_activated",
+                                      "@protoField":"set_activated"
+                                    },
+                                    {
+                                      "@nodeField":"activated",
+                                      "@protoField":"activated"
+                                    },
+                                    {
+                                      "@nodeField":"set_transmissionDuration",
+                                      "@protoField":"set_transmissionDuration"
+                                    },
+                                    {
+                                      "@nodeField":"transmissionDuration",
+                                      "@protoField":"transmissionDuration"
+                                    },
+                                    {
+                                      "@nodeField":"transmissionTimeDelay",
+                                      "@protoField":"transmissionTimeDelay"
+                                    },
+                                    {
+                                      "@nodeField":"set_transmissionTimeDelay",
+                                      "@protoField":"set_transmissionTimeDelay"
+                                    },
+                                    {
+                                      "@nodeField":"directionalTransmission",
+                                      "@protoField":"directionalTransmission"
+                                    },
+                                    {
+                                      "@nodeField":"set_directionalTransmission",
+                                      "@protoField":"set_directionalTransmission"
+                                    },
+                                    {
+                                      "@nodeField":"set_buoyType",
+                                      "@protoField":"set_buoyType"
+                                    },
+                                    {
+                                      "@nodeField":"buoyType",
+                                      "@protoField":"buoyType"
+                                    },
+                                    {
+                                      "@nodeField":"set_soundSpeedInWater",
+                                      "@protoField":"set_soundSpeedInWater"
+                                    },
+                                    {
+                                      "@nodeField":"soundSpeedInWater",
+                                      "@protoField":"soundSpeedInWater"
+                                    },
+                                    {
+                                      "@nodeField":"set_description",
+                                      "@protoField":"set_description"
+                                    },
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"description"
+                                    },
+                                    {
+                                      "@nodeField":"traceEnabled",
+                                      "@protoField":"traceEnabled"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize(timestamp)",
+"{",
+"\t// invoke trace routines, if enabled",
+"\tset_buoyType (buoyType, timestamp);",
+"\tset_directionalTransmission (directionalTransmission);",
+"\tprocess_position_updates ();",
+"\tinitializeTextLabel ();",
+"\ttracePrint('====================== initialize() complete ======================');",
+"}",
+"function initializeTextLabel ()",
+"{",
+"\tTextLabelNode.string = new MFString (description, 'location (' + position + ')');",
+"\ttracePrint('TextLabelNode.string=' + TextLabelNode.string);",
+"}",
+"function set_buoyType(stringValue, timestamp)",
+"{",
+"\tbuoyType = stringValue;",
+"\ttracePrint ('buoyType = ' + buoyType);",
+"\tif      (buoyType=='Racom')",
+"    {",
+"\t\tgeometrySwitch.whichChoice = 0;",
+"\t}",
+"\telse if (buoyType== 'Telesonar')",
+"    {",
+"\t\tgeometrySwitch.whichChoice = 1;",
+"\t}",
+"    else",
+"    {",
+"\t\talwaysPrint ('unrecognized buoyType=' + buoyType + ' [allowed choices:  Racom Telesonar]');",
+"\t\tgeometrySwitch.whichChoice = -1; // none",
+"\t}",
+"\tupdateSeaWebBuoyViewpointDescription ();",
+"}",
+"function updateSeaWebBuoyViewpointDescription ()",
+"{",
+"\tSeaWebBuoyViewpointNode.description = description + ' (' + position + ')';",
+"}",
+"function set_soundSpeedInWater(value, timestamp)",
+"{",
+"\tsoundSpeedInWater = value;",
+"\ttracePrint('soundSpeedInWater = ' + soundSpeedInWater);",
+"\tprocess_position_updates ();",
+"}",
+"function set_position(positionValue, timestamp)",
+"{",
+"\tposition = positionValue;",
+"\ttracePrint('position = ' + position);",
+"\tprocess_position_updates();",
+"\tupdateSeaWebBuoyViewpointDescription ();",
+"}",
+"function set_targetPosition(positionValue, timestamp)",
+"{",
+"\ttargetPosition = positionValue;",
+"\ttracePrint('targetPosition = ' + targetPosition);",
+"\tprocess_position_updates();",
+"}",
+"function set_transmissionDuration(value, timestamp)",
+"{",
+"\ttransmissionDuration = value;",
+"\ttracePrint('transmissionDuration     = ' + transmissionDuration);",
+"\tprocess_position_updates ();",
+"}",
+"function set_description(value, timestamp)",
+"{",
+"\ttracePrint('new description = ' + value);",
+"\tdescription = value;",
+"\tupdateSeaWebBuoyViewpointDescription ();",
+"}",
+"function process_position_updates(timestamp)",
+"{",
+"\ttracePrint('process_position_updates()...');",
+"\ttracePrint('transmissionTimeDelay    = ' + transmissionTimeDelay);",
+"\trelativeTargetPosition = new SFVec3f();",
+"\trelativeTargetPosition.x = targetPosition.x - position.x;",
+"\trelativeTargetPosition.y = targetPosition.y - position.y;",
+"\trelativeTargetPosition.z = targetPosition.z - position.z;",
+"\ttracePrint('relativeTargetPosition = ' + relativeTargetPosition);",
+"",
+"\t// propagationDistance also sets range for AcousticTransmissionCylinderInstance",
+"\tpropagationDistance = \tMath.sqrt(",
+"\t\t\t\t(relativeTargetPosition.x) * (relativeTargetPosition.x) +",
+"\t\t\t\t(relativeTargetPosition.y) * (relativeTargetPosition.y) +",
+"\t\t\t\t(relativeTargetPosition.z) * (relativeTargetPosition.z));",
+"\ttracePrint('propagationDistance = ' + propagationDistance);",
+"",
+"\tpropagationDuration = propagationDistance / soundSpeedInWater;",
+"\ttracePrint('propagationDuration    = ' + propagationDuration);",
+"\tactiveDuration = propagationDuration + transmissionDuration;",
+"\ttotalDuration = transmissionTimeDelay + propagationDuration + transmissionDuration;",
+"\ttracePrint('totalDuration    = ' + totalDuration);",
+"",
+"\tbeamCylinderInterpolator.key = new MFFloat (0, transmissionTimeDelay/totalDuration,",
+"\t\t(transmissionTimeDelay + propagationDuration)/totalDuration, 0.99, 1);",
+"\tbeamCylinderInterpolator.keyValue = new MFFloat (0, 0, propagationDistance, propagationDistance, 0);",
+"\ttracePrint('beamCylinderInterpolator.key = ' + beamCylinderInterpolator.key);",
+"\ttracePrint('beamCylinderInterpolator.keyValue = ' + beamCylinderInterpolator.keyValue);",
+"\tbeamRotation = new SFRotation (new SFVec3f (1, 0, 0), relativeTargetPosition.normalize());",
+"",
+"\tflyingText.timeIntervals = new MFTime(transmissionTimeDelay, propagationDuration + transmissionDuration);",
+"\ttracePrint('flyingText.timeIntervals = ' + flyingText.timeIntervals);",
+"\t// popup text without motion during transmissionTimeDelay",
+"\tflyingText.waypoints = new MFVec3f(new SFVec3f(0,0,0), new SFVec3f(0,0,0), relativeTargetPosition);",
+"\ttracePrint('flyingText.waypoints = ' + flyingText.waypoints);",
+"\ttracePrint('...process_position_updates() complete.');",
+"}",
+"function set_enabled(value, timestamp)",
+"{",
+"\tenabled = value;",
+"\ttracePrint('enabled = ' + enabled);",
+"}",
+"function set_activated(value, timestamp)",
+"{",
+"\tif (enabled)",
+"\t{",
+"\t\tprocess_position_updates(); // ensure up to date",
+"\t\tif (directionalTransmission)",
+"\t\t{",
+"\t\t//\tbeamCylinder.contact = true;",
+"\t\t}",
+"\t\telse",
+"\t\t{",
+"\t\t\t// start delay timer, which will later trigger acousticTransmissionCylinder",
+"\t\t//\tacousticTransmissionCylinder.startTransmission = true;",
+"\t\t}",
+"",
+"\t\tif (value == true)",
+"\t\t{",
+"\t\t\tdelayTimer.delayInterval = transmissionTimeDelay;",
+"\t\t\ttracePrint('delayTimer.delayInterval = ' + delayTimer.delayInterval);",
+"\t\t\tactivationTime = timestamp; // start DelayTimer, BeamCylinderAnimation, FlyingText startTime",
+"\t\t\ttracePrint('activated at ' + activationTime);",
+"\t\t}",
+"\t}",
+"}",
+"function set_targetIdNumber(value, timestamp)",
+"{",
+"\ttargetIdNumber = value;",
+"\ttracePrint('targetIdNumber = ' + targetIdNumber);",
+"}",
+"function set_directionalTransmission(value, timestamp)",
+"{",
+"\tdirectionalTransmission = value;",
+"\ttracePrint('directionalTransmission = ' + directionalTransmission);",
+"",
+"\tif (directionalTransmission)",
+"\t{",
+"\t\ttransmissionGeometrySwitch.whichChoice = 1;",
+"\t}",
+"\telse",
+"\t{",
+"\t\ttransmissionGeometrySwitch.whichChoice = 0;",
+"\t}",
+"}",
+"function set_transmissionTimeDelay(value, timestamp)",
+"{",
+"\tif (value < 0.0)",
+"\t{",
+"\t\talwaysPrint('error, illegal transmissionTimeDelay = ' + transmissionTimeDelay +",
+"\t\t\t', reset to 0');",
+"\t\ttransmissionTimeDelay = 0.0;",
+"\t}",
+"\telse",
+"\t{",
+"\t\ttransmissionTimeDelay = value;",
+"\t}",
+"\ttracePrint('transmissionTimeDelay = ' + transmissionTimeDelay);",
+"\tprocess_position_updates ();",
+"}",
+"function delayCompleted(value, timestamp)",
+"{",
+"\tif (directionalTransmission)",
+"\t{",
+"\t//\tbeamCylinder.range = 0;",
+"\t}",
+"\telse",
+"\t{",
+"\t\tacousticTransmissionCylinder.startTransmission = true;",
+"\t}",
+"\ttracePrint('delayTimer delayCompleted at ' + timestamp);",
+"}",
+"function alwaysPrint(string)",
+"{",
+"\tBrowser.print ('[SeaWebBuoyPrototype ' + description + '] ' + string);",
+"}",
+"function tracePrint(string)",
+"{",
+"\tif (traceEnabled)",
+"\t\tBrowser.print ('[SeaWebBuoyPrototype ' + description + '] ' + string);",
+"}"
+]
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"activationTime",
+                              "@fromNode":"RepeaterBuoyControlScript",
+                              "@toField":"startTime",
+                              "@toNode":"DelayTimer"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"delayCompleteTime",
+                              "@fromNode":"DelayTimer",
+                              "@toField":"delayCompleted",
+                              "@toNode":"RepeaterBuoyControlScript"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"delayCompleteTime",
+                              "@fromNode":"DelayTimer",
+                              "@toField":"set_startTime",
+                              "@toNode":"BeamCylinderAnimation"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"activationTime",
+                              "@fromNode":"RepeaterBuoyControlScript",
+                              "@toField":"set_startTime",
+                              "@toNode":"FlyingTextInstance"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"propagationDistance",
+                              "@fromNode":"RepeaterBuoyControlScript",
+                              "@toField":"set_range",
+                              "@toNode":"AcousticTransmissionCylinderInstance"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"beamRotation",
+                              "@fromNode":"RepeaterBuoyControlScript",
+                              "@toField":"set_rotation",
+                              "@toNode":"BeamCylinderRotation"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"activeDuration",
+                              "@fromNode":"RepeaterBuoyControlScript",
+                              "@toField":"cycleInterval",
+                              "@toNode":"BeamCylinderAnimation"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Viewable geometry for this scene is anchored text that links to an example showing ExternProtoDeclare usage of a SeaWeb buoy."
+          },
+          { "WorldInfo":
+            {
+              "@info":["A SeaWeb buoy."],
+              "@title":"SeaWebBuoyPrototype"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"SeaWebBuoy prototype definition",
+              "@position":[0,0,15]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3,0,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"SeaWeb buoy example",
+                    "@url":["SeaWebBuoyExample.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyExample.x3d","SeaWebBuoyExample.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/SeaWeb/SeaWebBuoyExample.wrl"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,1,1],
+                                      "@emissiveColor":[0,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["SeaWebBuoyPrototype","is a Prototype definition file.","","To see an example scene","click this text and view","SeaWebBuoyExample."],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[5,0,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"SeaWebBuoy",
+                    "fieldValue": [
+                      {
+                        "@name":"description",
+                        "@value":"Example buoy"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

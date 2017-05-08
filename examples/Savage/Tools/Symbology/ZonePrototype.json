@@ -1,0 +1,185 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ZonePrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Exclusion Zone Range Markers. Up to three"
+          },
+          {
+            "@name":"creator",
+            "@content":"Alan Hudson"
+          },
+          {
+            "@name":"created",
+            "@content":"11 Sept 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"version",
+            "@content":"1.0"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Symbology/ZonePrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"TextPad"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"Zone",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"translation",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Usually to raise ranges off the surface",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"range",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Scale of 1 meter radius circle",
+                      "@type":"SFVec3f",
+                      "@value":[1,1,1]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The color to display the zone in.",
+                      "@type":"SFColor",
+                      "@value":[1,1,1]
+                    },
+                    {
+                      "@name":"whichChoice",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Turns zones on and off",
+                      "@type":"SFInt32",
+                      "@value":0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Switch":
+                      {
+                        "@whichChoice":-1,
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"whichChoice",
+                                "@protoField":"whichChoice"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Transform":
+                            {
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"translation",
+                                      "@protoField":"translation"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "@DEF":"Range",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"scale",
+                                            "@protoField":"range"
+                                          }
+                                        ]
+                                    },
+                                    "-children":[
+                                      { "Shape":
+                                        {
+                                          "-appearance":
+                                            { "Appearance":
+                                              {
+                                                "-material":
+                                                  { "Material":
+                                                    {
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"emissiveColor",
+                                                              "@protoField":"color"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                          "-geometry":
+                                            { "IndexedLineSet":
+                                              {
+                                                "@colorIndex":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                                                "@colorPerVertex":false,
+                                                "@coordIndex":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
+                                                "-coord":
+                                                  { "Coordinate":
+                                                    {
+                                                      "@point":[0,0,-1,0.195,0,-0.981,0.382,0,-0.924,0.555,0,-0.832,0.707,0,-0.708,0.831,0,-0.556,0.923,0,-0.383,0.98,0,-0.196,1,0,0,0.98,0,0.195,0.923,0,0.382,0.831,0,0.555,0.707,0,0.707,0.555,0,0.831,0.382,0,0.923,0.195,0,0.98,0,0,1,-0.195,0,0.98,-0.382,0,0.923,-0.555,0,0.831,-0.707,0,0.707,-0.831,0,0.555,-0.923,0,0.382,-0.98,0,0.195,-1,0,0,-0.981,0,-0.195,-0.924,0,-0.382,-0.832,0,-0.555,-0.708,0,-0.707,-0.556,0,-0.831,-0.383,0,-0.923,-0.196,0,-0.98,0,0,-1,0.195,0,-0.981]
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}

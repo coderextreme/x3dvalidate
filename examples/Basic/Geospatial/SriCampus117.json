@@ -1,0 +1,119 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SriCampus117.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"SRI campus building"
+          },
+          {
+            "@name":"creator",
+            "@content":"Aaron Heller, SRI International"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 February 2000"
+          },
+          {
+            "@name":"translated",
+            "@content":"29 April 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 April 2009"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.geovrml.org/examples"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D geospatial example"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/SriCampus117.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "TouchSensor":
+            {
+              "@DEF":"MouseOverPopupDescription",
+              "@description":"House-99",
+              "@enabled":false
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.75,0.75,0.75]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@convex":false,
+                    "@coordIndex":[9,10,13,12,-1,8,12,13,11,-1,10,2,3,11,13,-1,8,0,1,9,12,-1,2,10,9,1,-1,0,8,11,3,-1,0,3,2,1,-1],
+                    "@solid":false,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@DEF":"OBJECT-117-VERTICES",
+                          "@point":[-4.899219,-3.4460645,36.470535,4.899219,-3.4460645,36.470535,4.899219,-3.4460645,-36.470535,-4.899219,-3.4460645,-36.470535,-4.899219,1.2414159,36.470535,4.899219,1.2414159,36.470535,4.899219,1.2414159,-36.470535,-4.899219,1.2414159,-36.470535,-4.899219,1.2414159,36.470535,4.899219,1.2414159,36.470535,4.899219,1.2414159,-36.470535,-4.899219,1.2414159,-36.470535,0.0,3.4460645,36.470535,0.0,3.4460645,-36.470535,0.0,3.4460645,36.470535,0.0,3.4460645,-36.470535]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,428 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"XvlShellAttributeEdgeRound.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Examples of XvlShell edgeRound attribute values."
+          },
+          {
+            "@name":"creator",
+            "@content":"Marc Jablonski"
+          },
+          {
+            "@name":"created",
+            "@content":"23 November 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 March 2016"
+          },
+          {
+            "@name":"error",
+            "@content":"Test X3D DTD experimental extensions mechanisms, the XVL nodes are not legal X3D"
+          },
+          {
+            "@name":"reference",
+            "@content":"readme.txt"
+          },
+          {
+            "@name":"reference",
+            "@content":"docs/LatticeXvl/LatticeXvlOverview.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/docs/LatticeXvl/LatticeXvlOverview.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.xvl3d.com"
+          },
+          {
+            "@name":"subject",
+            "@content":"Lattice XVL parametric geometry X3D VRML"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellAttributeEdgeRound.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundColor":[0,0.1,0.2],
+              "@skyColor":[0,0.1,0.2]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,1.5,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["XvlShell Edge Round"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3,-1,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,1.75,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@emissiveColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@maxExtent":2,
+                                "@string":["Top Edges","edgeRound = 0.0"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.5
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "XvlShell":
+                        {
+                          "@edgeBeginCoordIndex":[2,3,7,6],
+                          "@edgeEndCoordIndex":[3,7,6,2],
+                          "@edgeRound":[0.0,0.0,0.0,0.0],
+                          "@faceCoordIndex":[3,7,6,2,-1,7,3,1,5,-1,6,4,0,2,-1,1,3,2,0,-1,5,1,0,4,-1,7,5,4,6,-1],
+                          "@shellType":"LATTICE_MESH",
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"MESH_COORD",
+                                "@point":[-1,-1,-1,-1,-1,1,-1,1,-1,-1,1,1,1,-1,-1,1,-1,1,1,1,-1,1,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[3,7,6,2,-1,7,3,1,5,-1,6,4,0,2,-1,1,3,2,0,-1,5,1,0,4,-1,7,5,4,6,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@USE":"MESH_COORD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-1,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,1.75,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@emissiveColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@maxExtent":2,
+                                "@string":["Top Edges","edgeRound = 0.1"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.5
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "XvlShell":
+                        {
+                          "@edgeBeginCoordIndex":[2,3,7,6],
+                          "@edgeEndCoordIndex":[3,7,6,2],
+                          "@edgeRound":[0.1,0.1,0.1,0.1],
+                          "@faceCoordIndex":[3,7,6,2,-1,7,3,1,5,-1,6,4,0,2,-1,1,3,2,0,-1,5,1,0,4,-1,7,5,4,6,-1],
+                          "@shellType":"LATTICE_MESH",
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@USE":"MESH_COORD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[3,7,6,2,-1,7,3,1,5,-1,6,4,0,2,-1,1,3,2,0,-1,5,1,0,4,-1,7,5,4,6,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@USE":"MESH_COORD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[3,-1,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,1.75,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@emissiveColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@maxExtent":2,
+                                "@string":["Top Edges","edgeRound = 1.0"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.5
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "XvlShell":
+                        {
+                          "@edgeBeginCoordIndex":[2,3,7,6],
+                          "@edgeEndCoordIndex":[3,7,6,2],
+                          "@edgeRound":[1.0,1.0,1.0,1.0],
+                          "@faceCoordIndex":[3,7,6,2,-1,7,3,1,5,-1,6,4,0,2,-1,1,3,2,0,-1,5,1,0,4,-1,7,5,4,6,-1],
+                          "@shellType":"LATTICE_MESH",
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@USE":"MESH_COORD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[3,7,6,2,-1,7,3,1,5,-1,6,4,0,2,-1,1,3,2,0,-1,5,1,0,4,-1,7,5,4,6,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@USE":"MESH_COORD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

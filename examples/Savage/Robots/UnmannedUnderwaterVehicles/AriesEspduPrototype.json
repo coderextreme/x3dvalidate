@@ -1,0 +1,785 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AriesEspduPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype for a DIS enabled (including articulated parameters) for inclusion in a VRML/X3D Scene. Articulation parameters are in AUV Dynamics (AUV Workbench) order."
+          },
+          {
+            "@name":"creator",
+            "@content":"Duane Davis"
+          },
+          {
+            "@name":"translator",
+            "@content":"Vrml97ToX3dNist"
+          },
+          {
+            "@name":"created",
+            "@content":"21 November 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"UuvBoxTest.xml"
+          },
+          {
+            "@name":"reference",
+            "@content":"UuvBoxTest.disbin"
+          },
+          {
+            "@name":"reference",
+            "@content":"UuvBoxTest.disbin.disbinidx"
+          },
+          {
+            "@name":"errors",
+            "@content":"EspduTransformTrace needs revision"
+          },
+          {
+            "@name":"subject",
+            "@content":"Distributed Interactive Simulation DIS ESPDU Aries AUV"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesEspduPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Aries",
+              "@appinfo":"Acoustic Radio Interactive Exploratory Server (ARIES) is an operational NPS-designed Unmanned Underwater Vehicle (AUV)",
+              "@url":["../../../Savage/Robots/UnmannedUnderwaterVehicles/AriesPrototype.x3d#Aries","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesPrototype.x3d#Aries","../../../Savage/Robots/UnmannedUnderwaterVehicles/AriesPrototype.wrl#Aries","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesPrototype.wrl#Aries"],
+              "field": [
+                {
+                  "@name":"hullName",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"can be overridden at instantiation time only",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"hullColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"planeColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"rotation",
+                  "@accessType":"inputOutput",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"set_portRpm",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_stbdRpm",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_forwardRudders",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_afterRudders",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_forwardPlanes",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_afterPlanes",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_forwardVerticalThruster",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_afterVerticalThruster",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_forwardLateralThruster",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_afterLateralThruster",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_ST725Range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"meters along sonar axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_ST1000Range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"meters along sonar axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_ST725Bearing",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"degrees about vertical axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_ST1000Bearing",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"degrees about vertical axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_ST725Intensity",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"signal-to-noise ratio decibels",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"set_ST1000Intensity",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"signal-to-noise ratio decibels",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"AriesEspdu",
+              "@appinfo":"Aries unmanned underwater vehicle with IEEE DIS EspduTransform wrapper bundled together in a single prototype",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"hullName",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"up to 11 characters maps to EspduTransform marking",
+                      "@type":"SFString",
+                      "@value":"AriesAUV"
+                    },
+                    {
+                      "@name":"hullColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"hull color for this UUV instance",
+                      "@type":"SFColor",
+                      "@value":[0.9,0.9,0.9]
+                    },
+                    {
+                      "@name":"planeColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"plane color for this UUV instance",
+                      "@type":"SFColor",
+                      "@value":[0.1,0.1,0.8]
+                    },
+                    {
+                      "@name":"translation",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"initial position prior to first ESPDU receipt",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"rotation",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"initial orientation prior to first ESPDU receipt",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"siteID",
+                      "@accessType":"inputOutput",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"applicationID",
+                      "@accessType":"inputOutput",
+                      "@type":"SFInt32",
+                      "@value":1
+                    },
+                    {
+                      "@name":"entityID",
+                      "@accessType":"inputOutput",
+                      "@type":"SFInt32",
+                      "@value":2
+                    },
+                    {
+                      "@name":"readInterval",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"network read periodicity",
+                      "@type":"SFTime",
+                      "@value":0.1
+                    },
+                    {
+                      "@name":"writeInterval",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"network write periodicity",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"networkMode",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Override default EspduTransform value so that listening occurs by default",
+                      "@type":"SFString",
+                      "@value":"networkReader"
+                    },
+                    {
+                      "@name":"address",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"multicast address",
+                      "@type":"SFString",
+                      "@value":"239.255.5.8"
+                    },
+                    {
+                      "@name":"port",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"multicast port",
+                      "@type":"SFInt32",
+                      "@value":62040
+                    },
+                    {
+                      "@name":"traceNodeEnabled",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Set to 0 to activate EspduTransformTrace",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"============================="
+                    },
+                    { "Group":
+                      {
+                        "-children":[
+                          { "EspduTransform":
+                            {
+                              "@DEF":"ET",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"marking",
+                                      "@protoField":"hullName"
+                                    },
+                                    {
+                                      "@nodeField":"siteID",
+                                      "@protoField":"siteID"
+                                    },
+                                    {
+                                      "@nodeField":"applicationID",
+                                      "@protoField":"applicationID"
+                                    },
+                                    {
+                                      "@nodeField":"entityID",
+                                      "@protoField":"entityID"
+                                    },
+                                    {
+                                      "@nodeField":"readInterval",
+                                      "@protoField":"readInterval"
+                                    },
+                                    {
+                                      "@nodeField":"writeInterval",
+                                      "@protoField":"writeInterval"
+                                    },
+                                    {
+                                      "@nodeField":"networkMode",
+                                      "@protoField":"networkMode"
+                                    },
+                                    {
+                                      "@nodeField":"address",
+                                      "@protoField":"address"
+                                    },
+                                    {
+                                      "@nodeField":"port",
+                                      "@protoField":"port"
+                                    },
+                                    {
+                                      "@nodeField":"translation",
+                                      "@protoField":"translation"
+                                    },
+                                    {
+                                      "@nodeField":"rotation",
+                                      "@protoField":"rotation"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                {
+                                  "#comment":"applet 0 1 2, auv dynamics 36 1 1"
+                                },
+                                { "Switch":
+                                  {
+                                    "@whichChoice":0,
+                                    "-children":[
+                                      { "ProtoInstance":
+                                        {
+                                          "@name":"Aries",
+                                          "@DEF":"AriesAUV",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"hullName",
+                                                  "@protoField":"hullName"
+                                                },
+                                                {
+                                                  "@nodeField":"hullColor",
+                                                  "@protoField":"hullColor"
+                                                },
+                                                {
+                                                  "@nodeField":"planeColor",
+                                                  "@protoField":"planeColor"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Group":
+                                  {
+                                    "@DEF":"ArticulationParameterScriptRoutes",
+                                    "-children":[
+                                      { "Script":
+                                        {
+                                          "@DEF":"ArticulationParameterControl",
+                                          "field": [
+                                            {
+                                              "@name":"set_articulationParameters",
+                                              "@accessType":"inputOnly",
+                                              "@type":"MFFloat"
+                                            },
+                                            {
+                                              "@name":"portRpm",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"stbdRpm",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardVerticalThruster",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"afterVerticalThruster",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardLateralThruster",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"afterLateralThruster",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardRudders",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"afterRudders",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"forwardPlanes",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"afterPlanes",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"ST725Range",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"ST725Bearing",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"ST1000Range",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            },
+                                            {
+                                              "@name":"ST1000Bearing",
+                                              "@accessType":"outputOnly",
+                                              "@type":"SFFloat"
+                                            }
+                                          ],
+                                          "#sourceText":[
+"ecmascript:",
+"",
+"MAXRPM        = 700;",
+"MAXTHRUSTER   = 24;",
+"MAXSONARRANGE = 30;",
+"",
+"function initialize()",
+"{",
+"   forwardRudders          = 0;",
+"   afterRudders            = 0;",
+"   forwardPlanes           = 0;",
+"   afterPlanes             = 0;",
+"   portRpm                 = 0;",
+"   stbdRpm                 = 0;",
+"   forwardVerticalThruster = 0;",
+"   afterVerticalThruster   = 0;",
+"   forwardLateralThruster  = 0;",
+"   afterLateralThruster    = 0;",
+"   ST1000Bearing           = 0;",
+"   ST1000Range             = 0; // MAXSONARRANGE;",
+"   ST725Bearing            = 0;",
+"   ST725Range              = 0; // MAXSONARRANGE;",
+"}",
+"",
+"function set_articulationParameters( value, timestamp )",
+"{",
+"   forwardRudders          =  value[0];",
+"   afterRudders            = -value[0];",
+"   forwardPlanes           = -value[1];",
+"   afterPlanes             =  value[1];",
+"   portRpm                 =  value[2] / MAXRPM;",
+"   stbdRpm                 =  value[3] / MAXRPM;",
+"   forwardVerticalThruster =  value[4] / MAXTHRUSTER;",
+"   afterVerticalThruster   =  value[5] / MAXTHRUSTER;",
+"   forwardLateralThruster  =  value[6] / MAXTHRUSTER;",
+"   afterLateralThruster    =  value[7] / MAXTHRUSTER;",
+"   ST1000Bearing           =  value[8];   ",
+"   ST1000Range             =  value[9];",
+"   if      (ST1000Range <= 0)",
+"            ST1000Range = 0;",
+"   else if (ST1000Range > MAXSONARRANGE)",
+"            ST1000Range = 0; // MAXSONARRANGE;",
+"   ST725Bearing            =  value[11];",
+"   ST725Range              =  value[12];",
+"   if      (ST725Range <= 0)",
+"            ST725Range = 0;",
+"   else if (ST725Range > MAXSONARRANGE)",
+"            ST725Range = 0; // MAXSONARRANGE;",
+"}"
+]
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"articulationParameterArray",
+                                          "@fromNode":"ET",
+                                          "@toField":"set_articulationParameters",
+                                          "@toNode":"ArticulationParameterControl"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"portRpm",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_portRpm",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"stbdRpm",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_stbdRpm",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"forwardVerticalThruster",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_forwardVerticalThruster",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"afterVerticalThruster",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_afterVerticalThruster",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"forwardLateralThruster",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_forwardLateralThruster",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"afterLateralThruster",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_afterLateralThruster",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"forwardRudders",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_forwardRudders",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"afterRudders",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_afterRudders",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"forwardPlanes",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_forwardPlanes",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"afterPlanes",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_afterPlanes",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"ST725Range",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_ST725Range",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"ST725Bearing",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_ST725Bearing",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"ST1000Range",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_ST1000Range",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"ST1000Bearing",
+                                          "@fromNode":"ArticulationParameterControl",
+                                          "@toField":"set_ST1000Bearing",
+                                          "@toNode":"AriesAUV"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Switch":
+                            {
+                              "@DEF":"HideTraceText",
+                              "@whichChoice":-1,
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"whichChoice",
+                                      "@protoField":"traceNodeEnabled"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "@DEF":"TRACETRANSFORM",
+                                    "-children":[
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"translation",
+                                          "@fromNode":"ET",
+                                          "@toField":"set_translation",
+                                          "@toNode":"TRACETRANSFORM"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"rotation",
+                                          "@fromNode":"ET",
+                                          "@toField":"set_rotation",
+                                          "@toNode":"TRACETRANSFORM"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"=============================="
+          },
+          { "Viewpoint":
+            {
+              "@description":"AriesEspdu Prototype"
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"AriesEspdu",
+                    "fieldValue": [
+                      {
+                        "@name":"networkMode",
+                        "@value":"networkReader"
+                      },
+                      {
+                        "@name":"translation",
+                        "@value":[0,0.4,0]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"AriesEspdu Prototype",
+              "@parameter":["target=_blank"],
+              "@url":["AriesEspduExample.x3d","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesEspduExample.x3d","AriesEspduExample.wrl","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesEspduExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,1],
+                                "@emissiveColor":[0,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["AriesEspduPrototype","is a prototype definition file","","To see an example scene","click on any text and view","AriesEspduExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,379 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Board.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Board showing score"
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Christos Kalogrias - Hellenic Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"19 September 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SoccerStadium/Board.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"BoardView",
+              "@position":[0,0,4]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Case",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[0.1,0.25,0.1,-0.25,-0.1,-0.25,-0.1,0.25,0.1,0.25],
+                                "@spine":[2,1,0,2,-1,0,-2,-1,0,-2,1,0,2,1,0]
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.2,0.2,0.2]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[4,2,0.05]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Leg",
+                          "@translation":[-1,-1.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":1,
+                                      "@radius":0.1
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[2,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"Leg"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.15,0.15,0.15],
+                    "@translation":[-1.5,0.5,0],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["../../../Basic/StudentProjects/WallClock.x3d","http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/WallClock.x3d","../../../Basic/StudentProjects/WallClock.wrl","http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/WallClock.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.2,0.2,0.2],
+                    "@translation":[-0.6,0.6,0.1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["AEK FC - OLYMPIAKOS FC"]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-1.5,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.9,0.9,0.9]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["4 0"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["BEGIN","MIDDLE"],
+                                            "@size":1.2
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-3,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.9,0.9,0.9]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["12' OKKAS"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["BEGIN","MIDDLE"],
+                                            "@size":0.6
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-3.8,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.9,0.9,0.9]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["25' LIMBEROPOYLOS"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["BEGIN","MIDDLE"],
+                                            "@size":0.6
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-4.6,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.9,0.9,0.9]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["45' OKKAS"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["BEGIN","MIDDLE"],
+                                            "@size":0.6
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-5.4,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.9,0.9,0.9]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["58' TSARTAS"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["BEGIN","MIDDLE"],
+                                            "@size":0.6
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,467 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"DISEntityPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype definitions for DISEntityManager and DISEntityTypeMapping."
+          },
+          {
+            "@name":"creator",
+            "@content":"Alan Hudson"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"26 April 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 March 2010"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.xj3d.org/extensions/DIS.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.yumetech.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/DISEntityPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"============================================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"DISEntityManager",
+              "@appinfo":"A DISEntityManager node notifies content when new entities arrive or current entities leave.",
+              "@documentation":"http://www.xj3d.org/extensions/DIS.html#DISEntityManager",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"siteID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"applicationID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":1
+                    },
+                    {
+                      "@name":"entityID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535] field under consideration",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"address",
+                      "@accessType":"inputOutput",
+                      "@type":"SFString",
+                      "@value":"localhost"
+                    },
+                    {
+                      "@name":"port",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"mapping",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[DISEntityTypeMapping]",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"default NULL"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"addedEntities",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[EspduTransform]",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"removedEntities",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[EspduTransform]",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default NULL"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"X3DChildNode node type"
+                    },
+                    { "Group":
+                      {
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"DISEntityTypeMapping",
+              "@appinfo":"A DISEntityTypeMapping node provides a mapping from DIS Entity type information to an X3D model. This model is model provides a visual and behavioral representation of the entity for usage in X3D simulations. The mappings are done by selecting the most specific record which fits the entity. A value of 0 is considered a wildcard. All fields after the first zero must be zero as well.",
+              "@documentation":"http://www.xj3d.org/extensions/DIS.html#DISEntityTypeMapping",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"kind",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"domain",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"country",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"category",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"subcategory",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"specific",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"extra",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"identifier",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default NULL"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"X3DInfoNode node type"
+                    },
+                    { "MetadataSet":
+                      {
+                        "@name":"PlaceholderNode"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          {
+            "#comment":"Default content"
+          },
+          { "Viewpoint":
+            {
+              "@description":"default viewpoint",
+              "@position":[0,0,110]
+            }
+          },
+          { "EspduTransform":
+            {
+            }
+          },
+          { "TransmitterPdu":
+            {
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"DISEntityManager",
+              "@DEF":"EntityManager",
+              "fieldValue": [
+                {
+                  "@name":"address",
+                  "@value":"224.2.181.145"
+                },
+                {
+                  "@name":"port",
+                  "@value":62040
+                },
+                {
+                  "@name":"siteID",
+                  "@value":0
+                },
+                {
+                  "@name":"applicationID",
+                  "@value":1
+                },
+                {
+                  "@name":"mapping",
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"DISEntityTypeMapping",
+                        "fieldValue": [
+                          {
+                            "@name":"kind",
+                            "@value":1
+                          },
+                          {
+                            "@name":"domain",
+                            "@value":1
+                          },
+                          {
+                            "@name":"country",
+                            "@value":225
+                          },
+                          {
+                            "@name":"category",
+                            "@value":1
+                          },
+                          {
+                            "@name":"subcategory",
+                            "@value":1
+                          },
+                          {
+                            "@name":"specific",
+                            "@value":1
+                          },
+                          {
+                            "@name":"identifier",
+                            "@value":"m1a1tank.x3dv"
+                          }
+                        ]
+                      }
+                    },
+                    { "ProtoInstance":
+                      {
+                        "@name":"DISEntityTypeMapping",
+                        "fieldValue": [
+                          {
+                            "@name":"kind",
+                            "@value":1
+                          },
+                          {
+                            "@name":"domain",
+                            "@value":3
+                          },
+                          {
+                            "@name":"country",
+                            "@value":225
+                          },
+                          {
+                            "@name":"category",
+                            "@value":4
+                          },
+                          {
+                            "@name":"identifier",
+                            "@value":"dog.x3dv"
+                          }
+                        ]
+                      }
+                    },
+                    { "ProtoInstance":
+                      {
+                        "@name":"DISEntityTypeMapping",
+                        "fieldValue": [
+                          {
+                            "@name":"kind",
+                            "@value":1
+                          },
+                          {
+                            "@name":"domain",
+                            "@value":1
+                          },
+                          {
+                            "@name":"identifier",
+                            "@value":"land.x3dv"
+                          }
+                        ]
+                      }
+                    },
+                    { "ProtoInstance":
+                      {
+                        "@name":"DISEntityTypeMapping",
+                        "fieldValue": [
+                          {
+                            "@name":"kind",
+                            "@value":1
+                          },
+                          {
+                            "@name":"domain",
+                            "@value":1
+                          },
+                          {
+                            "@name":"country",
+                            "@value":225
+                          },
+                          {
+                            "@name":"identifier",
+                            "@value":"USAland.x3dv"
+                          }
+                        ]
+                      }
+                    },
+                    { "ProtoInstance":
+                      {
+                        "@name":"DISEntityTypeMapping",
+                        "fieldValue": [
+                          {
+                            "@name":"kind",
+                            "@value":1
+                          },
+                          {
+                            "@name":"domain",
+                            "@value":3
+                          },
+                          {
+                            "@name":"specific",
+                            "@value":1
+                          },
+                          {
+                            "@name":"identifier",
+                            "@value":"surface.x3dv"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"EntityHolder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"addedEntities",
+              "@fromNode":"EntityManager",
+              "@toField":"addChildren",
+              "@toNode":"EntityHolder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"removedEntities",
+              "@fromNode":"EntityManager",
+              "@toField":"removeChildren",
+              "@toNode":"EntityHolder"
+            }
+          }
+        ]
+    }
+  }
+}

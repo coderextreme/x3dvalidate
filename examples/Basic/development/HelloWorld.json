@@ -1,0 +1,159 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloWorld.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple X3D example"
+          },
+          {
+            "@name":"created",
+            "@content":"30 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"17 March 2013"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3D.org"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://x3dGraphics.com"
+          },
+          {
+            "@name":"Image",
+            "@content":"HelloWorld.tall.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"http://www.web3d.org/x3d/content/examples/license.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Example scene to illustrate X3D nodes and fields (XML elements and attributes)"
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"ViewUpClose",
+                    "@centerOfRotation":[0,-1,0],
+                    "@description":"Hello world!",
+                    "@position":[0,-1,7]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"MaterialLightBlue",
+                                      "@diffuseColor":[0.1,0.5,1]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"ImageCloudlessEarth",
+                                      "@url":["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-2,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"TextMessage",
+                                "@string":["Hello","world!"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@USE":"MaterialLightBlue"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

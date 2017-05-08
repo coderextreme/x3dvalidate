@@ -1,0 +1,121 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure04.06aTextPlainSerifFontWithAxes.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 4.6a, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch04/04fig06a.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"6 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Text in a plain serif font, with coordinate axes superimposed to show X3D/VRML directions. Compare with Figure 4.6b."
+          },
+          {
+            "@name":"reference",
+            "@content":"Figure04.06bTextBoldSerifFontWithAxes.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter04-Text/Figure04.06aTextPlainSerifFontWithAxes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Shape":
+            {
+              "-children":[
+                {
+                  "#comment":"When attribute values are not specified, the default values from the X3D and VRML97 Specifications are used."
+                }
+              ],
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0.5,0]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Text":
+                  {
+                    "@string":["Qwerty Uiop","Asdf"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@DEF":"DefaultFamilyIsSerif"
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"Adding this Inline reference to another scene superimposes X3D/VRML coordinate system axes."
+          },
+          { "Transform":
+            {
+              "@scale":[5,5,5],
+              "@translation":[0,0,-0.2],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"CoordinateAxes",
+                    "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

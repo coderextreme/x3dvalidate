@@ -1,0 +1,267 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RoundedRectanglePrimitives.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Illustrates how to build rounded rectangle using only primitive nodes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Marlon Heron and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"23 October 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"6 November 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D for Web Authors, homework for chapters 2 and 3."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://x3dgraphics.com/slidesets/X3dForWebAuthors/Chapter02-GeometryPrimitives.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://x3dgraphics.com/slidesets/X3dForWebAuthors/Chapter03-Grouping.pdf"
+          },
+          {
+            "@name":"TODO",
+            "@content":"add drawing of scene graph structure"
+          },
+          {
+            "@name":"TODO",
+            "@content":"fix Xj3D aliasing bug"
+          },
+          {
+            "@name":"Image",
+            "@content":"Xj3dAliasingProblemRoundedRectanglePrimitives.png"
+          },
+          {
+            "@name":"subject",
+            "@content":"Rounded Rectangle Primitive Geometry"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dgraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/RoundedRectanglePrimitives.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Top Down View",
+              "@orientation":[1,0,0,-1.570796],
+              "@position":[0,20,0]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.941176,1,0.988235]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"DefaultShape",
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[8,2.01,10]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.2,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[10,2.02,8]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.5,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4,0,4],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@DEF":"DefaultCylinder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.2,0.2,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4,0,-4],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@USE":"DefaultCylinder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-4,0,4],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@USE":"DefaultCylinder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-4,0,-4],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@USE":"DefaultCylinder"
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

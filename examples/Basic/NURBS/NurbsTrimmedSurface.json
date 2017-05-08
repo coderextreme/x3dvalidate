@@ -1,0 +1,262 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":4
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NurbsTrimmedSurface.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This scene contains a single NurbsTrimmedSurface rendering one-quarter of a cylindrical segment; with a triangular notch cut from one edge. The \"solid\" field of the surface is set false so surface is visible from both sides. Surface has semi-transparent material appearance. Scene also contains unit-length line segments defining x-y-z coordinate axes. Defined Viewpoints show the inner and outer sides of the cylindrical surface"
+          },
+          {
+            "@name":"Image",
+            "@content":"NurbsTrimmedSurface.jpg"
+          },
+          {
+            "@name":"creator",
+            "@content":"Vincent Marchetti"
+          },
+          {
+            "@name":"created",
+            "@content":"10 February 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 January 2014"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/NurbsTrimmedSurfaceInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/NurbsTrimmedSurfaceXj3D.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.kshell.com/pages/nurbs_surface_demo"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/NURBS/NurbsTrimmedSurface.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Python language scripting"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.8,0.8,0.8]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"view outer surface",
+              "@fieldOfView":0.16628,
+              "@orientation":[0.166,0.465,0.87,2.538],
+              "@position":[10.55,12.855,11.111]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"view inner surface",
+              "@fieldOfView":0.16628,
+              "@orientation":[0.797,-0.285,-0.533,1.182],
+              "@position":[-10.55,-12.855,11.111]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "NurbsTrimmedSurface":
+                  {
+                    "@solid":false,
+                    "@uDimension":5,
+                    "@uKnot":[0.0,0.0,0.0,0.5,0.5,1.0,1.0,1.0],
+                    "@vDimension":2,
+                    "@vKnot":[0.0,0.0,1.0,1.0],
+                    "@vOrder":2,
+                    "@weight":[1.0,0.923879181092,1.0,0.923879181092,1.0,1.0,0.923879181092,1.0,0.923879181092,1.0],
+                    "-controlPoint":
+                      { "Coordinate":
+                        {
+                          "@point":[1,0,0,0.92388,0.38268,0,0.70711,0.70711,0,0.38268,0.92388,0,-0.000004,1,0,1,0,1,0.92388,0.38268,0.92388,0.70711,0.70711,1,0.38268,0.92388,0.92388,-0.000004,1,1]
+                        }
+                      },
+                    "-trimmingContour":[
+                      { "Contour2D":
+                        {
+                          "-children":[
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[0,0,1,0,0.75,0.5,1,0.5,1,1,0,1,0,0],
+                                "@knot":[0,0,0.16667,0.33333,0.5,0.66667,0.83333,1,1],
+                                "@order":2,
+                                "@weight":[1,1,1,1,1,1,1]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[1,1,0],
+                          "@transparency":0.2
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,1,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,0,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,0,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,1,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,0,1]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

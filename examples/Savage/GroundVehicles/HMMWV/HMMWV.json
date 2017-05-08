@@ -1,0 +1,397 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HMMWV.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Highly Mobile Muliti-purpose Wheeled Vehicle (HMMWV)"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"3 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/HMMWV/HMMWV.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.9,0.9,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"HMMWV",
+              "@orientation":[-0.167,0.975,0.145,1.09],
+              "@position":[9,1.5,3.8]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Passenger Side",
+              "@orientation":[-0.962,-0.272,-0.017,0.1287],
+              "@position":[-0.6,1.4,10]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Rear View",
+              "@orientation":[0,1,0,4.2868],
+              "@position":[-10.4,0.1,-3.7]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"From Above 20M",
+              "@orientation":[-0.568,-0.598,-0.565,2.0593],
+              "@position":[-1.5,20,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Driver's Seat",
+              "@fieldOfView":1,
+              "@orientation":[0,1,0,4.66],
+              "@position":[-0.1,1.1,-1.5]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"HMMWV",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"FrameInline",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.14],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["Frame.wrl","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/Frame.wrl","Frame.x3d","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/Frame.x3d"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"AntennaInline",
+                    "-children":[
+                      { "LOD":
+                        {
+                          "@range":[35],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@scale":[0.5,0.8,0.5],
+                                "@translation":[-4.8125,0.7,-2.2825],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["../../AmphibiousVehicles/AAV/RearAntenna.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/RearAntenna.wrl","../../AmphibiousVehicles/AAV/RearAntenna.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/RearAntenna.x3d"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "WorldInfo":
+                              {
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"SideMirrorsLOD",
+                    "-children":[
+                      { "LOD":
+                        {
+                          "@range":[150],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@DEF":"SideMirrors",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,1.57],
+                                      "@scale":[0.25,0.25,0.25],
+                                      "@translation":[1.925,1,-2.75],
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@url":["DriverSideLargeSideMirror.wrl","../../GroundVehicles/HMMWV/DriverSideLargeSideMirror.wrl","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/DriverSideLargeSideMirror.wrl","DriverSideLargeSideMirror.x3d","../../GroundVehicles/HMMWV/DriverSideLargeSideMirror.x3d","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/DriverSideLargeSideMirror.x3d"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0.71,-0,-0.71,3.14],
+                                      "@scale":[0.25,0.25,0.25],
+                                      "@translation":[1.925,1,2.75],
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@url":["PassengerSideLargeSideMirror.wrl","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/PassengerSideLargeSideMirror.wrl","PassengerSideLargeSideMirror.x3d","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/PassengerSideLargeSideMirror.x3d"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "WorldInfo":
+                              {
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"SuspensionGroup",
+                    "-children":[
+                      { "LOD":
+                        {
+                          "@range":[100],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"SuspensionInline",
+                                "@scale":[0.75,0.75,0.75],
+                                "@translation":[3.4,-0.25,-1.2],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Suspension",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@url":["Suspension.wrl","../../GroundVehicles/HMMWV/Suspension.wrl","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/Suspension.wrl","Suspension.x3d","../../GroundVehicles/HMMWV/Suspension.x3d","https://savage.nps.edu/Savage/GroundVehicles/HMMWV/Suspension.x3d"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-9,0,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"Suspension"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"TireLODs",
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[3.4,-1,0],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"TireLOD",
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":5
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.1,0.1,0.1]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-6.6,0,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"TireLOD"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"Interior",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"FrontSeat",
+                          "@translation":[0.5,-0.15,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,3.14],
+                                "@scale":[1,1,0.9],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["BenchSeat.wrl","../../AmphibiousVehicles/AAV/BenchSeat.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/BenchSeat.wrl","../../AmphibiousVehicles/AAV/BenchSeat.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/BenchSeat.x3d"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,-0.3,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[1,0.6,4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"Tan",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.1,0.1,0.1]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-1.9,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"FrontSeat"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,-0.395],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,-1.57],
+                                "@scale":[1.25,1.25,1.25],
+                                "@translation":[1,1.1,-1.5],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["SteeringWheel.wrl","../../AmphibiousVehicles/AAV/SteeringWheel.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/SteeringWheel.wrl","../../AmphibiousVehicles/AAV/SteeringWheel.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAV/SteeringWheel.x3d"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Ambient.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Sound emitter: continuous localized sound example."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau, John L. Moreland, Michael M. Heck"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/ambient.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0348.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Ambient.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Sound":
+            {
+              "@minBack":5.0,
+              "@minFront":5.0,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@loop":true,
+                    "@startTime":1.0,
+                    "@url":["willow1.wav","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/willow1.wav"]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.0,-1.65,0.0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["SoundMarker.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/SoundMarker.x3d","SoundMarker.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/SoundMarker.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

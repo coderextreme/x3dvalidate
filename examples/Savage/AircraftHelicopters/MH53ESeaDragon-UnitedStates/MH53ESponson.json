@@ -1,0 +1,96 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MH53ESponson.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"MH-53E Sea Dragon sponson / fuel cells created by extrusion."
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Terry D. Norbraten, USN"
+          },
+          {
+            "@name":"created",
+            "@content":"23 March 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/h-53.htm"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/mh-53e-wasp-dr5.jpg http://images.google.com/imgres?imgurl=gra.midco.net/mlgould/Helicopters/MH-53E%2520Sea%2520Dragon.jpg&imgrefurl=http://gra.midco.net/mlgould/M-R.html&h=226&w=332&sz=32&tbnid=ICDN8Yoa8mAJ:&tbnh=78&tbnw=114&prev=/images%3Fq%3DMH-53E%26hl%3Den%26lr%3D%26ie%3DUTF-8%26oe%3DUTF-8%26c2coff%3D1 http://www.history.navy.mil/planes/mh-53e.jpg http://digilander.libero.it/31ATSG/MH-53E%20163057-41.jpg http://www.ndu.edu/nwc/nwcCLIPART/US_NAVY/Equipment/Helicopters/MH-53E(Sea-Dragon)/MH53ESeaDragon01.jpg"
+          },
+          {
+            "@name":"subject",
+            "@content":"MH-53E Sea Dragon sponson / fuel cells"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/MH53ESeaDragon-UnitedStates/MH53ESponson.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3d.org/x3d/translation/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.2,0.3,0.4],
+                          "@emissiveColor":[0.05,0.09,0]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@creaseAngle":1.05,
+                    "@crossSection":[-0.14995,2.85005,-0.0499501,3.05005,0.0437999,3.11255,0.15005,3.15005,0.35005,3.15005,0.566225,3.10892,0.65005,3.05005,0.95005,2.65005,1.00902,2.48895,1.05005,2.15005,0.95005,1.25005,0.65005,0.35005,0.138757,-0.79377,0.0893349,-0.84075,0.0668369,-0.85005,0.0500499,-0.84995,0.0207169,-0.83356,-0.0295981,-0.75719,-0.24995,0.55005,-0.24995,2.65005,-0.14995,2.85005],
+                    "@spine":[0.55,0.55,0,-0.55,0.55,0]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

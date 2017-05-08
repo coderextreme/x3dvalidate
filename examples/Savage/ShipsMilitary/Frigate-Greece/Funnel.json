@@ -1,0 +1,178 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Funnel.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Copyright [2001] By George Stavritis"
+          },
+          {
+            "@name":"created",
+            "@content":"28 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"The midship;s construction funnel.."
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/Funnel.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@rotation":[0,1,0,0.758],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"See the funnel",
+                    "@position":[0,13,45]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      },
+                    "-texture":
+                      { "ImageTexture":
+                        {
+                          "@DEF":"LightTexture",
+                          "@url":["faio.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/faio.gif"]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@convex":false,
+                    "@creaseAngle":0.785,
+                    "@crossSection":[3,19,3.5,9,5.5,8,5.3,0,-5.3,0,-5.5,8,-3.5,9,-3,19,3,19],
+                    "@solid":false,
+                    "@spine":[0,0,0,0,5,0]
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"3 0, 3.5 8, 5.5 9, 5.3 19, -5.3 19, -5.5 9, -3.5 8, -3 0, 3. 0"
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      },
+                    "-texture":
+                      { "ImageTexture":
+                        {
+                          "@USE":"LightTexture"
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@convex":false,
+                    "@creaseAngle":0.785,
+                    "@crossSection":[3,0,3.5,8,-3.5,8,-3,0,3,0],
+                    "@scale":[1,1,1,1,0.9,0.9,0.8,0.8],
+                    "@solid":false,
+                    "@spine":[0,5,0,0,9,0,0,8.8,0,0,9.5,0]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,5,9],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@USE":"LightTexture"
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@convex":false,
+                          "@creaseAngle":0.785,
+                          "@crossSection":[0,0,1,0.5,2,2,3,4,4,6,4,7,2.5,9,2,10,1,11,-1,11,-2,10,-2.5,9,-4,7,-4,6,-3,4,-2,2,-1,0.5,0,0],
+                          "@scale":[0.8,0.8,0.6,0.6,0.8,0.7,0.5,0.5],
+                          "@solid":false,
+                          "@spine":[0,0,0,0,6,0,0,7,0,0,6,0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

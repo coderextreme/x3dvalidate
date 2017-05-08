@@ -1,0 +1,288 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Chair.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple chair."
+          },
+          {
+            "@name":"creator",
+            "@content":"Baris AKTOP"
+          },
+          {
+            "@name":"created",
+            "@content":"16 August 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/HouseBarisAktop/Chair.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"chair",
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,0.2],
+                          "@translation":[-0.5,0.5,-0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"chairLeg",
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":1,
+                                      "@radius":0.1
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"chairapp",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.5,0]
+                                          }
+                                        },
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@DEF":"wood",
+                                            "@url":["wood.jpg","https://savage.nps.edu/Savage/Buildings/HouseBarisAktop/wood.jpg"]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,0.2],
+                          "@translation":[0.5,0.5,-0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"chairLeg"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-0.2],
+                          "@translation":[-0.5,0.5,0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"chairLeg"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-0.2],
+                          "@translation":[0.5,0.5,0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"chairLeg"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[1.2,0.1,1.2]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.5,0]
+                                          }
+                                        },
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@USE":"wood"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-0.4],
+                          "@translation":[-0.5,1.5,-0.7],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"bar",
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":1.1,
+                                      "@radius":0.08
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.5,0]
+                                          }
+                                        },
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@USE":"wood"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-0.4],
+                          "@translation":[0.5,1.5,-0.7],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"bar"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.17],
+                          "@scale":[2,1,1],
+                          "@translation":[0,2,-0.8],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.05,
+                                      "@radius":0.3
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.5,0]
+                                          }
+                                        },
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@USE":"wood"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "PlaneSensor":
+            {
+              "@DEF":"chairSensor",
+              "@description":"click and drag to move object",
+              "@maxPosition":[2,0],
+              "@minPosition":[-2,0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"chairSensor",
+              "@toField":"set_translation",
+              "@toNode":"chair"
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,323 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BollardHydraulicSecurityExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Rising/retractable security bollard: example use, showing multiple copies of a single triggered bollard."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and MV4205 Advanced XML class"
+          },
+          {
+            "@name":"created",
+            "@content":"5 September 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"5 September 2007"
+          },
+          {
+            "@name":"warning",
+            "@content":"USE copies of the DEF'ed bollard are not animating. Shouldn't they?"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.atgaccess.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"BollardHydraulicSecurityPrototype.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityPrototype.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"BollardHydraulicSecurity",
+              "@appinfo":"A security bollard can be raised or lowered to prevent vehicle access by blocking a road. Usually multiple bollards are installed side by side raised and lowered together.",
+              "@url":["BollardHydraulicSecurityPrototype.x3d#BollardHydraulicSecurity","../../../Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityPrototype.x3d#BollardHydraulicSecurity","https://savage.nps.edu/Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityPrototype.x3d#BollardHydraulicSecurity","BollardHydraulicSecurityPrototype.wrl#BollardHydraulicSecurity","../../../Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityPrototype.wrl#BollardHydraulicSecurity","https://savage.nps.edu/Savage/Buildings/SecurityPerimeter/BollardHydraulicSecurityPrototype.wrl#BollardHydraulicSecurity"],
+              "field": [
+                {
+                  "@name":"radius",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"height",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"textureUrl",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"diffuseColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"raise",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Command to raise the bollard.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"lower",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Command to lower the bollard.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"isRaised",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Notification event sent when bollard is fully raised.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"isLowered",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Notification event sent when bollard is fully lowered.",
+                  "@type":"SFBool"
+                }
+              ],
+              "-children":[
+                {
+                  "#comment":"TODO: add TimeDelaySensor nodes to report completion by the following output fields"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Viewpoint":
+            {
+              "@description":"Bollard view",
+              "@position":[0,0,6]
+            }
+          },
+          {
+            "#comment":"test locally during development, once complete we split this out into a separate Example scene."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"BollardHydraulicSecurity",
+              "@DEF":"Bollard",
+              "fieldValue": [
+                {
+                  "@name":"height",
+                  "@value":0.85
+                },
+                {
+                  "@name":"radius",
+                  "@value":0.2
+                },
+                {
+                  "@name":"textureUrl",
+                  "@value":["fan.png"]
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"RightBollard",
+              "@translation":[2,0,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"BollardHydraulicSecurity"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"LeftBollard",
+              "@translation":[-2,0,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"BollardHydraulicSecurity"
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"GroundLevel",
+              "-geometry":
+                { "Box":
+                  {
+                    "@size":[10,0.01,10]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"RaiseInterface",
+              "@translation":[-2,-1.5,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Click to","raise"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.3
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[3,2,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"ClickToRaiseBollard",
+                    "@description":"click to raise bollard"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"ClickToRaiseBollard",
+                    "@toField":"raise",
+                    "@toNode":"Bollard"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"LowerInterface",
+              "@translation":[2,-1.5,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Click to","lower"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.3
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[3,2,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"ClickToLowerBollard",
+                    "@description":"click tolower bollard"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"ClickToLowerBollard",
+                    "@toField":"lower",
+                    "@toNode":"Bollard"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SourceLaserSupport.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Support for the source Laser."
+          },
+          {
+            "@name":"creator",
+            "@content":"Brian Kibel"
+          },
+          {
+            "@name":"created",
+            "@content":"18 September 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Space/SatelliteLab/SourceLaserSupport.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"LaserSupport",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Leg1",
+                    "@rotation":[-1,0,1,0.757],
+                    "@translation":[1.24,2.25,1.65],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@scale":[0.1,2.5,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"SupportBeam",
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.7,0.7,0.73]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Leg2",
+                    "@rotation":[1,0,1,-0.757],
+                    "@translation":[-1.24,2.25,1.65],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@scale":[0.1,2.5,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"SupportBeam"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Leg3",
+                    "@rotation":[1,0,0,0.757],
+                    "@scale":[0.1,2.5,0.1],
+                    "@translation":[0,2.25,-1.25],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.3,0.2,0.3],
+                    "@translation":[2.5,0.3,2.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.3,0.2,0.3],
+                    "@translation":[0,0.3,-2.95],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,1.5707],
+                    "@scale":[0.2,0.1,0.2],
+                    "@translation":[2.5,0,2.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Wheel",
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.1,0.1,0.1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,1.5707],
+                    "@scale":[0.2,0.1,0.2],
+                    "@translation":[0,0,-2.95],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"Wheel"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.3,0.2,0.3],
+                    "@translation":[-2.5,0.3,2.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,1.5707],
+                    "@scale":[0.2,0.1,0.2],
+                    "@translation":[-2.5,0,2.9],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"Wheel"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"MainSupport",
+                    "@scale":[0.2,1.2,0.2],
+                    "@translation":[0,4.5,0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@scale":[0.75,1.8,0.75],
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"SupportBeam"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.3,0.3,0.3],
+                    "@translation":[0,6,0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"Wheel"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Knob",
+                    "@scale":[0.4,1,1],
+                    "@translation":[0.35,6,0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.2
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.7,0.7,0.73]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

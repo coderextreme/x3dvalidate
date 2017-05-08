@@ -1,0 +1,245 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ViewPositionOrientationExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly and Don Brutzman"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 November 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 April 2016"
+          },
+          {
+            "@name":"description",
+            "@content":"As user navigates, display local position and orientation in the console output window. Various other output formats also available."
+          },
+          {
+            "@name":"reference",
+            "@content":"ViewPositionOrientationPrototype.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/WhereAmIExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/WhereAmIPrototype.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.realism.com/Web3D/Examples#WhereAmI"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.realism.com/vrml/Example/WhereAmI/WhereAmI_Proto.wrl"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Copy the ExternProtoDeclare and ProtoInstance for ViewPositionOrientation at the top of your scene graph to add this functionality into other worlds."
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ViewPositionOrientation",
+              "@appinfo":"ViewPositionOrientation provides provides console output of local position and orientation as user navigates",
+              "@url":["ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Basic/course/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","../../../Basic/course/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Whether or not ViewPositionOrientation sends output to console",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Output internal trace messages for debugging this node, intended for developer use only",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_traceEnabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Ability to turn output tracing on/off at runtime",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"position_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output local position",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"orientation_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output local orientation",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"outputViewpointString",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"MFString value of new Viewpoint, suitable for use in string field of a Text node",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"expose internal metadata node",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ViewPositionOrientation",
+              "fieldValue": [
+                {
+                  "@name":"enabled",
+                  "@value":true
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"The rest of this example scene follows."
+          },
+          { "Viewpoint":
+            {
+              "@description":"ViewPositionOrientation example",
+              "@orientation":[-0.6,0.8,0,0.8961],
+              "@position":[20,15,20]
+            }
+          },
+          { "Billboard":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,4,2],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Open console output window and","navigate to see changing values for","Viewpoint position and orientation"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.4,0.8,0.6],
+                                      "@shininess":0.8
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3.5,1.8],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[14,4,0.1]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["../../../Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d","../../../Savage/Tools/Authoring/GridXZ_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.wrl"]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[11,11,11],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

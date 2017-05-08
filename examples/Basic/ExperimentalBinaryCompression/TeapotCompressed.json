@@ -1,0 +1,170 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TeapotCompressed.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Compressed IndexedFaceSet example."
+          },
+          {
+            "@name":"creator",
+            "@content":"Martin Isenburg"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"4 May 2003"
+          },
+          {
+            "@name":"translated",
+            "@content":"5 May 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"19 March 2012"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D VRML binary compression"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/TeapotCompressed.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"CompressedIndexedFaceSet",
+              "@appinfo":"An ASCII-compressed IndexedFaceSet",
+              "@url":["CodedCompressedPrototypes.wrl#CompressedIndexedFaceSet","CodedCompressedPrototypes.x3d#CompressedIndexedFaceSet","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/CodedCompressedPrototypes.wrl#CompressedIndexedFaceSet","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/CodedCompressedPrototypes.x3d#CompressedIndexedFaceSet"],
+              "field": [
+                {
+                  "@name":"code",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"ASCII-compressed coordIndex and texCoordIndex values",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"box_tex",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"bounding box of texture coordinates (always 4 values minU minV maxU maxV)",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"bits_tex",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"number of quantization bits for texture coordinates",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"box",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"bounding box of coordinates (always 6 values minX minY minZ maxX maxY maxZ)",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"bits",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"number of quantization bits for coordinates",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"1M view",
+              "@position":[0.0,0.0,1.0]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0.05,0.1,0.3],
+              "@skyColor":[0.05,0.1,0.3]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[1,0,0,-1.57],
+              "@scale":[0.1,0.1,0.1],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1.0,1.0,0.0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"CompressedIndexedFaceSet",
+                          "fieldValue": [
+                            {
+                              "@name":"code",
+                              "@value":"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"
+                            },
+                            {
+                              "@name":"box",
+                              "@value":[-2.95609,-2.01033,0.004061,3.45695,1.98978,3.03026]
+                            },
+                            {
+                              "@name":"bits",
+                              "@value":10
+                            }
+                          ]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

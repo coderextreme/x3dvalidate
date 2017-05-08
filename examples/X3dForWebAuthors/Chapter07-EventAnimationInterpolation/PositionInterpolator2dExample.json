@@ -1,0 +1,189 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "-children":[
+          {
+            "#comment":"Note that the following component statement is needed to add PositionInterpolator2D to Immersive profile nodes"
+          }
+        ],
+        "component": [
+          {
+            "@name":"Interpolation",
+            "@level":3
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PositionInterpolator2dExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Interpolation example using PositionInterpolator2D, user can touch (select) the geometry to activate an animation loop that rescales the image texture superimposed on the geometry."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"16 October 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"PositionInterpolator2D"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/PositionInterpolator2dExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/PositionInterpolator2dExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Click to activate animation",
+              "@position":[0,0,3]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":10,
+              "@enabled":false,
+              "@loop":true
+            }
+          },
+          {
+            "#comment":"author fun: experiment by comparing results with keyValue='1 1 1 3 1 3 0.8 0.8 1 1 1 1'"
+          },
+          { "PositionInterpolator2D":
+            {
+              "@DEF":"InterpolateTTscale",
+              "@key":[0,0.35,0.45,0.8,0.9,1],
+              "@keyValue":[1,1,3,3,3,3,0.8,0.8,1,1,1,1]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"InterpolateTTscale"
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"ImageAspectRatio",
+              "@scale":[1.5,1,1],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"Toucher",
+                    "@description":"click and hold to animate TextureTransform"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"Toucher",
+                    "@toField":"enabled",
+                    "@toNode":"Clock"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"solid='true' means single-sided rendering"
+                      }
+                    ],
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,3,0,-1],
+                          "-children":[
+                            {
+                              "#comment":"note how DEF names can be self-documenting"
+                            }
+                          ],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"TwoByTwoSquare",
+                                "@point":[-1,-1,0,1,-1,0,1,1,0,-1,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@DEF":"ContactImage",
+                                "@url":["JavaBoardSmileForTheCamera.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/JavaBoardSmileForTheCamera.jpg"]
+                              }
+                            },
+                          "-textureTransform":
+                            { "TextureTransform":
+                              {
+                                "@DEF":"TextureTransformNode"
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"author fun: replace destination toField from 'set_scale' with new value of 'set_translation' or 'set_center'"
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"InterpolateTTscale",
+                    "@toField":"set_scale",
+                    "@toNode":"TextureTransformNode"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

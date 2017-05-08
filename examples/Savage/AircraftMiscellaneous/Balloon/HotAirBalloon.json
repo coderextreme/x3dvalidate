@@ -1,0 +1,413 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HotAirBalloon.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"description",
+            "@content":"Hot Air Balloon that fires and lifts off from the pad. The balloon is built by scaling a circle around a straight spline."
+          },
+          {
+            "@name":"created",
+            "@content":"3 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 August 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftMiscellaneous/Balloon/HotAirBalloon.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Computational cost of Extrusion compared to IndexedFaceSet: quicker to download, takes time to calculate polygonal faces and normals during initial loading, equally fast at run time."
+          },
+          {
+            "#comment":"Authoring capabilities of Extrusion compared to IndexedFaceSet: can be more complicated to express, but also can provide great detail with much less effort."
+          },
+          {
+            "#comment":"First position and rotate viewpoint into positive-X-Y-Z octant using a Transform"
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,0.758],
+              "@translation":[10,5,0],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Wide Angle",
+                    "@orientation":[1,0,0,-0.3],
+                    "@position":[0,10,25]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Balloon",
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,-1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.8,0.8]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.85,0.85,0.85]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-0.65,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.8,0.8]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.7,
+                                      "@radius":0.2,
+                                      "@top":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@beginCap":false,
+                                "@creaseAngle":1.57,
+                                "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                "@scale":[0.6,0.6,1.0,1.0,1.3,1.3,1.5,1.5,1.7,1.7,1.9,1.9,2.15,2.15,2.35,2.35,2.4,2.4,2.32,2.32,2.2,2.2,1.85,1.85,1.5,1.5,0.4,0.4],
+                                "@solid":false,
+                                "@spine":[0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.8,0.0,0.0,1.2,0.0,0.0,1.6,0.0,0.0,2.0,0.0,0.0,2.4,0.0,0.0,2.8,0.0,0.0,3.2,0.0,0.0,3.6,0.0,0.0,4.0,0.0,0.0,4.4,0.0,0.0,4.8,0.0,0.0,5.2,0.0]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,0,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedLineSet":
+                                          {
+                                            "@coordIndex":[0,1],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[0.4,-0.85,0.4,0.45,0,0.45]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,0,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedLineSet":
+                                          {
+                                            "@coordIndex":[0,1],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[-0.4,-0.85,0.4,-0.45,0,0.45]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,0,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedLineSet":
+                                          {
+                                            "@coordIndex":[0,1],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[0.4,-0.85,-0.4,0.45,0,-0.45]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[1,0,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedLineSet":
+                                          {
+                                            "@coordIndex":[0,1],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[-0.4,-0.85,-0.4,-0.45,0,-0.45]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Fire",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.8,0.0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.7,
+                                      "@radius":0.18
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[20,0.1,20]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"FireClock",
+              "@cycleInterval":4,
+              "@loop":true
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"FirePath",
+              "@key":[0,0.05,0.7,0.75],
+              "@keyValue":[0,-0.7,0,0,0,0,0,0,0,0,-0.7,0]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"BalloonClock",
+              "@cycleInterval":20,
+              "@loop":true
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"BalloonPath",
+              "@key":[0,0.1,0.15,0.2,0.25,0.3,0.5,1],
+              "@keyValue":[0,0,0,0,0,0,0,0.5,0,0,1,0,0,2,0,0,4,0,0,12,0,0,28,0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"FireClock",
+              "@toField":"set_fraction",
+              "@toNode":"FirePath"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"FirePath",
+              "@toField":"set_translation",
+              "@toNode":"Fire"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"BalloonClock",
+              "@toField":"set_fraction",
+              "@toNode":"BalloonPath"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"BalloonPath",
+              "@toField":"set_translation",
+              "@toNode":"Balloon"
+            }
+          }
+        ]
+    }
+  }
+}

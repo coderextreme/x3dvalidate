@@ -1,0 +1,402 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CameraCompass36Example.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A circular set of 36 compass bearings that follows the active viewpoint. Coordinate axis viewpoint shows that North = +X axis, East = +Z axis, up = +Y axis."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"17 June 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CameraCompass36Example.x3d"
+          },
+          {
+            "@name":"inspiration",
+            "@content":"David Colleen"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.planet9.com/earth/pearlharbor/vrml/tour.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.planet9.com/earth/pearlharbor/vrml/compass.wrl"
+          },
+          {
+            "@name":"subject",
+            "@content":"compass display"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"CameraCompass36",
+              "@appinfo":"Circular set of compass bearings that follow the active viewpoint set at 360/36 = 10 degree intervals. North = +X axis East = +Z axis up = +Y axis.",
+              "@url":["CameraCompassPrototypes.x3d#CameraCompass36","../../../Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.x3d#CameraCompass36","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.x3d#CameraCompass36","CameraCompassPrototypes.wrl#CameraCompass36","../../../Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.wrl#CameraCompass36","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CameraCompassPrototypes.wrl#CameraCompass36"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"positionOffsetFromCamera",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"markerColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"labelColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ViewPositionOrientation",
+              "@appinfo":"ViewPositionOrientation prototype provides local position and orientation as user navigates with optional console output",
+              "@url":["../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Whether or not ViewPositionOrientation sends output to console.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Output internal trace messages for debugging this node - developer use only can be ignored.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_traceEnabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Ability to turn output tracing on/off at runtime.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"position_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output local position.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"orientation_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Output local orientation.",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"outputViewpointString",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"MFString value of new Viewpoint for example: <Viewpoint position=\"20 15 20\" orientation=\"-0.516 0.83 0.212 0.9195\"/>",
+                  "@type":"MFString"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================"
+          },
+          { "Viewpoint":
+            {
+              "@description":"walk and rotate to test heads-up display (HUD)",
+              "@position":[0,0,25]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"walk and rotate to test heads-up display (HUD)",
+              "@orientation":[0,1,0,-1.57],
+              "@position":[-14,0,0]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@speed":10,
+              "@type":["FLY","ANY"]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.7,0.7,0.9]
+            }
+          },
+          { "PointLight":
+            {
+              "@location":[0,20,0]
+            }
+          },
+          {
+            "#comment":"Test the compass prototype of interest."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"CameraCompass36",
+              "fieldValue": [
+                {
+                  "@name":"enabled",
+                  "@value":true
+                },
+                {
+                  "@name":"positionOffsetFromCamera",
+                  "@value":[0,5,0]
+                },
+                {
+                  "@name":"markerColor",
+                  "@value":[0.9,0.9,0.9]
+                },
+                {
+                  "@name":"labelColor",
+                  "@value":[0.9,0.9,0.9]
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Put a coordinate axis in to display orientation"
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2.5,0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"CoordinateAxes",
+                    "@url":["../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@description":"Coordinate axes: x=North, y=Up, z=East",
+                    "@orientation":[0,1,0,-1.4],
+                    "@position":[-3.6,0.2,0.6]
+                  }
+                },
+                { "ProximitySensor":
+                  {
+                    "@DEF":"AxisProximity",
+                    "@size":[10,10,10]
+                  }
+                },
+                { "NavigationInfo":
+                  {
+                    "@DEF":"AxisNavigation"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          {
+            "#comment":"Open the VRML console to see ViewPositionOrientation output. This demonstrates that more than one ProximitySensor can be active in the scene at a single time."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ViewPositionOrientation",
+              "fieldValue": [
+                {
+                  "@name":"enabled",
+                  "@value":true
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Floor",
+              "@translation":[0,-5,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5,0.4,5]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.3,0.7,0.3]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[20,0.3,20]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.3]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[50,0.2,50]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.8,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[100,0.1,100]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.3,1,0.3]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"CenterInstructions",
+              "@translation":[0,0.75,0],
+              "-children":[
+                { "Billboard":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Walk and rotate to move scene while","compass heads-up display (HUD)","CameraCompass36 stays overhead"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0,0],
+                                      "@emissiveColor":[0.2,0.7,0.2]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"AxisProximity",
+              "@toField":"set_bind",
+              "@toNode":"AxisNavigation"
+            }
+          }
+        ]
+    }
+  }
+}

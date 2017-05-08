@@ -1,0 +1,153 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure19.27SquareFaceAnimatingNormals.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 19.27, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch19/19fig27.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"7 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"An elevation grid using a special shading effect."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter19-NormalsShading/Figure19.27SquareFaceAnimatingNormals.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Animating normals on right vertices of a quadrilateral",
+              "@position":[0,0,4]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Other side - note difference in animated shading",
+              "@orientation":[0,1,0,3.14159],
+              "@position":[0,0,-4]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,3],
+                          "@normalIndex":[0,1,2,3],
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[-1,-1,0,1,-1,0,1,1,0,-1,1,0]
+                              }
+                            },
+                          "-normal":
+                            { "Normal":
+                              {
+                                "@DEF":"AnimatedNormals",
+                                "@vector":[0,0,1,0,0,1,0,0,1,0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.3,0.6,0.9]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"Clock",
+                    "@cycleInterval":4,
+                    "@loop":true
+                  }
+                },
+                { "NormalInterpolator":
+                  {
+                    "@DEF":"NormalPath",
+                    "@key":[0,0.5,1],
+                    "@keyValue":[0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"NormalPath"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"NormalPath",
+              "@toField":"set_vector",
+              "@toNode":"AnimatedNormals"
+            }
+          }
+        ]
+    }
+  }
+}

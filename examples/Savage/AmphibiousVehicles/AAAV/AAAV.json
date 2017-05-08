@@ -1,0 +1,249 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AAAV.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Advanced Amphibious Assault Vehicle"
+          },
+          {
+            "@name":"creator",
+            "@content":"William Geissler"
+          },
+          {
+            "@name":"created",
+            "@content":"9 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/AAAV.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/aaav.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/docs/aaav_WelcomeIntro-1_1/sld002.htm"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Advanced Amphibious Assault Vehicle"],
+              "@title":"AAAV"
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@speed":50
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0,0,0,0,0,0,0,0,0],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0.5,0.5,0.5,0.4,0.4,0.4,0,0,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"AAAV from behind",
+              "@orientation":[0,1,0,-1.57],
+              "@position":[-20,6,0]
+            }
+          },
+          {
+            "#comment":"Orient nose of vehicle to point along X axis. Center of vehicle is above ground so that 0 elevation puts tracks on the ground. A good depth while swimming (i.e. partially submerged) is -2m along Y axis."
+          },
+          { "Transform":
+            {
+              "@scale":[0.875,0.875,0.875],
+              "@translation":[0,3,0],
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[200,2000,20000],
+                    "-children":[
+                      {
+                        "#comment":"Close range is high resolution. Need to check scale."
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@scale":[0.45,0.45,0.45],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"Track",
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["Track.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/Track.x3d","Track.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/Track.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Body",
+                                "@scale":[1.6,2,1.8],
+                                "@translation":[0,4,1],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["Body.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/Body.x3d","Body.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/Body.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Turret",
+                                "@rotation":[0,1,0,1.57],
+                                "@scale":[0.8,0.8,0.9],
+                                "@translation":[0,6.2,4],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["Turret.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/Turret.x3d","Turret.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/Turret.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment":"Medium range is low resolution"
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1.35,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[8,3.7,4]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.02,0.26,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment":"Long range is tactical symbol"
+                      },
+                      { "Billboard":
+                        {
+                          "@DEF":"LongRangeSymbol",
+                          "@axisOfRotation":[0,0,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,30,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@coordIndex":[0,1,2,3,4,-1],
+                                            "@solid":false,
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[60,60,0,60,-60,0,-60,-60,0,-60,60,0,60,60,0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-texture":
+                                              { "ImageTexture":
+                                                {
+                                                  "@url":["AmphibiousTrackedArmorPlatoon.png","https://savage.nps.edu/Savage/AmphibiousVehicles/AAAV/AmphibiousTrackedArmorPlatoon.png"]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment":"Extreme range is not rendered"
+                      },
+                      { "WorldInfo":
+                        {
+                          "@info":["null node"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

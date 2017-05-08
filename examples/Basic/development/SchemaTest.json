@@ -1,0 +1,344 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Core",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SchemaTest.x3d"
+          },
+          {
+            "@name":"created",
+            "@content":"1 October 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 March 2016"
+          },
+          {
+            "@name":"description",
+            "@content":"Test scene for obscure schema validation cases."
+          },
+          {
+            "@name":"error",
+            "@content":"Test scene that does not render or validate."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/SchemaTest.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "TimeSensor":
+            {
+              "@DEF":"badCycleIntervalValue",
+              "@cycleInterval":-1.8e-1
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,0,1,-0.444E+1],
+              "@translation":[10000.0e-1,50,0.5],
+              "-children":[
+                { "Anchor":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "-color":
+                                  { "Color":
+                                    {
+                                    }
+                                  },
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "MovieTexture":
+                                    {
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-textureTransform":
+                                  { "TextureTransform":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Collision":
+                        {
+                          "-children":[
+                            { "Background":
+                              {
+                                "@groundAngle":[0.5],
+                                "@groundColor":[1,0,0]
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        },
+                                      "-texture":
+                                        { "PixelTexture":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                          ],
+                          "-proxy":
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "-normal":
+                      { "Normal":
+                        {
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[0.5e+0,0.05e+1,0.0e-1,0,1,1]
+                        }
+                      },
+                    "-texCoord":
+                      { "TextureCoordinate":
+                        {
+                        }
+                      },
+                    "-children":[
+                      {
+                        "#comment":"partial loophole via xsd:all forcontained ProtoInstance, USE"
+                      }
+                    ]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-textureTransform":
+                      { "TextureTransform":
+                        {
+                        }
+                      },
+                    "-texture":
+                      { "MovieTexture":
+                        {
+                        }
+                      },
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "IS": {
+                        "connect": [
+                          {
+                            "@nodeField":"sfdg",
+                            "@protoField":"df"
+                          }
+                        ]
+                    },
+                    "-metadata":
+                      { "MetadataSet":
+                        {
+                          "-value":[
+                            { "MetadataInteger":
+                              {
+                              }
+                            },
+                            { "MetadataSet":
+                              {
+                              }
+                            },
+                            { "ProtoInstance":
+                              {
+                                "@name":"SomeKindOfMetadataPrototype"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      },
+                    "-texture":
+                      { "MultiTexture":
+                        {
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "-normal":
+                      { "Normal":
+                        {
+                        }
+                      },
+                    "-coord":
+                      { "Coordinate":
+                        {
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"blah",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"something",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Anchor":
+                      {
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"x",
+                        "@fromNode":"blah",
+                        "@toField":"x",
+                        "@toNode":"blah"
+                      }
+                    },
+                    { "Sound":
+                      {
+                        "-source":
+                          { "AudioClip":
+                            {
+                            }
+                          }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"blah",
+              "@DEF":"blah"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"x",
+              "@fromNode":"blah",
+              "@toField":"x",
+              "@toNode":"blah"
+            }
+          }
+        ]
+    }
+  }
+}

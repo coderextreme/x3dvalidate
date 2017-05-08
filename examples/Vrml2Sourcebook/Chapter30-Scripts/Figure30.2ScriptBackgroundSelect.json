@@ -1,0 +1,426 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure30.2ScriptBackgroundSelect.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 30.2, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch30/30fig02.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"2 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"7 October 2016"
+          },
+          {
+            "@name":"description",
+            "@content":"Click on a geometric Shape to change the scene Background. A Script node controls the state changes."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter30-Scripts/Figure30.2ScriptBackgroundSelect.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Background select",
+              "@orientation":[1,0,0,-0.2],
+              "@position":[0,2,10]
+            }
+          },
+          {
+            "#comment":"Background nodes are usually best placed at the top of the scene since they have global effect and are bindable nodes."
+          },
+          {
+            "#comment":"Bindable Backgrounds (cyan, red, blue)"
+          },
+          { "Background":
+            {
+              "@DEF":"Default"
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"BackgroundCyan-ish",
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0.0,0.5,1,1,1,1]
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"BackgroundReddish",
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.5,0.25,0.2,0.6,0.6,0.2],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[1,0,0,1,0.4,0,1,1,0]
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"BackgroundBluish",
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0,0,0.1,0,0.1,0.3,0.3,0.3,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[1,0,0.8,0.5,0,0.8,0,0,0.8]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-3,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.5,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"SensorButton1",
+                          "@description":"Cyan background"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"Filter1",
+                    "field": [
+                      {
+                        "@name":"set_boolean",
+                        "@accessType":"inputOnly",
+                        "@appinfo":"filter input value",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"activated",
+                        "@accessType":"outputOnly",
+                        "@appinfo":"activated provides a persistent binding value otherwise isActive events will toggle Background binding on/off.",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"count",
+                        "@accessType":"initializeOnly",
+                        "@appinfo":"count is only used locally so it is declared as an interface for persistence",
+                        "@type":"SFInt32",
+                        "@value":1
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize () {",
+"  Browser.print (' '); // skip line",
+"  Browser.print ('Click shapes to select a background...');",
+"  Browser.print (' '); // skip line",
+"}",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"",
+"function set_boolean ( value, eventTime ) {",
+"  // only trigger on true values so that Background stays bound",
+"  if ( value == true ) {  ",
+"\tactivated = value;",
+"\tBrowser.print ('Cyan background ' + count);",
+"  }",
+"  else count++;  // received isActive value = false",
+"}"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"SensorButton1",
+                    "@toField":"set_boolean",
+                    "@toNode":"Filter1"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"activated",
+                    "@fromNode":"Filter1",
+                    "@toField":"set_bind",
+                    "@toNode":"BackgroundCyan-ish"
+                  }
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,0.3,0.3]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"SensorButton2",
+                          "@description":"Red background"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"Filter2",
+                    "field": [
+                      {
+                        "@name":"set_boolean",
+                        "@accessType":"inputOnly",
+                        "@appinfo":"filter input value",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"activated",
+                        "@accessType":"outputOnly",
+                        "@appinfo":"activated provides a persistent binding value otherwise isActive events will toggle Background binding on/off.",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"count",
+                        "@accessType":"initializeOnly",
+                        "@appinfo":"count is only used locally so it is declared as an interface for persistence",
+                        "@type":"SFInt32",
+                        "@value":1
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"",
+"function set_boolean ( value, eventTime ) {",
+"  // only trigger on true values so that Background stays bound",
+"  if ( value == true ) {",
+"\tactivated = value;",
+"\tBrowser.print ('Red background ' + count);",
+"  }",
+"  else count++;  // received isActive value = false",
+"}"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"SensorButton2",
+                    "@toField":"set_boolean",
+                    "@toNode":"Filter2"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"activated",
+                    "@fromNode":"Filter2",
+                    "@toField":"set_bind",
+                    "@toNode":"BackgroundReddish"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[3,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cone":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.2,0.2,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"SensorButton3",
+                          "@description":"Blue background"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"Filter3",
+                    "field": [
+                      {
+                        "@name":"set_boolean",
+                        "@accessType":"inputOnly",
+                        "@appinfo":"filter input value",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"activated",
+                        "@accessType":"outputOnly",
+                        "@appinfo":"activated provides a persistent binding value otherwise isActive events will toggle Background binding on/off.",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"count",
+                        "@accessType":"initializeOnly",
+                        "@appinfo":"count is only used locally so it is declared as an interface for persistence",
+                        "@type":"SFInt32",
+                        "@value":1
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"",
+"function set_boolean ( value, eventTime ) {",
+"  // only trigger on true values so that Background stays bound",
+"  if ( value == true ) {",
+"\tactivated = value;",
+"\tBrowser.print ('Blue background ' + count);",
+"  }",
+"  else count++;  // received isActive value = false",
+"}"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"SensorButton3",
+                    "@toField":"set_boolean",
+                    "@toNode":"Filter3"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"activated",
+                    "@fromNode":"Filter3",
+                    "@toField":"set_bind",
+                    "@toNode":"BackgroundBluish"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-3,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Click on a Shape to change a Background,","Open player console to see trace statements."],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.6
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.7,0.7,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

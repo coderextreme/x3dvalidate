@@ -1,0 +1,2837 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"EspduTransformPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype definition for EspduTransform which handles network communications for multiple DIS Prototype Data Units (PDUs): EntityState, Collision, Detonate, Fire, CreateEntity and RemoveEntity. Also contains EspduTransformTrace which compatibly adds billboarded text-trace capabilities for run-time debugging inside a scene."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Don McGregor, and Duane Davis"
+          },
+          {
+            "@name":"created",
+            "@content":"7 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 November 2015"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development but mostly complete. need articulationParameters and miscellany fields connected. ROUTE firstFired1/2 to sound node?"
+          },
+          {
+            "@name":"reference",
+            "@content":"/vrtp/mil/navy/nps/dis/EspduTransformPROTO.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"/vrtp/mil/navy/nps/dis/EspduTransform.java"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/WorkingGroups/vrtp/mil/navy/nps/dis/EspduTransform.java"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/ExternProtoDeclareDefinitions.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"DIS Find-It-Fast Guide at Simulation Interoperability Standards Organization (SISO)"
+          },
+          {
+            "@name":"reference",
+            "@content":"available via http://discussions.sisostds.org/default.asp?action=9&boardid=2&read=40321&fid=32"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/EspduTransformPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"============================================================"
+          },
+          {
+            "#comment":"Why a prototype rather than an Inline file? Prototyping allows replacement of standard VRML nodes (e.g. Transform) and can also expose events and fields to the encapsulating top-level scene."
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"EspduTransform",
+              "@appinfo":"EspduTransform is a networked Grouping node that can contain most nodes. Prototype definition for EspduTransform which handles network communications for multiple DIS Prototype Data Units (PDUs): EntityState Collision Detonate Fire CreateEntity and RemoveEntity.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"geoCoords_changed",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Double precision output for 64-bit Espdu translation usable by georeferenced nodes.",
+                      "@type":"SFVec3d"
+                    },
+                    {
+                      "@name":"addChildren",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Adding a node to the children field will add that node to the EspduTransform's set of children. Warning: adding any node to the EspduTransform's children field that is already in that child list is illegal. Warning: adding any node to the EspduTransform's children that is an ancestor of that grouping is illegal.",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"removeChildren",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"The removeChildren event removes nodes from the EspduTransform's children field. Any nodes in the removeChildren event that are not in the EspduTransform's children list are ignored.",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Children nodes within translation and rotation coordinate system of EspduTransform. Hint: XML encoding can include child node(s) directly.",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node array"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"translation",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Position of children relative to local coordinate system usually read from (or written to) remote networked EspduTransform nodes.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"rotation",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Orientation of children relative to local coordinate system usually read from (or written to) remote networked EspduTransform nodes.",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"center",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Translation offset from origin of local coordinate system.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"scale",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Non-uniform x-y-z scale of child coordinate system adjusted by center and scaleOrientation.",
+                      "@type":"SFVec3f",
+                      "@value":[1,1,1]
+                    },
+                    {
+                      "@name":"scaleOrientation",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Non-uniform x-y-z scale of child coordinate system adjusted by center and scaleOrientation.",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box center: position offset from origin of local coordinate system.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box size: automatically calculated can be specified as an optimization or constraint.",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"marking",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"0-to-11 character label for entity.",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"siteID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535] EntityID: unique ID for that site.",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"applicationID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535] EntityID: application ID unique ID for application at that site.",
+                      "@type":"SFInt32",
+                      "@value":1
+                    },
+                    {
+                      "@name":"entityID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535] EntityID: unique ID for entity within that application.",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"address",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"multicast address or else \"localhost\" listens to local defaultBridge",
+                      "@type":"SFString",
+                      "@value":"localhost"
+                    },
+                    {
+                      "@name":"port",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535] multicast port or else listen to local defaultBridge",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"multicastRelayHost",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Host name of multicast relay server to provide alternative connectivity if local native multicast traffic not heard.",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"multicastRelayPort",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Connection port on multicast relay server.",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"networkMode",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"networkMode:&#10;standAlone (ignore network but still respond to local events)&#10;networkReader (listen to network as ghost entity)&#10;networkWriter (output to network as master entity at writeInterval)",
+                      "@type":"SFString",
+                      "@value":"standAlone"
+                    },
+                    {
+                      "@name":"isStandAlone",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Whether networkMode standAlone (ignore network but still respond to local events) is true/false",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"isMaster",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Whether networkMode 'networkWriter' (output to network as master entity at writeInterval) is true/false",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"isRemote",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Whether networkMode 'networkReader' (listen to network as ghost entity) is true/false",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"readInterval",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"seconds between read updates",
+                      "@type":"SFTime",
+                      "@value":0.1
+                    },
+                    {
+                      "@name":"writeInterval",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"seconds between write updates",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Indicates if the node has received a DIS message (isActive=true) or not (isActive=false). Since DIS entities can be considered inactive after some period of time (typically five seconds) either event may be received by listening nodes.",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"timestamp",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"DIS timestamp in VRML units",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"rtpHeaderExpected",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"whether RTP header is expected to be prepended to DIS packet",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"isRtpHeaderHeard",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"whether RTP header was found prepended to DIS packet",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"forceID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entityKind",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entityDomain",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entityCountry",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entityCategory",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entitySubCategory",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entitySpecific",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"entityExtra",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"linearVelocity",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"linearAcceleration",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"deadReckoning",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Dead reckoning algorithm being used to project position/orientation with velocities/accelerations.",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"isCollided",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"collideTime",
+                      "@accessType":"outputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"eventApplicationID",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"eventSiteID",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"eventEntityID",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"collisionType",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[0255]",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"eventNumber",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"fired1",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"fired2",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"firedTime",
+                      "@accessType":"outputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"munitionStartPoint",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"munitionEndPoint",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"munitionApplicationID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"munitionSiteID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"munitionEntityID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"fireMissionIndex",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"warhead",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"fuse",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"munitionQuantity",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":1
+                    },
+                    {
+                      "@name":"firingRate",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[065535]",
+                      "@type":"SFInt32",
+                      "@value":1
+                    },
+                    {
+                      "@name":"firingRange",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":0
+                    },
+                    {
+                      "@name":"isDetonated",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"detonateTime",
+                      "@accessType":"outputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"detonationLocation",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"detonationRelativeLocation",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"detonationResult",
+                      "@accessType":"outputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"articulationParameterCount",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"range [078]. Indicates the number of appended parameters that are being used to describe articulation of various segments of the entity model.",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"articulationParameterDesignatorArray",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"range [0255]. The Parameter Type Designator entries in the articulationParameterDesignatorArray indicate if the the parameter record is for an articulated or attached part. It is represented by an 8-bit enumeration.",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node array"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"articulationParameterChangeIndicatorArray",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"range [0255]. The Change Indicator entries in the articulationChangeIndicatorArray indicate the change of any parameter for the associated articulated part. This is specified by an 8-bit unsigned integer. The value is initially set to zero for each exercise and is sequentially incremented by one for each change in the articulation parameters. The proper indicator is updated automatically by an X3D DIS implementation upon receipt of a set_articulationParameterValue event.",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node array"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"articulationParameterIdPartAttachedToArray",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"range [065535]. The ID - Part Attached To entries in the articulationParameterIdPartAttachedToArray identify the articulated part to which this articulation parameter is attached. The value is specified by a 16-bit unsigned integer and is set to zero if the articulated part is attached directly to the entity.",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node array"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"articulationParameterTypeArray",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"range [0255]. The Parameter Type entries in the articulationParameterTypeArray are specified by 32-bit enumeration values.",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node array"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"articulationParameterArray",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The Parameter Value entries in the articulationParameterArray are specified by a 64-bit field. The definition of the 64 bits is determined based on the type of parameter indicated above.",
+                      "@type":"MFFloat",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node array"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"set_articulationParameterValue0",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue1",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue2",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue3",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue4",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue5",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue6",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_articulationParameterValue7",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue0_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue1_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue2_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue3_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue4_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue5_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue6_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"articulationParameterValue7_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    }
+                  ],
+                  "-children":[
+                    {
+                      "#comment":"Standard Transform fields"
+                    },
+                    {
+                      "#comment":"Entity identity"
+                    },
+                    {
+                      "#comment":"Networking configuration parameters"
+                    },
+                    {
+                      "#comment":"Further identification"
+                    },
+                    {
+                      "#comment":"Collision PDU events"
+                    },
+                    {
+                      "#comment":"Fire, Detonate PDU events"
+                    },
+                    {
+                      "#comment":"Articulation parameters are extra blocks of information, appended one by one to end of regular Espdu."
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"First node inside a PrototypeDeclaration is the node type of the ProtoInstance"
+                    },
+                    { "Transform":
+                      {
+                        "@DEF":"DisTransformNode",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"addChildren",
+                                "@protoField":"addChildren"
+                              },
+                              {
+                                "@nodeField":"removeChildren",
+                                "@protoField":"removeChildren"
+                              },
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              },
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"translation"
+                              },
+                              {
+                                "@nodeField":"rotation",
+                                "@protoField":"rotation"
+                              },
+                              {
+                                "@nodeField":"center",
+                                "@protoField":"center"
+                              },
+                              {
+                                "@nodeField":"scale",
+                                "@protoField":"scale"
+                              },
+                              {
+                                "@nodeField":"scaleOrientation",
+                                "@protoField":"scaleOrientation"
+                              },
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"CacheExposedFieldNodes",
+                        "-children":[
+                          {
+                            "#comment":"This first set of nodes are not rendered and only hold exposedField state. This hack is necessary to work around the restriction on exposedFields directly in Script nodes."
+                          },
+                          { "Anchor":
+                            {
+                              "@DEF":"MarkingState",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"marking"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Switch":
+                            {
+                              "@DEF":"SiteIdState",
+                              "@whichChoice":-1,
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"whichChoice",
+                                      "@protoField":"siteID"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Switch":
+                            {
+                              "@DEF":"ApplicationIdState",
+                              "@whichChoice":-1,
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"whichChoice",
+                                      "@protoField":"applicationID"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Switch":
+                            {
+                              "@DEF":"EntityIdState",
+                              "@whichChoice":-1,
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"whichChoice",
+                                      "@protoField":"entityID"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Anchor":
+                            {
+                              "@DEF":"NetworkModeState",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"networkMode"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "NavigationInfo":
+                            {
+                              "@DEF":"ReaderState",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"headlight",
+                                      "@protoField":"isRemote"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "NavigationInfo":
+                            {
+                              "@DEF":"MasterState",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"headlight",
+                                      "@protoField":"isMaster"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "NavigationInfo":
+                            {
+                              "@DEF":"LocalState",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"headlight",
+                                      "@protoField":"isStandAlone"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"ReadWriteIntervalState",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"startTime",
+                                      "@protoField":"readInterval"
+                                    },
+                                    {
+                                      "@nodeField":"stopTime",
+                                      "@protoField":"writeInterval"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"MunitionPointNode",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"translation",
+                                      "@protoField":"munitionStartPoint"
+                                    },
+                                    {
+                                      "@nodeField":"center",
+                                      "@protoField":"munitionEndPoint"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Switch":
+                            {
+                              "@whichChoice":-1,
+                              "-children":[
+                                { "Anchor":
+                                  {
+                                    "@DEF":"AddressHolder",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"description",
+                                            "@protoField":"address"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                                { "Anchor":
+                                  {
+                                    "@DEF":"MulticastAddressHolder",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"description",
+                                            "@protoField":"multicastRelayHost"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                                { "Switch":
+                                  {
+                                    "@DEF":"PortHolder",
+                                    "@whichChoice":-1,
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"whichChoice",
+                                            "@protoField":"port"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                                { "Switch":
+                                  {
+                                    "@DEF":"MulticastPortHolder",
+                                    "@whichChoice":-1,
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"whichChoice",
+                                            "@protoField":"multicastRelayPort"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                                { "Switch":
+                                  {
+                                    "@DEF":"ArticulationParameterCountHolder",
+                                    "@whichChoice":-1,
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"whichChoice",
+                                            "@protoField":"articulationParameterCount"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                                { "ScalarInterpolator":
+                                  {
+                                    "@DEF":"ArticulationParameterArrayHolder",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"keyValue",
+                                            "@protoField":"articulationParameterArray"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment":"Nonrendering Script that connects network communications to interfaces"
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"NetworkingScriptAndReadWriteClocks",
+                        "-children":[
+                          {
+                            "#comment":"Fields in the Script are directly mapped to the PrototypeDeclare field-tag interfaces by using the IS construct"
+                          },
+                          {
+                            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"EspduScriptNode",
+                              "@directOutput":true,
+                              "@mustEvaluate":true,
+                              "@url":["EspduTransform.class","/vrtp/mil/navy/nps/dis/EspduTransform.class","dis-java-vrml.jar#EspduTransform.class","/vrtp/dis-java-vrml.jar#EspduTransform.class","file:///c:/vrtp/mil/navy/nps/dis/EspduTransform.class","http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/EspduTransform.class"],
+                              "-children":[
+                                {
+                                  "#comment":"Generic events"
+                                },
+                                {
+                                  "#comment":"Initialization fields"
+                                }
+                              ],
+                              "field": [
+                                {
+                                  "@name":"geoCoords_changed",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"Double precision outputs for 64-bit Espdu translation.",
+                                  "@type":"SFVec3d"
+                                },
+                                {
+                                  "@name":"traceJava",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                },
+                                {
+                                  "@name":"update",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Used by TimeSensor clocks to trigger processEvents() method.",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"transformNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Transform":
+                                      {
+                                        "@USE":"DisTransformNode"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"markingNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Anchor":
+                                      {
+                                        "@USE":"MarkingState"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"siteIdNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"SiteIdState"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"applicationIdNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"ApplicationIdState"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"entityIdNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"EntityIdState"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"addressNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Anchor":
+                                      {
+                                        "@USE":"AddressHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"multicastAddressNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Anchor":
+                                      {
+                                        "@USE":"MulticastAddressHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"portNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"PortHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"multicastPortNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"MulticastPortHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"networkModeNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Anchor":
+                                      {
+                                        "@USE":"NetworkModeState"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"readWriteIntervalNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "TimeSensor":
+                                      {
+                                        "@USE":"ReadWriteIntervalState"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"isActive",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"timestamp",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"rtpHeaderExpected",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"isRtpHeaderHeard",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"isCollided",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"collideTime",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"isDetonated",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"detonateTime",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"firedTime",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"munitionPointNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Transform":
+                                      {
+                                        "@USE":"MunitionPointNode"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"articulationParameterCountNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Switch":
+                                      {
+                                        "@USE":"ArticulationParameterCountHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"articulationParameterArrayNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ScalarInterpolator":
+                                      {
+                                        "@USE":"ArticulationParameterArrayHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue0",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue1",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue2",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue3",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue4",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue5",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue6",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_articulationParameterValue7",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue0_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue1_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue2_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue3_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue4_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue5_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue6_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"articulationParameterValue7_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"geoCoords_changed",
+                                      "@protoField":"geoCoords_changed"
+                                    },
+                                    {
+                                      "@nodeField":"isActive",
+                                      "@protoField":"isActive"
+                                    },
+                                    {
+                                      "@nodeField":"timestamp",
+                                      "@protoField":"timestamp"
+                                    },
+                                    {
+                                      "@nodeField":"rtpHeaderExpected",
+                                      "@protoField":"rtpHeaderExpected"
+                                    },
+                                    {
+                                      "@nodeField":"isRtpHeaderHeard",
+                                      "@protoField":"isRtpHeaderHeard"
+                                    },
+                                    {
+                                      "@nodeField":"isCollided",
+                                      "@protoField":"isCollided"
+                                    },
+                                    {
+                                      "@nodeField":"collideTime",
+                                      "@protoField":"collideTime"
+                                    },
+                                    {
+                                      "@nodeField":"isDetonated",
+                                      "@protoField":"isDetonated"
+                                    },
+                                    {
+                                      "@nodeField":"detonateTime",
+                                      "@protoField":"detonateTime"
+                                    },
+                                    {
+                                      "@nodeField":"firedTime",
+                                      "@protoField":"firedTime"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue0",
+                                      "@protoField":"set_articulationParameterValue0"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue1",
+                                      "@protoField":"set_articulationParameterValue1"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue2",
+                                      "@protoField":"set_articulationParameterValue2"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue3",
+                                      "@protoField":"set_articulationParameterValue3"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue4",
+                                      "@protoField":"set_articulationParameterValue4"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue5",
+                                      "@protoField":"set_articulationParameterValue5"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue6",
+                                      "@protoField":"set_articulationParameterValue6"
+                                    },
+                                    {
+                                      "@nodeField":"set_articulationParameterValue7",
+                                      "@protoField":"set_articulationParameterValue7"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue0_changed",
+                                      "@protoField":"articulationParameterValue0_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue1_changed",
+                                      "@protoField":"articulationParameterValue1_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue2_changed",
+                                      "@protoField":"articulationParameterValue2_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue3_changed",
+                                      "@protoField":"articulationParameterValue3_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue4_changed",
+                                      "@protoField":"articulationParameterValue4_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue5_changed",
+                                      "@protoField":"articulationParameterValue5_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue6_changed",
+                                      "@protoField":"articulationParameterValue6_changed"
+                                    },
+                                    {
+                                      "@nodeField":"articulationParameterValue7_changed",
+                                      "@protoField":"articulationParameterValue7_changed"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          {
+                            "#comment":"Clocks stimulate the processEvents() method in the Script code, resulting in DIS PDU reads/writes. The 'update' eventIn is implicit (i.e. no corresponding Java method is needed)."
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"ReadIntervalClock",
+                              "@loop":true,
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"cycleInterval",
+                                      "@protoField":"readInterval"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"WriteIntervalClock",
+                              "@loop":true,
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"cycleInterval",
+                                      "@protoField":"writeInterval"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"cycleTime",
+                              "@fromNode":"ReadIntervalClock",
+                              "@toField":"update",
+                              "@toNode":"EspduScriptNode"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"cycleTime",
+                              "@fromNode":"WriteIntervalClock",
+                              "@toField":"update",
+                              "@toNode":"EspduScriptNode"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"EspduTransformTrace",
+              "@appinfo":"EspduTransformTrace provides 3D trace values for a corresponding EspduTransorm usually as a child so that it stays local to an entity's position. EspduTransformTrace compatibly adds billboarded text-trace capabilities for run-time debugging inside a scene.",
+              "ProtoInterface": {
+                  "-children":[
+                    {
+                      "#comment":"Special trace fields (beyond regular EspduTransform signature)"
+                    }
+                  ],
+                  "field": [
+                    {
+                      "@name":"espduTransformNode",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"initialize with <EspduTransform USE=\"NodeToBeTraced\"/> so that networked data is passed by reference",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"provide <EspduTransform USE=\"nodeName\"/> i.e. copy-by=reference node to initialize"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"traceColor",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Trace text color",
+                      "@type":"SFColor",
+                      "@value":[1,0.4,0.05]
+                    },
+                    {
+                      "@name":"traceOffset",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Trace text position relative to entity",
+                      "@type":"SFVec3f",
+                      "@value":[0,2.5,0]
+                    },
+                    {
+                      "@name":"traceFontSize",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Trace text scale",
+                      "@type":"SFFloat",
+                      "@value":0.8
+                    },
+                    {
+                      "@name":"traceJava",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"whether or not to include verbose trace comments in Java console in order to help debug network connectivity",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"localTraceEnabled",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Whether EspduTransformTrace debug scripting is visible inside the X3D scene",
+                      "@type":"SFBool",
+                      "@value":false
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Group":
+                            {
+                              "@DEF":"PrimaryControlScripts",
+                              "-children":[
+                                {
+                                  "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                                },
+                                {
+                                  "#comment":"OverriddenDefaultEspduTransformNode"
+                                },
+                                { "Script":
+                                  {
+                                    "@DEF":"TraceScript",
+                                    "@directOutput":true,
+                                    "@mustEvaluate":true,
+                                    "field": [
+                                      {
+                                        "@name":"espduTransformNode",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"initialize with <EspduTransform USE=\"NodeToBeTraced\"/>",
+                                        "@type":"SFNode"
+                                      },
+                                      {
+                                        "@name":"traceColor",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Trace text color",
+                                        "@type":"SFColor"
+                                      },
+                                      {
+                                        "@name":"traceOffset",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Trace text position relative to entity",
+                                        "@type":"SFVec3f"
+                                      },
+                                      {
+                                        "@name":"traceFontSize",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Trace text scale",
+                                        "@type":"SFFloat"
+                                      },
+                                      {
+                                        "@name":"traceJava",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"(not passable???) whether or not to include verbose trace comments in Java console in order to help debug network connectivity",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"localTraceEnabled",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Whether EspduTransformTrace debug scripting has verbose output",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"touched",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"update",
+                                        "@accessType":"inputOnly",
+                                        "@appinfo":"Used by TimeSensor clocks to trigger processEvents() method.",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"marking",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFString"
+                                      },
+                                      {
+                                        "@name":"readInterval",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"writeInterval",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"fired1",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"fired2",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"fireTime",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"traceString",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFString"
+                                      },
+                                      {
+                                        "@name":"prior_marking",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFString"
+                                      },
+                                      {
+                                        "@name":"prior_readInterval",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFTime",
+                                        "@value":-1
+                                      },
+                                      {
+                                        "@name":"prior_writeInterval",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFTime",
+                                        "@value":-1
+                                      },
+                                      {
+                                        "@name":"prior_fired1",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFBool",
+                                        "@value":false
+                                      },
+                                      {
+                                        "@name":"prior_fired2",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFBool",
+                                        "@value":false
+                                      },
+                                      {
+                                        "@name":"prior_translation",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFVec3f",
+                                        "@value":[0,0,0]
+                                      },
+                                      {
+                                        "@name":"prior_geoCoords_changed",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFVec3d",
+                                        "@value":[0,0,0]
+                                      }
+                                    ],
+                                    "-children":[
+                                      {
+                                        "#comment":"Changed-value outputs"
+                                      },
+                                      {
+                                        "#comment":"other internal state variables"
+                                      }
+                                    ],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"espduTransformNode",
+                                            "@protoField":"espduTransformNode"
+                                          },
+                                          {
+                                            "@nodeField":"traceColor",
+                                            "@protoField":"traceColor"
+                                          },
+                                          {
+                                            "@nodeField":"traceOffset",
+                                            "@protoField":"traceOffset"
+                                          },
+                                          {
+                                            "@nodeField":"traceFontSize",
+                                            "@protoField":"traceFontSize"
+                                          },
+                                          {
+                                            "@nodeField":"traceJava",
+                                            "@protoField":"traceJava"
+                                          },
+                                          {
+                                            "@nodeField":"localTraceEnabled",
+                                            "@protoField":"localTraceEnabled"
+                                          }
+                                        ]
+                                    },
+                                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\ttracePrint('TraceScript initialize() start...');",
+"\ttracePrint('traceColor=' + traceColor);",
+"\ttracePrint('traceOffset=' + traceOffset);",
+"\ttracePrint('traceFontSize=' + traceFontSize);",
+"\ttracePrint('traceJava=' + traceJava);",
+"\ttracePrint('marking=' + espduTransformNode.marking);",
+"\ttracePrint('address=' + espduTransformNode.address);",
+"\ttracePrint('   port=' + espduTransformNode.port);",
+"\ttracePrint('networkMode=' + espduTransformNode.networkMode);",
+"",
+"\tif (espduTransformNode.networkMode == 'networkReader')",
+"\t{",
+"\t\treadInterval  = espduTransformNode.readInterval;",
+"\t\twriteInterval = 0;",
+"\t}",
+"\tif (espduTransformNode.networkMode == 'networkWriter')",
+"\t{",
+"\t\treadInterval  = 0;",
+"\t\twriteInterval = espduTransformNode.writeInterval;",
+"\t}",
+"\ttracePrint('readInterval='  + espduTransformNode.readInterval);",
+"\ttracePrint('writeInterval=' + espduTransformNode.writeInterval);",
+"",
+"\tprior_marking       = espduTransformNode.marking;",
+"\tprior_readInterval  = espduTransformNode.readInterval;",
+"\tprior_writeInterval = espduTransformNode.writeInterval;",
+"\tprior_translation   = espduTransformNode.translation;",
+"\tprior_geoCoords_changed = espduTransformNode.geoCoords_changed;",
+"",
+"\tprior_fired1  = espduTransformNode.fired1;",
+"\tprior_fired2  = espduTransformNode.fired2;",
+"",
+"\toutputString1 = espduTransformNode.marking + '  (' +",
+"\t\t\tespduTransformNode.siteID + ', ' +",
+"\t\t\tespduTransformNode.applicationID + ', ' +",
+"\t\t\tespduTransformNode.entityID + ')';",
+"",
+"\toutputString2 = 'awaiting PDUs...';",
+"",
+"\ttraceString = new MFString (outputString1, outputString2);",
+"\ttracePrint ('traceString=' + traceString);",
+"//\tif (offsetFollowsEspduTransform)",
+"//\t{",
+"//\t\t// create ROUTEs to connect parent EspduTransform",
+"//\t}",
+"\ttracePrint('TraceScript initialize() finish.');",
+"}",
+"",
+"function touched (isActiveValue, timestamp)",
+"{",
+"\ttracePrint ('touched=' + isActiveValue + ', no action');",
+"}",
+"",
+"function update (value, timestamp)",
+"{",
+"//\ttracePrint('begin update() ...');",
+"\tchanged = false;  // only send output events when changed",
+"\tif (prior_marking != espduTransformNode.marking)",
+"\t{",
+"\t\ttracePrint('update() changed marking');",
+"\t\tmarking        = espduTransformNode.marking;",
+"\t\tprior_marking  = marking;",
+"\t\tchanged = true;",
+"\t}",
+"\tif (prior_readInterval != espduTransformNode.readInterval)",
+"\t{",
+"\t\ttracePrint('update() changed readInterval');",
+"\t\treadInterval        = espduTransformNode.readInterval;",
+"\t\tprior_readInterval  = espduTransformNode.readInterval;",
+"\t\tchanged = true;",
+"\t}",
+"\tif (prior_writeInterval != espduTransformNode.writeInterval)",
+"\t{",
+"\t\ttracePrint('update() changed writeInterval');",
+"\t\twriteInterval        = espduTransformNode.writeInterval;",
+"\t\tprior_writeInterval  = espduTransformNode.writeInterval;",
+"\t\tchanged = true;",
+"\t}",
+"\tif (\t(prior_translation.x != espduTransformNode.translation.x) ||",
+"\t\t(prior_translation.y != espduTransformNode.translation.y) ||",
+"\t\t(prior_translation.z != espduTransformNode.translation.z))",
+"\t{",
+"\t\ttracePrint('update() changed translation');",
+"\t\tprior_translation = espduTransformNode.translation;",
+"\t\tchanged = true;",
+"\t}",
+"\tif (prior_geoCoords_changed != espduTransformNode.geoCoords_changed)",
+"\t{",
+"\t\ttracePrint('update() changed geoCoords_changed');",
+"\t\tprior_geoCoords_changed = espduTransformNode.geoCoords_changed;",
+"\t\tchanged = true;",
+"\t}",
+"//\ttracePrint('espduTransformNode.translation=' + espduTransformNode.translation);",
+"//\ttracePrint('prior_translation=' + prior_translation);",
+"//\ttracePrint('prior_geoCoords_changed=' + prior_geoCoords_changed);",
+"\tif (prior_fired1 != espduTransformNode.fired1)",
+"\t{",
+"\t\ttracePrint('update() changed fired1');",
+"\t\tfired1        = espduTransformNode.fired1;",
+"\t\tfireTime      = timestamp;",
+"\t\tprior_fired1  = espduTransformNode.fired1;",
+"\t\tchanged = true;",
+"\t}",
+"\tif (prior_fired2 != espduTransformNode.fired2)",
+"\t{",
+"\t\ttracePrint('update() changed fired2');",
+"\t\tfired2        = espduTransformNode.fired2;",
+"\t\tfireTime      = timestamp;",
+"\t\tprior_fired2  = espduTransformNode.fired2;",
+"\t\tchanged = true;",
+"\t}",
+"",
+"\tif (changed == true) // produce, then send trace text",
+"\t{",
+"\t\ttracePrint('update() changed == true');",
+"\t\toutputString1 = espduTransformNode.marking + '  (' +",
+"\t\t\tespduTransformNode.siteID + ', ' +",
+"\t\t\tespduTransformNode.applicationID + ', ' +",
+"\t\t\tespduTransformNode.entityID + ')';",
+"",
+"\t\toutputString2 = prior_geoCoords_changed;",
+"",
+"\t\ttraceString = new MFString (outputString1, outputString2);",
+"\t}",
+"\ttracePrint('end update()   changed=' + changed);",
+"}",
+"function roundoff (x)",
+"{",
+"\treturn Math.round(x * 10) / 10;",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[EspduTransformTrace ' + espduTransformNode.marking + '] ' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[EspduTransformTrace ' + espduTransformNode.marking + '] ' + outputString);",
+"}"
+]
+                                  }
+                                },
+                                {
+                                  "#comment":"Clocks stimulate the processEvents() method"
+                                },
+                                { "TimeSensor":
+                                  {
+                                    "@DEF":"ReadIntervalTraceClock",
+                                    "@loop":true
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"readInterval",
+                                    "@fromNode":"TraceScript",
+                                    "@toField":"cycleInterval",
+                                    "@toNode":"ReadIntervalTraceClock"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"cycleTime",
+                                    "@fromNode":"ReadIntervalTraceClock",
+                                    "@toField":"update",
+                                    "@toNode":"TraceScript"
+                                  }
+                                },
+                                { "TimeSensor":
+                                  {
+                                    "@DEF":"WriteIntervalTraceClock",
+                                    "@loop":true
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"writeInterval",
+                                    "@fromNode":"TraceScript",
+                                    "@toField":"cycleInterval",
+                                    "@toNode":"WriteIntervalTraceClock"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"cycleTime",
+                                    "@fromNode":"WriteIntervalTraceClock",
+                                    "@toField":"update",
+                                    "@toNode":"TraceScript"
+                                  }
+                                },
+                                {
+                                  "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                                },
+                                { "Script":
+                                  {
+                                    "@DEF":"DEBUG_JAVASCRIPT",
+                                    "@directOutput":true,
+                                    "field": [
+                                      {
+                                        "@name":"espduTransformNode",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"initialize with <EspduTransform USE=\"NodeToBeTraced\"/>",
+                                        "@type":"SFNode"
+                                      },
+                                      {
+                                        "@name":"localTraceEnabled",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Whether EspduTransformTrace debug scripting has verbose output",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"articulationParameterCount",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFInt32"
+                                      },
+                                      {
+                                        "@name":"MFmarking",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFString"
+                                      },
+                                      {
+                                        "@name":"set_rotation",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFRotation"
+                                      },
+                                      {
+                                        "@name":"timestamp",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"set_translation",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFVec3f"
+                                      },
+                                      {
+                                        "@name":"detonated",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"marking_address_text",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFString"
+                                      },
+                                      {
+                                        "@name":"result",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"entityID",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFInt32",
+                                        "@value":0
+                                      },
+                                      {
+                                        "@name":"translation_text",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFString"
+                                      },
+                                      {
+                                        "@name":"port",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFInt32",
+                                        "@value":0
+                                      },
+                                      {
+                                        "@name":"collided",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"rtpHeaderHeard",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"rotation_text",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFString"
+                                      },
+                                      {
+                                        "@name":"applicationID",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFInt32",
+                                        "@value":0
+                                      },
+                                      {
+                                        "@name":"address",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFString"
+                                      },
+                                      {
+                                        "@name":"active",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFBool",
+                                        "@value":true
+                                      },
+                                      {
+                                        "@name":"touch",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"marking",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFString"
+                                      },
+                                      {
+                                        "@name":"siteID",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"SFInt32",
+                                        "@value":0
+                                      }
+                                    ],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"espduTransformNode",
+                                            "@protoField":"espduTransformNode"
+                                          },
+                                          {
+                                            "@nodeField":"localTraceEnabled",
+                                            "@protoField":"localTraceEnabled"
+                                          }
+                                        ]
+                                    },
+                                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ( )",
+"{",
+"\ttracePrint ('DEBUG_JAVASCRIPT initialize() start...');",
+"\ttranslation_text[0]     = espduTransformNode.marking + '  awaiting DIS';",
+"//\trotation_text   [0]     = 'translation and rotation updates';",
+"//\tmarking_address_text[0] = 'multicast group: ' + address +'/' + port + ', ID:'//\t\t+ siteID + ',' + applicationID + ',' + entityID;",
+"\tMFmarking[0] = espduTransformNode.marking;",
+"\ttracePrint ('DEBUG_JAVASCRIPT initialize() finish.');",
+"}",
+"function set_translation ( translation, ts )",
+"{",
+"\tif (active) {",
+"\t\t// round to nearest tenth",
+"\t\ttranslation.x = Math.round (translation.x * 10.0) / 10.0;",
+"\t\ttranslation.y = Math.round (translation.y * 10.0) / 10.0;",
+"\t\ttranslation.z = Math.round (translation.z * 10.0) / 10.0;",
+"\t\ttranslation_text[0] = marking + '  translation ' + translation;",
+"\t}",
+"}",
+"function set_rotation    ( rotation, ts )",
+"{",
+"\tif (active) {",
+"\t\t// round terms to nearest thousandth",
+"\t\trotation.x     = Math.round (rotation.x     * 1000.0) / 1000.0;",
+"\t\trotation.y     = Math.round (rotation.y     * 1000.0) / 1000.0;",
+"\t\trotation.z     = Math.round (rotation.z     * 1000.0) / 1000.0;",
+"\t\trotation.angle = (rotation.angle * 180.0) / 3.141592653;",
+"\t\trotation.angle = Math.round (rotation.angle * 10.0) / 10.0;",
+"//\t\trotation_text   [0] = 'rotation ' + rotation + ' axis/degrees';",
+"\t}",
+"}",
+"function touch (value, time)",
+"{",
+"\tactive = !active;",
+"\tresult =  active;",
+"\tif (result) {",
+"\t\ttranslation_text[0]     = marking + '  awaiting DIS';",
+"//\t\trotation_text   [0]     = 'translation and rotation updates';",
+"//\t\tmarking_address_text[0] = 'multicast group: ' + address +'/' + port + ', ID:'//\t\t\t+ siteID + ',' + applicationID + ',' + entityID;",
+"\t\tMFmarking[0] = marking;",
+"\t} else {",
+"\t\ttranslation_text[0] = '';",
+"\t\trotation_text   [0] = '';",
+"\t\tmarking_address_text[0] = '';",
+"\t\tMFmarking[0] = '';",
+"\t}",
+"}",
+"function timestamp    ( value, ts ) {",
+"\ttracePrint ('DIS timestamp=' + value + ', event timestamp=' + ts);",
+"}",
+"function collided    ( value, ts ) {",
+"\ttracePrint ('collided=' + value);",
+"}",
+"function detonated    ( value, ts ) {",
+"\ttracePrint ('detonated=' + value);",
+"}",
+"function articulationParameterCount    ( value, ts ) {",
+"\ttracePrint ('articulationParameterCount=' + value);",
+"}",
+"function articulationParameterValue0   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue0=' + value);",
+"}",
+"function articulationParameterValue1   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue1=' + value);",
+"}",
+"function articulationParameterValue2   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue2=' + value);",
+"}",
+"function articulationParameterValue3   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue3=' + value);",
+"}",
+"function articulationParameterValue4   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue4=' + value);",
+"}",
+"function articulationParameterValue5   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue5=' + value);",
+"}",
+"function articulationParameterValue6   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue6=' + value);",
+"}",
+"function articulationParameterValue7   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue7=' + value);",
+"}",
+"function articulationParameterValue8   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue8=' + value);",
+"}",
+"function articulationParameterValue9   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue9=' + value);",
+"}",
+"function articulationParameterValue10   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue10=' + value);",
+"}",
+"function articulationParameterValue11   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue11=' + value);",
+"}",
+"function articulationParameterValue12   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue12=' + value);",
+"}",
+"function articulationParameterValue13   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue13=' + value);",
+"}",
+"function articulationParameterValue14   ( value, ts ) {",
+"\ttracePrint ('articulationParameterValue14=' + value);",
+"}",
+"function munitionStartPoint   ( value, ts ) {",
+"\ttracePrint ('munitionStartPoint=' + value);",
+"}",
+"function munitionEndPoint   ( value, ts ) {",
+"\ttracePrint ('munitionEndPoint=' + value);",
+"}",
+"function rtpHeaderHeard   ( value, ts ) {",
+"\ttracePrint ('unexpected RTP header status, rtpHeaderHeard=' + value);",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[EspduTransformTrace ' + espduTransformNode.marking + '] ' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[EspduTransformTrace ' + espduTransformNode.marking + '] ' + outputString);",
+"}"
+]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "@DEF":"TouchToActivateGroup",
+                              "-children":[
+                                { "TouchSensor":
+                                  {
+                                    "@DEF":"ActivationTouchSensor",
+                                    "@description":"Touch trace text to toggle simple or verbose"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"isActive",
+                                    "@fromNode":"ActivationTouchSensor",
+                                    "@toField":"touched",
+                                    "@toNode":"TraceScript"
+                                  }
+                                },
+                                { "LOD":
+                                  {
+                                    "@range":[300.0,3000.0,40000.0],
+                                    "-children":[
+                                      { "Transform":
+                                        {
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"translation",
+                                                  "@protoField":"traceOffset"
+                                                }
+                                              ]
+                                          },
+                                          "-children":[
+                                            { "Billboard":
+                                              {
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@DEF":"TextColor",
+                                                                  "@diffuseColor":[0,0,0],
+                                                                  "IS": {
+                                                                      "connect": [
+                                                                        {
+                                                                          "@nodeField":"emissiveColor",
+                                                                          "@protoField":"traceColor"
+                                                                        }
+                                                                      ]
+                                                                  }
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Text":
+                                                          {
+                                                            "@DEF":"TraceText",
+                                                            "-fontStyle":
+                                                              { "FontStyle":
+                                                                {
+                                                                  "@DEF":"TraceFont",
+                                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                                  "IS": {
+                                                                      "connect": [
+                                                                        {
+                                                                          "@nodeField":"size",
+                                                                          "@protoField":"traceFontSize"
+                                                                        }
+                                                                      ]
+                                                                  }
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                  { "ROUTE":
+                                                    {
+                                                      "@fromField":"traceString",
+                                                      "@fromNode":"TraceScript",
+                                                      "@toField":"string",
+                                                      "@toNode":"TraceText"
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@translation":[0.0,-0.25,0.0],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@USE":"TextColor"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Text":
+                                                                {
+                                                                  "@DEF":"DEBUG_ROTATION",
+                                                                  "-fontStyle":
+                                                                    { "FontStyle":
+                                                                      {
+                                                                        "@USE":"TraceFont"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@translation":[0.0,-0.5,0.0],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@USE":"TextColor"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-geometry":
+                                                              { "Text":
+                                                                {
+                                                                  "@DEF":"DEBUG_MARKING_ADDRESS",
+                                                                  "-fontStyle":
+                                                                    { "FontStyle":
+                                                                      {
+                                                                        "@USE":"TraceFont"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "WorldInfo":
+                                        {
+                                        }
+                                      },
+                                      { "Billboard":
+                                        {
+                                          "@axisOfRotation":[0.0,0.0,0.0],
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@translation":[0.0,800.0,0.0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@USE":"TextColor"
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Text":
+                                                          {
+                                                            "@DEF":"LONG_RANGE_MARKING",
+                                                            "-fontStyle":
+                                                              { "FontStyle":
+                                                                {
+                                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                                  "@size":125.0,
+                                                                  "@style":"BOLD"
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@translation":[0.0,40.0,0.0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@USE":"TextColor"
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Box":
+                                                          {
+                                                            "@size":[50.0,50.0,50.0]
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "WorldInfo":
+                                        {
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "@DEF":"LineOfFireGroup",
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@emissiveColor":[0.3,0.15,0.15]
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "IndexedLineSet":
+                                        {
+                                          "@colorIndex":[0,1,-1],
+                                          "@coordIndex":[0,1,-1],
+                                          "-color":
+                                            { "Color":
+                                              {
+                                                "@color":[0.0,1.0,0.0,1.0,0.0,0.0]
+                                              }
+                                            },
+                                          "-coord":
+                                            { "Coordinate":
+                                              {
+                                                "@DEF":"LineOfFireCoordinateNode",
+                                                "@point":[0.0,0.0,0.0,0.0,0.0,20.0]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                },
+                                {
+                                  "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                                },
+                                { "Script":
+                                  {
+                                    "@DEF":"SetFireLineEndpoints",
+                                    "field": [
+                                      {
+                                        "@name":"set_munitionStartPoint",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFVec3f"
+                                      },
+                                      {
+                                        "@name":"set_munitionEndPoint",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFVec3f"
+                                      },
+                                      {
+                                        "@name":"holdArray",
+                                        "@accessType":"initializeOnly",
+                                        "@type":"MFVec3f",
+                                        "-children":[
+                                          {
+                                            "#comment":"default initialization is NULL node array"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "@name":"pointArray",
+                                        "@accessType":"outputOnly",
+                                        "@type":"MFVec3f",
+                                        "-children":[
+                                          {
+                                            "#comment":"default initialization is NULL node array"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "@name":"localTraceEnabled",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Whether EspduTransformTrace debug scripting has verbose output",
+                                        "@type":"SFBool"
+                                      }
+                                    ],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"localTraceEnabled",
+                                            "@protoField":"localTraceEnabled"
+                                          }
+                                        ]
+                                    },
+                                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ( )",
+"{",
+"\ttracePrint ('SetFireLineEndpoints initialize() start...');",
+"\tholdArray [0] = new SFVec3f (0.0, 0.0, 0.0);",
+"\tholdArray [1] = new SFVec3f (0.0, 0.0, 0.0);",
+"\tpointArray = holdArray;",
+"\ttracePrint ('SetFireLineEndpoints initialize() start...');",
+"}",
+"function set_munitionStartPoint   ( value, timestamp )",
+"{",
+"\tholdArray [0] = value;",
+"}",
+"function set_munitionEndPoint   ( value, timestamp )",
+"{",
+"\tholdArray [1] = value;",
+"\tpointArray = holdArray;",
+"//\ttracePrint ('fire line endpoints=' + holdArray);",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[EspduTransformTrace SetFireLineEndpoints] ' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[EspduTransformTrace SetFireLineEndpoints] ' + outputString);",
+"}"
+]
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"pointArray",
+                                    "@fromNode":"SetFireLineEndpoints",
+                                    "@toField":"set_point",
+                                    "@toNode":"LineOfFireCoordinateNode"
+                                  }
+                                },
+                                {
+                                  "#comment":"Needed?"
+                                },
+                                {
+                                  "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                                },
+                                { "Script":
+                                  {
+                                    "@DEF":"FireSequenceScript",
+                                    "@mustEvaluate":true,
+                                    "field": [
+                                      {
+                                        "@name":"set_fired1",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"set_fired2",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"fireTime",
+                                        "@accessType":"inputOnly",
+                                        "@type":"SFTime"
+                                      },
+                                      {
+                                        "@name":"firstFired1",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"firstFired2",
+                                        "@accessType":"outputOnly",
+                                        "@type":"SFBool"
+                                      },
+                                      {
+                                        "@name":"localTraceEnabled",
+                                        "@accessType":"initializeOnly",
+                                        "@appinfo":"Whether EspduTransformTrace debug scripting has verbose output",
+                                        "@type":"SFBool"
+                                      }
+                                    ],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"localTraceEnabled",
+                                            "@protoField":"localTraceEnabled"
+                                          }
+                                        ]
+                                    },
+                                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ( )",
+"{",
+"\ttracePrint ('FireSequenceScript initialize() start...');",
+"\tfirstFired1 = false;",
+"\tfirstFired2 = false;",
+"\ttracePrint ('FireSequenceScript initialize() finish.');",
+"}",
+"function fireTime (value, timestamp)",
+"{",
+"\t// no action",
+"}",
+"function set_fired1 (value, timestamp)",
+"{",
+"\tif ((value == true) && (firstFired1 == false))",
+"\t{",
+"\t\tfirstFired1 = true;",
+"\t\ttracePrint ('EspduTransformPROTO.wrl: fired1 FIRE_SEQUENCE_SCRIPT timestamp ' + fireTime);",
+"\t}",
+"}",
+"",
+"function set_fired2 (value, timestamp)",
+"{",
+"\tif ((value == true) && (firstFired1 == false))",
+"\t{",
+"\t\tfirstFired2 = true;",
+"\t\ttracePrint ('EspduTransformPROTO.wrl: fired2 FIRE_SEQUENCE_SCRIPT timestamp ' + fireTime);",
+"\t}",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[EspduTransformTrace FireSequenceScript] ' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[EspduTransformTrace FireSequenceScript] ' + outputString);",
+"}"
+]
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"fired1",
+                                    "@fromNode":"TraceScript",
+                                    "@toField":"set_fired1",
+                                    "@toNode":"FireSequenceScript"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"fired2",
+                                    "@fromNode":"TraceScript",
+                                    "@toField":"set_fired2",
+                                    "@toNode":"FireSequenceScript"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"fireTime",
+                                    "@fromNode":"TraceScript",
+                                    "@toField":"fireTime",
+                                    "@toNode":"FireSequenceScript"
+                                  }
+                                },
+                                {
+                                  "#comment":"ROUTE firstFired1/2 to sound node?"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          {
+            "#comment":"Begin rendered scene"
+          },
+          {
+            "#comment":"Ensure that instances of this node are placed at the top-most level and are not translated away from the local world coordinates origin."
+          },
+          { "EspduTransform":
+            {
+              "@DEF":"EspduTrans",
+              "@address":"224.2.181.145",
+              "@marking":"Example PDU",
+              "@networkMode":"networkReader",
+              "@port":62040,
+              "@readInterval":10,
+              "@writeInterval":10,
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"moving viewpoint"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["EspduTransform body goes here"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@DEF":"FontJustifyMiddle",
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.6,0.6]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Typically place EspduTransformTrace as a child of corresponding EspduTransform so that outputs are positioned relatively."
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TraceTransform",
+              "-children":[
+                {
+                  "#comment":"EspduTransformTrace cannot be a direct child of EspduTransform or a directed-acyclic graph (DAG) error occurs"
+                },
+                {
+                  "#comment":"EspduTransformTrace must be translated for trace text to stay local to parent EspduTransform"
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"EspduTransformTrace",
+                    "fieldValue": [
+                      {
+                        "@name":"espduTransformNode",
+                        "-children":[
+                          { "EspduTransform":
+                            {
+                              "@USE":"EspduTrans"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"traceColor",
+                        "@value":[0.9,0.4,0.2]
+                      },
+                      {
+                        "@name":"traceFontSize",
+                        "@value":0.8
+                      },
+                      {
+                        "@name":"traceJava",
+                        "@value":true
+                      },
+                      {
+                        "@name":"localTraceEnabled",
+                        "@value":true
+                      }
+                    ]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"translation",
+                    "@fromNode":"EspduTrans",
+                    "@toField":"set_translation",
+                    "@toNode":"TraceTransform"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"rotation",
+                    "@fromNode":"EspduTrans",
+                    "@toField":"set_rotation",
+                    "@toNode":"TraceTransform"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

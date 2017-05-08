@@ -1,0 +1,282 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ChaffTubes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Generic Chaff Tubes"
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Josh Hansen"
+          },
+          {
+            "@name":"created",
+            "@content":"17 September 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 June 2012"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/DD963-Spruance-UnitedStates/ChaffTubes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/weaps/mk-36.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/weaps/mk-53.htm"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.5],
+                    "@translation":[0.25,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.5,
+                                "@radius":0.15
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.95,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.75],
+                    "@translation":[-0.25,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.5,
+                                "@radius":0.15
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.95,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.5],
+                    "@translation":[0.25,0,0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.5,
+                                "@radius":0.15
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.95,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.75],
+                    "@translation":[-0.25,0,0.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.5,
+                                "@radius":0.15
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.95,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.5],
+                    "@translation":[0.25,0,1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.5,
+                                "@radius":0.15
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.95,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.75],
+                    "@translation":[-0.25,0,1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.5,
+                                "@radius":0.15
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.95,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-0.75,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[1.5,0.2,2]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

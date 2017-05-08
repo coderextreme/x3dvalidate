@@ -1,0 +1,267 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ThrusterTechnadyne.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and Jeff Weekley"
+          },
+          {
+            "@name":"description",
+            "@content":"A thruster is a shrouded propeller used for propulsion or posture control."
+          },
+          {
+            "@name":"created",
+            "@content":"15 March 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/ThrusterTechnadyne.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                {
+                  "#comment":"Outer blue casing"
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@beginCap":false,
+                          "@creaseAngle":2,
+                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                          "@endCap":false,
+                          "@scale":[0.09,0.09,0.08,0.08,0.07,0.07,0.08,0.08,0.09,0.09],
+                          "@spine":[-0.08,0,0,0.08,0,0,0.08,0,0,-0.08,0,0,-0.08,0,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.7,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Screw and shaft"
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,1.57079],
+                          "@translation":[0.0281,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"SCREW_SHAFT",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"SCREW_APPEARANCE",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.226,0.197,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.0762,
+                                      "@radius":0.008,
+                                      "@top":false
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Motor",
+                                "@translation":[0,-0.1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.175,
+                                            "@radius":0.05
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.25,0.3,0.33]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,1.57079],
+                          "@translation":[-0.015,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"SHAFT_END_CAP",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"SCREW_APPEARANCE"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottom":false,
+                                      "@bottomRadius":0.008,
+                                      "@height":0.01
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"STARBOARD_BLADE",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,-0.39],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"SCREW_APPEARANCE"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@coordIndex":[0,1,2,3,4,5,6,7,-1,0,7,6,5,4,3,2,1,-1],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@DEF":"BLADE_COORDINATES",
+                                                  "@point":[0,0,-0.00508,0,0.02540,-0.02032,0,0.04572,-0.01524,0,0.05080,-0.00508,0,0.05080,0.00508,0,0.04572,0.01524,0,0.02540,0.02032,0,0,0.00508]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57079],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"STARBOARD_BLADE"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,3.14159267],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"STARBOARD_BLADE"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-1.57079],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"STARBOARD_BLADE"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NarragansettBayGeospatialCoordinateAxesNsew.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo, Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"16 June 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 June 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"X Y Z axis arrows and labels in Geospatial coordinate system, confirming correct NSEW alignment of terrain + bathymetry tiles."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/NarragansettBayRhodeIslandSmall/NarragansettBayGeospatialCoordinateAxesNsew.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Inline":
+            {
+              "@DEF":"NarragansettBaySmall",
+              "@url":["NarragansettBaySmall.x3d","https://savage.nps.edu/Savage/Locations/NarragansettBayRhodeIslandSmall/NarragansettBaySmall.x3d"]
+            }
+          },
+          {
+            "#comment":"This GeoLocation block shows how to geospatially reference regular nongeospatial shapes"
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[41.56722223554018,-71.30572987125981,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@scale":[1000,1000,1000],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"CoordinateAxesNSEW",
+                          "@url":["../../Basic/course/CoordinateAxesNSEW.x3d","CoordinateAxesNSEW.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@DEF":"ORIGIN",
+                    "@geoCoords":[41.5,-71.5,0],
+                    "@geoSystem":["GD"]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

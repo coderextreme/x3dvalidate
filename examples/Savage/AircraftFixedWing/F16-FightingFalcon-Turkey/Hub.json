@@ -1,0 +1,237 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Hub.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"The hub is used for front and rear wheels"
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"translator",
+            "@content":"Murat ONDER, LTJG, Turkish Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"19 July 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Hub.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@scale":[0.3,0.3,0.3],
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.571],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"inside_wheel_center",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.2,
+                                      "@radius":0.275
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,1.571],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"inside_wheel2",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.85,0.85,0.85]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.1
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment":"wheel volts"
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"volts",
+                          "@rotation":[1,0,0,1.571],
+                          "@translation":[0,0.48,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"volt",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.7,0.7,0.7]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.2,
+                                      "@radius":0.1
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.571],
+                          "@translation":[0.45,0.225,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"volt"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.571],
+                          "@translation":[0,-0.48,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"volt"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.571],
+                          "@translation":[-0.45,-0.225,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"volt"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.571],
+                          "@translation":[0.45,-0.225,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"volt"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.571],
+                          "@translation":[-0.45,0.225,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"volt"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

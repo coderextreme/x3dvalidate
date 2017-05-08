@@ -1,0 +1,206 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SuspensionSpring.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Suspension and Tires for the Highly Mobile Multi-purpose Wheeled Vehicle"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"17 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"17 December 2001"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/HMMWV/SuspensionSpring.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.66,0.66,0.88]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"HalfSpring",
+              "@scale":[0.25,0.25,0.25],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"OnceRound",
+                    "@scale":[1.25,1.25,1.25],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"Tan",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.7,0.7]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@convex":false,
+                                "@creaseAngle":1.57,
+                                "@crossSection":[0.20,0.00,0.192,-0.138,0.171,-0.171,0.138,-0.192,0.00,-0.20,-0.138,-0.192,-0.171,-0.171,-0.192,-0.138,-0.20,-0.00,-0.192,0.138,-0.171,0.171,-0.138,0.192,0.00,0.20,0.138,0.192,0.171,0.171,0.192,0.138,0.20,0.00],
+                                "@spine":[2.00,0.04,0.00,1.85,0.08,0.77,1.41,0.12,1.41,0.77,0.16,1.85,0.00,0.2,2.00,-0.77,0.24,1.85,-1.41,0.28,1.41,-1.85,0.32,0.77,-2.00,0.36,0.00,-1.85,0.4,-0.77,-1.41,0.44,-1.41,-0.77,0.48,-1.85,0.00,0.52,-2.00,0.77,0.56,-1.85,1.41,0.6,-1.41,1.85,0.64,-0.77,2.00,0.68,0.00]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0.64,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,1.28,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,1.92,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,2.56,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3.2,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3.84,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,4.48,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,5.12,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"OnceRound"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,2560 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geometry2D",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TrainingArea.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Complete Soccer Park with stadium, four full-size fields, and 120m x 130m training area with four futsal fields."
+          },
+          {
+            "@name":"creator",
+            "@content":"Capt Beth Welliver"
+          },
+          {
+            "@name":"created",
+            "@content":"13 March 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"Side Board artwork from www.ussoccer.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"Stadium Structure and Goal from Savage Archive, https://savage.nps.edu/Savage/Buildings/SoccerStadium/index.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SoccerComplex/TrainingArea.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[0],
+              "@groundColor":[0.160784,0.039216,0],
+              "@skyAngle":[0.1,0.15,1.309,1.571],
+              "@skyColor":[0.4,0.4,0.1,0.4,0.4,0.1,0,0.1,0.3,0,0.2,0.6,0.8,0.8,0.8]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"StartingView",
+              "@description":"At Entry Gate",
+              "@orientation":[0,1,0,1.57],
+              "@position":[385,2,-82.5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"ComplexOverview",
+              "@description":"Training Area and Stadium",
+              "@orientation":[0.1,1,0.1,-1.98],
+              "@position":[-150,65,-75]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Match Fields",
+              "@orientation":[0.1,1,0.1,-1.05],
+              "@position":[-150,65,-50]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Inside Training Area View One",
+              "@orientation":[0,1,0,-0.78],
+              "@position":[-60,2.5,63]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Inside Training Area View Two",
+              "@orientation":[0,1,0,2.44],
+              "@position":[55,3,-65]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Corner of Stadium",
+              "@orientation":[0,1,0,3.95],
+              "@position":[154,1.65,-38]
+            }
+          },
+          {
+            "#comment":"<Viewpoint DEF='SpinningStadium' description='Standing at Center Circle of Stadium' orientation='0 1 0 0' position='223 1.5 5'/>"
+          },
+          { "Viewpoint":
+            {
+              "@description":"Looking down into Stadium",
+              "@orientation":[0,1,0.2,2.35],
+              "@position":[334,77,-78]
+            }
+          },
+          {
+            "#comment":"<Viewpoint description='Above Stadium Across Complex' orientation='0.05 .8 .05 1.37' position='650 130 5'/>"
+          },
+          { "Viewpoint":
+            {
+              "@description":"Far Away Overview",
+              "@orientation":[0,1,0,1.57],
+              "@position":[750,130,-82.5]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"MasterTime",
+              "@cycleInterval":50
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"CameraRotation",
+              "@key":[0.0000,0.0667,0.0889,0.1111,0.1333,0.1556,0.2444,0.251864444444444,0.259284444444444,0.266704444444444,0.274124444444444,0.2815,0.288964444444444,0.296384444444444,0.303804444444444,0.311224444444444,0.3186,0.34,0.4300,0.4600,0.5175,0.5750,0.6325,0.6667,0.6937,0.7207,0.7556,0.8222,0.822422222222222,0.822622222222222,0.8889,1.0000],
+              "@keyValue":[0.00,1.00,0.00,1.57,0.00,1.00,0.00,0.8275,0.00,1.00,0.00,0.085,0.00,1.00,0.00,-0.6575,0.00,1.00,0.00,-1.98,0.10,1.00,0.00,-1.40,0.00,1.00,0.00,-0.78,0.00,1.00,0.00,-0.57066,0.00,1.00,0.00,-0.36132,0.00,1.00,0.00,-0.15198,0.00,1.00,0.00,0.0573599999999999,0.00,1.00,0.00,0.2667,0.00,1.00,0.00,0.47604,0.00,1.00,0.00,0.68538,0.00,1.00,0.00,0.89472,0.00,1.00,0.00,1.10406,0.00,1.00,0.00,1.3134,0.00,1.00,0.00,2.36,0.00,1.00,0.00,3.95,0.00,1.00,0.00,0.00,0.00,1.00,0.00,1.57,0.00,1.00,0.00,3.14,0.00,1.00,0.00,4.71,0.00,1.00,0.00,6.28,0,1,0.067,4.97,0,1,0.134,3.66,0,1,0.2,2.35,0.05,0.8,0.05,1.37,0.0333,0.867,0.0333,1.4367,0.0166,0.934,0.0166,1.5034,0.00,1.00,0.00,1.57,0.00,0.00,0.00,1.57]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"MasterTime",
+              "@toField":"set_fraction",
+              "@toNode":"CameraRotation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CameraRotation",
+              "@toField":"orientation",
+              "@toNode":"StartingView"
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"CameraPosition",
+              "@key":[0.0000,0.0222,0.1333,0.1422,0.1511,0.1600,0.1689,0.1778,0.2000,0.2444,0.2815,0.3186,0.3556,0.4300,0.4600,0.6667,0.8222,0.8500,0.8889,1.0000],
+              "@keyValue":[385.00,1.00,-82.50,385.00,2.5,-82.50,-112.00,8.00,-75.00,-116.60,14.40,-74.40,-121.20,20.80,-73.80,-125.80,27.20,-73.20,-130.40,33.60,-72.60,-135.00,40.00,-72.00,-150.00,65.00,-70.00,-60.00,2.00,63.00,-30.00,2.30,25.00,25.00,2.60,-25.00,55.00,3.00,-65.00,154.00,1.65,-38.00,223.00,1.50,5.00,223.00,1.50,5.00,334.00,77.00,-78.00,750.00,150.00,-82.50,750.00,150.00,-82.50,385.00,1.00,-82.50]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"MasterTime",
+              "@toField":"set_fraction",
+              "@toNode":"CameraPosition"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CameraPosition",
+              "@toField":"position",
+              "@toNode":"StartingView"
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@translation":[365,2,-80],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"Sign",
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TouchSign",
+                          "@description":"Touch sign to start tour"
+                        }
+                      },
+                      { "BooleanFilter":
+                        {
+                          "@DEF":"FilterSign"
+                        }
+                      },
+                      { "TimeTrigger":
+                        {
+                          "@DEF":"TriggerSign"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"TouchSign",
+                          "@toField":"set_boolean",
+                          "@toNode":"FilterSign"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"inputTrue",
+                          "@fromNode":"FilterSign",
+                          "@toField":"set_boolean",
+                          "@toNode":"TriggerSign"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"triggerTime",
+                          "@fromNode":"TriggerSign",
+                          "@toField":"startTime",
+                          "@toNode":"MasterTime"
+                        }
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"WholePole",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"Pole",
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":4,
+                                      "@radius":0.3,
+                                      "@solid":false
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.249999,
+                                            "@diffuseColor":[0.12549,0.12549,0.12549],
+                                            "@emissiveColor":[0.541176,0.541176,0.541176],
+                                            "@shininess":0.1,
+                                            "@specularColor":[0.52549,0.52549,0.52549]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@scale":[0.55,0.55,0.55],
+                                "@translation":[0,2.1,0],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["../SoccerStadium/SoccerBall.x3d","https://savage.nps.edu/Savage/Buildings/SoccerStadium/SoccerBall.x3d"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[5,0,0],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"WholePole"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[2.5,1.4,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.058824,0.098039,1],
+                                            "@emissiveColor":[0.078431,0.090196,1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[4.4,1.2,0.2]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,0.1],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-texture":
+                                              { "ImageTexture":
+                                                {
+                                                  "@url":["WelcomeSign.jpg","https://savage.nps.edu/Savage/Buildings/SoccerComplex/WelcomeSign.jpg"]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[4.38,1.18,0.05]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[175,-0.2,-80],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"GroundBox",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[550,0.01,450]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.901961,0.007843]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"TrainingArea",
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@DEF":"TrainingSurface",
+                          "@size":[120,0.1,130]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@DEF":"SportTurf",
+                                "@url":["blueTurf.jpg","https://savage.nps.edu/Savage/Buildings/SoccerComplex/blueTurf.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"OneTwentyBoundary",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[-40,1,65],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@DEF":"Sideboard",
+                                "@url":["SideBoards.x3d","https://savage.nps.edu/Savage/Buildings/SoccerComplex/SideBoards.x3d"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-20,1,65],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,65],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[20,1,65],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[40,1,65],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[60,1,65],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"OneTwentyBoundary"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"OneThirtyBoundary",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[-60,1,40],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[-60,1,20],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[-60,1,0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[-60,1,-20],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[-60,1,-40],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[-60,1,-60],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Sideboard"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"OneThirtyBoundary"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"GridLines",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"FiveByFiveGrid",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"FiveBoxEdge",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"Line",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,1,1],
+                                            "@emissiveColor":[0.5,0.5,0.5]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[-50,0.01,55,-40,0.01,55,-40,0.01,35,-50,0.01,35,-50,0.01,55]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"InsideLongLine",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Line"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[-45,0.01,35,-45,0.01,55]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"InsideShortLine",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Line"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[-50,0.01,40,-40,0.01,40]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,5],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"InsideShortLine"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,10],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"InsideShortLine"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TenByTenGrid",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"TenBoxEdge",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Line"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[-30,0.01,55,-10,0.01,55,-10,0.01,35,-30,0.01,35,-30,0.01,55]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"InsideTenGrid",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Line"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[-30,0.01,45,-10,0.01,45]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,1.57],
+                                "@translation":[-65,0.1,25],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"InsideTenGrid"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"FutsalField",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"FutsalBoundary",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Line"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[10,0.01,55,50,0.01,55,50,0.01,35,10,0.01,35,10,0.01,55]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"FutsalMidField",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Line"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                      "@spine":[30,0.01,55,30,0.01,35]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[30,0.01,45],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"FutsalCenterCircle",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Line"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Circle2D":
+                                          {
+                                            "@radius":3
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,-1.57],
+                                "@scale":[0.3,0.6,0.4],
+                                "@translation":[50,0,45],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@DEF":"FutsalGoal",
+                                      "@url":["../SoccerStadium/GoalPost.x3d","https://savage.nps.edu/Savage/Buildings/SoccerStadium/GoalPost.x3d"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,1.57],
+                                "@translation":[10,0,45],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"FutsalGoal"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0,-30],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"GridLines"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0,-60],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"GridLines"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0,-90],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"GridLines"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Fields",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-55,0,-215],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"FullField",
+                          "-children":[
+                            { "Group":
+                              {
+                                "@DEF":"PitchOutline",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[37.5,0,55],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Pitch",
+                                                  "@size":[85,0.01,120],
+                                                  "@solid":false
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"Grass",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0,0.419608,0.015686],
+                                                        "@emissiveColor":[0.2,0.321569,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"Lines",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[37.5,0.01,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Endline",
+                                                  "@size":[75,0.02,0.12],
+                                                  "@solid":false
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"LineStyle",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[1,1,1]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0.01,27.5],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Sideline",
+                                                  "@size":[0.12,0.02,55]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[75,0.01,27.5],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@USE":"Sideline"
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[17.34,0.01,8.25],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Side18",
+                                                  "@size":[0.12,0.02,16.5],
+                                                  "@solid":false
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[57.66,0.01,8.25],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@USE":"Side18"
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[37.5,0.01,16.5],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Top18",
+                                                  "@size":[40.32,0.02,0.12],
+                                                  "@solid":false
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"PenaltyArc",
+                                      "@rotation":[0,-1,0,0.93],
+                                      "@translation":[37.5,0.01,9.14],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@crossSection":[-0.05,0.05,0.05,0.05,0.05,-0.05,-0.05,-0.05],
+                                                  "@spine":[9.1440,0,0,9.1433,0,0.1163,9.1410,0,0.2326,9.1373,0,0.3489,9.1322,0,0.4651,9.1255,0,0.5812,9.1174,0,0.6972,9.1078,0,0.8131,9.0967,0,0.9289,9.0841,0,1.0446,9.0701,0,1.1600,9.0546,0,1.2753,9.0377,0,1.3904,9.0193,0,1.5052,8.9994,0,1.6198,8.9780,0,1.7342,8.9553,0,1.8482,8.9310,0,1.9620,8.9053,0,2.0755,8.8782,0,2.1886,8.8497,0,2.3013,8.8197,0,2.4137,8.7883,0,2.5257,8.7554,0,2.6373,8.7212,0,2.7484,8.6855,0,2.8591,8.6484,0,2.9694,8.6100,0,3.0792,8.5701,0,3.1884,8.5288,0,3.2972,8.4862,0,3.4054,8.4422,0,3.5131,8.3968,0,3.6202,8.3501,0,3.7267,8.3020,0,3.8326,8.2526,0,3.9379,8.2019,0,4.0426,8.1498,0,4.1466,8.0964,0,4.2499,8.0416,0,4.3525,7.9856,0,4.4545,7.9283,0,4.5557,7.8697,0,4.6562,7.8099,0,4.7559,7.7487,0,4.8549,7.6864,0,4.9530,7.6227,0,5.0504,7.5579,0,5.1470,7.4918,0,5.2427,7.4245,0,5.3376,7.3560,0,5.4316,7.2863,0,5.5247,7.2155,0,5.6169,7.1434,0,5.7083,7.0702,0,5.7987,6.9959,0,5.8881,6.9204,0,5.9766,6.8439,0,6.0642,6.7662,0,6.1508,6.6874,0,6.2363,6.6075,0,6.3209,6.5266,0,6.4044,6.4446,0,6.4869,6.3615,0,6.5684,6.2775,0,6.6488,6.1924,0,6.7281,6.1063,0,6.8063,6.0192,0,6.8834,5.9312,0,6.9594,5.8422,0,7.0343,5.7522,0,7.1081,5.6614,0,7.1807,5.5696,0,7.2521,5.4769,0,7.3223,5.3833,0,7.3914,5.2888,0,7.4593,5.1935,0,7.5260,5.0974,0,7.5914,5.0004,0,7.6556,4.9026,0,7.7186,4.8040,0,7.7804,4.7047,0,7.8409,4.6045,0,7.9001,4.5037,0,7.9580,4.4021,0,8.0146,4.2998,0,8.0700,4.1968,0,8.1240,4.0931,0,8.1768,3.9888,0,8.2282,3.8838,0,8.2782,3.7782,0,8.3270,3.6719,0,8.3743,3.5651,0,8.4204,3.4577,0,8.4650,3.3498,0,8.5083,3.2413,0,8.5503,3.1322,0,8.5908,3.0227,0,8.6299,2.9127,0,8.6677,2.8022,0,8.7040,2.6913,0,8.7390]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[28.34,0.01,2.75],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Side6",
+                                                  "@size":[0.12,0.02,5.5]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "@translation":[37.5,0.01,11],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Disk2D":
+                                                {
+                                                  "@DEF":"PenaltySpot",
+                                                  "@outerRadius":0.12
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[46.66,0.01,2.75],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@USE":"Side6"
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[37.5,0.01,5.5],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Top6",
+                                                  "@size":[18.32,0.02,0.12]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[37.5,0.01,55],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@DEF":"Midfield",
+                                                  "@size":[75,0.03,0.12]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LineStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,1,0,3.14],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "Arc2D":
+                                                      {
+                                                        "@DEF":"CornerArc",
+                                                        "@endAngle":0,
+                                                        "@startAngle":1.57
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"LineStyle"
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,1.57],
+                                      "@translation":[75,0.01,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Arc2D":
+                                                {
+                                                  "@USE":"CornerArc"
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Line"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,3.14],
+                                "@translation":[75,0.01,110],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"Lines"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[37.5,0.01,55],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"LineStyle"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Circle2D":
+                                          {
+                                            "@radius":9.15
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[37.5,0.01,55],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"LineStyle"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Disk2D":
+                                          {
+                                            "@DEF":"CenterSpot",
+                                            "@outerRadius":0.12
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"Goal",
+                                "-children":[
+                                  {
+                                    "#comment":"Inline the goal from Savage Archive"
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[37.5,0,0],
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"GoalPost",
+                                            "@url":["../SoccerStadium/GoalPost.x3d","https://savage.nps.edu/Savage/Buildings/SoccerStadium/GoalPost.x3d"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,3.14],
+                                      "@translation":[37.5,0,110],
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@USE":"GoalPost"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[45,0,-215],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"FullField"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[150,0,-215],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"FullField"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[255,0,-215],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"FullField"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@translation":[200,0,307],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"MainStadium",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.14],
+                          "@scale":[1.2,1,1.1],
+                          "@translation":[300,0,20],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["StadiumStructure.x3d","https://savage.nps.edu/Savage/Buildings/SoccerComplex/StadiumStructure.x3d"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[262,0,-35],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"FullField"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[277,0,20],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"OneTwentyBoundary"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[192,0,20],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"OneTwentyBoundary"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"EndlineBoards",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[342,1,80],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"Sideboard"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[322,1,80],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"Sideboard"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[302,1,80],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"Sideboard"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[282,1,80],
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@USE":"Sideboard"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.14],
+                          "@translation":[599,0,40.5],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"EndlineBoards"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Sidewalks",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"Asphault",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.058824,0.098039,0.101961],
+                                "@emissiveColor":[0.121569,0.2,0.2]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[-70,0.01,-82.5,350,0.01,-82.5,350,0.01,-250,-70,0.01,-250,-70,0.01,100,350,0.01,100,350,0.01,-82.5]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Asphault"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[350,0.01,-82.5,375,0.01,-82.5]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Asphault"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[350,0.01,-82.5,350,0.01,-250]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Asphault"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[60,0.01,63,85,0.01,63]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Asphault"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[60,0.01,-62,85,0.01,-62]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Asphault"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[-70,0.01,-62,-60,0.01,-62]
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Asphault"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[2.5,0.05,-2.5,0.05,-2.5,-0.05,2.5,-0.05],
+                          "@spine":[-70,0.01,62,-60,0.01,62]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Courtyard",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[110,0,5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"Concrete",
+                                      "@url":["concreteTwo.jpg","https://savage.nps.edu/Savage/Buildings/SoccerComplex/concreteTwo.jpg"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[100,0.1,100]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[100,-0.1,75],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"Concrete"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[30,0.1,45]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[100,-0.1,-61],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"Concrete"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[30,0.1,39]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-80,1.5,101],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"PineTrees",
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"Pine",
+                          "@url":["PineTrees.x3d","https://savage.nps.edu/Savage/Buildings/SoccerComplex/PineTrees.x3d"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"DoubleRowTrees",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"LongRowTrees",
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"RowTrees",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,91],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,81],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,71],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,61],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,51],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,41],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,31],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,21],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,11],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,1],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-11],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-21],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-31],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-41],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-51],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-61],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-71],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,-81],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,-170],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"RowTrees"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-5,0,5],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"LongRowTrees"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@translation":[165,0,30],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"DoubleRowTrees"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@translation":[165,0,-345],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"DoubleRowTrees"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"LastTrees",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"RemainingSideTrees",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[255,0,30],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,111],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,101],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,91],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,81],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,71],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,61],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,51],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,41],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,31],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,21],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-80,1.5,11],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[5,0,5],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"RemainingSideTrees"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,0,-375],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"LastTrees"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"DoubleFrontRow",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"FullFrontTrees",
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"FrontTrees",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,91],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,81],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,71],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,61],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,51],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,41],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,31],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,21],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,11],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,1],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-11],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-21],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-31],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-41],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-51],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-61],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[365,1.5,-71],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@USE":"PineTrees"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,-190],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"FrontTrees"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[5,0,5],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"FullFrontTrees"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

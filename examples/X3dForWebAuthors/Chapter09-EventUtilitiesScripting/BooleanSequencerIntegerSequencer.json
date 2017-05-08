@@ -1,0 +1,216 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BooleanSequencerIntegerSequencer.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Show synchronized use of BooleanSequencer and IntegerSequencer nodes for SpotLight enabled and Switch whichChoice control, respectively"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"6 September 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter09-EventUtilitiesScripting/BooleanSequencerIntegerSequencer.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":5,
+              "@loop":true
+            }
+          },
+          { "BooleanSequencer":
+            {
+              "@DEF":"OnOffSequencer",
+              "@key":[0,0.2,0.4,0.6,0.8,1],
+              "@keyValue":[true,false,true,false,true,true]
+            }
+          },
+          { "SpotLight":
+            {
+              "@DEF":"RedSpotLight",
+              "@color":[1,0.0,0.0],
+              "@location":[0,0,10]
+            }
+          },
+          {
+            "#comment":"Note no red or pink materials, only grey"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"OnOffSequencer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"OnOffSequencer",
+              "@toField":"on",
+              "@toNode":"RedSpotLight"
+            }
+          },
+          { "IntegerSequencer":
+            {
+              "@DEF":"ChildSequencer",
+              "@key":[0,0.2,0.4,0.6,0.8,1],
+              "@keyValue":[0,1,2,3,-1,0]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3.5,1,0],
+              "-children":[
+                { "Switch":
+                  {
+                    "@DEF":"ShapeSwitcher",
+                    "@whichChoice":-1,
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Child0",
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Grey child 0","headlight plus red light"]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"GreyAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.7,0.7,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"Child1",
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Grey child 1","headlight only"]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"GreyAppearance"
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"Child2",
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Grey child 2","headlight plus red light"]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"GreyAppearance"
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"Child3",
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Grey child 3","headlight only"]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"GreyAppearance"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"ChildSequencer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"ChildSequencer",
+              "@toField":"whichChoice",
+              "@toNode":"ShapeSwitcher"
+            }
+          }
+        ]
+    }
+  }
+}

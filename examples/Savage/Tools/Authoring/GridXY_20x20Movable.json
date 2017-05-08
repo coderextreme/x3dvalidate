@@ -1,0 +1,736 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"GridXY_20x20Movable.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"22 November 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 March 2016"
+          },
+          {
+            "@name":"description",
+            "@content":"Line grid authoring tool for precise measurement in 3D space: drag plane to move along Z axis, click numbers to hide grid. Oriented along XY plane, size 20m by 20m, default block size 1m by 1m."
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/GridsExample.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Movable.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"XY grid (0 0 30 relative)",
+              "@position":[0,0,30]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"XY grid (35 0 20 relative)",
+              "@orientation":[0,1,0,1.06],
+              "@position":[35,0,20]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"GridLocation",
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TextLabelTouchSensor",
+                          "@description":"select and hold to hide grid"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-0.5,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@DEF":"CenterText",
+                                            "@string":["origin"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@DEF":"LABEL_FONT",
+                                                  "@family":["SANS"],
+                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                  "@size":0.4
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"DefaultAppearance",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[10,10.5,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@DEF":"UpperRightText",
+                                            "@string":["10 10 0"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@USE":"LABEL_FONT"
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"DefaultAppearance"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-10,10.5,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@DEF":"UpperLeftText",
+                                            "@string":["-10 10 0"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@USE":"LABEL_FONT"
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"DefaultAppearance"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-10,-10.5,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@DEF":"LowerLeftText",
+                                            "@string":["-10 -10 0"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@USE":"LABEL_FONT"
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"DefaultAppearance"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[10,-10.5,0],
+                          "-children":[
+                            { "Billboard":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@DEF":"LowerRightText",
+                                            "@string":["10 -10 0"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@USE":"LABEL_FONT"
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"DefaultAppearance"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Switch":
+                  {
+                    "@DEF":"GridOnOffSwitch",
+                    "@whichChoice":0,
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57079],
+                          "-children":[
+                            { "PlaneSensor":
+                              {
+                                "@DEF":"GridSensor",
+                                "@description":"click and drag to move grid"
+                              }
+                            },
+                            { "Script":
+                              {
+                                "@DEF":"LineSensorAxisZ",
+                                "field": [
+                                  {
+                                    "@name":"set_translation",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFVec3f"
+                                  },
+                                  {
+                                    "@name":"translation_changed",
+                                    "@accessType":"outputOnly",
+                                    "@type":"SFVec3f"
+                                  }
+                                ],
+                                "#sourceText":[
+"ecmascript:",
+"",
+"// local-coordinates vertical Y is world-coordinates axis Z",
+"function set_translation (location, timeStamp)  {",
+"\ttranslation_changed [0] = 0;",
+"\ttranslation_changed [1] = 0;",
+"\ttranslation_changed [2] = location.y;",
+"//\tBrowser.print ('location=' + location + ', translation_changed=' + translation_changed); ",
+"}"
+]
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"LinesAlignedAlongZ",
+                                "-geometry":
+                                  { "IndexedLineSet":
+                                    {
+                                      "@colorIndex":[1,0,0,0,0,2,0,0,0,0,1,0,0,0,0,2,0,0,0,0,1],
+                                      "@colorPerVertex":false,
+                                      "@coordIndex":[1,22,-1,2,23,-1,3,24,-1,4,25,-1,5,26,-1,6,27,-1,7,28,-1,8,29,-1,9,30,-1,10,31,-1,11,32,-1,12,33,-1,13,34,-1,14,35,-1,15,36,-1,16,37,-1,17,38,-1,18,39,-1,19,40,-1,20,41,-1,21,42,-1],
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@DEF":"EndPoints",
+                                            "@point":[0,0,0,-10,0,10,-9,0,10,-8,0,10,-7,0,10,-6,0,10,-5,0,10,-4,0,10,-3,0,10,-2,0,10,-1,0,10,0,0,10,1,0,10,2,0,10,3,0,10,4,0,10,5,0,10,6,0,10,7,0,10,8,0,10,9,0,10,10,0,10,-10,0,-10,-9,0,-10,-8,0,-10,-7,0,-10,-6,0,-10,-5,0,-10,-4,0,-10,-3,0,-10,-2,0,-10,-1,0,-10,0,0,-10,1,0,-10,2,0,-10,3,0,-10,4,0,-10,5,0,-10,6,0,-10,7,0,-10,8,0,-10,9,0,-10,10,0,-10]
+                                          }
+                                        },
+                                      "-color":
+                                        { "Color":
+                                          {
+                                            "@color":[0.4,0.4,0.4,0.8,0.2,0,0.4,0.1,0.05]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"LinesAlignedAlongX",
+                                "@rotation":[0,1,0,1.57079],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"LinesAlignedAlongZ"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,-1.57079],
+                                "@translation":[10.5,0,0],
+                                "-children":[
+                                  { "Billboard":
+                                    {
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["X"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"LABEL_FONT"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"LABEL_APPEARANCE",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[1,1,0.3],
+                                                        "@emissiveColor":[0.33,0.33,0.1]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,-1.57079],
+                                "@translation":[0,0,-10.5],
+                                "-children":[
+                                  { "Billboard":
+                                    {
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["Y"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"LABEL_FONT"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LABEL_APPEARANCE"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"CenterTextScript",
+              "field": [
+                {
+                  "@name":"set_translation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"// eventOut 'value' is an MFString array to match type of destination Text node string field",
+"",
+"function initialize ( ) { ",
+"//\tBrowser.print ('Grid script initialized, print function works');",
+"//\ttrace ('Grid script initialized, trace function works');",
+"}",
+"",
+"function set_translation (location, timeStamp)  {",
+"\tnumberOfPlaces = 1000;",
+"\tvalue[0] = (Math.round (location.x * numberOfPlaces) / numberOfPlaces) + ' '",
+"                 + (Math.round (location.y * numberOfPlaces) / numberOfPlaces) + ' '",
+"                 + (Math.round (location.z * numberOfPlaces) / numberOfPlaces); ",
+"//\tBrowser.print ('location=' + location); ",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"UpperRightTextScript",
+              "field": [
+                {
+                  "@name":"set_translation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_translation (location, timeStamp)  {",
+"\tnumberOfPlaces = 1000;",
+"\tvalue[0] =  10 + ' ' +  10 + ' '",
+"                 + (Math.round (location.z * numberOfPlaces) / numberOfPlaces); ",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"UpperLeftTextScript",
+              "field": [
+                {
+                  "@name":"set_translation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_translation (location, timeStamp)  {",
+"\tnumberOfPlaces = 1000;",
+"\tvalue[0] =  -10 + ' ' + 10 + ' '",
+"                 + (Math.round (location.z * numberOfPlaces) / numberOfPlaces); ",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"LowerLeftTextScript",
+              "field": [
+                {
+                  "@name":"set_translation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_translation (location, timeStamp)  {",
+"\tnumberOfPlaces = 1000;",
+"\tvalue[0] = -10 + ' ' + -10 + ' '",
+"                 + (Math.round (location.z * numberOfPlaces) / numberOfPlaces); ",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"LowerRightTextScript",
+              "field": [
+                {
+                  "@name":"set_translation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_translation (location, timeStamp)  {",
+"\tnumberOfPlaces = 1000;",
+"\tvalue[0] = 10 + ' ' +  -10 + ' '",
+"                 + (Math.round (location.z * numberOfPlaces) / numberOfPlaces); ",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"SwitchTextOnOffScript",
+              "field": [
+                {
+                  "@name":"isTouched",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"touchChoice",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function isTouched (value, timeStamp)  {",
+"\tif (value == true)",
+"\t\ttouchChoice = -1;",
+"\telse\ttouchChoice =  0; ",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"GridSensor",
+              "@toField":"set_translation",
+              "@toNode":"LineSensorAxisZ"
+            }
+          },
+          {
+            "#comment":"Send changed position to text-construction scripts"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"LineSensorAxisZ",
+              "@toField":"set_translation",
+              "@toNode":"GridLocation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"LineSensorAxisZ",
+              "@toField":"set_translation",
+              "@toNode":"CenterTextScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"LineSensorAxisZ",
+              "@toField":"set_translation",
+              "@toNode":"UpperRightTextScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"LineSensorAxisZ",
+              "@toField":"set_translation",
+              "@toNode":"UpperLeftTextScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"LineSensorAxisZ",
+              "@toField":"set_translation",
+              "@toNode":"LowerLeftTextScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"LineSensorAxisZ",
+              "@toField":"set_translation",
+              "@toNode":"LowerRightTextScript"
+            }
+          },
+          {
+            "#comment":"Send text showing changed position to output Text nodes"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value",
+              "@fromNode":"CenterTextScript",
+              "@toField":"string",
+              "@toNode":"CenterText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value",
+              "@fromNode":"UpperRightTextScript",
+              "@toField":"string",
+              "@toNode":"UpperRightText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value",
+              "@fromNode":"UpperLeftTextScript",
+              "@toField":"string",
+              "@toNode":"UpperLeftText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value",
+              "@fromNode":"LowerLeftTextScript",
+              "@toField":"string",
+              "@toNode":"LowerLeftText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value",
+              "@fromNode":"LowerRightTextScript",
+              "@toField":"string",
+              "@toNode":"LowerRightText"
+            }
+          },
+          {
+            "#comment":"Enable/disable grid visibility based on user touching coordinate labels"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TextLabelTouchSensor",
+              "@toField":"isTouched",
+              "@toNode":"SwitchTextOnOffScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchChoice",
+              "@fromNode":"SwitchTextOnOffScript",
+              "@toField":"whichChoice",
+              "@toNode":"GridOnOffSwitch"
+            }
+          }
+        ]
+    }
+  }
+}

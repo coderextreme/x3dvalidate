@@ -1,0 +1,105 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"sky1.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Panoramic background for Universal Media, showing a brightly lit sky and high puffy clouds with the sun peeking through."
+          },
+          {
+            "@name":"creator",
+            "@content":"Gerardo Quintieri, copyright 1998"
+          },
+          {
+            "@name":"translator",
+            "@content":"Victor Spears, NPS MV4470 Image Synthesis Class"
+          },
+          {
+            "@name":"created",
+            "@content":"30 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 February 2009"
+          },
+          {
+            "@name":"rights",
+            "@content":"copyright.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.livinglinks.com/people/GQ/Welcome.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3dmedia.com/UniversalMedia"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/WorkingGroups/media"
+          },
+          {
+            "@name":"reference",
+            "@content":"indexOriginalPanoramas.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky1.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"UniversalMedia background texture panorama"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@avatarSize":[0.25,1.75,0.25]
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["urn:web3d:media:textures/panoramas/sky_1_back.jpg","sky_1_back.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/sky_1_back.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky_1_back.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/sky_1_back.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/sky_1_back.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/sky_1_back.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/sky_1_back.jpg"],
+              "@bottomUrl":["urn:web3d:media:textures/panoramas/sky_1_bottom.jpg","sky_1_bottom.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/sky_1_bottom.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky_1_bottom.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/sky_1_bottom.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/sky_1_bottom.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/sky_1_bottom.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/sky_1_bottom.jpg"],
+              "@frontUrl":["urn:web3d:media:textures/panoramas/sky_1_front.jpg","sky_1_front.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/sky_1_front.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky_1_front.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/sky_1_front.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/sky_1_front.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/sky_1_front.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/sky_1_front.jpg"],
+              "@groundColor":[0.4,0.2,0.3],
+              "@leftUrl":["urn:web3d:media:textures/panoramas/sky_1_left.jpg","sky_1_left.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/sky_1_left.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky_1_left.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/sky_1_left.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/sky_1_left.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/sky_1_left.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/sky_1_left.jpg"],
+              "@rightUrl":["urn:web3d:media:textures/panoramas/sky_1_right.jpg","sky_1_right.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/sky_1_right.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky_1_right.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/sky_1_right.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/sky_1_right.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/sky_1_right.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/sky_1_right.jpg"],
+              "@skyColor":[0.7,0.7,1],
+              "@topUrl":["urn:web3d:media:textures/panoramas/sky_1_top.jpg","sky_1_top.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/sky_1_top.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/sky_1_top.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/sky_1_top.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/sky_1_top.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/sky_1_top.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/sky_1_top.jpg"]
+            }
+          }
+        ]
+    }
+  }
+}

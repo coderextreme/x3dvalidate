@@ -1,0 +1,300 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SteeringWheel.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Steering wheel."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"12 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 December 2001"
+          },
+          {
+            "@name":"reference",
+            "@content":"Lightweight155mmHowitzer.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/HMMWV/SteeringWheel.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"Steering Wheel, Crank"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@position":[0,0,2.5]
+            }
+          },
+          { "LOD":
+            {
+              "@DEF":"Crank",
+              "@range":[25],
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"CircularHandle",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@beginCap":false,
+                                      "@creaseAngle":1.57,
+                                      "@crossSection":[0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0],
+                                      "@endCap":false,
+                                      "@scale":[0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4],
+                                      "@spine":[0.3,0,0,0.276,-0.114,0,0.213,-0.213,0,0.114,-0.276,0,0,-0.3,0,-0.114,-0.276,0,-0.213,-0.213,0,-0.276,-0.114,0,-0.3,0,0,-0.276,0.114,0,-0.213,0.213,0,-0.114,0.276,0,0,0.3,0,0.114,0.276,0,0.213,0.213,0,0.276,0.114,0,0.3,0,0]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"Black",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.1,0.1,0.1]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"CrankShaft",
+                          "@translation":[0,0,-0.05],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"Shaft",
+                                "@rotation":[1,0,0,1.57],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.02,
+                                            "@radius":0.08
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"Tan",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.8,0.7,0.7]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Top",
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[0,0,-0.1],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.2,
+                                            "@radius":0.05
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"TopBall",
+                                "@translation":[0,0,-0.01],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Sphere":
+                                          {
+                                            "@radius":0.05
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[0,0,-0.3],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.2,0.375,0.2]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Struts",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"StrutOne",
+                                "@rotation":[1,0,0,0.21],
+                                "@translation":[0,0.04,-0.05725],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@creaseAngle":3.14,
+                                            "@crossSection":[0.01,0,0.0092,-0.0038,0.0071,-0.0071,0.0038,-0.0092,0,-0.01,-0.0038,-0.0092,-0.0071,-0.0071,-0.0092,-0.0038,-0.01,0,-0.0092,0.0038,-0.0071,0.0071,-0.0038,0.0092,0,0.01,0.0038,0.0092,0.0071,0.0071,0.0092,0.0038,0.01,0],
+                                            "@scale":[4,2,2,2,2,2,2,2,2,4],
+                                            "@spine":[0,0,0,0,0.125,0,0,0.25,0,0,0.255,0,0,0.274,0]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"StrutTwo",
+                                "@rotation":[0,0,1,2.09],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"StrutOne"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"StrutThree",
+                                "@rotation":[0,0,-1,2.09],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"StrutOne"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "WorldInfo":
+                  {
+                    "@info":["null node"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

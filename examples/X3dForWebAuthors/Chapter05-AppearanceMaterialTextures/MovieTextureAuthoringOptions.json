@@ -1,0 +1,525 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MovieTextureAuthoringOptions.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Provide examples of helpful MovieTexture usage"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and MV3204 class"
+          },
+          {
+            "@name":"created",
+            "@content":"21 August 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"22 October 2015"
+          },
+          {
+            "@name":"subject",
+            "@content":"MovieTexture examples"
+          },
+          {
+            "@name":"Image",
+            "@content":"MovieTextureFigure.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"MovieTextureAuthoringOptions.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/MovieTextureAuthoringOptions.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"MovieTexture authoring options",
+              "@position":[0,0,18]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"TopGroupTextures",
+              "-children":[
+                {
+                  "#comment":"First row: standard definition"
+                },
+                { "Transform":
+                  {
+                    "@translation":[-6,3,0],
+                    "-children":[
+                      {
+                        "#comment":"Flat-surface movie, with fixed position and orientation"
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Movie #1, standard definition",
+                          "@position":[0,0,5]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"MovieShapeStandardDefinition",
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@DEF":"Quadrilateral320x240",
+                                "@coordIndex":[0,1,2,3],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-1.6,-1.2,0,1.6,-1.2,0,1.6,1.2,0,-1.6,1.2,0]
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@DEF":"FullImageMapping",
+                                      "@point":[0,0,1,0,1,1,0,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "MovieTexture":
+                                    {
+                                      "@DEF":"X3dQuipMovieStandardDefinition",
+                                      "@description":"click to start movie, standard definition",
+                                      "@repeatS":false,
+                                      "@repeatT":false,
+                                      "@url":["X3dQuipBrutzmanStandardDefinitionMPEG1.mpg","X3dQuipBrutzmanStandardDefinitionMPEG1.mov","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionMPEG1.mpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionMPEG1.mov"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3,0],
+                    "-children":[
+                      {
+                        "#comment":"movie under a Billboard to always face user"
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Billboarded movie #2 offset view location, standard definition",
+                          "@orientation":[0,1,0,0.8],
+                          "@position":[4,0,4]
+                        }
+                      },
+                      { "Billboard":
+                        {
+                          "@axisOfRotation":[0,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"MovieShapeStandardDefinition"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"MovieTouchStandardDefinition",
+                    "@description":"click to start movie, standard definition"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"MovieTouchStandardDefinition",
+                    "@toField":"startTime",
+                    "@toNode":"X3dQuipMovieStandardDefinition"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TopGroupTextureLaunch",
+              "@translation":[6,3,0],
+              "-children":[
+                {
+                  "#comment":"Launch movie into external browser"
+                },
+                { "Viewpoint":
+                  {
+                    "@description":"Image #3 launches movie externally, standard definition",
+                    "@position":[0,0,5]
+                  }
+                },
+                { "Anchor":
+                  {
+                    "@description":"Click to launch in external browser, standard definition",
+                    "@parameter":["target=_blank"],
+                    "@url":["X3dQuipBrutzmanStandardDefinitionMPEG1.mpg","X3dQuipBrutzmanStandardDefinitionMPEG1.mov","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionMPEG1.mpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionMPEG1.mov"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"Quadrilateral320x240"
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@repeatS":false,
+                                      "@repeatT":false,
+                                      "@url":["X3dQuipBrutzmanStandardDefinitionInitialFrame.png","X3dQuipBrutzmanStandardDefinitionInitialFrame.gif","X3dQuipBrutzmanStandardDefinitionInitialFrame.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionInitialFrame.png","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionInitialFrame.gif","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanStandardDefinitionInitialFrame.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"CenterGroupText",
+              "@translation":[0,0.25,0],
+              "-children":[
+                {
+                  "#comment":"Text descriptions for user"
+                },
+                { "Transform":
+                  {
+                    "@translation":[-6,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Select to run","MovieTexture"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"TextAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.7,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Billboard":
+                  {
+                    "@axisOfRotation":[0,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Billboarded","MovieTexture"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"TextAppearance"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[6,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Select image","to launch"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"TextAppearance"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"BottomGroupTextures",
+              "-children":[
+                {
+                  "#comment":"Third row: high definition"
+                },
+                { "Transform":
+                  {
+                    "@translation":[-6,-3,0],
+                    "-children":[
+                      { "Viewpoint":
+                        {
+                          "@description":"Movie #4, high definition",
+                          "@position":[0,0,5]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"MovieShapeHighDefinition",
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@DEF":"Quadrilateral480x270",
+                                "@coordIndex":[0,1,2,3],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-2.4,-1.35,0,2.4,-1.35,0,2.4,1.35,0,-2.4,1.35,0]
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@USE":"FullImageMapping"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "MovieTexture":
+                                    {
+                                      "@DEF":"X3dQuipMovieHighDefinition",
+                                      "@description":"click to start movie, high definition",
+                                      "@repeatS":false,
+                                      "@repeatT":false,
+                                      "@url":["X3dQuipBrutzmanH264MPEG1Mash.mpg","X3dQuipBrutzmanH264.mov","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264MPEG1Mash.mpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264.mov"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-3,0],
+                    "-children":[
+                      {
+                        "#comment":"movie under a Billboard to always face user"
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Billboarded movie #5 offset view location, high definition",
+                          "@orientation":[0,1,0,0.8],
+                          "@position":[4,0,4]
+                        }
+                      },
+                      { "Billboard":
+                        {
+                          "@axisOfRotation":[0,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"MovieShapeHighDefinition"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"MovieTouchHighDefinition",
+                    "@description":"click to start movie, high definition"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"MovieTouchHighDefinition",
+                    "@toField":"startTime",
+                    "@toNode":"X3dQuipMovieHighDefinition"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"BottomGroupTextureLaunch",
+              "@translation":[6,-3,0],
+              "-children":[
+                {
+                  "#comment":"Launch movie into external browser"
+                },
+                { "Viewpoint":
+                  {
+                    "@description":"Image #6 launches movie externally, high definition",
+                    "@position":[0,0,5]
+                  }
+                },
+                { "Anchor":
+                  {
+                    "@description":"Click to launch in external browser, high definition",
+                    "@parameter":["target=_blank"],
+                    "@url":["X3dQuipBrutzmanH264MPEG1Mash.mpg","X3dQuipBrutzmanH264.mov","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264MPEG1Mash.mpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264.mov"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@USE":"Quadrilateral480x270"
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@repeatS":false,
+                                      "@repeatT":false,
+                                      "@url":["X3dQuipBrutzmanH264InitialFrame.png","X3dQuipBrutzmanH264InitialFrame.gif","X3dQuipBrutzmanH264InitialFrame.jpg","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264InitialFrame.png","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264InitialFrame.gif","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05-AppearanceMaterialTextures/X3dQuipBrutzmanH264InitialFrame.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Backdrop",
+              "@translation":[0,0,-3],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[22,16,0.5]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.501961,0.27451]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

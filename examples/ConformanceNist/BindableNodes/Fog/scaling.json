@@ -1,0 +1,306 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"scaling.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.nist.gov/vrml.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"
+          },
+          {
+            "@name":"creator",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/members.html"
+          },
+          {
+            "@name":"disclaimer",
+            "@content":"This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."
+          },
+          {
+            "@name":"info",
+            "@content":"Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"
+          },
+          {
+            "@name":"translator",
+            "@content":"Michael Kass NIST, Don Brutzman NPS"
+          },
+          {
+            "@name":"translated",
+            "@content":"21 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Test Transform scaling effect on Fog visibility. This world contains two Viewpoint nodes, residing in two seperate Transforms. One Viewpoint is contained in a Transform with a scale of 1 1 1. A second Viewpoint is contained in a Transform with a scale of (.01 .01 .01). Indicating the Text geometry associated with each Viewpoint places the viewer in that Viepoints local coordinate system. A single Fog node with a visibilityLimit of 40 meters, and Box geometry exist in the root Transform. Indicating the appropriate Text geometry with the pointing device moves the Viewpoint to either of the two Transforms local coordinate systems. As a result: indicating the left Text geometry places the Viewpoint at a distance of 20 meters from the Box, while indicating the right Text places the Viewpoint in a local coordinate system where the viewer is 2000 meters from the Box. Hence, indicating the left Text results in a half-fogged Box, while indicating the right Text renderes a fully-fogged Box."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Fog/scaling.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@DEF":"DUMMYVIEW",
+              "@description":"initial view",
+              "@position":[0,0,20]
+            }
+          },
+          { "Fog":
+            {
+              "@DEF":"DUMMYFOG"
+            }
+          },
+          { "Fog":
+            {
+              "@DEF":"REDFOG",
+              "@color":[1,0,0],
+              "@visibilityRange":40
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[6,6,2]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-10,2.5,2],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TOUCH1",
+                    "@description":"touch for close range"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["scale = 1 1 1","(distance = 20)"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4.2,2.5,2],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"TOUCH2",
+                    "@description":"touch for far range"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["scale = .01 .01 .01","(distance = 2000)"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"VIEW1",
+                    "@description":"1-to-1 scale view",
+                    "@position":[0,0,20]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[0.01,0.01,0.01],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"VIEW2",
+                    "@description":"1-to-100 scale view",
+                    "@position":[0,0,2000]
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"STACKSCRIPT",
+              "@directOutput":true,
+              "@url":["scaling.js","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Fog/scaling.js"],
+              "field": [
+                {
+                  "@name":"redfog",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Fog":
+                      {
+                        "@USE":"REDFOG"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"view1",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Viewpoint":
+                      {
+                        "@USE":"VIEW1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"view2",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Viewpoint":
+                      {
+                        "@USE":"VIEW2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"smallScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"largeScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"TOUCH1",
+              "@toField":"largeScale",
+              "@toNode":"STACKSCRIPT"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"TOUCH2",
+              "@toField":"smallScale",
+              "@toNode":"STACKSCRIPT"
+            }
+          }
+        ]
+    }
+  }
+}

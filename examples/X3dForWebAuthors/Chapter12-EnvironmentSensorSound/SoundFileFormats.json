@@ -1,0 +1,753 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SoundFileFormats.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Provide a test scene for sound files using various audio formats."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"10 November 2013"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"Image",
+            "@content":"SoundFileFormats.png"
+          },
+          {
+            "@name":"Sound",
+            "@content":"audio/Testing123stereo.wav"
+          },
+          {
+            "@name":"Sound",
+            "@content":"audio/Testing123stereo.aiff"
+          },
+          {
+            "@name":"Sound",
+            "@content":"audio/Testing123stereo.mp3"
+          },
+          {
+            "@name":"Sound",
+            "@content":"audio/Testing123original.wav"
+          },
+          {
+            "@name":"Sound",
+            "@content":"Reunion by Marc Sabatella, distributed with MuseScore"
+          },
+          {
+            "@name":"Sound",
+            "@content":"audio/Reunion_Example.mid"
+          },
+          {
+            "@name":"requires",
+            "@content":"File type requirements, http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/sound.html#AudioClip"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D audio formats test"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/SoundFileFormats.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"ZOOM H2next Handy Recorder, http://www.zoom.co.jp/products/h2n"
+          },
+          {
+            "@name":"generator",
+            "@content":"Audacity, http://audacity.sourceforge.net"
+          },
+          {
+            "@name":"generator",
+            "@content":"MuseScore, http://musescore.org"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.2,0.2,0.2]
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "Transform":
+            {
+              "@DEF":"WavPlay",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[-4,0.5,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"WavTextClickedSensor",
+                    "@description":"Play file via Sound/AudioClip: Testing123stereo.wav"
+                  }
+                },
+                { "Sound":
+                  {
+                    "@maxBack":100,
+                    "@maxFront":100,
+                    "@minBack":20,
+                    "@minFront":20,
+                    "-children":[
+                      {
+                        "#comment":"Make sure the sound source AudioClip is audible at the user location"
+                      }
+                    ],
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"Testing123stereoWavAudioClip",
+                          "@description":"Playing Testing123stereo.wav",
+                          "@url":["audio/Testing123stereo.wav","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Testing123stereo.wav"]
+                        }
+                      }
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"WavTextClickedSensor",
+                    "@toField":"startTime",
+                    "@toNode":"Testing123stereoWavAudioClip"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Testing123stereo.wav"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@DEF":"MessageFont",
+                                "@family":["SANS"],
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"GreenAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TextClickSurface",
+                    "@scale":[5,0.5,1],
+                    "@translation":[0,0.3,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,1,2,3,-1],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[1,1,0,1,-1,0,-1,-1,0,-1,1,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@transparency":1
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"WavLaunch",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[-4,-0.1,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"Launch audio file in Web browser: Testing123stereo.wav",
+                    "@parameter":["target=_blank"],
+                    "@url":["audio/Testing123stereo.wav","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Testing123stereo.wav"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["(launch)"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"MessageFont"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"GreenAppearance"
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"TextClickSurface"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "Transform":
+            {
+              "@DEF":"Mp3Play",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[0,0.5,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"Mp3TextClickedSensor",
+                    "@description":"Play file via Sound/AudioClip: Testing123stereo.mp3"
+                  }
+                },
+                { "Sound":
+                  {
+                    "@maxBack":100,
+                    "@maxFront":100,
+                    "@minBack":20,
+                    "@minFront":20,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"Testing123stereoMp3AudioClip",
+                          "@description":"Play file via Sound/AudioClip: Testing123stereo.mp3",
+                          "@url":["audio/Testing123stereo.mp3","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Testing123stereo.mp3"]
+                        }
+                      }
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"Mp3TextClickedSensor",
+                    "@toField":"startTime",
+                    "@toNode":"Testing123stereoMp3AudioClip"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Testing123stereo.mp3"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"MessageFont"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"TurquoiseAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.156863,0.878431,0.815686]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"TextClickSurface"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Mp3Launch",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[0,-0.1,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"Launch audio file in Web browser: Testing123stereo.mp3",
+                    "@parameter":["target=_blank"],
+                    "@url":["audio/Testing123stereo.mp3","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Testing123stereo.mp3"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["(launch)"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"MessageFont"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"TurquoiseAppearance"
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"TextClickSurface"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "Transform":
+            {
+              "@DEF":"MidiPlay",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[0,-2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"MidiTextClickedSensor",
+                    "@description":"Play file via Sound/AudioClip: Reunion_Example.mid"
+                  }
+                },
+                { "Sound":
+                  {
+                    "@maxBack":100,
+                    "@maxFront":100,
+                    "@minBack":20,
+                    "@minFront":20,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"Testing123stereoMidiAudioClip",
+                          "@description":"Play file via Sound/AudioClip: Reunion_Example.mid",
+                          "@url":["audio/Reunion_Example.mid","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Reunion_Example.mid"]
+                        }
+                      }
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"MidiTextClickedSensor",
+                    "@toField":"startTime",
+                    "@toNode":"Testing123stereoMidiAudioClip"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Reunion_Example.mid"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"MessageFont"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"TurquoiseAppearance"
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"TextClickSurface"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"MidiLaunch",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[0,-2.6,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"Launch audio file in Web browser: Reunion_Example.mid",
+                    "@parameter":["target=_blank"],
+                    "@url":["audio/Reunion_Example.mid","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Reunion_Example.mid"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["(launch)"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"MessageFont"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"TurquoiseAppearance"
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"TextClickSurface"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "Transform":
+            {
+              "@DEF":"AiffPlay",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[4,0.5,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"AiffTextClickedSensor",
+                    "@description":"Play file via Sound/AudioClip: Testing123stereo.aiff"
+                  }
+                },
+                { "Sound":
+                  {
+                    "@maxBack":100,
+                    "@maxFront":100,
+                    "@minBack":20,
+                    "@minFront":20,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"Testing123stereoAiffAudioClip",
+                          "@description":"Play file via Sound/AudioClip: Testing123stereo.aiff",
+                          "@url":["audio/Testing123stereo.aiff","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Testing123stereo.aiff"]
+                        }
+                      }
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"AiffTextClickedSensor",
+                    "@toField":"startTime",
+                    "@toNode":"Testing123stereoAiffAudioClip"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Testing123stereo.aiff"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"MessageFont"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"AmberAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.760784,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"TextClickSurface"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"AiffLaunch",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[4,-0.1,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"Launch audio file in Web browser: Testing123stereo.aiff",
+                    "@parameter":["target=_blank"],
+                    "@url":["audio/Testing123stereo.aiff","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/audio/Testing123stereo.aiff"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["(launch)"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"MessageFont"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"AmberAppearance"
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@USE":"TextClickSurface"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"============================================================"
+          },
+          { "Transform":
+            {
+              "@DEF":"HeaderBox",
+              "@translation":[0,2,-0.1],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[12,1,0.1]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1],
+                                "@transparency":0.75
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"WavRequired",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[-4,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Required Support"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"MessageFont"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"GreenAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Mp3Recommended",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[0,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Recommended Support"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"MessageFont"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"TurquoiseAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"AiffOptional",
+              "@scale":[0.4,0.4,0.4],
+              "@translation":[4,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Optional Support"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"MessageFont"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"AmberAppearance"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

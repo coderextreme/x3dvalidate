@@ -1,0 +1,256 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"LoadSensor.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple test of LoadSensor node"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"17 July 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 January 2011"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright Don Brutzman and Leonard Daly 2008"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D LoadSensor example"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/LoadSensor.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@DEF":"ViewAll",
+              "@description":"LoadSensor test",
+              "@position":[0,0,12]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"HelloWorld",
+              "@url":["../HelloWorld.x3d","http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"]
+            }
+          },
+          { "LoadSensor":
+            {
+              "@DEF":"InlineLoadSensor",
+              "@timeOut":5,
+              "-watchList":[
+                { "Inline":
+                  {
+                    "@USE":"HelloWorld"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"PivotTextSigns",
+              "@translation":[0,3,0],
+              "-children":[
+                {
+                  "#comment":"First sign indicates waiting..."
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@length":[0],
+                          "@string":["LoadSensor waiting for HelloWorld scene..."],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.7,
+                                "@style":"ITALIC"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0.878431,0.262745,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Second sign indicates completed, initially rotated 90 degrees out of view"
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@length":[0],
+                                "@string":["LoadSensor reports HelloWorld scene loading complete."],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.7,
+                                      "@style":"ITALIC"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@emissiveColor":[0,0.278431,0.027451]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"SignRotationInterpolator",
+              "@key":[0,1],
+              "@keyValue":[0,1,0,0,0,1,0,-1.57]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"SignRotationClock",
+              "@cycleInterval":0.8
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"loadTime",
+              "@fromNode":"InlineLoadSensor",
+              "@toField":"set_startTime",
+              "@toNode":"SignRotationClock"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"SignRotationClock",
+              "@toField":"set_fraction",
+              "@toNode":"SignRotationInterpolator"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"SignRotationInterpolator",
+              "@toField":"set_rotation",
+              "@toNode":"PivotTextSigns"
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"TraceScript",
+              "field": [
+                {
+                  "@name":"eventLoaded",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"loadTimeEvent",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"function eventLoaded (value)",
+"{",
+"\tBrowser.println ('InlineLoadSensor isLoaded=' + value);",
+"}",
+"function loadTimeEvent (value)",
+"{",
+"\tBrowser.println ('InlineLoadSensor loadTime=' + value);",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isLoaded",
+              "@fromNode":"InlineLoadSensor",
+              "@toField":"eventLoaded",
+              "@toNode":"TraceScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"loadTime",
+              "@fromNode":"InlineLoadSensor",
+              "@toField":"loadTimeEvent",
+              "@toNode":"TraceScript"
+            }
+          }
+        ]
+    }
+  }
+}

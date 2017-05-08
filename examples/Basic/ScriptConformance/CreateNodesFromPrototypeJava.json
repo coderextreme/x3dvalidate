@@ -1,0 +1,124 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CreateNodesFromPrototypeJava.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This example shows creation of nodes from a prototype"
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D Specification"
+          },
+          {
+            "@name":"translated",
+            "@content":"23 February 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 November 2011"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Java Script Authoring Interface (SAI)"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/CreateNodesFromPrototypeJava.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-19777-2-X3DLanguageBindings-Java/Part2/examples.html#CreateNodesFromAPrototype"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"ColoredSphere",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"color",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0.0,0.0,0.0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"diffuseColor",
+                                            "@protoField":"color"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                        "-geometry":
+                          { "Sphere":
+                            {
+                            }
+                          }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"SC",
+              "@url":["SAIExample5.class","http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/SAIExample5.class"]
+            }
+          }
+        ]
+    }
+  }
+}

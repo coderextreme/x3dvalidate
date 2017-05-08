@@ -1,0 +1,359 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure30.3ScriptSoundActivate.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 30.3, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch30/30fig03.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"29 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"7 October 2016"
+          },
+          {
+            "@name":"description",
+            "@content":"A pair of filter scripts used to create a toggle on-off switch."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter30-Scripts/Figure30.3ScriptSoundActivate.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"toggle sound by clicking ball"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"move left spatialize right",
+              "@position":[-5,0,10]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"move right spatialize left",
+              "@position":[5,0,10]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"outside maximum attenuation ellipsoid",
+              "@position":[0,0,30]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["NONE"]
+            }
+          },
+          {
+            "#comment":"Background nodes are usually best placed at the top of the scene since they have global effect and are bindable nodes."
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.5,0.25,0.2,0.6,0.6,0.2],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[1,0,0,1,0.4,0,1,1,0]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"Touch",
+                    "@description":"touch to toggle audio"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.3,0.3]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Sound":
+                  {
+                    "@maxBack":15,
+                    "@maxFront":15,
+                    "@minBack":5,
+                    "@minFront":5,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"Audio",
+                          "@description":"willow1",
+                          "@loop":true,
+                          "@url":["../Chapter24-Sound/willow1.wav","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter24-Sound/willow1.wav"]
+                        }
+                      }
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"ToggleScript",
+                    "field": [
+                      {
+                        "@name":"toggle",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"state",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFBool",
+                        "@value":true
+                      },
+                      {
+                        "@name":"stateTurnedTrue",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"stateTurnedFalse",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"// you can view the output of print statements in the VRML Console",
+"",
+"function toggle ( value, ts ) {",
+"  // only toggle on click (isActive true) not release (isActive false)",
+"  if ( value == false ) return;",
+"  if ( state == true )",
+"  {",
+"\tstate  = false;",
+"\tstateTurnedFalse = true;",
+"\tBrowser.print ('ToggleScript.state = ' + state + ', stateTurnedFalse = ' + true);",
+"  }",
+"  else",
+"  {",
+"\tstate  = true;",
+"\tstateTurnedTrue = true;",
+"\tBrowser.print ('ToggleScript.state = ' + state + ', stateTurnedTrue = ' + true);",
+"  }",
+"}"
+]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"TimeFilter",
+                    "field": [
+                      {
+                        "@name":"setStart",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"setStop",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"startEventTime",
+                        "@accessType":"outputOnly",
+                        "@type":"SFTime"
+                      },
+                      {
+                        "@name":"stopEventTime",
+                        "@accessType":"outputOnly",
+                        "@type":"SFTime"
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"",
+"function setStart ( value, timeStamp ) {",
+"\tstartEventTime = timeStamp;",
+"\tBrowser.print ('TimeFilter.setStart (' + value + '), startEventTime = ' + timeStamp);",
+"\tBrowser.print ('\n'); // newline",
+"}",
+"function setStop  ( value, timeStamp ) {",
+"\tstopEventTime  = timeStamp;",
+"\tBrowser.print ('TimeFilter.setStop  (' + value + '),  stopEventTime = ' + timeStamp);",
+"\tBrowser.print ('\n'); // newline",
+"}"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"Touch",
+                    "@toField":"toggle",
+                    "@toNode":"ToggleScript"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"stateTurnedTrue",
+                    "@fromNode":"ToggleScript",
+                    "@toField":"setStart",
+                    "@toNode":"TimeFilter"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"stateTurnedFalse",
+                    "@fromNode":"ToggleScript",
+                    "@toField":"setStop",
+                    "@toNode":"TimeFilter"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"startEventTime",
+                    "@fromNode":"TimeFilter",
+                    "@toField":"set_startTime",
+                    "@toNode":"Audio"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"stopEventTime",
+                    "@fromNode":"TimeFilter",
+                    "@toField":"set_stopTime",
+                    "@toNode":"Audio"
+                  }
+                },
+                {
+                  "#comment":"extra widget"
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,2.5,0],
+                    "-children":[
+                      {
+                        "#comment":"Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"
+                      },
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["toggle sound","by clicking ball"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@family":["SANS"],
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.8,
+                                      "@style":"BOLD"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Semitransparent sphere matching maxFront-MaxBack attenuation ellipsoid"
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"TransparentAppearance",
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.5,0,0],
+                          "@transparency":0.7
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Sphere":
+                  {
+                    "@radius":15
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

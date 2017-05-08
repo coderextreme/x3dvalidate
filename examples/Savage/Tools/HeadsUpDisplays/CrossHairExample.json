@@ -1,0 +1,297 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CrossHairExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example use of a heads-up display (HUD) crosshair showing center of screen, useful for assessing lookAt point."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 February 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"crosshair display"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"========================"
+          },
+          {
+            "#comment":"Copy this ExternProtoDeclare and ProtoInstance for use in another scene"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CrossHair",
+              "@appinfo":"CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point",
+              "@url":["../../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"],
+              "field": [
+                {
+                  "@name":"enabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether CrossHair prototype is enabled or not",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_enabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"control whether enabled/disabled",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"markerColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"color of CrossHair marker",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"size of CrossHair in meters",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"positionOffsetFromCamera",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"distance in front of HUD viewpoint",
+                  "@type":"SFVec3f"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"CrossHair",
+              "@DEF":"CrossHairInstance",
+              "fieldValue": [
+                {
+                  "@name":"enabled",
+                  "@value":true
+                },
+                {
+                  "@name":"markerColor",
+                  "@value":[1,0.5,0]
+                },
+                {
+                  "@name":"scale",
+                  "@value":[1,1,1]
+                },
+                {
+                  "@name":"positionOffsetFromCamera",
+                  "@value":[0,0,-6]
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================"
+          },
+          {
+            "#comment":"Test scene and background, to see that HUD remains fixed relative to viewpoint."
+          },
+          { "Viewpoint":
+            {
+              "@description":"walk and rotate to test heads-up display (HUD)"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"outside proximity box turns crosshair off",
+              "@position":[0,0,20]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@speed":10,
+              "@type":["FLY","ANY"]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.7,0.7,0.9]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@string":["Click text, zoom out/in,","or switch viewpoints to","toggle CrossHair HUD"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@justify":["MIDDLE","MIDDLE"]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.4,0.4,0.13]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"========================"
+          },
+          {
+            "#comment":"Turn CrossHair on/off depending on toggling Box touch"
+          },
+          { "TouchSensor":
+            {
+              "@DEF":"TouchBox",
+              "@description":"touch to toggle CrossHair"
+            }
+          },
+          { "BooleanToggle":
+            {
+              "@DEF":"TouchToggle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TouchBox",
+              "@toField":"set_boolean",
+              "@toNode":"TouchToggle"
+            }
+          },
+          {
+            "#comment":"TouchToggle toggle_changed should likely revert to TouchToggle toggle when inputOutput fields supported in Script, or native implementation provided."
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toggle_changed",
+              "@fromNode":"TouchToggle",
+              "@toField":"set_enabled",
+              "@toNode":"CrossHairInstance"
+            }
+          },
+          {
+            "#comment":"========================"
+          },
+          {
+            "#comment":"Turn CrossHair on/off depending on proximity to a target location"
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProximitySensor":
+                  {
+                    "@DEF":"ProximityBox",
+                    "@size":[21,21,21]
+                  }
+                },
+                { "BooleanTrigger":
+                  {
+                    "@DEF":"EnterProximityBox"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"enterTime",
+                    "@fromNode":"ProximityBox",
+                    "@toField":"set_triggerTime",
+                    "@toNode":"EnterProximityBox"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"triggerTrue",
+                    "@fromNode":"EnterProximityBox",
+                    "@toField":"set_enabled",
+                    "@toNode":"CrossHairInstance"
+                  }
+                },
+                { "BooleanTrigger":
+                  {
+                    "@DEF":"ExitProximityBox"
+                  }
+                },
+                { "BooleanFilter":
+                  {
+                    "@DEF":"ExitFilter"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"exitTime",
+                    "@fromNode":"ProximityBox",
+                    "@toField":"set_triggerTime",
+                    "@toNode":"ExitProximityBox"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"triggerTrue",
+                    "@fromNode":"ExitProximityBox",
+                    "@toField":"set_boolean",
+                    "@toNode":"ExitFilter"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"inputNegate",
+                    "@fromNode":"ExitFilter",
+                    "@toField":"set_enabled",
+                    "@toNode":"CrossHairInstance"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

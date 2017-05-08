@@ -1,0 +1,442 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Rendering",
+            "@level":5
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ClipPlaneExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Nicholas Polys, Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"20 February 2013"
+          },
+          {
+            "@name":"modified",
+            "@content":"5 July 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Illustrate use of two ClipPlane intersections across four sets of primitive geometry. Line indicators are outside the scope of the ClipPlane transformation hierarchy and so are not clipped."
+          },
+          {
+            "@name":"reference",
+            "@content":"ClipPlaneExample.x3d"
+          },
+          {
+            "@name":"Image",
+            "@content":"ClipPlaneExampleFront.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"ClipPlaneExampleOblique.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"ClipPlaneExampleOverhead.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"ClipPlaneExampleSide.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/CAD/ClipPlaneExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vivaty Studio"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"TODO Schematron error for orientation='0 0 0 0'"
+          },
+          { "Viewpoint":
+            {
+              "@description":"ClipPlanes front view",
+              "@position":[0,1,10]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"ClipPlanes oblique view",
+              "@orientation":[1,0,0,-0.851966],
+              "@position":[0,8,7]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"ClipPlanes overhead view",
+              "@orientation":[1,0,0,-1.570796],
+              "@position":[0,12,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"ClipPlanes side view",
+              "@orientation":[-0.03326,0.99889,0.03326,1.571904],
+              "@position":[15,1,0]
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"WhiteBackground",
+              "@groundColor":[1,1,1],
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"ClipPlaneGroup",
+              "-children":[
+                {
+                  "#comment":"ClipPlane nodes affect peers and children"
+                },
+                { "ClipPlane":
+                  {
+                    "@DEF":"ClipPlaneHorizontal"
+                  }
+                },
+                { "ClipPlane":
+                  {
+                    "@DEF":"ClipPlaneVertical",
+                    "@plane":[0,0,-1,0]
+                  }
+                },
+                {
+                  "#comment":"<TimeSensor DEF='timer' cycleInterval='13.000' loop='true' startTime='0.000'/> <ROUTE fromNode='timer' fromField='fraction_changed' toNode='timer_pos0' toField='set_fraction'/> <ROUTE fromNode='timer_pos0' fromField='value_changed' toNode='move' toField='set_translation'/>"
+                },
+                {
+                  "#comment":"Non-standard scripting for ClipPlane <PythonScript DEF=\"PS\" url=\"OpacityMapStyle.py\" /> <ROUTE fromNode='timer_pos0' fromField='value_changed' toNode='PS' toField='planeEquation'/> <ROUTE fromNode='PS' fromField='planeEquation' toNode='CP' toField='plane'/>"
+                },
+                { "Group":
+                  {
+                    "@DEF":"PrimitiveShapes",
+                    "-children":[
+                      { "WorldInfo":
+                        {
+                          "@info":["This Web3D Content was created with Vivaty Studio, a Web3D authoring tool","www.mediamachines.com"],
+                          "@title":"primitives"
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"dad_Box1",
+                          "@translation":[-3,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"Box1",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@DEF":"Red",
+                                            "@ambientIntensity":0.2,
+                                            "@diffuseColor":[1,0,0],
+                                            "@shininess":0.2
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@DEF":"GeoBox1",
+                                      "@solid":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"dad_Cylinder1",
+                          "@translation":[-1,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"Cylinder1",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@DEF":"Green",
+                                            "@ambientIntensity":0.2,
+                                            "@diffuseColor":[0,1,0],
+                                            "@shininess":0.2
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@DEF":"GeoCylinder1",
+                                      "@solid":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"dad_Cone1",
+                          "@translation":[1,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"Cone1",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@DEF":"Blue",
+                                            "@ambientIntensity":0.2,
+                                            "@diffuseColor":[0,0,1],
+                                            "@shininess":0.2
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@DEF":"GeoCone1",
+                                      "@solid":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"dad_Sphere1",
+                          "@translation":[3,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"Sphere1",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@DEF":"Shiny_Yellow",
+                                            "@ambientIntensity":0.2,
+                                            "@diffuseColor":[1,1,0],
+                                            "@shininess":0.1,
+                                            "@specularColor":[1,1,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@DEF":"GeoSphere1",
+                                      "@solid":false
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"dad_Light1",
+                          "@translation":[0,5,0],
+                          "-children":[
+                            { "PointLight":
+                              {
+                                "@DEF":"Light1"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"dad_Background1",
+                          "@translation":[-0.73213,4.14112,0],
+                          "-children":[
+                            { "Background":
+                              {
+                                "@DEF":"Background1",
+                                "@groundColor":[1,1,1],
+                                "@skyColor":[1,1,1]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3,0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"PrimitiveShapes"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Keep boundary lines outside of scope of the two clipping planes so that they can illustrate boundaries without being cut off"
+          },
+          { "Group":
+            {
+              "@DEF":"BoundaryLines",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"move",
+                    "@translation":[0,0.00001,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"PlaneOutlineHorizontal",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"BoundaryLineAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.2,
+                                      "@emissiveColor":[0.1,0.1,0.1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@coordIndex":[0,1,2,3,0,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[5,0,-2,5,0,2,-5,0,2,-5,0,-2]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "PositionInterpolator":
+                  {
+                    "@DEF":"timer_pos0",
+                    "@key":[0,0.5,1],
+                    "@keyValue":[0,2,0,0,-2,0,0,2,0]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,-1.578],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"move2",
+                          "@translation":[0,0.00001,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"PlaneOutlineVertical",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"BoundaryLineAppearance"
+                                    }
+                                  },
+                                "-children":[
+                                  {
+                                    "#comment":"also includes center line"
+                                  }
+                                ],
+                                "-geometry":
+                                  { "IndexedLineSet":
+                                    {
+                                      "@coordIndex":[0,1,2,3,0,-1,4,5,-1],
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[5,0,-2,5,0,4,-5,0,4,-5,0,-2,5,0,0,-5,0,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

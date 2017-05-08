@@ -1,0 +1,941 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestPositionFollower.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"X3D Follower example"
+          },
+          {
+            "@name":"creator",
+            "@content":"Herbert Stocker"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"18 April 2006"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 December 2011"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/test_PosFollower.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Stocker_06_Followers.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.hersto.com/Publications/Followers"
+          },
+          {
+            "@name":"requires",
+            "@content":"X3D version 3.2 or greater"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Follower Chaser Damper"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development, instantReality works but BS Contact fails silently"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/followers.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Followers/TestPositionFollower.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"TestPositionFollower",
+              "@fieldOfView":0.716,
+              "@position":[0.0,0.0,15.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["NONE"]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"PlaneSensorPosition",
+                    "@description":"touch to activate"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,-0.05],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.0333,
+                                      "@diffuseColor":[0.0,0.0,0.0],
+                                      "@emissiveColor":[0.177,0.19,0.208],
+                                      "@shininess":0.54
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[10.0,10.0,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TrObjectDirect",
+              "@scale":[0.8,0.8,0.8],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.0333,
+                                "@diffuseColor":[0.02,0.24,0.53],
+                                "@emissiveColor":[0.01,0.12,0.27],
+                                "@shininess":0.54,
+                                "@specularColor":[0.32,0.4,0.4]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@DEF":"GeomObject",
+                          "@radius":0.3
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"trackPoint_changed",
+              "@fromNode":"PlaneSensorPosition",
+              "@toField":"translation",
+              "@toNode":"TrObjectDirect"
+            }
+          },
+          { "Switch":
+            {
+              "@DEF":"SwObjectDampered",
+              "@whichChoice":0,
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"TrObjectDampered",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"AppObjectDampered",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.0333,
+                                      "@diffuseColor":[0.53,0.02,0.24],
+                                      "@emissiveColor":[0.27,0.01,0.12],
+                                      "@shininess":0.54,
+                                      "@specularColor":[0.4,0.32,0.4]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@USE":"GeomObject"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "PositionDamper":
+            {
+              "@DEF":"PositionDamperNode"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"trackPoint_changed",
+              "@fromNode":"PlaneSensorPosition",
+              "@toField":"set_destination",
+              "@toNode":"PositionDamperNode"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"PositionDamperNode",
+              "@toField":"translation",
+              "@toNode":"TrObjectDampered"
+            }
+          },
+          { "Switch":
+            {
+              "@DEF":"SwObjectFollowed",
+              "@whichChoice":0,
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"TrObjectFollowed",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"AppObjectFollowed",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.0333,
+                                      "@diffuseColor":[0.24,0.53,0.02],
+                                      "@emissiveColor":[0.12,0.27,0.01],
+                                      "@shininess":0.54,
+                                      "@specularColor":[0.4,0.4,0.32]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@USE":"GeomObject"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "PositionChaser":
+            {
+              "@DEF":"PositionChaserNode",
+              "@duration":1.5
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"trackPoint_changed",
+              "@fromNode":"PlaneSensorPosition",
+              "@toField":"set_destination",
+              "@toNode":"PositionChaserNode"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"PositionChaserNode",
+              "@toField":"translation",
+              "@toNode":"TrObjectFollowed"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ToggleButton",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"HottColor",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0.8,0.8,0.3]
+                    },
+                    {
+                      "@name":"initiallyOn",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"ColdColor",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0.2,0.2,0.0]
+                    },
+                    {
+                      "@name":"isOn",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@scale":[0.4,0.4,0.4],
+                        "-children":[
+                          { "TouchSensor":
+                            {
+                              "@DEF":"TouchPosition",
+                              "@description":"move ball to demonstrate PositionChaser2D, PositionDamper2D"
+                            }
+                          },
+                          { "Shape":
+                            {
+                              "@DEF":"ShRect",
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@DEF":"Mat",
+                                          "@ambientIntensity":0.04,
+                                          "@diffuseColor":[0.0,0.0,0.0],
+                                          "@shininess":0.11
+                                        }
+                                      }
+                                  }
+                                },
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,2,3,-1],
+                                    "-coord":
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-1,-1,0,1,-1,0,1,1,0,-1,1,0]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ScrToggleButton",
+                        "field": [
+                          {
+                            "@name":"TS_Touched",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"Color",
+                            "@accessType":"outputOnly",
+                            "@type":"SFColor"
+                          },
+                          {
+                            "@name":"isOn",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"ColdColor",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFColor"
+                          },
+                          {
+                            "@name":"Tau",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"initiallyOn",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"DamperSThere",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"HottColor",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFColor"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"isOn",
+                                "@protoField":"isOn"
+                              },
+                              {
+                                "@nodeField":"ColdColor",
+                                "@protoField":"ColdColor"
+                              },
+                              {
+                                "@nodeField":"initiallyOn",
+                                "@protoField":"initiallyOn"
+                              },
+                              {
+                                "@nodeField":"HottColor",
+                                "@protoField":"HottColor"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function DamperSThere()",
+"{",
+"    activate(initiallyOn);",
+"}",
+"",
+"function activate(a)",
+"{",
+"    isOn= a;",
+"    Tau=  a? .1 : .2;",
+"    Color= a? HottColor : ColdColor;",
+"}",
+"",
+"function set_id(i)",
+"{",
+"    id= i;",
+"}",
+"",
+"function TS_Touched()",
+"{",
+"    activate(!isOn);",
+"}"
+]
+                      }
+                    },
+                    { "ColorDamper":
+                      {
+                        "@DEF":"ColorDamperNode",
+                        "@order":1
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-5.7,4.0,0.0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"ToggleButton",
+                    "@DEF":"BtnDamper",
+                    "fieldValue": [
+                      {
+                        "@name":"HottColor",
+                        "@value":[0.8,0.03,0.36]
+                      },
+                      {
+                        "@name":"initiallyOn",
+                        "@value":true
+                      },
+                      {
+                        "@name":"ColdColor",
+                        "@value":[0.2,0.0080,0.09]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-8.0,3.9,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"AppLabels",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.0,0.0,0.0],
+                                "@emissiveColor":[0.8,0.8,0.8]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Damper"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@DEF":"FntLabels",
+                                "@family":["Arial","SANS"],
+                                "@size":0.5
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-5.7,2.8,0.0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"ToggleButton",
+                    "@DEF":"BtnChaser",
+                    "fieldValue": [
+                      {
+                        "@name":"HottColor",
+                        "@value":[0.36,0.8,0.03]
+                      },
+                      {
+                        "@name":"initiallyOn",
+                        "@value":true
+                      },
+                      {
+                        "@name":"ColdColor",
+                        "@value":[0.09,0.2,0.0080]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-8.0,2.7,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"AppLabels"
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Chaser"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@USE":"FntLabels"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"ScrBtnMgr",
+              "field": [
+                {
+                  "@name":"BtnChaserIsOn",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"WcDamper",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"WcChaser",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"BtnDamperIsOn",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function BtnDamperIsOn(on)",
+"{",
+"    WcDamper= on? 0:-1;",
+"}",
+"function BtnChaserIsOn(on)",
+"{",
+"    WcChaser= on? 0:-1;",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOn",
+              "@fromNode":"BtnDamper",
+              "@toField":"BtnDamperIsOn",
+              "@toNode":"ScrBtnMgr"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOn",
+              "@fromNode":"BtnChaser",
+              "@toField":"BtnChaserIsOn",
+              "@toNode":"ScrBtnMgr"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"WcDamper",
+              "@fromNode":"ScrBtnMgr",
+              "@toField":"whichChoice",
+              "@toNode":"SwObjectDampered"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"WcChaser",
+              "@fromNode":"ScrBtnMgr",
+              "@toField":"whichChoice",
+              "@toNode":"SwObjectFollowed"
+            }
+          },
+          { "Switch":
+            {
+              "@DEF":"SwDamperTrail",
+              "@whichChoice":0,
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"GrDamperTrail"
+                  }
+                }
+              ]
+            }
+          },
+          { "Switch":
+            {
+              "@DEF":"SwChaserTrail",
+              "@whichChoice":0,
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"GrChaserTrail"
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TmrTrail",
+              "@cycleInterval":0.020000000000000004,
+              "@loop":true
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"ScrTrailer",
+              "@directOutput":true,
+              "field": [
+                {
+                  "@name":"cShapeDamperTrailPoint",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "@USE":"AppObjectDampered"
+                            }
+                          },
+                        "-geometry":
+                          { "Sphere":
+                            {
+                              "@DEF":"GeomTrail",
+                              "@radius":0.1
+                            }
+                          }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"lastDamperPos",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0.0,0.0,0.0]
+                },
+                {
+                  "@name":"ChaserTrails",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFNode",
+                  "-children":[
+                    {
+                      "#comment":"no initialization nodes since this is a local field to hold content"
+                    }
+                  ]
+                },
+                {
+                  "@name":"cShapeChaserTrailPoint",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "@USE":"AppObjectFollowed"
+                            }
+                          },
+                        "-geometry":
+                          { "Sphere":
+                            {
+                              "@USE":"GeomTrail"
+                            }
+                          }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"DamperTrails",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFNode",
+                  "-children":[
+                    {
+                      "#comment":"no initialization nodes since this is a local field to hold content"
+                    }
+                  ]
+                },
+                {
+                  "@name":"GrChaserTrail",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Group":
+                      {
+                        "@USE":"GrChaserTrail"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"ChaserPos",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"cNumTrailPoints",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32",
+                  "@value":35
+                },
+                {
+                  "@name":"lastChaserPos",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0.0,0.0,0.0]
+                },
+                {
+                  "@name":"Tick",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"DamperPos",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"GrDamperTrail",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Group":
+                      {
+                        "@USE":"GrDamperTrail"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"    DamperTrails.length=",
+"    ChaserTrails.length= cNumTrailPoints;",
+"",
+"    for(var C= 0; C<cNumTrailPoints; C++ )",
+"    {",
+"        DamperTrails[C]= new SFNode('Transform{}');",
+"        ChaserTrails[C]= new SFNode('Transform{}');",
+"",
+"        DamperTrails[C].children[0]= cShapeDamperTrailPoint;",
+"        ChaserTrails[C].children[0]= cShapeChaserTrailPoint;",
+"    }",
+"",
+"    GrDamperTrail.children= DamperTrails;",
+"    GrChaserTrail.children= ChaserTrails;",
+"}",
+"function DamperPos(Pos)",
+"{",
+"    lastDamperPos= Pos;",
+"}",
+"function ChaserPos(Pos)",
+"{",
+"    lastChaserPos= Pos;",
+"}",
+"function Tick()",
+"{",
+"    for(var C= cNumTrailPoints - 1; C>0; C-- )",
+"    {",
+"        DamperTrails[C].translation= DamperTrails[  C - 1].translation;",
+"        ChaserTrails[C].translation= ChaserTrails[C - 1].translation;",
+"    }",
+"",
+"    DamperTrails[0].translation= lastDamperPos;",
+"    ChaserTrails[0].translation= lastChaserPos;",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"cycleTime",
+              "@fromNode":"TmrTrail",
+              "@toField":"Tick",
+              "@toNode":"ScrTrailer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation",
+              "@fromNode":"TrObjectDampered",
+              "@toField":"DamperPos",
+              "@toNode":"ScrTrailer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation",
+              "@fromNode":"TrObjectFollowed",
+              "@toField":"ChaserPos",
+              "@toNode":"ScrTrailer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"WcDamper",
+              "@fromNode":"ScrBtnMgr",
+              "@toField":"whichChoice",
+              "@toNode":"SwDamperTrail"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"WcChaser",
+              "@fromNode":"ScrBtnMgr",
+              "@toField":"whichChoice",
+              "@toNode":"SwChaserTrail"
+            }
+          }
+        ]
+    }
+  }
+}

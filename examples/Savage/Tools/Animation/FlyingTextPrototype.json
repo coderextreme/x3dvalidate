@@ -1,0 +1,651 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"FlyingTextPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype definition for a flying text message. Waypoints, time intervals, cycleInterval and text message can be overridden."
+          },
+          {
+            "@name":"creator",
+            "@content":"Murat Onder and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"2 June 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 February 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"FlyingTextExample.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/FlyingTextPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"FlyingText",
+              "@appinfo":"Visualize message transfer between two points as flying text",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"waypoints",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFVec3f",
+                      "@value":[0,0,0,0,1,0]
+                    },
+                    {
+                      "@name":"set_waypoints",
+                      "@accessType":"inputOnly",
+                      "@type":"MFVec3f"
+                    },
+                    {
+                      "@name":"timeIntervals",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFFloat",
+                      "@value":[1]
+                    },
+                    {
+                      "@name":"set_timeIntervals",
+                      "@accessType":"inputOnly",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"textMessage",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["default"]
+                    },
+                    {
+                      "@name":"set_textMessage",
+                      "@accessType":"inputOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"visible",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"set_visible",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"axisOfRotation",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"timeSensorEnabled",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"set_startTime",
+                      "@accessType":"inputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"stopTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"set_stopTime",
+                      "@accessType":"inputOnly",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"traceEnabled",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"textDiffuseColor",
+                      "@accessType":"inputOutput",
+                      "@type":"SFColor",
+                      "@value":[0.2,0.2,0.4]
+                    },
+                    {
+                      "@name":"fontStyle",
+                      "@accessType":"inputOutput",
+                      "@type":"SFNode",
+                      "-children":[
+                        { "FontStyle":
+                          {
+                            "@justify":["MIDDLE","MIDDLE"]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Billboard":
+                            {
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"axisOfRotation",
+                                      "@protoField":"axisOfRotation"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "@DEF":"TextMessageTransform",
+                                    "-children":[
+                                      { "Switch":
+                                        {
+                                          "@DEF":"TextVisibilitySwitch",
+                                          "@whichChoice":-1,
+                                          "-children":[
+                                            { "Shape":
+                                              {
+                                                "-geometry":
+                                                  { "Text":
+                                                    {
+                                                      "@DEF":"TextMessage",
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"fontStyle",
+                                                              "@protoField":"fontStyle"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  },
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "-material":
+                                                        { "Material":
+                                                          {
+                                                            "IS": {
+                                                                "connect": [
+                                                                  {
+                                                                    "@nodeField":"diffuseColor",
+                                                                    "@protoField":"textDiffuseColor"
+                                                                  }
+                                                                ]
+                                                            }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                            { "TouchSensor":
+                                              {
+                                                "@DEF":"Toucher",
+                                                "@description":"Touch to fly the text"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Group":
+                                  {
+                                    "@DEF":"TextAnimationGroup",
+                                    "-children":[
+                                      { "TimeSensor":
+                                        {
+                                          "@DEF":"Clock",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"loop",
+                                                  "@protoField":"loop"
+                                                },
+                                                {
+                                                  "@nodeField":"enabled",
+                                                  "@protoField":"timeSensorEnabled"
+                                                },
+                                                {
+                                                  "@nodeField":"startTime",
+                                                  "@protoField":"startTime"
+                                                },
+                                                {
+                                                  "@nodeField":"set_startTime",
+                                                  "@protoField":"set_startTime"
+                                                },
+                                                {
+                                                  "@nodeField":"stopTime",
+                                                  "@protoField":"stopTime"
+                                                },
+                                                {
+                                                  "@nodeField":"set_stopTime",
+                                                  "@protoField":"set_stopTime"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"touchTime",
+                                          "@fromNode":"Toucher",
+                                          "@toField":"set_startTime",
+                                          "@toNode":"Clock"
+                                        }
+                                      },
+                                      { "PositionInterpolator":
+                                        {
+                                          "@DEF":"TextAnimator"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"fraction_changed",
+                                          "@fromNode":"Clock",
+                                          "@toField":"set_fraction",
+                                          "@toNode":"TextAnimator"
+                                        }
+                                      },
+                                      { "ROUTE":
+                                        {
+                                          "@fromField":"value_changed",
+                                          "@fromNode":"TextAnimator",
+                                          "@toField":"set_translation",
+                                          "@toNode":"TextMessageTransform"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"AnimationScript",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"interpolatorNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "PositionInterpolator":
+                                      {
+                                        "@USE":"TextAnimator"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"textNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Text":
+                                      {
+                                        "@USE":"TextMessage"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"timeSensorNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "TimeSensor":
+                                      {
+                                        "@USE":"Clock"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"waypoints",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFVec3f"
+                                },
+                                {
+                                  "@name":"set_waypoints",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFVec3f"
+                                },
+                                {
+                                  "@name":"timeIntervals",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"set_timeIntervals",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"textMessage",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFString"
+                                },
+                                {
+                                  "@name":"set_textMessage",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFString"
+                                },
+                                {
+                                  "@name":"visible",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"set_visible",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"hideText",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"revealText",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"set_startTime",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"totalDuration",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFTime",
+                                  "@value":0
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"traceEnabled",
+                                      "@protoField":"traceEnabled"
+                                    },
+                                    {
+                                      "@nodeField":"waypoints",
+                                      "@protoField":"waypoints"
+                                    },
+                                    {
+                                      "@nodeField":"set_waypoints",
+                                      "@protoField":"set_waypoints"
+                                    },
+                                    {
+                                      "@nodeField":"timeIntervals",
+                                      "@protoField":"timeIntervals"
+                                    },
+                                    {
+                                      "@nodeField":"set_timeIntervals",
+                                      "@protoField":"set_timeIntervals"
+                                    },
+                                    {
+                                      "@nodeField":"textMessage",
+                                      "@protoField":"textMessage"
+                                    },
+                                    {
+                                      "@nodeField":"set_textMessage",
+                                      "@protoField":"set_textMessage"
+                                    },
+                                    {
+                                      "@nodeField":"visible",
+                                      "@protoField":"visible"
+                                    },
+                                    {
+                                      "@nodeField":"set_visible",
+                                      "@protoField":"set_visible"
+                                    },
+                                    {
+                                      "@nodeField":"set_startTime",
+                                      "@protoField":"set_startTime"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"   if ((waypoints.length - timeIntervals.length) == 1 )",
+"   {",
+"     set_textMessage(textMessage);",
+"     set_timeIntervals(timeIntervals);",
+"     set_waypoints(waypoints);",
+"   }",
+"   else",
+"   {",
+"     alwaysPrint('timeIntervals.length=' + timeIntervals.length + ' should be one less '",
+"                + 'than waypoints.length=' + waypoints.length);",
+"     alwaysPrint ('timeIntervals=' + timeIntervals);",
+"     alwaysPrint ('waypoints    =' + waypoints);",
+"   }",
+"   if (visible) revealText = true;",
+"   else           hideText = true;",
+"   tracePrint ('visible = ' + visible);",
+"}",
+"function set_textMessage(text)",
+"{",
+"   textNode.string = text;",
+"   tracePrint ('textNode.string = ' + textNode.string);",
+"}",
+"function set_waypoints(waypointsArray)",
+"{",
+"   interpolatorNode.keyValue = waypointsArray;",
+"   tracePrint ('interpolatorNode.keyValue = ' + interpolatorNode.keyValue);",
+"}",
+"function set_timeIntervals(intervals)",
+"{",
+"   tracePrint ('set_timeIntervals(' + timeIntervals + ')');",
+"   totalDuration = 0;",
+"   for(i = 0; i < timeIntervals.length; i++)",
+"   {",
+"      totalDuration = totalDuration + timeIntervals[i];",
+"   }",
+"   tracePrint ('totalDuration = ' + totalDuration);",
+"   timeSensorNode.cycleInterval = totalDuration;",
+"",
+"   interpolatorNode.key[0] = 0.0;",
+"   for (j = 0; j < timeIntervals.length; j++)",
+"   {",
+"      interpolatorNode.key[j+1] = interpolatorNode.key[j] + timeIntervals[j]/totalDuration;",
+"      tracePrint ('interpolatorNode.key[j] = ' + interpolatorNode.key[j]);",
+"   }",
+"   tracePrint ('interpolatorNode.key = ' + interpolatorNode.key);",
+"}",
+"function set_visible (value, timestamp)",
+"{",
+"\tvisible = value;",
+"\tif (visible) revealText = true;",
+"\telse           hideText = true;",
+"\ttracePrint ('visible = ' + visible);",
+"}",
+"function set_startTime (value, timestamp)",
+"{",
+"\ttracePrint ('set_startTime = ' + value);",
+"\tset_visible (true);  // ensure visible when activated",
+"\tinitialize ();       // ensure all computations up to date",
+"}",
+"function tracePrint(value)",
+"{",
+"   if (traceEnabled) alwaysPrint(value);",
+"}",
+"function alwaysPrint(value)",
+"{",
+"      if (textMessage.length > 1)",
+"\t       Browser.print ('[FlyingText ' + textMessage + '] ' + value + '\n');",
+"      else Browser.print ('[FlyingText] ' + value + '\n');",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "@DEF":"TextVisibilityGroup",
+                              "-children":[
+                                { "IntegerTrigger":
+                                  {
+                                    "@DEF":"HideTextTrigger"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"hideText",
+                                    "@fromNode":"AnimationScript",
+                                    "@toField":"set_boolean",
+                                    "@toNode":"HideTextTrigger"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"triggerValue",
+                                    "@fromNode":"HideTextTrigger",
+                                    "@toField":"whichChoice",
+                                    "@toNode":"TextVisibilitySwitch"
+                                  }
+                                },
+                                { "IntegerTrigger":
+                                  {
+                                    "@DEF":"RevealTextTrigger",
+                                    "@integerKey":0
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"revealText",
+                                    "@fromNode":"AnimationScript",
+                                    "@toField":"set_boolean",
+                                    "@toNode":"RevealTextTrigger"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"triggerValue",
+                                    "@fromNode":"RevealTextTrigger",
+                                    "@toField":"whichChoice",
+                                    "@toNode":"TextVisibilitySwitch"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================"
+          },
+          { "Anchor":
+            {
+              "@description":"FlyingText Example",
+              "@parameter":["target=_blank"],
+              "@url":["../../../Savage/Tools/Animation/FlyingTextExample.x3d","https://savage.nps.edu/Savage/Tools/Animation/FlyingTextExample.x3d","../../../Savage/Tools/Animation/FlyingTextExample.wrl","https://savage.nps.edu/Savage/Tools/Animation/FlyingTextExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["FlyingTextPrototype","defines a prototype","","Click text to see example scene","","(Text has Billboard style)"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.7
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.7,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,625 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AllVrml97Nodes.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 January 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"List all VRML nodes in a single nonrendering scene as a convenient simple test for translation programs. Used for early development of X3D-Edit and Xj3D."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/AllVrml97Nodes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@DEF":"WORLDINFO",
+              "@title":"VRML test scene: x3d/content/AllVrml97Nodes.wrl"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"DTD_TAGSET_CANDIDATES"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"Xj3D_BUGS_AND_ISSUES"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"Xj3D_FIXES"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"XEENA_BUGS_AND_ISSUES"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"XEENA_FIXES"
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"BACKGROUND",
+              "@groundColor":[0.0,0.0,0.0]
+            }
+          },
+          { "Fog":
+            {
+              "@DEF":"FOG"
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@DEF":"NAVIGATIONINFO",
+              "@type":["EXAMINE","WALK","ANY","FLY"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"VIEWPOINT"
+            }
+          },
+          { "Anchor":
+            {
+              "@DEF":"ANCHOR",
+              "-children":[
+                { "Billboard":
+                  {
+                    "@DEF":"Billboard",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_BOX",
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@DEF":"BOX"
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"APPEARANCE",
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"IMAGETEXTURE",
+                                      "@url":["../icons/cube.gif","http://www.web3d.org/x3d/content/examples/Basic/development/../icons/cube.gif"]
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"MATERIAL"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Collision":
+                  {
+                    "@DEF":"COLLISION",
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"PROXY_GROUP",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"PROXY_SHAPE",
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@DEF":"PROXY_BOX"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_CONE",
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@DEF":"CONE"
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"GROUP",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_CYLINDER",
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@DEF":"CYLINDER"
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Inline":
+                  {
+                    "@DEF":"INLINE",
+                    "@url":["inlineTestFileOne.wrl","inlineTestFileTwo.wrl","inlineTestFileEmbedding%20Blanks%20In%20Name.wrl"]
+                  }
+                },
+                { "Inline":
+                  {
+                    "@DEF":"INLINE_HELLO_WORLD",
+                    "@url":["HelloWorld.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/HelloWorld.wrl"]
+                  }
+                },
+                { "LOD":
+                  {
+                    "@DEF":"LOD",
+                    "@range":[1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_ELEVATIONGRID",
+                          "-geometry":
+                            { "ElevationGrid":
+                              {
+                                "@DEF":"ELEVATIONGRID",
+                                "@height":[1.0,2.0,3.0,4.0]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"APPEARANCE"
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_EXTRUSION",
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@DEF":"EXTRUSION",
+                                "@crossSection":[1.0,1.0,1.0,-1.0,-1.0,-1.0,-1.0,1.0,1.0,1.0],
+                                "@scale":[1.0,1.0,1.0,1.0],
+                                "@spine":[0.0,0.0,0.0,0.0,1.0,0.0]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"APPEARANCE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Switch":
+                  {
+                    "@DEF":"SWITCH",
+                    "@whichChoice":-1,
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_TEXTURETRANSFORM_INDEXEDFACESET",
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@DEF":"INDEXEDFACESET",
+                                "@colorIndex":[0,1,0,1],
+                                "@coordIndex":[0,1,2,3],
+                                "@normalIndex":[0,1,2,3],
+                                "@texCoordIndex":[0,1,2,3],
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@DEF":"COLOR",
+                                      "@color":[1.0,0.0,0.0,0.0,1.0,0.0]
+                                    }
+                                  },
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@DEF":"COORDINATE",
+                                      "@point":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0]
+                                    }
+                                  },
+                                "-normal":
+                                  { "Normal":
+                                    {
+                                      "@DEF":"NORMAL",
+                                      "@vector":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0]
+                                    }
+                                  },
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@DEF":"TEXTURECOORDINATE",
+                                      "@point":[0.1,0.1,0.9,0.1,0.9,0.9,0.1,0.9]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"APPEARANCE_TEXTURETRANSFORM",
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"IMAGETEXTURE"
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  },
+                                "-textureTransform":
+                                  { "TextureTransform":
+                                    {
+                                      "@DEF":"TEXTURETRANSFORM",
+                                      "@center":[0.5,0.5]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_INDEXEDLINESET",
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@DEF":"INDEXEDLINESET",
+                                "@colorIndex":[0,1,0,1],
+                                "@coordIndex":[0,1,2,3],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"COORDINATE"
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@USE":"COLOR"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"APPEARANCE"
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_POINTSET",
+                          "-geometry":
+                            { "PointSet":
+                              {
+                                "@DEF":"POINTSET",
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@USE":"COLOR"
+                                    }
+                                  },
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"COORDINATE"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"APPEARANCE"
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_MOVIETEXTURE",
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,1,2,3,-1],
+                                "@solid":false,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[0.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TRANSFORM",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_SPHERE",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@DEF":"SPHERE"
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"APPEARANCE"
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"SHAPE_TEXT",
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"TEXT",
+                                "@string":[" first line of text","second line of text"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@DEF":"FONTSTYLE"
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"APPEARANCE"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Sound":
+                  {
+                    "@DEF":"SOUND",
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"AUDIOCLIP",
+                          "@description":"AudioClip"
+                        }
+                      }
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"GROUP_LIGHTS",
+                    "-children":[
+                      { "DirectionalLight":
+                        {
+                          "@DEF":"DIRECTIONALLIGHT"
+                        }
+                      },
+                      { "PointLight":
+                        {
+                          "@DEF":"POINTLIGHT"
+                        }
+                      },
+                      { "SpotLight":
+                        {
+                          "@DEF":"SPOTLIGHT",
+                          "@beamWidth":1.570796,
+                          "@cutOffAngle":0.785398
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"GROUP_INTERPOLATORS",
+                    "-children":[
+                      { "ColorInterpolator":
+                        {
+                          "@DEF":"COLORINTERPOLATOR",
+                          "@key":[0.0],
+                          "@keyValue":[0.0,0.0,0.0]
+                        }
+                      },
+                      { "CoordinateInterpolator":
+                        {
+                          "@DEF":"COORDINATEINTERPOLATOR",
+                          "@key":[0.0],
+                          "@keyValue":[0.0,0.0,0.0]
+                        }
+                      },
+                      { "NormalInterpolator":
+                        {
+                          "@DEF":"NORMALINTERPOLATOR",
+                          "@key":[0.0],
+                          "@keyValue":[0.0,0.0,0.0]
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF":"ORIENTATIONINTERPOLATOR",
+                          "@key":[0.0],
+                          "@keyValue":[0.0,0.0,1.0,0.0]
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF":"POSITIONINTERPOLATOR",
+                          "@key":[0.0],
+                          "@keyValue":[0.0,0.0,0.0]
+                        }
+                      },
+                      { "ScalarInterpolator":
+                        {
+                          "@DEF":"SCALARINTERPOLATOR",
+                          "@key":[0.0],
+                          "@keyValue":[0.0]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"GROUP_SENSORS",
+                    "-children":[
+                      { "CylinderSensor":
+                        {
+                          "@DEF":"CYLINDERSENSOR"
+                        }
+                      },
+                      { "PlaneSensor":
+                        {
+                          "@DEF":"PLANESENSOR"
+                        }
+                      },
+                      { "ProximitySensor":
+                        {
+                          "@DEF":"PROXIMITYSENSOR"
+                        }
+                      },
+                      { "SphereSensor":
+                        {
+                          "@DEF":"SPHERESENSOR"
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"TIMESENSOR"
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TOUCHSENSOR"
+                        }
+                      },
+                      { "VisibilitySensor":
+                        {
+                          "@DEF":"VISIBILITYSENSOR"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"Xj3D_NODE_TRANSLATION_STATUS"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TOUCHSENSOR",
+              "@toField":"enabled",
+              "@toNode":"TOUCHSENSOR"
+            }
+          }
+        ]
+    }
+  }
+}

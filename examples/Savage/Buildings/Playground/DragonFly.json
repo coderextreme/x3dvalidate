@@ -1,0 +1,355 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"DragonFly.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Dragon Fly to fly in the playround with sound effect."
+          },
+          {
+            "@name":"creator",
+            "@content":"Kok Keng Ng"
+          },
+          {
+            "@name":"created",
+            "@content":"22 August 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"rights",
+            "@content":"You may reuse my creation without any constraint!"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/PlayGround/DragonFly.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"DRAGONFLYTx",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"DRAGONFLYBody",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,0,0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"EYE",
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.55
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.1,0.1,0.1]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,-0.5],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"EYE"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Sphere":
+                                                {
+                                                  "@radius":0.37
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"EYEApp",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.9,0.1,0.1]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,-1.575],
+                                            "@translation":[5,0,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "Cone":
+                                                      {
+                                                        "@bottomRadius":0.35,
+                                                        "@height":10
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"EYEApp"
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "-children":[
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Group":
+                              {
+                                "@DEF":"LEFTWings",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "@DEF":"WING",
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,1.575],
+                                                        "@scale":[5,0.000001,0.8],
+                                                        "@translation":[1.5,0,4.7],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-geometry":
+                                                                { "Sphere":
+                                                                  {
+                                                                    "@radius":1.2
+                                                                  }
+                                                                },
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[0.9,0.1,0.1],
+                                                                          "@transparency":0.8
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                }
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[2,0,0],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "@USE":"WING"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,3.1415],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"LEFTWings"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Sound":
+                  {
+                    "@maxBack":5,
+                    "@maxFront":5,
+                    "@minBack":0,
+                    "@minFront":0,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"WingSound",
+                          "@loop":true,
+                          "@url":["wings2.wav","https://savage.nps.edu/Savage/Buildings/PlayGround/wings2.wav"]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.575],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Dragon Fly (Top)",
+                    "@orientation":[1,0,0,-1.1],
+                    "@position":[0,3,1.2]
+                  }
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Dragon Fly (Side)",
+              "@orientation":[1,0,0,-0.87575],
+              "@position":[0,20,20]
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.25,0.5,0.95]
+            }
+          }
+        ]
+    }
+  }
+}

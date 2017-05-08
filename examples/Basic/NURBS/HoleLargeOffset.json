@@ -1,0 +1,266 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":4
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HoleLargeOffset.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A NurbsTrimmedSurface node rendering a square centered on the origin in the x-y plane; with sides 8 units length. A trimming curve is used to cut out a circle of radius 1 unit centered at the point (x,y)=(2,2) . Red (x), Green (y) and Blue (z) line segments represent the x-y-z unit axes."
+          },
+          {
+            "@name":"Image",
+            "@content":"HoleLargeOffset.jpg"
+          },
+          {
+            "@name":"creator",
+            "@content":"Vincent Marchetti"
+          },
+          {
+            "@name":"created",
+            "@content":"10 February 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 January 2014"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HoleLargeOffsetInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/HoleLargeOffsetXj3D.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.kshell.com/pages/trimmed_nurbs_demo"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/NURBS/HoleLargeOffset.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Python language scripting"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Hole Large Offset NurbsTrimmedSurface",
+              "@position":[0,0,12]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0.01,1,0,0.01]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,0,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0.01,0,1,0.01]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,1,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0.01,0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,0,1]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "NurbsTrimmedSurface":
+                  {
+                    "@solid":false,
+                    "@uDimension":2,
+                    "@uKnot":[-4,-4,4,4],
+                    "@uOrder":2,
+                    "@vDimension":2,
+                    "@vKnot":[-4,-4,4,4],
+                    "@vOrder":2,
+                    "@weight":[1,1,1,1],
+                    "-controlPoint":
+                      { "Coordinate":
+                        {
+                          "@point":[-4,-4,0,4,-4,0,-4,4,0,4,4,0]
+                        }
+                      },
+                    "-trimmingContour":[
+                      { "Contour2D":
+                        {
+                          "-children":[
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[-4,-4,4,-4,4,4,-4,4,-4,-4],
+                                "@knot":[0,0,0.25,0.5,0.75,1,1],
+                                "@order":2,
+                                "@weight":[1,1,1,1,1]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Contour2D":
+                        {
+                          "-children":[
+                            { "NurbsCurve2D":
+                              {
+                                "@controlPoint":[3,2,2.1213,0.7071,2,1,0.7071,0.7071,1,2,0.7071,2.1213,2,3,2.1213,2.1213,3,2],
+                                "@knot":[0,0,0,0.25,0.25,0.5,0.5,0.75,0.75,1,1,1],
+                                "@weight":[1,0.7071,1,0.7071,1,0.7071,1,0.7071,1]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"ksh_appearance_1",
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0,1]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

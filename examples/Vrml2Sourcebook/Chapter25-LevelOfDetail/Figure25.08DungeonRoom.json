@@ -1,0 +1,249 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure25.08DungeonRoom.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 25.8, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch25/25fig08.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"3 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"A dungeon room."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.08DungeonRoom.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Dungeon room",
+              "@position":[0,2,10]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@headlight":false
+            }
+          },
+          { "PointLight":
+            {
+              "@color":[0.6,0.6,0.3]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,0,2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"Floor",
+                          "@url":["Figure25.06DungeonRoomFloor.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.06DungeonRoomFloor.x3d","Figure25.06DungeonRoomFloor.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.06DungeonRoomFloor.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0,-2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"Floor"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3.5,2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"Floor"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,3.5,-2.5],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"Floor"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-5,0,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,0,2.5],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@DEF":"Wall",
+                                "@url":["Figure25.07DungeonRoomWall.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.07DungeonRoomWall.x3d","Figure25.07DungeonRoomWall.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.07DungeonRoomWall.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,-2.5],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Wall"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[0,2.25,0],
+                          "-children":[
+                            { "PointLight":
+                              {
+                                "@ambientIntensity":0.4,
+                                "@attenuation":[0,0.6,0],
+                                "@color":[1,0.4,0.2],
+                                "@intensity":0.8,
+                                "@location":[0,0.25,0.2],
+                                "@radius":10
+                              }
+                            },
+                            { "Inline":
+                              {
+                                "@DEF":"Torch",
+                                "@url":["Figure25.05ThreeTorchesSingleLOD.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.05ThreeTorchesSingleLOD.x3d","Figure25.05ThreeTorchesSingleLOD.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter25-LevelOfDetail/Figure25.05ThreeTorchesSingleLOD.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[5,0,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,0,2.5],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Wall"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,-2.5],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"Wall"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,-1.57],
+                          "@translation":[0,2.25,0],
+                          "-children":[
+                            { "PointLight":
+                              {
+                                "@ambientIntensity":0.4,
+                                "@attenuation":[0,0.6,0],
+                                "@color":[1,0.4,0.2],
+                                "@intensity":0.8,
+                                "@location":[0,0.25,0.2],
+                                "@radius":10
+                              }
+                            },
+                            { "Inline":
+                              {
+                                "@USE":"Torch"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"GunFire.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Animation for the M1 main gun firing"
+          },
+          {
+            "@name":"creator",
+            "@content":"Michael Martin"
+          },
+          {
+            "@name":"created",
+            "@content":"12 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Tank Fire"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Scenarios/TankManeuver/GunFire.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@rotation":[1,0,0,-1.57],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,0.3,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"Yellow",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":1,
+                                      "@diffuseColor":[1,1,0],
+                                      "@emissiveColor":[1,1,0],
+                                      "@shininess":0,
+                                      "@specularColor":[1,1,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.5,
+                                "@height":0.6
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,3.14],
+                    "@translation":[0,-1,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Yellow"
+                              }
+                            },
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.5
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[1.2,1.2,1.2],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,0.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"Red",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":1,
+                                            "@diffuseColor":[1,0,0],
+                                            "@emissiveColor":[1,0,0],
+                                            "@shininess":0,
+                                            "@specularColor":[1,0.25,0],
+                                            "@transparency":0.5
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.5,
+                                      "@height":0.5
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,3.14],
+                          "@translation":[0,-1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Red"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.5
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

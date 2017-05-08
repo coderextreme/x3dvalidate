@@ -1,0 +1,95 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TurkishFlagRight.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"F16, Fighting Falcon, Turkish Air Force (TUAF) Turkish Flag"
+          },
+          {
+            "@name":"creator",
+            "@content":"Murat ONDER, LTJG, Turkish Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"13 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Turkish Flag"
+          },
+          { "Transform":
+            {
+              "@rotation":[-1,0,0,3.14],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,2,3,4],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,0,4,0,4,4,0,4,0,0,0,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@repeatS":false,
+                                "@repeatT":false,
+                                "@url":["TurkishFlag2.gif","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlag2.gif"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

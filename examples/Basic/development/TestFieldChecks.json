@@ -1,0 +1,139 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestFieldChecks.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"7 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Ensure X3dToVrml97 xsl translator properly diagnoses content errors with field, fieldValue tags. Does not produce a legal/viewable scene."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestFieldChecks.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Scene nodes are added here"
+          },
+          { "Script":
+            {
+              "@DEF":"SELF",
+              "@directOutput":true,
+              "field": [
+                {
+                  "@name":"aa",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Script":
+                      {
+                        "@USE":"SELF"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"bb",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "@value":"using value attribute for nodes will provoke an error",
+                  "-children":[
+                    {
+                      "#comment":"initializing node goes here, comment silences warning"
+                    }
+                  ]
+                },
+                {
+                  "@name":"cc",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Script":
+                      {
+                        "@USE":"SELF"
+                      }
+                    },
+                    {
+                      "#comment":"ensure contained comments under Node are checked OK"
+                    }
+                  ]
+                },
+                {
+                  "@name":"dd",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"ee",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "WorldInfo":
+                      {
+                      }
+                    },
+                    {
+                      "#comment":"ensure contained comments under Node are checked OK"
+                    }
+                  ]
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"// no functionality provided for this test scene",
+"",
+"function dd (value, timestamp)",
+"{",
+"\t// references to silence warnings",
+"\t// aa bb cc ee",
+"}"
+]
+            }
+          }
+        ]
+    }
+  }
+}

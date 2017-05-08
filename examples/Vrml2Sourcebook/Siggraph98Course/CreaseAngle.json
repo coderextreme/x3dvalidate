@@ -1,0 +1,496 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CreaseAngle.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"creaseAngle demonstration: select and drag upper halves of quadrilaterals to change creaseAngle and shading."
+          },
+          {
+            "@name":"creator",
+            "@content":"John L. Moreland"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 October 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/creangle.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0243.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/CreaseAngle.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["copyright (c) 1997, John L. Moreland"],
+              "@title":"Crease angle demonstration"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@centerOfRotation":[0,0.85,0],
+              "@description":"Front Face",
+              "@orientation":[0,1,0,-0.62],
+              "@position":[-2,0.85,3]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@centerOfRotation":[0,0.85,0],
+              "@description":"Back Face",
+              "@orientation":[0.0,1.0,0.0,0.62],
+              "@position":[2.4,0.85,3.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@color":[1.0,0.0,0.0],
+              "@direction":[0.0,-1.0,0.1]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@color":[0.0,0.0,1.0],
+              "@direction":[0.0,1.0,-0.1]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-1.1,0.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"White",
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.5,
+                                "@diffuseColor":[1.0,1.0,1.0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,4,5,0,-1,1,2,3,4,1,-1],
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"Crd1",
+                                "@point":[0.0,0.0,1.0,0.0,1.0,1.0,0.0,2.0,1.0,0.0,2.0,-1.0,0.0,1.0,-1.0,0.0,0.0,-1.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,1.0,1.2],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"FntColor",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1.0,0.0,0.0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["0.0"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@DEF":"FntStyle",
+                                            "@justify":["BEGIN","MIDDLE"],
+                                            "@size":0.1,
+                                            "@style":"BOLD"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"bendAngleLabel",
+                                "@translation":[0.0,-0.1,0.0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.0,0.5,0.0]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Text":
+                                          {
+                                            "@DEF":"bendAngle",
+                                            "@string":["0.0"],
+                                            "-fontStyle":
+                                              { "FontStyle":
+                                                {
+                                                  "@USE":"FntStyle"
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"White"
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,4,5,0,-1,1,2,3,4,1,-1],
+                          "@creaseAngle":0.785,
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"Crd2",
+                                "@point":[0.0,0.0,1.0,0.0,1.0,1.0,0.0,2.0,1.0,0.0,2.0,-1.0,0.0,1.0,-1.0,0.0,0.0,-1.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,1.0,1.2],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"FntColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["0.785"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"FntStyle"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"bendAngleLabel"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[1.1,0.0,0.0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"White"
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[0,1,4,5,0,-1,1,2,3,4,1,-1],
+                          "@creaseAngle":1.57,
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"Crd3",
+                                "@point":[0.0,0.0,1.0,0.0,1.0,1.0,0.0,2.0,1.0,0.0,2.0,-1.0,0.0,1.0,-1.0,0.0,0.0,-1.0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,1.0,1.2],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"FntColor"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["1.57"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"FntStyle"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@USE":"bendAngleLabel"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "PlaneSensor":
+            {
+              "@DEF":"PS",
+              "@description":"Select and drag upper halves of quads to change creaseAngle and shading",
+              "@maxPosition":[6.283,1.57]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"Scr",
+              "field": [
+                {
+                  "@name":"label_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"set_translation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"fraction_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"        function set_translation( tran, et )",
+"        {",
+"            tempCA = tran[0] / 4.0;",
+"            if ( tempCA < 0.00 ) tempCA = 0.0;",
+"            if ( tempCA > 1.57 ) tempCA = 1.57;",
+"            fraction_changed = tempCA;",
+"            // Hacks to get truncation/formatting",
+"            tempCA = (Math.floor(tempCA*1000)/1000.0);",
+"            if ( (tempCA > 0.1) && (tempCA < 1.0) )",
+"                tempCA = '0' + tempCA;",
+"            if ( tempCA <= 0.0 )",
+"                tempCA = tempCA + '.' + '0';",
+"            label_changed[0] = tempCA;",
+"        }"
+]
+            }
+          },
+          { "CoordinateInterpolator":
+            {
+              "@DEF":"CI",
+              "@key":[0.0,1.57],
+              "@keyValue":[0.0,0.0,1.0,0.0,1.0,1.0,0.0,2.0,1.0,0.0,2.0,-1.0,0.0,1.0,-1.0,0.0,0.0,-1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,-1.0,0.0,1.0,-1.0,0.0,0.0,-1.0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"PS",
+              "@toField":"set_translation",
+              "@toNode":"Scr"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Scr",
+              "@toField":"set_fraction",
+              "@toNode":"CI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"label_changed",
+              "@fromNode":"Scr",
+              "@toField":"set_string",
+              "@toNode":"bendAngle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CI",
+              "@toField":"set_point",
+              "@toNode":"Crd1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CI",
+              "@toField":"set_point",
+              "@toNode":"Crd2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CI",
+              "@toField":"set_point",
+              "@toNode":"Crd3"
+            }
+          }
+        ]
+    }
+  }
+}

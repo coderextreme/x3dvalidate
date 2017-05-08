@@ -1,0 +1,1528 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Frame.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Frame for the Highly Mobile Muliti-purpose Wheeled Vehicle (HMMWV)"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"3 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"version",
+            "@content":"Version 2"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/HMMWV/Frame.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.9,0.9,1]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"ChassisLOD",
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[500,1000],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"Chassis",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"PassengerCabin",
+                                "@rotation":[1,0,0,3.14],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@crossSection":[-1.7,0.6,-2.1,0.6,-2.1,0.4,-1.9,0.4,-1.9,-0.85,1.6,-0.85,2,-0.6,2.2,0,1.9,0,1.8,-0.4,1.6,-0.65,-1.7,-0.65,-1.7,-0.5],
+                                            "@solid":false,
+                                            "@spine":[0,0,-2.4,0,0,2.4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"Tan",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.8,0.7,0.7]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"EngineCompartment",
+                                "@translation":[-3.2,0.25,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[2.5,0.4,4.6]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"FrontFender",
+                                "@rotation":[1,0,0,3.14],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@crossSection":[-2.2,-0.85,-2.7,0.1,-2.9,0.2,-3.3,0.25,-3.9,0.2,-4,0,-4.4,0,-4.4,0.1,-3.95,0.3,-3.3,0.32,-2.9,0.3,-2.65,0.1,-2.5,0.1,-2.1,0.4,-1.9,0.4,-1.9,-0.85,-2.2,-0.85],
+                                            "@solid":false,
+                                            "@spine":[0,0,-2.4,0,0,2.4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Trunk",
+                                "@translation":[3.4,0,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[2.65,0.8,3.8]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[1.3,0.45,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.05,0.15,4.1]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Tan"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RearFender",
+                                "@rotation":[1,0,0,3.14],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@crossSection":[1.9,0,2.1,0.7,1.7,1.7,1.85,1.7,2.2,0.75,2.2,0.55,4.7,0.55,4.7,-0.2,4.2,-0.2,4,0.15,3.7,0.3,3.15,0.35,2.6,0.3,2.2,0,1.9,0],
+                                            "@solid":false,
+                                            "@spine":[0,0,-2.4,0,0,2.4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Hatch",
+                                "@rotation":[1,0,0,3.14],
+                                "@translation":[0.1,-0.1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@creaseAngle":1.56,
+                                            "@crossSection":[1.85,1.85,2.2,1.75,4.5,1,4.6,0.9,4.65,0.75,2.2,0.75,1.85,1.85],
+                                            "@scale":[0.95,0.95,1,1,1,1,0.95,0.95],
+                                            "@spine":[0,0,-2.4,0,0,-2.2,0,0,2.2,0,0,2.4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"BedLiner",
+                                "@translation":[3.45,0.6,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[2.5,0.1,4.8]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"FenderTop",
+                                "@rotation":[1,0,0,3.14],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@crossSection":[-2.1,0.4,-2.5,0.1,-2.65,0.1,-2.9,0.3,-3.3,0.3,-3.95,0.3,-3.7,0.45,-2.6,0.5,-2.5,0.65,-2.1,0.7,-2.1,0.4],
+                                            "@solid":false,
+                                            "@spine":[0,0,-2.4,0,0,-2.3,0,0,2.3,0,0,2.4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Hood",
+                                "@rotation":[1,0,0,3.14],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@convex":false,
+                                            "@creaseAngle":1.57,
+                                            "@crossSection":[-4.4,0.4,-4.4,0.45,-3.7,0.5,-3.3,0.6,-3,0.625,-2.5,0.65,-2.6,0.5,-4.4,0.4],
+                                            "@scale":[0.975,0.975,1,1,1,1,0.975,0.975],
+                                            "@solid":false,
+                                            "@spine":[0,0,-2.3,0,0,-2.275,0,0,2.275,0,0,2.3]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"HoodTop",
+                                      "@rotation":[1,0,0,1.57],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@crossSection":[-2.4,-0.125,-2.375,0.1,-2.3,0.2,2.3,0.2,2.375,0.1,2.4,-0.125],
+                                                  "@scale":[0.66,0.66,1,1],
+                                                  "@solid":false,
+                                                  "@spine":[-4.55,0,0.5,-2.1,0,0.5]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Tan"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"FrontBumperLOD",
+                                "-children":[
+                                  { "LOD":
+                                    {
+                                      "@range":[60],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "@DEF":"FrontBumper",
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@DEF":"Guard",
+                                                  "@translation":[-4.675,-0.16,0],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-geometry":
+                                                          { "Box":
+                                                            {
+                                                              "@size":[0.25,0.2,3.3]
+                                                            }
+                                                          },
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "@USE":"Tan"
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                    { "Transform":
+                                                      {
+                                                        "@DEF":"LowerGuard",
+                                                        "@rotation":[0,0,1,0.4],
+                                                        "@translation":[0.025,-0.135,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[0.25,0.2,3.3]
+                                                                  }
+                                                                },
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "@USE":"Tan"
+                                                                  }
+                                                                }
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@DEF":"BrushGuard",
+                                                  "@translation":[-0.1,-0.1,0],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-geometry":
+                                                          { "Extrusion":
+                                                            {
+                                                              "@crossSection":[0.05,0,0.05,0.05,0,0.05,0,0,0.05,0],
+                                                              "@solid":false,
+                                                              "@spine":[-4.7,0.1,-2.1,-4.7,0.2,-2.2,-4.7,0.65,-2.2,-4.7,0.75,-2.1,-4.7,0.75,2.1,-4.7,0.65,2.2,-4.7,0.2,2.2,-4.7,0.1,2.1,-4.7,0.1,-2.1]
+                                                            }
+                                                          },
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "@USE":"Tan"
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@DEF":"StrutAssembly",
+                                                  "@scale":[0.3,0.45,1],
+                                                  "@translation":[-4.7,0,1.6],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@DEF":"Strut",
+                                                        "@rotation":[0,1,1,3.14],
+                                                        "-children":[
+                                                          { "Transform":
+                                                            {
+                                                              "@DEF":"SurfaceOne",
+                                                              "-children":[
+                                                                { "Shape":
+                                                                  {
+                                                                    "-geometry":
+                                                                      { "IndexedFaceSet":
+                                                                        {
+                                                                          "@coordIndex":[0,1,2,3,4,-1],
+                                                                          "@solid":false,
+                                                                          "-coord":
+                                                                            { "Coordinate":
+                                                                              {
+                                                                                "@point":[0,0,-0.25,0.4,0,-0.25,0.3,0,1.5,0.1,0,1.5,0,0,-0.25]
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      },
+                                                                    "-appearance":
+                                                                      { "Appearance":
+                                                                        {
+                                                                          "@USE":"Tan"
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "Transform":
+                                                            {
+                                                              "@DEF":"SurfaceTwo",
+                                                              "-children":[
+                                                                { "Shape":
+                                                                  {
+                                                                    "-geometry":
+                                                                      { "IndexedFaceSet":
+                                                                        {
+                                                                          "@coordIndex":[0,1,2,3,4,-1],
+                                                                          "@solid":false,
+                                                                          "-coord":
+                                                                            { "Coordinate":
+                                                                              {
+                                                                                "@point":[0,-0.01,-0.25,0.4,-0.01,-0.25,0.3,-0.01,1.5,0.1,-0.01,1.5,0,-0.01,-0.25]
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      },
+                                                                    "-appearance":
+                                                                      { "Appearance":
+                                                                        {
+                                                                          "@USE":"Tan"
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "Transform":
+                                                            {
+                                                              "@DEF":"SideOne",
+                                                              "-children":[
+                                                                { "Shape":
+                                                                  {
+                                                                    "-geometry":
+                                                                      { "IndexedFaceSet":
+                                                                        {
+                                                                          "@coordIndex":[0,1,2,3,4,-1],
+                                                                          "@solid":false,
+                                                                          "-coord":
+                                                                            { "Coordinate":
+                                                                              {
+                                                                                "@point":[0.3,0,1.5,0.4,0,-0.25,0.4,-0.01,-0.25,0.3,-0.01,1.5,0.3,0,1.5]
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      },
+                                                                    "-appearance":
+                                                                      { "Appearance":
+                                                                        {
+                                                                          "@USE":"Tan"
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "Transform":
+                                                            {
+                                                              "@DEF":"SideTwo",
+                                                              "-children":[
+                                                                { "Shape":
+                                                                  {
+                                                                    "-geometry":
+                                                                      { "IndexedFaceSet":
+                                                                        {
+                                                                          "@coordIndex":[0,1,2,3,4,-1],
+                                                                          "@solid":false,
+                                                                          "-coord":
+                                                                            { "Coordinate":
+                                                                              {
+                                                                                "@point":[0,0,-0.25,0,-0.01,-0.25,0.4,-0.01,-0.25,0.4,0,-0.25,0,0,-0.25]
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      },
+                                                                    "-appearance":
+                                                                      { "Appearance":
+                                                                        {
+                                                                          "@USE":"Tan"
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "Transform":
+                                                            {
+                                                              "@DEF":"SideThree",
+                                                              "-children":[
+                                                                { "Shape":
+                                                                  {
+                                                                    "-geometry":
+                                                                      { "IndexedFaceSet":
+                                                                        {
+                                                                          "@coordIndex":[0,1,2,3,4,-1],
+                                                                          "@solid":false,
+                                                                          "-coord":
+                                                                            { "Coordinate":
+                                                                              {
+                                                                                "@point":[0,0,-0.25,0,-0.01,-0.25,0.1,-0.01,1.5,0.1,0,1.5,0,0,-0.25]
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      },
+                                                                    "-appearance":
+                                                                      { "Appearance":
+                                                                        {
+                                                                          "@USE":"Tan"
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[0,0,-3.2],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"StrutAssembly"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@DEF":"CrossBeam",
+                                                  "@translation":[-4.775,0.325,0],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-geometry":
+                                                          { "Box":
+                                                            {
+                                                              "@size":[0.05,0.65,0.05]
+                                                            }
+                                                          },
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "@USE":"Tan"
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[0,0,-2],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"CrossBeam"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[0,0,2],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"CrossBeam"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[0,0,-1],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"CrossBeam"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[0,0,1],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"CrossBeam"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "WorldInfo":
+                                          {
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[9,3.5,6.5]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Tan"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "WorldInfo":
+                        {
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"SignalsAndReflectors",
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[45],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"SignalsAndReflectorLOD",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"TurnSignal",
+                                "@scale":[1.2,1.2,1.2],
+                                "@translation":[-4.15,0.35,2.27],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Plate",
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.15,0.075,0.1]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"SignalTan",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.2,0.5,0.7]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"TurnSignalLight",
+                                      "@scale":[1,1,0.66],
+                                      "@translation":[0,0,0.025],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.05,
+                                                  "@radius":0.06
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"SafetyOrange",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[1,0.8,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Reflector",
+                                "@scale":[1,1,0.33],
+                                "@translation":[-4.325,0.25,2.295],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"ReflectorShape",
+                                      "-geometry":
+                                        { "Sphere":
+                                          {
+                                            "@radius":0.055
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"SafetyOrange"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@center":[-4.15,0,0],
+                                "@rotation":[0,1,0,3.14],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"TurnSignal"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@scale":[1,1,0.33],
+                                "@translation":[-4.325,0.25,-2.295],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"ReflectorShape"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RearLight",
+                                "@scale":[0.33,1.2,1.2],
+                                "@translation":[4.7,0.1,2.3],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"ReflectorShape"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,-4.6],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"RearLight"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RearTurnSignal",
+                                "@rotation":[0,0,1,1.57],
+                                "@translation":[4.7,0.3,2.15],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.05,
+                                            "@radius":0.09
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.8,0.1,0.1]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"LargeReflector",
+                                "@translation":[-4.47,0.3,2],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@scale":[0.33,2,2],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@USE":"ReflectorShape"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,1.57],
+                                      "@translation":[0.02,0,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.05,
+                                                  "@radius":0.125
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"Black",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.1,0.125,0.125]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,-4],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"LargeReflector"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,-4.3],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"RearTurnSignal"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "WorldInfo":
+                        {
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Roof",
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[500],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"RoofLOD",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,-1.57],
+                                "@translation":[0,1.7,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@creaseAngle":1.25,
+                                            "@crossSection":[-2.4,0,2.4,0,2.375,0.1,2.3,0.2,-2.3,0.2,-2.375,0.1,-2.4,0],
+                                            "@scale":[1,0.9,1,1,1,1,1,0.25],
+                                            "@solid":false,
+                                            "@spine":[-1.9,0,0,-1.8,0,0,1.7,0,0,2.15,0,0]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"WindShield",
+                                "@rotation":[0,0,1,-0.13],
+                                "@translation":[-1.925,1.225,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.05,1.15,4.64]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.1,0.4,0.9],
+                                                  "@shininess":0.9,
+                                                  "@specularColor":[0.9,0.9,0.9],
+                                                  "@transparency":0.6
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"WindowFrame",
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@crossSection":[0.07,0.07,0.07,-0.07,-0.07,-0.07,-0.07,0.07,0.07,0.07],
+                                            "@solid":false,
+                                            "@spine":[-1.975,0.5,2.35,-1.85,1.7,2.35,-1.85,1.7,-2.35,-1.975,0.5,-2.35]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Tan"
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"CenterWindowStrut",
+                                      "@rotation":[0,0,1,-0.13],
+                                      "@translation":[-1.935,1.125,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.1,1.1,0.07]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Tan"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "WorldInfo":
+                        {
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Grill",
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[100],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[-4.425,0.12,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.25,0.6,3.175]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Tan"
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"HeadLight",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[-0.125,0.2,1.35],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.05,0.4,0.4]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Black"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@scale":[0.33,1,1],
+                                            "@translation":[-0.02,0,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "Sphere":
+                                                      {
+                                                        "@radius":0.175
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.75,0.85,0.9],
+                                                              "@shininess":1,
+                                                              "@specularColor":[0.9,0.9,0.9]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0,-2.7],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"HeadLight"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"GrillHole",
+                                      "@translation":[-0.125,0.15,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.05,0.45,0.15]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Black"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,1.57],
+                                            "@translation":[0,0.225,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.05,
+                                                        "@radius":0.075
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Black"
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,1.57],
+                                            "@translation":[0,-0.225,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.05,
+                                                        "@radius":0.075
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Black"
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0,-0.9],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"GrillHole"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0,-0.6],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"GrillHole"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0,-0.3],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"GrillHole"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0,0.3],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"GrillHole"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0,0.6],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"GrillHole"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0,0.9],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"GrillHole"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "WorldInfo":
+                        {
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Antennas",
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[50],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"AntennaHousing",
+                          "@translation":[4.8,0.55,2.275],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.25,0.025,0.2]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Tan"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "WorldInfo":
+                        {
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"ExhaustSystem",
+              "-children":[
+                { "LOD":
+                  {
+                    "@range":[50],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@scale":[1.1,1.1,1.1],
+                          "@translation":[-2.4,0.8,-2],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":0.785,
+                                      "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                      "@scale":[0.16,0.16,0.14,0.14,0.08,0.08,0.025,0.025],
+                                      "@spine":[0,-0.1,0,0,0.02,0,0,0.04,0,0,0.05,0]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Tan"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "WorldInfo":
+                        {
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Core",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"EmptySceneCoreProfile.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Illustrate a minimalist scene using only Core profile nodes. Root nodes must either be allowed children nodes of a Grouping node, or a LayerSet node. Note that DOCTYPE, head/meta and Group/Metadata* elements can be deleted without losing scene validity."
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly, Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"24 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 February 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"EmptyScene.x3d"
+          },
+          {
+            "@name":"TODO",
+            "@content":"should Metadata nodes inherit from X3DNode or X3DChildNode?"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Rootnodes"
+          },
+          {
+            "@name":"info",
+            "@content":"Increase X3D profile (or add component statements) to match if any other X3D nodes are added to this scene."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/EmptySceneCoreProfile.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://x3dgraphics.com/chapters/Chapter15-MetadataInformation.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Core profile can only contain WorldInfo and Metadata nodes."
+          },
+          { "WorldInfo":
+            {
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "@name":"NodeSet",
+                    "-value":[
+                      { "MetadataBoolean":
+                        {
+                          "@name":"BooleanData",
+                          "@value":[true,false]
+                        }
+                      },
+                      { "MetadataDouble":
+                        {
+                          "@name":"DoubleData",
+                          "@value":[1,2,3]
+                        }
+                      },
+                      { "MetadataFloat":
+                        {
+                          "@name":"FloatData",
+                          "@value":[4,5,6]
+                        }
+                      },
+                      { "MetadataInteger":
+                        {
+                          "@name":"IntegerData",
+                          "@value":[7,8,9]
+                        }
+                      },
+                      { "MetadataString":
+                        {
+                          "@name":"StringData",
+                          "@value":["Empty Scene","Core Profile"]
+                        }
+                      }
+                    ]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

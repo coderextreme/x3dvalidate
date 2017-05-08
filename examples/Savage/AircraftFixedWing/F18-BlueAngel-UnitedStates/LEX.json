@@ -1,0 +1,136 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"LEX.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"The sharp-edged, cambered leading-edge extensions(LEX), slots at fuselage junction and outward-canted twin fins designed to produce high agility and docile performance."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"created",
+            "@content":"31 August 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/LEX.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"leading-edge extension, LEX"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.5,0.5,0.5]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[-0,0.71,0.71,3.14],
+              "@scale":[0.6,0.6,0.6],
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"LEXColor",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.1,0.25,0.5],
+                                      "@specularColor":[0,0.2,0.3]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@ccw":false,
+                                "@creaseAngle":3.14,
+                                "@crossSection":[-2,0.8,-3,0.7,-5.2,0.00,-3,-0.7,-2,-0.8,-2,0.8],
+                                "@scale":[0.3,0.3,0.35,0.35,0.35,0.35,0.3,0.3,0.28,0.28,0.25,0.25,0.1,0.1],
+                                "@spine":[-12,0,0,-10,0,0,-8.5,0,0,-6,0,0,-4,0,0,-3.5,0,0,-1,0,0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"LEXColor"
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@ccw":false,
+                                "@creaseAngle":3.14,
+                                "@crossSection":[2,-0.8,3,-0.7,5.2,0.00,3,0.7,2,0.8,2,-0.8],
+                                "@scale":[0.3,0.3,0.35,0.35,0.35,0.35,0.3,0.3,0.28,0.28,0.25,0.25,0.1,0.1],
+                                "@spine":[-12,0,0,-10,0,0,-8.5,0,0,-6,0,0,-4,0,0,-3.5,0,0,-1,0,0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

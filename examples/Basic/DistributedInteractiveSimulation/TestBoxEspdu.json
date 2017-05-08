@@ -1,0 +1,127 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestBoxEspdu.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Don McGregor"
+          },
+          {
+            "@name":"created",
+            "@content":"1 January 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly and Don Brutzman"
+          },
+          {
+            "@name":"description",
+            "@content":"A simple EspduTransform test to move a Box."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/TestBoxEspdu.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"EspduTransform moves Box",
+              "@position":[0,0,25]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.5,0.6,0.8]
+            }
+          },
+          { "EspduTransform":
+            {
+              "@address":"239.1.2.3",
+              "@entityID":2,
+              "@marking":"TestBox",
+              "@networkMode":"networkReader",
+              "@port":62040,
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[2,4,6]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.748014,0.62085,0],
+                                "@shininess":0.93,
+                                "@specularColor":[0.860606,0.860606,0.860599]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[5,5,5],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["../../X3dForWebAuthors/Chapter03-Grouping//CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

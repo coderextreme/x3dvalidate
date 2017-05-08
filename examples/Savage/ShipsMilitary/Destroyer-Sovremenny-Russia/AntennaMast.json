@@ -1,0 +1,736 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AntennaMast.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Kevin S. Anderson"
+          },
+          {
+            "@name":"created",
+            "@content":"3 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"description",
+            "@content":"Antenna Mast for Russian Ship Sovremenny"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Destroyer-Sovremenny-Russia/AntennaMast.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Antenna Mast",
+              "@orientation":[0,1,0,0.79],
+              "@position":[18,7,18]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.8,0.8,1]
+            }
+          },
+          {
+            "#comment":"Radar Mast Structure"
+          },
+          { "Group":
+            {
+              "@DEF":"HalfMastStructure",
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[-1,0,0,0.16],
+                    "@translation":[0,0,2],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"FrontSide",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,1.57],
+                                "@translation":[0,0.05,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":4,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"Black",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.2,0.2,0.2]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,-0.1644],
+                                "@translation":[-1,6,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":12.166,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,0.1644],
+                                "@translation":[1,6,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":12.166,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,0.8614],
+                                "@translation":[0.2,1.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":4.61,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,-0.8614],
+                                "@translation":[-0.2,1.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":4.61,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,0.6939],
+                                "@translation":[0.2,4.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":3.905,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,-0.6939],
+                                "@translation":[-0.2,4.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":3.905,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,0.4629],
+                                "@translation":[0.25,7.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":3.354,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,-0.4629],
+                                "@translation":[-0.25,7.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":3.354,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,1.57],
+                                "@translation":[0,9,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":1,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,1.57],
+                                "@translation":[0,6,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,1.57],
+                                "@translation":[0,3,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":3,
+                                            "@radius":0.1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,1.67,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.45,0.45,0.17]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,4.78,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.45,0.45,0.17]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,8,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Black"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.45,0.45,0.17]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.16],
+                    "@translation":[0,0,-2],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"FrontSide"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"HalfMastStructure"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,7.5,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5,0.3,5]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,13.6,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":4,
+                          "@radius":0.1
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,13,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":3,
+                          "@radius":0.25
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,14.8,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[2,0.3,0.3]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"BulletAntenna",
+              "@translation":[0,8.3,2],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":1.6,
+                          "@radius":0.4
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0.8,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Black"
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.4
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,0,-4],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"BulletAntenna"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,0,1,1.57],
+              "@translation":[0.7,11.8,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":1.5,
+                          "@radius":0.1
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[1.395,12.095,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":0.6,
+                          "@radius":0.1
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[1.395,12.89,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Black"
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":0.5
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@scale":[0.9,0.9,0.7],
+              "@translation":[0,2.8,0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["YardArmBlack.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Destroyer-Sovremenny-Russia/YardArmBlack.x3d","YardArmBlack.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Destroyer-Sovremenny-Russia/YardArmBlack.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

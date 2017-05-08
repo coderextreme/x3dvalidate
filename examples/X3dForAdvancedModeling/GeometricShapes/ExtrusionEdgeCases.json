@@ -1,0 +1,218 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExtrusionEdgeCases.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Scene incorporating extrusion edge cases"
+          },
+          {
+            "@name":"creator",
+            "@content":"Roy Walmsley"
+          },
+          {
+            "@name":"created",
+            "@content":"29 January 2016"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 June 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/wiki/index.php/Extrusion_Edge_Cases"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/ExtrusionEdgeCases.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"XML Spy, http://www.altova.com"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Extrusion Edge Cases",
+              "@position":[10,5,50]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,10,0],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Extrusion Edge Case 1",
+                    "@position":[2,0,20]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.1,0.05]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[-1,0,0,1,1,0,-1,0],
+                          "@scale":[1,1,1,1,1,1,2,2,3,3,3,3],
+                          "@spine":[-5,0,0,0,0,0,4,4,0,4,4,0,4,4,0,8,0,0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[2,2,2],
+              "@translation":[-2,-2,0],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Extrusion Edge Case 2a",
+                    "@position":[0,0,6]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.8,0.1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[-1,0,0,2,1,0,-1,0],
+                          "@solid":false
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[2,2,2],
+              "@translation":[4,-2,0],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Extrusion Edge Case 2b",
+                    "@position":[0,0,4]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.8,0.1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[-1,0,0,2,1,0,-1,0],
+                          "@solid":false,
+                          "@spine":[0,1,0,0,0,0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[1.5,1.5,1.5],
+              "@translation":[20,0,0],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Extrusion Edge Case 3",
+                    "@position":[0,0,6]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0,0.8]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@beginCap":false,
+                          "@endCap":false,
+                          "@scale":[1,1,1.2,1.2,1.4,1.4],
+                          "@solid":false,
+                          "@spine":[0,0,0,0,1,0,0,0,0]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

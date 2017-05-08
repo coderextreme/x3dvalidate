@@ -1,0 +1,542 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CodedCompressedPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototypes for CodedIndexedFaceSet decoding and CompressedIndexedFaceSet decompression, with links to example scenes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Martin Isenburg"
+          },
+          {
+            "@name":"translator",
+            "@content":"X3D-Edit VRML importer"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"26 September 2002"
+          },
+          {
+            "@name":"translated",
+            "@content":"28 April 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.unc.edu/~isenburg/ac/models"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.unc.edu/~isenburg/research/asciicoder"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.unc.edu/~isenburg/research/asciicoder/coder"
+          },
+          {
+            "@name":"reference",
+            "@content":"Martin Isenburg, Jack Snoeyink Binary Compression Rates for ASCII Formats, accepted for Web3D'03, March 2003"
+          },
+          {
+            "@name":"reference",
+            "@content":"isenburg/is-bcraf-03.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.unc.edu/~isenburg/research/papers/is-bcraf-03.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"Martin Isenburg, Jack Snoeyink, Coding with ASCII: compact, yet text-based 3D content, Proceedings of the 1st International Symposium on 3D Data Processing, Visualization and Transmission'02 (Invited Paper), pages 609 - 616, June 2002."
+          },
+          {
+            "@name":"reference",
+            "@content":"isenburg/is-cwa-02.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.unc.edu/~isenburg/papers/is-cwa-02.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"Martin Isenburg, Jack Snoeyink Coding Polygon Meshes as Compressable ASCII, Proceedings of Web3D Symposium'02 (Best Paper), pages 1 - 10, February 2002"
+          },
+          {
+            "@name":"reference",
+            "@content":"isenburg/is-cpmca-02.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cs.unc.edu/~isenburg/papers/is-cpmca-02.pdf"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D VRML binary compression"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/CodedCompressedPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CodedIndexedFaceSet",
+              "@appinfo":"An ASCII-coded IndexedFaceSet",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"code",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"ASCII-coded coordIndex and texCoordIndex values",
+                      "@type":"MFInt32",
+                      "@value":[0]
+                    },
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"dequantization multiplier for Coordinate values",
+                      "@type":"SFFloat",
+                      "@value":0.0
+                    },
+                    {
+                      "@name":"tex",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"dequantization multiplier for TextureCoordinate values",
+                      "@type":"SFFloat",
+                      "@value":0.0
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Coordinate node",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"not initialized by default"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"TextureCoordinate node",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"not initialized by default"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"DecodedIFS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"DecoderScript",
+                        "@directOutput":true,
+                        "@url":["isenburg/Vrml97Scripts/CodedIndexedFaceSet.class","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/isenburg/Vrml97Scripts/CodedIndexedFaceSet.class"],
+                        "field": [
+                          {
+                            "@name":"code",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFInt32"
+                          },
+                          {
+                            "@name":"pos",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"tex",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"IFS",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "IndexedFaceSet":
+                                {
+                                  "@USE":"DecodedIFS"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"code",
+                                "@protoField":"code"
+                              },
+                              {
+                                "@nodeField":"pos",
+                                "@protoField":"pos"
+                              },
+                              {
+                                "@nodeField":"tex",
+                                "@protoField":"tex"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CompressedIndexedFaceSet",
+              "@appinfo":"An ASCII-compressed IndexedFaceSet",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"code",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"ASCII-compressed coordIndex and texCoordIndex values",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"box_tex",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"bounding box of texture coordinates (always 4 values minU minV maxU maxV)",
+                      "@type":"MFFloat",
+                      "@value":[0,0,1,1]
+                    },
+                    {
+                      "@name":"bits_tex",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"number of quantization bits for texture coordinates",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"box",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"bounding box of coordinates (always 6 values minX minY minZ maxX maxY maxZ)",
+                      "@type":"MFFloat",
+                      "@value":[0,0,0,1,1,1]
+                    },
+                    {
+                      "@name":"bits",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"number of quantization bits for coordinates",
+                      "@type":"SFInt32",
+                      "@value":0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"DecompressedIFS"
+                      }
+                    },
+                    {
+                      "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"DecompressionScript",
+                        "@directOutput":true,
+                        "@url":["isenburg/Vrml97Scripts/CompressedIndexedFaceSet.class","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/isenburg/Vrml97Scripts/CompressedIndexedFaceSet.class"],
+                        "field": [
+                          {
+                            "@name":"code",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"box_tex",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFFloat"
+                          },
+                          {
+                            "@name":"bits_tex",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"box",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFFloat"
+                          },
+                          {
+                            "@name":"bits",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"IFS",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "IndexedFaceSet":
+                                {
+                                  "@USE":"DecompressedIFS"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"code",
+                                "@protoField":"code"
+                              },
+                              {
+                                "@nodeField":"box_tex",
+                                "@protoField":"box_tex"
+                              },
+                              {
+                                "@nodeField":"bits_tex",
+                                "@protoField":"bits_tex"
+                              },
+                              {
+                                "@nodeField":"box",
+                                "@protoField":"box"
+                              },
+                              {
+                                "@nodeField":"bits",
+                                "@protoField":"bits"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Viewpoint":
+            {
+              "@description":"Select an example scene",
+              "@position":[0,0,12]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0.05,0.1,0.3],
+              "@skyColor":[0.05,0.1,0.3]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[7,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,3,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for IndexedFaceSet example",
+                          "@url":["Fish.x3d","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/Fish.x3d","Fish.wrl","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/Fish.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@length":[0],
+                                      "@string":["Fish IndexedFaceSet 442 KB"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@DEF":"TextFont",
+                                            "@justify":["END","MIDDLE"],
+                                            "@size":1.25,
+                                            "@style":"BOLD"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for CodedIndexedFaceSet example",
+                          "@url":["FishCoded.x3d","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCoded.x3d","FishCoded.wrl","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCoded.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@length":[0],
+                                      "@string":["FishCoded 96 KB"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"TextFont"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-3,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for CompressedIndexedFaceSet example",
+                          "@url":["FishCompressed.x3d","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCompressed.x3d","FishCompressed.wrl","http://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCompressed.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@length":[0],
+                                      "@string":["FishCompressed 22 KB"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"TextFont"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

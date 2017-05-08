@@ -1,0 +1,112 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TriangleBlackLines.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple Triangle with black lines, illustrating default line rendering."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"5 July 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 September 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/TriangleBlackLines.x3d"
+          },
+          {
+            "@name":"X3dTidy",
+            "@content":"replaceBlackEmissiveColor=false"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Triangle using black lines",
+              "@position":[0,0,4]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedLineSet":
+                  {
+                    "@coordIndex":[0,1,2,0,-1],
+                    "-children":[
+                      {
+                        "#comment":"equilateral triangle"
+                      }
+                    ],
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@DEF":"TriangleCoordinatePoints",
+                          "@point":[-1,-1,0,1,-1,0,0,0.86600254,0]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"default Material emissiveColor='0 0 0'"
+                      }
+                    ],
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

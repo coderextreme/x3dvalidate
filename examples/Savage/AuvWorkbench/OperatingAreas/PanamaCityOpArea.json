@@ -1,0 +1,78 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PanamaCityOpArea.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Operations area top-level scene for Panama City Florida, used by the AUV Workbench to build scenarios using unmanned vehicles."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"2 June 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 September 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/PanamaCityOpArea.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@speed":100,
+              "@type":["EXAMINE","FLY","WALK","ANY"]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"Bathymetry",
+              "@url":["../../Locations/PanamaCityFlorida/PanamaCity.x3d","https://savage.nps.edu/Savage/Locations/PanamaCityFlorida/PanamaCity.x3d","../../Locations/PanamaCityFlorida/PanamaCity.wrl","https://savage.nps.edu/Savage/Locations/PanamaCityFlorida/PanamaCity.wrl","../../AuvWorkbench/OperatingAreas/SavageArchiveNotAvailable.x3d","https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/SavageArchiveNotAvailable.x3d","../../AuvWorkbench/OperatingAreas/SavageArchiveNotAvailable.wrl","https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/SavageArchiveNotAvailable.wrl"]
+            }
+          }
+        ]
+    }
+  }
+}

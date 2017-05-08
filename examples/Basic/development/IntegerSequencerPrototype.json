@@ -1,0 +1,558 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"IntegerSequencerPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This proto, modeled after a ScalarInterpolator, generates an array of integer values based on the input fraction and keys."
+          },
+          {
+            "@name":"warning",
+            "@content":"MFInt32 keyValue accessType is listed as initializeOnly/field, since inputOutput cannot be translated to exposedField in VRML97 scripting."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Estuko Lippi, Jeff Weekley, Jane Wu, Matthew Braun"
+          },
+          {
+            "@name":"created",
+            "@content":"20 August 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#ScalarInterpolator"
+          },
+          {
+            "@name":"subject",
+            "@content":"integer sequencer"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/IntegerSequencerPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"IntegerSequencer",
+              "ProtoInterface": {
+                  "-children":[
+                    {
+                      "#comment":"Regular interpolator-style input"
+                    },
+                    {
+                      "#comment":"Regular interpolator-style output"
+                    },
+                    {
+                      "#comment":"Utility methods"
+                    }
+                  ],
+                  "field": [
+                    {
+                      "@name":"set_fraction",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"range [0..1]",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_key",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"key",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"key_changed",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.",
+                      "@type":"MFFloat"
+                    },
+                    {
+                      "@name":"set_keyValue",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Array of integer values. Must have the same number of keys as keyValues.",
+                      "@type":"MFInt32"
+                    },
+                    {
+                      "@name":"keyValue",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Array of integer values. Must have the same number of keys as keyValues.",
+                      "@type":"MFInt32"
+                    },
+                    {
+                      "@name":"keyValue_changed",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"Array of integer values. Must have the same number of keys as keyValues.",
+                      "@type":"MFInt32"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"previous",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"next",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Switch":
+                            {
+                              "@whichChoice":-1,
+                              "-children":[
+                                { "ScalarInterpolator":
+                                  {
+                                    "@DEF":"KeyHolder",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"key",
+                                            "@protoField":"key"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"SequencerScript",
+                              "@directOutput":true,
+                              "-children":[
+                                {
+                                  "#comment":"Regular interpolator-style input"
+                                },
+                                {
+                                  "#comment":"Regular interpolator-style output"
+                                },
+                                {
+                                  "#comment":"Utility methods"
+                                },
+                                {
+                                  "#comment":"Script-specific interfaces, not needed for node definition"
+                                }
+                              ],
+                              "field": [
+                                {
+                                  "@name":"set_fraction",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"range [0..1]",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"set_key",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Array sequentially increasing [0..1]. Must have the same number of keys as keyValues.",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"keyHolderNode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "ScalarInterpolator":
+                                      {
+                                        "@USE":"KeyHolder"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"key_changed",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"Array sequentially increasing [0..1]. Must have the same number of keys as keyValues.",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"set_keyValue",
+                                  "@accessType":"inputOnly",
+                                  "@appinfo":"Array of integer values. Must have the same number of keys as keyValues.",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"keyValue",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"keyValue_changed",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"Array of integer values. Must have the same number of keys as keyValues.",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"value_changed",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFInt32"
+                                },
+                                {
+                                  "@name":"previous",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"next",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"For development use only not for inclusion in specification implementations.",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"previousFraction",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat",
+                                  "@value":0.0
+                                },
+                                {
+                                  "@name":"nextIndex",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFInt32",
+                                  "@value":0
+                                },
+                                {
+                                  "@name":"isValid",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"recheckValidity",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":false
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"set_fraction",
+                                      "@protoField":"set_fraction"
+                                    },
+                                    {
+                                      "@nodeField":"set_key",
+                                      "@protoField":"set_key"
+                                    },
+                                    {
+                                      "@nodeField":"key_changed",
+                                      "@protoField":"key_changed"
+                                    },
+                                    {
+                                      "@nodeField":"set_keyValue",
+                                      "@protoField":"set_keyValue"
+                                    },
+                                    {
+                                      "@nodeField":"keyValue",
+                                      "@protoField":"keyValue"
+                                    },
+                                    {
+                                      "@nodeField":"keyValue_changed",
+                                      "@protoField":"keyValue_changed"
+                                    },
+                                    {
+                                      "@nodeField":"value_changed",
+                                      "@protoField":"value_changed"
+                                    },
+                                    {
+                                      "@nodeField":"previous",
+                                      "@protoField":"previous"
+                                    },
+                                    {
+                                      "@nodeField":"next",
+                                      "@protoField":"next"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"var leftToRight;",
+"",
+"function initialize()",
+"{",
+"\tkey      = keyHolderNode.key;",
+"\ttracePrint('Initializing a new IntegerSequencer.  key.length=' + key.length + '; keyValue.length=' + keyValue.length);",
+"\ttracePrint('key =' + key);",
+"\ttracePrint('keyValue =' + keyValue);",
+"",
+"\tvalidityCheck();",
+"\tsetHalfKeyRange();",
+"",
+"\t// assume we start at first key, going left to right",
+"\tleftToRight = true;",
+"\tpreviousFraction = key[0];",
+"\tnextIndex = 1;  //validityCheck ensures minimum of 2 keys exist",
+"}",
+"",
+"function set_fraction(newFraction, timeStamp)",
+"{",
+"\tif (recheckValidity) validityCheck();",
+"",
+"\tif (!isValid) return; //IntegerSequencer ignored",
+"",
+"\t//Bounds checking",
+"\tif (newFraction < key[0])",
+"\t{",
+"\t\ttracePrint('*** warning: fraction is less than first key.  fraction set to first key ***');",
+"\t\tnewFraction = key[0];",
+"\t}",
+"\telse if (newFraction > key[key.length-1])",
+"\t{",
+"\t\ttracePrint('*** warning: fraction is greater than last key.  fraction set to last key ***');",
+"\t\tnewFraction = key[key.length -1];",
+"\t}",
+"",
+"\t//Check animation direction",
+"\tif (newFraction < previousFraction && leftToRight == true)",
+"\t{",
+"\t\tif ((previousFraction - newFraction) > halfKeyRange) //looped around",
+"\t\t{",
+"\t\t\tnextIndex = 1;",
+"\t\t}",
+"\t\telse //just changed direction",
+"\t\t{",
+"\t\t\tleftToRight = false;",
+"\t\t\tnextIndex = nextIndex - 1;",
+"            }",
+"\t}",
+"\telse if (newFraction > previousFraction && leftToRight == false)",
+"\t{",
+"\t\tif ((newFraction - previousFraction) < halfKeyRange) //looped around",
+"\t\t{",
+"\t\t\tnextIndex = key.length - 2;",
+"\t\t}",
+"\t\telse //just changed direction",
+"\t\t{",
+"\t\t\tleftToRight = true;",
+"\t\t\tnextIndex = nextIndex + 1;",
+"            }",
+"\t}",
+"\telse if (newFraction == previousFraction)",
+"\t{ //no change, so no processing required",
+"\t\treturn;",
+"\t}",
+"\tpreviousFraction = newFraction;",
+"",
+"\tif (leftToRight) // moving left to right",
+"\t{",
+"\t\twhile (newFraction > key[nextIndex]) nextIndex++;",
+"",
+"\t\tif (newFraction == key[nextIndex])",
+"\t\t\tvalue_changed = keyValue[nextIndex];",
+"\t\telse\tvalue_changed = keyValue[nextIndex -1];",
+"",
+"\t\ttracePrint('forward animation, fraction =' + newFraction);",
+"\t\ttracePrint('value_changed eventOut is:' + value_changed);",
+"\t}",
+"\telse // moving right to left",
+"\t{",
+"\t\twhile (newFraction < key[nextIndex]) nextIndex--;",
+"",
+"\t\tif (newFraction == key[nextIndex])",
+"\t\t\tvalue_changed = keyValue[nextIndex];",
+"\t\telse\tvalue_changed = keyValue[nextIndex + 1];",
+"",
+"\t\ttracePrint('backward animation, fraction =' + newFraction);",
+"\t\ttracePrint('value_changed eventOut is:' + value_changed);",
+"\t}",
+"}",
+"",
+"function set_key(newKey, timeStamp)",
+"{",
+"\tkey = newKey;",
+"\tkeyHolderNode.key = newKey;",
+"\tsetHalfKeyWidth();",
+"\trecheckValidity = true;",
+"}",
+"",
+"function set_keyValue(newKeyValue, timeStamp)",
+"{",
+"\tkeyValue = newKeyValue;",
+"\trecheckValidity = true;",
+"}",
+"",
+"function setHalfKeyRange()",
+"{",
+"\thalfKeyRange = (key[key.length - 1] - key[0])/2.0;",
+"}",
+"",
+"function previous (value, timeStamp)",
+"{",
+"  if (value==true) // trigger on true events only",
+"  {",
+"\tleftToRight = true;",
+"\tnextIndex = nextIndex - 2; // reset to previous",
+"\tif (nextIndex < 0) nextIndex = nextIndex + key.length;",
+"\tvalue_changed = keyValue[nextIndex];",
+"\tpreviousFraction = key[nextIndex];",
+"\tnextIndex++; // setup for next time, leftToRight",
+"\tif (nextIndex > key.length - 1) nextIndex = 0;",
+"  }",
+"}",
+"function next (value, timeStamp)",
+"{",
+"  if (value==true) // trigger on true events only",
+"  {",
+"\tleftToRight = true;",
+"\tvalue_changed = keyValue[nextIndex];",
+"\tpreviousFraction = key[nextIndex];",
+"\tnextIndex++; // setup for next time,leftToRight",
+"\tif (nextIndex > key.length - 1) nextIndex = 0;",
+"  }",
+"}",
+"",
+"function validityCheck()",
+"{",
+"\t//Check if lengths of key & keyValue arrays match",
+"\tif (key.length != keyValue.length)",
+"\t{",
+"\t\talwaysPrint('*** error: key and keyValue arrays must be of the same length.  IntegerSequencer ignored ***');",
+"\t\tisValid = false;",
+"\t\treturn;",
+"\t}",
+"\t//check to ensure minimum of 2 keys have been specified",
+"\tif (key.length < 2)",
+"\t{",
+"\t\talwaysPrint('*** error: must contain at least 2 keys.  IntegerSequencer ignored ***');",
+"\t\tisValid = false;",
+"\t\treturn;",
+"\t}",
+"",
+"\t//Check if key array has values in an non-decreasing order",
+"\tfor (i = 1; i < key.length; i++)",
+"\t{",
+"\t\ttracePrint('i=' + i);",
+"",
+"\t\tif (key[i] < key [i-1])",
+"\t\t{",
+"\t\t\talwaysPrint('*** error: key array values must be listed in a non-decreasing order.  IntegerSequencer ignored ***');",
+"\t\t\tisValid = false;",
+"\t\t\treturn;",
+"\t\t}",
+"\t}",
+"\tisValid = true",
+"\trecheckValidity = false;",
+"\tkey_changed = key;",
+"\tkeyValue_changed = keyValue;",
+"\treturn;",
+"}",
+"",
+"function tracePrint(outputString)",
+"{",
+"\tif (traceEnabled) Browser.print ('[IntegerSequencer]' + outputString);",
+"}",
+"",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[IntegerSequencer]' + outputString);",
+"}"
+]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===============Example=============="
+          },
+          { "Anchor":
+            {
+              "@description":"IntegerSequencerExample",
+              "@parameter":["target=_blank"],
+              "@url":["IntegerSequencerExample.x3d","https://savage.nps.edu/Savage/Tools/Animation/IntegerSequencerExample.x3d","IntegerSequencerExample.wrl","https://savage.nps.edu/Savage/Tools/Animation/IntegerSequencerExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["IntegerSequencerPrototype","defines a prototype","","Click text to see example scene","IntegerSequencerExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.9
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

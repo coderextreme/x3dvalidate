@@ -1,0 +1,301 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Prototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"DDG-51 Flight IIA Helo hangers and deck with movable hanger doors and RASTs"
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Joe Sears, USN"
+          },
+          {
+            "@name":"created",
+            "@content":"21 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://combatindex.com/store/3d"
+          },
+          {
+            "@name":"drawing",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/ddg-51.htm"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/Prototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"STBD side",
+              "@orientation":[-0.047,0.998,0.042,1.6342],
+              "@position":[140.2,8,-88.7]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Flight Operations",
+              "@orientation":[-0.977,-0.207,0.045,0.1503],
+              "@position":[-0.9,28.2,75.2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"25 meters aft of helo hanger looking forward",
+              "@orientation":[-1,0,0.007,0.1154],
+              "@position":[0,1.9,26.5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Bow Forward Superstructure",
+              "@orientation":[0.002,0.999,0.053,3.101],
+              "@position":[1,6.4,-182.1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"STBD Chaff Launchers",
+              "@orientation":[-0.109,0.981,0.161,1.334],
+              "@position":[23.1,6.9,-78.2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Combat Systems FWD to Aft",
+              "@orientation":[0.024,0.996,-0.081,2.3639],
+              "@position":[22.1,5.7,-102.2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Overhead",
+              "@orientation":[-0.581,0.57,0.581,2.1039],
+              "@position":[0.1,152.4,-75.5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"MK 45 5 Inch Gun",
+              "@orientation":[-1,0.016,0.003,0.9041],
+              "@position":[0,12.5,-120.6]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-5.5,0],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"HeloHanger",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,2.55,0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["HeloHanger.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/HeloHanger.x3d","HeloHanger.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/HeloHanger.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"HullBottom",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["Hull.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/Hull.x3d","Hull.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/Hull.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"SuperstructureAft",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["AftSuperstructure.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/AftSuperstructure.x3d","AftSuperstructure.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/AftSuperstructure.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"FWDSuperstructure",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,0.05,0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["ForwardSuperstructure.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/ForwardSuperstructure.x3d","ForwardSuperstructure.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/ForwardSuperstructure.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"MK32MOD14SVTT",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"SVTTSTBD",
+                          "@translation":[9.5,6.05,-70],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@DEF":"SVTT",
+                                "@url":["SVTT.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/SVTT.x3d","SVTT.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/SVTT.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"SVTTPort",
+                          "@translation":[-9.5,6.05,-70],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@USE":"SVTT"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"Mk45Gun",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"FiveInchGun",
+                          "@rotation":[0,1,0,-1.57],
+                          "@scale":[0.75,0.75,0.75],
+                          "@translation":[0,8.3,-126],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["../Frigate-Yavuz-Turkey/Mk45.x3d","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Yavuz-Turkey/Mk45.x3d","../Frigate-Yavuz-Turkey/Mk45.wrl","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Yavuz-Turkey/Mk45.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"AntennaGroup",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"SRS-1AntennaGroup",
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["SRS-1AntennaGroup.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/SRS-1AntennaGroup.x3d","SRS-1AntennaGroup.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/SRS-1AntennaGroup.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Switch":
+                  {
+                    "@DEF":"MissileLauncherWG",
+                    "@whichChoice":0,
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@scale":[1.2,1.2,1.4],
+                          "@translation":[0,10.6,-26],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["MissileLaunchers.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/MissileLaunchers.x3d","MissileLaunchers.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/MissileLaunchers.wrl"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

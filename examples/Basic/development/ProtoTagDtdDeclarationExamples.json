@@ -1,0 +1,355 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ProtoTagDtdDeclarationExamples.x3d"
+          },
+          {
+            "@name":"created",
+            "@content":"17 April 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 March 2016"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"e-mail",
+            "@content":"brutzman@nps.navy.mil"
+          },
+          {
+            "@name":"description",
+            "@content":"Provides Prototype XML-tag-definition examples to demonstrate DTD modularization and extensibility in X3D scenes. Also see SpinGroupInternalSubsetDeclaration.x3d"
+          },
+          {
+            "@name":"warning",
+            "@content":"You must view full source of the DTD declarations (ProtoTagDtdDeclarationExamples.x3d.txt) to fully understand validation techniques in this file."
+          },
+          {
+            "@name":"error",
+            "@content":"internal subset deficiency: nodeType attributes need to be converted to containerField attributes."
+          },
+          {
+            "@name":"reference",
+            "@content":"ProtoTagDtdDeclarationExamples.x3d.txt"
+          },
+          {
+            "@name":"reference",
+            "@content":"SpinGroupInternalSubsetDeclaration.x3d.txt"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/ProtoTagDtdDeclarationExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"*********************************************************************"
+          },
+          {
+            "#comment":"*** Step 5: Copy/edit ProtoDeclare, (optionally ProtoInstance) ***"
+          },
+          {
+            "#comment":"*** and the tagset version for your nodes of interest. ***"
+          },
+          {
+            "#comment":"*** When instantiating field Node/Nodes or field values, ***"
+          },
+          {
+            "#comment":"*** use fieldValue tags to override the initial values. ***"
+          },
+          {
+            "#comment":"*** The following example content instantiates prototype ***"
+          },
+          {
+            "#comment":"*** NewTransformExample using tags and ProtoInstance. ***"
+          },
+          {
+            "#comment":"*********************************************************************"
+          },
+          {
+            "#comment":"Declaring the NewTransformExample PROTO:"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"NewTransformExample",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"translation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"rotation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"center",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"scale",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[1,1,1]
+                    },
+                    {
+                      "@name":"scaleOrientation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "WorldInfo":
+                          {
+                            "@info":["overridden at run time"]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"Transform is first node, which determines node type, and encloses children for instances."
+                    },
+                    { "Transform":
+                      {
+                        "@DEF":"InitialTransform",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"translation"
+                              },
+                              {
+                                "@nodeField":"rotation",
+                                "@protoField":"rotation"
+                              },
+                              {
+                                "@nodeField":"center",
+                                "@protoField":"center"
+                              },
+                              {
+                                "@nodeField":"scale",
+                                "@protoField":"scale"
+                              },
+                              {
+                                "@nodeField":"scaleOrientation",
+                                "@protoField":"scaleOrientation"
+                              },
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              },
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Instantiating the NewTransformExample PROTO using a ProtoInstance tag:"
+          },
+          { "ProtoInstance":
+            {
+              "@name":"NewTransformExample",
+              "fieldValue": [
+                {
+                  "@name":"translation",
+                  "@value":[0,1.5,0]
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.1,0.8,0.8]
+                                  }
+                                }
+                            }
+                          },
+                        "-geometry":
+                          { "Text":
+                            {
+                              "@string":["ProtoTagDtdDeclaration Examples","using a regular ProtoInstance"],
+                              "-fontStyle":
+                                { "FontStyle":
+                                  {
+                                    "@DEF":"FS",
+                                    "@justify":["MIDDLE","MIDDLE"],
+                                    "@size":0.7
+                                  }
+                                }
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Instantiating the NewTransformExample node using a customized tag:"
+          },
+          { "NewTransformExample":
+            {
+              "@center":[0,0,0],
+              "@rotation":[0,0,1,0],
+              "@scaleOrientation":[0,0,1,0],
+              "@translation":[0,-0.5,0],
+              "@scale":[1,1,1],
+              "fieldValue": [
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0.1,0.8,0.2]
+                                  }
+                                }
+                            }
+                          },
+                        "-geometry":
+                          { "Text":
+                            {
+                              "@string":["plus header-declared XML tag from","XML document subset declaration"],
+                              "-fontStyle":
+                                { "FontStyle":
+                                  {
+                                    "@USE":"FS"
+                                  }
+                                }
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"Click to view source (ProtoTagDtdDeclarationExamples.x3d.txt)",
+                    "@parameter":["target=_blank"],
+                    "@url":["ProtoTagDtdDeclarationExamples.x3d.txt","http://www.web3d.org/x3d/content/examples/development/ProtoTagDtdDeclarationExamples.x3d.txt"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.4,0.1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["(click to see source)"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"FS"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

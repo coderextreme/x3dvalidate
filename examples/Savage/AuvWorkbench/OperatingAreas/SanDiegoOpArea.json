@@ -1,0 +1,141 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          },
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SanDiegoOpArea.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Operations area top-level scene for Monterey Bay California, used by the AUV Workbench to build scenarios using unmanned vehicles."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"15 September 2010"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/SanDiegoOpArea.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Note that the geoCoords must match the AUV Workbench c_geo.xml file in /configuration/template"
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[32.67,-117.23,0],
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@DEF":"DEPRECATED",
+                    "@geoCoords":[32.67,-117.23,0.0]
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"<DirectionalLight ambientIntensity='0.1' direction='-3 -3 0'/>"
+                },
+                {
+                  "#comment":"the following scene is not geospatially referenced"
+                },
+                { "Inline":
+                  {
+                    "@url":["../../../Savage/Locations/SanDiegoCalifornia/SanDiego.x3d","https://savage.nps.edu/Savage/Locations/SanDiegoCalifornia/SanDiego.x3d","../../../Savage/Locations/SanDiegoCalifornia/SanDiego.wrl","https://savage.nps.edu/Savage/Locations/SanDiegoCalifornia/SanDiego.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "@DEF":"OverheadViewpoint",
+              "@description":"San Diego Bay Operations Area",
+              "@orientation":[-1,0,0,1.57],
+              "@position":[32.67,-117.23,2000]
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "@DEF":"IntermediateViewpoint",
+              "@description":"500m altitude",
+              "@position":[32.67,-117.23,500]
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "@DEF":"LowerViewpoint",
+              "@description":"250m altitude",
+              "@position":[32.63,-117.22,250]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@DEF":"FastNI",
+              "@speed":1000.0,
+              "@type":["FLY","ANY"]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@DEF":"SlowNI",
+              "@speed":100.0
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isBound",
+              "@fromNode":"OverheadViewpoint",
+              "@toField":"set_bind",
+              "@toNode":"FastNI"
+            }
+          }
+        ]
+    }
+  }
+}

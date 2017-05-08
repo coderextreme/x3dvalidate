@@ -1,0 +1,272 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MineTrainingShape.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"U.S. Navy Mark VI static mine diplayed on the NPS campus."
+          },
+          {
+            "@name":"creator",
+            "@content":"Marlon Heron and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"2 February 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 February 2015"
+          },
+          {
+            "@name":"TODO",
+            "@content":"Determine if this shape is used in any training minefields at sea."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Naval_mine"
+          },
+          {
+            "@name":"Image",
+            "@content":"MineTrainingShapeNpsPhoto.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"Contact Mine, http://www.maritime.org/doc/minedisposal/p02ch2pg02.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"Mark 6 Mine, http://www.maritime.org/doc/minedisposal/p02ch2pg05.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"British Mines, http://www.navweaps.com/Weapons/WAMBR_Mines.htm"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/UnderwaterMines/MineTrainingShape.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"MineBody",
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":1.5
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0.1,0.1],
+                                "@transparency":0.05
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"CenterRing",
+              "@rotation":[0,0,1,1.570796],
+              "@translation":[0,1.59,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@height":0.05,
+                          "@radius":0.1,
+                          "@side":false
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0.1,0.1]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@DEF":"MineTrainingShapeCenterRing",
+                                "@url":["MineTrainingShapeCenterRing.jpg","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/MineTrainingShapeCenterRing.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@bottom":false,
+                          "@height":0.05,
+                          "@radius":0.1,
+                          "@solid":false,
+                          "@top":false
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0.1,0.1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"HertzHorn1",
+                    "@rotation":[0,0,1,-0.785398],
+                    "@translation":[0.85,1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"HertzHornShape",
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.65,
+                                "@radius":0.1
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.1,0.1,0.1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"HertzHorn2",
+                    "@rotation":[0,1,0,1.256637],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"HertzHorn1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"HertzHorn3",
+                    "@rotation":[0,1,0,2.513274],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"HertzHorn1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"HertzHorn4",
+                    "@rotation":[0,1,0,3.769911],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"HertzHorn1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"HertzHorn5",
+                    "@rotation":[0,1,0,5.026548],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"HertzHorn1"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

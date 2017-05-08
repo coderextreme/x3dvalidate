@@ -1,0 +1,166 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SeaStateElevationGridExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Sea State animation using ElevationGrid."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Marcus Simoes and MV3204 class"
+          },
+          {
+            "@name":"created",
+            "@content":"25 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"warning",
+            "@content":"unfinished, but in progress..."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Environment/SeaState/SeaStateElevationGridExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"SeaStateExtrusionExample.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"sea state, MFFloat interpolator script"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"hello sea state",
+              "@orientation":[1,0,0,-0.78],
+              "@position":[0,5,5]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"WaveClock",
+              "@cycleInterval":3,
+              "@loop":true
+            }
+          },
+          {
+            "#comment":"WaveHeightCalculationScript"
+          },
+          { "Script":
+            {
+              "@DEF":"MFFloatInterpolatorScript",
+              "field": [
+                {
+                  "@name":"set_fraction",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"key",
+                  "@accessType":"inputOutput",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"keyValue",
+                  "@accessType":"inputOutput",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"value_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"MFFloat"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_fraction (value, timestamp)",
+"{",
+"//\tBrowser.print ('received value=' + value);",
+"",
+"//\tinterpolate between values in our keyValue array",
+"}"
+]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "@DEF":"WaveGrid",
+                    "@height":[0,0,0,0,0,0,0,0,0],
+                    "@xDimension":3,
+                    "@zDimension":3
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0.6,0.6]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"WaveClock",
+              "@toField":"set_fraction",
+              "@toNode":"MFFloatInterpolatorScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"MFFloatInterpolatorScript",
+              "@toField":"set_height",
+              "@toNode":"WaveGrid"
+            }
+          }
+        ]
+    }
+  }
+}

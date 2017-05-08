@@ -1,0 +1,151 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure16.4ColoredBookFaces.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 16.4, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch16/16fig04.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"25 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"A book with its faces individually colored using colors from a ColorNode."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter16-Color/Figure16.4ColoredBookFaces.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Book",
+              "@orientation":[1,0,0,1.4],
+              "@position":[0,-1,0.3]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"SPINNING_VIEWPOINT_PARENT_TRANSFORM",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Spinning viewpoint",
+                    "@orientation":[1,0,0,1.4],
+                    "@position":[0,-1,0.3]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-children":[
+                {
+                  "#comment":"no appearance, use Color node colors instead"
+                }
+              ],
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@colorIndex":[0,0,0,1,1,1],
+                    "@colorPerVertex":false,
+                    "@coordIndex":[0,1,2,3,-1,7,6,5,4,-1,0,3,7,4,-1,0,4,5,1,-1,1,5,6,2,-1,2,6,7,3],
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[-0.095,-0.115,0.04,0.095,-0.115,0.04,0.095,0.115,0.04,-0.095,0.115,0.04,-0.095,-0.115,0.00,0.095,-0.115,0.00,0.095,0.115,0.00,-0.095,0.115,0.00]
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[0.7,0.5,0.2,0.8,0.8,0.8]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TIMER",
+              "@cycleInterval":4,
+              "@loop":true
+            }
+          },
+          {
+            "#comment":"Note direction of rotation is negative, since we are rotating the position of a Viewpoint looking down the default -Z axis"
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"SPINNER",
+              "@key":[0,0.5,1],
+              "@keyValue":[0,0,1,0,0,0,1,-3.1416,0,0,1,-6.2832]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"SPINNER"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"SPINNER",
+              "@toField":"set_rotation",
+              "@toNode":"SPINNING_VIEWPOINT_PARENT_TRANSFORM"
+            }
+          }
+        ]
+    }
+  }
+}

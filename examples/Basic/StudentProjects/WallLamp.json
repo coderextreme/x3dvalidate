@@ -1,0 +1,186 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"WallLamp.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A reusable wall lamp: prototype using an inverted cone with embedded PointLight."
+          },
+          {
+            "@name":"creator",
+            "@content":"Frederic Roussille"
+          },
+          {
+            "@name":"created",
+            "@content":"1 April 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 December 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/WallLamp.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"WallLamp",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"lampColor",
+                      "@accessType":"inputOutput",
+                      "@type":"SFColor",
+                      "@value":[0,0,1]
+                    },
+                    {
+                      "@name":"lightColor",
+                      "@accessType":"inputOutput",
+                      "@type":"SFColor",
+                      "@value":[0.7,0.5,0]
+                    },
+                    {
+                      "@name":"lightIntensity",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":0.8
+                    },
+                    {
+                      "@name":"lightAttenuation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0.6,0]
+                    },
+                    {
+                      "@name":"radius",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":50
+                    },
+                    {
+                      "@name":"lightLocation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,5]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@DEF":"lamp_color",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"diffuseColor",
+                                                  "@protoField":"lampColor"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                  }
+                                },
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,9,1,-1,1,9,2,-1,2,9,3,-1,3,9,4,-1,4,9,5,-1,5,9,6,-1,6,9,7,-1,7,9,8,-1,9,0,8,-1],
+                                    "@creaseAngle":1.57,
+                                    "@solid":false,
+                                    "-coord":
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-1,0,0,-0.92,0,0.38,-0.71,0,0.71,-0.38,0,0.92,0,0,1,0.38,0,0.92,0.71,0,0.71,0.92,0,0.38,1,0,0,0,-3,0]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          },
+                          { "PointLight":
+                            {
+                              "@DEF":"lamp_light",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"color",
+                                      "@protoField":"lightColor"
+                                    },
+                                    {
+                                      "@nodeField":"intensity",
+                                      "@protoField":"lightIntensity"
+                                    },
+                                    {
+                                      "@nodeField":"attenuation",
+                                      "@protoField":"lightAttenuation"
+                                    },
+                                    {
+                                      "@nodeField":"radius",
+                                      "@protoField":"radius"
+                                    },
+                                    {
+                                      "@nodeField":"location",
+                                      "@protoField":"lightLocation"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"WallLamp"
+            }
+          }
+        ]
+    }
+  }
+}

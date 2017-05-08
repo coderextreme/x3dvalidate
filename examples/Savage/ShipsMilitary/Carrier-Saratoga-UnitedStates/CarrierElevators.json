@@ -1,0 +1,319 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CarrierElevators.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Carrier elevators lift planes up from hangar deck to flight deck."
+          },
+          {
+            "@name":"creator",
+            "@content":"Chun Hock Sng"
+          },
+          {
+            "@name":"created",
+            "@content":"1 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Carrier-Saratoga-UnitedStates/CarrierElevators.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"Elevators",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Move_elevator1",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Elevator1",
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[44,10.5,58.5,10.5,58.5,-2,44,-2,44,10.5]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.502,0.502,0.502]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TouchSensor1"
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"CLOCK1",
+                          "@cycleInterval":15,
+                          "@enabled":false,
+                          "@loop":true
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF":"Elevator_1",
+                          "@key":[0.0,0.5,1.0],
+                          "@keyValue":[0,0,0,0,-8,0,0,0,0]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Move_elevator2",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Elevator2",
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[91.5,10.5,91.5,-2.07,6.5,-2.07,6.5,10.5,91.5,10.5]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"Elev_col",
+                                      "@diffuseColor":[0.5,0.5,0.5]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"CLOCK2",
+                          "@cycleInterval":12,
+                          "@loop":true
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF":"Elevator_2",
+                          "@key":[0.0,0.5,1.0],
+                          "@keyValue":[0,0,0,0,-8,0,0,0,0]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Move_elevator3",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Elevator3",
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[130,10.5,144.5,10.5,144.5,-2,130,-2,130,10.5]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@USE":"Elev_col"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"CLOCK3",
+                          "@cycleInterval":60,
+                          "@loop":true
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF":"Elevator_3",
+                          "@key":[0,0.1,0.15,0.2,0.3,0.4,0.5,0.6,0.7,0.76,0.86,0.9,0.93,0.96,1],
+                          "@keyValue":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-8,0,0,-8,0]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Move_elevator4",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Elevator4",
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@convex":false,
+                                "@crossSection":[138,-46,138,-33.5,153.5,-33.5,153.5,-37,156.5,-37.5,153.5,-46,138,-46]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@USE":"Elev_col"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF":"CLOCK4",
+                          "@cycleInterval":60,
+                          "@loop":true
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF":"Elevator_4",
+                          "@key":[0,0.1,0.15,0.2,0.3,0.4,0.5,0.6,0.7,0.76,0.86,0.9,0.93,0.96,1],
+                          "@keyValue":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-8,0,0,-8,0]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"TouchSensor1",
+              "@toField":"set_enabled",
+              "@toNode":"CLOCK1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK1",
+              "@toField":"set_fraction",
+              "@toNode":"Elevator_1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Elevator_1",
+              "@toField":"set_translation",
+              "@toNode":"Move_elevator1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK2",
+              "@toField":"set_fraction",
+              "@toNode":"Elevator_2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Elevator_2",
+              "@toField":"set_translation",
+              "@toNode":"Move_elevator2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK3",
+              "@toField":"set_fraction",
+              "@toNode":"Elevator_3"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Elevator_3",
+              "@toField":"set_translation",
+              "@toNode":"Move_elevator3"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK4",
+              "@toField":"set_fraction",
+              "@toNode":"Elevator_4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Elevator_4",
+              "@toField":"set_translation",
+              "@toNode":"Move_elevator4"
+            }
+          }
+        ]
+    }
+  }
+}

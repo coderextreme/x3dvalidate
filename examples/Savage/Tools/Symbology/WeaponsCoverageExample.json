@@ -1,0 +1,84 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"WeaponsCoverageExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"WeaponsCoverageExample provides a simple example usage of the WeaponsCoverage prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"Alan Hudson"
+          },
+          {
+            "@name":"created",
+            "@content":"11 Sept 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 April 2007"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Symbology/WeaponsCoverageExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"TextPad"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"WeaponsCoverage",
+              "@url":["WeaponsCoveragePrototype.x3d#WeaponsCoverage","../../../Savage/Tools/Symbology/WeaponsCoveragePrototype.x3d#WeaponsCoverage","https://savage.nps.edu/Savage/Tools/Symbology/WeaponsCoveragePrototype.x3d#WeaponsCoverage","WeaponsCoverage.wrl#WeaponsCoverage","../../../Savage/Tools/Symbology/WeaponsCoverage.wrl#WeaponsCoverage","https://savage.nps.edu/Savage/Tools/Symbology/WeaponsCoverage.wrl#WeaponsCoverage"],
+              "field": [
+                {
+                  "@name":"whichChoice",
+                  "@accessType":"inputOutput",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"WeaponsCoverage",
+              "fieldValue": [
+                {
+                  "@name":"whichChoice",
+                  "@value":0
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

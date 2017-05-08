@@ -1,0 +1,262 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure30.1ScriptSlidingBall.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 30.1, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch30/30fig01.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"28 November 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"4 February 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"A sliding red sphere and a custom interpolation script. Three ways to include ECMAScript (JavaScript) programming are compared: external file, url script code, and embedded script code. Recommendation: use embedded script code inside a CDATA block."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter30-Scripts/Figure30.1ScriptSlidingBall.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"sliding ball",
+              "@orientation":[1,0,0,-0.2],
+              "@position":[0.5,0.5,1.5]
+            }
+          },
+          {
+            "#comment":"Background nodes are usually best placed at the top of the scene since they have global effect and are bindable nodes."
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0,0,0.1,0,0.1,0.3,0.3,0.3,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[1,0,0.8,0.5,0,0.8,0,0,0.8]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Floor",
+                    "@translation":[0.5,-0.005,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[1,0.01,0.5]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.7,0.7,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0.1,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"BallTransform",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.1
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,0.3,0.3]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"Clock",
+                    "@cycleInterval":4,
+                    "@loop":true
+                  }
+                },
+                {
+                  "#comment":"In this example, each Script node can serve as a simple replacement for a PositionInterpolator node."
+                },
+                {
+                  "#comment":"First Script example: external .js javascript file. This can be helpful if multiple Script nodes (perhaps in multiple scenes) reuse the same code, allowing any changes to occur in a single .js ecmascript file."
+                },
+                { "Script":
+                  {
+                    "@DEF":"MoverUsingExternalScriptFile",
+                    "@url":["Figure30.1ScriptSlidingBall.js","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter30-Scripts/Figure30.1ScriptSlidingBall.js"],
+                    "field": [
+                      {
+                        "@name":"set_fraction",
+                        "@accessType":"inputOnly",
+                        "@type":"SFFloat"
+                      },
+                      {
+                        "@name":"value_changed",
+                        "@accessType":"outputOnly",
+                        "@type":"SFVec3f"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment":"Second Script example: executable code is placed in url field. This is legal, but no longer a recommended approach."
+                },
+                {
+                  "#comment":"Warning: avoid // inline comments or else canonicalization will hide all follow-on code!"
+                },
+                { "Script":
+                  {
+                    "@DEF":"MoverUsingUrlScript",
+                    "@url":["ecmascript: function set_fraction( fraction eventTime ) { value_changed[0] = fraction; value_changed[1] = 0.0; value_changed[2] = 0.0; }"],
+                    "field": [
+                      {
+                        "@name":"set_fraction",
+                        "@accessType":"inputOnly",
+                        "@type":"SFFloat"
+                      },
+                      {
+                        "@name":"value_changed",
+                        "@accessType":"outputOnly",
+                        "@type":"SFVec3f"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment":"Third Script example, using preferred method: script code contained in CDATA block"
+                },
+                { "Script":
+                  {
+                    "@DEF":"MoverUsingContainedScript",
+                    "field": [
+                      {
+                        "@name":"set_fraction",
+                        "@accessType":"inputOnly",
+                        "@appinfo":"receive fraction from clock",
+                        "@type":"SFFloat"
+                      },
+                      {
+                        "@name":"value_changed",
+                        "@accessType":"outputOnly",
+                        "@appinfo":"produce output position to move the ball",
+                        "@type":"SFVec3f"
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"// Move a shape in a straight path",
+"function set_fraction( fraction, eventTime ) {",
+"\tvalue_changed[0] = fraction;    // X component",
+"\tvalue_changed[1] = 0.0;         // Y component",
+"\tvalue_changed[2] = 0.0;         // Z component",
+"}"
+]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Any one of the three Mover script alternatives can drive the ball - modify both ROUTEs to test"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"MoverUsingContainedScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"MoverUsingContainedScript",
+              "@toField":"set_translation",
+              "@toNode":"BallTransform"
+            }
+          }
+        ]
+    }
+  }
+}

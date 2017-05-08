@@ -1,0 +1,493 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ProjectileInterpolatorPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A proto which simulates x-y plane projectile motion."
+          },
+          {
+            "@name":"creator",
+            "@content":"Ozan APAYDIN"
+          },
+          {
+            "@name":"created",
+            "@content":"10 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ProjectileInterpolatorPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"ProjectileInterpolator",
+              "@appinfo":"This prototype is a Projectile Motion Interpolator. It takes Inputs : Initial Velocity and Angle then calculates trajectory of the projectile on x-y plane according to given dt time and B_m. It outputs value_changed values(SFVec3f).",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"Vi",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Initial Velocity value of the object.",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"theta",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Launch Angle. The angle between horizantal and launch direction",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"B_m",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Proportional to drag force = B2/m",
+                      "@type":"SFFloat",
+                      "@value":0.00004
+                    },
+                    {
+                      "@name":"dt",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Time step.",
+                      "@type":"SFFloat",
+                      "@value":0.1
+                    },
+                    {
+                      "@name":"fraction",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"SFFloat Values ranging [0..1].",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_fraction",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"The set_fraction eventIn receives an SFFloat event and causes the interpolator function to evaluate resulting in a value_changed eventOut with the same timestamp as the set_fraction event.",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_theta",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Sets theta to the value of eventIn.",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_Vi",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"Sets Vi to the value of eventIn.",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"The interpolator function eventOut results as Vector3Float.",
+                      "@type":"SFVec3f"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"ProjectileMotionTrackerScript",
+                        "field": [
+                          {
+                            "@name":"Vi",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"theta",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"B_m",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"dt",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"fraction",
+                            "@accessType":"initializeOnly",
+                            "@appinfo":"In range [01]",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_fraction",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_theta",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_Vi",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"Vi",
+                                "@protoField":"Vi"
+                              },
+                              {
+                                "@nodeField":"theta",
+                                "@protoField":"theta"
+                              },
+                              {
+                                "@nodeField":"B_m",
+                                "@protoField":"B_m"
+                              },
+                              {
+                                "@nodeField":"dt",
+                                "@protoField":"dt"
+                              },
+                              {
+                                "@nodeField":"fraction",
+                                "@protoField":"fraction"
+                              },
+                              {
+                                "@nodeField":"set_fraction",
+                                "@protoField":"set_fraction"
+                              },
+                              {
+                                "@nodeField":"set_theta",
+                                "@protoField":"set_theta"
+                              },
+                              {
+                                "@nodeField":"set_Vi",
+                                "@protoField":"set_Vi"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"var x;",
+"var y;",
+"var Vx;",
+"var Vy;",
+"var B_m;",
+"var dt;",
+"var blocksize;",
+"var Vi;",
+"var theta;",
+"",
+"var key;",
+"var keyValue;",
+"var previousFraction;",
+"var previousFractionIndex;",
+"var blockSize;",
+"var outputArray;",
+"",
+"function tracePrint (outputString)",
+"{",
+"\tvar traceEnabled = true;",
+"\tif (traceEnabled) Browser.print ('[WaypointInterpolator]' + outputString);",
+"}",
+"function alwaysPrint (outputString)",
+"{",
+"\tBrowser.print ('[WaypointInterpolator]' + outputString);",
+"}",
+"",
+"",
+"",
+"function initialize() {",
+"   key = new Array();",
+"   keyValue = new MFVec3f();",
+"   x = new Array();",
+"   y = new Array();",
+"   calculateTrajectory();",
+"",
+"   previousFractionIndex = -1;",
+"\tpreviousFraction = 0;",
+"\t// check key array ranges [0..1] and is monotonically increasing",
+"\t// check that size of keyValue array is integer multiple of size of key array",
+"\ttracePrint ('key            =' + key);",
+"\ttracePrint ('key.length= ' + key.length);",
+"\ttracePrint ('keyValue=   ' + keyValue);",
+"\ttracePrint ('keyValue.length=' + keyValue.length);",
+"\tblockSize =  3; //keyValue.length/key.length;",
+"\ttracePrint ('blockSize=' + blockSize);",
+"\tif (blockSize != Math.round(blockSize))",
+"\t{",
+"\t  alwaysPrint ('*** warning:  blockSize not an integer multiple. check sizes of key and keyValue');",
+"\t}",
+"\tif (key[0] != 0)",
+"\t{",
+"\t  alwaysPrint ('*** warning:  key[0] != 0');",
+"\t}",
+"\tif (key[key.length-1] != 1)",
+"\t{",
+"\t  alwaysPrint ('*** warning:  key[' + (key.length - 1) + '] != 1, reset from' + key[key.length-1] + ' to 1');",
+"\t  key[key.length-1] = 1;",
+"\t}",
+"\tfor (index = 0; index < blockSize; index++)",
+"\t{",
+"\t\tif ((key[index] < 0) || (key[index] > 1))",
+"\t\t{",
+"\t\t   alwaysPrint ('*** warning:  key[' + index + '] =' + key[index] + ', out of range [0..1]');",
+"\t\t}",
+"\t}",
+"\t// instantiate default array, later computations just update it",
+"\toutputArray = new SFVec3f();",
+"\toutputArray = keyValue[0];",
+"\ttracePrint ('initial outputArray=' + outputArray);",
+"",
+"}",
+"",
+"function set_fraction (inputFloat, timestamp) {",
+"\tfraction = inputFloat;",
+"\ttracePrint ('previousFractionIndex=' + previousFractionIndex",
+"\t\t + ', fraction=' + fraction + ', previousFraction=' + previousFraction);",
+"",
+"\tif (fraction < 0)",
+"\t{",
+"\t\ttracePrint ('*** illegal fraction' + fraction + ' set to 0');",
+"\t\tfraction = 0;",
+"\t\tpreviousFractionIndex = 0; // first",
+"\t}",
+"\telse if (fraction > 1)",
+"\t{",
+"\t\talwaysPrint ('*** illegal fraction' + fraction + ' set to 1');",
+"\t\tfraction = 1;",
+"\t\tpreviousFractionIndex = blockSize - 1; // last",
+"\t}",
+"\telse if (previousFractionIndex == -1)",
+"\t{",
+"\t\tpreviousFractionIndex = 0; // first",
+"\t\ttracePrint ('previousFractionIndex initialized for first event');",
+"\t}",
+"\telse if ((fraction >= previousFraction) && (fraction >= key[previousFractionIndex+1]))",
+"\t{",
+"\t\tpreviousFractionIndex++;",
+"\t}",
+"\telse if (fraction < previousFraction) // regress, or loop repeat without reaching one",
+"\t{",
+"",
+"\t\tpreviousFractionIndex = 0;",
+"\t\twhile ((fraction >= key[previousFractionIndex+1]) && (previousFractionIndex < blockSize))",
+"\t\t{",
+"\t\t\tpreviousFractionIndex++;",
+"\t\t}",
+"\t\ttracePrint ('reset/reincrement previousFractionIndex to' + previousFractionIndex);",
+"\t}",
+"",
+"\tif (fraction == 1) // use final block",
+"\t{",
+"\t\ttracePrint ('(fraction == 1)');",
+"",
+"",
+"        \toutputArray = keyValue[(keyValue.length -1)];",
+"",
+"\t\tpreviousFractionIndex = -1; // setup for restart",
+"\t\ttracePrint ('finished final fraction==1 block');",
+"\t}",
+"\t// when fraction matches index, calculate value_changed from corresponding keyValue array",
+"\telse if (fraction == key[previousFractionIndex])",
+"\t{",
+"\t\ttracePrint ('(fraction == key[previousFractionIndex])');",
+"",
+"",
+"\t\t// update outputArray - need to interpolate next",
+"\t\toutputArray = keyValue[previousFractionIndex];",
+"",
+"\t}",
+"        else {",
+"",
+"              delta = key[previousFractionIndex + 1] -  key[previousFractionIndex];",
+"              differ = fraction - key[previousFractionIndex];",
+"              percentDiffer = differ / delta;",
+"",
+"              valueDelta = new SFVec3f();",
+"              for(index = 0; index < blockSize; index++) {",
+"                 valueDelta[index] =  keyValue[(previousFractionIndex + 1)][index] - keyValue[previousFractionIndex][index];",
+"                 outputArray[index]  = keyValue[previousFractionIndex][index] + valueDelta[index] * percentDiffer;",
+"\t\t Browser.print ('valueDelta' + valueDelta[index]);",
+"                 Browser.print ('perDiffer' + percentDiffer);",
+"              }",
+"",
+"        }",
+"",
+"\tvalue_changed = outputArray;",
+"\tpreviousFraction = fraction;",
+"\ttracePrint ('value_changed=' + value_changed);",
+"",
+"}",
+"",
+"",
+"function set_Vi(initialVelocity, timeStamp) {",
+"   Vi = initialVelocity;",
+"   initialize(timeStamp);",
+"}",
+"",
+"",
+"function set_theta(angle, timeStamp) {",
+"   theta = angle;",
+"   initialize(timeStamp);",
+"}",
+"",
+"",
+"function calculateTrajectory() {",
+"",
+"   x[0] = 0;",
+"   y[0] = 0;",
+"",
+"   var timeKeys = new Array();",
+"   timeKeys[0] = 0.0;",
+"",
+"   //convert degree to radian",
+"   angle = Math.PI * theta / 180;",
+"",
+"   Vx = Vi * Math.cos(angle);",
+"   Vy = Vi * Math.sin(angle);",
+"",
+"   var i = 0;",
+"",
+"   do {",
+"      i = i + 1;",
+"      timeKeys[i] = timeKeys[i - 1] + dt;",
+"      Browser.print ('timeKeys' + timeKeys[i]);",
+"      x[i] = x[i - 1] + Vx * dt;",
+"      y[i] = y[i - 1] + Vy * dt;",
+"",
+"",
+"      f = B_m * Math.sqrt(Vx * Vx + Vy * Vy) * Math.exp(-y[i] / 0.0001);",
+"",
+"      Vy = Vy - 9.8 * dt - f * Vy * dt;",
+"      Vx = Vx - f * Vx * dt;",
+"      Browser.print ('Vy' + Vy);",
+"   }while(y[i] > 0);",
+"   Browser.print ('Im here' + x.length);",
+"",
+"   //interpolate to find landing point",
+"   var a = -y[i] / y[i-1];",
+"   x[i] = (x[i] + a * x[i-1]) / (1+a);",
+"   y[i] = 0;",
+"",
+"   //copy x, y values to keyValues",
+"   copyToKeyValues();",
+"   //finding keys",
+"   for(j = 0; j < timeKeys.length; j++) {",
+"      key[j] = timeKeys[j] / timeKeys[timeKeys.length - 1];",
+"      Browser.print (' ' + key[j]);",
+"",
+"   }",
+"",
+"}",
+"",
+"function copyToKeyValues() {",
+"   for(i = 0; i < x.length; i++) {",
+"     Browser.print ('x' + x[i]);",
+"      keyValue[i][0] = x[i];",
+"      keyValue[i][1] = y[i];",
+"      keyValue[i][2] = 0;",
+"   Browser.print ('keyValue' + i + ' ' + keyValue[i][0]);",
+"   }",
+"",
+"}"
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Anchor":
+            {
+              "@description":"ProjectileInterpolatorArena",
+              "@parameter":["target=_blank"],
+              "@url":["ProjectileInterpolatorArena.wrl","http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ProjectileInterpolatorArena.wrl","ProjectileInterpolatorArena.x3d","http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ProjectileInterpolatorArena.x3d"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["ProjectileInterpolatorPrototype","defines a prototype","","Click on this text to see","ProjectileInterpolatorArena"," scene"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.7
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "PositionInterpolator":
+            {
+            }
+          }
+        ]
+    }
+  }
+}

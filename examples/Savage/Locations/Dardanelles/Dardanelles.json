@@ -1,0 +1,127 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Dardanelles.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Terrain model of Dardanelles, Turkey"
+          },
+          {
+            "@name":"creator",
+            "@content":"Murat Ozdogan"
+          },
+          {
+            "@name":"created",
+            "@content":"23 October 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://planet-earth.org/Rez/RezIndex.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/Dardanelles/Dardanelles.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "PointLight":
+                  {
+                    "@location":[10000000000,0,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[-10000000000,0,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,10000000000,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,-10000000000,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,0,10000000000],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,0,-10000000000],
+                    "@radius":100000000000000
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"Default Viewpoint",
+                    "@orientation":[-1,0,0,1.57],
+                    "@position":[40.16643453115464,26.49987728550963,189236.70777323423],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[40.16643453115464,26.49987728550963,0]
+                        }
+                      }
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["./tiles/0/dardanel0-0.x3d"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,439 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HudControlPanelExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example world using an adjustable Heads-Up Display (HUD) or control panel. The panel always appears in the same position in the brower's window, independent of view point. The HUD can be dragged around the window by grabbing onto the border and sliding."
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly"
+          },
+          {
+            "@name":"translator",
+            "@content":"Dan Kucik"
+          },
+          {
+            "@name":"created",
+            "@content":"1999"
+          },
+          {
+            "@name":"translated",
+            "@content":"8 June 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"error",
+            "@content":"HUD does not sit still when navigating"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.realism.com/Web3D/Examples/examples.cgi?ID=5"
+          },
+          {
+            "@name":"rights",
+            "@content":"This code may be reused in part or total. Please include this paragraph when it is used. Copyright 1999, Leonard Daly #****************"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.realism.com/vrml/Example/HUD/CP.gif"
+          },
+          {
+            "@name":"subject",
+            "@content":"Heads-up display example"
+          },
+          {
+            "@name":"reference",
+            "@content":"Original VRML File: http://www.realism.com/vrml/Example/HUD/HUD.wrl"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HudControlPanelExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"HudControlPanel",
+              "@appinfo":"Heads Up Display (HUD) Control Panel",
+              "@url":["HudControlPanelPrototype.x3d#HudControlPanel","../../Tools/HeadsUpDisplays/HudControlPanelPrototype.x3d#HudControlPanel","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HudControlPanelPrototype.x3d#HudControlPanel","../../Tools/HeadsUpDisplays/HudControlPanelPrototype.wrl#HudControlPanel","HudControlPanelPrototype.wrl#HudControlPanel","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HudControlPanelPrototype.wrl#HudControlPanel"],
+              "field": [
+                {
+                  "@name":"translation",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"SFVec3f Position of the panel relative to the viewpoint. The X and Y components can be changed by dragging the window around.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"orientation",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"SFRotation This field should be the object of a ROUTE statement from the orientation_changed event from a ProximitySensor. For some reason the ProximitySensor does not correctly report the current viewpoint when the sensor is located inside of the PROTO.",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"isOver",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Out - SFBool event is generated when the cursor is over the texture mapped region of the control panel. Set to false when the cursor leaves the texture mapped region.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"hitTexCoord_changed",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Out - SFVec2f The X/Y normalized coordinates (S and T) of the cursor location when 'isOver' is true.",
+                  "@type":"SFVec2f"
+                },
+                {
+                  "@name":"borderColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"SFColor The color of the panel border. This is the region that can be used to drag the panel around the screen.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"SFVec3f Size of the panel. The texture mapped area (see textureMap) is 95% in X and 90% in Y of this size.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"position",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"SFVec3f This field should be the object of a ROUTE statement from the position_changed event from a ProximitySensor. See 'orientation' for more details.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"textureMap",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"MFString The texture map URLs. This is specified in the same manner as the URL field in ImageTexture. The first one that can be loaded is the that is displayed. If this field is not specified then this region of the object is painted white.",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"touchTime",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Out - SFTime The time when a mouse button is released provided that the just prior to release 'isOver' and 'isActive' are true.",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"isActive",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"Out - SFBool A true event is generated when the mouse button is depressed and the cursor is over the texture mapped region. A false event is generated when the button is released or when 'isOver' becomes false.",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@DEF":"NavInfo",
+              "@type":["FLY","EXAMINE","ANY"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"SIDE_VP",
+              "@description":"Side View",
+              "@jump":false
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"TOP_VP",
+              "@description":"Top View",
+              "@jump":false,
+              "@orientation":[1.0,0.0,0.0,-1.57],
+              "@position":[0.0,10.0,0.0]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Revolver",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Body1",
+                    "@translation":[3.0,0.0,0.0],
+                    "-children":[
+                      { "PointLight":
+                        {
+                          "@color":[0.0,0.0,1.0]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,0.0,0.0],
+                                      "@emissiveColor":[0.0,0.0,1.0],
+                                      "@specularColor":[0.0,1.0,0.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.75
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Body2",
+                    "@translation":[-3.0,0.0,0.0],
+                    "-children":[
+                      { "SpotLight":
+                        {
+                          "@beamWidth":1.57,
+                          "@direction":[0.0,-1.0,0.0]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.0,1.0,1.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.75,
+                                "@height":1.5
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Timer1",
+              "@cycleInterval":5.0,
+              "@loop":true,
+              "@startTime":1.0
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Timer2",
+              "@cycleInterval":3.0,
+              "@loop":true,
+              "@startTime":1.0
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"Spinner",
+              "@key":[0.0,0.333,0.667,1.0],
+              "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,2.09,0.0,1.0,0.0,4.18,0.0,1.0,0.0,0.0]
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"Tumble",
+              "@key":[0.0,0.14,0.28,0.43,0.57,0.71,0.86,1.0],
+              "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.5,0.898,0.0,0.5,1.0,1.795,0.5,0.0,1.0,2.693,1.0,0.2,0.8,3.59,1.0,0.8,0.5,4.488,0.5,1.0,0.0,5.386,0.0,1.0,0.0,6.283]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Timer1",
+              "@toField":"set_fraction",
+              "@toNode":"Spinner"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Timer2",
+              "@toField":"set_fraction",
+              "@toNode":"Tumble"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Spinner",
+              "@toField":"rotation",
+              "@toNode":"Revolver"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Tumble",
+              "@toField":"rotation",
+              "@toNode":"Body2"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"HudControlPanel",
+              "@DEF":"HUD",
+              "fieldValue": [
+                {
+                  "@name":"translation",
+                  "@value":[4,-2,-10]
+                },
+                {
+                  "@name":"orientation",
+                  "@value":[0.0,1.0,0.0,0.0]
+                },
+                {
+                  "@name":"borderColor",
+                  "@value":[0.0,0.4,0.0]
+                },
+                {
+                  "@name":"scale",
+                  "@value":[2.5,1.5,0.05]
+                },
+                {
+                  "@name":"position",
+                  "@value":[0.0,0.0,0.0]
+                },
+                {
+                  "@name":"textureMap",
+                  "@value":["HudControlPanel.gif","http://www.realism.com/vrml/Example/HUD/CP.gif","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HudControlPanel.gif"]
+                }
+              ]
+            }
+          },
+          { "ProximitySensor":
+            {
+              "@DEF":"Where",
+              "@size":[1000.0,1000.0,1000.0]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"Controller",
+              "field": [
+                {
+                  "@name":"Headlight",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"Position",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec2f"
+                },
+                {
+                  "@name":"Touch",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"Light",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool",
+                  "@value":true
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"      function Position (value) {",
+"\tmsg = 'Control Panel';",
+"\tif (value[1] < .5) {",
+"\t  if (value[0] > .5) {",
+"\t    Light = false;",
+"\t    msg = 'Headlight Off';",
+"\t   } else {",
+"\t    Light = true;",
+"\t    msg = 'Headlight On';",
+"\t  }",
+"\t}",
+"\t// Browser.setDescription (msg); // TODO figure this out, see Table 7.2 in Ecmascript SAI",
+"      }",
+"",
+"      function Touch (value) {",
+"\tHeadlight = Light;",
+"      }"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"hitTexCoord_changed",
+              "@fromNode":"HUD",
+              "@toField":"Position",
+              "@toNode":"Controller"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"HUD",
+              "@toField":"Touch",
+              "@toNode":"Controller"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"Headlight",
+              "@fromNode":"Controller",
+              "@toField":"headlight",
+              "@toNode":"NavInfo"
+            }
+          }
+        ]
+    }
+  }
+}

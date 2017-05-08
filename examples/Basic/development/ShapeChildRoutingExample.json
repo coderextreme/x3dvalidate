@@ -1,0 +1,122 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ShapeChildRoutingExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"7 November 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Show routing of a node as an input to a Script - success shows a Sphere, failure shows a Box."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/ShapeChildRoutingExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"A_SHAPE",
+                    "-geometry":
+                      { "Box":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.4,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"A_SCRIPT",
+                    "@directOutput":true,
+                    "field": [
+                      {
+                        "@name":"geometryResult",
+                        "@accessType":"outputOnly",
+                        "@type":"SFNode"
+                      }
+                    ],
+                    "-children":[
+                      {
+                        "#comment":"Scripting code is wrapped in a CDATA section to preserve all characters without normalization"
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"    sphereResult   = Browser.createVrmlFromString ('Sphere { }');",
+"    geometryResult = sphereResult [0]; // type casting MF -> SFNode",
+"}"
+]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"geometryResult",
+              "@fromNode":"A_SCRIPT",
+              "@toField":"geometry",
+              "@toNode":"A_SHAPE"
+            }
+          }
+        ]
+    }
+  }
+}

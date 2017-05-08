@@ -1,0 +1,163 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NurbsPatchSurfaceExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Animated NURBS patch"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley, Charles Adams"
+          },
+          {
+            "@name":"created",
+            "@content":"6 February 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 January 2014"
+          },
+          {
+            "@name":"warning",
+            "@content":"missing default values for knot and weight array fields in NurbsPatchSurface (weight default: all 1 values) ; not required by X3D specification, but some browsers may fail without them."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://edocs.nps.edu/npspubs/scholarly/theses/2003/Jun/03Jun_Adams.pdf"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development, needs to be upgraded to final version of X3D NURBS nodes"
+          },
+          {
+            "@name":"Image",
+            "@content":"NurbsPatchSurfaceDiagram01.jpg"
+          },
+          {
+            "@name":"subject",
+            "@content":"NURBS Surface Example"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/NURBS/NurbsPatchSurfaceExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"animatedPlane",
+              "@position":[3,2,40]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[1,0,0,-1.5],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "NurbsPatchSurface":
+                        {
+                          "@DEF":"NS",
+                          "@solid":false,
+                          "@uDimension":5,
+                          "@uOrder":4,
+                          "@uTessellation":20,
+                          "@vDimension":5,
+                          "@vOrder":4,
+                          "@vTessellation":20,
+                          "-controlPoint":
+                            { "Coordinate":
+                              {
+                                "@point":[-10,-10,0,-10,-5,0,-10,0,0,-10,5,0,-10,10,0,-5,-10,0,-5,-5,2.5,-5,0,5,-5,5,2.5,-5,10,0,0,-10,0,0,-5,2.5,0,0,5,0,5,2.5,0,10,0,5,-10,0,5,-5,2.5,5,0,15,5,5,2.5,5,10,0,10,-10,0,10,-5,0,10,0,0,10,5,0,10,10,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "CoordinateInterpolator":
+            {
+              "@DEF":"CI",
+              "@key":[0,0.5,1],
+              "@keyValue":[-10,-10,0,-10,-5,0,-10,0,0,-10,5,0,-10,10,0,-5,-10,0,-5,-5,2.5,-5,0,5,-5,5,2.5,-5,10,0,0,-10,0,0,-5,2.5,0,0,5,0,5,2.5,0,10,0,5,-10,0,5,-5,2.5,5,0,15,5,5,2.5,5,10,0,10,-10,0,10,-5,0,10,0,0,10,5,0,10,10,0,-10,-10,0,-10,-5,0,-10,0,0,-10,5,0,-10,10,0,-5,-10,0,-5,-5,0,-5,0,0,-5,5,0,-5,10,0,0,-10,0,0,-5,0,0,0,0,0,5,0,0,10,0,5,-10,0,5,-5,0,5,0,0,5,5,0,5,10,0,10,-10,0,10,-5,0,10,0,0,10,5,0,10,10,0,-10,-10,0,-10,-5,0,-10,0,0,-10,5,0,-10,10,0,-5,-10,0,-5,-5,2.5,-5,0,5,-5,5,2.5,-5,10,0,0,-10,0,0,-5,2.5,0,0,5,0,5,2.5,0,10,0,5,-10,0,5,-5,2.5,5,0,15,5,5,2.5,5,10,0,10,-10,0,10,-5,0,10,0,0,10,5,0,10,10,0]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TS",
+              "@cycleInterval":6,
+              "@loop":true
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"CI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CI",
+              "@toField":"set_controlPoint",
+              "@toNode":"NS"
+            }
+          }
+        ]
+    }
+  }
+}

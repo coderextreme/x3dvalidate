@@ -1,0 +1,131 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"GroupFormation.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"8 November 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 January 2004"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple example to demonstrate rotating a Group of copied, elongated Boxes."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/course/GroupFormation.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"watch the boxes",
+              "@position":[0,2,10]
+            }
+          },
+          {
+            "#comment":"Translate and rotate the entire formation here. 90 degrees around y axis turns to West."
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,-0.345],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"LEAD_ENTITY",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"FLYING_BOX",
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.5,0.5,3]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.2,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"SECOND_ENTITY",
+                    "@translation":[5,0,-2],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"FLYING_BOX"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"THIRD_ENTITY",
+                    "@translation":[-5,0,-2],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"FLYING_BOX"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

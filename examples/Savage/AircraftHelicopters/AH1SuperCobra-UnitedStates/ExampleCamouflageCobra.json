@@ -1,0 +1,252 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExampleCamouflageCobra.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Instantiates an example of the Super Cobra AH-1Z Helicopter's prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"16 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 February 2016"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/ExampleCamouflageCobra.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/ah-1.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/camo-wood.jpg"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"SuperCobra",
+              "@appinfo":"Prototype declaration for SuperCobra helicopter",
+              "@url":["SuperCobraPrototype.x3d#SuperCobra","https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.x3d#SuperCobra","SuperCobraPrototype.wrl#SuperCobra","https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/SuperCobraPrototype.wrl#SuperCobra"],
+              "field": [
+                {
+                  "@name":"tailBoomColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"color of tail boom",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"tailRotorDriveShaftColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"color of tail boom drive shaft",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"horizontalStabilizerColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"color of horizontal stabilizer",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"fuselageColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"color of fuselage",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"cockpitColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"color of cockpit",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"cowlingColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"color of cowling",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"helicopterName",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"name of specific helicopter",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"inFlight",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"input event indicating that the aircraft is in flight",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"Sensor",
+                    "@description":"touch to animate rotors"
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"SuperCobra",
+                    "@DEF":"ExampleHelicopter",
+                    "fieldValue": [
+                      {
+                        "@name":"tailBoomColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@DEF":"CamoWoodTexture",
+                                    "@url":["camo-wood.jpg","https://savage.nps.edu/Savage/AircraftHelicopters/AH1SuperCobra-UnitedStates/camo-wood.jpg"]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"tailRotorDriveShaftColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@USE":"CamoWoodTexture"
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"horizontalStabilizerColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@USE":"CamoWoodTexture"
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"fuselageColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@USE":"CamoWoodTexture"
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"cockpitColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@USE":"CamoWoodTexture"
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"cowlingColor",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@USE":"CamoWoodTexture"
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"helicopterName",
+                        "@value":"Camouflage Cobra"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"Sensor",
+              "@toField":"inFlight",
+              "@toNode":"ExampleHelicopter"
+            }
+          }
+        ]
+    }
+  }
+}

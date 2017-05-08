@@ -1,0 +1,696 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MlrsTracks.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"MLRS 270 Tracks"
+          },
+          {
+            "@name":"created",
+            "@content":"28 February 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"creator",
+            "@content":"Suat Kursat GUN"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/MLRS270/MlrsTracks.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"TRACKS",
+              "@rotation":[1,0,0,1.57],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"RIGHT_SIDE_TRACK",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"TRACK_TRANS",
+                                "@rotation":[0,0,1,1.57],
+                                "@scale":[0.55,0.55,0.55],
+                                "@translation":[-1.862191,0,-1.20166],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@DEF":"TRACK_GROUP",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@DEF":"TRACKPAD_TRANS",
+                                            "-children":[
+                                              { "Inline":
+                                                {
+                                                  "@DEF":"TRACKPAD",
+                                                  "@url":["track.wrl","http://fp2k.redshift.com/rayburge3/track.wrl"]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-1.0,0],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"TRACKPAD_TRANS"
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[0,-1.0,0],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"TRACKPAD_TRANS"
+                                                      }
+                                                    },
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[0,-1.0,0],
+                                                        "-children":[
+                                                          { "Transform":
+                                                            {
+                                                              "@USE":"TRACKPAD_TRANS"
+                                                            }
+                                                          },
+                                                          { "Transform":
+                                                            {
+                                                              "@translation":[0,-1.0,0],
+                                                              "-children":[
+                                                                { "Transform":
+                                                                  {
+                                                                    "@USE":"TRACKPAD_TRANS"
+                                                                  }
+                                                                },
+                                                                { "Transform":
+                                                                  {
+                                                                    "@translation":[0,-1.0,0],
+                                                                    "-children":[
+                                                                      { "Transform":
+                                                                        {
+                                                                          "@USE":"TRACKPAD_TRANS"
+                                                                        }
+                                                                      },
+                                                                      { "Transform":
+                                                                        {
+                                                                          "@translation":[0,-1.0,0],
+                                                                          "-children":[
+                                                                            { "Transform":
+                                                                              {
+                                                                                "@USE":"TRACKPAD_TRANS"
+                                                                              }
+                                                                            },
+                                                                            { "Transform":
+                                                                              {
+                                                                                "@translation":[0,-0.5,0],
+                                                                                "-children":[
+                                                                                  { "Transform":
+                                                                                    {
+                                                                                      "@USE":"TRACKPAD_TRANS"
+                                                                                    }
+                                                                                  },
+                                                                                  { "Transform":
+                                                                                    {
+                                                                                      "@rotation":[0,0,1,-0.4],
+                                                                                      "@translation":[0,-1.0,0],
+                                                                                      "-children":[
+                                                                                        { "Transform":
+                                                                                          {
+                                                                                            "@USE":"TRACKPAD_TRANS"
+                                                                                          }
+                                                                                        },
+                                                                                        { "Transform":
+                                                                                          {
+                                                                                            "@rotation":[0,0,1,-0.1],
+                                                                                            "@translation":[0,-1.0,0],
+                                                                                            "-children":[
+                                                                                              { "Transform":
+                                                                                                {
+                                                                                                  "@USE":"TRACKPAD_TRANS"
+                                                                                                }
+                                                                                              },
+                                                                                              { "Transform":
+                                                                                                {
+                                                                                                  "@rotation":[0,0,1,-0.75],
+                                                                                                  "@translation":[0,-1.0,0],
+                                                                                                  "-children":[
+                                                                                                    { "Transform":
+                                                                                                      {
+                                                                                                        "@DEF":"HALFTRACKPAD_TRANS",
+                                                                                                        "-children":[
+                                                                                                          { "Inline":
+                                                                                                            {
+                                                                                                              "@DEF":"HALFTRACKPAD",
+                                                                                                              "@url":["halftrack.wrl","http://fp2k.redshift.com/rayburge3/halftrack.wrl"]
+                                                                                                            }
+                                                                                                          }
+                                                                                                        ]
+                                                                                                      }
+                                                                                                    },
+                                                                                                    { "Transform":
+                                                                                                      {
+                                                                                                        "@rotation":[0,0,1,-1.1],
+                                                                                                        "@translation":[0,-0.5,0],
+                                                                                                        "-children":[
+                                                                                                          { "Transform":
+                                                                                                            {
+                                                                                                              "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                            }
+                                                                                                          },
+                                                                                                          { "Transform":
+                                                                                                            {
+                                                                                                              "@rotation":[0,0,1,-0.8],
+                                                                                                              "@translation":[0,-0.5,0],
+                                                                                                              "-children":[
+                                                                                                                { "Transform":
+                                                                                                                  {
+                                                                                                                    "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                { "Transform":
+                                                                                                                  {
+                                                                                                                    "@translation":[0,-0.5,0],
+                                                                                                                    "-children":[
+                                                                                                                      { "Transform":
+                                                                                                                        {
+                                                                                                                          "@USE":"TRACKPAD_TRANS"
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      { "Transform":
+                                                                                                                        {
+                                                                                                                          "@translation":[0,-1,0],
+                                                                                                                          "-children":[
+                                                                                                                            { "Transform":
+                                                                                                                              {
+                                                                                                                                "@translation":[0,-1,0],
+                                                                                                                                "-children":[
+                                                                                                                                  { "Transform":
+                                                                                                                                    {
+                                                                                                                                      "@USE":"TRACKPAD_TRANS"
+                                                                                                                                    }
+                                                                                                                                  },
+                                                                                                                                  { "Transform":
+                                                                                                                                    {
+                                                                                                                                      "@translation":[0,-1,0],
+                                                                                                                                      "-children":[
+                                                                                                                                        { "Transform":
+                                                                                                                                          {
+                                                                                                                                            "@USE":"TRACKPAD_TRANS"
+                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                                        { "Transform":
+                                                                                                                                          {
+                                                                                                                                            "@translation":[0,-1,0],
+                                                                                                                                            "-children":[
+                                                                                                                                              { "Transform":
+                                                                                                                                                {
+                                                                                                                                                  "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                }
+                                                                                                                                              },
+                                                                                                                                              { "Transform":
+                                                                                                                                                {
+                                                                                                                                                  "@translation":[0,-1,0],
+                                                                                                                                                  "-children":[
+                                                                                                                                                    { "Transform":
+                                                                                                                                                      {
+                                                                                                                                                        "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                      }
+                                                                                                                                                    },
+                                                                                                                                                    { "Transform":
+                                                                                                                                                      {
+                                                                                                                                                        "@translation":[0,-1,0],
+                                                                                                                                                        "-children":[
+                                                                                                                                                          { "Transform":
+                                                                                                                                                            {
+                                                                                                                                                              "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                            }
+                                                                                                                                                          },
+                                                                                                                                                          { "Transform":
+                                                                                                                                                            {
+                                                                                                                                                              "@translation":[0,-1,0],
+                                                                                                                                                              "-children":[
+                                                                                                                                                                { "Transform":
+                                                                                                                                                                  {
+                                                                                                                                                                    "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                                  }
+                                                                                                                                                                },
+                                                                                                                                                                { "Transform":
+                                                                                                                                                                  {
+                                                                                                                                                                    "@translation":[0,-1,0],
+                                                                                                                                                                    "-children":[
+                                                                                                                                                                      { "Transform":
+                                                                                                                                                                        {
+                                                                                                                                                                          "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                                        }
+                                                                                                                                                                      },
+                                                                                                                                                                      { "Transform":
+                                                                                                                                                                        {
+                                                                                                                                                                          "@translation":[0,7,0],
+                                                                                                                                                                          "-children":[
+                                                                                                                                                                            { "Transform":
+                                                                                                                                                                              {
+                                                                                                                                                                                "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                                              }
+                                                                                                                                                                            }
+                                                                                                                                                                          ]
+                                                                                                                                                                        }
+                                                                                                                                                                      },
+                                                                                                                                                                      { "Transform":
+                                                                                                                                                                        {
+                                                                                                                                                                          "@translation":[0,-1,0],
+                                                                                                                                                                          "-children":[
+                                                                                                                                                                            { "Transform":
+                                                                                                                                                                              {
+                                                                                                                                                                                "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                                                                                              }
+                                                                                                                                                                            },
+                                                                                                                                                                            { "Transform":
+                                                                                                                                                                              {
+                                                                                                                                                                                "@rotation":[0,0,1,-0.2],
+                                                                                                                                                                                "@translation":[0,-0.5,0],
+                                                                                                                                                                                "-children":[
+                                                                                                                                                                                  { "Transform":
+                                                                                                                                                                                    {
+                                                                                                                                                                                      "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                                                                                                    }
+                                                                                                                                                                                  },
+                                                                                                                                                                                  { "Transform":
+                                                                                                                                                                                    {
+                                                                                                                                                                                      "@rotation":[0,0,1,-1],
+                                                                                                                                                                                      "@translation":[0,-0.5,0],
+                                                                                                                                                                                      "-children":[
+                                                                                                                                                                                        { "Transform":
+                                                                                                                                                                                          {
+                                                                                                                                                                                            "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                                                                                                          }
+                                                                                                                                                                                        },
+                                                                                                                                                                                        { "Transform":
+                                                                                                                                                                                          {
+                                                                                                                                                                                            "@rotation":[0,0,1,-0.75],
+                                                                                                                                                                                            "@translation":[0,-0.5,0],
+                                                                                                                                                                                            "-children":[
+                                                                                                                                                                                              { "Transform":
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                                                                                                                }
+                                                                                                                                                                                              },
+                                                                                                                                                                                              { "Transform":
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  "@rotation":[0,0,1,-0.77],
+                                                                                                                                                                                                  "@translation":[0,-0.5,0],
+                                                                                                                                                                                                  "-children":[
+                                                                                                                                                                                                    { "Transform":
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        "@USE":"HALFTRACKPAD_TRANS"
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    { "PositionInterpolator":
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        "@DEF":"HALFTRACKPATH",
+                                                                                                                                                                                                        "@key":[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.99],
+                                                                                                                                                                                                        "@keyValue":[0.00,0.00,0.00,0.00,-0.02,0.00,0.00,-0.04,0.00,0.00,-0.06,0.00,0.00,-0.08,0.00,0.00,-0.10,0.00,0.00,-0.12,0.00,0.00,-0.14,0.00,0.00,-0.16,0.00,0.00,-0.18,0.00,0.00,-0.20,0.00]
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    { "Transform":
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        "@translation":[0,-0.5,0],
+                                                                                                                                                                                                        "-children":[
+                                                                                                                                                                                                          { "Transform":
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                              "@USE":"TRACKPAD_TRANS"
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                          },
+                                                                                                                                                                                                          { "TimeSensor":
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                              "@DEF":"CLOCK",
+                                                                                                                                                                                                              "@cycleInterval":0.5,
+                                                                                                                                                                                                              "@enabled":false,
+                                                                                                                                                                                                              "@loop":true
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                          },
+                                                                                                                                                                                                          { "PositionInterpolator":
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                              "@DEF":"TRACKPATH",
+                                                                                                                                                                                                              "@key":[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.99],
+                                                                                                                                                                                                              "@keyValue":[0.00,0.00,0.00,0.00,-0.04,0.00,0.00,-0.08,0.00,0.00,-0.12,0.00,0.00,-0.16,0.00,0.00,-0.20,0.00,0.00,-0.24,0.00,0.00,-0.28,0.00,0.00,-0.32,0.00,0.00,-0.36,0.00,0.00,-0.40,0.00]
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                          }
+                                                                                                                                                                                                        ]
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                  ]
+                                                                                                                                                                                                }
+                                                                                                                                                                                              }
+                                                                                                                                                                                            ]
+                                                                                                                                                                                          }
+                                                                                                                                                                                        }
+                                                                                                                                                                                      ]
+                                                                                                                                                                                    }
+                                                                                                                                                                                  }
+                                                                                                                                                                                ]
+                                                                                                                                                                              }
+                                                                                                                                                                            }
+                                                                                                                                                                          ]
+                                                                                                                                                                        }
+                                                                                                                                                                      }
+                                                                                                                                                                    ]
+                                                                                                                                                                  }
+                                                                                                                                                                }
+                                                                                                                                                              ]
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        ]
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  ]
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            ]
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      ]
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                ]
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          ]
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              ]
+                                                                                                            }
+                                                                                                          }
+                                                                                                        ]
+                                                                                                      }
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"ROAD_WHEELS",
+                    "@rotation":[1,0,0,1.57],
+                    "@scale":[0.33,0.33,0.4],
+                    "@translation":[-1.7,1.11,-0.36],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"RDWHL",
+                                "-children":[
+                                  { "Inline":
+                                    {
+                                      "@url":["roadwheel.wrl","http://fp2k.redshift.com/rayburge3/roadwheel.wrl"]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[2.2,0,0],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"RDWHL"
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[2.2,0,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"RDWHL"
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[2.7,0,0],
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@USE":"RDWHL"
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@translation":[2.2,0,0],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@USE":"RDWHL"
+                                                      }
+                                                    },
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2.2,0,0],
+                                                        "-children":[
+                                                          { "Transform":
+                                                            {
+                                                              "@USE":"RDWHL"
+                                                            }
+                                                          },
+                                                          { "OrientationInterpolator":
+                                                            {
+                                                              "@DEF":"RDWHL_PATH",
+                                                              "@key":[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.99],
+                                                              "@keyValue":[0,0,1,-0.000,0,0,1,-0.052,0,0,1,-0.104,0,0,1,-0.156,0,0,1,-0.208,0,0,1,-0.260,0,0,1,-0.312,0,0,1,-0.364,0,0,1,-0.416,0,0,1,-0.468,0,0,1,-0.520]
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-2,-0.9,0],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"RDWHL"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"SPROCKET",
+                    "@rotation":[1,0,0,1.57],
+                    "@scale":[0.26,0.26,0.37],
+                    "@translation":[3,1.1,-0.66],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"SPRKT",
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["sprocket.wrl","http://fp2k.redshift.com/rayburge3/sprocket.wrl"]
+                              }
+                            },
+                            { "OrientationInterpolator":
+                              {
+                                "@DEF":"SPRKT_PATH",
+                                "@key":[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.99],
+                                "@keyValue":[0,0,1,-0.000,0,0,1,-0.052,0,0,1,-0.104,0,0,1,-0.156,0,0,1,-0.208,0,0,1,-0.260,0,0,1,-0.312,0,0,1,-0.364,0,0,1,-0.416,0,0,1,-0.468,0,0,1,-0.520]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"TrackSensor",
+                    "@description":"TrackSensor"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isOver",
+                    "@fromNode":"TrackSensor",
+                    "@toField":"set_enabled",
+                    "@toNode":"CLOCK"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"CLOCK",
+                    "@toField":"set_fraction",
+                    "@toNode":"TRACKPATH"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"CLOCK",
+                    "@toField":"set_fraction",
+                    "@toNode":"HALFTRACKPATH"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"CLOCK",
+                    "@toField":"set_fraction",
+                    "@toNode":"RDWHL_PATH"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"CLOCK",
+                    "@toField":"set_fraction",
+                    "@toNode":"SPRKT_PATH"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"HALFTRACKPATH",
+                    "@toField":"set_translation",
+                    "@toNode":"HALFTRACKPAD_TRANS"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"TRACKPATH",
+                    "@toField":"set_translation",
+                    "@toNode":"TRACKPAD_TRANS"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"RDWHL_PATH",
+                    "@toField":"set_rotation",
+                    "@toNode":"RDWHL"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"SPRKT_PATH",
+                    "@toField":"set_rotation",
+                    "@toNode":"SPRKT"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

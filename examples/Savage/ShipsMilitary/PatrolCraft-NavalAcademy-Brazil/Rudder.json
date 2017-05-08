@@ -1,0 +1,131 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Rudder.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Brazilian Naval Academy Training Ship"
+          },
+          {
+            "@name":"creator",
+            "@content":"Claudio Coreixas"
+          },
+          {
+            "@name":"created",
+            "@content":"20 October 2009"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 November 2009"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.en.mar.mil.br"
+          },
+          {
+            "@name":"subject",
+            "@content":"ships parts"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-NavalAcademy-Brazil/Rudder.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"stbRudder",
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@ccw":false,
+                          "@convex":false,
+                          "@crossSection":[-0.2,0.01,0,0.01,0.05,0.35,-0.24,0.4,-0.2,0.01],
+                          "@solid":false,
+                          "@spine":[0,0,0.01,0,0,-0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.4,0.058824,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,0.4,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"stbRudderAxis",
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                          "@DEF":"rudderAxis",
+                          "@height":0.1,
+                          "@radius":0.01
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.4,0.058824,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

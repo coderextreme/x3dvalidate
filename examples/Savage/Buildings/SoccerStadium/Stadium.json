@@ -1,0 +1,238 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Stadium.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Complete soccer stadium, primary scene"
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Christos Kalogrias - Hellenic Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"15 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fussballtempel.net/uefa/Gre/Nikos_Goumas.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wsoccer.com/stadium/greece/aek_athens/"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.lucia.it/vrml/group/home/ignazio/vmhome.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.lucia.it/vrml/projects/frank/frank_e.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SoccerStadium/Stadium.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.0,1.57],
+              "@groundColor":[0.5,0.3,0.3,0.5,0.3,0.3,0.5,0.3,0.3],
+              "@skyAngle":[1.309,1.572],
+              "@skyColor":[0,0.5,0.7,0,0.5,1,1,1,1]
+            }
+          },
+          { "PointLight":
+            {
+              "@location":[0,5,-39]
+            }
+          },
+          { "PointLight":
+            {
+              "@location":[0,5,0]
+            }
+          },
+          { "PointLight":
+            {
+              "@location":[0,5,48]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"High View",
+              "@orientation":[1,0,0,-0.5],
+              "@position":[0,100,150]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"High View 2",
+              "@orientation":[0,1,0,3.14],
+              "@position":[0,20,-80]
+            }
+          },
+          { "Sound":
+            {
+              "@intensity":0.6,
+              "@maxBack":450,
+              "@maxFront":450,
+              "@minBack":150,
+              "@minFront":150,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@DEF":"PenWhistle",
+                    "@description":"Door opening",
+                    "@loop":true,
+                    "@url":["cheer2.wav","https://savage.nps.edu/Savage/Buildings/SoccerStadium/cheer2.wav"]
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"DirtField",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"DirtCollor",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[80,0.05,140]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["./SoccerField.wrl","https://savage.nps.edu/Savage/Buildings/SoccerStadium/SoccerField.wrl"]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["./OneLevelSeats.wrl","https://savage.nps.edu/Savage/Buildings/SoccerStadium/OneLevelSeats.wrl"]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["./TwoLevelSeats.wrl","https://savage.nps.edu/Savage/Buildings/SoccerStadium/TwoLevelSeats.wrl"]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,-1],
+              "@scale":[1,2,1],
+              "@translation":[65,0,-53],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"FloodLight",
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@url":["./FloodLight.wrl","https://savage.nps.edu/Savage/Buildings/SoccerStadium/FloodLight.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1],
+              "@scale":[1,2,1],
+              "@translation":[-65,0,-53],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"FloodLight"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,-2],
+              "@scale":[1,2,1],
+              "@translation":[65,0,53],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"FloodLight"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,2],
+              "@scale":[1,2,1],
+              "@translation":[-65,0,53],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"FloodLight"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,240 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Arc2dComponentPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"X3D Geometry2D component node, implemented as prototype for backwards compatibility with VRML 97. Arc2D specifies a 2D linear circular arc."
+          },
+          {
+            "@name":"creator",
+            "@content":"Christos Kalogrias, Don Brutzman, Ken Curtin, Duane Davis"
+          },
+          {
+            "@name":"created",
+            "@content":"14 November 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry2D.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"Geometry2D component node (Arc2D)"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/Arc2dComponentPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Arc2D",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"startAngle",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0
+                    },
+                    {
+                      "@name":"endAngle",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1.5707963265
+                    },
+                    {
+                      "@name":"radius",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"Only the first node counts as the node type of a prototype. This node must be a geometry node."
+                    },
+                    { "IndexedLineSet":
+                      {
+                        "@DEF":"ArcIndexPoints",
+                        "-coord":
+                          { "Coordinate":
+                            {
+                              "@DEF":"Arc3DPoints"
+                            }
+                          }
+                      }
+                    },
+                    {
+                      "#comment":"Any nodes after initial node in a ProtoBody is not rendered."
+                    },
+                    { "Group":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"metadata",
+                                "@protoField":"metadata"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Script":
+                            {
+                              "@DEF":"Arc2dToFaceSet3d",
+                              "field": [
+                                {
+                                  "@name":"startAngle",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"endAngle",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"radius",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"arcSet3d",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFVec3f"
+                                },
+                                {
+                                  "@name":"arcIndexSet3d",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFInt32"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"startAngle",
+                                      "@protoField":"startAngle"
+                                    },
+                                    {
+                                      "@nodeField":"endAngle",
+                                      "@protoField":"endAngle"
+                                    },
+                                    {
+                                      "@nodeField":"radius",
+                                      "@protoField":"radius"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"   numOfPoints = 100;",
+"",
+"   if (radius < 0)",
+"   {",
+"      Browser.print ('[Arc2D] Warning:  invalid value, radius=' + value + ' must instead be >= 0');",
+"   }",
+"",
+"   if ((startAngle < 0) || (startAngle >= 2 * Math.PI))",
+"   {",
+"      Browser.print ('[Arc2D] Warning: startAngle=' + startAngle + ' must be within range [0..2pi)');",
+"   }",
+"",
+"   if ((endAngle < 0) || (endAngle >= 2 * Math.PI))",
+"   {",
+"      Browser.print ('[Arc2D] Warning: endAngle=' + endAngle + ' must be within range [0..2pi)');",
+"   }",
+"",
+"   // equal startAngle, endAngle means draw full circle.",
+"   // high out-of-range endAngle is OK for local computation.",
+"   if (startAngle >= endAngle)",
+"      endAngle += (2 * Math.PI);",
+"",
+"   differAng = Math.abs((endAngle - startAngle))/numOfPoints;",
+"",
+"   for (i = 0; i <= numOfPoints; i++)",
+"   {",
+"      arcSet3d[i] = new SFVec3f (radius * Math.cos(startAngle + i * differAng), radius * Math.sin(startAngle + i * differAng), 0.0);",
+"      arcIndexSet3d[i] = i;",
+"   }",
+"",
+"} // initialize"
+]
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"arcSet3d",
+                              "@fromNode":"Arc2dToFaceSet3d",
+                              "@toField":"point",
+                              "@toNode":"Arc3DPoints"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"arcIndexSet3d",
+                              "@fromNode":"Arc2dToFaceSet3d",
+                              "@toField":"set_coordIndex",
+                              "@toNode":"ArcIndexPoints"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}

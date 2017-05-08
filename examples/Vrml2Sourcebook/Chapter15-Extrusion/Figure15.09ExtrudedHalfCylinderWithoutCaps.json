@@ -1,0 +1,112 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure15.09ExtrudedHalfCylinderWithoutCaps.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 15.9, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch15/15fig09.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"20 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 March 2012"
+          },
+          {
+            "@name":"description",
+            "@content":"An extruded half cylinder with its beginning and ending caps turned off. Also see Figure 15.8 for comparison."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter15-Extrusion/Figure15.09ExtrudedHalfCylinderWithoutCaps.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"First position and rotate viewpoint into positive-X-Y-Z octant using a Transform"
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,0.758],
+              "@translation":[4,1.5,4],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Extruded half cylinder with end caps",
+                    "@orientation":[1,0,0,-0.2],
+                    "@position":[0,0,0]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0.7,1]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@beginCap":false,
+                    "@creaseAngle":0.785,
+                    "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00],
+                    "@endCap":false,
+                    "@solid":false,
+                    "@spine":[0,-1,0,0,1,0]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

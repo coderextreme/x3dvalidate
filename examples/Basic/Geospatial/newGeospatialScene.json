@@ -1,0 +1,199 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"newGeospatialScene.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"23 May 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Sample default scene which shows syntax and provides default relationships among Geospatial nodes."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/newGeospatialScene.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"ExternProtoDeclare statements for Geospatial nodes are no longer needed for backwards compatibility for VRML 97, since X3dToVrml97.xsl now handles that task."
+          },
+          {
+            "#comment":"This scene shows example Geospatial node relationships in a scene graph."
+          },
+          { "WorldInfo":
+            {
+              "@info":["WorldInfo contains generic information or metadata about a VRML scene, not about the georeferenced information."]
+            }
+          },
+          { "GeoMetadata":
+            {
+              "@summary":["title","example title","description","example description"],
+              "@url":["http://example"]
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@DEF":"DefaultGeoOrigin"
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"GeoInline replaced by Inline"
+          },
+          { "Inline":
+            {
+            }
+          },
+          { "GeoLocation":
+            {
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@USE":"DefaultGeoOrigin"
+                  }
+                }
+            }
+          },
+          { "GeoLOD":
+            {
+              "@center":[10,10,1],
+              "@child1Url":["http://b"],
+              "@child2Url":["http://c"],
+              "@child3Url":["http://d"],
+              "@child4Url":["http://e"],
+              "@range":1000,
+              "@rootUrl":["http://a"],
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@USE":"DefaultGeoOrigin"
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"Nodes loaded via the 'rootUrl' field appear under 'rootNode' for current GeoLOD level."
+                },
+                {
+                  "#comment":"Defining both 'rootUrl' and 'rootNode' is erroneous, use either one or the other."
+                },
+                {
+                  "#comment":"rootNode nodes are the default geometry to be shown at this level of detail"
+                },
+                { "Shape":
+                  {
+                  }
+                }
+              ],
+              "-rootNode":[
+                { "WorldInfo":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "GeoElevationGrid":
+                  {
+                    "@height":[0,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"DefaultGeoOrigin"
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                        }
+                      },
+                    "-normal":
+                      { "Normal":
+                        {
+                        }
+                      },
+                    "-texCoord":
+                      { "TextureCoordinate":
+                        {
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "-coord":
+                      { "GeoCoordinate":
+                        {
+                          "-geoOrigin":
+                            { "GeoOrigin":
+                              {
+                                "@USE":"DefaultGeoOrigin"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

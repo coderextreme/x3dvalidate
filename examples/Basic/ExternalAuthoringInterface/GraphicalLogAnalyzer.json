@@ -1,0 +1,208 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"GraphicalLogAnalyzer.x3d"
+          },
+          {
+            "@name":"example",
+            "@content":"GraphicalLogAnalyzerDisplay.html"
+          },
+          {
+            "@name":"description",
+            "@content":"Graphical Log Analyzer (GLA) reads data from a file to create a visualization - load the GraphicalLogAnalyzerDisplay HTML page to test functionality."
+          },
+          {
+            "@name":"warning",
+            "@content":"requires External Authoring Interface (EAI) as implemented by Cortona. File read/display functionality only works when running in Netscape."
+          },
+          {
+            "@name":"creator",
+            "@content":"Lindsey Lack"
+          },
+          {
+            "@name":"created",
+            "@content":"2 May 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"warning",
+            "@content":"Under development. VRML 97 EAI support appears inconsistent for various browsers."
+          },
+          {
+            "@name":"reference",
+            "@content":"GraphicalLogAnalyzer.ppt"
+          },
+          {
+            "@name":"reference",
+            "@content":"GraphicalLogAnalyzer.java"
+          },
+          {
+            "@name":"reference",
+            "@content":"javadoc/index.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"GraphicalLogAnalyzerInputFile.txt"
+          },
+          {
+            "@name":"reference",
+            "@content":"GraphicalLogAnalyzerReadme.txt"
+          },
+          {
+            "@name":"reference",
+            "@content":"Some values used from CreateVrmlFromString sample by Vincent Gardet (modified by Curt Blais). Also see vrmlcity CreateVrmlFromString tutorial."
+          },
+          {
+            "@name":"reference",
+            "@content":"../course/CreateVrmlFromStringRandomBoxes.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"../course/CreateVrmlFromStringRandomBoxes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"../course/CreateVrmlFromStringRandomBoxes.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.gardet.nom.fr/vrmlcity/tut_cvfs.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.parallelgraphics.com/developer/products/cortona/eai"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/ExternalAuthoringInterface/GraphicalLogAnalyzer.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@headlight":false,
+              "@speed":5
+            }
+          },
+          { "Background":
+            {
+              "@skyAngle":[1.1,1.57],
+              "@skyColor":[0.3,0.3,1,0.4,0.4,1,0.7,0.7,0.9]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@direction":[0,-0.5,-1]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@direction":[-1,-0.5,0.5],
+              "@intensity":0.7
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@direction":[1,-0.5,0.5],
+              "@intensity":0.7
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry",
+              "@position":[0,1.2,5]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Overview",
+              "@orientation":[1,0,0,-0.37],
+              "@position":[0,5,4]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Down",
+              "@orientation":[1,0,0,-1.57],
+              "@position":[0,8,-2]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,0,-490],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.25,
+                                "@diffuseColor":[0.14,0.14,0.16],
+                                "@shininess":0.072,
+                                "@specularColor":[0.39,0.46,0.52],
+                                "@transparency":0.1
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[10,0.01,1000]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"ROOT"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

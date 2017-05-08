@@ -1,0 +1,104 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"StraitsOfMalaccaLarge.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Large-Area Terrain model of Straits of Malacca with no bathymetry"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo"
+          },
+          {
+            "@name":"created",
+            "@content":"17 July 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"7 March 2016"
+          },
+          {
+            "@name":"TODO",
+            "@content":"upgrade Rez to X3D v3.3"
+          },
+          {
+            "@name":"TODO",
+            "@content":"develop ability to automatically upgrade Geo nodes to X3D v3.3 using X3dTidy stylesheet"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://www.rez3d.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/StraitsOfMalaccaLarge/StraitsOfMalaccaLarge.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "GeoViewpoint":
+                  {
+                    "@description":"Default Viewpoint StraitsOfMalaccaLarge",
+                    "@orientation":[-1,0,0,1.57],
+                    "@position":[0.3471685463819618,100.89750038406439,1792095.085119945],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[0.3471685463819618,100.89750038406439,0],
+                          "@geoSystem":["GD"]
+                        }
+                      }
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["./tiles/0/Malacca0-0.x3d","https://savage.nps.edu/Savage/Locations/StraitsOfMalaccaLarge/tiles/0/Malacca0-0.x3d","./tiles/0/Malacca0-0.wrl","https://savage.nps.edu/Savage/Locations/StraitsOfMalaccaLarge/tiles/0/Malacca0-0.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

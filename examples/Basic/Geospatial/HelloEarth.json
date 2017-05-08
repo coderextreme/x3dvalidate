@@ -1,0 +1,82 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloEarth.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simplest example to load X3D Earth into an X3D scene."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 November 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"22 March 2010"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d-earth"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://x3d-earth.nps.edu"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/HelloEarth.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"a simple Inline node is all that is needed for any scene to use X3D Earth assets"
+          },
+          { "Inline":
+            {
+              "@url":["http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d"]
+            }
+          },
+          {
+            "#comment":"TODO: consider exchanging further configuration information with server via IMPORT/EXPORT"
+          },
+          {
+            "#comment":"TODO: also consider passed parameters to server in the url, similar to HTML forms"
+          }
+        ]
+    }
+  }
+}

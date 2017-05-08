@@ -1,0 +1,234 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ProximitySensorSingle.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example of a single ProximitySensor region"
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"15 July 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"5 July 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"ProximitySensorMultiple.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"ProximitySensorNoOverlap.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"ProximitySensorOverlap.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright Don Brutzman and Leonard Daly 2007"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/ProximitySensorSingle.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"WhereAmI",
+              "@url":["../Chapter14-Prototypes/WhereAmIPrototype.x3d#WhereAmI","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/WhereAmIPrototype.x3d#WhereAmI","../Chapter14-Prototypes/WhereAmIPrototype.wrl#WhereAmI","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/WhereAmI.wrl#WhereAmI"]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"WhereAmI"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Book Viewpoint",
+              "@orientation":[0,1,0,-0.06],
+              "@position":[0.05,0,8.71]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Inside proximity box",
+              "@orientation":[0,1,0,-0.78],
+              "@position":[0,0,0.5]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@avatarSize":[0.05,1.6,0.75],
+              "@type":["WALK","ANY"]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Collision":
+            {
+              "@enabled":false,
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "ProximitySensor":
+                        {
+                          "@DEF":"HereIAm",
+                          "@size":[2,2,2]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"SensorSize",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"BoxOutline",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@emissiveColor":[0.8,0.8,0.8]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "IndexedLineSet":
+                                    {
+                                      "@coordIndex":[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1],
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[1,1,1,1,1,-1,1,-1,-1,1,-1,1,-1,1,1,-1,1,-1,-1,-1,-1,-1,-1,1]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"BoxSurface",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[1,0.5,0],
+                                            "@transparency":0.8
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"LocationReport",
+              "@url":["ProximitySensorSingleScriptLocationReport.js","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter12-EnvironmentSensorSound/ProximitySensorSingleScriptLocationReport.js"],
+              "field": [
+                {
+                  "@name":"position",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"orientation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFRotation"
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"HereIAm",
+              "@toField":"position",
+              "@toNode":"LocationReport"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"HereIAm",
+              "@toField":"orientation",
+              "@toNode":"LocationReport"
+            }
+          }
+        ]
+    }
+  }
+}

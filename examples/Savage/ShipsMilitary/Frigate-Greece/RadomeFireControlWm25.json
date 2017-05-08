@@ -1,0 +1,196 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RadomeFireControlWm25.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Copyright [2001] By George Stavritis"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"WM 25 fire control radar"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/RadomeFireControlWm25.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@orientation":[1,0,0,0],
+              "@position":[0,0,6]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Column",
+                    "@rotation":[0,1,0,1],
+                    "@scale":[1,1.2,1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.8
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@emissiveColor":[0.2,0.3,1],
+                                      "@shininess":0.3,
+                                      "@specularColor":[1,0,1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"Clock",
+                    "@cycleInterval":5,
+                    "@loop":true
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"ColumnPath",
+                    "@key":[0.0,0.50,1.0],
+                    "@keyValue":[-1.0,0.0,1.0,3.14,0.0,0.0,1.0,3.14,1.0,0.0,1.0,3.14]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@center":[0,10,3]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cone":
+                        {
+                          "@bottomRadius":0.2,
+                          "@height":1.5
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0.2,0.3,1],
+                                "@shininess":0.3,
+                                "@specularColor":[1,0,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-0.75,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.3,
+                                "@radius":0.4
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":1,
+                                      "@shininess":0.3
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@center":[-5,2,2],
+              "@rotation":[1,0,0,0.752],
+              "@translation":[1,1,1]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"ColumnPath"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"ColumnPath",
+              "@toField":"set_rotation",
+              "@toNode":"Column"
+            }
+          }
+        ]
+    }
+  }
+}

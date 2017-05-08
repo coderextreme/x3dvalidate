@@ -1,0 +1,1045 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Slider.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"X3D Follower example"
+          },
+          {
+            "@name":"creator",
+            "@content":"Herbert Stocker"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"18 April 2006"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 December 2011"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/test_Sliders.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Stocker_06_Followers.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.hersto.com/Publications/Followers"
+          },
+          {
+            "@name":"requires",
+            "@content":"X3D version 3.2 or greater"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Follower Chaser Damper"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Followers/Slider.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":[" The original versions of the PROTO Slider was written by me, Herbert Stocker. The original versions and some test and demonstration Worlds can be found at http://www.hersto.de/ . "," You can use and modify the PROTO in this file if you keep the credit information valid and if you do not remove the link to the originating site http://www.hersto.de/ . In brief, keep this WorldInfo node along with the Proto. "," Please send a message to hersto@hersto.de where you describe how you use or improved the nodes. Especially if you included the improved versions. "],
+              "@title":"Copyright (C) 2002 by Herbert Stocker (AKA hersto)"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Slider",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"initial_position",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0.5
+                    },
+                    {
+                      "@name":"credits",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["Initial idea and copyright by Herbert Stocker http://www.hersto.com/"]
+                    },
+                    {
+                      "@name":"radiusKnob",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":0.3
+                    },
+                    {
+                      "@name":"radiusStick",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":0.2
+                    },
+                    {
+                      "@name":"silently_set_unfiltered_position",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"min",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":0.0
+                    },
+                    {
+                      "@name":"position_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"appearance",
+                      "@accessType":"inputOutput",
+                      "@type":"SFNode",
+                      "-children":[
+                        { "Appearance":
+                          {
+                            "-material":
+                              { "Material":
+                                {
+                                }
+                              }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"smoothMovements",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"set_position",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"pageSize",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":0.2
+                    },
+                    {
+                      "@name":"max",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"unfiltered_position_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"silently_set_position",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_unfiltered_position",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"height",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":2.0
+                    },
+                    {
+                      "@name":"positionInt_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFInt32"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Billboard":
+                      {
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"TrStickAbove",
+                              "-children":[
+                                { "TouchSensor":
+                                  {
+                                    "@DEF":"TchPgUp",
+                                    "@description":"touch to activate PgUp"
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"appearance",
+                                            "@protoField":"appearance"
+                                          }
+                                        ]
+                                    },
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@height":1.0
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"TrStickBelow",
+                              "-children":[
+                                { "TouchSensor":
+                                  {
+                                    "@DEF":"TchPgDown",
+                                    "@description":"touch to activate PgDown"
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"appearance",
+                                            "@protoField":"appearance"
+                                          }
+                                        ]
+                                    },
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@height":1.0
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-children":[
+                                { "PlaneSensor":
+                                  {
+                                    "@DEF":"SensKnob",
+                                    "@autoOffset":false,
+                                    "@description":"touch to activate",
+                                    "@maxPosition":[0.0,-1.0]
+                                  }
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"TrKnob",
+                                    "-children":[
+                                      { "Shape":
+                                        {
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"appearance",
+                                                  "@protoField":"appearance"
+                                                }
+                                              ]
+                                          },
+                                          "-geometry":
+                                            { "Cylinder":
+                                              {
+                                                "@height":1.0
+                                              }
+                                            }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "ProtoDeclare":
+                      {
+                        "@name":"EFFS",
+                        "ProtoInterface": {
+                            "field": [
+                              {
+                                "@name":"height",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":2.0
+                              },
+                              {
+                                "@name":"max",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":1.0
+                              },
+                              {
+                                "@name":"radiusKnob",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":0.5
+                              },
+                              {
+                                "@name":"pageSize",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":0.2
+                              },
+                              {
+                                "@name":"smoothMovements",
+                                "@accessType":"inputOutput",
+                                "@type":"SFBool",
+                                "@value":true
+                              },
+                              {
+                                "@name":"radiusStick",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":0.25
+                              },
+                              {
+                                "@name":"min",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":0.0
+                              }
+                            ]
+                        },
+                        "ProtoBody": {
+                            "-children":[
+                              { "Group":
+                                {
+                                }
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ProtoInstance":
+                      {
+                        "@name":"EFFS",
+                        "@DEF":"EFFS",
+                        "fieldValue": [
+                          {
+                            "@name":"max",
+                            "@value":1.0
+                          },
+                          {
+                            "@name":"height",
+                            "@value":2.0
+                          },
+                          {
+                            "@name":"pageSize",
+                            "@value":0.2
+                          },
+                          {
+                            "@name":"radiusKnob",
+                            "@value":0.5
+                          },
+                          {
+                            "@name":"smoothMovements",
+                            "@value":true
+                          },
+                          {
+                            "@name":"radiusStick",
+                            "@value":0.25
+                          },
+                          {
+                            "@name":"min",
+                            "@value":0.0
+                          }
+                        ]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Timer",
+                        "@loop":true
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"Worker",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"height",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":2.0
+                          },
+                          {
+                            "@name":"set_max",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"silent",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"lastTick",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"set_pageSize",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"decPage",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_radiusStick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_height",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"position_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"Timer",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "TimeSensor":
+                                {
+                                  "@USE":"Timer"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"set_position",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"snapTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"TrStickAbove",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Transform":
+                                {
+                                  "@USE":"TrStickAbove"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"set_radiusKnob",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"smoothMovements",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":true
+                          },
+                          {
+                            "@name":"max",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":1.0
+                          },
+                          {
+                            "@name":"initialUpdate",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":true
+                          },
+                          {
+                            "@name":"EFFS",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "ProtoInstance":
+                                {
+                                  "@name":"EFFS",
+                                  "@USE":"EFFS"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"SensKnobOrigin",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"pageSize",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.2
+                          },
+                          {
+                            "@name":"positionInt_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"SmoothTau3",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.05
+                          },
+                          {
+                            "@name":"SmoothTau2",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.05
+                          },
+                          {
+                            "@name":"SmoothTau1",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.05
+                          },
+                          {
+                            "@name":"set_min",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"SensKnob_isActive",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"KnobSize",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"silently_set_position",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"initialUnfilteredUpdate",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":true
+                          },
+                          {
+                            "@name":"positionSmo3",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"snapToInt",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"positionSmo2",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"set_unfiltered_position",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"positionSmo1",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"silently_set_unfiltered_position",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"radiusStick",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.25
+                          },
+                          {
+                            "@name":"KnobCenterPos",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"position",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"SensKnob_translationChanged",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"radiusKnob",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.5
+                          },
+                          {
+                            "@name":"TrStickBelow",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Transform":
+                                {
+                                  "@USE":"TrStickBelow"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"TchPgUp",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "TouchSensor":
+                                {
+                                  "@USE":"TchPgUp"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"incPage",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"unfiltered_position_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"Tick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_smooothMovements",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"min",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"TchPgDown",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "TouchSensor":
+                                {
+                                  "@USE":"TchPgDown"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"TrKnob",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Transform":
+                                {
+                                  "@USE":"TrKnob"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"position_changed",
+                                "@protoField":"position_changed"
+                              },
+                              {
+                                "@nodeField":"set_position",
+                                "@protoField":"set_position"
+                              },
+                              {
+                                "@nodeField":"positionInt_changed",
+                                "@protoField":"positionInt_changed"
+                              },
+                              {
+                                "@nodeField":"silently_set_position",
+                                "@protoField":"silently_set_position"
+                              },
+                              {
+                                "@nodeField":"set_unfiltered_position",
+                                "@protoField":"set_unfiltered_position"
+                              },
+                              {
+                                "@nodeField":"silently_set_unfiltered_position",
+                                "@protoField":"silently_set_unfiltered_position"
+                              },
+                              {
+                                "@nodeField":"position",
+                                "@protoField":"initial_position"
+                              },
+                              {
+                                "@nodeField":"unfiltered_position_changed",
+                                "@protoField":"unfiltered_position_changed"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{            ",
+"    positionSmo1= position;",
+"    positionSmo2= position;",
+"    positionSmo3= position;",
+"",
+"    min=             EFFS.min;",
+"    max=             EFFS.max;",
+"    pageSize=        EFFS.pageSize;",
+"    height=          EFFS.height;",
+"    radiusKnob=      EFFS.radiusKnob;",
+"    radiusStick=     EFFS.radiusStick;",
+"    smoothMovements= EFFS.smoothMovements;",
+"",
+"    // work around the initialization bug in Contact 5.",
+"    if(   Browser.getName() == 'blaxxunCC3D'",
+"       && Browser.getVersion() <= 5.104",
+"       && !position && !min && !max && !pageSize && !height && !radiusKnob && !radiusStick",
+"      )",
+"    {",
+"        position= .5;",
+"        min= 0;",
+"        max= 1;",
+"        pageSize= .2;",
+"        height= 2;",
+"        radiusKnob= .3;",
+"        radiusStick= .2;",
+"",
+"        positionSmo1= ",
+"        positionSmo2= ",
+"        positionSmo3=",
+"            position;",
+"    }",
+"",
+"",
+"    Update();",
+"",
+"    Timer.enabled= true; // TBD: Shouldn't we start with false?",
+"}",
+"",
+"function set_min(m)           {          min= m;  Update();          }",
+"function set_max(m)           {          max= m;  Update();          }",
+"function set_pageSize(s)      {     pageSize= s;  Update();          }",
+"function set_height(h)        {       height= h;  UpdateGeometry();  }",
+"function set_radiusKnob(r)    {   radiusKnob= r;  UpdateGeometry();  }",
+"function set_radiusStick(r)   {  radiusStick= r;  UpdateGeometry();  }",
+"function set_position(p) ",
+"{ ",
+"    silent= false; ",
+"    snapTime= 0; ",
+"    position= snapToInt? Math.floor(p + .5) : p;",
+"    Update();",
+"}",
+"",
+"function set_smooothMovements(s)",
+"{",
+"    smoothMovements= s;",
+"    Update();",
+"}",
+"",
+"function silently_set_position(p) ",
+"{ ",
+"    silent= true;",
+"    snapTime= 0;",
+"    position= snapToInt? Math.floor(p + .5) : p;",
+"    Update();        ",
+"}",
+"",
+"function silently_set_unfiltered_position(p, now)  ",
+"{ ",
+"    silent= true; ",
+"    snapTime= 0;",
+"    position= positionSmo1= positionSmo2= positionSmo3= p;",
+"    snapTime= now + .1;",
+"    Update(); ",
+"}",
+"",
+" function set_unfiltered_position(p, now)  ",
+"{ ",
+"    snapTime= 0;",
+"    position= positionSmo1= positionSmo2= positionSmo3= p;",
+"    snapTime= now + .1;",
+"    Update(); ",
+"}",
+"",
+"function incPage(t, now)",
+"{",
+"    silent= false;",
+"    position+= pageSize;",
+"    snapTime= now + .3;",
+"    Update();",
+"}",
+"",
+"function decPage(t, now)",
+"{",
+"    silent= false;",
+"    position-= pageSize;",
+"    snapTime= now + .3;",
+"    Update();",
+"}",
+"",
+"function SensKnob_isActive(a, now)",
+"{",
+"    if(a)",
+"    {",
+"        SensKnobOrigin= smoothMovements? positionSmo3 : position;  // TBD: Da stimmt noch was nicht.",
+"        SmoothTau1= .07;",
+"        SmoothTau2= .001;",
+"        SmoothTau3= .001;",
+"//                last_SensKnob_translationChange= SensKnob_translationChanged;",
+"    }else{",
+"        SmoothTau1= .06;",
+"        SmoothTau2= .06;",
+"        SmoothTau3= .06;",
+"        snapTime=   now;",
+"    }",
+"}",
+"",
+"function SensKnob_translationChanged(t, now)",
+"{",
+"    silent= false;",
+"//            if(t.subtract(last_SensKnob_translationChange).length() > .0001 )",
+"//            {",
+"        position= SensKnobOrigin + ( height? t.y * (max - min) / (height - KnobSize)",
+"                                           : 0",
+"                                   );",
+"//                snapTime= now + .3;",
+"",
+"//                last_SensKnob_translationChange= t;",
+"//            }",
+"    Update();",
+"}",
+"",
+"function Update()",
+"{",
+"    UpdateLogic();",
+"",
+"    UpdateGeometry();",
+"",
+"    if(smoothMovements) ",
+"    {",
+"        setUPC(position);",
+"    }else{",
+"        setUPC(position);",
+"        positionSmo1= position;",
+"        positionSmo2= position;",
+"        positionSmo3= position;",
+"        setPC(position);",
+"    }",
+"}",
+"",
+"function UpdateLogic()",
+"{",
+"    if(max < min)",
+"        max= min;",
+"",
+"    if(position     > max)    position=     max;",
+"    if(positionSmo1 > max)    positionSmo1= max;",
+"    if(positionSmo2 > max)    positionSmo2= max;",
+"    if(positionSmo3 > max)    positionSmo3= max;",
+"",
+"    if(position     < min)    position=     min;",
+"    if(positionSmo1 < min)    positionSmo1= min;",
+"    if(positionSmo2 < min)    positionSmo2= min;",
+"    if(positionSmo3 < min)    positionSmo3= min;",
+"}",
+"",
+"function UpdateGeometry()",
+"{",
+"    KnobSize= max - min? pageSize / (max - min) * height",
+"                       : height",
+"                       ;",
+"",
+"    KnobCenterPos= max - min? ( ( smoothMovements? positionSmo3",
+"                                                 : position",
+"                                )",
+"                              - (max + min)/2",
+"                              ) / (max - min) * (height - KnobSize)",
+"                            : 0",
+"                            ;",
+"",
+"    TrKnob.scale=             new SFVec3f(radiusKnob,   KnobSize,                     radiusKnob);",
+"    TrKnob.translation=       new SFVec3f(0,            KnobCenterPos,                0);",
+"",
+"    TrStickAbove.scale=       new SFVec3f(radiusStick,  (height/2 - KnobCenterPos),   radiusStick);",
+"    TrStickAbove.translation= new SFVec3f(0,           (height/2 + KnobCenterPos)/2, 0          );",
+"",
+"    TrStickBelow.scale=       new SFVec3f(radiusStick, (KnobCenterPos - -height/2),   radiusStick);",
+"    TrStickBelow.translation= new SFVec3f(0,           (KnobCenterPos + -height/2)/2, 0          );",
+"}",
+"",
+"function Tick(now)",
+"{",
+"    if(!lastTick)",
+"    {",
+"        lastTick= now;",
+"return;",
+"    }",
+"",
+"    var Delta= now - lastTick;",
+"",
+"    if(smoothMovements)  // TBD: The timer should be completely off if !Smoothmovements.",
+"    {",
+"        positionSmo1= position     + (positionSmo1 - position    ) * Math.exp(-Delta/SmoothTau1);",
+"        positionSmo2= positionSmo1 + (positionSmo2 - positionSmo1) * Math.exp(-Delta/SmoothTau2);",
+"        positionSmo3= positionSmo2 + (positionSmo3 - positionSmo2) * Math.exp(-Delta/SmoothTau3);",
+"",
+"        UpdateGeometry();",
+"",
+"        setPC(positionSmo3);",
+"    }",
+"",
+"    if(snapToInt)",
+"        if(snapTime && now >= snapTime)",
+"        {",
+"            var newPos= Math.floor(position + .5);",
+"            SensKnobOrigin+= newPos - position;",
+"            position= newPos;",
+"            snapTime= 0;",
+"        }",
+"",
+"",
+"    //TBD: Set Timer.enabled",
+"",
+"    lastTick= now;",
+"}",
+"",
+"function setUPC(value)",
+"{",
+"    if(unfiltered_position_changed != value || initialUnfilteredUpdate)",
+"        if(!silent) unfiltered_position_changed= value;",
+"",
+"    initialUnfilteredUpdate= false;",
+"}",
+"",
+"function setPC(value)",
+"{",
+"    if(position_changed != value || initialUpdate) ",
+"        if(!silent) position_changed= value;",
+"",
+"    if(Math.floor(position_changed + .5) != positionInt_changed || initialUpdate)",
+"        if(!silent) positionInt_changed= Math.floor(position_changed + .5);",
+"",
+"    initialUpdate= false;",
+"}"
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"TODO anchor link"
+          }
+        ]
+    }
+  }
+}

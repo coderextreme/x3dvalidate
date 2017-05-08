@@ -1,0 +1,147 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Hull.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Copyright [2001] By George Stavritis"
+          },
+          {
+            "@name":"created",
+            "@content":"28 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"A model of Adrias ship's hull and maindeck."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/Hull.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Far view",
+              "@orientation":[1,0,1,0],
+              "@position":[10,10,100]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.57,
+                          "@crossSection":[0.00,0.70,0.468,0.592,0.571,0.571,0.592,0.538,0.600,0.00,0.592,-0.538,0.571,-0.571,0.468,-0.592,0.00,-0.70],
+                          "@orientation":[0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,-0.5],
+                          "@scale":[3,5,8,9,11,10,14,10,14,11,14,11,13,0.1,0.1,0.1],
+                          "@solid":false,
+                          "@spine":[-100.5,0,0,-100,0,0,-94,0,0,-90,0,0,0,0,0,1,0,0,28,0.4,0,31,1,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["faioLight.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/faioLight.gif"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.57,
+                          "@crossSection":[0.00,0.70,0.00,-0.70],
+                          "@scale":[3,5,8,9,10,10,14,10,14,11,14,11,13,0.1,0.1,0.1],
+                          "@solid":false,
+                          "@spine":[-100.5,0,0,-100,0,0,-94,0,0,-90,0,0,0,0,0,1,0,0,28,0.4,0,31,1,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,0,0.1]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["faioDark.gif","https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Greece/faioDark.gif"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@frontUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[1,1,1,0.1,0.1,0.5,0.4,0.25,0.2,0.1,0.6,0.1],
+              "@leftUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@rightUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          }
+        ]
+    }
+  }
+}

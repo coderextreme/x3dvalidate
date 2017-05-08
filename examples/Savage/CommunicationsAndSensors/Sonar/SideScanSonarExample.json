@@ -1,0 +1,351 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SideScanSonarExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Produce wireframe or transparent sidescan sonar beams."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"15 March 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 December 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/RemusSideScan.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonar/SideScanSonarExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3 https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.2,0.2,0.4]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@info":["Produce wireframe or transparent beam cones"],
+              "@title":"BeamConeExample"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"SideScanSonar example",
+              "@orientation":[0,1,0,-1.57],
+              "@position":[-40,0,0]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SideScanSonar",
+              "@appinfo":"Produce wireframe or semi-transparent sonar sidescan beams",
+              "@url":["../../../Savage/CommunicationsAndSensors/Sonar/SideScanSonarPrototype.x3d#SideScanSonar","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonar/SideScanSonarPrototype.x3d#SideScanSonar","../../../Savage/CommunicationsAndSensors/Sonar/SideScanSonarPrototype.wrl#SideScanSonar","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonar/SideScanSonarPrototype.wrl#SideScanSonar"],
+              "field": [
+                {
+                  "@name":"altitude",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"vertical distance above bottom in meters along y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultAltitude",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default vertical distance above bottom in meters along y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"maxAltitude",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"maximum effective altitude of sidescan sonar above bottom",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultCrossTrackHalfRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters from nadir to rightmost/leftmost edge when operating at defaultAltitude above the bottom",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultTrackWidthMeters",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"longitudinal width of a single return",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"vehicleWidthMeters",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"width (or diameter) of vehicle carrying port/starboard sidescan sonar transducers",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) whether transmitted signal is in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"draw lines for tracking shape?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"draw solid tracking shape?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Viewable geometry for this scene"
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"SideScanSonar",
+                    "@DEF":"SideScanSonarBeam",
+                    "fieldValue": [
+                      {
+                        "@name":"defaultTrackWidthMeters",
+                        "@value":1
+                      },
+                      {
+                        "@name":"transparency",
+                        "@value":0.5
+                      },
+                      {
+                        "@name":"wireframe",
+                        "@value":true
+                      },
+                      {
+                        "@name":"solid",
+                        "@value":true
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,4,0],
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.8,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["touch text to activate contact-mode rendering"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":2
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "TouchSensor":
+                              {
+                                "@description":"Hover over text to activate contact mode"
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"transparent Box as text-selection assist"
+                                  }
+                                ],
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[32,2,0.001]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@transparency":1
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TextTouch",
+                          "@description":"touch text to toggle contact-mode rendering"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isOver",
+                          "@fromNode":"TextTouch",
+                          "@toField":"contact",
+                          "@toNode":"SideScanSonarBeam"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimationGroup",
+              "-children":[
+                { "TimeSensor":
+                  {
+                    "@DEF":"SonarClock",
+                    "@cycleInterval":10,
+                    "@loop":true
+                  }
+                },
+                {
+                  "#comment":"note that this interpolator sets speed at (5m / 6sec) == 0.78 m/sec which is very very slow!!"
+                },
+                {
+                  "#comment":"this example is not physically realistic but it helps visualize the propagation of sound energy"
+                },
+                { "ScalarInterpolator":
+                  {
+                    "@DEF":"RangeInterpolator",
+                    "@key":[0,0.2,0.8,1],
+                    "@keyValue":[0,0.01,5,5]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"SonarClock",
+                    "@toField":"set_fraction",
+                    "@toNode":"RangeInterpolator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"RangeInterpolator",
+                    "@toField":"altitude",
+                    "@toNode":"SideScanSonarBeam"
+                  }
+                },
+                {
+                  "#comment":"=========="
+                },
+                { "ScalarInterpolator":
+                  {
+                    "@DEF":"TransparencyInterpolator",
+                    "@key":[0,0.2,0.8,1],
+                    "@keyValue":[0,0,1,1]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"SonarClock",
+                    "@toField":"set_fraction",
+                    "@toNode":"TransparencyInterpolator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"TransparencyInterpolator",
+                    "@toField":"transparency",
+                    "@toNode":"SideScanSonarBeam"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

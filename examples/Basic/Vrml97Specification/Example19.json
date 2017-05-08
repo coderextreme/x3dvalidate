@@ -1,0 +1,497 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Example19.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"24 May 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D working group"
+          },
+          {
+            "@name":"description",
+            "@content":"VRML 97 specification example: Execution model demonstrated. Click ball to see script-generated text appear."
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/exampleD_19.wrl"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"VRML 97, ISO/IEC 14772-1, Part 1: Functional specification and UTF-8 encoding, D.19 Execution model"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/documents/specifications/14772/V2.0/part1/examples.html#D.19"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example19.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "TouchSensor":
+            {
+              "@DEF":"TS",
+              "@description":"touch to trigger more events"
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script1",
+              "field": [
+                {
+                  "@name":"touchTime",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"toScript2",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toScript3",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"string",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function touchTime()",
+"{",
+"\ttoScript2 = true;",
+"}",
+"function eventsProcessed()",
+"{",
+"\tstring = 'Script1.eventsProcessed';",
+"\ttoScript3 = true;",
+"}"
+]
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script2",
+              "field": [
+                {
+                  "@name":"fromScript1",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toScript4",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"string",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function fromScript1() { }",
+"",
+"function eventsProcessed()",
+"{",
+"\tstring = 'Script2.eventsProcessed';",
+"\ttoScript4 = true;",
+"}"
+]
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script3",
+              "field": [
+                {
+                  "@name":"fromScript1",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toScript5",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toScript6",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"string",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function fromScript1()",
+"{",
+"\ttoScript5 = true;",
+"}",
+"function eventsProcessed()",
+"{",
+"\tstring = 'Script3.eventsProcessed';",
+"\ttoScript6 = true;",
+"}"
+]
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script4",
+              "field": [
+                {
+                  "@name":"fromScript2",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function fromScript2() { }"
+]
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script5",
+              "field": [
+                {
+                  "@name":"fromScript3",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function fromScript3() { }"
+]
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script6",
+              "field": [
+                {
+                  "@name":"fromScript3",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toScript7",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"string",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function fromScript3()",
+"{",
+"\ttoScript7 = true;",
+"}",
+"function eventsProcessed()",
+"{",
+"\tstring = 'Script6.eventsProcessed';",
+"}"
+]
+            }
+          },
+          {
+            "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+          },
+          { "Script":
+            {
+              "@DEF":"Script7",
+              "field": [
+                {
+                  "@name":"fromScript6",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function fromScript6 () { }"
+]
+            }
+          },
+          {
+            "#comment":"Display the results"
+          },
+          { "Script":
+            {
+              "@DEF":"Collector",
+              "field": [
+                {
+                  "@name":"string",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"fromString",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\tstring[0] = 'Event Sequence:';",
+"}",
+"function fromString(s)",
+"{",
+"\ti = string.length;",
+"\tstring[i] = '('+i+') '+s+' occurred';",
+"}"
+]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-6,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-2,2,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0.6,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@DEF":"Result",
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["BEGIN","END"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"DefaultAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Touch ball to trigger events",
+              "@position":[7,-1,18]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"TS",
+              "@toField":"touchTime",
+              "@toNode":"Script1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toScript2",
+              "@fromNode":"Script1",
+              "@toField":"fromScript1",
+              "@toNode":"Script2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toScript3",
+              "@fromNode":"Script1",
+              "@toField":"fromScript1",
+              "@toNode":"Script3"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toScript4",
+              "@fromNode":"Script2",
+              "@toField":"fromScript2",
+              "@toNode":"Script4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toScript5",
+              "@fromNode":"Script3",
+              "@toField":"fromScript3",
+              "@toNode":"Script5"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toScript6",
+              "@fromNode":"Script3",
+              "@toField":"fromScript3",
+              "@toNode":"Script6"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"toScript7",
+              "@fromNode":"Script6",
+              "@toField":"fromScript6",
+              "@toNode":"Script7"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"string",
+              "@fromNode":"Script1",
+              "@toField":"fromString",
+              "@toNode":"Collector"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"string",
+              "@fromNode":"Script2",
+              "@toField":"fromString",
+              "@toNode":"Collector"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"string",
+              "@fromNode":"Script3",
+              "@toField":"fromString",
+              "@toNode":"Collector"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"string",
+              "@fromNode":"Script6",
+              "@toField":"fromString",
+              "@toNode":"Collector"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"string",
+              "@fromNode":"Collector",
+              "@toField":"string",
+              "@toNode":"Result"
+            }
+          }
+        ]
+    }
+  }
+}

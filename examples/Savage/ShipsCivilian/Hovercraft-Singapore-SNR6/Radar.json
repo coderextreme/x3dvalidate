@@ -1,0 +1,192 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Radar.x3d"
+          },
+          {
+            "@name":"created",
+            "@content":"1 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"creator",
+            "@content":"Tay Yeong Kiang Winston"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/Radar.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Creates the rotating radar element of the hovercraft"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Radar",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,-0.1],
+                          "@translation":[0,0.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.8,0.05,4]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.0,
+                                            "@diffuseColor":[0.0,0.0,0.0],
+                                            "@shininess":0.056122,
+                                            "@specularColor":[0.918367,0.910614,0.885116]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.4,0.6,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.2,4]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.0,
+                                            "@diffuseColor":[0.0,0.0,0.0],
+                                            "@shininess":0.056122,
+                                            "@specularColor":[0.918367,0.910614,0.885116]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                "@scale":[0.2,0.2,0.15,0.15,0.1,0.1],
+                                "@spine":[0,0,0,0,0.25,0,0,0.5,0]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.0,
+                                      "@diffuseColor":[0.0,0.0,0.0],
+                                      "@shininess":0.056122,
+                                      "@specularColor":[0.918367,0.910614,0.885116]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"CLOCK",
+                    "@cycleInterval":4,
+                    "@loop":true
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"RadarPath",
+                    "@key":[0,0.5,1],
+                    "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14,0.0,1.0,0.0,6.28]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK",
+              "@toField":"set_fraction",
+              "@toNode":"RadarPath"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"RadarPath",
+              "@toField":"set_rotation",
+              "@toNode":"Radar"
+            }
+          }
+        ]
+    }
+  }
+}

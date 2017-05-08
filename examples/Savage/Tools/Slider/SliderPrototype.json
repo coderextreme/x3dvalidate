@@ -1,0 +1,854 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SliderPrototype.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"12 February 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"External prototype of a slider to be used to control scenes where integer values are needed. This file is a combination of a slider prototype and a conversion program."
+          },
+          {
+            "@name":"warning",
+            "@content":"needs troubleshooting."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"ScaledSFFloat",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"oldMin",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0
+                    },
+                    {
+                      "@name":"oldMax",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"newMin",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0
+                    },
+                    {
+                      "@name":"newMax",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"set_oldMin",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_oldMax",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_newMin",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_newMax",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"set_value",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ScaledSFFloatScriptNode",
+                        "@url":["ScaledSFFloatScript.class","https://savage.nps.edu/Savage/Tools/ExerciseClock/ScaledSFFloatScript.class"],
+                        "field": [
+                          {
+                            "@name":"oldMin",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"oldMax",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"newMin",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"newMax",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_oldMin",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_oldMax",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_newMin",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_newMax",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_value",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"oldMin",
+                                "@protoField":"oldMin"
+                              },
+                              {
+                                "@nodeField":"oldMax",
+                                "@protoField":"oldMax"
+                              },
+                              {
+                                "@nodeField":"newMin",
+                                "@protoField":"newMin"
+                              },
+                              {
+                                "@nodeField":"newMax",
+                                "@protoField":"newMax"
+                              },
+                              {
+                                "@nodeField":"set_oldMin",
+                                "@protoField":"set_oldMin"
+                              },
+                              {
+                                "@nodeField":"set_oldMax",
+                                "@protoField":"set_oldMax"
+                              },
+                              {
+                                "@nodeField":"set_newMin",
+                                "@protoField":"set_newMin"
+                              },
+                              {
+                                "@nodeField":"set_newMax",
+                                "@protoField":"set_newMax"
+                              },
+                              {
+                                "@nodeField":"set_value",
+                                "@protoField":"set_value"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"SingleTypeConversion",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"SFBoolValue",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"SFFloatValue",
+                      "@accessType":"inputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"SFInt32Value",
+                      "@accessType":"inputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"SFStringValue",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"SFBoolResult",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"SFFloatResult",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"SFInt32Result",
+                      "@accessType":"outputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"SFStringResult",
+                      "@accessType":"outputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"MFStringResult",
+                      "@accessType":"outputOnly",
+                      "@type":"MFString"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    {
+                      "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"SingleTypeConversionScriptNode",
+                        "@url":["SingleTypeConversionScript.class","https://savage.nps.edu/Savage/Tools/ExerciseClock/SingleTypeConversionScript.class"],
+                        "field": [
+                          {
+                            "@name":"SFBoolValue",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"SFFloatValue",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"SFInt32Value",
+                            "@accessType":"inputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"SFStringValue",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"SFBoolResult",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"SFFloatResult",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"SFInt32Result",
+                            "@accessType":"outputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"SFStringResult",
+                            "@accessType":"outputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"MFStringResult",
+                            "@accessType":"outputOnly",
+                            "@type":"MFString"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"SFBoolValue",
+                                "@protoField":"SFBoolValue"
+                              },
+                              {
+                                "@nodeField":"SFFloatValue",
+                                "@protoField":"SFFloatValue"
+                              },
+                              {
+                                "@nodeField":"SFInt32Value",
+                                "@protoField":"SFInt32Value"
+                              },
+                              {
+                                "@nodeField":"SFStringValue",
+                                "@protoField":"SFStringValue"
+                              },
+                              {
+                                "@nodeField":"SFBoolResult",
+                                "@protoField":"SFBoolResult"
+                              },
+                              {
+                                "@nodeField":"SFFloatResult",
+                                "@protoField":"SFFloatResult"
+                              },
+                              {
+                                "@nodeField":"SFInt32Result",
+                                "@protoField":"SFInt32Result"
+                              },
+                              {
+                                "@nodeField":"SFStringResult",
+                                "@protoField":"SFStringResult"
+                              },
+                              {
+                                "@nodeField":"MFStringResult",
+                                "@protoField":"MFStringResult"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Slider",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"height",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"radius",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0.1
+                    },
+                    {
+                      "@name":"min",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"max",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFInt32",
+                      "@value":10
+                    },
+                    {
+                      "@name":"value",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFInt32",
+                      "@value":0
+                    },
+                    {
+                      "@name":"set_min",
+                      "@accessType":"inputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"set_max",
+                      "@accessType":"inputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"set_value",
+                      "@accessType":"outputOnly",
+                      "@type":"SFInt32"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFInt32"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"CONNECTOR_TRANS",
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@radius":0.02
+                                        }
+                                      },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0.8,0.4,0.8]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"BALL_TRANS",
+                              "-children":[
+                                { "TouchSensor":
+                                  {
+                                    "@DEF":"BALL_TOUCH"
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "-geometry":
+                                      { "Sphere":
+                                        {
+                                          "@radius":0.1
+                                        }
+                                      },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0.3,0.4,0.8]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                },
+                                { "PlaneSensor":
+                                  {
+                                    "@DEF":"BALL_PLANE"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"BOTTOM_DISK_TRANS",
+                              "-children":[
+                                { "TouchSensor":
+                                  {
+                                    "@DEF":"BOTTOM_DISK_TOUCH"
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@height":0.05,
+                                          "@radius":0.1
+                                        }
+                                      },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0.2,0.3,0.9]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@DEF":"TOP_DISK_TRANS",
+                              "-children":[
+                                { "TouchSensor":
+                                  {
+                                    "@DEF":"TOP_DISK_TOUCH"
+                                  }
+                                },
+                                { "Shape":
+                                  {
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@height":0.05,
+                                          "@radius":0.1
+                                        }
+                                      },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0.2,0.3,0.9]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment":"Warning: VRML97-style scripting, not X3D Scene Authoring Interface (SAI)"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"SLIDER_SCRIPT",
+                        "@url":["SliderScript.class","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderScript.class"],
+                        "field": [
+                          {
+                            "@name":"height",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"radius",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"min",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"max",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"value",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"set_min",
+                            "@accessType":"inputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"set_max",
+                            "@accessType":"inputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"set_value",
+                            "@accessType":"outputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"bottomDiskTouched",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"topDiskTouched",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"set_ballTrans",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"set_dragActive",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"topDiskTrans_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"bottomDiskTrans_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"connectorTrans_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"ballTrans_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"maxBallPosition_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec2f"
+                          },
+                          {
+                            "@name":"minBallPosition_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec2f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"height",
+                                "@protoField":"height"
+                              },
+                              {
+                                "@nodeField":"radius",
+                                "@protoField":"radius"
+                              },
+                              {
+                                "@nodeField":"min",
+                                "@protoField":"min"
+                              },
+                              {
+                                "@nodeField":"max",
+                                "@protoField":"max"
+                              },
+                              {
+                                "@nodeField":"value",
+                                "@protoField":"value"
+                              },
+                              {
+                                "@nodeField":"set_min",
+                                "@protoField":"set_min"
+                              },
+                              {
+                                "@nodeField":"set_max",
+                                "@protoField":"set_max"
+                              },
+                              {
+                                "@nodeField":"set_value",
+                                "@protoField":"set_value"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"bottomDiskTrans_changed",
+                        "@fromNode":"SLIDER_SCRIPT",
+                        "@toField":"set_translation",
+                        "@toNode":"BOTTOM_DISK_TRANS"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"topDiskTrans_changed",
+                        "@fromNode":"SLIDER_SCRIPT",
+                        "@toField":"set_translation",
+                        "@toNode":"TOP_DISK_TRANS"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"connectorTrans_changed",
+                        "@fromNode":"SLIDER_SCRIPT",
+                        "@toField":"set_translation",
+                        "@toNode":"CONNECTOR_TRANS"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"ballTrans_changed",
+                        "@fromNode":"SLIDER_SCRIPT",
+                        "@toField":"set_translation",
+                        "@toNode":"BALL_TRANS"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"maxBallPosition_changed",
+                        "@fromNode":"SLIDER_SCRIPT",
+                        "@toField":"set_maxPosition",
+                        "@toNode":"BALL_PLANE"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"minBallPosition_changed",
+                        "@fromNode":"SLIDER_SCRIPT",
+                        "@toField":"set_minPosition",
+                        "@toNode":"BALL_PLANE"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"isActive",
+                        "@fromNode":"BALL_PLANE",
+                        "@toField":"set_dragActive",
+                        "@toNode":"SLIDER_SCRIPT"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"translation_changed",
+                        "@fromNode":"BALL_PLANE",
+                        "@toField":"set_ballTrans",
+                        "@toNode":"SLIDER_SCRIPT"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"isActive",
+                        "@fromNode":"BOTTOM_DISK_TOUCH",
+                        "@toField":"bottomDiskTouched",
+                        "@toNode":"SLIDER_SCRIPT"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"isActive",
+                        "@fromNode":"TOP_DISK_TOUCH",
+                        "@toField":"topDiskTouched",
+                        "@toNode":"SLIDER_SCRIPT"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"SliderExample",
+              "@url":["SliderExample.x3d","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderExample.x3d","SliderExample.wrl","https://savage.nps.edu/Savage/Tools/ExerciseClock/SliderExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["SliderPrototype","holds prototype declarations","","Select text to view","SliderTest.x3d"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.6,0.6]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

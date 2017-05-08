@@ -1,0 +1,224 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TSSR-Tripod.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"1 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"description",
+            "@content":"Tripod stand for TSSR body. A Tropo Satellite Support Radio (TSSR) is a short-range (< 20 miles) point- to-point SHF communication system designed to support remote equipment and users by replacing long cable runs."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/TSSR/TSSR-Tripod.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.57079],
+              "@groundColor":[1,0.8,0.6,0.6,0.4,0.2],
+              "@skyAngle":[0.2],
+              "@skyColor":[1,1,1,0.2,0.2,1]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-0.25,-0.4,0],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"Tripod",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[-0.15,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.5,0.1,0.35]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"DarkGray",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.2,0.2,0.2]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-0.35],
+                          "@translation":[0.05,-0.5,0.25],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,0.1],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":1.0,
+                                            "@radius":0.075
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"DarkGray"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,0.35],
+                          "@translation":[0.05,-0.5,-0.25],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,0.1],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":1.0,
+                                            "@radius":0.075
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"DarkGray"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,-0.35],
+                          "@translation":[-0.5,-0.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":1.0,
+                                      "@radius":0.075
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"DarkGray"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.1,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.5,
+                                      "@radius":0.05
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"DarkGray"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,387 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SliderIntegerExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This is an example of the SliderInteger prototype, showing a slider bar starting at 12 and ranging from 0 to 24."
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"19 September 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 March 2013"
+          },
+          {
+            "@name":"subject",
+            "@content":"slider example"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Animation/SliderIntegerExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"SliderInteger",
+              "@appinfo":"Slider user-interface widget that produces integer output values",
+              "@url":["../../../Savage/Tools/Animation/SliderIntegerPrototype.x3d#SliderInteger","https://savage.nps.edu/Savage/Tools/Animation/SliderIntegerPrototype.x3d#SliderInteger","../../../Savage/Tools/Animation/SliderIntegerPrototype.wrl#SliderInteger","https://savage.nps.edu/Savage/Tools/Animation/SliderIntegerPrototype.wrl#SliderInteger"],
+              "field": [
+                {
+                  "@name":"height",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value 1.0",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"radius",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value 0.1",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"sliderBarColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value .8 .4 .8",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"sliderBallColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value .3 .4 .8",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"sliderEndColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value .2 .3 .9",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"min",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value 0",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"max",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value 10",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"value",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value 0",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"setMin",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"set minimum value for slider bar",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"setMax",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"set maximum value for slider bar",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"setValue",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"set value for slider bar",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"valueChanged",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"output value for slider bar",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"barRadius",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"default value 0.02",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Enable/disable console output for troubleshooting",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"layoutDirection",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Allowed values: vertical, horizontal",
+                  "@type":"SFString"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SingleTypeConversion",
+              "@appinfo":"SingleTypeConversion converts from a single typed value to various other types of values",
+              "@url":["../../../Savage/Tools/Authoring/SingleTypeConversionPrototype.x3d#SingleTypeConversion","https://savage.nps.edu/Savage/Tools/Authoring/SingleTypeConversionPrototype.x3d#SingleTypeConversion","../../../Savage/Tools/Authoring/SingleTypeConversionPrototype.wrl#SingleTypeConversion","https://savage.nps.edu/Savage/Tools/Authoring/SingleTypeConversionPrototype.wrl#SingleTypeConversion"],
+              "field": [
+                {
+                  "@name":"decimalPlaces",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"decimalPlaces is the number of significant digits after the decimal point, use -1 to indicate no round off",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"setDecimalPlaces",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"BooleanValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"FloatValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"IntegerValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"TimeValue",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"BooleanResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"FloatResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"IntegerResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"TimeResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"StringResult",
+                  "@accessType":"outputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"StringsResult",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Scene graph begins here"
+          },
+          { "Viewpoint":
+            {
+              "@description":"Drag slider ball to change values",
+              "@position":[0,1,9]
+            }
+          },
+          { "Billboard":
+            {
+              "@axisOfRotation":[0,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,2,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Drag slider ball","to change values,","select end stops to","increment/decrement"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-0.4,-1.2,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"ResultString"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-2,0],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"SliderInteger",
+                          "@DEF":"SliderExample",
+                          "fieldValue": [
+                            {
+                              "@name":"layoutDirection",
+                              "@value":"horizontal"
+                            },
+                            {
+                              "@name":"height",
+                              "@value":5
+                            },
+                            {
+                              "@name":"radius",
+                              "@value":0.1
+                            },
+                            {
+                              "@name":"min",
+                              "@value":0
+                            },
+                            {
+                              "@name":"max",
+                              "@value":24
+                            },
+                            {
+                              "@name":"value",
+                              "@value":12
+                            },
+                            {
+                              "@name":"sliderBarColor",
+                              "@value":[0.8,0.4,0.8]
+                            },
+                            {
+                              "@name":"sliderBallColor",
+                              "@value":[0.3,0.4,0.8]
+                            },
+                            {
+                              "@name":"sliderEndColor",
+                              "@value":[0.2,0.3,0.9]
+                            },
+                            {
+                              "@name":"traceEnabled",
+                              "@value":true
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"SingleTypeConversion",
+              "@DEF":"IntegerConverter"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"valueChanged",
+              "@fromNode":"SliderExample",
+              "@toField":"IntegerValue",
+              "@toNode":"IntegerConverter"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"StringsResult",
+              "@fromNode":"IntegerConverter",
+              "@toField":"set_string",
+              "@toNode":"ResultString"
+            }
+          }
+        ]
+    }
+  }
+}

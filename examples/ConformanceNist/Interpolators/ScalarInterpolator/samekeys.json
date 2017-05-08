@@ -1,0 +1,176 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"samekeys.x3d"
+          },
+          {
+            "@name":"MovingImage",
+            "@content":"samekeys-movie.mpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.nist.gov/vrml.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"
+          },
+          {
+            "@name":"creator",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/members.html"
+          },
+          {
+            "@name":"disclaimer",
+            "@content":"This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."
+          },
+          {
+            "@name":"info",
+            "@content":"Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"
+          },
+          {
+            "@name":"translator",
+            "@content":"Michael Kass NIST, Don Brutzman NPS"
+          },
+          {
+            "@name":"translated",
+            "@content":"21 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 January 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"Test keys with same value. A ScalarInterpolator node is used to change the intensity of a SpotLight that illuminates a Cylinder geometry. The fraction_changed field of a TimeSensor node is used to change the position from keyValues of [ 0.0, 0.5, 1.0, 0.5, 0.0 ] for keys of [ 0.0, 0.5, 0.5, 0.5, 1.0 ] respectively. As a result: because of the three identical keys (0.5), the leftmost and rightmost identical keys serve as limits for that key, and result in a 1/4 intensity of light upon the Cylinder for the time interval between the two limits. The Cylinder should NOT reach full illumination intensity, but should begin with no illumination, increase to 1/4 maximum illumination, then decrease again to no illumination over a 5 second period."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/ConformanceNist/Interpolators/ScalarInterpolator/samekeys.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@headlight":false,
+              "@type":["EXAMINE","WALK","FLY","ANY"]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0,0,0],
+              "@skyColor":[0.2,0.2,0.2]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TIME",
+              "@cycleInterval":5,
+              "@loop":true
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"SCALAR_INTERPOLATOR",
+              "@key":[0,0.5,0.5,0.5,1],
+              "@keyValue":[0,0.5,1,0.5,0]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"TRANS",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,4],
+                          "-children":[
+                            { "SpotLight":
+                              {
+                                "@DEF":"LIGHT",
+                                "@beamWidth":1.570796,
+                                "@cutOffAngle":0.785398
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIME",
+              "@toField":"set_fraction",
+              "@toNode":"SCALAR_INTERPOLATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"SCALAR_INTERPOLATOR",
+              "@toField":"intensity",
+              "@toNode":"LIGHT"
+            }
+          }
+        ]
+    }
+  }
+}

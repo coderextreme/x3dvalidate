@@ -1,0 +1,295 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          },
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MontereyPeninsulaCollegePoolOpArea.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Operations area top-level scene for Monterey Peninsula College Pool, used by the AUV Workbench to build scenarios using unmanned vehicles."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman and Luciano Cerritos"
+          },
+          {
+            "@name":"created",
+            "@content":"11 June 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"TODO",
+            "@content":"Confirm scale of pool and grid to match"
+          },
+          {
+            "@name":"reference",
+            "@content":"OpenOceanOpArea.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/MontereyPeninsulaCollegePoolOpArea.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Must be geospatially oriented"
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[36.588600158691406,-121.8853988647461,0.0],
+              "-children":[
+                {
+                  "#comment":"TODO GeoOrigin deprecated for X3D v3.3"
+                },
+                { "Background":
+                  {
+                    "@DEF":"OffWhiteBackground",
+                    "@skyColor":[0.9,0.9,1]
+                  }
+                },
+                {
+                  "#comment":"TODO Bad Xj3D bug? Correction rotation to bring the Background node to correct orientation under a GeoLocation node"
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,2.815],
+                    "-children":[
+                      { "Background":
+                        {
+                          "@DEF":"SandyShallowBottomBackground",
+                          "@groundAngle":[0.05,1.52,1.56,1.570796],
+                          "@groundColor":[0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4],
+                          "@skyAngle":[0.05,0.1,1.309,1.571],
+                          "@skyColor":[0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@DEF":"ORIGIN",
+                    "@geoCoords":[36.588600158691406,-121.8853988647461,0.0]
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"Note that the geoCoords must match the AUV Workbench c_geo.xml file in /configuration/template"
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[36.5886,-121.8854,0.0],
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@DEF":"DEPRECATED",
+                    "@geoCoords":[36.5886,-121.8854,0.0]
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"Must specify a rotation about the Y-axis to get a Savage model's coordinate system back to the X3D GeoLocation coordinate system for proper DIS operation when networked"
+                },
+                {
+                  "#comment":"Current default Savage model nose coordinate system is X-axis (east), must rotate about the Y-axis 90 degress (1.5708 radians) to align with north"
+                },
+                {
+                  "#comment":"Consult para. 25.3.3 GeoLocation for the Geospatial component's adjustment of X3D to GeoLoc coordinates"
+                },
+                { "Transform":
+                  {
+                    "@DEF":"RotateSavageDefaultToX3DNorth",
+                    "@rotation":[0,1,0,1.5708],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"PoolMontereyPeninsulaCollege",
+                          "@url":["../../Locations/MontereyPeninsulaCollege/PoolMontereyPeninsulaCollege.x3d","https://savage.nps.edu/Savage/Locations/MontereyPeninsulaCollege/PoolMontereyPeninsulaCollege.x3d","../../Locations/MontereyPeninsulaCollege/PoolMontereyPeninsulaCollege.wrl","https://savage.nps.edu/Savage/Locations/MontereyPeninsulaCollege/PoolMontereyPeninsulaCollege.wrl"]
+                        }
+                      },
+                      { "ExternProtoDeclare":
+                        {
+                          "@name":"GridXZ",
+                          "@url":["../../../Savage/Tools/Authoring/GridXZPrototype.x3d#GridXZ","https://savage.nps.edu/Savage/Tools/Authoring/GridXZPrototype.x3d#GridXZ","../../../Savage/Tools/Authoring/GridXZPrototype.wrl#GridXZ","https://savage.nps.edu/Savage/Tools/Authoring/GridXZPrototype.wrl#GridXZ"],
+                          "field": [
+                            {
+                              "@name":"description",
+                              "@accessType":"initializeOnly",
+                              "@type":"SFString"
+                            },
+                            {
+                              "@name":"labelColor",
+                              "@accessType":"inputOutput",
+                              "@type":"SFColor"
+                            },
+                            {
+                              "@name":"scale",
+                              "@accessType":"inputOutput",
+                              "@type":"SFVec3f"
+                            },
+                            {
+                              "@name":"originLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"WestLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"NorthWestLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"NorthLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"NorthEastLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"EastLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"SouthEastLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"SouthLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            },
+                            {
+                              "@name":"SouthWestLabel",
+                              "@accessType":"inputOutput",
+                              "@type":"MFString"
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"ScaleFeetToMeters",
+                          "@scale":[0.3048,0.3048,0.3048],
+                          "@translation":[10,0,10],
+                          "-children":[
+                            { "ProtoInstance":
+                              {
+                                "@name":"GridXZ",
+                                "fieldValue": [
+                                  {
+                                    "@name":"description",
+                                    "@value":"GridXZ for AUV in Open Ocean"
+                                  },
+                                  {
+                                    "@name":"labelColor",
+                                    "@value":[1.0,1.0,1.0]
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@value":[10,10,10]
+                                  },
+                                  {
+                                    "@name":"originLabel",
+                                    "@value":["origin","0 0 0"]
+                                  },
+                                  {
+                                    "@name":"WestLabel",
+                                    "@value":["West","-Y"]
+                                  },
+                                  {
+                                    "@name":"NorthWestLabel",
+                                    "@value":["1000 0 -500"]
+                                  },
+                                  {
+                                    "@name":"NorthLabel",
+                                    "@value":["North","+X"]
+                                  },
+                                  {
+                                    "@name":"NorthEastLabel",
+                                    "@value":["500 0 500"]
+                                  },
+                                  {
+                                    "@name":"EastLabel",
+                                    "@value":["East","+Y"]
+                                  },
+                                  {
+                                    "@name":"SouthEastLabel",
+                                    "@value":["-500 0 500"]
+                                  },
+                                  {
+                                    "@name":"SouthLabel",
+                                    "@value":["South","-X"]
+                                  },
+                                  {
+                                    "@name":"SouthWestLabel",
+                                    "@value":["-500 0 -500"]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

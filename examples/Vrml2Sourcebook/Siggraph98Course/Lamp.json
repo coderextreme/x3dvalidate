@@ -1,0 +1,396 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Lamp.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Desk lampillustrate the use of multiple sensors, nested into groups within groups along with the shapes they sense."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/lamp.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0173.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Lamp.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, Andrea L. Ames, David R. Nadeau, John L. Moreland"],
+              "@title":"Desk lamp"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@position":[0.0,0.15,1.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.0,0.0,0.0],
+                                "@emissiveColor":[0.7,0.7,0.7]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[2.25,0.01,2.25]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[1.0,0.0,0.0,1.571],
+              "@translation":[0.0,0.01,0.0],
+              "-children":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"MoveLamp"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Lamp",
+                    "@rotation":[1.0,0.0,0.0,-1.571],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.5,0.5,0.5]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.01,
+                                "@radius":0.1
+                              }
+                            }
+                        }
+                      },
+                      { "Group":
+                        {
+                          "-children":[
+                            { "CylinderSensor":
+                              {
+                                "@DEF":"MoveFirstArm"
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"FirstArm",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@center":[0.0,-0.15,0.0],
+                                      "@rotation":[1.0,0.0,0.0,-0.7],
+                                      "@translation":[0.0,0.15,0.0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@DEF":"LampArm",
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"Red",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[1.0,0.2,0.2]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.3,
+                                                  "@radius":0.01
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "CylinderSensor":
+                                                {
+                                                  "@DEF":"MoveSecondArm"
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@DEF":"SecondArm",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@center":[0.0,-0.15,0.0],
+                                                        "@rotation":[1.0,0.0,0.0,1.9],
+                                                        "@translation":[0.0,0.3,0.0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "@USE":"LampArm"
+                                                            }
+                                                          },
+                                                          { "Group":
+                                                            {
+                                                              "-children":[
+                                                                { "SphereSensor":
+                                                                  {
+                                                                    "@DEF":"MoveLampShade",
+                                                                    "@offset":[1.0,0.0,0.0,-1.25]
+                                                                  }
+                                                                },
+                                                                { "Transform":
+                                                                  {
+                                                                    "@DEF":"LampShade",
+                                                                    "@center":[0.0,0.075,0.0],
+                                                                    "@rotation":[1.0,0.0,0.0,-1.25],
+                                                                    "@translation":[0.0,0.075,0.0],
+                                                                    "-children":[
+                                                                      { "Shape":
+                                                                        {
+                                                                          "-appearance":
+                                                                            { "Appearance":
+                                                                              {
+                                                                                "@USE":"Red"
+                                                                              }
+                                                                            },
+                                                                          "-geometry":
+                                                                            { "Cone":
+                                                                              {
+                                                                                "@bottom":false,
+                                                                                "@bottomRadius":0.12,
+                                                                                "@height":0.15
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      },
+                                                                      { "Transform":
+                                                                        {
+                                                                          "@translation":[0.0,0.075,0.0],
+                                                                          "-children":[
+                                                                            { "Shape":
+                                                                              {
+                                                                                "-appearance":
+                                                                                  { "Appearance":
+                                                                                    {
+                                                                                      "-material":
+                                                                                        { "Material":
+                                                                                          {
+                                                                                            "@diffuseColor":[1.0,1.0,1.0]
+                                                                                          }
+                                                                                        }
+                                                                                    }
+                                                                                  },
+                                                                                "-geometry":
+                                                                                  { "Cylinder":
+                                                                                    {
+                                                                                      "@height":0.03,
+                                                                                      "@radius":0.007
+                                                                                    }
+                                                                                  }
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      },
+                                                                      { "Transform":
+                                                                        {
+                                                                          "@translation":[0.0,-0.05,0.0],
+                                                                          "-children":[
+                                                                            { "Shape":
+                                                                              {
+                                                                                "-appearance":
+                                                                                  { "Appearance":
+                                                                                    {
+                                                                                      "-material":
+                                                                                        { "Material":
+                                                                                          {
+                                                                                            "@diffuseColor":[0.0,0.0,0.0],
+                                                                                            "@emissiveColor":[1.0,1.0,1.0]
+                                                                                          }
+                                                                                        }
+                                                                                    }
+                                                                                  },
+                                                                                "-geometry":
+                                                                                  { "Sphere":
+                                                                                    {
+                                                                                      "@radius":0.05
+                                                                                    }
+                                                                                  }
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"MoveLamp",
+              "@toField":"set_translation",
+              "@toNode":"Lamp"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"rotation_changed",
+              "@fromNode":"MoveFirstArm",
+              "@toField":"set_rotation",
+              "@toNode":"FirstArm"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"rotation_changed",
+              "@fromNode":"MoveSecondArm",
+              "@toField":"set_rotation",
+              "@toNode":"SecondArm"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"rotation_changed",
+              "@fromNode":"MoveLampShade",
+              "@toField":"set_rotation",
+              "@toNode":"LampShade"
+            }
+          }
+        ]
+    }
+  }
+}

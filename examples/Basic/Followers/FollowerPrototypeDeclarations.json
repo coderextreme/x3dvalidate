@@ -1,0 +1,2533 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"FollowerPrototypeDeclarations.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Original implementation pattern as prototype declarations for Follower (Chaser and Damper) nodes, useful for browser developers."
+          },
+          {
+            "@name":"creator",
+            "@content":"Herbert Stocker"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"18 April 2006"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 December 2011"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 February 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"FollowerExternalPrototypeDeclarations.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/Chasers.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/Dampers.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Stocker_06_Followers.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.hersto.com/Publications/Followers"
+          },
+          {
+            "@name":"requires",
+            "@content":"X3D version 3.0, 3.1"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Follower Chaser Damper"
+          },
+          {
+            "@name":"warning",
+            "@content":"under development"
+          },
+          {
+            "@name":"TODO",
+            "@content":"Rename and test these prototypes to match final names in X3D Specification Followers Component"
+          },
+          {
+            "@name":"TODO",
+            "@content":"Ensure full coverage of follower nodes in order to provide backwards compatibility with X3D v3.0 and v3.1."
+          },
+          {
+            "@name":"TODO Xj3D Player Bugzilla Issue",
+            "@content":"http://bugzilla.xj3d.org/show_bug.cgi?id=639"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/followers.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Followers/FollowerPrototypeDeclarations.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["The ExternProto nodes found in this file implement principles described in the paper","Linear Filters - Animating Objects in a Flexible and Pleasing Way","They have been proposed and added to the X3D standard in 2006.","Webpage: http://www.hersto.net/Followers","","Please use the code in this file in any content or application you like","or modify it in any way.","","The code here works, however things like detecting when a transition has ended","and when the node can stop calculating and updating the output or secondary fields","like set_value or initial_destination are not yet implemented.","Nevertheless, set_destination and value_changed do work."],
+              "@title":"Damper nodes"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"PositionChaser",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"set_value",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"credits",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["Initial idea and copyright by Herbert Stocker http://www.hersto.net"]
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"set_destination",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"duration",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"initial_destination",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"initial_value",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"ScreenPositionDamper_PositionChaser",
+                        "field": [
+                          {
+                            "@name":"Tick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_value",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"duration",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"Buffer",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFVec3f"
+                          },
+                          {
+                            "@name":"bInitialized",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"BufferEndTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"cNumSupports",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32",
+                            "@value":10
+                          },
+                          {
+                            "@name":"set_destination",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"cStepTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"previousValue",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"initial_destination",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"destination",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"isActive",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"initial_value",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_value",
+                                "@protoField":"set_value"
+                              },
+                              {
+                                "@nodeField":"duration",
+                                "@protoField":"duration"
+                              },
+                              {
+                                "@nodeField":"set_destination",
+                                "@protoField":"set_destination"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              },
+                              {
+                                "@nodeField":"initial_destination",
+                                "@protoField":"initial_destination"
+                              },
+                              {
+                                "@nodeField":"isActive",
+                                "@protoField":"isActive"
+                              },
+                              {
+                                "@nodeField":"initial_value",
+                                "@protoField":"initial_value"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"    CheckInit();",
+"}",
+"",
+"function CheckInit()",
+"{",
+"    if(!bInitialized)",
+"    {",
+"        bInitialized= true;  // Init() may call other functions that call CheckInit(). In that case it's better the flag is already set, otherwise an endless loop would occur.",
+"        Init();",
+"    }",
+"}",
+"",
+"function Init()",
+"{",
+"    destination= initial_destination;",
+"",
+"    Buffer.length= cNumSupports;",
+"",
+"    Buffer[0]= initial_destination;",
+"    for(var C= 1; C<Buffer.length; C++ )",
+"        Buffer[C]= initial_value;",
+"",
+"    previousValue= initial_value;",
+"",
+"    cStepTime= duration / cNumSupports;",
+"}",
+"",
+"function set_destination(Dest, Now)",
+"{",
+"    CheckInit();",
+"",
+"    destination= Dest;",
+"    // Somehow we assign to Buffer[-1] and wait untill this gets shifted into the real buffer.",
+"    // Would we assign to Buffer[0] instead, we'd have no delay, but this would create a jump in the",
+"    // output because Buffer[0] is associated with a value in the past.",
+"",
+"    UpdateBuffer(Now);",
+"}",
+"",
+"function Tick(Now)",
+"{",
+"    CheckInit();",
+"",
+"    if(!BufferEndTime)",
+"    {",
+"        BufferEndTime= Now; // first event we received, so we are in the initialization phase.",
+"",
+"        value_changed= initial_value;",
+"        return;",
+"    }",
+"",
+"    var Frac= UpdateBuffer(Now);",
+"    // Frac is a value in   0 <= Frac < 1.",
+"",
+"    // Now we can calculate the output.",
+"    // This means we calculate the delta between each entry in Buffer and its previous",
+"    // entries, calculate the step response of each such step and add it to form the output.",
+"",
+"    // The oldest vaule Buffer[Buffer.length - 1] needs some extra thought, because it has",
+"    // no previous value. More exactly, we haven't stored a previous value anymore.",
+"    // However, the step response of that missing previous value has already reached its",
+"    // destination, so we can - would we have that previous value - use this as a start point",
+"    // for adding the step responses.",
+"    // Actually UpdateBuffer(.) maintains this value in",
+"",
+"    var Output= previousValue;",
+"",
+"    var DeltaIn= Buffer[Buffer.length - 1].subtract(previousValue);",
+"",
+"    var DeltaOut= DeltaIn.multiply(StepResponse((Buffer.length - 1 + Frac) * cStepTime));",
+"",
+"    Output= Output.add(DeltaOut);",
+"",
+"    for(var C= Buffer.length - 2; C>=0; C-- )",
+"    {",
+"        var DeltaIn= Buffer[C].subtract(Buffer[C + 1]);",
+"",
+"        var DeltaOut= DeltaIn.multiply(StepResponse((C + Frac) * cStepTime));",
+"",
+"        Output= Output.add(DeltaOut);",
+"    }",
+"    if(Output != value_changed)",
+"        value_changed= Output;",
+"}",
+"",
+"function UpdateBuffer(Now)",
+"{",
+"    var Frac= (Now - BufferEndTime) / cStepTime;",
+"    // is normally < 1. When it has grown to be larger than 1, we have to shift the array because the step response",
+"    // of the oldest entry has already reached its destination, and it's time for a newer entry.",
+"    // has already reached it",
+"    // In the case of a very low frame rate, or a very short cStepTime we may need to shift by more than one entry.",
+"",
+"    if(Frac >= 1)",
+"    {",
+"        var NumToShift= Math.floor(Frac);",
+"        Frac-= NumToShift;",
+"",
+"        if(NumToShift < Buffer.length)",
+"        {   // normal case.",
+"",
+"            previousValue= Buffer[Buffer.length - NumToShift];",
+"",
+"            for(var C= Buffer.length - 1; C>=NumToShift; C-- )",
+"                Buffer[C]= Buffer[C - NumToShift];",
+"",
+"            for(var C= 0; C<NumToShift; C++ )",
+"            {",
+"                // Hmm, we have a destination value, but don't know how it has",
+"                // reached the current state.",
+"                // Therefore we do a linear interpolation from the latest value in the buffer to destination.",
+"",
+"                var Alpha= C / NumToShift;",
+"",
+"                Buffer[C]= Buffer[NumToShift].multiply(Alpha).add(destination.multiply((1 - Alpha)));",
+"            }",
+"        }else",
+"        {",
+"            // degenerated case:",
+"            //",
+"            // We have a _VERY_ low frame rate...",
+"            // we can only guess how we should fill the array.",
+"            // Maybe we could write part of a linear interpolation",
+"            // from Buffer[0] to destination, that goes from BufferEndTime to Now",
+"            // (possibly only the end of the interpolation is to be written),",
+"            // but if we rech here we are in a very degenerate case...",
+"            // Thus we just write destination to the buffer.",
+"",
+"            previousValue= NumToShift == Buffer.length? Buffer[0] : destination;",
+"",
+"            for(var C= 0; C<Buffer.length; C++ )",
+"                Buffer[C]= destination;",
+"        }",
+"",
+"        BufferEndTime+= NumToShift * cStepTime;",
+"    }",
+"    return Frac;",
+"}",
+"",
+"function StepResponse(t)",
+"{",
+"    if(t < 0)",
+"        return 0;",
+"",
+"    if(t > duration)",
+"        return 1;",
+"",
+"    // When optimizing for speed, the above two if(.) cases can be omitted,",
+"    // as this funciton will not be called for values outside of 0..duration.",
+"",
+"    return StepResponseCore(t / duration);",
+"}",
+"",
+"// This function defines the shape of how the output responds to the input.",
+"// It must accept values for T in the range 0 <= T <= 1.",
+"// In order to create a smooth animation, it should return 0 for T == 0,",
+"// 1 for T == 1 and be sufficient smooth in the range 0 <= T <= 1.",
+"",
+"// It should be optimized for speed, in order for high performance. It's",
+"// executed Buffer.length + 1 times each simulation tick.",
+"",
+"function StepResponseCore(T)",
+"{",
+"    return .5 - .5 * Math.cos(T * Math.PI);",
+"}",
+"",
+"// The following functions are not used. They provide other responses (for fun).",
+"function StepResponseCoreF(T)",
+"{",
+"    var cTau= .3;",
+"    var cFrequency= 2.5;",
+"    return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI));",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI))* (.5 + .5 * Math.cos(T * Math.PI));",
+"}",
+"",
+"",
+"function StepResponseCoreE(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin(Math.sqrt(1 - T) * Math.PI/2);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"",
+"function StepResponseCoreD(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin((1 - T) * Math.PI/2);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreC(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreB(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"function StepResponseCoreA(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"    var Alpha= .2 * T;",
+"    return A * (1 - Alpha) + B * Alpha;",
+"}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Tmer_PositionChaser",
+                        "@loop":true
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"time",
+                        "@fromNode":"Tmer_PositionChaser",
+                        "@toField":"Tick",
+                        "@toNode":"ScreenPositionDamper_PositionChaser"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"OrientationChaser",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"set_value",
+                      "@accessType":"inputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"credits",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["Initial idea and copyright by Herbert Stocker http://www.hersto.net/"]
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"set_destination",
+                      "@accessType":"inputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"duration",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"initial_destination",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFRotation",
+                      "@value":[0.0,0.0,1.0,0.0]
+                    },
+                    {
+                      "@name":"initial_value",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFRotation",
+                      "@value":[0.0,0.0,1.0,0.0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"ScreenPositionDamper_OrientationChaser",
+                        "field": [
+                          {
+                            "@name":"Tick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_value",
+                            "@accessType":"inputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"duration",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"Buffer",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFRotation"
+                          },
+                          {
+                            "@name":"bInitialized",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"BufferEndTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"cNumSupports",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32",
+                            "@value":10
+                          },
+                          {
+                            "@name":"set_destination",
+                            "@accessType":"inputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"cStepTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"previousValue",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation",
+                            "@value":[0.0,0.0,1.0,0.0]
+                          },
+                          {
+                            "@name":"initial_destination",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"destination",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation",
+                            "@value":[0.0,0.0,1.0,0.0]
+                          },
+                          {
+                            "@name":"isActive",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"initial_value",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_value",
+                                "@protoField":"set_value"
+                              },
+                              {
+                                "@nodeField":"duration",
+                                "@protoField":"duration"
+                              },
+                              {
+                                "@nodeField":"set_destination",
+                                "@protoField":"set_destination"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              },
+                              {
+                                "@nodeField":"initial_destination",
+                                "@protoField":"initial_destination"
+                              },
+                              {
+                                "@nodeField":"isActive",
+                                "@protoField":"isActive"
+                              },
+                              {
+                                "@nodeField":"initial_value",
+                                "@protoField":"initial_value"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"    CheckInit();",
+"}",
+"",
+"function CheckInit()",
+"{",
+"    if(!bInitialized)",
+"    {",
+"        bInitialized= true;  // Init() may call other functions that call CheckInit(). In that case it's better the flag is already set, otherwise an endless loop would occur.",
+"        Init();",
+"    }",
+"}",
+"",
+"function Init()",
+"{",
+"    destination= initial_destination;",
+"",
+"    Buffer.length= cNumSupports;",
+"",
+"    Buffer[0]= initial_destination;",
+"    for(var C= 1; C<Buffer.length; C++ )",
+"        Buffer[C]= initial_value;",
+"",
+"    previousValue= initial_value;",
+"",
+"    cStepTime= duration / cNumSupports;",
+"}",
+"",
+"function set_destination(Dest, Now)",
+"{",
+"    CheckInit();",
+"",
+"    destination= Dest;",
+"    // Somehow we assign to Buffer[-1] and wait untill this gets shifted into the real buffer.",
+"    // Would we assign to Buffer[0] instead, we'd have no delay, but this would create a jump in the",
+"    // output because Buffer[0] is associated with a value in the past.",
+"",
+"    UpdateBuffer(Now);",
+"}",
+"",
+"function Tick(Now)",
+"{",
+"    CheckInit();",
+"",
+"    if(!BufferEndTime)",
+"    {",
+"        BufferEndTime= Now; // first event we received, so we are in the initialization phase.",
+"",
+"        value_changed= initial_value;",
+"        return;",
+"    }",
+"",
+"    var Frac= UpdateBuffer(Now);",
+"    // Frac is a value in   0 <= Frac < 1.",
+"",
+"    // Now we can calculate the output.",
+"    // This means we calculate the delta between each entry in Buffer and its previous",
+"    // entries, calculate the step response of each such step and add it to form the output.",
+"",
+"    // The oldest vaule Buffer[Buffer.length - 1] needs some extra thought, because it has",
+"    // no previous value. More exactly, we haven't stored a previous value anymore.",
+"    // However, the step response of that missing previous value has already reached its",
+"    // destination, so we can - would we have that previous value - use this as a start point",
+"    // for adding the step responses.",
+"    // Actually UpdateBuffer(.) maintains this value in",
+"",
+"    var Output= previousValue;",
+"",
+"    var DeltaIn= previousValue.inverse().multiply(Buffer[Buffer.length - 1]);",
+"",
+"    Output= Output.slerp(Output.multiply(DeltaIn), StepResponse((Buffer.length - 1 + Frac) * cStepTime));",
+"",
+"    for(var C= Buffer.length - 2; C>=0; C-- )",
+"    {",
+"        var DeltaIn= Buffer[C + 1].inverse().multiply(Buffer[C]);",
+"",
+"        Output= Output.slerp(Output.multiply(DeltaIn), StepResponse((C + Frac) * cStepTime));",
+"    }",
+"",
+"",
+"    if(Output != value_changed)",
+"        value_changed= Output;",
+"}",
+"",
+"function UpdateBuffer(Now)",
+"{",
+"    var Frac= (Now - BufferEndTime) / cStepTime;",
+"    // is normally < 1. When it has grown to be larger than 1, we have to shift the array because the step response",
+"    // of the oldest entry has already reached its destination, and it's time for a newer entry.",
+"    // has already reached it",
+"    // In the case of a very low frame rate, or a very short cStepTime we may need to shift by more than one entry.",
+"",
+"    if(Frac >= 1)",
+"    {",
+"        var NumToShift= Math.floor(Frac);",
+"        Frac-= NumToShift;",
+"",
+"        if(NumToShift < Buffer.length)",
+"        {   // normal case.",
+"",
+"            previousValue= Buffer[Buffer.length - NumToShift];",
+"",
+"            for(var C= Buffer.length - 1; C>=NumToShift; C-- )",
+"                Buffer[C]= Buffer[C - NumToShift];",
+"",
+"            for(var C= 0; C<NumToShift; C++ )",
+"            {",
+"                // Hmm, we have a destination value, but don't know how it has",
+"                // reached the current state.",
+"                // Therefore we do a linear interpolation from the latest value in the buffer to destination.",
+"",
+"                Buffer[C]= destination.slerp(Buffer[NumToShift], C / NumToShift);",
+"            }",
+"        }else",
+"        {",
+"            // degenerated case:",
+"            //",
+"            // We have a _VERY_ low frame rate...",
+"            // we can only guess how we should fill the array.",
+"            // Maybe we could write part of a linear interpolation",
+"            // from Buffer[0] to destination, that goes from BufferEndTime to Now",
+"            // (possibly only the end of the interpolation is to be written),",
+"            // but if we rech here we are in a very degenerate case...",
+"            // Thus we just write destination to the buffer.",
+"",
+"            previousValue= NumToShift == Buffer.length? Buffer[0] : destination;",
+"",
+"            for(var C= 0; C<Buffer.length; C++ )",
+"                Buffer[C]= destination;",
+"        }",
+"        BufferEndTime+= NumToShift * cStepTime;",
+"    }",
+"",
+"return Frac;",
+"}",
+"",
+"function StepResponse(t)",
+"{",
+"    if(t < 0)",
+"        return 0;",
+"",
+"    if(t > duration)",
+"        return 1;",
+"",
+"    // When optimizing for speed, the above two if(.) cases can be omitted,",
+"    // as this funciton will not be called for values outside of 0..duration.",
+"",
+"     return StepResponseCore(t / duration);",
+"}",
+"",
+"// This function defines the shape of how the output responds to the input.",
+"// It must accept values for T in the range 0 <= T <= 1.",
+"// In order to create a smooth animation, it should return 0 for T == 0,",
+"// 1 for T == 1 and be sufficient smooth in the range 0 <= T <= 1.",
+"",
+"// It should be optimized for speed, in order for high performance. It's",
+"// executed Buffer.length + 1 times each simulation tick.",
+"",
+"function StepResponseCore(T)",
+"{",
+"    return .5 - .5 * Math.cos(T * Math.PI);",
+"}",
+"",
+"// The following functions are not used. They provide other responses (for fun).",
+"",
+"function StepResponseCoreG(T)",
+"{",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI));",
+"}",
+"",
+"function StepResponseCoreF(T)",
+"{",
+"    var cTau= .3;",
+"    var cFrequency= 2.5;",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI));",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI))* (.5 + .5 * Math.cos(T * Math.PI));",
+"}",
+"",
+"function StepResponseCoreE(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin(Math.sqrt(1 - T) * Math.PI/2);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreD(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin((1 - T) * Math.PI/2);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreC(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreB(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreA(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"    var Alpha= .2 * T;",
+"    return A * (1 - Alpha) + B * Alpha;",
+"}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Tmer_OrientationChaser",
+                        "@loop":true
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"time",
+                        "@fromNode":"Tmer_OrientationChaser",
+                        "@toField":"Tick",
+                        "@toNode":"ScreenPositionDamper_OrientationChaser"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Position2fChaser",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec2f"
+                    },
+                    {
+                      "@name":"set_value",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec2f"
+                    },
+                    {
+                      "@name":"credits",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["Initial idea and copyright by Herbert Stocker http://www.hersto.net/"]
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"set_destination",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec2f"
+                    },
+                    {
+                      "@name":"duration",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"initial_destination",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec2f",
+                      "@value":[0.0,0.0]
+                    },
+                    {
+                      "@name":"initial_value",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec2f",
+                      "@value":[0.0,0.0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"ScreenPositionDamper_Position2fChaser",
+                        "field": [
+                          {
+                            "@name":"Tick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_value",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec2f"
+                          },
+                          {
+                            "@name":"duration",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"Buffer",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFVec2f"
+                          },
+                          {
+                            "@name":"bInitialized",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"BufferEndTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"cNumSupports",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32",
+                            "@value":10
+                          },
+                          {
+                            "@name":"set_destination",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec2f"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec2f"
+                          },
+                          {
+                            "@name":"cStepTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"previousValue",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec2f",
+                            "@value":[0.0,0.0]
+                          },
+                          {
+                            "@name":"initial_destination",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec2f"
+                          },
+                          {
+                            "@name":"destination",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec2f",
+                            "@value":[0.0,0.0]
+                          },
+                          {
+                            "@name":"isActive",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"initial_value",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec2f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_value",
+                                "@protoField":"set_value"
+                              },
+                              {
+                                "@nodeField":"duration",
+                                "@protoField":"duration"
+                              },
+                              {
+                                "@nodeField":"set_destination",
+                                "@protoField":"set_destination"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              },
+                              {
+                                "@nodeField":"initial_destination",
+                                "@protoField":"initial_destination"
+                              },
+                              {
+                                "@nodeField":"isActive",
+                                "@protoField":"isActive"
+                              },
+                              {
+                                "@nodeField":"initial_value",
+                                "@protoField":"initial_value"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"    CheckInit();",
+"}",
+"",
+"function CheckInit()",
+"{",
+"    if(!bInitialized)",
+"    {",
+"        bInitialized= true;  // Init() may call other functions that call CheckInit(). In that case it's better the flag is already set, otherwise an endless loop would occur.",
+"        Init();",
+"    }",
+"}",
+"",
+"function Init()",
+"{",
+"    destination= initial_destination;",
+"",
+"    Buffer.length= cNumSupports;",
+"",
+"    Buffer[0]= initial_destination;",
+"    for(var C= 1; C<Buffer.length; C++ )",
+"        Buffer[C]= initial_value;",
+"",
+"    previousValue= initial_value;",
+"",
+"    cStepTime= duration / cNumSupports;",
+"}",
+"",
+"function set_destination(Dest, Now)",
+"{",
+"    CheckInit();",
+"",
+"    destination= Dest;",
+"    // Somehow we assign to Buffer[-1] and wait untill this gets shifted into the real buffer.",
+"    // Would we assign to Buffer[0] instead, we'd have no delay, but this would create a jump in the",
+"    // output because Buffer[0] is associated with a value in the past.",
+"",
+"    UpdateBuffer(Now);",
+"}",
+"",
+"function Tick(Now)",
+"{",
+"    CheckInit();",
+"",
+"    if(!BufferEndTime)",
+"    {",
+"        BufferEndTime= Now; // first event we received, so we are in the initialization phase.",
+"",
+"        value_changed= initial_value;",
+"        return;",
+"    }",
+"",
+"    var Frac= UpdateBuffer(Now);",
+"    // Frac is a value in   0 <= Frac < 1.",
+"",
+"    // Now we can calculate the output.",
+"    // This means we calculate the delta between each entry in Buffer and its previous",
+"    // entries, calculate the step response of each such step and add it to form the output.",
+"",
+"    // The oldest vaule Buffer[Buffer.length - 1] needs some extra thought, because it has",
+"    // no previous value. More exactly, we haven't stored a previous value anymore.",
+"    // However, the step response of that missing previous value has already reached its",
+"    // destination, so we can - would we have that previous value - use this as a start point",
+"    // for adding the step responses.",
+"    // Actually UpdateBuffer(.) maintains this value in",
+"",
+"    var Output= previousValue;",
+"",
+"    var DeltaIn= Buffer[Buffer.length - 1].subtract(previousValue);",
+"",
+"    var DeltaOut= DeltaIn.multiply(StepResponse((Buffer.length - 1 + Frac) * cStepTime));",
+"",
+"    Output= Output.add(DeltaOut);",
+"",
+"    for(var C= Buffer.length - 2; C>=0; C-- )",
+"    {",
+"        var DeltaIn= Buffer[C].subtract(Buffer[C + 1]);",
+"",
+"        var DeltaOut= DeltaIn.multiply(StepResponse((C + Frac) * cStepTime));",
+"",
+"        Output= Output.add(DeltaOut);",
+"    }",
+"",
+"",
+"    if(Output != value_changed)",
+"        value_changed= Output;",
+"}",
+"",
+"function UpdateBuffer(Now)",
+"{",
+"    var Frac= (Now - BufferEndTime) / cStepTime;",
+"    // is normally < 1. When it has grown to be larger than 1, we have to shift the array because the step response",
+"    // of the oldest entry has already reached its destination, and it's time for a newer entry.",
+"    // has already reached it",
+"    // In the case of a very low frame rate, or a very short cStepTime we may need to shift by more than one entry.",
+"",
+"    if(Frac >= 1)",
+"    {",
+"        var NumToShift= Math.floor(Frac);",
+"        Frac-= NumToShift;",
+"",
+"        if(NumToShift < Buffer.length)",
+"        {   // normal case.",
+"",
+"            previousValue= Buffer[Buffer.length - NumToShift];",
+"",
+"            for(var C= Buffer.length - 1; C>=NumToShift; C-- )",
+"                Buffer[C]= Buffer[C - NumToShift];",
+"",
+"            for(var C= 0; C<NumToShift; C++ )",
+"            {",
+"                // Hmm, we have a destination value, but don't know how it has",
+"                // reached the current state.",
+"                // Therefore we do a linear interpolation from the latest value in the buffer to destination.",
+"",
+"                var Alpha= C / NumToShift;",
+"",
+"                Buffer[C]= Buffer[NumToShift].multiply(Alpha).add(destination.multiply((1 - Alpha)));",
+"            }",
+"        }else",
+"        {",
+"            // degenerated case:",
+"            //",
+"            // We have a _VERY_ low frame rate...",
+"            // we can only guess how we should fill the array.",
+"            // Maybe we could write part of a linear interpolation",
+"            // from Buffer[0] to destination, that goes from BufferEndTime to Now",
+"            // (possibly only the end of the interpolation is to be written),",
+"            // but if we rech here we are in a very degenerate case...",
+"            // Thus we just write destination to the buffer.",
+"",
+"            previousValue= NumToShift == Buffer.length? Buffer[0] : destination;",
+"",
+"            for(var C= 0; C<Buffer.length; C++ )",
+"                Buffer[C]= destination;",
+"        }",
+"",
+"        BufferEndTime+= NumToShift * cStepTime;",
+"    }",
+"",
+"return Frac;",
+"}",
+"",
+"",
+"",
+"function StepResponse(t)",
+"{",
+"    if(t < 0)",
+"return 0;",
+"",
+"    if(t > duration)",
+"return 1;",
+"",
+"    // When optimizing for speed, the above two if(.) cases can be omitted,",
+"    // as this funciton will not be called for values outside of 0..duration.",
+"",
+"return StepResponseCore(t / duration);",
+"}",
+"",
+"",
+"// This function defines the shape of how the output responds to the input.",
+"// It must accept values for T in the range 0 <= T <= 1.",
+"// In order to create a smooth animation, it should return 0 for T == 0,",
+"// 1 for T == 1 and be sufficient smooth in the range 0 <= T <= 1.",
+"",
+"// It should be optimized for speed, in order for high performance. It's",
+"// executed Buffer.length + 1 times each simulation tick.",
+"function StepResponseCore(T)",
+"{",
+"return .5 - .5 * Math.cos(T * Math.PI);",
+"}",
+"",
+"",
+"// The following functions are not used. They provide other responses (for fun).",
+"function StepResponseCoreF(T)",
+"{",
+"    var cTau= .3;",
+"    var cFrequency= 2.5;",
+"return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI));",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI))* (.5 + .5 * Math.cos(T * Math.PI));",
+"}",
+"",
+"function StepResponseCoreE(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"  var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin(Math.sqrt(1 - T) * Math.PI/2);",
+"",
+"return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreD(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"  var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin((1 - T) * Math.PI/2);",
+"",
+"return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreC(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"  var cTau= .3;",
+"  var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"",
+"return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreB(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"  var cTau= .3;",
+"  var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"return A * .8 + B * .2;",
+"}",
+"",
+"function StepResponseCoreA(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"  var cTau= .3;",
+"  var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"    var Alpha= .2 * T;",
+"return A * (1 - Alpha) + B * Alpha;",
+"}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Tmer_Position2fChaser",
+                        "@loop":true
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"time",
+                        "@fromNode":"Tmer_Position2fChaser",
+                        "@toField":"Tick",
+                        "@toNode":"ScreenPositionDamper_Position2fChaser"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"PlacementChaser",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"isLoaded",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"set_valuePos",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"set_valueOri",
+                      "@accessType":"inputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"set_destinationPos",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"credits",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["Initial idea and copyright by Herbert Stocker http://www.hersto.net/"]
+                    },
+                    {
+                      "@name":"duration",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"set_destinationOri",
+                      "@accessType":"inputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"initial_valuePos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"initial_destinationPos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"valuePos_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"initial_valueOri",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFRotation",
+                      "@value":[0.0,0.0,1.0,0.0]
+                    },
+                    {
+                      "@name":"initial_destinationOri",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFRotation",
+                      "@value":[0.0,0.0,1.0,0.0]
+                    },
+                    {
+                      "@name":"valueOri_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"ScreenPositionDamper_PlacementChaser",
+                        "field": [
+                          {
+                            "@name":"previousValueOri",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation",
+                            "@value":[0.0,0.0,1.0,0.0]
+                          },
+                          {
+                            "@name":"Tick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"duration",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_destinationOri",
+                            "@accessType":"inputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"bInitialized",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"set_valueOri",
+                            "@accessType":"inputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"previousValuePos",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"destinationOri",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation",
+                            "@value":[0.0,0.0,1.0,0.0]
+                          },
+                          {
+                            "@name":"initial_valueOri",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"set_destinationPos",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"BufferEndTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"cNumSupports",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32",
+                            "@value":10
+                          },
+                          {
+                            "@name":"set_valuePos",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"cStepTime",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"initial_destinationOri",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"BufferOri",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFRotation"
+                          },
+                          {
+                            "@name":"destinationPos",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"initial_valuePos",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"valuePos_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"isActive",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"initial_destinationPos",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"valueOri_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"BufferPos",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFVec3f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"duration",
+                                "@protoField":"duration"
+                              },
+                              {
+                                "@nodeField":"set_destinationOri",
+                                "@protoField":"set_destinationOri"
+                              },
+                              {
+                                "@nodeField":"set_valueOri",
+                                "@protoField":"set_valueOri"
+                              },
+                              {
+                                "@nodeField":"initial_valueOri",
+                                "@protoField":"initial_valueOri"
+                              },
+                              {
+                                "@nodeField":"set_destinationPos",
+                                "@protoField":"set_destinationPos"
+                              },
+                              {
+                                "@nodeField":"set_valuePos",
+                                "@protoField":"set_valuePos"
+                              },
+                              {
+                                "@nodeField":"initial_destinationOri",
+                                "@protoField":"initial_destinationOri"
+                              },
+                              {
+                                "@nodeField":"initial_valuePos",
+                                "@protoField":"initial_valuePos"
+                              },
+                              {
+                                "@nodeField":"valuePos_changed",
+                                "@protoField":"valuePos_changed"
+                              },
+                              {
+                                "@nodeField":"isActive",
+                                "@protoField":"isActive"
+                              },
+                              {
+                                "@nodeField":"initial_destinationPos",
+                                "@protoField":"initial_destinationPos"
+                              },
+                              {
+                                "@nodeField":"valueOri_changed",
+                                "@protoField":"valueOri_changed"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"    CheckInit();",
+"}",
+"",
+"function CheckInit()",
+"{",
+"    if(!bInitialized)",
+"    {",
+"        bInitialized= true;  // Init() may call other functions that call CheckInit(). In that case it's better the flag is already set, otherwise an endless loop would occur.",
+"        Init();",
+"    }",
+"}",
+"function Init()",
+"{",
+"    destinationPos= initial_destinationPos;",
+"    destinationOri= initial_destinationOri;",
+"",
+"    BufferPos.length=",
+"    BufferOri.length= cNumSupports;",
+"",
+"    BufferPos[0]= initial_destinationPos;",
+"    BufferOri[0]= initial_destinationOri;",
+"    for(var C= 1; C<BufferPos.length; C++ )",
+"    {",
+"        BufferPos[C]= initial_valuePos;",
+"        BufferOri[C]= initial_valueOri;",
+"    }",
+"",
+"    previousValuePos= initial_valuePos;",
+"    previousValueOri= initial_valueOri;",
+"",
+"    cStepTime= duration / cNumSupports;",
+"}",
+"function set_destinationPos(Dest, Now)",
+"{",
+"    CheckInit();",
+"",
+"    destinationPos= Dest;",
+"    // Somehow we assign to Buffer[-1] and wait untill this gets shifted into the real buffer.",
+"    // Would we assign to Buffer[0] instead, we'd have no delay, but this would create a jump in the",
+"    // output because Buffer[0] is associated with a value in the past.",
+"",
+"    //UpdateBuffer(Now);",
+"}",
+"",
+"function set_destinationOri(Dest, Now)",
+"{",
+"    CheckInit();",
+"",
+"    destinationOri= Dest;",
+"    // Somehow we assign to Buffer[-1] and wait untill this gets shifted into the real buffer.",
+"    // Would we assign to Buffer[0] instead, we'd have no delay, but this would create a jump in the",
+"    // output because Buffer[0] is associated with a value in the past.",
+"",
+"    //UpdateBuffer(Now);",
+"}",
+"function Tick(Now)",
+"{",
+"    CheckInit();",
+"",
+"    if(!BufferEndTime)",
+"    {",
+"        BufferEndTime= Now; // first event we received, so we are in the initialization phase.",
+"",
+"        valuePos_changed= initial_valuePos;",
+"        valueOri_changed= initial_valueOri;",
+"        return;",
+"    }",
+"",
+"    var Frac= UpdateBuffer(Now);",
+"    // Frac is a value in   0 <= Frac < 1.",
+"",
+"    // Now we can calculate the output.",
+"    // This means we calculate the delta between each entry in Buffer and its previous",
+"    // entries, calculate the step response of each such step and add it to form the output.",
+"",
+"    // The oldest vaule Buffer[Buffer.length - 1] needs some extra thought, because it has",
+"    // no previous value. More exactly, we haven't stored a previous value anymore.",
+"    // However, the step response of that missing previous value has already reached its",
+"    // destination, so we can - would we have that previous value - use this as a start point",
+"    // for adding the step responses.",
+"    // Actually UpdateBuffer(.) maintains this value in",
+"",
+"    var OutputPos= previousValuePos;",
+"    var OutputOri= previousValueOri;",
+"",
+"    var DeltaInPos= BufferPos[BufferPos.length - 1].subtract(previousValuePos);",
+"    var DeltaInOri= previousValueOri.inverse().multiply(BufferOri[BufferOri.length - 1]);",
+"",
+"    var DeltaOutPos= DeltaInPos.multiply(StepResponse((BufferPos.length - 1 + Frac) * cStepTime));",
+"",
+"    OutputPos= OutputPos.add(DeltaOutPos);",
+"    OutputOri= OutputOri.slerp(OutputOri.multiply(DeltaInOri), StepResponse((BufferOri.length - 1 + Frac) * cStepTime));",
+"",
+"    for(var C= BufferPos.length - 2; C>=0; C-- )",
+"    {",
+"        var DeltaInPos= BufferPos[C].subtract(BufferPos[C + 1]);",
+"        var DeltaInOri= BufferOri[C + 1].inverse().multiply(BufferOri[C]);",
+"",
+"        var DeltaOutPos= DeltaInPos.multiply(StepResponse((C + Frac) * cStepTime));",
+"",
+"        OutputPos= OutputPos.add(DeltaOutPos);",
+"        OutputOri= OutputOri.slerp(OutputOri.multiply(DeltaInOri), StepResponse((C + Frac) * cStepTime));",
+"    }",
+"    if(OutputPos != valuePos_changed)",
+"        valuePos_changed= OutputPos;",
+"",
+"    if(OutputOri != valueOri_changed)",
+"        valueOri_changed= OutputOri;",
+"}",
+"function UpdateBuffer(Now)",
+"{",
+"    var Frac= (Now - BufferEndTime) / cStepTime;",
+"    // is normally < 1. When it has grown to be larger than 1, we have to shift the array because the step response",
+"    // of the oldest entry has already reached its destination, and it's time for a newer entry.",
+"    // has already reached it",
+"    // In the case of a very low frame rate, or a very short cStepTime we may need to shift by more than one entry.",
+"",
+"    if(Frac >= 1)",
+"    {",
+"        var NumToShift= Math.floor(Frac);",
+"        Frac-= NumToShift;",
+"",
+"        if(NumToShift < BufferPos.length)",
+"        {   // normal case.",
+"",
+"            previousValuePos= BufferPos[BufferPos.length - NumToShift];",
+"            previousValueOri= BufferOri[BufferOri.length - NumToShift];",
+"",
+"            for(var C= BufferPos.length - 1; C>=NumToShift; C-- )",
+"            {",
+"                BufferPos[C]= BufferPos[C - NumToShift];",
+"                BufferOri[C]= BufferOri[C - NumToShift];",
+"            }",
+"",
+"            for(var C= 0; C<NumToShift; C++ )",
+"            {",
+"                // Hmm, we have a destination value, but don't know how it has",
+"                // reached the current state.",
+"                // Therefore we do a linear interpolation from the latest value in the buffer to destination.",
+"",
+"                var Alpha= C / NumToShift;",
+"",
+"                BufferPos[C]= BufferPos[NumToShift].multiply(Alpha).add(destinationPos.multiply((1 - Alpha)));",
+"                BufferOri[C]= destinationOri.slerp(BufferOri[NumToShift], Alpha);",
+"            }",
+"        }else",
+"        {",
+"            // degenerated case:",
+"            //",
+"            // We have a _VERY_ low frame rate...",
+"            // we can only guess how we should fill the array.",
+"            // Maybe we could write part of a linear interpolation",
+"            // from Buffer[0] to destination, that goes from BufferEndTime to Now",
+"            // (possibly only the end of the interpolation is to be written),",
+"            // but if we rech here we are in a very degenerate case...",
+"            // Thus we just write destination to the buffer.",
+"",
+"            previousValuePos= NumToShift == BufferPos.length? BufferPos[0] : destinationPos;",
+"            previousValueOri= NumToShift == BufferOri.length? BufferOri[0] : destinationOri;",
+"",
+"            for(var C= 0; C<BufferPos.length; C++ )",
+"            {",
+"                BufferPos[C]= destinationPos;",
+"                BufferOri[C]= destinationOri;",
+"            }",
+"        }",
+"        BufferEndTime+= NumToShift * cStepTime;",
+"    }",
+"    return Frac;",
+"}",
+"function StepResponse(t)",
+"{",
+"    if(t < 0)",
+"        return 0;",
+"",
+"    if(t > duration)",
+"        return 1;",
+"",
+"    // When optimizing for speed, the above two if(.) cases can be omitted,",
+"    // as this funciton will not be called for values outside of 0..duration.",
+"",
+"    return StepResponseCore(t / duration);",
+"}",
+"",
+"",
+"// This function defines the shape of how the output responds to the input.",
+"// It must accept values for T in the range 0 <= T <= 1.",
+"// In order to create a smooth animation, it should return 0 for T == 0,",
+"// 1 for T == 1 and be sufficient smooth in the range 0 <= T <= 1.",
+"",
+"// It should be optimized for speed, in order for high performance. It's",
+"// executed Buffer.length + 1 times each simulation tick.",
+"function StepResponseCore(T)",
+"{",
+"    return .5 - .5 * Math.cos(T * Math.PI);",
+"}",
+"",
+"// The following functions are not used. They provide other responses (for fun).",
+"function StepResponseCoreF(T)",
+"{",
+"    var cTau= .3;",
+"    var cFrequency= 2.5;",
+"    return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T) * (1 - T);",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI));",
+"//      return 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (.5 + .5 * Math.cos(T * Math.PI))* (.5 + .5 * Math.cos(T * Math.PI));",
+"}",
+"function StepResponseCoreE(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin(Math.sqrt(1 - T) * Math.PI/2);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"function StepResponseCoreD(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cFrequency= 2.5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.sin((1 - T) * Math.PI/2);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"function StepResponseCoreC(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) * Math.exp(-T / cTau) * (1 - T);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"",
+"",
+"function StepResponseCoreB(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"    return A * .8 + B * .2;",
+"}",
+"function StepResponseCoreA(T)",
+"{",
+"    var A= .5 - .5 * Math.cos(T * Math.PI);",
+"",
+"    var cTau= .3;",
+"    var cFrequency= 5;",
+"    var B= 1 - Math.cos(T * 2 * Math.PI * cFrequency) /** Math.exp(-T / cTau)*/ * (1 - T);",
+"",
+"    var Alpha= .2 * T;",
+"    return A * (1 - Alpha) + B * Alpha;",
+"}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Tmer_PlacementChaser",
+                        "@loop":true
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"time",
+                        "@fromNode":"Tmer_PlacementChaser",
+                        "@toField":"Tick",
+                        "@toNode":"ScreenPositionDamper_PlacementChaser"
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"LastNode",
+                        "field": [
+                          {
+                            "@name":"isLoaded",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"isLoaded",
+                                "@protoField":"isLoaded"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"    isLoaded= true;",
+"}"
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"PositionDamper",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"isLoaded",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"value_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"set_destination",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"takeFirstInput",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"initial_destination",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"order",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFInt32",
+                      "@value":1
+                    },
+                    {
+                      "@name":"credits",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString",
+                      "@value":["Initial idea and copyright by Herbert Stocker http://www.hersto.net/"]
+                    },
+                    {
+                      "@name":"reachThreshold",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0.01
+                    },
+                    {
+                      "@name":"tau",
+                      "@accessType":"inputOutput",
+                      "@type":"SFFloat",
+                      "@value":1.0
+                    },
+                    {
+                      "@name":"set_value",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"reached",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"initial_value",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"eps",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0.0010
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoDeclare":
+                      {
+                        "@name":"EFFS",
+                        "ProtoInterface": {
+                            "field": [
+                              {
+                                "@name":"tau",
+                                "@accessType":"inputOutput",
+                                "@type":"SFFloat",
+                                "@value":1.0
+                              }
+                            ]
+                        },
+                        "ProtoBody": {
+                            "-children":[
+                              { "Group":
+                                {
+                                }
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ProtoInstance":
+                      {
+                        "@name":"EFFS",
+                        "@DEF":"EFFS",
+                        "fieldValue": [
+                          {
+                            "@name":"tau",
+                            "@value":1.0
+                          }
+                        ]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"Worker",
+                        "field": [
+                          {
+                            "@name":"set_value",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"IsCortona",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"bInitialized",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"reachThreshold",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"lastTick",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFTime",
+                            "@value":0.0
+                          },
+                          {
+                            "@name":"bNeedToTakeFirstInput",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":true
+                          },
+                          {
+                            "@name":"value5",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"value4",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"value3",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"value2",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"input",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"value1",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0,0.0,0.0]
+                          },
+                          {
+                            "@name":"eps",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"set_destination",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"value_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"tau",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat",
+                            "@value":1.0
+                          },
+                          {
+                            "@name":"effs",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "ProtoInstance":
+                                {
+                                  "@name":"EFFS",
+                                  "@USE":"EFFS"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"order",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"needTimer",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"tick",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"set_tau",
+                            "@accessType":"inputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"initial_value",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"reached",
+                            "@accessType":"outputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"takeFirstInput",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_value",
+                                "@protoField":"set_value"
+                              },
+                              {
+                                "@nodeField":"reachThreshold",
+                                "@protoField":"reachThreshold"
+                              },
+                              {
+                                "@nodeField":"input",
+                                "@protoField":"initial_destination"
+                              },
+                              {
+                                "@nodeField":"eps",
+                                "@protoField":"eps"
+                              },
+                              {
+                                "@nodeField":"set_destination",
+                                "@protoField":"set_destination"
+                              },
+                              {
+                                "@nodeField":"value_changed",
+                                "@protoField":"value_changed"
+                              },
+                              {
+                                "@nodeField":"order",
+                                "@protoField":"order"
+                              },
+                              {
+                                "@nodeField":"needTimer",
+                                "@protoField":"isActive"
+                              },
+                              {
+                                "@nodeField":"initial_value",
+                                "@protoField":"initial_value"
+                              },
+                              {
+                                "@nodeField":"reached",
+                                "@protoField":"reached"
+                              },
+                              {
+                                "@nodeField":"takeFirstInput",
+                                "@protoField":"takeFirstInput"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function StartTimer()",
+"{",
+"    if(IsCortona)",
+"        return;",
+"",
+"    if(!needTimer)",
+"    {",
+"        lastTick= 0;",
+"        needTimer= true;",
+"    }",
+"}",
+"",
+"function StopTimer()",
+"{",
+"    if(IsCortona)",
+"        return;",
+"",
+"    if(needTimer)",
+"    {",
+"        needTimer= false;",
+"    }",
+"}",
+"",
+"function initialize()",
+"{",
+"    CheckInit();",
+"}",
+"",
+"function CheckInit()",
+"{",
+"    if(!bInitialized)",
+"    {",
+"        bInitialized= true;",
+"        Init();",
+"    }",
+"",
+"}",
+"",
+"function Init()",
+"{",
+"    IsCortona= false && Browser.getName().indexOf('Cortona') != -1;",
+"",
+"    bNeedToTakeFirstInput= takeFirstInput;",
+"",
+"    tau= effs.tau;",
+"    set_value(initial_value);",
+"    if(IsCortona)",
+"        needTimer= true;",
+"    else",
+"        needTimer=    input.x != initial_value.x",
+"                   || input.y != initial_value.y",
+"                   || input.z != initial_value.z",
+"                   ;",
+"}",
+"",
+"function set_tau(t)",
+"{",
+"    CheckInit();",
+"",
+"    tau= t;",
+"}",
+"",
+"function set_destination(i)",
+"{",
+"    CheckInit();",
+"",
+"    if(bNeedToTakeFirstInput)",
+"    {",
+"        bNeedToTakeFirstInput= false;",
+"        set_value(i);",
+"    }",
+"",
+"",
+"    if(i != input)",
+"    {",
+"        input= i;",
+"        StartTimer();",
+"    }",
+"}",
+"",
+"function set_value(o)",
+"{",
+"    CheckInit();",
+"",
+"    bNeedToTakeFirstInput= false;",
+"",
+"    value1= value2= value3= value4= value5= o;",
+"    value_changed= o;",
+"    UpdateReached();",
+"    StartTimer();",
+"}",
+"",
+"function tick(now)",
+"{",
+"    CheckInit();",
+"",
+"    if(!lastTick)",
+"    {",
+"        lastTick= now;",
+"        return;",
+"    }",
+"",
+"    var delta= now - lastTick;",
+"    lastTick= now;",
+"",
+"    var alpha= Math.exp(-delta / tau);",
+"",
+"",
+"    if(bNeedToTakeFirstInput)  // then don't do any processing.",
+"        return;",
+"",
+"    value1= order > 0 && tau",
+"               ? input  .add(value1.subtract(input  ).multiply(alpha))",
+"               : input;",
+"",
+"    value2= order > 1 && tau",
+"               ? value1.add(value2.subtract(value1).multiply(alpha))",
+"               : value1;",
+"",
+"    value3= order > 2 && tau",
+"               ? value2.add(value3.subtract(value2).multiply(alpha))",
+"               : value2;",
+"",
+"    value4= order > 3 && tau",
+"               ? value3.add(value4.subtract(value3).multiply(alpha))",
+"               : value3;",
+"",
+"    value5= order > 4 && tau",
+"               ? value4.add(value5.subtract(value4).multiply(alpha))",
+"               : value4;",
+"",
+"    var dist= GetDist();",
+"",
+"    if(dist < eps)",
+"    {",
+"        value1= value2= value3= value4= value5= input;",
+"",
+"        value_changed= input;",
+"        UpdateReached2(dist);",
+"",
+"        StopTimer();",
+"        return;",
+"    }",
+"    value_changed= value5;",
+"    UpdateReached2(dist);",
+"",
+"}",
+"",
+"function GetDist()",
+"{",
+"    var dist= value1.subtract(input).length();",
+"    if(order > 1)",
+"    {",
+"        var dist2= value2.subtract(value1).length();",
+"        if( dist2 > dist)  dist= dist2;",
+"    }",
+"    if(order > 2)",
+"    {",
+"        var dist3= value3.subtract(value2).length();",
+"        if( dist3 > dist)  dist= dist3;",
+"    }",
+"    if(order > 3)",
+"    {",
+"        var dist4= value4.subtract(value3).length();",
+"        if( dist4 > dist)  dist= dist4;",
+"    }",
+"    if(order > 4)",
+"    {",
+"        var dist5= value5.subtract(value4).length();",
+"        if( dist5 > dist)  dist= dist5;",
+"    }",
+"    return dist;",
+"}",
+"",
+"function UpdateReached()",
+"{",
+"    return UpdateReached2(GetDist());",
+"}",
+"",
+"function UpdateReached2(Dist)",
+"{",
+"    if(reached)",
+"    {",
+"        if(Dist > reachThreshold)",
+"            reached= false;",
+"    }else",
+"    {",
+"        if(Dist <= reachThreshold)",
+"            reached= true;",
+"    }",
+"}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Timer_PositionDamper",
+                        "@loop":true
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"needTimer",
+                        "@fromNode":"Worker",
+                        "@toField":"enabled",
+                        "@toNode":"Timer_PositionDamper"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"time",
+                        "@fromNode":"Timer_PositionDamper",
+                        "@toField":"tick",
+                        "@toNode":"Worker"
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}

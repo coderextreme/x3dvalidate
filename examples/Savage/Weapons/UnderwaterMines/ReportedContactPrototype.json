@@ -1,0 +1,759 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ReportedContactPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example instance of prototype for a reported mine-like contact."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Jeff Weekley, Frederic Roussille and Jane Wu"
+          },
+          {
+            "@name":"created",
+            "@content":"15 October 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 November 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"/ads/src/mil/navy/nps/ads/x3dArchive/DataArchiver.java"
+          },
+          {
+            "@name":"reference",
+            "@content":"/ads/doc/mil/navy/nps/ads/x3dArchive/DataArchiver.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/UnderwaterMines/ReportedContactPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Pdm1BottomMine",
+              "@url":["Pdm1BottomMinePrototype.x3d#Pdm1BottomMine","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/Pdm1BottomMinePrototype.x3d#Pdm1BottomMine","Pdm1BottomMinePrototype.wrl#Pdm1BottomMine","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/Pdm1BottomMinePrototype.wrl#Pdm1BottomMine"],
+              "field": [
+                {
+                  "@name":"viewpointDescription",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"mineColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"MantaMine",
+              "@url":["MantaMinePrototype.x3d#MantaMine","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/MantaMinePrototype.x3d#MantaMine","MantaMinePrototype.wrl#MantaMine","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/MantaMinePrototype.wrl#MantaMine"],
+              "field": [
+                {
+                  "@name":"MineColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"viewpointDescription",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"SphericalMine",
+              "@appinfo":"Spherical floating mine moored to bottom",
+              "@url":["SphericalMinePrototype.x3d#SphericalMine","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/SphericalMinePrototype.x3d#SphericalMine","SphericalMinePrototype.wrl#SphericalMine","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/SphericalMinePrototype.wrl#SphericalMine"],
+              "field": [
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Description for each mine contact.",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"color",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Mine color can be used to indicate status (found/unknown/disabled/) tactic etc.",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Location of this mine's center in local world coordinates.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Scale factor to change spherical mine size default diameter = 1m.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"bboxCenter",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Bounding box for collision detection of mine.",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"tetherPoints",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Top and bottom endpoints of line tether that anchors this mine to the bottom.",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"proximityIsActive",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"proximityIsActive can be used to activate information or interaction when the viewer nears the mine.",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"proximitySize",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"proximitySize provides overall box dimensions for proximity; thus (10 10 10) yields approximate radius 5..7 meters.",
+                  "@type":"SFVec3f"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ReportedContact",
+              "@appinfo":"Provide icon and contact information for a reported contact. Position ProtoInstances using the depth and location where found.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"name",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"aboveViewpointLabel",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFString",
+                      "@value":"Reported Contact (100m above)"
+                    },
+                    {
+                      "@name":"closeViewpointLabel",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFString",
+                      "@value":"Reported Contact (10m closeup)"
+                    },
+                    {
+                      "@name":"description",
+                      "@accessType":"inputOutput",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"reportedPosition",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Latitude and longitude (or local coordinates) for display purposes.",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"classificationCode",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    },
+                    {
+                      "@name":"imageUrl",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"provide filename and url of contact image as separate quoted strings",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"imageScale",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Aspect-ratio x-y scale of image icon (keep z=1)",
+                      "@type":"SFVec3f",
+                      "@value":[1.00,1.00,1]
+                    },
+                    {
+                      "@name":"imageOffset",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Relative position of image icon",
+                      "@type":"SFVec3f",
+                      "@value":[0,2.5,0]
+                    },
+                    {
+                      "@name":"textColor",
+                      "@accessType":"inputOutput",
+                      "@type":"SFColor",
+                      "@value":[0.4,0.4,0]
+                    },
+                    {
+                      "@name":"textOffset",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Relative position of image icon",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Viewpoint":
+                            {
+                              "@DEF":"SeenFromAboveViewpoint",
+                              "@description":"100m above contact (overridden by field viewpointLabel)",
+                              "@orientation":[1,0,0,-1.57],
+                              "@position":[0,100,0],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"aboveViewpointLabel"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"ContactCloseupViewpoint",
+                              "@description":"10m next to contact (overridden by closeViewpointLabel)",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"closeViewpointLabel"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "LOD":
+                            {
+                              "@range":[150,10000],
+                              "-children":[
+                                {
+                                  "#comment":"close range"
+                                },
+                                { "Group":
+                                  {
+                                    "-children":[
+                                      { "Transform":
+                                        {
+                                          "@DEF":"TextOffset",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"translation",
+                                                  "@protoField":"textOffset"
+                                                }
+                                              ]
+                                          },
+                                          "-children":[
+                                            { "Billboard":
+                                              {
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@translation":[0,-0.25,0],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-geometry":
+                                                              { "Text":
+                                                                {
+                                                                  "@DEF":"PositionText",
+                                                                  "IS": {
+                                                                      "connect": [
+                                                                        {
+                                                                          "@nodeField":"string",
+                                                                          "@protoField":"reportedPosition"
+                                                                        }
+                                                                      ]
+                                                                  },
+                                                                  "-fontStyle":
+                                                                    { "FontStyle":
+                                                                      {
+                                                                        "@DEF":"SmallFont",
+                                                                        "@justify":["MIDDLE","MIDDLE"],
+                                                                        "@size":0.75
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "@DEF":"IconAppearance",
+                                                                  "-material":
+                                                                    { "Material":
+                                                                      {
+                                                                        "@DEF":"IconMaterial",
+                                                                        "IS": {
+                                                                            "connect": [
+                                                                              {
+                                                                                "@nodeField":"diffuseColor",
+                                                                                "@protoField":"textColor"
+                                                                              }
+                                                                            ]
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                      "@translation":[0,-1.5,0],
+                                                      "-children":[
+                                                        { "Shape":
+                                                          {
+                                                            "-geometry":
+                                                              { "Text":
+                                                                {
+                                                                  "@DEF":"DescriptionText",
+                                                                  "IS": {
+                                                                      "connect": [
+                                                                        {
+                                                                          "@nodeField":"string",
+                                                                          "@protoField":"description"
+                                                                        }
+                                                                      ]
+                                                                  },
+                                                                  "-fontStyle":
+                                                                    { "FontStyle":
+                                                                      {
+                                                                        "@DEF":"SmallerFont",
+                                                                        "@justify":["MIDDLE","MIDDLE"],
+                                                                        "@size":0.6
+                                                                      }
+                                                                    }
+                                                                }
+                                                              },
+                                                            "-appearance":
+                                                              { "Appearance":
+                                                                {
+                                                                  "@USE":"IconAppearance"
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@DEF":"ImageOffset",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"translation",
+                                                  "@protoField":"imageOffset"
+                                                }
+                                              ]
+                                          },
+                                          "-children":[
+                                            { "Billboard":
+                                              {
+                                                "@axisOfRotation":[0,0,0],
+                                                "-children":[
+                                                  { "Anchor":
+                                                    {
+                                                      "@DEF":"BillBoardAnchor",
+                                                      "@description":"click image to popup image viewer",
+                                                      "@parameter":["target=_blank"],
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"url",
+                                                              "@protoField":"imageUrl"
+                                                            }
+                                                          ]
+                                                      },
+                                                      "-children":[
+                                                        { "Transform":
+                                                          {
+                                                            "@DEF":"ImageFit",
+                                                            "IS": {
+                                                                "connect": [
+                                                                  {
+                                                                    "@nodeField":"scale",
+                                                                    "@protoField":"imageScale"
+                                                                  }
+                                                                ]
+                                                            },
+                                                            "-children":[
+                                                              { "Shape":
+                                                                {
+                                                                  "-appearance":
+                                                                    { "Appearance":
+                                                                      {
+                                                                        "-material":
+                                                                          { "Material":
+                                                                            {
+                                                                              "@USE":"IconMaterial"
+                                                                            }
+                                                                          },
+                                                                        "-texture":
+                                                                          { "ImageTexture":
+                                                                            {
+                                                                              "@DEF":"ContactImage",
+                                                                              "IS": {
+                                                                                  "connect": [
+                                                                                    {
+                                                                                      "@nodeField":"url",
+                                                                                      "@protoField":"imageUrl"
+                                                                                    }
+                                                                                  ]
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                      }
+                                                                    },
+                                                                  "-geometry":
+                                                                    { "IndexedFaceSet":
+                                                                      {
+                                                                        "@coordIndex":[0,1,2,3,0,-1],
+                                                                        "-coord":
+                                                                          { "Coordinate":
+                                                                            {
+                                                                              "@DEF":"TwoByTwoSquare",
+                                                                              "@point":[-1,-1,0,1,-1,0,1,1,0,-1,1,0]
+                                                                            }
+                                                                          }
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  {
+                                                    "#comment":"Unfortunately the anchor link connects to the viewpoint DEF name, which can't be overridden at runtime. This means that multiple use of the prototype will not resolve properly."
+                                                  },
+                                                  { "Anchor":
+                                                    {
+                                                      "@DEF":"ViewpointAnchor",
+                                                      "@description":"click text for Contact Closeup Viewpoint",
+                                                      "@url":["#ContactCloseupViewpoint"],
+                                                      "-children":[
+                                                        {
+                                                          "#comment":"TODO Add children nodes here"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Group":
+                                                    {
+                                                      "-children":[
+                                                        { "Transform":
+                                                          {
+                                                            "@translation":[0,-2,0],
+                                                            "-children":[
+                                                              { "Shape":
+                                                                {
+                                                                  "-geometry":
+                                                                    { "Text":
+                                                                      {
+                                                                        "@DEF":"NameText",
+                                                                        "IS": {
+                                                                            "connect": [
+                                                                              {
+                                                                                "@nodeField":"string",
+                                                                                "@protoField":"name"
+                                                                              }
+                                                                            ]
+                                                                        },
+                                                                        "-fontStyle":
+                                                                          { "FontStyle":
+                                                                            {
+                                                                              "@DEF":"LargeFont",
+                                                                              "@justify":["MIDDLE","MIDDLE"]
+                                                                            }
+                                                                          }
+                                                                      }
+                                                                    },
+                                                                  "-appearance":
+                                                                    { "Appearance":
+                                                                      {
+                                                                        "@USE":"IconAppearance"
+                                                                      }
+                                                                    }
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        },
+                                                        { "TouchSensor":
+                                                          {
+                                                            "@DEF":"CloseUpTouchSensor",
+                                                            "@description":"bind closeup Viewpoint"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Script":
+                                                    {
+                                                      "@DEF":"BindViewpointFilter",
+                                                      "field": [
+                                                        {
+                                                          "@name":"touched",
+                                                          "@accessType":"inputOnly",
+                                                          "@type":"SFBool"
+                                                        },
+                                                        {
+                                                          "@name":"activate",
+                                                          "@accessType":"outputOnly",
+                                                          "@type":"SFBool"
+                                                        }
+                                                      ],
+                                                      "#sourceText":[
+"ecmascript:",
+"",
+"// only activate viewpoint when touched is true, do not unbind when false",
+"function touched (value, timestamp)",
+"{",
+"\tif (value == true) activate = true;",
+"}"
+]
+                                                    }
+                                                  },
+                                                  { "ROUTE":
+                                                    {
+                                                      "@fromField":"isActive",
+                                                      "@fromNode":"CloseUpTouchSensor",
+                                                      "@toField":"touched",
+                                                      "@toNode":"BindViewpointFilter"
+                                                    }
+                                                  },
+                                                  { "ROUTE":
+                                                    {
+                                                      "@fromField":"activate",
+                                                      "@fromNode":"BindViewpointFilter",
+                                                      "@toField":"set_bind",
+                                                      "@toNode":"ContactCloseupViewpoint"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "@translation":[0,-3,0],
+                                          "-children":[
+                                            { "Switch":
+                                              {
+                                                "@DEF":"MineModelSwitch",
+                                                "@whichChoice":-1,
+                                                "IS": {
+                                                    "connect": [
+                                                      {
+                                                        "@nodeField":"whichChoice",
+                                                        "@protoField":"classificationCode"
+                                                      }
+                                                    ]
+                                                },
+                                                "-children":[
+                                                  {
+                                                    "#comment":"Mine code enumerations appear in ADS.src.mil.navy.nps.ads.x3dArchive.DataArchiver.java"
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "@DEF":"UnknownContact",
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@diffuseColor":[0.3,0.8,0]
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Box":
+                                                          {
+                                                            "@size":[1,1,1]
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"Pdm1BottomMine"
+                                                    }
+                                                  },
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"MantaMine",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"viewpointDescription",
+                                                          "@value":"Manta mine 10m"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Inline":
+                                                    {
+                                                      "@DEF":"RockanContact",
+                                                      "@url":["Rockan.x3d","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/Rockan.x3d","Rockan.wrl","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/Rockan.wrl"]
+                                                    }
+                                                  },
+                                                  { "ProtoInstance":
+                                                    {
+                                                      "@name":"SphericalMine",
+                                                      "fieldValue": [
+                                                        {
+                                                          "@name":"description",
+                                                          "@value":"Spherical Mine"
+                                                        },
+                                                        {
+                                                          "@name":"tetherPoints",
+                                                          "@value":[0,0,0,0,-5,0]
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Inline":
+                                                    {
+                                                      "@DEF":"SonarDeflectorDecoyBox",
+                                                      "@url":["SonarReflectorDecoyBox.x3d","../../Weapons/UnderwaterMines/SonarReflectorDecoyBox.x3d","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/SonarReflectorDecoyBox.x3d","../../Weapons/UnderwaterMines/SonarReflectorDecoyBox.wrl","SonarReflectorDecoyBox.wrl","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/SonarReflectorDecoyBox.wrl"]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "#comment":"intermediate range"
+                                },
+                                { "Transform":
+                                  {
+                                    "@USE":"ImageOffset"
+                                  }
+                                },
+                                {
+                                  "#comment":"far range: might place a self-scaling icon billboard here for long-distance map-like appearance"
+                                },
+                                { "WorldInfo":
+                                  {
+                                    "@info":["null node"]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Example scene starts here, in case this prototype is examined."
+          },
+          { "Anchor":
+            {
+              "@description":"ReportedContactExample",
+              "@parameter":["target=_blank"],
+              "@url":["ReportedContactExample.x3d","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/ReportedContactExample.x3d","ReportedContactExample.wrl","https://savage.nps.edu/Savage/Weapons/UnderwaterMines/ReportedContactExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["ReportedContactPrototype","is a prototype definition file","","Click this text to see","ReportedContactExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.6,0.8,0.4]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,385 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RearHatch.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Osprey MV-22 rear hatch."
+          },
+          {
+            "@name":"creator",
+            "@content":"Major William C. James USMC"
+          },
+          {
+            "@name":"created",
+            "@content":"23 September 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"Amended from VRML Sourcebook Figure 8.4 (used as base)"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.navair.navy.mil/v22"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/Mv22-Osprey-UnitedStates/RearHatch.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.2,0.2,0.7]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"ToggleScript",
+              "field": [
+                {
+                  "@name":"toggle",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"state",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"stateTurnedTrue",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"stateTurnedFalse",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"// you can view the output of print statements in the VRML Console",
+"",
+"function toggle ( value, ts ) {",
+"  // only toggle on click (isActive true) not release (isActive false)",
+"  if ( value == false ) return;",
+"  if ( state == true )",
+"  {",
+"\tstate  = false;",
+"\tstateTurnedFalse = true;",
+"\tBrowser.print ('ToggleScript.state = ' + state + ', stateTurnedFalse = ' + true);",
+"  }",
+"  else",
+"  {",
+"\tstate  = true;",
+"\tstateTurnedTrue = true;",
+"\tBrowser.print ('ToggleScript.state = ' + state + ', stateTurnedTrue = ' + true);",
+"  }",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"TimeFilter",
+              "field": [
+                {
+                  "@name":"setStart",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"setStop",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"startEventTime",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"stopEventTime",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"// setting the value of an eventOut variable also sends it as an event",
+"",
+"function setStart ( value, timeStamp ) {",
+"\tstartEventTime = timeStamp;",
+"\tBrowser.print ('TimeFilter.setStart (' + value + '), startEventTime = ' + timeStamp);",
+"\tBrowser.print (' ');",
+"}",
+"function setStop  ( value, timeStamp ) {",
+"\tstopEventTime  = timeStamp;",
+"\tBrowser.print ('TimeFilter.setStop  (' + value + '),  stopEventTime = ' + timeStamp);",
+"\tBrowser.print (' ');",
+"}"
+]
+            }
+          },
+          {
+            "#comment":"Rear Hatch"
+          },
+          { "Group":
+            {
+              "@DEF":"Rear_Hatch",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"RearHatchTransform",
+                    "@rotation":[0,0,-1,1.57],
+                    "@translation":[0,-4.6,-6.2],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"RearHatch",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"RearHatchRotationSupport",
+                                "@rotation":[0,1,0,0.45],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"RotatingBar",
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":3.9,
+                                            "@radius":0.2
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.5,0.5,0.5],
+                                                  "@shininess":0.5
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Hatch",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,-1,1.57],
+                                            "@translation":[0,0,-2.5],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[3.85,0.2,5]
+                                                      }
+                                                    },
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.5,0.5,0.5],
+                                                              "@shininess":0.5
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"RearHatchSensor",
+                    "@description":"touch to open"
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"CLOCK1",
+                    "@cycleInterval":4
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"RearHatchInterpolator",
+                    "@key":[0.0,1.0],
+                    "@keyValue":[0.0,1.0,0.0,0.45,0.0,1.0,0.0,-0.2]
+                  }
+                },
+                {
+                  "#comment":"Up_Ramp"
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"CLOCK2",
+                    "@cycleInterval":4
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"RearHatchInterpolator1",
+                    "@key":[0.0,1.0],
+                    "@keyValue":[0.0,1.0,0.0,-0.2,0.0,1.0,0.0,0.45]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Down_Ramp_Code"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"RearHatchSensor",
+              "@toField":"set_startTime",
+              "@toNode":"CLOCK1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK1",
+              "@toField":"set_fraction",
+              "@toNode":"RearHatchInterpolator"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"RearHatchInterpolator",
+              "@toField":"set_rotation",
+              "@toNode":"RearHatchRotationSupport"
+            }
+          },
+          {
+            "#comment":"Toggle_Code"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"RearHatchSensor",
+              "@toField":"toggle",
+              "@toNode":"ToggleScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"RearHatchInterpolator1",
+              "@toField":"set_rotation",
+              "@toNode":"RearHatchRotationSupport"
+            }
+          },
+          {
+            "#comment":"Up_Ramp_Code"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK2",
+              "@toField":"set_fraction",
+              "@toNode":"RearHatchInterpolator1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"stateTurnedTrue",
+              "@fromNode":"ToggleScript",
+              "@toField":"setStart",
+              "@toNode":"TimeFilter"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"stateTurnedTrue",
+              "@fromNode":"ToggleScript",
+              "@toField":"setStop",
+              "@toNode":"TimeFilter"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"startEventTime",
+              "@fromNode":"TimeFilter",
+              "@toField":"set_startTime",
+              "@toNode":"CLOCK1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"startEventTime",
+              "@fromNode":"TimeFilter",
+              "@toField":"set_startTime",
+              "@toNode":"CLOCK2"
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Door.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A door which has an opening capability."
+          },
+          {
+            "@name":"creator",
+            "@content":"Selcuk OZTURK"
+          },
+          {
+            "@name":"created",
+            "@content":"10 August 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 October 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftMiscellaneous/Zeppelin/Door.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Rotating Cube, the Door35.jpg is dowloaded from 3DCafe.com for free."
+          },
+          { "Viewpoint":
+            {
+              "@description":"Door",
+              "@position":[0,0,15]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"DOOR_TRANSFORM",
+                    "@center":[0.5,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[1,2.5,0.1]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["door35.jpg","https://savage.nps.edu/Savage/AircraftMiscellaneous/Zeppelin/door35.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.4,0,0.07],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.1
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.4,0.3]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"MyTouchSensor",
+                    "@description":"touch to operate door"
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"CLOCK",
+                    "@cycleInterval":10
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"CubePathInterpolator",
+                    "@key":[0.0,0.50,1.0],
+                    "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.57,0.0,1.0,0.0,0.0]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"MyTouchSensor",
+              "@toField":"set_startTime",
+              "@toNode":"CLOCK"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"CLOCK",
+              "@toField":"set_fraction",
+              "@toNode":"CubePathInterpolator"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"CubePathInterpolator",
+              "@toField":"set_rotation",
+              "@toNode":"DOOR_TRANSFORM"
+            }
+          }
+        ]
+    }
+  }
+}

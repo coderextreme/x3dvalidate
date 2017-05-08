@@ -1,0 +1,106 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NanuchkaMissileCorvetteWithLighthouse.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Weng Wah LO"
+          },
+          {
+            "@name":"created",
+            "@content":"27 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 September 2002"
+          },
+          {
+            "@name":"description",
+            "@content":"Using Extrusion to model Nanuchka Missile Corvette"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-Nanuchka-Lighthouse-Russia/NanuchkaMissileCorvetteWithLighthouse.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@speed":20
+            }
+          },
+          {
+            "#comment":"Horizon Background"
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.0,0.3,0.7,0.0,0.1,0.8,0.0,0.0,0.0],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0.0,0.2,0.7,0.0,0.5,1.0,1,1,1]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"NuanuchkaLocation",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Naunuchka",
+                    "@position":[0,10,50]
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["NanuchkaMissileCorvette.wrl","https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-Nanuchka-Lighthouse-Russia/NanuchkaMissileCorvette.wrl","NanuchkaMissileCorvette.x3d","https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-Nanuchka-Lighthouse-Russia/NanuchkaMissileCorvette.x3d"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[150,15,100],
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["Lighthouse.wrl","https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-Nanuchka-Lighthouse-Russia/Lighthouse.wrl","Lighthouse.x3d","https://savage.nps.edu/Savage/ShipsMilitary/PatrolCraft-Nanuchka-Lighthouse-Russia/Lighthouse.x3d"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

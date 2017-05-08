@@ -1,0 +1,361 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SLQ-32.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"DDG-51 Flight IIA SLQ-32 V3 electronic warfare antenna"
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Joe Sears, USN"
+          },
+          {
+            "@name":"created",
+            "@content":"26 August 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://combatindex.com/store/3d"
+          },
+          {
+            "@name":"drawing",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/ddg-51.htm"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/DDG-51FlightIIA-UnitedStates/SLQ-32.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"SLQ-32",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Base",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "@translation":[0.3,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@crossSection":[-0.2,0,-0.1,0.25,0.1,0.25,0.2,0,-0.2,0],
+                                      "@orientation":[1,0,0,-0.2,1,0,0,0.2],
+                                      "@scale":[1,1,1,1],
+                                      "@spine":[0,0,0,0,0,-0.6]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"HazeGray",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@specularColor":[0.4,0.4,0.4]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"SLQFrame",
+                    "@rotation":[1,0,0,-1.57],
+                    "@translation":[0,1.25,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@crossSection":[-1,0,-0.5,0.6,0.5,0.6,1,0,0.2,-0.6,0,-0.6,-0.2,-0.6,-1,0],
+                                "@scale":[1,1,1,1],
+                                "@spine":[0,0,0,0,0,-1]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"HazeGray"
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"LeftAntennaFace",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.92],
+                          "@translation":[-0.55,1.1,0.38],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"AntennaFace",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.74,0.74,0.74]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.2,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.92],
+                          "@translation":[-0.6,0.75,0.34],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.25,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,0.92],
+                          "@translation":[-0.76,0.4,0.2],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.2,0.4]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"CenterAntennaFace",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0,1.1,0.6],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.2,
+                                      "@radius":0.16
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0.8,0.6],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.18,
+                                      "@radius":0.18
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"RightAntennaFace",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,-0.92],
+                          "@translation":[0.55,1.1,0.38],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.2,0.7]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,-0.92],
+                          "@translation":[0.6,0.75,0.34],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.25,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,-0.92],
+                          "@translation":[0.76,0.4,0.2],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AntennaFace"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.1,0.2,0.4]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

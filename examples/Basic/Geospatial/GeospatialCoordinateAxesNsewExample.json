@@ -1,0 +1,657 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"GeospatialCoordinateAxesNsewExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo"
+          },
+          {
+            "@name":"created",
+            "@content":"3 June 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"1 February 2014"
+          },
+          {
+            "@name":"TODO",
+            "@content":"fix background globe"
+          },
+          {
+            "@name":"description",
+            "@content":"X Y Z axis arrows and labels in Geospatial coordinate system."
+          },
+          {
+            "@name":"Image",
+            "@content":"GeospatialCoordinateAxesNsewExample.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/GeospatialCoordinateAxesNsewExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"X3D Earth is already geospatially referenced"
+          },
+          { "Inline":
+            {
+              "@DEF":"X3D-Earth",
+              "@url":["http://x3d-earth.nps.edu/d0.x3d"]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                {
+                  "#comment":"Each GeoLocation block shows how to geospatially reference regular nongeospatial shapes"
+                },
+                { "GeoLocation":
+                  {
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[0,0,-6378137]
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"ScaledCoordinateAxesNSEW",
+                          "@scale":[1000000,1000000,1000000],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@DEF":"CoordinateAxesNSEW",
+                                "@url":["../course/CoordinateAxesNSEW.x3d","CoordinateAxesNSEW.x3d","http://www.web3d.org/x3d/content/examples/Basic/course/CoordinateAxesNSEW.x3d"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,45,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,89.9,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,135,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,180,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,-45,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,-89.9,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[0,-135,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,0,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[89.9,0,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,0,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-89.9,0,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,45,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,45,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,89.9,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,89.9,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,135,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,135,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,180,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,180,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,-45,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,-89.9,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,-89.9,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[45,-135,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,-135,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoLocation":
+                  {
+                    "@geoCoords":[-45,-45,0],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      },
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"ScaledCoordinateAxesNSEW"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"0E 0N",
+                    "@fieldOfView":1.05,
+                    "@orientation":[1,0,1,-1.5707],
+                    "@position":[0,0,10000000],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      }
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"90E 0N",
+                    "@fieldOfView":1.05,
+                    "@orientation":[1,0,1,-1.5707],
+                    "@position":[0,89.900002,10000000],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      }
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"90W 0N",
+                    "@fieldOfView":1.05,
+                    "@orientation":[1,0,1,-1.5707],
+                    "@position":[0,-89.900002,10000000],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      }
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"180E 0N",
+                    "@fieldOfView":1.05,
+                    "@orientation":[1.0,0.0,0.0,-1.5707],
+                    "@position":[0,180,10000000],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      }
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"North Pole",
+                    "@fieldOfView":1.05,
+                    "@orientation":[1.0,0.0,0.0,-1.5707],
+                    "@position":[90,0,10000000],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      }
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"South Pole",
+                    "@fieldOfView":1.05,
+                    "@orientation":[1.0,0.0,0.0,-1.5707],
+                    "@position":[-89.9,0,10000000],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@USE":"ORIGIN"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HamptonRoadsVA.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Scene created for the Trident Warrior 2009 Data Visualization Project."
+          },
+          {
+            "@name":"author",
+            "@content":"Terry Norbraten"
+          },
+          {
+            "@name":"created",
+            "@content":"4 November 2009"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://planet-earth.org/Rez/RezIndex.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/HamptonRoadsVirginia/HamptonRoadsVA.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "GeoLocation":
+            {
+              "@geoCoords":[36.989999984839216,-76.99299996786561,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,0,0,2.815],
+                    "-children":[
+                      { "Background":
+                        {
+                          "@skyColor":[0.7,0.8,0.9]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment":"Need some major illumination"
+                },
+                { "PointLight":
+                  {
+                    "@ambientIntensity":1,
+                    "@location":[0,100000,0],
+                    "@radius":1000000
+                  }
+                }
+              ],
+              "-geoOrigin":
+                { "GeoOrigin":
+                  {
+                    "@DEF":"ORIGIN",
+                    "@geoCoords":[36.989999984839216,-76.99299996786561,0.0]
+                  }
+                }
+            }
+          },
+          { "Inline":
+            {
+              "@url":["tiles/0/HamptonRoadsVA0-0.x3d","https://savage.nps.edu/Savage/Locations/HamptonRoadsVirginia/tiles/0/HamptonRoadsVA0-0.x3d","tiles/0/HamptonRoadsVA0-0.wrl","https://savage.nps.edu/Savage/Locations/HamptonRoadsVirginia/tiles/0/HamptonRoadsVA0-0.wrl"]
+            }
+          },
+          {
+            "#comment":"Inline url=\"/javaapis/auv/AuvwFOUO/ExerciseTelemetry/TridentWarrior2009/x3d/AMN_73_30JunTelemetry_2usv.x3d\"/"
+          }
+        ]
+    }
+  }
+}

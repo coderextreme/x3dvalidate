@@ -1,0 +1,809 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NeonPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples."
+          },
+          {
+            "@name":"creator",
+            "@content":"David Roussel"
+          },
+          {
+            "@name":"translator",
+            "@content":"James Harney, Don Brutzman NPS"
+          },
+          {
+            "@name":"created",
+            "@content":"7 April 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"7 January 2009"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://vrmlstuff.free.fr/materials"
+          },
+          {
+            "@name":"subject",
+            "@content":"Universal Media Material Library"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/NeonPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"Neon00",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,0.398733,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon01",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,0.628573,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.47027,0.47027,0.47027]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon02",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.018841,0.940276,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon03",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,1.0,0.734243],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon04",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,1.0,0.456346],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon05",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,1.0,0.168349],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon06",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.023906,1.0,0.00239],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon07",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.363921,1.0,0.0478],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon08",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.559606,1.0,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon09",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.757687,1.0,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon10",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.871763,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon11",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.7155,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon12",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.577069,0.0],
+                        "@shininess":0.054054,
+                        "@specularColor":[0.383784,0.383784,0.383784]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon13",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.442751,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.475676,0.475676,0.475676]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon14",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.318894,0.0],
+                        "@shininess":0.086486,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon15",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.151505,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon16",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.0,0.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon17",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.0,0.080733],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon18",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.0,0.265757],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon19",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.0,0.34678],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon20",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.079082,0.656922],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon21",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.934028,0.003043,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon22",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.755836,0.0,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon23",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.58832,0.017294,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon24",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.460235,0.0,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon25",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.17496,0.0,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon26",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,0.135953,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon27",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,0.277276,1.0],
+                        "@shininess":0.05102,
+                        "@specularColor":[0.622449,0.622449,0.622449]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon28",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,0.2805,0.39661],
+                        "@shininess":0.081081,
+                        "@specularColor":[0.616216,0.616216,0.616216]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon29",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.0,0.2805,0.040678],
+                        "@shininess":0.081081,
+                        "@specularColor":[0.616216,0.616216,0.616216]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon30",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.921769,0.544218,0.0],
+                        "@shininess":0.054054,
+                        "@specularColor":[0.637764,0.37654,0.0]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon31",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[1.0,0.286509,0.159322],
+                        "@shininess":0.054054,
+                        "@specularColor":[0.535135,0.535135,0.535135]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon32",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.667797,0.076966,0.171099],
+                        "@shininess":0.054054,
+                        "@specularColor":[0.497297,0.497297,0.497297]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon33",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.59083,0.058279,0.307405],
+                        "@shininess":0.075676,
+                        "@specularColor":[0.6,0.6,0.6]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Neon34",
+              "@appinfo":"UniversalMediaMaterials prototype",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+              "ProtoBody": {
+                  "-children":[
+                    { "Material":
+                      {
+                        "@ambientIntensity":0.0,
+                        "@diffuseColor":[0.0,0.0,0.0],
+                        "@emissiveColor":[0.595346,0.187689,0.595358],
+                        "@shininess":0.054054,
+                        "@specularColor":[0.47027,0.47027,0.47027]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"click for examples",
+              "@parameter":["target=_blank"],
+              "@url":["NeonExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/NeonExamples.x3d","NeonExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/NeonExamples.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.4,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["NeonExamples.x3d","is a Materials Prototype declaration file.","","For an example scene using these node,","click this text and view","NeonExamples.x3d"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.8
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

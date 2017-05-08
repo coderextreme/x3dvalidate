@@ -1,0 +1,114 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PortHuenemeHarbor.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Satellite Image of Port Hueneme Harbor"
+          },
+          {
+            "@name":"creator",
+            "@content":"James Harney"
+          },
+          {
+            "@name":"created",
+            "@content":"31 January 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"TODO",
+            "@content":"lay harbor chart horizontal to match Background"
+          },
+          {
+            "@name":"reference",
+            "@content":"NIMA chart 18725, 1996 ed."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/PortHuenemeCalifornia/PortHuenemeHarbor.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE","FLY","ANY"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entire Harbor Satellite View",
+              "@position":[0,0.1,4.7]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5.85,4.27,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["PortHueneme.jpg","https://savage.nps.edu/Savage/Locations/PortHuenemeCalifornia/PortHueneme.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

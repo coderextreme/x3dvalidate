@@ -1,0 +1,131 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"CADInterchange",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"CADGeometry",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"IndexedQuadSetExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple IndexedQuadSet example."
+          },
+          {
+            "@name":"creator",
+            "@content":"Andrew Grieve, Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"15 October 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"TODO",
+            "@content":"create similar test for QuadSet"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/CAD/IndexedQuadSetExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Side",
+              "@description":"IndexedQuadSet side view"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Front",
+              "@description":"IndexedQuadSet front view",
+              "@orientation":[0,1,0,1.57],
+              "@position":[10,0,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Top",
+              "@description":"IndexedQuadSet top view",
+              "@orientation":[1,0,0,-1.57],
+              "@position":[0,10,0]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[2,2,2],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedQuadSet":
+                        {
+                          "@index":[0,3,2,1,4,5,6,7,2,7,9,8,2,3,4,7],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[-1.5,0,0,-1.5,1,-1,-0.5,1,-1,-0.5,0,0,0.5,0,0,1.5,0,0,1.5,1,-1,0.5,1,-1,-0.5,2,-1,0.5,2,-1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

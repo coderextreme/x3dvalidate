@@ -1,0 +1,773 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"M1A2Turret"
+          },
+          {
+            "@name":"description",
+            "@content":"Untextured M1A2 for use in larger scenes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Michael Martin"
+          },
+          {
+            "@name":"created",
+            "@content":"7 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2004"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/m1.htm"
+          },
+          {
+            "@name":"subject",
+            "@content":"M1A2 tank"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Scenarios/TankManeuver/M1A2Turret.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"Turret",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@center":[0,0,0.25],
+                          "@translation":[0,0.63,-0.15],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"Friendly",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0,0,1]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "IndexedFaceSet":
+                                    {
+                                      "@coordIndex":[9,0,1,-1,9,1,2,-1,9,2,3,4,5,8,-1,5,6,8,-1,6,7,8,-1,7,0,9,8,-1,9,8,7,0,-1,0,10,11,12,1,-1,1,12,13,2,-1,2,13,14,15,3,-1,3,15,16,4,-1,16,15,14,17,-1,17,18,5,4,16,-1,18,19,6,5,-1,19,20,21,7,6,-1,7,21,10,0,-1,20,11,10,21,-1,20,19,12,11,-1,19,18,13,12,-1,18,17,14,13],
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[0.21,0.15,1.28,0.73,0.15,1.01,0.73,0.21,0.15,0.69,0.23,-1,-0.69,0.23,-1,-0.73,0.21,0.15,-0.73,0.15,1.01,-0.21,0.15,1.28,-0.22,0.22,0.21,0.22,0.22,0.21,0.22,-0.05,1.41,0.44,-0.16,1.37,0.9,-0.16,1.13,0.93,-0.18,0.2,0.84,-0.11,-1.01,0.78,0.07,-1.15,-0.78,0.07,-1.15,-0.84,-0.11,-1.01,-0.93,-0.18,0.2,-0.9,-0.16,1.13,-0.44,-0.16,1.37,-0.22,-0.05,1.41]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,1.57],
+                                "@translation":[0,0,2.375],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@center":[0,-1.11,0],
+                                      "@rotation":[1,0,0,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "@DEF":"GunTube",
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Friendly"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":2.22,
+                                                  "@radius":0.075
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@scale":[0.8,1,1.1],
+                                            "@translation":[0,-0.2,-0.03],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "@DEF":"BoreEvac",
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Friendly"
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.42,
+                                                        "@radius":0.105
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-0.15,-0.9,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "@DEF":"Coax",
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Friendly"
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.42,
+                                                        "@radius":0.03
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,-0.165,0.25],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.1,
+                                            "@radius":0.665
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0.075,-1.2],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[1.4,0.22,0.28]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,-0.37],
+                                "@translation":[-0.3,0.225,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"CommandersHatch",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.06,
+                                            "@radius":0.25
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@center":[0,0,-0.11],
+                                      "@rotation":[1,0,0,-0.15],
+                                      "@translation":[0,0.12,0.35],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Friendly"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.08,0.08,0.3]
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,1.57],
+                                            "@translation":[0,0,0.35],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Friendly"
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.4,
+                                                        "@radius":0.015
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0.12,0,0.04],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Friendly"
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.16,0.09,0.07]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,-0.785],
+                                      "@translation":[0,0.05,0.2],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Friendly"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.1,0.1,0.2]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,0.78],
+                                "@translation":[0.3,0.215,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"LoadersHatch",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.04,
+                                            "@radius":0.2
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0.095,0.2],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Friendly"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.1,0.15,0.15]
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,1.57],
+                                            "@translation":[0,0.05,0.2],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Friendly"
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.25,
+                                                        "@radius":0.015
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0.11,0.03,0.03],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "@USE":"Friendly"
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.16,0.09,0.07]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.4,0.275,0.5],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"CITV",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.18,
+                                            "@radius":0.125
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-0.4,0.215,0.6],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"Doghouse",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.38,0.15,0.33]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0.31,-1.03],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"Crosswind",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.25,
+                                            "@radius":0.03
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0.125,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Friendly"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.18,0.05,0.06]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.6,0.695,-0.9],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":1,
+                                            "@radius":0.005
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-0.6,0.695,-0.9],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@height":1,
+                                            "@radius":0.005
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.22,0.23,-0.7],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.42,0.04,0.59]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-0.22,0.23,-0.7],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.42,0.04,0.59]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-0.76,0.085,-0.34],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"RSponsonBox",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@coordIndex":[0,1,2,3,-1,3,2,4,5,-1,1,0,5,4,-1,0,3,5,-1,2,1,4],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[0.11,0.135,0.54,0.11,0.135,-0.54,-0.06,0.135,-0.54,-0.11,0.135,0.54,-0.06,-0.075,-0.54,-0.11,-0.135,0.54]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.76,0.085,-0.34],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"LSponsonBox",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "IndexedFaceSet":
+                                          {
+                                            "@ccw":false,
+                                            "@coordIndex":[0,1,2,3,-1,3,2,4,5,-1,1,0,5,4,-1,0,3,5,-1,2,1,4],
+                                            "-coord":
+                                              { "Coordinate":
+                                                {
+                                                  "@point":[-0.11,0.135,0.54,-0.11,0.135,-0.54,0.06,0.135,-0.54,0.11,0.135,0.54,0.06,-0.075,-0.54,0.11,-0.135,0.54]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[-1,-1,0,0.6],
+                                "@translation":[-0.83,0.1,0.33],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@crossSection":[0.08,0.09,0.12,0.06,0.04,-0.09,-0.04,-0.09,-0.12,0.06,-0.08,0.09,0.08,0.09],
+                                            "@scale":[0.5,1,1,1,0.8,1],
+                                            "@spine":[0,-0.075,0,0,0.025,0,0,0.075,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[-1,1,0,0.6],
+                                "@translation":[0.83,0.1,0.33],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"Friendly"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@crossSection":[0.08,0.09,0.12,0.06,0.04,-0.09,-0.04,-0.09,-0.12,0.06,-0.08,0.09,0.08,0.09],
+                                            "@scale":[0.5,1,1,1,0.8,1],
+                                            "@spine":[0,-0.075,0,0,0.025,0,0,0.075,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

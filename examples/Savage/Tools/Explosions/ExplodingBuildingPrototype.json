@@ -1,0 +1,430 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExplodingBuildingPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A simple prototype for exploding structure components, experimenting with the \"Hello World\" of explosions. This prototype demonstrates a simplified and scalable approach for modeling explosions. Each chunk of geometry inside an Exploder prototype is given initial/final position/orientation. Intermediate heights for each polygon are at the same height as the distance traveled over ground."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"Exploding building schematic layout diagram:"
+          },
+          {
+            "@name":"Image",
+            "@content":"ExplodingBuildingLayout.pdf"
+          },
+          {
+            "@name":"Image",
+            "@content":"ExplodingBuildingSnapshots.pdf"
+          },
+          {
+            "@name":"Image",
+            "@content":"ExplodingBuildingMontage.png"
+          },
+          {
+            "@name":"MovingImage",
+            "@content":"ExplodingBuildingExampleVideo.mov"
+          },
+          {
+            "@name":"reference",
+            "@content":"ExplodingBuildingLargeExample.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"Rotation calculations performed using the Dizzy utility from Vapour Technologies by James Smith."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.vapourtech.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"DIS-Java-VRML Working Group"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/WorkingGroups/vrtp/dis-java-vrml"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Tools/Explosions/ExplodingBuildingPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"Exploder",
+              "@appinfo":"Explode contained geometry through animation on demand",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"geometry",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"geometry node, to be used inside a Shape",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"initialization node (if any) goes here"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"material",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Material node for this geometry, to be used inside a Shape",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"initialization node (if any) goes here"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"initialPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"starting point",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"finalPosition",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"finish point",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"initialOrientation",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"starting point orientation",
+                      "@type":"SFRotation",
+                      "@value":[0,1,0,0]
+                    },
+                    {
+                      "@name":"finalOrientation",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"finish point orientation",
+                      "@type":"SFRotation",
+                      "@value":[0,1,0,0]
+                    },
+                    {
+                      "@name":"set_fraction",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"animation input",
+                      "@type":"SFFloat"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"LocationTransform",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"initialPosition"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"RotationTransform",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"rotation",
+                                      "@protoField":"initialOrientation"
+                                    }
+                                  ]
+                              },
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "@DEF":"AnimatedShape",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"geometry",
+                                            "@protoField":"geometry"
+                                          }
+                                        ]
+                                    },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "@DEF":"AnimatedShapeAppearance",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"material",
+                                                  "@protoField":"material"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment":"only initial node in ProtoBody is rendered"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ProtoAnimationScript",
+                        "field": [
+                          {
+                            "@name":"initialPosition",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"finalPosition",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"initialOrientation",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"finalOrientation",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"position_changeds",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f"
+                          },
+                          {
+                            "@name":"rotationValues",
+                            "@accessType":"outputOnly",
+                            "@type":"MFRotation"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"initialPosition",
+                                "@protoField":"initialPosition"
+                              },
+                              {
+                                "@nodeField":"finalPosition",
+                                "@protoField":"finalPosition"
+                              },
+                              {
+                                "@nodeField":"initialOrientation",
+                                "@protoField":"initialOrientation"
+                              },
+                              {
+                                "@nodeField":"finalOrientation",
+                                "@protoField":"finalOrientation"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tdx = finalPosition.x - initialPosition.x;",
+"\tdy = finalPosition.y - initialPosition.y;",
+"\tdz = finalPosition.z - initialPosition.z;",
+"//\tBrowser.print ('dx=' + dx + ', dy=' + dy + ', dz=' + dz);",
+"\tdistance = Math.sqrt (dx*dx + dy*dy + dz*dz);",
+"//\tBrowser.print ('distance          =' + distance);",
+"\tquarterPoint   = initialPosition.add (new SFVec3f (  dx/4,   dy/4 + 0.707*distance,     dz/4));",
+"\thalfwaypoint   = initialPosition.add (new SFVec3f (  dx/2,   dy/2 +       distance,     dz/2));",
+"\tthree4thsPoint = initialPosition.add (new SFVec3f (3*dx/4, 3*dy/4 + 0.707*distance/2, 3*dz/4));",
+"\tposition_changeds = new MFVec3f (initialPosition, initialPosition, quarterPoint, halfwaypoint, three4thsPoint, finalPosition);",
+"//\tBrowser.print ('position_changeds    =' + position_changeds);",
+"\trotationValues = new MFRotation (initialOrientation, finalOrientation);",
+"",
+"//\tBrowser.print ('initialPosition   =' + initialPosition);",
+"//\tBrowser.print ('finalPosition     =' + finalPosition);",
+"//\tBrowser.print ('position_changeds    =' + position_changeds);",
+"//\tBrowser.print ('initialOrientation=' + initialOrientation);",
+"//\tBrowser.print ('finalOrientation  =' + finalOrientation);",
+"//\tBrowser.print ('rotationValues=' + rotationValues);",
+"}"
+]
+                      }
+                    },
+                    {
+                      "#comment":"keyValue arrays for following interpolators get recalculated and reset by ProtoAnimationScript"
+                    },
+                    { "PositionInterpolator":
+                      {
+                        "@DEF":"ProtoPositionInterpolator",
+                        "@key":[0,0.2,0.4,0.6,0.8,1],
+                        "@keyValue":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_fraction",
+                                "@protoField":"set_fraction"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"ProtoOrientationInterpolator",
+                        "@key":[0,1],
+                        "@keyValue":[0,1,0,0,0,1,0,0],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_fraction",
+                                "@protoField":"set_fraction"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"ProtoPositionInterpolator",
+                        "@toField":"translation",
+                        "@toNode":"LocationTransform"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"ProtoOrientationInterpolator",
+                        "@toField":"rotation",
+                        "@toNode":"RotationTransform"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"position_changeds",
+                        "@fromNode":"ProtoAnimationScript",
+                        "@toField":"keyValue",
+                        "@toNode":"ProtoPositionInterpolator"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"rotationValues",
+                        "@fromNode":"ProtoAnimationScript",
+                        "@toField":"keyValue",
+                        "@toNode":"ProtoOrientationInterpolator"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"============================"
+          },
+          { "Viewpoint":
+            {
+              "@description":"ExplodingBuilding Prototype",
+              "@position":[0,0,12]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.57],
+              "@groundColor":[0.6,0.9,0.6,0.6,0.9,0.6],
+              "@skyColor":[0.6,0.6,0.9]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"ExplodingBuilding Example",
+              "@parameter":["target=_blank"],
+              "@url":["ExplodingBuildingExample.x3d","https://savage.nps.edu/Savage/Tools/Explosions/ExplodingBuildingExample.x3d","ExplodingBuildingExample.wrl","https://savage.nps.edu/Savage/Tools/Explosions/ExplodingBuildingExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["ExplodingBuildingPrototype","is a prototype definition file","","Click this text to see","ExplodingBuildingExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.2,0.2,0.8]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

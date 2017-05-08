@@ -1,0 +1,286 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HarpoonLauncher.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Harpoon Launchers of Yavuz Class Frigate"
+          },
+          {
+            "@name":"creator",
+            "@content":"Ozan APAYDIN"
+          },
+          {
+            "@name":"created",
+            "@content":"15 SEPT 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"17 SEPT 2001"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Frigate-Yavuz-Turkey/HarpoonLauncher.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@rotation":[0,0,1,0.785],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"HarpoonLauncher",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Tube",
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":2.5,
+                                "@radius":0.2
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"TubeAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9],
+                                      "@shininess":0.7
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.4,0,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"Tube"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.4,0,0.4],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"Tube"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,0.4],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"Tube"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"cover",
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":0.2,
+                                      "@radius":0.23
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"Blue",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.4,0.4,0.6]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.4,1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.4,-1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.4,1,0.4],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.4,-1,0.4],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,1,0.4],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-1,0.4],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.4,0,0.2],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[2,0.1,0.8]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Blue"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,0,1,2.355],
+              "@translation":[0.4,0,0.8],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"HarpoonLauncher"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

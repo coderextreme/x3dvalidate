@@ -1,0 +1,677 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"LightHouse.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Abandoned Lighthouse on Ship Island, Mississippi"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"1 November 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"22 March 2002"
+          },
+          {
+            "@name":"reference",
+            "@content":"National Oceanographic and Atmospheric Administration map of Mississippi Sound and Approaches (Dauphin Island to Cat Island), published by the U.S Department of Commerce, 10 July 1999."
+          },
+          {
+            "@name":"reference",
+            "@content":"Site surveyed during AUVFest 2001."
+          },
+          {
+            "@name":"photo",
+            "@content":"*enter photo filename/url here*"
+          },
+          {
+            "@name":"Image",
+            "@content":"LighthouseModelShipIsland1.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"LighthouseModelShipIsland2.gif"
+          },
+          {
+            "@name":"subject",
+            "@content":"Lighthouse is measured at 84 feet, converted to meters on a scale of one foot equals 0.305 meters."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/ShipIslandMississippi/LightHouse.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Light House",
+              "@position":[0,25,75]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.2,0.67,0.95]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Lighthouse",
+              "-children":[
+                { "Transform":
+                  {
+                    "@scale":[0.305,0.305,0.305],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"LightHouseWall",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "IndexedFaceSet":
+                                    {
+                                      "@ccw":false,
+                                      "@coordIndex":[0,1,2,3,4,-1],
+                                      "@solid":false,
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[16,0,-16,-16,0,-16,-6,78,-6,6,78,-6,16,0,-16]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"CapeCodeWhite",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.85,0.85]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Window",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[1,0,0,-0.14],
+                                      "@translation":[0,40,11],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[3,4,0.2]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.1,0.15,0.15]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,20,-2.587],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"Window"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"WallTwo",
+                          "@rotation":[0,1,0,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"LightHouseWall"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"WallThree",
+                          "@rotation":[0,1,0,3.14],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"LightHouseWall"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"WallFour",
+                          "@rotation":[0,1,0,-1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"LightHouseWall"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"UpperPlatform",
+                          "@translation":[0,78,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[15,0.66,15]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"CapeCodBlack",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.1,0.25,0.3]
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"Railing",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"TopRailing",
+                                      "@translation":[0,4,7],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[14,0.2,0.4]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"CapeCodBlack"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-7,2.125,7],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.2,4.25,0.4]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"CapeCodBlack"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,2.125,7],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.2,4.25,0.4]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"CapeCodBlack"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[7,2.125,7],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.2,4.25,0.4]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"CapeCodBlack"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,-3,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@USE":"TopRailing"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,1.57],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"Railing"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,3.14],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"Railing"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[0,1,0,-1.57],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"Railing"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"LightRoom",
+                          "@translation":[0,78,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@bottom":false,
+                                            "@height":6,
+                                            "@radius":3,
+                                            "@top":false
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.1,0.3,0.35],
+                                                  "@specularColor":[0.2,0.4,0.45],
+                                                  "@transparency":0.67
+                                                }
+                                              }
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[8,2,8]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CapeCodBlack"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,8.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                            "@bottomRadius":4,
+                                            "@height":1
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CapeCodBlack"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,9,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[1,2.5,1]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CapeCodBlack"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"FrontDoorAndWindows",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,8.5,16],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[9,15,4]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CapeCodeWhite"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,0.625,16],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[12,1.5,6]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CapeCodeWhite"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,7,18.25],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[6,14,1]
+                                          }
+                                        },
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"CapeCodBlack"
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,-0.14],
+                                "@translation":[8,12,14.45],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"BottomWindow",
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[3,4,0.2]
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.1,0.15,0.15]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,-0.14],
+                                "@translation":[-8,12,14.45],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"BottomWindow"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"Foundation",
+                          "@translation":[0,-0.25,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[33,1,33]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"CapeCodeWhite"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

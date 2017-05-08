@@ -1,0 +1,212 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CanopyExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Animation example from Canopy Prototype. Clicking canopy triggers animation for open and close performance."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"created",
+            "@content":"18 October 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/CanopyExample.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"cockpit canopy animation example"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Canopy",
+              "@url":["CanopyPrototype.wrl#Canopy","../../AircraftFixedWing/F18-BlueAngel-UnitedStates/CanopyPrototype.wrl#Canopy","https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/CanopyPrototype.wrl#Canopy","CanopyPrototype.x3d#Canopy","../../AircraftFixedWing/F18-BlueAngel-UnitedStates/CanopyPrototype.x3d#Canopy","https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/CanopyPrototype.x3d#Canopy"],
+              "field": [
+                {
+                  "@name":"canopyOpen",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"canopyOut",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"animationStartTime",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.7,0.7,0.7]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"CanopyTouchSensor",
+                    "@description":"canopy open/close"
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Canopy",
+                    "-children":[
+                      { "Script":
+                        {
+                          "@DEF":"ExampleSelectionScript",
+                          "field": [
+                            {
+                              "@name":"landed",
+                              "@accessType":"initializeOnly",
+                              "@type":"SFInt32",
+                              "@value":-1
+                            },
+                            {
+                              "@name":"enabled",
+                              "@accessType":"inputOnly",
+                              "@type":"SFBool"
+                            },
+                            {
+                              "@name":"status",
+                              "@accessType":"outputOnly",
+                              "@type":"SFBool"
+                            }
+                          ],
+                          "#sourceText":[
+"ecmascript:",
+"",
+"function tracePrint (outputString)",
+"{",
+"\tif (traceEnabled) Browser.print ('[trace] ' + outputString);",
+"}",
+"",
+"function enabled(value, timeStamp)",
+"{",
+"\ttracePrint('enabled = ' + value);",
+"\tif (value == true)",
+"\t{",
+"\t\tif (landed == -1)",
+"\t\t{\t\t\t",
+"                        status = false;",
+"                        landed = 0;\t\t\t",
+"\t\t}",
+"\t\tif (landed == 0)",
+"\t\t{",
+"\t\t\tif (status)",
+"\t\t\t{",
+"\t\t\t\tstatus = false;                             ",
+"\t\t\t}",
+"\t\t\telse",
+"\t\t\t{",
+"\t\t\t\tstatus = true;                               \t\t\t",
+"\t\t\t}",
+"\t\t}",
+"                else",
+"                {",
+"         \t\tlanded = 0;",
+"     \t\t\treturn;",
+"                }",
+"\t}",
+"}"
+]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"Canopy",
+                    "@DEF":"CP",
+                    "fieldValue": [
+                      {
+                        "@name":"traceEnabled",
+                        "@value":true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"CanopyTouchSensor",
+              "@toField":"animationStartTime",
+              "@toNode":"CP"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"CanopyTouchSensor",
+              "@toField":"enabled",
+              "@toNode":"ExampleSelectionScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"status",
+              "@fromNode":"ExampleSelectionScript",
+              "@toField":"canopyOpen",
+              "@toNode":"CP"
+            }
+          }
+        ]
+    }
+  }
+}

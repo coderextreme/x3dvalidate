@@ -1,0 +1,473 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TopFront.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Sketch of front portion of top body"
+          },
+          {
+            "@name":"created",
+            "@content":"1 September 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"18 October 2004"
+          },
+          {
+            "@name":"creator",
+            "@content":"Tay Yeong Kiang Winston"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Hovercraft-Singapore-SNR6/TopFront.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"TopSeg",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[1.5,2.5,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Top",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.25,
+                                      "@diffuseColor":[0.315152,0.07457,0.0],
+                                      "@shininess":0.036364,
+                                      "@specularColor":[0.508861,0.684007,0.326263]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[3.01,0.4,4]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,0.3],
+                    "@translation":[3.6,0,0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"WindowSeg",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"BottomFrame",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.25,
+                                            "@diffuseColor":[0.315152,0.07457,0.0],
+                                            "@shininess":0.036364,
+                                            "@specularColor":[0.508861,0.684007,0.326263]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[0.4,0.4,4]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,1.25,0.9],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"LeftGlass",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@ambientIntensity":0.240602,
+                                                  "@diffuseColor":[0.526888,0.525905,0.603564],
+                                                  "@shininess":0.636364,
+                                                  "@specularColor":[0.651092,0.441837,0.42173],
+                                                  "@transparency":0.285714
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.1,2.4,1.5]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,1.25,-0.9],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"LeftGlass"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,1.25,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"CentreFrame",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@ambientIntensity":0.25,
+                                                  "@diffuseColor":[0.315152,0.07457,0.0],
+                                                  "@shininess":0.036364,
+                                                  "@specularColor":[0.508861,0.684007,0.326263]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.4,2.5,0.4]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"TopFrame",
+                                "@translation":[0,2.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"BottomFrame"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"LeftFrame",
+                                "@translation":[0,1.25,1.8],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"CentreFrame"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"RightFrame",
+                                "@translation":[0,1.25,-1.8],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"CentreFrame"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,3.14],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"TopSeg"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[1,0,0,-0.3],
+              "@translation":[0,0,2.6],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"Front",
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"CFront",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,1.25,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@ambientIntensity":0.240602,
+                                                  "@diffuseColor":[0.526888,0.525905,0.603564],
+                                                  "@shininess":0.636364,
+                                                  "@specularColor":[0.651092,0.441837,0.42173],
+                                                  "@transparency":0.285714
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[1.9,2.4,0.1]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Shape":
+                              {
+                                "@DEF":"BFrame",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@ambientIntensity":0.25,
+                                            "@diffuseColor":[0.315152,0.07457,0.0],
+                                            "@shininess":0.036364,
+                                            "@specularColor":[0.508861,0.684007,0.326263]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[2,0.4,0.4]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,2.5,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"BFrame"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0.8,1.25,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"RFrame",
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@ambientIntensity":0.25,
+                                                  "@diffuseColor":[0.315152,0.07457,0.0],
+                                                  "@shininess":0.036364,
+                                                  "@specularColor":[0.508861,0.684007,0.326263]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.4,2.5,0.4]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[-0.8,1.25,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"RFrame"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[2,0,0],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"CFront"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-2,0,0],
+                          "-children":[
+                            { "Group":
+                              {
+                                "@USE":"CFront"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3,-0.1,2],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Edge",
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[0,0,-0.9,0,0,0.9,0,0],
+                          "@scale":[1,1,0.643,0.643,0.001,0.001],
+                          "@spine":[0,0,0,0,1,0,0,2.8,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.25,
+                                "@diffuseColor":[0.315152,0.07457,0.0],
+                                "@shininess":0.036364,
+                                "@specularColor":[0.508861,0.684007,0.326263]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@translation":[3,-0.1,2],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Edge"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

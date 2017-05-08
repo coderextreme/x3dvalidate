@@ -1,0 +1,109 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Pylon.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Michael Collins"
+          },
+          {
+            "@name":"modifier",
+            "@content":"LT Terry D. Norbraten, USN"
+          },
+          {
+            "@name":"created",
+            "@content":"18 March 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"29 April 2004"
+          },
+          {
+            "@name":"description",
+            "@content":"Helicopter tail pylon. Tail section of the H60 helicopter which could be folded when in a stored posture such as on the deck of an aircraft carrier."
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/SH60-Seahawk-UnitedStates/Pylon.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/sh-60.htm"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@coordIndex":[9,8,7,6,5,4,3,2,-1,9,2,1,0,-1,0,1,11,10,-1,1,2,12,11,-1,2,3,13,12,-1,3,4,14,13,-1,4,5,6,7,8,9,0,10,19,18,17,16,15,14,-1,10,11,12,18,19,-1,18,12,13,17,-1,17,13,14,15,16,-1,20,14,21,-1,21,14,15,16,17,-1,22,20,21,-1,21,17,22,-1],
+                          "@creaseAngle":1.57,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,2.2,0.3,0.2,1.8,1,0.2,3.9,3.1,0.2,3,3.6,0.2,2.5,3.5,0.2,2.2,3.2,0.2,2.4,2.9,0.2,0.5,1,0.2,0,1,0,0,0,0.8,2.2,0.3,0.4,1.8,1,0.4,3.9,3.1,0.4,3,3.6,0.4,2.5,3.5,0.4,2.2,3.2,0.4,2.4,2.9,0.4,0.5,1,0.6,0,1,0.8,3.3,3,0.4,2.8,3.2,0.8,2.8,2.8,0.4]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          }
+        ]
+    }
+  }
+}

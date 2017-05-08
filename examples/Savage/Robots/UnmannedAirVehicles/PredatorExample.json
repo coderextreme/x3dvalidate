@@ -1,0 +1,112 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PredatorExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example showing NPS Predator Autonomous Underwater Vehicle (AUV) prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"30 July 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedAirVehicles/PredatorExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Predator",
+              "@appinfo":"Predator unmanned air vehicle (UAV)",
+              "@url":["PredatorPrototype.x3d#Predator","../../Robots/UnmannedAirVehicles/PredatorPrototype.x3d#Predator","https://savage.nps.edu/Savage/Robots/UnmannedAirVehicles/PredatorPrototype.x3d#Predator","PredatorPrototype.wrl#Predator","../../Robots/UnmannedAirVehicles/PredatorPrototype.wrl#Predator","https://savage.nps.edu/Savage/Robots/UnmannedAirVehicles/PredatorPrototype.wrl#Predator"],
+              "field": [
+                {
+                  "@name":"translation",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"default value 0 0 0",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"rotation",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"default value 0 0 1 0",
+                  "@type":"SFRotation"
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Background":
+                  {
+                    "@groundAngle":[1.57],
+                    "@groundColor":[0.05,0.05,0.15,0.05,0.05,0.15],
+                    "@skyAngle":[0.05,1.4,1.55,1.56,1.57],
+                    "@skyColor":[1,1,0.5,0.4,0.4,0.6,0.4,0.4,0.6,0.5,0.5,0.75,0.6,0.6,0.8,0.8,0.8,0.8]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"Predator",
+                          "fieldValue": [
+                            {
+                              "@name":"rotation",
+                              "@value":[0,1,0,-0.5]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

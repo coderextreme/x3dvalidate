@@ -1,0 +1,150 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"newECMAscriptTest.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example scene providing a unit test for newECMAscript template javascript source code, first load this scene and then see console for test output."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"3 November 2013"
+          },
+          {
+            "@name":"modified",
+            "@content":"25 October 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"newECMAscriptTestConsole.txt"
+          },
+          {
+            "@name":"reference",
+            "@content":"newECMAscript.js"
+          },
+          {
+            "@name":"reference",
+            "@content":"../newECMAscript.js"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/newECMAscript.js"
+          },
+          {
+            "@name":"reference",
+            "@content":"../../build.xml#commonSetup"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D javascript ECMAscript"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter09-EventUtilitiesScripting/newECMAscriptTest.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ],
+        "-children":[
+          {
+            "#comment":"local, master and online versions of script template"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[1,0.5,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Check X3D console to see output",
+              "@position":[0,0,8]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[0.4,0.4,0.4],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["newECMAscriptTest.x3d","","to check newECMAscript.js","","(see browser console for output)"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@family":["SANS"],
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"TestScript",
+              "@url":["newECMAscript.js","../newECMAscript.js","http://www.web3d.org/x3d/content/examples/newECMAscript.js"],
+              "-children":[
+                {
+                  "#comment":"initialize() method includes unit test with output on browser console"
+                },
+                {
+                  "#comment":"authors adding field definitions put them here"
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

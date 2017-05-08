@@ -1,0 +1,1850 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Turret.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"T72M model tank turret"
+          },
+          {
+            "@name":"creator",
+            "@content":"Joseph L. Chacon"
+          },
+          {
+            "@name":"created",
+            "@content":"20 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"version",
+            "@content":"1.5"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/row/t72tank.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/land/row/t72-1.gif"
+          },
+          {
+            "@name":"reference",
+            "@content":"Zaloga, Steven J., T-72 Main Battle Tank 1974-93, Osprey Publishing, Oxford, United Kingdom, 1993."
+          },
+          {
+            "@name":"subject",
+            "@content":"T-72, Tank, Soviet, OPFOR"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/T72M/Turret.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TURRET",
+              "@translation":[0,-0.2,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"FRONT_TURRET",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"turret",
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.8,0.7,0.6]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Extrusion":
+                                    {
+                                      "@creaseAngle":0.785,
+                                      "@crossSection":[-0.4,1.2,-0.4,-1.2,-0.7,-1.1,-0.8,-1,-0.9,-0.9,-1,-0.8,-1.1,-0.6,-1.2,-0.4,-1.2,0.4,-1.1,0.6,-1,0.8,-0.9,0.9,-0.8,1,-0.7,1.1,-0.4,1.2,-0.2,1.25,-0.1,1.275,0,1.3,0.1,1.25,0.2,1.25,0.3,1.2,0.5,1.1,0.8,0.9,1,0.6,1.1,0.4,1.2,0.2,1.2,-0.2,1.1,-0.4,1,-0.6,0.8,-0.9,0.5,-1.1,0.3,-1.2,0.2,-1.25,0.1,-1.275,0,-1.3,-0.1,-1.275,-0.2,-1.25,-0.4,-1.2,-0.4,1.2],
+                                      "@scale":[1,0.98,0.95,0.95,0.925,0.925,0.90,0.90,0.85,0.85,0.75,0.75,0.6,0.70],
+                                      "@solid":false,
+                                      "@spine":[0,1.6,0,0,1.7,0,0,1.8,0,0,1.9,0,0,2.0,0,0,2.1,0,0,2.2,0]
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"R_sponson_box",
+                                "@translation":[0,0.2,0.1],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,1.1],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,-1.57],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.85,0.75,0.65]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Extrusion":
+                                                      {
+                                                        "@creaseAngle":0.785,
+                                                        "@crossSection":[1,1.6,1,1.9,1.45,1.9,1.45,1.8,1.3,1.6,1,1.6],
+                                                        "@solid":false,
+                                                        "@spine":[0,-0.4,0,0,0.4,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"rear_sponson_box",
+                                "@rotation":[1,0,0,-1.57],
+                                "@translation":[-0.2,0.2,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.85,0.75,0.65]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Extrusion":
+                                          {
+                                            "@creaseAngle":0.785,
+                                            "@crossSection":[1,1.6,1,1.9,1.45,1.9,1.45,1.8,1.3,1.6,1,1.6],
+                                            "@solid":false,
+                                            "@spine":[0,-0.5,0,0,0.5,0]
+                                          }
+                                        }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"snorkle",
+                                "@translation":[0.2,1.8,1.2],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,1,0,-1.4],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[1,0,0,1.57],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "-material":
+                                                                { "Material":
+                                                                  {
+                                                                    "@diffuseColor":[0.8,0.7,0.6]
+                                                                  }
+                                                                }
+                                                            }
+                                                          },
+                                                        "-geometry":
+                                                          { "Cylinder":
+                                                            {
+                                                              "@height":1.2,
+                                                              "@radius":0.075
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[1,0,0,1.57],
+                                                  "@translation":[0,0,0.6],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "-material":
+                                                                { "Material":
+                                                                  {
+                                                                    "@diffuseColor":[0,0,0]
+                                                                  }
+                                                                }
+                                                            }
+                                                          },
+                                                        "-geometry":
+                                                          { "Cylinder":
+                                                            {
+                                                              "@height":0.1,
+                                                              "@radius":0.12
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[1,0,0,1.57],
+                                                  "@translation":[0,0,-0.6],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "-material":
+                                                                { "Material":
+                                                                  {
+                                                                    "@diffuseColor":[0,0,0]
+                                                                  }
+                                                                }
+                                                            }
+                                                          },
+                                                        "-geometry":
+                                                          { "Cylinder":
+                                                            {
+                                                              "@height":0.075,
+                                                              "@radius":0.09
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[1,0,0,-1.57],
+                                                  "@translation":[-0.1,-0.1,0.3],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "-material":
+                                                                { "Material":
+                                                                  {
+                                                                    "@diffuseColor":[0,0,0]
+                                                                  }
+                                                                }
+                                                            }
+                                                          },
+                                                        "-geometry":
+                                                          { "Box":
+                                                            {
+                                                              "@size":[0.3,0.1,0.1]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[1,0,0,-1.57],
+                                                  "@translation":[-0.1,-0.1,-0.3],
+                                                  "-children":[
+                                                    { "Shape":
+                                                      {
+                                                        "-appearance":
+                                                          { "Appearance":
+                                                            {
+                                                              "-material":
+                                                                { "Material":
+                                                                  {
+                                                                    "@diffuseColor":[0,0,0]
+                                                                  }
+                                                                }
+                                                            }
+                                                          },
+                                                        "-geometry":
+                                                          { "Box":
+                                                            {
+                                                              "@size":[0.3,0.1,0.1]
+                                                            }
+                                                          }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"IR_Light",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,-1.57],
+                                      "@scale":[0.15,0.4,0.15],
+                                      "@translation":[-1.2,1.8,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@creaseAngle":0.785,
+                                                  "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                  "@scale":[1,1,0.8,0.8,0.4,0.4],
+                                                  "@spine":[0,0,0,0,0.2,0,0,0.3,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,-1.57],
+                                      "@scale":[0.13,0.02,0.13],
+                                      "@translation":[-1.21,1.8,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0,0,0]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@creaseAngle":0.785,
+                                                  "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                  "@spine":[0,0,0,0,0.1,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"CDR_Hatch",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[0.15,2.2,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.9,0.8,0.7]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.1,
+                                                  "@radius":0.3
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@scale":[0.25,0.4,0.25],
+                                      "@translation":[0.15,2.2,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@creaseAngle":0.785,
+                                                  "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                  "@scale":[1,1,0.8,0.8,0.4,0.4],
+                                                  "@spine":[0,0,0,0,0.2,0,0,0.3,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,-1.57],
+                                      "@scale":[0.075,0.2,0.075],
+                                      "@translation":[0,2.4,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@creaseAngle":0.785,
+                                                  "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                  "@scale":[1,1,0.8,0.8,0.4,0.4],
+                                                  "@spine":[0,0,0,0,0.2,0,0,0.3,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0.05,2.2,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.05,0.3,0.05]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,-1.57],
+                                      "@scale":[0.065,0.1,0.065],
+                                      "@translation":[-0.01,2.4,-0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0,0,0]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Extrusion":
+                                                {
+                                                  "@creaseAngle":0.785,
+                                                  "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                  "@scale":[1,1,0.8,0.8,0.4,0.4],
+                                                  "@spine":[0,0,0,0,0.2,0,0,0.3,0]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"Gunners_stuff",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"hinge",
+                                      "@translation":[0.12,2.2,0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.05,0.1,0.2]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"hatch",
+                                      "@scale":[0.95,1,1.25],
+                                      "@translation":[0.3,2.2,0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.9,0.8,0.7]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.05,
+                                                  "@radius":0.2
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"night_sight",
+                                      "@translation":[0.08,2.1,0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.5,
+                                                  "@radius":0.05
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"Gunners_light",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@DEF":"Light",
+                                            "@rotation":[0,0,1,-1.57],
+                                            "@scale":[0.05,0.175,0.05],
+                                            "@translation":[0.1,2.3,0.6],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Extrusion":
+                                                      {
+                                                        "@creaseAngle":0.785,
+                                                        "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                        "@scale":[1,1,0.8,0.8,0.4,0.4],
+                                                        "@spine":[0,0,0,0,0.2,0,0,0.3,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0.12,2.2,0.6],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.02,0.2,0.02]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,-1.57],
+                                            "@scale":[0.04,0.05,0.04],
+                                            "@translation":[0.09,2.3,0.6],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0,0,0]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Extrusion":
+                                                      {
+                                                        "@creaseAngle":0.785,
+                                                        "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                                        "@scale":[1,1,0.8,0.8,0.4,0.4],
+                                                        "@spine":[0,0,0,0,0.2,0,0,0.3,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"day_sight",
+                                      "@translation":[-0.2,2.2,0.4],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0.8,0.7,0.6]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Box":
+                                                {
+                                                  "@size":[0.2,0.2,0.25]
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Group":
+                              {
+                                "@DEF":"smk_grndes",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[-0.85,1.8,1],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-0.785],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@DEF":"smoke_laucher",
+                                                              "-children":[
+                                                                { "Transform":
+                                                                  {
+                                                                    "@rotation":[1,0,0,1.57],
+                                                                    "-children":[
+                                                                      { "Shape":
+                                                                        {
+                                                                          "-appearance":
+                                                                            { "Appearance":
+                                                                              {
+                                                                                "-material":
+                                                                                  { "Material":
+                                                                                    {
+                                                                                      "@diffuseColor":[0.8,0.7,0.6]
+                                                                                    }
+                                                                                  }
+                                                                              }
+                                                                            },
+                                                                          "-geometry":
+                                                                            { "Cylinder":
+                                                                              {
+                                                                                "@height":0.2,
+                                                                                "@radius":0.02
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                },
+                                                                { "Transform":
+                                                                  {
+                                                                    "@rotation":[1,0,0,1.57],
+                                                                    "@translation":[0,0,-0.1],
+                                                                    "-children":[
+                                                                      { "Shape":
+                                                                        {
+                                                                          "-appearance":
+                                                                            { "Appearance":
+                                                                              {
+                                                                                "-material":
+                                                                                  { "Material":
+                                                                                    {
+                                                                                      "@diffuseColor":[0.8,0.7,0.6]
+                                                                                    }
+                                                                                  }
+                                                                              }
+                                                                            },
+                                                                          "-geometry":
+                                                                            { "Cylinder":
+                                                                              {
+                                                                                "@height":0.05,
+                                                                                "@radius":0.03
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                },
+                                                                { "Transform":
+                                                                  {
+                                                                    "@rotation":[1,0,0,1.57],
+                                                                    "@translation":[0,0,0.1],
+                                                                    "-children":[
+                                                                      { "Shape":
+                                                                        {
+                                                                          "-appearance":
+                                                                            { "Appearance":
+                                                                              {
+                                                                                "-material":
+                                                                                  { "Material":
+                                                                                    {
+                                                                                      "@diffuseColor":[0,0,0]
+                                                                                    }
+                                                                                  }
+                                                                              }
+                                                                            },
+                                                                          "-geometry":
+                                                                            { "Cylinder":
+                                                                              {
+                                                                                "@height":0.05,
+                                                                                "@radius":0.025
+                                                                              }
+                                                                            }
+                                                                        }
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-1,1.8,0.85],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-0.9],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@USE":"smoke_laucher"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-1.15,1.8,0.7],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-1.5],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@USE":"smoke_laucher"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-1.15,1.8,0.55],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-1.7],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@USE":"smoke_laucher"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-1.15,1.8,0.3],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-1.7],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@USE":"smoke_laucher"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-1.15,1.8,-0.55],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-1.7],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@USE":"smoke_laucher"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[-1.15,1.8,-0.7],
+                                      "-children":[
+                                        { "Group":
+                                          {
+                                            "-children":[
+                                              { "Transform":
+                                                {
+                                                  "@rotation":[0,0,1,-0.9],
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@rotation":[0,1,0,-1.5],
+                                                        "-children":[
+                                                          { "Group":
+                                                            {
+                                                              "@USE":"smoke_laucher"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@DEF":"AA_MG",
+                                "@scale":[0.1,0.1,0.1],
+                                "@translation":[0.9,2.6,-0.4],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,1.57],
+                                            "@translation":[4.25,0,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0,0,0]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":10,
+                                                        "@radius":0.25
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,1.57],
+                                            "@translation":[2.5,-0.26,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0,0,0]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":5,
+                                                        "@radius":0.35
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-2.5,-0.3,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0,0,0]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[5,2,1]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-2.5,-0.7,1.5],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[1,3.2,2]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[1,0,0,1.57],
+                                            "@translation":[-4,-1.5,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":2.5,
+                                                        "@radius":0.5
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-4,-3,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":2.5,
+                                                        "@radius":0.5
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,0,1,-0.785],
+                                            "@translation":[-2.5,-2.5,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":3.5,
+                                                        "@radius":0.2
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-4,1.5,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.25,1,2]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-4,0,0.875],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.25,2.5,0.25]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[-4,0,-0.875],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Box":
+                                                      {
+                                                        "@size":[0.25,2.5,0.25]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[1,0,0,-1.57],
+                          "@translation":[-1.3,1.8,0],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"Gun_Mantle",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,-1.57],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Extrusion":
+                                                      {
+                                                        "@creaseAngle":0.9,
+                                                        "@crossSection":[0,0.2,0.1,0.2,0.2,0.2,0.3,0.1,0.3,0.0,0.3,-0.1,0.2,-0.2,0.1,-0.2,0,-0.2,-0.1,-0.2,-0.2,-0.2,-0.3,-0.1,-0.3,0,-0.3,0.1,-0.2,0.2,-0.1,0.2,0,0.2],
+                                                        "@scale":[0.75,0.75,0.8,0.8,0.85,0.85,0.9,0.9,0.95,0.95,1,1],
+                                                        "@solid":false,
+                                                        "@spine":[0,0,0,0,0.1,0,0,0.2,0,0,0.3,0,0,0.4,0,0,0.5,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,1,-1.57],
+                                      "@translation":[-0.1,0,0],
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@rotation":[0,1,0,1.57],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.5,0.5,0.5]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Extrusion":
+                                                      {
+                                                        "@creaseAngle":0.9,
+                                                        "@crossSection":[0,0.15,0.1,0.1,0.15,0,0.1,-0.1,0,-0.15,-0.1,-0.1,-0.15,0,-0.1,0.1,0,0.15],
+                                                        "@scale":[0.75,0.75,1,1],
+                                                        "@solid":false,
+                                                        "@spine":[0,0,0,0,0.1,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"BARREL",
+                                      "@center":[0,-2.3,0],
+                                      "@rotation":[0,0,1,1.57],
+                                      "@translation":[-0.1,2.3,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[0,0,0]
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cylinder":
+                                                {
+                                                  "@height":4.4,
+                                                  "@radius":0.085
+                                                }
+                                              }
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,1.8,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.7,
+                                                        "@radius":0.09
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,1.05,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.7,
+                                                        "@radius":0.09
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,0.3,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.7,
+                                                        "@radius":0.125
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-0.45,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.7,
+                                                        "@radius":0.09
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-1.2,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.7,
+                                                        "@radius":0.09
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-1.95,0],
+                                            "-children":[
+                                              { "Shape":
+                                                {
+                                                  "-appearance":
+                                                    { "Appearance":
+                                                      {
+                                                        "-material":
+                                                          { "Material":
+                                                            {
+                                                              "@diffuseColor":[0.8,0.7,0.6]
+                                                            }
+                                                          }
+                                                      }
+                                                    },
+                                                  "-geometry":
+                                                    { "Cylinder":
+                                                      {
+                                                        "@height":0.7,
+                                                        "@radius":0.09
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "CylinderSensor":
+                              {
+                                "@DEF":"gun_sensor",
+                                "@description":"sensor for gun elevation",
+                                "@maxAngle":0.10,
+                                "@minAngle":-0.10
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"rotation_changed",
+                                "@fromNode":"gun_sensor",
+                                "@toField":"set_rotation",
+                                "@toNode":"Gun_Mantle"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "CylinderSensor":
+                        {
+                          "@DEF":"turret_sensor",
+                          "@description":"sensor for turrent rotation",
+                          "@maxAngle":2.355,
+                          "@minAngle":-2.355
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"rotation_changed",
+                    "@fromNode":"turret_sensor",
+                    "@toField":"set_rotation",
+                    "@toNode":"TURRET"
+                  }
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@orientation":[1,0,0,-0.37],
+              "@position":[0,5,10]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Front",
+              "@orientation":[0,1,0,-1.57],
+              "@position":[-10,2,0]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,0,1,-0.785],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Front High",
+                    "@orientation":[0,1,0,-1.57],
+                    "@position":[-12,2,0]
+                  }
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"left side",
+              "@orientation":[0,1,0,-3.14],
+              "@position":[0,2,-10]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"rear",
+              "@orientation":[0,1,0,1.57],
+              "@position":[10,2,0]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"top",
+              "@orientation":[1,0,0,-1.57],
+              "@position":[0,10,0]
+            }
+          }
+        ]
+    }
+  }
+}

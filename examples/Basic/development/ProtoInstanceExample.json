@@ -1,0 +1,170 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ProtoInstanceExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"26 June 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 December 2002"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple PROTO example, includes Node as a field for PROTO"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/ProtoInstanceExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"NewShape",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"InitialAppearance",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFNode",
+                      "-children":[
+                        { "Appearance":
+                          {
+                            "-material":
+                              { "Material":
+                                {
+                                  "@diffuseColor":[1,0,0]
+                                }
+                              }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"newHeight",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":3
+                    },
+                    {
+                      "@name":"newRadius",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":0.5
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Shape":
+                      {
+                        "@DEF":"ContainedShape",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"appearance",
+                                "@protoField":"InitialAppearance"
+                              }
+                            ]
+                        },
+                        "-geometry":
+                          { "Cylinder":
+                            {
+                              "@DEF":"ContainedCylinder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"height",
+                                      "@protoField":"newHeight"
+                                    },
+                                    {
+                                      "@nodeField":"radius",
+                                      "@protoField":"newRadius"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Billboard":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"NewShape",
+                    "fieldValue": [
+                      {
+                        "@name":"newHeight",
+                        "@value":3
+                      },
+                      {
+                        "@name":"newRadius",
+                        "@value":4
+                      },
+                      {
+                        "@name":"InitialAppearance",
+                        "-children":[
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@DEF":"CylinderMaterial",
+                                    "@diffuseColor":[0,1,0]
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,2399 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Core",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@level":3
+          },
+          {
+            "@name":"Geometry2D"
+          },
+          {
+            "@name":"Geometry2D",
+            "@level":3
+          }
+        ],
+        "unit": [
+          {
+            "@name":"nonPositiveConversionFactor",
+            "@category":"angle",
+            "@conversionFactor":-1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestSchematronDiagnostics.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Test Schematron diagnostics capabilities for detecting various content errors and style warnings."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"19 October 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 January 2017"
+          },
+          {
+            "@name":"warning",
+            "@content":"The regex is not finding IllegalMinusSignsTest."
+          },
+          {
+            "@name":"error",
+            "@content":"Test scene with many errors, primarily intended to exercise most of the rules in the X3D Schematron diagnostic set."
+          },
+          {
+            "@name":"warning",
+            "@content":"Test scene with many warnings embedded in comments."
+          },
+          {
+            "@name":"hint",
+            "@content":"Test scene with many hints embedded in comments."
+          },
+          {
+            "@name":"info",
+            "@content":"Perhaps the most erroneous X3D scene in the world!"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/tools/schematron/X3dSchematronValidityChecks.sch"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/tools/schematron/X3dSchematron.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestSchematronDiagnostics.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene":
+      {
+        "@USE":"improperUSE",
+        "-children":[
+          {
+            "#comment":"- illegal comment starts with extra hyphen - character"
+          },
+          {
+            "#comment":"- illegal comment has intermediate paired-hyphen - - characters"
+          },
+          { "TouchSensor":
+            {
+              "@USE":"IllegalCombinationDEFUSE"
+            }
+          },
+          { "CylinderSensor":
+            {
+              "@DEF":"DoubleDEF",
+              "@enabled":false
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"DoubleDEF"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"FirstTitle",
+              "@title":"title #1"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"SecondTitle",
+              "@title":"title #2"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"DEFPrependedSpace"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"DEFEmbedded Space"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"DEFAppendedSpace"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"IllegalInfoQuotes",
+              "@info":["WorldInfo info strings need to be quoted"]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"IllegalChild",
+              "-children":[
+                { "WorldInfo":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"LegalChild",
+              "-metadata":
+                { "MetadataString":
+                  {
+                  }
+                }
+            }
+          },
+          { "Anchor":
+            {
+              "@DEF":"NoChildrenNoUrl"
+            }
+          },
+          { "Anchor":
+            {
+              "@DEF":"AnchorBookmark",
+              "@parameter":["target=unquoted"],
+              "@url":["#missingBookmark"],
+              "-children":[
+                { "Group":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"HelloWorld",
+              "@url":["../HelloWorld.x3d","http://www.web3d.org/x3d/content/examples/Basic/HelloWorld.x3d","../HelloWorld.wrl"]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"UrlDotWrlPrecedesDotX3d",
+              "@url":["test.wrl","test.x3d","adjacent\"\"quote marks"]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"NoUrlIllegalChild",
+              "-children":[
+                { "WorldInfo":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"NodeUrlVRML.wrl.PrecedingX3D.x3d",
+              "@url":["HelloWorld.wrl","HelloWorld.x3d"]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ExternProtoDeclareUrlVRML.wrl.PrecedingX3D.x3d",
+              "@url":["HelloWorld.wrl","HelloWorld.x3d"]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ExternProtoDeclareUrlVRML.wrl.MissingX3D.x3d",
+              "@url":["HelloWorld.wrl"]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"NoChildAppearance",
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"NoChildGeometry",
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"test no other fields if USE present"
+          },
+          { "Shape":
+            {
+              "@USE":"NoChildAppearance"
+            }
+          },
+          { "Shape":
+            {
+              "@USE":"NoChildAppearance"
+            }
+          },
+          { "Shape":
+            {
+              "@USE":"NoChildAppearance"
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"USEwithChildElement",
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"AppearanceWithProtoInstanceChild",
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"NodeSubstituteNoDeclaration"
+                        }
+                      }
+                    ]
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "@USE":"USEwithChildElement",
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"SingleProtoInstanceChild",
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"NodeSubstituteNoDeclaration"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"no DEF name"
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"NoOutputROUTE"
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":100,
+              "@loop":true
+            }
+          },
+          { "ColorInterpolator":
+            {
+            }
+          },
+          { "ColorInterpolator":
+            {
+              "@DEF":"InterpolatorWithSingleKey",
+              "@key":[0]
+            }
+          },
+          { "ColorInterpolator":
+            {
+              "@DEF":"ColorInterpolatorColorProblems",
+              "@key":[0],
+              "@keyValue":[-1,1.2,0.3,0.4]
+            }
+          },
+          {
+            "#comment":"no DEF name"
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"NoROUTEsNoKeyValueArray",
+              "@key":[0,0]
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"MismatchedKeyArrays",
+              "@key":[0],
+              "@keyValue":[0,0]
+            }
+          },
+          { "NormalInterpolator":
+            {
+              "@DEF":"MismatchedKeyArraysSFVec3f",
+              "@key":[0,1],
+              "@keyValue":[0,0,0,1,1]
+            }
+          },
+          {
+            "#comment":"bogus ROUTEs to allow trapping deeper error"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"MismatchedKeyArrays",
+              "@toField":"set_fraction",
+              "@toNode":"MismatchedKeyArrays"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"MismatchedKeyArraysSFVec3f",
+              "@toField":"set_fraction",
+              "@toNode":"MismatchedKeyArraysSFVec3f"
+            }
+          },
+          { "BooleanSequencer":
+            {
+            }
+          },
+          { "BooleanSequencer":
+            {
+              "@DEF":"NoROUTEs",
+              "@key":[0,0.5,1],
+              "@keyValue":[true,false,true]
+            }
+          },
+          { "IntegerTrigger":
+            {
+            }
+          },
+          { "IntegerTrigger":
+            {
+              "@DEF":"NoROUTE"
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"OI"
+            }
+          },
+          { "LoadSensor":
+            {
+              "@DEF":"ChildrenIncorrectContainerField",
+              "-texture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"textureContainerField",
+                    "@url":["http:/bogus"]
+                  }
+                }
+            }
+          },
+          { "LoadSensor":
+            {
+              "@DEF":"ChildrenCorrectContainerField",
+              "-watchList":[
+                { "ImageTexture":
+                  {
+                    "@DEF":"watchListContainerField"
+                  }
+                }
+              ]
+            }
+          },
+          { "LoadSensor":
+            {
+              "@DEF":"IncorrectChildNodes",
+              "-watchList":[
+                { "Group":
+                  {
+                  }
+                }
+              ],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@DEF":"IllegalChildForLoadSensor"
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"HasLegalCDATA",
+              "field": [
+                {
+                  "@name":"duplicatedFieldName",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"duplicatedFieldName",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"function initialize()",
+"{",
+"   // initialize() method silences ROUTE check",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"HasCDATAwithoutEcmascriptHeader",
+              "field": [
+                {
+                  "@name":"noAccessType",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"noType",
+                  "@accessType":"inputOnly"
+                },
+                {
+                  "@accessType":"inputOnly",
+                  "@type":"noName"
+                },
+                {
+                  "@name":"neverSet",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"// empty Script body"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"HasUrlNoCDATA",
+              "@url":["TestSchematronDiagnostics.js"]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"NoUrlNoCDATA"
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"BothUrlAndCDATA",
+              "@url":["TestSchematronDiagnostics.js"],
+              "field": [
+                {
+                  "@name":"inputFunctionDefinedTwice",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"noInputFunctionAllowed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_noInputFunctionAllowed (newValue)",
+"{",
+"    // cannot have input function for output field",
+"}",
+"function set_inputFunctionDefinedTwice (newValue)",
+"{",
+"    // only one definition allowed; this is #1",
+"}",
+"function set_inputFunctionDefinedTwice (newValue)",
+"{",
+"    // only one definition allowed; this is #2",
+"}"
+]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"RouteButNoFields",
+              "@url":["TestSchematronDiagnostics.js"]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"blah",
+              "@fromNode":"NoFields",
+              "@toField":"blah",
+              "@toNode":"NoFields"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"NoDeclaration"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"MissingProtoBody"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"DEFoutsideProtoDeclareScope"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"DoubleMixedDeclaration",
+              "@DEF":"DuplicatedDeclaration",
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                      }
+                    },
+                    { "Viewpoint":
+                      {
+                        "@DEF":"ISconnectDescription",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"description",
+                                "@protoField":"description"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"TODO not yet working..."
+                    },
+                    { "WorldInfo":
+                      {
+                        "@USE":"DEFoutsideProtoDeclareScope"
+                      }
+                    },
+                    { "WorldInfo":
+                      {
+                        "@DEF":"USEoutsideProtoDeclareScope"
+                      }
+                    },
+                    { "WorldInfo":
+                      {
+                        "@DEF":"DEF_USEinsideProtoDeclareScope"
+                      }
+                    },
+                    { "WorldInfo":
+                      {
+                        "@USE":"DEF_USEinsideProtoDeclareScope"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "WorldInfo":
+            {
+              "@USE":"USEoutsideProtoDeclareScope"
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"DoubleMixedDeclaration",
+              "@url":["http://bogus#DifferentRemotePrototypeName"]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"DoubleMixedDeclaration",
+              "@DEF":"DoubleDeclaration2",
+              "fieldValue": [
+                {
+                  "@name":"duplicatedFieldValueName",
+                  "@value":"blah"
+                },
+                {
+                  "@name":"duplicatedFieldValueName"
+                },
+                {
+                  "@value":"noName"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"DoubleProtoDeclaration",
+              "@url":["http:/bogus"]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"DoubleProtoDeclaration",
+              "@url":["http:///bogus"]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"DoubleDeclarationUrlMissingPoundProtoName",
+              "@url":["http:///bogus"]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"DoubleDeclarationUrlMissingPoundProtoName",
+              "@url":["http:/bogus"]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"EmptyProtoInterfaceEmptyProtoBody",
+              "ProtoInterface": {
+              },
+              "ProtoBody": {
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"IllegalProtoInterface",
+              "ProtoInterface": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "@DEF":"OnlyFieldDeclarationsAllowedInProtoInterface"
+                      }
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ExternProtoDeclareBeforeInstance",
+              "@url":["httpsMissing"]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ExternProtoDeclareBeforeInstance"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ExternProtoDeclareAfterInstance"
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ExternProtoDeclareAfterInstance",
+              "@url":["httpMissing"]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ProtoDeclareBeforeInstance",
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ProtoDeclareBeforeInstance"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ProtoDeclareAfterInstance"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ProtoDeclareAfterInstance",
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"danglingConnectNodeField",
+                                "@protoField":"danglingConnectProtoField"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"ContainsISchildButNoParentProtoDeclare",
+              "IS": {
+                  "connect": [
+                    {
+                      "@nodeField":"isolatedConnectNodeField",
+                      "@protoField":"isolatedConnectProtoField"
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"test isolated (invalid) connect element <connect nodeField=\"isolatedConnectNodeField\" protoField=\"isolatedConnectProtoField\"/>"
+          },
+          { "Shape":
+            {
+              "@DEF":"BadBoundingBoxValues",
+              "@bboxCenter":[1a,2b,3c],
+              "@bboxSize":[-1,-2,-3],
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@DEF":"ExtrusionCrossSectionMiscountSpineMismatchCrossSectionMiscount",
+                    "@crossSection":[1,2,3],
+                    "@orientation":[0,0,1,0,0,0,1,0,0,0,1,0],
+                    "@scale":[1,1,1,1,1,1,1,1,1,1,1,1],
+                    "@spine":[0,0,0,0,2,0]
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"check for reserved word in DEF"
+                }
+              ],
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"DEF",
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "TwoSidedMaterial":
+                        {
+                          "@DEF":"separateBackColorWrong",
+                          "@backShininess":0.123
+                        }
+                      }
+                    ]
+                  }
+                }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"set_blah",
+              "@fromNode":"blah",
+              "@toField":"bleah_changed",
+              "@toNode":"bleah"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"OKviewpoint",
+              "@description":"this viewpoint is OK"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"DEFdescriptionMatch",
+              "@description":"DEFdescriptionMatch"
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "@DEF":"IllegalFields",
+              "@navType":["OTHER"]
+            }
+          },
+          { "GeoMetadata":
+            {
+              "@DEF":"BadChild",
+              "-children":[
+                { "GeoViewpoint":
+                  {
+                    "@DEF":"BadContainerField"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"check for reserved word in name definitions"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"X3D",
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "@DEF":"PrototypeRootNode"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"X3D",
+              "field": [
+                {
+                  "@name":"X3D",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"X3D",
+              "@DEF":"BadNameBadFieldValueNameMissingInitialization",
+              "fieldValue": [
+                {
+                  "@name":"X3D"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"X3D",
+              "fieldValue": [
+                {
+                  "@name":"X3D",
+                  "@value":doubleInitialization,
+                  "-children":[
+                    { "Shape":
+                      {
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          { "LOD":
+            {
+              "-children":[
+                { "Background":
+                  {
+                    "@DEF":"BackgroundWithParentLOD"
+                  }
+                },
+                { "Fog":
+                  {
+                    "@DEF":"FogWithParentLOD"
+                  }
+                },
+                { "NavigationInfo":
+                  {
+                    "@DEF":"NavigationInfoWithParentLOD"
+                  }
+                },
+                { "Viewpoint":
+                  {
+                    "@DEF":"ViewpointWithParentLOD"
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "PixelTexture":
+                        {
+                          "@DEF":"NoImageData"
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "PixelTexture":
+                        {
+                          "@DEF":"IllegalImageData",
+                          "@image":[1,a,b,c,d]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "PixelTexture":
+                        {
+                          "@DEF":"DefaultImageData"
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "PixelTexture":
+                        {
+                          "@DEF":"DuplicateImageData"
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Box":
+                  {
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "PixelTexture":
+                        {
+                          "@DEF":"ImageDataTest",
+                          "@image":[1,1,1,170]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "WorldInfo":
+            {
+              "@USE":"USEandDEFtogether"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@USE":"USEprecedesDEF"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"USEprecedesDEF"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@USE":"noDEFforUSE"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"noChildNodeforUSE"
+            }
+          },
+          { "WorldInfo":
+            {
+              "@USE":"noChildNodeforUSE",
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "-metadata":
+                      { "MetadataString":
+                        {
+                          "@name":"someStringArray",
+                          "@value":["unquoted string values"]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"DEFcontainsUSEcopyOfSelf",
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"DEFcontainsUSEcopyOfSelf"
+                  }
+                }
+              ]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@DEF":"USEmismatchDEFnodeType"
+            }
+          },
+          { "Group":
+            {
+              "@USE":"USEmismatchDEFnodeType"
+            }
+          },
+          { "LocalFog":
+            {
+              "@DEF":"NoLocalFogV3.0"
+            }
+          },
+          { "PointLight":
+            {
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@DEF":"CountTests",
+                    "@coordIndex":[0,1,2,-1],
+                    "@creaseAngle":-1.234,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[0,0,0,0,1,0,1,0,0,5]
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                          "@DEF":"IllegalValuesColor",
+                          "@color":[-1,2,3]
+                        }
+                      },
+                      { "ColorRGBA":
+                        {
+                          "@DEF":"IllegalValuesColorRGBA",
+                          "@color":[-1,1.2,0.3,0.4]
+                        }
+                      },
+                    "-texCoord":
+                      { "TextureCoordinate":
+                        {
+                        }
+                      },
+                      { "TextureCoordinateGenerator":
+                        {
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@DEF":"CharacterBeforeQuotes",
+                    "@string":[x ","],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@family":["unquotedFontFamilyName"],
+                          "@justify":["unquotedIllegalJustification"]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@DEF":"ThreeUnescapedQuoteMarksMissingSpaceEndsApostrophe",
+                    "@string":["", x\" '],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@DEF":"familyValuesMissingIntermediateQuotes",
+                          "@family":["SANS SERIF"],
+                          "@justify":["BEGIN","BEGIN"]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@DEF":"EscapedQuoteMarkWarning",
+                    "@string":["here is a single escaped \\\" quote mark character"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@justify":["IllegalValue"]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@DEF":"NeedQuoteMarks",
+                    "@string":["quote marks are required for single string"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@DEF":"EmbeddedQuoteMarksOK",
+                    "@string":["plain text with \\\"quote marks\\\" embedded"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@DEF":"FontStyleFieldsContainIllegalQuotes",
+                          "@language":"\"noquo\"",
+                          "@style":"\"PLAIN\""
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedQuadSet":
+                  {
+                    "@DEF":"MissingIndex",
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@DEF":"DuplicatedCoordinatePointArray",
+                          "@point":[0,0,0,0,1,0,1,0,0,5]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@USE":"NoMaterialNoTexture"
+                  }
+                }
+            }
+          },
+          { "NormalInterpolator":
+            {
+              "@DEF":"NormalPath",
+              "@key":[0,0.5,1],
+              "@keyValue":[0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,5]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@DEF":"LegalGeoSystem",
+              "@geoCoords":[36.607,-121.885,0.0]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ReferenceTest",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"defaultTest",
+                      "@accessType":"initializeOnly",
+                      "@type":"SInt32",
+                      "@value":78
+                    },
+                    {
+                      "@name":"incorrectInitializationSFColorRGBA",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColorRGBA",
+                      "@value":[1,1,1]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@url":["http:///bogus"],
+                        "field": [
+                          {
+                            "@name":"missingInitializationValue1",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"missingInitializationValue2",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"incorrectInitializationSFVec3f",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFVec3f",
+                            "@value":[0.0]
+                          },
+                          {
+                            "@name":"incorrectInitializationMFColor",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFColor",
+                            "@value":[1,2,3,4,5,6,7]
+                          },
+                          {
+                            "@name":"missingInitializationValueHasIS",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":true
+                          }
+                        ],
+                        "fieldValue": [
+                          {
+                            "@name":"shouldBeField"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"missingInitializationValueHasIS",
+                                "@protoField":"test"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"Subsequent nodes do not render, but still must be a valid X3D subgraph"
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ReferenceTest",
+              "fieldValue": [
+                {
+                  "@name":"defaultTest",
+                  "@value":78
+                },
+                {
+                  "@name":"incorrectInitializationSFColorRGBA",
+                  "@value":[1,1,1,1,1]
+                }
+              ],
+              "field": [
+                {
+                  "@name":"shouldBeFieldValue"
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"ZeroMagnitudeRotationAxes",
+              "@rotation":[0,0,0,0],
+              "@scaleOrientation":[0,0,0,0]
+            }
+          },
+          { "Collision":
+            {
+              "@DEF":"IllegalGeometryProxyNode",
+              "-proxy":
+                { "Box":
+                  {
+                    "@DEF":"GeometryNodeCollisionParentNeedsParentShapeWithProxyContainerField"
+                  }
+                }
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@DEF":"UnquotedTypeAndTransitionTypeErrors",
+              "@transitionType":["ALTERNATE"],
+              "@type":["OTHER"]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"IllegalParentChild-DEF-USE",
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"IllegalParentChild-DEF-USE"
+                  }
+                }
+              ]
+            }
+          },
+          { "CADLayer":
+            {
+              "@name":"incorrect boolean value",
+              "@visible":[true,false,wrong]
+            }
+          },
+          { "Shape":
+            {
+              "-texture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"IllegalParent1"
+                  }
+                },
+                { "MovieTexture":
+                  {
+                    "@DEF":"IllegalParent2"
+                  }
+                },
+                { "PixelTexture":
+                  {
+                    "@DEF":"IllegalParent3"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-textureTransform":
+                { "TextureTransform":
+                  {
+                    "@DEF":"TextureTransformWithNoSiblingTextureNode"
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-textureTransform":
+                      { "TextureTransform":
+                        {
+                          "@USE":"TextureTransformWithNoSiblingTextureNode"
+                        }
+                      },
+                    "-texCoord":
+                      { "TextureCoordinateGenerator":
+                        {
+                          "@DEF":"TextureCoordinateGeneratorIllegalMode",
+                          "@mode":"Bogus"
+                        }
+                      },
+                      { "TextureCoordinateGenerator":
+                        {
+                          "@DEF":"TextureCoordinateGeneratorIllegalParameterCount",
+                          "@mode":"NOISE",
+                          "@parameter":[1,2,3,4]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-texture":
+                      { "MultiTexture":
+                        {
+                          "@DEF":"NoTextureChildren",
+                          "@function":["BogusFunction1Value","BogusFunction2Value\","],
+                          "@mode":["BogusMode1Value\" BogusMode2Value"],
+                          "@source":["BogusSourceValue"]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"NoBackgroundChildrenAllowed",
+              "-texture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"IllegalBackgroundChild"
+                  }
+                }
+            }
+          },
+          { "TextureBackground":
+            {
+              "-texture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"LegalChild1"
+                  }
+                },
+                { "MovieTexture":
+                  {
+                    "@DEF":"LegalChild2"
+                  }
+                },
+                { "PixelTexture":
+                  {
+                    "@DEF":"LegalChild3"
+                  }
+                },
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"IllegalTextureBackgroundChild"
+                  }
+                }
+              ],
+              "-frontUrl":[
+                { "ImageTexture":
+                  {
+                    "@DEF":"IllegalTextureBackgroundChildContainerField"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Embedded Blanks DEF"
+            }
+          },
+          { "Group":
+            {
+              "@USE":"Embedded Blanks USE"
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"\"QuotedDEF\""
+            }
+          },
+          { "Group":
+            {
+              "@USE":"\"QuotedUSE\""
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"IllegalDecimalPointsTest",
+              "@key":[0.00.5,1.0],
+              "@keyValue":[1,2,3]
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"IllegalMinusSignsTest",
+              "@key":[0.0,0.5,1.0],
+              "@keyValue":[-1-2,3]
+            }
+          },
+          {
+            "#comment":"test of NeedsChildNode"
+          },
+          { "Group":
+            {
+              "@DEF":"EmptyGroup"
+            }
+          },
+          { "Switch":
+            {
+              "@whichChoice":-1,
+              "-children":[
+                {
+                  "#comment":"test of NeedsChildNode"
+                },
+                { "Group":
+                  {
+                    "@DEF":"EmptyGroupInsideSwitch"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"EmptyGroupContainsComment",
+              "-children":[
+                {
+                  "#comment":"test of NeedsChildNode"
+                }
+              ]
+            }
+          },
+          { "Switch":
+            {
+              "@DEF":"EmptySwitchContainsROUTE",
+              "@whichChoice":-1,
+              "-children":[
+                {
+                  "#comment":"test of NeedsChildNode"
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"blah",
+                    "@fromNode":"NoFields",
+                    "@toField":"blah",
+                    "@toNode":"NoFields"
+                  }
+                }
+              ]
+            }
+          },
+          { "CADLayer":
+            {
+              "@visible":false,
+              "-children":[
+                { "CADAssembly":
+                  {
+                    "-children":[
+                      { "CADPart":
+                        {
+                          "-children":[
+                            { "CADFace":
+                              {
+                                "@DEF":"CADFaceOneShapeChild",
+                                "-shape":
+                                  { "Transform":
+                                    {
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                              }
+                            },
+                            { "CADFace":
+                              {
+                                "@DEF":"CADFaceMultipleShapeChildren",
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@DEF":"containerFieldNot_shape",
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                          }
+                                        },
+                                        { "Shape":
+                                          {
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "HAnimHumanoid":
+            {
+              "@name":"JimDandy",
+              "@DEF":"notUniqueName1",
+              "@version":"1.1"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"ViewHumanoidMissingCenterOfRotation"
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"EmptyShapeWithCommentSilencesWarning",
+              "-children":[
+                {
+                  "#comment":"silence warning"
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@DEF":"IllegalColorValuesMaterial",
+                          "@diffuseColor":[-1,1.2,0.3,0.4],
+                          "@emissiveColor":[-1,1.2,0.3,0.4],
+                          "@specularColor":[-1,1.2,0.3,0.4]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Background":
+            {
+              "@DEF":"BackgroundColorProblems",
+              "@groundColor":[-1,1.2,0.3,0.4],
+              "@skyColor":[-1,1.2,0.3,0.4]
+            }
+          },
+          { "Fog":
+            {
+              "@DEF":"FogColorProblems",
+              "@color":[-1,1.2,0.3,0.4]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@DEF":"DirectionalLightColorProblems",
+              "@color":[-1,1.2,0.3,0.4]
+            }
+          },
+          { "PointLight":
+            {
+              "@DEF":"PointLightColorProblems",
+              "@color":[-1,1.2,0.3,0.4]
+            }
+          },
+          { "SpotLight":
+            {
+              "@DEF":"SpotLightColorProblems",
+              "@color":[-1,1.2,0.3,0.4]
+            }
+          },
+          { "HAnimHumanoid":
+            {
+              "@name":"JimDandy",
+              "@DEF":"notUniqueName2",
+              "@version":"2.0",
+              "-children":[
+                {
+                  "#comment":"keep the following Group node as first child so that it is reported by diagnostic test"
+                },
+                { "Group":
+                  {
+                    "@name":"IllegalGroupChildrenNode",
+                    "@DEF":"HumanoidCannotContainChildrenNodes"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@DEF":"MissingComponentH-AnimLevel1",
+                    "-children":[
+                      { "HAnimHumanoid":
+                        {
+                          "@DEF":"incorrectlyNestedHumanoidMissingNameAttribute",
+                          "@version":"2.0"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@DEF":"MissingNameAttributeCheckContainerField"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"MissingNameAttributeCheckContainerField"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@name":"sacroiliac",
+                    "@DEF":"duplicateName1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@name":"sacroiliac",
+                    "@DEF":"duplicateName2"
+                  }
+                },
+                { "PositionInterpolator":
+                  {
+                    "@DEF":"JointInterpolator",
+                    "@key":[0,0],
+                    "@keyValue":[0,0,0,1,0,0]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"JointInterpolator",
+                    "@toField":"translation",
+                    "@toNode":"MissingNameAttribute"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@name":"l_acromioclavicular",
+                    "@DEF":"ImproperDEFname"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@name":"HumanoidRoot",
+                    "@DEF":"hanim_HumanoidRoot",
+                    "-children":[
+                      { "HAnimSegment":
+                        {
+                          "@name":"notSacrum",
+                          "@DEF":"JointNameSegmentNameHierarchyTest"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@name":"negativeCenterHeight",
+                          "@DEF":"negativeCenterHeight",
+                          "@center":[0,-1,0],
+                          "-children":[
+                            { "HAnimSegment":
+                              {
+                                "@name":"IllegalChildrenContainerFields",
+                                "@DEF":"IllegalChildrenContainerFields",
+                                "-children":[
+                                  { "HAnimSite":
+                                    {
+                                      "@name":"negativeTranslationHeight",
+                                      "@DEF":"negativeTranslationHeight",
+                                      "@translation":[0,-1,0],
+                                      "-displacers":[
+                                        { "HAnimDisplacer":
+                                          {
+                                            "@DEF":"IllegalHAnimDisplacerInHAnimSiteNode"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                    }
+                                  },
+                                  { "CoordinateDouble":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@name":"l_knee",
+                          "@DEF":"MismatchedJointCenter_l_knee",
+                          "@center":[1,2,3]
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@name":"r_knee",
+                          "@DEF":"MismatchedJointCenter_r_knee",
+                          "@center":[4,5,6]
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"IllegalEmbeddedHAnimUse"
+                        }
+                      },
+                      { "HAnimSite":
+                        {
+                          "@name":"IllegalNameIllegalParent",
+                          "@DEF":"IllegalNameIllegalParent"
+                        }
+                      },
+                      {
+                        "#comment":"TODO test IllegalEmbeddedHAnimUse in another HAnimHumanoid"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment":"the following construct is OK and should not throw errors"
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "HanimJoint":
+                  {
+                    "@DEF":"ImproperCapitalizationOfNodeName"
+                  }
+                }
+              ],
+              "-viewpoints":[
+                { "HAnimSite":
+                  {
+                    "@name":"Top_view",
+                    "@DEF":"hanim_Top_view",
+                    "@rotation":[1,0,0,-1.57],
+                    "@translation":[0,3.5,0],
+                    "-children":[
+                      { "Viewpoint":
+                        {
+                          "@DEF":"hanim_Top_viewpoint",
+                          "@centerOfRotation":[0,0.9,0],
+                          "@description":"Top",
+                          "@position":[0,0,0]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-skinCoord":
+                { "Coordinate":
+                  {
+                    "@DEF":"HAnimCoordinateCorrectContainerField",
+                    "@point":[0,0,0]
+                  }
+                },
+                { "CoordinateDouble":
+                  {
+                    "@DEF":"HAnimCoordinateDoubleCorrectContainerField",
+                    "@point":[0,0,0]
+                  }
+                },
+              "-coord":
+                { "Coordinate":
+                  {
+                    "@DEF":"HAnimCoordinateIncorrectContainerField"
+                  }
+                },
+                { "CoordinateDouble":
+                  {
+                    "@DEF":"HAnimCoordinateDoubleIncorrectContainerField"
+                  }
+                },
+              "-normal":
+                { "Normal":
+                  {
+                    "@DEF":"HAnimNormalIncorrectContainerField"
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"NoChildren"
+            }
+          },
+          { "Sound":
+            {
+              "@class":"must separate classes with;space characters",
+              "@location":[0,2,0],
+              "-source":
+                { "AudioClip":
+                  {
+                    "@description":"bad clip reference",
+                    "@url":["blah"]
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"SoundDefaults",
+              "@location":[0,2,0],
+              "-source":
+                { "AudioClip":
+                  {
+                    "@DEF":"ReusableAudioClip",
+                    "@description":"reusable",
+                    "@url":["../Vrml97Specification/click.wav","http://www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/click.wav"]
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"SoundMinNegative",
+              "@location":[0,2,0],
+              "@minBack":-1,
+              "@minFront":-1,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@USE":"ReusableAudioClip"
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"SoundMaxNegative",
+              "@location":[0,2,0],
+              "@maxBack":-10,
+              "@maxFront":-10,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@USE":"ReusableAudioClip"
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"SoundMinGreaterThanMax",
+              "@location":[0,2,0],
+              "@maxBack":11,
+              "@maxFront":11,
+              "@minBack":12,
+              "@minFront":12,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@USE":"ReusableAudioClip"
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"SoundMinGreaterThanDefaultMax",
+              "@location":[0,2,0],
+              "@minBack":13,
+              "@minFront":13,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@USE":"ReusableAudioClip"
+                  }
+                }
+            }
+          },
+          { "Sound":
+            {
+              "@DEF":"SoundMaxLessThanDefaultMin",
+              "@location":[0,2,0],
+              "@maxBack":0.5,
+              "@maxFront":0.5,
+              "-source":
+                { "AudioClip":
+                  {
+                    "@USE":"ReusableAudioClip"
+                  }
+                }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"test1",
+              "@fromNode":"DuplicateROUTE",
+              "@toField":"test3",
+              "@toNode":"test2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"test1",
+              "@fromNode":"DuplicateROUTE",
+              "@toField":"test3",
+              "@toNode":"test2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"test1",
+              "@fromNode":"DuplicateROUTE",
+              "@toField":"test3",
+              "@toNode":"test2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"children",
+              "@fromNode":"NodeFollowsRoute1",
+              "@toField":"children",
+              "@toNode":"NodeFollowsRoute2"
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"NodeFollowsRoute1",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"NodeFollowsRoute2",
+                    "-children":[
+                      {
+                        "#comment":"silence warning"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"ElevationGridInsufficientHeights",
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "@height":[1,2,3,4,5],
+                    "@solid":false,
+                    "@xSpacing":0,
+                    "@zDimension":3,
+                    "@zSpacing":0
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"ElevationGridTooManyHeights",
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "@height":[1,2,3,4,5,6,7],
+                    "@solid":false,
+                    "@xSpacing":-1,
+                    "@zDimension":3,
+                    "@zSpacing":-1
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"ElevationGridBadDimensions",
+              "-geometry":
+                { "ElevationGrid":
+                  {
+                    "@height":[1,2,3,4,5,6],
+                    "@solid":false,
+                    "@xDimension":-2,
+                    "@zDimension":-3
+                  }
+                }
+            }
+          },
+          { "StaticGroup":
+            {
+              "@DEF":"StaticGroupChildTests",
+              "-children":[
+                { "Group":
+                  {
+                    "-children":[
+                      { "TimeSensor":
+                        {
+                          "@DEF":"StaticGroupDescendantsCannotProduceEvents"
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF":"StaticGroupDescendantsCannotConsumeEvents"
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@USE":"StaticGroupDescendantsCannotBeUsed"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"StaticGroupDescendantsCannotProduceEvents",
+                    "@toField":"set_fraction",
+                    "@toNode":"StaticGroupDescendantsCannotConsumeEvents"
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"CaseSensitive",
+              "-children":[
+                {
+                  "#comment":"test case sensitivity of DEF/USE"
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@USE":"CASESENSITIVE"
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@DEF":"PeerTouchSensor"
+                  }
+                },
+                { "CylinderSensor":
+                  {
+                    "@DEF":"PeerCylinderSensor"
+                  }
+                },
+                { "Billboard":
+                  {
+                    "@DEF":"PeerBillboard"
+                  }
+                }
+              ]
+            }
+          },
+          { "Inline":
+            {
+              "@DEF":"RecursiveInlineInvocation",
+              "@url":["TestSchematronDiagnostics.x3d"]
+            }
+          }
+        ],
+        "-appearance":
+          { "Appearance":
+            {
+              "@DEF":"MissingParentShape"
+            }
+          },
+        "-IllegalChildNodeFieldNameNotFound":[
+          { "OrthoViewpoint":
+            {
+              "@DEF":"NoSpacesInDescription",
+              "@description":"NeedToPutSpacesInDescription"
+            }
+          }
+        ],
+        "-IllegalChildNodeFieldNameNotFound":[
+          { "ViewpointGroup":
+            {
+              "@DEF":"IllegalViewpointGroupChild",
+              "-children":[
+                { "Transform":
+                  {
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "-geometry":
+          { "Box":
+            {
+              "@DEF":"GeometryNodeNeedsShapeParent"
+            }
+          },
+        "-metadata":
+          { "MetadataSet":
+            {
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "MetadataBoolean":
+                }
+              ],
+              "-value":[
+                { "MetadataFloat":
+                  {
+                  }
+                }
+              ],
+              "-illegalName":[
+                { "MetadataDouble":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+        "-value":[
+          { "MetadataString":
+            {
+              "@DEF":"IllegalMetadataContainerField"
+            }
+          }
+        ],
+        "-geoOrigin":
+          { "GeoOrigin":
+            {
+              "@DEF":"DeprecatedNodeUnquotedGeoSystem",
+              "@geoSystem":["GD WE"]
+            }
+          },
+        "-IllegalChildNodeFieldNameNotFound":[
+          { "ClipPlane":
+            {
+              "@DEF":"IllegalPlaneEquationValues",
+              "@plane":[1,2,3,4,5]
+            }
+          }
+        ],
+        "-source":[
+          { "AudioClip":
+            {
+              "@DEF":"NoParentSoundNode",
+              "@description":"bad clip reference",
+              "@url":["blah"]
+            }
+          }
+        ]
+      }
+  }
+}

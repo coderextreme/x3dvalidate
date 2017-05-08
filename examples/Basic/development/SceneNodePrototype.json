@@ -1,0 +1,689 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SceneNodePrototype.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"19 December 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Expose functionality of Browser class in Java/ECMAscript annexes of VRML 97 specification. Consider promotion to a native node in X3D/VRML 200x scenes."
+          },
+          {
+            "@name":"warning",
+            "@content":"Under development, many of these exposed attributes will be eliminated. Scene node will not be used in X3D proper, but may become a valuable prototype via SAI scripting."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/SceneNodePrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"Scene",
+              "ProtoInterface": {
+                  "-children":[
+                    {
+                      "#comment":"Standard browser attributes exposed via VRML 97 Script annexes"
+                    },
+                    {
+                      "#comment":"Candidate additions"
+                    }
+                  ],
+                  "field": [
+                    {
+                      "@name":"createVrmlFromString",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"createVrmlFromURL",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"createdVrmlNodes",
+                      "@accessType":"outputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"currentFrameRate",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"currentSpeed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"description",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"evaluate",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"loadUrl",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"loadUrlParameter",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"name",
+                      "@accessType":"outputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"replaceWorld",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"version",
+                      "@accessType":"outputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"worldUrl",
+                      "@accessType":"outputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"addRoute",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"deleteRoute",
+                      "@accessType":"inputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"fromNode",
+                      "@accessType":"inputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"fromEventOut",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"toNode",
+                      "@accessType":"inputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"toEventIn",
+                      "@accessType":"inputOnly",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"boundBackground",
+                      "@accessType":"outputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"boundFog",
+                      "@accessType":"outputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"boundGeoViewpoint",
+                      "@accessType":"outputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"boundNavigationInfo",
+                      "@accessType":"outputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"boundViewpoint",
+                      "@accessType":"outputOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"response",
+                      "@accessType":"outputOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"dashboardVisible",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"pixelWidth",
+                      "@accessType":"inputOutput",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    },
+                    {
+                      "@name":"pixelHeight",
+                      "@accessType":"inputOutput",
+                      "@type":"SFInt32",
+                      "@value":-1
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"BrowserScript",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"createVrmlFromString",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"createVrmlFromURL",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"createdVrmlNodes",
+                            "@accessType":"outputOnly",
+                            "@type":"MFNode"
+                          },
+                          {
+                            "@name":"currentFrameRate",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"currentSpeed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"description",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"evaluate",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"loadUrl",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"loadUrlParameter",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"name",
+                            "@accessType":"outputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"replaceWorld",
+                            "@accessType":"inputOnly",
+                            "@type":"MFNode"
+                          },
+                          {
+                            "@name":"version",
+                            "@accessType":"outputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"worldUrl",
+                            "@accessType":"outputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"addRoute",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"deleteRoute",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"fromNode",
+                            "@accessType":"inputOnly",
+                            "@type":"SFNode"
+                          },
+                          {
+                            "@name":"fromEventOut",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"toNode",
+                            "@accessType":"inputOnly",
+                            "@type":"SFNode"
+                          },
+                          {
+                            "@name":"toEventIn",
+                            "@accessType":"inputOnly",
+                            "@type":"SFString"
+                          },
+                          {
+                            "@name":"response",
+                            "@accessType":"outputOnly",
+                            "@type":"MFString"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"createVrmlFromString",
+                                "@protoField":"createVrmlFromString"
+                              },
+                              {
+                                "@nodeField":"createVrmlFromURL",
+                                "@protoField":"createVrmlFromURL"
+                              },
+                              {
+                                "@nodeField":"createdVrmlNodes",
+                                "@protoField":"createdVrmlNodes"
+                              },
+                              {
+                                "@nodeField":"currentFrameRate",
+                                "@protoField":"currentFrameRate"
+                              },
+                              {
+                                "@nodeField":"currentSpeed",
+                                "@protoField":"currentSpeed"
+                              },
+                              {
+                                "@nodeField":"description",
+                                "@protoField":"description"
+                              },
+                              {
+                                "@nodeField":"evaluate",
+                                "@protoField":"evaluate"
+                              },
+                              {
+                                "@nodeField":"loadUrl",
+                                "@protoField":"loadUrl"
+                              },
+                              {
+                                "@nodeField":"loadUrlParameter",
+                                "@protoField":"loadUrlParameter"
+                              },
+                              {
+                                "@nodeField":"name",
+                                "@protoField":"name"
+                              },
+                              {
+                                "@nodeField":"replaceWorld",
+                                "@protoField":"replaceWorld"
+                              },
+                              {
+                                "@nodeField":"version",
+                                "@protoField":"version"
+                              },
+                              {
+                                "@nodeField":"worldUrl",
+                                "@protoField":"worldUrl"
+                              },
+                              {
+                                "@nodeField":"addRoute",
+                                "@protoField":"addRoute"
+                              },
+                              {
+                                "@nodeField":"deleteRoute",
+                                "@protoField":"deleteRoute"
+                              },
+                              {
+                                "@nodeField":"fromNode",
+                                "@protoField":"fromNode"
+                              },
+                              {
+                                "@nodeField":"fromEventOut",
+                                "@protoField":"fromEventOut"
+                              },
+                              {
+                                "@nodeField":"toNode",
+                                "@protoField":"toNode"
+                              },
+                              {
+                                "@nodeField":"toEventIn",
+                                "@protoField":"toEventIn"
+                              },
+                              {
+                                "@nodeField":"response",
+                                "@protoField":"response"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function evaluate (inputValue, timeStamp)",
+"{",
+"\tif (inputValue)  // Boolean",
+"\t{",
+"\t\tcurrentFrameRate = Browser.getCurrentFrameRate ();",
+"\t\tcurrentSpeed = Browser.getCurrentSpeed ();",
+"\t\tversion = Browser.getVersion ();",
+"\t\tname = Browser.getName ();",
+"\t\tworldUrl = Browser.getWorldURL ();",
+"",
+"\t\tBrowser.print ('currentFrameRate = ' + currentFrameRate);",
+"\t\tBrowser.print ('currentSpeed = ' + currentSpeed);",
+"\t\tBrowser.print ('version = ' + version);",
+"\t\tBrowser.print ('name = ' + name);",
+"\t\tBrowser.print ('worldUrl = ' + worldUrl);",
+"\t}",
+"}",
+"",
+"function createVrmlFromString (inputValue, timeStamp)",
+"{",
+"\t// note VRML 97 method name didn't follow capitalization convention",
+"\tcreatedVrmlNodes = Browser.createVrmlFromString (inputValue);",
+"}",
+"",
+"function createVrmlFromUrl (inputValue, timeStamp)",
+"{",
+"\t// note VRML 97 method name didn't follow capitalization convention",
+"\tcreatedVrmlNodes = Browser.createVrmlFromURL (inputValue);",
+"}",
+"",
+"function description (inputValue, timeStamp)",
+"{",
+"\tBrowser.print ('description = ' + inputValue);",
+"\tBrowser.setDescription (inputValue);",
+"}",
+"",
+"function replaceWorld (inputValue, timeStamp)",
+"{",
+"\tBrowser.replaceWorld (inputValue);",
+"}",
+"",
+"function addRoute (inputValue, timeStamp)",
+"{",
+"\tif (inputValue)  // Boolean",
+"\t{",
+"\t\tBrowser.addRoute (fromNode, fromEventOut, toNode, toEventIn);",
+"\t}",
+"}",
+"",
+"function deleteRoute (inputValue, timeStamp)",
+"{",
+"\tif (inputValue)  // Boolean",
+"\t{",
+"\t\tBrowser.deleteRoute (fromNode, fromEventOut, toNode, toEventIn);",
+"\t}",
+"}",
+"",
+"function loadURL (inputValue, timeStamp)",
+"{",
+"\tBrowser.print ('loadURL = ' + inputValue);",
+"\tBrowser.print ('loadUrlParameter = ' + loadUrlParameter);",
+"\tBrowser.loadURL (inputValue, loadUrlParameter);",
+"}",
+"function createVrmlFromURL (SFStringValue, timestamp)",
+"{",
+"",
+"}",
+"",
+"function loadUrl (SFStringValue, timestamp)",
+"{",
+"",
+"}",
+"",
+"function loadUrlParameter (SFStringValue, timestamp)",
+"{",
+"",
+"}",
+"",
+"function fromNode (SFNodeValue, timestamp)",
+"{",
+"",
+"}",
+"",
+"function fromEventOut (SFStringValue, timestamp)",
+"{",
+"",
+"}",
+"",
+"function toNode (SFNodeValue, timestamp)",
+"{",
+"",
+"}",
+"",
+"function toEventIn (SFStringValue, timestamp)",
+"{",
+"",
+"}"
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Example invocation"
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Scene",
+              "@DEF":"SceneNode"
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@DEF":"Output3dText",
+                    "@string":["Click text for partial Scene node test"],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@justify":["MIDDLE","MIDDLE"],
+                          "@size":0.5
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0,0.6,0.6]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "TouchSensor":
+            {
+              "@DEF":"ClickTextSensor",
+              "@description":"Click text for partial Scene node test"
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"AssembleBrowserOutputText",
+              "field": [
+                {
+                  "@name":"currentFrameRate",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"currentSpeed",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"name",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"version",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"worldUrl",
+                  "@accessType":"inputOnly",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"evaluatedResult",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tevaluatedResult = new MFString (",
+"\t\t'Click for partial Scene node test:',",
+"\t\t' ', ' ', ' ', ' ', ' ', ' ', ' ');",
+"}",
+"function currentFrameRate (inputValue, timeStamp)",
+"{",
+"\tevaluatedResult [2] = 'currentFrameRate=' + inputValue;",
+"}",
+"function currentSpeed (inputValue, timeStamp)",
+"{",
+"\tevaluatedResult [3] = 'currentSpeed=' + inputValue;",
+"}",
+"function version (inputValue, timeStamp)",
+"{",
+"\tevaluatedResult [4] = 'version=' + inputValue;",
+"}",
+"function name (inputValue, timeStamp)",
+"{",
+"\tevaluatedResult [5] = 'name=' + inputValue;",
+"}",
+"function worldUrl (inputValue, timeStamp)",
+"{",
+"\tevaluatedResult [6] = 'worldUrl=';",
+"\tevaluatedResult [7] = inputValue;",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"ClickTextSensor",
+              "@toField":"evaluate",
+              "@toNode":"SceneNode"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"currentFrameRate",
+              "@fromNode":"SceneNode",
+              "@toField":"currentFrameRate",
+              "@toNode":"AssembleBrowserOutputText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"currentSpeed",
+              "@fromNode":"SceneNode",
+              "@toField":"currentSpeed",
+              "@toNode":"AssembleBrowserOutputText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"version",
+              "@fromNode":"SceneNode",
+              "@toField":"version",
+              "@toNode":"AssembleBrowserOutputText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"name",
+              "@fromNode":"SceneNode",
+              "@toField":"name",
+              "@toNode":"AssembleBrowserOutputText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"worldUrl",
+              "@fromNode":"SceneNode",
+              "@toField":"worldUrl",
+              "@toNode":"AssembleBrowserOutputText"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"evaluatedResult",
+              "@fromNode":"AssembleBrowserOutputText",
+              "@toField":"string",
+              "@toNode":"Output3dText"
+            }
+          }
+        ]
+    }
+  }
+}

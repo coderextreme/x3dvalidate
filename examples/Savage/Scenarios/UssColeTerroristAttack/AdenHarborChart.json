@@ -1,0 +1,121 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AdenHarborChart.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Chart of Aden Harbor, Yemen."
+          },
+          {
+            "@name":"creator",
+            "@content":"James Harney"
+          },
+          {
+            "@name":"created",
+            "@content":"17 October 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Aden"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.foia.navy.mil/usscole/enclosures/enclosure3.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"NIMA chart 62098, 1995 edition"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Scenarios/UssColeTerroristAttack/AdenHarborChart.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE","FLY","ANY"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entire Harbor",
+              "@position":[0,0.1,4]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Close Up of Area of Interest",
+              "@position":[0,0.5,2]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"TODO: Make into IndexedFaceSet"
+                      }
+                    ],
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5,2.9048,0.01]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["NIMA62098.jpg","https://savage.nps.edu/Savage/Scenarios/UssColeTerroristAttack/NIMA62098.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,1047 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"DicassPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"AN/SSQ-62B/C/D/E Directional Command Activated Sonobuoy System (DICASS) Sonobuoy"
+          },
+          {
+            "@name":"coordinateSystem",
+            "@content":"x=East, z=North, y=Up"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, Patrick Burton"
+          },
+          {
+            "@name":"created",
+            "@content":"30 January 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 October 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"DICASS-an-ssq-62.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/weaps/an-ssq-62.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"NAVY TRAINING SYSTEM PLAN FOR THE NAVY CONSOLIDATED SONOBUOYS N88-NTSP-A-50-8910B/A SEPTEMBER 1998"
+          },
+          {
+            "@name":"reference",
+            "@content":"ntsp-Sonobuoy.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ship/weaps/docs/ntsp-Sonobuoy.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.avtechtra.navy.mil/pdf/Sonobuoys_a.PDF"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.ultra-scs.com/sonobuoys/dicass.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.ultra-ussg.com/company/sonobuoy_history.cfm"
+          },
+          {
+            "@name":"subject",
+            "@content":"DICASS sonobuoy"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DicassPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamHemisphere",
+              "@appinfo":"Produce wireframe or transparent beam hemisphere. Typical uses include sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: hemisphere with centroid at (0 0 0) and radius 1 atop x-z plane.",
+              "@url":["../../CommunicationsAndSensors/Beam/BeamHemispherePrototype.x3d#BeamHemisphere","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamHemispherePrototype.x3d#BeamHemisphere","../../CommunicationsAndSensors/Beam/BeamHemispherePrototype.wrl#BeamHemisphere","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamHemispherePrototype.wrl#BeamHemisphere"],
+              "field": [
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"DICASS",
+              "@appinfo":"AN/SSQ-62B/C/D/E Directional Command Activated Sonobuoy System (DICASS) Sonobuoy",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ID",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"identifier label for this buoy",
+                      "@type":"MFString",
+                      "@value":["missingID"]
+                    },
+                    {
+                      "@name":"version",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"default value: AN/SSQ-62B",
+                      "@type":"SFString",
+                      "@value":"AN/SSQ-62B"
+                    },
+                    {
+                      "@name":"initialPositionXZ",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"local surface coordinates X=North Z=East",
+                      "@type":"SFVec2f",
+                      "@value":[0,0]
+                    },
+                    {
+                      "@name":"orderedPositionXZ",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"local surface coordinates X=North Z=East",
+                      "@type":"SFVec2f"
+                    },
+                    {
+                      "@name":"initialDepth",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"meters depth use negative numbers for subsurface",
+                      "@type":"SFFloat",
+                      "@value":-10
+                    },
+                    {
+                      "@name":"orderedDepth",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"meters depth use negative numbers for subsurface",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"bindViewpoint",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"trigger event to bind/unbind viewpoint",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"location_changed",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"local coordinates X=North Y=altitude Z=East",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"maxRange",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"maximum audible sonar detection range meters",
+                      "@type":"SFFloat",
+                      "@value":1000
+                    },
+                    {
+                      "@name":"pingDuration",
+                      "@accessType":"outputOnly",
+                      "@appinfo":"pingDuration corresponds to maxRange at 1500m/sec sound speed",
+                      "@type":"SFTime"
+                    },
+                    {
+                      "@name":"soundSpeed",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"in-water sound speed m/s, default value 1500",
+                      "@documentation":"https://en.wikipedia.org/wiki/Speed_of_sound#Seawater",
+                      "@type":"SFFloat",
+                      "@value":1500
+                    },
+                    {
+                      "@name":"startPing",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"trigger event to start single ping",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"startContinuousPings",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"trigger event to start continuous ping sequence",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"linkText",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Can add linkable text for further information",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"linkUrl",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"url for linkable text",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"linkTargetWindow",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"target window for linkable text",
+                      "@type":"MFString"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"BuoyPosition",
+                              "-children":[
+                                { "Viewpoint":
+                                  {
+                                    "@DEF":"BuoyViewpoint",
+                                    "@description":"DICASS buoy",
+                                    "-children":[
+                                      {
+                                        "#comment":"ViewpointControl initialize() updates description to include ID"
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "LOD":
+                                  {
+                                    "@range":[1000,5000],
+                                    "-children":[
+                                      { "Group":
+                                        {
+                                          "@DEF":"CloseUpView",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@translation":[0,0.25,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "@DEF":"BuoyBody",
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@radius":0.1
+                                                          }
+                                                        },
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@DEF":"Maroon",
+                                                                  "@diffuseColor":[0.5,0,0]
+                                                                }
+                                                              },
+                                                            "-texture":
+                                                              { "ImageTexture":
+                                                                {
+                                                                  "@url":["DICASSphoto.png","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DICASSphoto.png"]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "Group":
+                                              {
+                                                "@DEF":"LinkTextGroup",
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "@translation":[0,-1,0],
+                                                      "-children":[
+                                                        { "Billboard":
+                                                          {
+                                                            "@axisOfRotation":[0,0,0],
+                                                            "-children":[
+                                                              { "Anchor":
+                                                                {
+                                                                  "@DEF":"LinkTextAnchor",
+                                                                  "@description":"click this text for link",
+                                                                  "IS": {
+                                                                      "connect": [
+                                                                        {
+                                                                          "@nodeField":"url",
+                                                                          "@protoField":"linkUrl"
+                                                                        },
+                                                                        {
+                                                                          "@nodeField":"parameter",
+                                                                          "@protoField":"linkTargetWindow"
+                                                                        }
+                                                                      ]
+                                                                  },
+                                                                  "-children":[
+                                                                    { "Shape":
+                                                                      {
+                                                                        "-appearance":
+                                                                          { "Appearance":
+                                                                            {
+                                                                              "-material":
+                                                                                { "Material":
+                                                                                  {
+                                                                                    "@diffuseColor":[0.6,0.6,0.1]
+                                                                                  }
+                                                                                }
+                                                                            }
+                                                                          },
+                                                                        "-geometry":
+                                                                          { "Text":
+                                                                            {
+                                                                              "@DEF":"LinkTextNode",
+                                                                              "IS": {
+                                                                                  "connect": [
+                                                                                    {
+                                                                                      "@nodeField":"string",
+                                                                                      "@protoField":"linkText"
+                                                                                    }
+                                                                                  ]
+                                                                              },
+                                                                              "-fontStyle":
+                                                                                { "FontStyle":
+                                                                                  {
+                                                                                    "@justify":["MIDDLE","BEGIN"],
+                                                                                    "@size":0.3
+                                                                                  }
+                                                                                }
+                                                                            }
+                                                                          }
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Group":
+                                        {
+                                          "@DEF":"DescriptionTextGroup",
+                                          "-children":[
+                                            { "Billboard":
+                                              {
+                                                "@axisOfRotation":[0,0,0],
+                                                "-children":[
+                                                  { "TouchSensor":
+                                                    {
+                                                      "@DEF":"TextTouch",
+                                                      "@description":"click and hold to view sonobuoy data"
+                                                    }
+                                                  },
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@USE":"Maroon"
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Text":
+                                                          {
+                                                            "@DEF":"BuoyID",
+                                                            "IS": {
+                                                                "connect": [
+                                                                  {
+                                                                    "@nodeField":"string",
+                                                                    "@protoField":"ID"
+                                                                  }
+                                                                ]
+                                                            },
+                                                            "-fontStyle":
+                                                              { "FontStyle":
+                                                                {
+                                                                  "@justify":["MIDDLE","BEGIN"]
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "#comment":"make text touchable at a distance, allows closeup viewing of DICASS and label data"
+                                            },
+                                            { "Shape":
+                                              {
+                                                "-appearance":
+                                                  { "Appearance":
+                                                    {
+                                                      "-material":
+                                                        { "Material":
+                                                          {
+                                                            "@DEF":"Invisible",
+                                                            "@transparency":1
+                                                          }
+                                                        }
+                                                    }
+                                                  },
+                                                "-geometry":
+                                                  { "Box":
+                                                    {
+                                                      "@size":[0.1,0.1,0.1]
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "WorldInfo":
+                                        {
+                                          "@info":["null node, no text at long range"]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"TextLabelOffset",
+                                    "@translation":[0,2,0],
+                                    "-children":[
+                                      { "LOD":
+                                        {
+                                          "@range":[50],
+                                          "-children":[
+                                            { "Billboard":
+                                              {
+                                                "@axisOfRotation":[0,0,0],
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                  "@USE":"Maroon"
+                                                                }
+                                                              }
+                                                          }
+                                                        },
+                                                      "-geometry":
+                                                        { "Text":
+                                                          {
+                                                            "@DEF":"BuoyLabel",
+                                                            "-fontStyle":
+                                                              { "FontStyle":
+                                                                {
+                                                                  "@justify":["MIDDLE","MIDDLE"],
+                                                                  "@size":0.3
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            { "WorldInfo":
+                                              {
+                                                "@info":["null node, no text at long range"]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"BeamHemisphere",
+                                    "@DEF":"SonarBeamHemisphere",
+                                    "fieldValue": [
+                                      {
+                                        "@name":"defaultRange",
+                                        "@value":10
+                                      },
+                                      {
+                                        "@name":"transparency",
+                                        "@value":1
+                                      },
+                                      {
+                                        "@name":"wireframe",
+                                        "@value":true
+                                      },
+                                      {
+                                        "@name":"solid",
+                                        "@value":true
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "#comment":"Needed: time-delay prototype gated by distance and speed of sound through medium."
+                                },
+                                { "Sound":
+                                  {
+                                    "@DEF":"PingSound",
+                                    "@maxBack":10000,
+                                    "@maxFront":10000,
+                                    "-source":
+                                      { "AudioClip":
+                                        {
+                                          "@DEF":"PingAudioClip",
+                                          "@description":"representative sonar ping",
+                                          "@url":["sonarPing.wav","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/sonarPing.wav"]
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "#comment":"nonrendering controllers"
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"LocationScript",
+                              "@url":["DicassPrototypeScriptLocation.js","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DicassPrototypeScriptLocation.js"],
+                              "field": [
+                                {
+                                  "@name":"ID",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFString"
+                                },
+                                {
+                                  "@name":"version",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"initialPositionXZ",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFVec2f"
+                                },
+                                {
+                                  "@name":"orderedPositionXZ",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFVec2f"
+                                },
+                                {
+                                  "@name":"initialDepth",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"orderedDepth",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"newLocation",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"newBuoyLabel",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFString"
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"set Script to verbose mode by enabling console trace statements",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"ID",
+                                      "@protoField":"ID"
+                                    },
+                                    {
+                                      "@nodeField":"version",
+                                      "@protoField":"version"
+                                    },
+                                    {
+                                      "@nodeField":"initialPositionXZ",
+                                      "@protoField":"initialPositionXZ"
+                                    },
+                                    {
+                                      "@nodeField":"orderedPositionXZ",
+                                      "@protoField":"orderedPositionXZ"
+                                    },
+                                    {
+                                      "@nodeField":"initialDepth",
+                                      "@protoField":"initialDepth"
+                                    },
+                                    {
+                                      "@nodeField":"orderedDepth",
+                                      "@protoField":"orderedDepth"
+                                    },
+                                    {
+                                      "@nodeField":"newLocation",
+                                      "@protoField":"location_changed"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"newLocation",
+                              "@fromNode":"LocationScript",
+                              "@toField":"set_translation",
+                              "@toNode":"BuoyPosition"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"newBuoyLabel",
+                              "@fromNode":"LocationScript",
+                              "@toField":"string",
+                              "@toNode":"BuoyLabel"
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"ViewpointControl",
+                              "@directOutput":true,
+                              "@url":["DicassPrototypeScriptViewpointControl.js","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DicassPrototypeScriptViewpointControl.js"],
+                              "field": [
+                                {
+                                  "@name":"ID",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFString"
+                                },
+                                {
+                                  "@name":"LocalViewpoint",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "Viewpoint":
+                                      {
+                                        "@USE":"BuoyViewpoint"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"viewpointDescription",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"bindViewpoint",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"set Script to verbose mode by enabling console trace statements",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"ID",
+                                      "@protoField":"ID"
+                                    },
+                                    {
+                                      "@nodeField":"bindViewpoint",
+                                      "@protoField":"bindViewpoint"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          {
+                            "#comment":"<ROUTE fromField='viewpointDescription' fromNode='ViewpointControl' toField='description' toNode='BuoyViewpoint'/>"
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"isActive",
+                              "@fromNode":"TextTouch",
+                              "@toField":"bindViewpoint",
+                              "@toNode":"ViewpointControl"
+                            }
+                          },
+                          { "Group":
+                            {
+                              "@DEF":"AnimationGroup",
+                              "-children":[
+                                { "TimeSensor":
+                                  {
+                                    "@DEF":"PingClock"
+                                  }
+                                },
+                                { "ScalarInterpolator":
+                                  {
+                                    "@DEF":"RangeInterpolator",
+                                    "@key":[0,0.1,0.6,0.6,1],
+                                    "@keyValue":[0.01,0.01,1000,0,0]
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"fraction_changed",
+                                    "@fromNode":"PingClock",
+                                    "@toField":"set_fraction",
+                                    "@toNode":"RangeInterpolator"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"value_changed",
+                                    "@fromNode":"RangeInterpolator",
+                                    "@toField":"range",
+                                    "@toNode":"SonarBeamHemisphere"
+                                  }
+                                },
+                                {
+                                  "#comment":"maintain opaque until mid range, then go transparent to indicate active detection not feasible"
+                                },
+                                { "ScalarInterpolator":
+                                  {
+                                    "@DEF":"TransparencyInterpolator",
+                                    "@key":[0,0.35,0.5,1],
+                                    "@keyValue":[0.2,0.2,1,0]
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"fraction_changed",
+                                    "@fromNode":"PingClock",
+                                    "@toField":"set_fraction",
+                                    "@toNode":"TransparencyInterpolator"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
+                                    "@fromField":"value_changed",
+                                    "@fromNode":"TransparencyInterpolator",
+                                    "@toField":"transparency",
+                                    "@toNode":"SonarBeamHemisphere"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"PingControl",
+                              "@url":["DicassPrototypeScriptPingControl.js","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DicassPrototypeScriptPingControl.js"],
+                              "field": [
+                                {
+                                  "@name":"ID",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFString"
+                                },
+                                {
+                                  "@name":"maxRange",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"soundSpeed",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"pingDuration",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"pingDuration corresponds to maxRange at 1500m/sec sound speed",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"cycleInterval",
+                                  "@accessType":"outputOnly",
+                                  "@appinfo":"duration between successive pings is twice pingInterval",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"keyValueRangeInterpolator",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFFloat"
+                                },
+                                {
+                                  "@name":"initializeHemisphereRange",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"startPing",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"startContinuousPings",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"startTime",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"loop",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"traceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@appinfo":"set Script to verbose mode by enabling console trace statements",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"ID",
+                                      "@protoField":"ID"
+                                    },
+                                    {
+                                      "@nodeField":"maxRange",
+                                      "@protoField":"maxRange"
+                                    },
+                                    {
+                                      "@nodeField":"soundSpeed",
+                                      "@protoField":"soundSpeed"
+                                    },
+                                    {
+                                      "@nodeField":"pingDuration",
+                                      "@protoField":"pingDuration"
+                                    },
+                                    {
+                                      "@nodeField":"startPing",
+                                      "@protoField":"startPing"
+                                    },
+                                    {
+                                      "@nodeField":"startContinuousPings",
+                                      "@protoField":"startContinuousPings"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"cycleInterval",
+                              "@fromNode":"PingControl",
+                              "@toField":"cycleInterval",
+                              "@toNode":"PingClock"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"keyValueRangeInterpolator",
+                              "@fromNode":"PingControl",
+                              "@toField":"keyValue",
+                              "@toNode":"RangeInterpolator"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"initializeHemisphereRange",
+                              "@fromNode":"PingControl",
+                              "@toField":"range",
+                              "@toNode":"SonarBeamHemisphere"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"loop",
+                              "@fromNode":"PingControl",
+                              "@toField":"loop",
+                              "@toNode":"PingClock"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"startTime",
+                              "@fromNode":"PingControl",
+                              "@toField":"startTime",
+                              "@toNode":"PingClock"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"startTime",
+                              "@fromNode":"PingControl",
+                              "@toField":"startTime",
+                              "@toNode":"PingAudioClip"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"cycleTime",
+                              "@fromNode":"PingClock",
+                              "@toField":"startTime",
+                              "@toNode":"PingAudioClip"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Rendered scene begins here"
+          },
+          { "Background":
+            {
+              "@DEF":"AquaTealBackground",
+              "@groundColor":[0.0,0.25,0.25],
+              "@skyColor":[0,1,1]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@speed":10
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"Dicass Example",
+              "@url":["DicassExample.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DicassExample.x3d","DicassExample.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/Sonobuoys/DicassExample.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["DicassPrototype is a","sonobuoy prototype","","Click text to see","DicassExample"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.9
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,0.5,0.1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

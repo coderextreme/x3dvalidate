@@ -1,0 +1,132 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Figure15.15TwistedBarWithAxes.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Figure 15.15, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.wiley.com/legacy/compbooks/vrml2sbk/ch15/15fig15.htm"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"20 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2010"
+          },
+          {
+            "@name":"description",
+            "@content":"A bar twisted using Y-axis, cross-section rotation at each spine coordinate."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter15-Extrusion/Figure15.15TwistedBarWithAxes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Computational cost of Extrusion compared to IndexedFaceSet: quicker to download, takes time to calculate polygonal faces and normals during initial loading, equally fast at run time."
+          },
+          {
+            "#comment":"Authoring capabilities of Extrusion compared to IndexedFaceSet: can be more complicated to express, but also can provide great detail with much less effort."
+          },
+          {
+            "#comment":"First position and rotate viewpoint into positive-X-Y-Z octant using a Transform"
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,0.758],
+              "@translation":[10,5,10],
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@description":"Twisted bar using extrusion orientations",
+                    "@orientation":[1,0,0,-0.3],
+                    "@position":[0,0,0]
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[1,0.5,0]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@creaseAngle":0.785,
+                    "@crossSection":[-1,1,1,1,1,-1,-1,-1,-1,1],
+                    "@orientation":[0,1,0,0,0,1,0,0.175,0,1,0,0.349,0,1,0,0.524,0,1,0,0.698,0,1,0,0.873,0,1,0,1.047,0,1,0,1.222,0,1,0,1.396],
+                    "@spine":[0,0.0,0,0,0.5,0,0,1.0,0,0,1.5,0,0,2.0,0,0,2.5,0,0,3.0,0,0,3.5,0,0,4.0,0]
+                  }
+                }
+            }
+          },
+          {
+            "#comment":"Adding this Inline reference to another scene superimposes X3D/VRML coordinate system axes."
+          },
+          { "Transform":
+            {
+              "@scale":[5,5,5],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"CoordinateAxes",
+                    "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

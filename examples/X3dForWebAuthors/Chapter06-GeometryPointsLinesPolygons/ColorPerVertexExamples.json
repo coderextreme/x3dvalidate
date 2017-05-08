@@ -1,0 +1,232 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ColorPerVertexExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Geometry Polygons Nodes: Color, Coordinate, ElevationGrid, Extrusion, IndexedFaceSet, IndexedLineSet, PointSet"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"5 September 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 January 2014"
+          },
+          {
+            "@name":"Image",
+            "@content":"ColorPerVertexExamples.png"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright (c) 2005, Daly Realism and Don Brutzman"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter06-GeometryPointsLinesPolygons/ColorPerVertexExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"ColorPerVertex Examples",
+              "@position":[0,0,6]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0.1,0.1,0.1],
+              "@skyColor":[0.1,0.1,0.1]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-0.5,0,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-3,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-children":[
+                            {
+                              "#comment":"Default settings: colorPerVertex='true'"
+                            }
+                          ],
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@colorIndex":[0,1,2,3,0,-1],
+                                "@coordIndex":[0,1,2,3,0,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@DEF":"FourPoints",
+                                      "@point":[0,0,0,1,0,0,1,1,0,0,1,0]
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@DEF":"FourColors",
+                                      "@color":[1,0,0,0,1,0,0,0,1,0.8,0.8,0.8]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-1,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-children":[
+                            {
+                              "#comment":"Note that only 4 points are needed to create a 4-vertex polygon."
+                            }
+                          ],
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@colorIndex":[2],
+                                "@colorPerVertex":false,
+                                "@coordIndex":[0,1,2,3,0,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"FourPoints"
+                                    }
+                                  },
+                                "-color":
+                                  { "ColorRGBA":
+                                    {
+                                      "@DEF":"FourColorsRGBA",
+                                      "@color":[1,0,0,1,0,1,0,1,0,0,1,0.5,0.8,0.8,0.8,0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-children":[
+                            {
+                              "#comment":"Student TODO: try different color indices."
+                            }
+                          ],
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@colorIndex":[0,1,2,3,0,-1],
+                                "@coordIndex":[0,1,2,3,0,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"FourPoints"
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@USE":"FourColors"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[3,0,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-children":[
+                            {
+                              "#comment":"Note that 5 points are needed to create 4 complete line segments."
+                            }
+                          ],
+                          "-geometry":
+                            { "IndexedLineSet":
+                              {
+                                "@colorIndex":[0],
+                                "@colorPerVertex":false,
+                                "@coordIndex":[0,1,2,3,0,-1],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@USE":"FourPoints"
+                                    }
+                                  },
+                                "-color":
+                                  { "Color":
+                                    {
+                                      "@USE":"FourColors"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

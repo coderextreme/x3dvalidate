@@ -1,0 +1,469 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Example14.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"22 November 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D working group"
+          },
+          {
+            "@name":"description",
+            "@content":"VRML 97 specification example: animation of shuttle and pendulum prototype nodes."
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/exampleD_14.wrl"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"VRML 97, ISO/IEC 14772-1, Part 1: Functional specification and UTF-8 encoding, D.14 Shuttles and pendulums"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/documents/specifications/14772/V2.0/part1/examples.html#D.14"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example14.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"Shuttle",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"rate",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"distance",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":1
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"stopTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"F",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"T",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"rate"
+                              },
+                              {
+                                "@nodeField":"startTime",
+                                "@protoField":"startTime"
+                              },
+                              {
+                                "@nodeField":"stopTime",
+                                "@protoField":"stopTime"
+                              },
+                              {
+                                "@nodeField":"loop",
+                                "@protoField":"loop"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"S",
+                        "field": [
+                          {
+                            "@name":"distance",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"position",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"distance",
+                                "@protoField":"distance"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize () {     // constructor:setup interpolator",
+"\tpos1 = new SFVec3f(-distance, 0, 0);",
+"\tpos2 = new SFVec3f(distance, 0, 0);",
+"\tposition = new MFVec3f(pos1, pos2, pos1);",
+"}"
+]
+                      }
+                    },
+                    { "PositionInterpolator":
+                      {
+                        "@DEF":"I",
+                        "@key":[0,0.5,1],
+                        "@keyValue":[-1,0,0,1,0,0,-1,0,0]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"T",
+                        "@toField":"set_fraction",
+                        "@toNode":"I"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"I",
+                        "@toField":"set_translation",
+                        "@toNode":"F"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"position",
+                        "@fromNode":"S",
+                        "@toField":"set_keyValue",
+                        "@toNode":"I"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Pendulum",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"rate",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"maxAngle",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFFloat",
+                      "@value":3.14159
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"stopTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"FF",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"TT",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"rate"
+                              },
+                              {
+                                "@nodeField":"startTime",
+                                "@protoField":"startTime"
+                              },
+                              {
+                                "@nodeField":"stopTime",
+                                "@protoField":"stopTime"
+                              },
+                              {
+                                "@nodeField":"loop",
+                                "@protoField":"loop"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"SS",
+                        "field": [
+                          {
+                            "@name":"maxAngle",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"rotation",
+                            "@accessType":"outputOnly",
+                            "@type":"MFRotation"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"maxAngle",
+                                "@protoField":"maxAngle"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize() {     // constructor: setup interpolator ",
+"\trot1 = new SFRotation(0, 0, 1, 0);",
+"\trot2 = new SFRotation(0, 0, 1, maxAngle/2);",
+"\trot3 = new SFRotation(0, 0, 1, maxAngle);",
+"\trotation = new MFRotation(rot1, rot2, rot3, rot2, rot1);",
+"}"
+]
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"II",
+                        "@key":[0,0.25,0.5,0.75,1],
+                        "@keyValue":[0,0,1,0,0,0,1,1.57,0,0,1,3.14,0,0,1,1.57,0,0,1,0]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"TT",
+                        "@toField":"set_fraction",
+                        "@toNode":"II"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"II",
+                        "@toField":"set_rotation",
+                        "@toNode":"FF"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"rotation",
+                        "@fromNode":"SS",
+                        "@toField":"set_keyValue",
+                        "@toNode":"II"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3,0,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Pendulum",
+                    "fieldValue": [
+                      {
+                        "@name":"rate",
+                        "@value":3
+                      },
+                      {
+                        "@name":"maxAngle",
+                        "@value":6.28
+                      },
+                      {
+                        "@name":"children",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "Cylinder":
+                                  {
+                                    "@height":5
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[0.8,0.1,0]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Shuttle",
+                    "fieldValue": [
+                      {
+                        "@name":"rate",
+                        "@value":2
+                      },
+                      {
+                        "@name":"children",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[0.1,0.8,0]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"PhysicalUnitRepresentationPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototypes to demonstrate functionality for Real-Length Representation nodes."
+          },
+          {
+            "@name":"warning",
+            "@content":"under development"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"22 July 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 November 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"Myeon Won Lee and Sun-Young Cho, \"Real Length Representation for Virtual Objects,\" point paper, University of Suwon, Korea, June 2007."
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D scaling and metadata convenience nodes"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/PhysicalUnitRepresentationPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Initial approach: direct scaling"
+          },
+          { "Transform":
+            {
+              "@DEF":"MyZeptoScale",
+              "@scale":[1.0E-10,1.0E-10,1.0E-10],
+              "-children":[
+                { "Transform":
+                  {
+                    "@scale":[1.0E-11,1.0E-11,1.0E-11],
+                    "-metadata":
+                      { "MetadataString":
+                        {
+                          "@name":"lengthUnit",
+                          "@value":["ZEPTO meters"]
+                        }
+                      },
+                    "-children":[
+                      {
+                        "#comment":"scaled content goes here"
+                      },
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Box":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Second approach: prototype nodes for scaling"
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ZeptoScale",
+              "@appinfo":"ZeptoScale applies a uniform scale factor of 10^-21 to all children",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ],
+                  "-children":[
+                    {
+                      "#comment":"TODO: can add other fields for Transform node here to ensure completeness"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"ZeptoScale",
+                        "@scale":[1.0E-10,1.0E-10,1.0E-10],
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@scale":[1.0E-11,1.0E-11,1.0E-11],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"children",
+                                      "@protoField":"children"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"Example use of prototype: the following should be very very small..."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ZeptoScale",
+              "fieldValue": [
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-geometry":
+                          { "Sphere":
+                            {
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "Background":
+            {
+              "@groundColor":[0.25,0.25,0.25],
+              "@skyColor":[0.25,0.25,0.25]
+            }
+          }
+        ]
+    }
+  }
+}

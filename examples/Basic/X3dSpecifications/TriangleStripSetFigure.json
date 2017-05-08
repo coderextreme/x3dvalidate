@@ -1,0 +1,203 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "-children":[
+          {
+            "#comment":"NURBS component or Full profile needed to use CoordinateDouble node"
+          },
+          {
+            "#comment":"Geometry2D component or Full profile needed to use TriangleSet2D node"
+          }
+        ],
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":1
+          },
+          {
+            "@name":"Geometry2D",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TriangleStripSetFigure.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"X3D specification example for TriangleStripSet."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"17 November 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 December 2015"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"X3D Abstract Specification, Part 1: Architecture and base components, Topic 11.4.14 TriangleStripSet"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#TriangleStripSet"
+          },
+          {
+            "@name":"TODO",
+            "@content":"confirm indices in specification diagram"
+          },
+          {
+            "@name":"Image",
+            "@content":"TriangleStripSet.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentPrototypes.x3d"
+          },
+          {
+            "@name":"info",
+            "@content":"X3dToVrml97.xslt translation stylesheet automatically invokes backwards-compatibility prototypes upon encountering any new Rendering nodes."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/stylesheets/X3dToVrml97.xslt"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/TriangleStripSetFigure.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"IndexedTriangleStripSet, TriangleStripSet example",
+              "@position":[-1,0,16]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[1,1,1],
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,4,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"IndexedTriangleStripSet"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedTriangleStripSet":
+                        {
+                          "@index":[0,1,2,3,4,5,6,7,8,9,10,11,12,-1],
+                          "@solid":false,
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[-4.0,-1.0,-0.5,-4.5,-2.0,-0.5,-3.0,-0.5,0,-2.5,-1.5,-0.5,-2.0,-0.5,-1,-1.5,-1.5,-0.5,-0.5,0.5,-0.5,0,0,0,1,0.5,-0.5,1.5,-2.0,-1,2.5,-2.0,-0.5,2.5,-2.5,-0.5,3.5,-2.0,-1.0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0.3,0.7]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2,0],
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"TriangleStripSet"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "TriangleStripSet":
+                        {
+                          "@solid":false,
+                          "@stripCount":[13],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[-4.0,-1.0,-0.5,-4.5,-2.0,-0.5,-3.0,-0.5,0,-2.5,-1.5,-0.5,-2.0,-0.5,-1,-1.5,-1.5,-0.5,-0.5,0.5,-0.5,0,0,0,1,0.5,-0.5,1.5,-2.0,-1,2.5,-2.0,-0.5,2.5,-2.5,-0.5,3.5,-2.0,-1.0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"GreyAppearance",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,0.5,0.5]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

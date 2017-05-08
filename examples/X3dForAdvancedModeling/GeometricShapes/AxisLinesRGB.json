@@ -1,0 +1,111 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AxisLinesRGB.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"AxisLinesRGB shows 3 red-green-blue (RBB) perpendicular lines suitable as X-Y-Z axes."
+          },
+          {
+            "@name":"created",
+            "@content":"30 December 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 July 2016"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#CoordinateSystems"
+          },
+          {
+            "@name":"info",
+            "@content":"Development of this scene added new features to X3D-Edit"
+          },
+          {
+            "@name":"Image",
+            "@content":"AxisLinesRGB.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"AxisLinesRgbInterface.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/AxisLinesRGB.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Axis Lines RGB XYZ",
+              "@position":[0,0,4]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "IndexedLineSet":
+                  {
+                    "@colorIndex":[0,1,2],
+                    "@colorPerVertex":false,
+                    "@coordIndex":[0,1,-1,0,2,-1,0,3,-1],
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[0,0,0,1,0,0,0,1,0,0,0,1]
+                        }
+                      },
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[1,0,0,0,0.6,0,0,0,1]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

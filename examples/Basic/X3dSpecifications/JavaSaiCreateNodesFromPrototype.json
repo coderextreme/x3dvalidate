@@ -1,0 +1,148 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"JavaSaiCreateNodesFromPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Java Scene Authoring Interface (JSAI) scene and source code example that show creation of nodes from a prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"X3D Working Group"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xeena VRML importer"
+          },
+          {
+            "@name":"imported",
+            "@content":"23 February 2005"
+          },
+          {
+            "@name":"created",
+            "@content":"23 February 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"SAIExample5.java"
+          },
+          {
+            "@name":"TODO",
+            "@content":"build, compile, test"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/files/specifications/19777-2/V3.0/Part2/X3D_Java.html"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"X3D language bindings, ISO/IEC 19777-2, Part 2: Java, D.6 Create nodes from a prototype"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/files/specifications/19777-2/V3.0/Part2/examples.html#CreateNodesFromAPrototype"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3D.org/TaskGroups/x3d/translation/README.X3D-Edit.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/JavaSaiCreateNodesFromPrototype.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"ColoredSphere",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"color",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0.0,0.0,0.0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"diffuseColor",
+                                            "@protoField":"color"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                        "-geometry":
+                          { "Sphere":
+                            {
+                            }
+                          }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"SC",
+              "@url":["SAIExample5.class","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/SAIExample5.class"]
+            }
+          }
+        ]
+    }
+  }
+}

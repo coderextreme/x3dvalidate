@@ -1,0 +1,736 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"WingMain.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"The main wing of a Blue Angel. Wings are Mid-mounted, semidelta with prominent leading edge root extension on sides of fuselage from the front of the cockpit. The U.S. Navy insignias are attached."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"created",
+            "@content":"23 August 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 February 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F18-BlueAngel-UnitedStates/WingMain.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"Main wing"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"MainWings",
+              "@scale":[0.16,0.16,0.16],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.1,0.25,0.5],
+                                "@specularColor":[0,0.2,0.3]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@DEF":"Wing",
+                          "@ccw":false,
+                          "@creaseAngle":3.14,
+                          "@crossSection":[0.00,1.00,-5.2,0.00,4,-0.5,4.6,-0.4,4.8,-0.2,4.9,0.1,4.9,0.3,4.5,0.6,4,0.8,3,1,1,1.1,0.00,1.00],
+                          "@orientation":[0,0,1,0.6,0,0,1,0,0,0,1,-0.6],
+                          "@scale":[0.6,0.6,2.2,2.2,0.6,0.6],
+                          "@spine":[-19.5,0.1,23.4,-6.5,0.6,0,-19.5,0.1,-23.4]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.5,0.5,0.5]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"WingEdges",
+              "@scale":[0.16,0.16,0.16],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"MainWEdge",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.8,0],
+                                "@specularColor":[1,0.8,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@DEF":"WingEdge",
+                          "@ccw":false,
+                          "@creaseAngle":3.14,
+                          "@crossSection":[0.00,1.00,-5.2,0.00,4,-0.5,4.6,-0.4,4.8,-0.2,4.9,0.1,4.9,0.3,4.5,0.6,4,0.8,3,1,1,1.1,0.00,1.00],
+                          "@orientation":[0,0,1,0.6,0,0,1,0,0,0,1,-0.6],
+                          "@scale":[0.58,0.58,0.5,0.5,0.58,0.58],
+                          "@spine":[-19.8,0.095,24,-6.5,0.6,0,-19.8,0.095,-24]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3.6,0,3.9],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"MainWEdge"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@convex":false,
+                          "@creaseAngle":1.57,
+                          "@crossSection":[0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0],
+                          "@scale":[0.2,0.2,0.5,0.5,0.6,0.6,0.5,0.5,0.2,0.2],
+                          "@spine":[0.0,0.0,0.0,0.2,0.0,0.0,0.7,0.0,0.0,1.2,0.0,0.0,1.4,0.0,0.0]
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.5,0,-0.09],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"MainWEdge"
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.5,0.01,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3.6,0,-3.9],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"MainWEdge"
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@convex":false,
+                          "@creaseAngle":1.57,
+                          "@crossSection":[0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0],
+                          "@scale":[0.2,0.2,0.5,0.5,0.6,0.6,0.5,0.5,0.2,0.2],
+                          "@spine":[0.0,0.0,0.0,0.2,0.0,0.0,0.7,0.0,0.0,1.2,0.0,0.0,1.4,0.0,0.0]
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.5,0,0.09],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"MainWEdge"
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.5,0.01,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"U.S. NAVY title attached to the bottom of wing."
+          },
+          { "Transform":
+            {
+              "@rotation":[-0.82,-0,0.57,3.14],
+              "@scale":[0.5,0.7,0.5],
+              "@translation":[-5.8,-0.32,3],
+              "-children":[
+                {
+                  "#comment":"rotation X = -180, Y = -70, Z = 0"
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.58,-0.58,0.58,2.09],
+                    "@scale":[0.4,0.4,0.4],
+                    "@translation":[0.5,-0.43,-5],
+                    "-children":[
+                      {
+                        "#comment":"U.S.NAVY title attached bottom part of the Main Wing."
+                      },
+                      { "Group":
+                        {
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[2,0,0],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2,2.3,2],
+                                      "@translation":[-2,-0.8,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["U."],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@DEF":"USNavy_font",
+                                                        "@family":["SANS"],
+                                                        "@size":1.5
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@DEF":"USNavy",
+                                                  "-material":
+                                                    { "Material":
+                                                      {
+                                                        "@diffuseColor":[1,0.8,0],
+                                                        "@specularColor":[1,0.8,0]
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2,2.5,2],
+                                      "@translation":[-2,-3,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["S."],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2.3,3,2.3],
+                                      "@translation":[-2,-5.5,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["N"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2.5,3.5,2.5],
+                                      "@translation":[-2,-7.5,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["A"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2.8,3.65,2.8],
+                                      "@translation":[-2,-8.9,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["V"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[3,3.85,3],
+                                      "@translation":[-2,-11.2,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["Y"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[-0.57,-0,0.82,3.14],
+              "@scale":[0.5,0.7,0.5],
+              "@translation":[-4.6,-0.33,0.2],
+              "-children":[
+                {
+                  "#comment":"rotation X = -180, Y = -70, Z = 0"
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.58,-0.58,0.58,2.09],
+                    "@scale":[0.4,0.4,0.4],
+                    "@translation":[0.5,-0.43,-5],
+                    "-children":[
+                      {
+                        "#comment":"U.S.NAVY text bottom of left wing."
+                      },
+                      { "Group":
+                        {
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[2,0,0],
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[3,3.85,3],
+                                      "@translation":[-2,-0.8,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["U."],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2.8,3.65,2.8],
+                                      "@translation":[-2,-4,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["S."],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2.5,3.4,2.5],
+                                      "@translation":[-2,-6.9,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["N"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2.3,3,2.3],
+                                      "@translation":[-2,-9.1,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["A"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2,2.5,2],
+                                      "@translation":[-2,-10.5,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["V"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[-0.71,0.71,-0,3.14],
+                                      "@scale":[2,2.3,2],
+                                      "@translation":[-2,-12.3,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["Y"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"USNavy_font"
+                                                      }
+                                                    }
+                                                }
+                                              },
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"USNavy"
+                                                }
+                                              }
+                                          }
+                                        },
+                                        {
+                                          "#comment":"Rotation (Y=180, Z=-90)"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

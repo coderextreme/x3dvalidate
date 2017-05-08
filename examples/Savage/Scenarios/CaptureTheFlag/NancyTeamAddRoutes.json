@@ -1,0 +1,1155 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NancyTeamAddRoutes.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Thomas E. Miller"
+          },
+          {
+            "@name":"created",
+            "@content":"7 December 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Human team aggregation for Capture the Flag."
+          },
+          {
+            "@name":"warning",
+            "@content":"Incomplete translation, work in progress"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/NancyTeamAddRoutes.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "EspduTransform":
+                  {
+                    "@DEF":"NancyTeamAddRoutes_EspduTransform",
+                    "@address":"224.2.181.145",
+                    "@entityID":40,
+                    "@marking":"\"NancyTeam 40\"",
+                    "@port":62040,
+                    "@readInterval":0.25,
+                    "@translation":[-10,-200,2240],
+                    "-children":[
+                      {
+                        "#comment":"traceColor='0 0 1' traceJava='false' traceOffset='0 3 0' traceSize='1 1 1'"
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"NancyTeam 40 *** Trail",
+                          "@orientation":[0,1,0,-1.571],
+                          "@position":[-10,0.2,0]
+                        }
+                      },
+                      { "LOD":
+                        {
+                          "@range":[30],
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Viewpoint":
+                                    {
+                                      "@description":"Blue 40 Front",
+                                      "@orientation":[0,1,0,1.571],
+                                      "@position":[20,0,0]
+                                    }
+                                  },
+                                  { "Viewpoint":
+                                    {
+                                      "@description":"Blue 40 Right Side View",
+                                      "@position":[0,0,15]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "WorldInfo":
+                              {
+                                "@info":["null node for LOD to switch out the Viewpoint when distant"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Switch":
+                        {
+                          "@DEF":"NancyTeamSwap",
+                          "@whichChoice":0,
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,1,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"BLUE",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0,0,1]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[2,0.25,0.25]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"BLUE"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.25,2,0.25]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@USE":"BLUE"
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Box":
+                                          {
+                                            "@size":[0.25,0.25,2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@rotation":[0,0,-1,1.571],
+                                      "@translation":[1,0,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"BLUE"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cone":
+                                                {
+                                                  "@bottomRadius":0.375,
+                                                  "@height":1
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"LeaderTransform",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"Leader",
+                                            "@url":["Leader.x3d","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Leader.x3d","Leader.wrl","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Leader.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Rifle1Transform",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"Rifle1",
+                                            "@url":["Rifle1.x3d","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Rifle1.x3d","Rifle1.wrl","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Rifle1.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"Rifle2Transform",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"Rifle2",
+                                            "@url":["Rifle2.x3d","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Rifle2.x3d","Rifle2.wrl","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Rifle2.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"AutogunTransform",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"Autogun",
+                                            "@url":["Autogun.x3d","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Autogun.x3d","Autogun.wrl","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Autogun.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"GrenadierTransform",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"Grenadier",
+                                            "@url":["Grenadier.x3d","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Grenadier.x3d","Grenadier.wrl","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Grenadier.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@DEF":"HueyTransform",
+                                      "-children":[
+                                        { "Inline":
+                                          {
+                                            "@DEF":"Huey",
+                                            "@url":["Huey.x3d","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Huey.x3d","Huey.wrl","https://savage.nps.edu/Savage/Scenarios/CaptureTheFlag/Huey.wrl"]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"NancyTeamVisible",
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"set_Visible",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"Visible_changed",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFInt32"
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"function set_Visible ( Visible, timeStamp )",
+"{",
+"\tBrowser.print ('Visible = ' + Visible);",
+"\tif ( Visible == -1 )",
+"\t\tVisible_changed = -1;",
+"\telse\tVisible_changed = 0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"MountLeader",
+                                      "@directOutput":true,
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"mountedState",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"translation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"zeroTranslation",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"routeLoaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"routeUnloaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"thisNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountLeader"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"fromNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "EspduTransform":
+                                              {
+                                                "@USE":"NancyTeamAddRoutes_EspduTransform"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"toNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@USE":"LeaderTransform"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"",
+"function mountedState (mState, timeStamp)",
+"{",
+"\t// 0=unmounted, 1=mounted",
+"\tif (mState == 0)",
+"\t{",
+"\t\tif (!routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute (fromNode, 'translation_changed', thisNode, 'translation');",
+"\t\t\tBrowser.deleteRoute (thisNode, 'zeroTranslation',     toNode, 'set_translation');",
+"\t\t\trouteUnloaded = true;",
+"\t\t\tBrowser.print ('Just deleted Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t\tif (!routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', toNode, 'set_translation');",
+"\t\t\trouteLoaded = true;",
+"\t\t\tBrowser.print ('Just added Espdu Translation Routes. routeLoaded =' + routeLoaded);",
+"\t\t}",
+"\t}",
+"\telse",
+"\t{",
+"\t\tif (routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute (fromNode, 'translation_changed', toNode, 'set_translation');",
+"\t\t\trouteLoaded = false;",
+"\t\t\tBrowser.print ('Just deleted Espdu Translation Routes. routeLoaded = ' + routeLoaded);",
+"\t\t}",
+"\t\tif (routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute (fromNode, 'translation_changed', thisNode, 'translation');",
+"\t\t\tBrowser.addRoute (thisNode, 'zeroTranslation', toNode, 'set_translation');",
+"\t\t\trouteUnloaded = false;",
+"\t\t\tBrowser.print ('Just added Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t}",
+"}",
+"",
+"function translation (trans, timeStamp)",
+"{",
+"\t zeroTranslation.x = 0.0;",
+"\t zeroTranslation.y = 0.0;",
+"\t zeroTranslation.z = 0.0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"MountRifle1",
+                                      "@directOutput":true,
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"mountedState",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"translation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"zeroTranslation",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"routeLoaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"routeUnloaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"thisNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountRifle1"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"fromNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "EspduTransform":
+                                              {
+                                                "@USE":"NancyTeamAddRoutes_EspduTransform"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"toNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountRifle1"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"",
+"function mountedState ( mState, timeStamp )",
+"{",
+"\t// 0=unmounted, 1=mounted",
+"\tif (mState == 0)",
+"\t{",
+"\t\tif (!routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.deleteRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = true;",
+"\t\t\tBrowser.print ('Just deleted Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t\tif (!routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = true;",
+"\t\t\tBrowser.print ('Just added Espdu Translation Routes. routeLoaded =' + routeLoaded);",
+"\t\t}",
+"\t}",
+"\telse",
+"\t{",
+"\t\tif (routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = false;",
+"\t\t\tBrowser.print ('Just deleted Espdu Translation Routes. routeLoaded = ' + routeLoaded);",
+"\t\t}",
+"\t\tif (routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.addRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = false;",
+"\t\t\tBrowser.print ('Just added Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t}",
+"}",
+"function translation (trans, timeStamp)",
+"{",
+"\tzeroTranslation.x = 0.0;",
+"\tzeroTranslation.y = 0.0;",
+"\tzeroTranslation.z = 0.0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"MountRifle2",
+                                      "@directOutput":true,
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"mountedState",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"translation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"zeroTranslation",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"routeLoaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"routeUnloaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"thisNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountRifle2"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"fromNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "EspduTransform":
+                                              {
+                                                "@USE":"NancyTeamAddRoutes_EspduTransform"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"toNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@USE":"Rifle2Transform"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"",
+"function mountedState ( mState, timeStamp )",
+"{",
+"\t// 0=unmounted, 1=mounted",
+"\tif (mState == 0)",
+"\t{",
+"\t\tif (!routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.deleteRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = true;",
+"\t\t\tBrowser.print ('Just deleted Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t\tif (!routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = true;",
+"\t\t\tBrowser.print ('Just added Espdu Translation Routes. routeLoaded =' + routeLoaded);",
+"\t\t}",
+"\t}",
+"\telse",
+"\t{",
+"\t\tif (routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = false;",
+"\t\t\tBrowser.print ('Just deleted Espdu Translation Routes. routeLoaded = ' + routeLoaded);",
+"\t\t}",
+"\t\tif (routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.addRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = false;",
+"\t\t\tBrowser.print ('Just added Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t}",
+"}",
+"function translation (trans, timeStamp)",
+"{",
+"\tzeroTranslation.x = 0.0;",
+"\tzeroTranslation.y = 0.0;",
+"\tzeroTranslation.z = 0.0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"MountAutogun",
+                                      "@directOutput":true,
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"mountedState",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"translation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"zeroTranslation",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"routeLoaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"routeUnloaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"thisNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountAutogun"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"fromNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "EspduTransform":
+                                              {
+                                                "@USE":"NancyTeamAddRoutes_EspduTransform"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"toNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@USE":"AutogunTransform"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"",
+"function mountedState ( mState, timeStamp )",
+"{",
+"\t// 0=unmounted, 1=mounted",
+"\tif (mState == 0)",
+"\t{",
+"\t\tif (!routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.deleteRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = true;",
+"\t\t\tBrowser.print ('Just deleted Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t\tif (!routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = true;",
+"\t\t\tBrowser.print ('Just added Espdu Translation Routes. routeLoaded =' + routeLoaded);",
+"\t\t}",
+"\t}",
+"\telse",
+"\t{",
+"\t\tif (routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = false;",
+"\t\t\tBrowser.print ('Just deleted Espdu Translation Routes. routeLoaded = ' + routeLoaded);",
+"\t\t}",
+"\t\tif (routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.addRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = false;",
+"\t\t\tBrowser.print ('Just added Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t}",
+"}",
+"function translation (trans, timeStamp)",
+"{",
+"\tzeroTranslation.x = 0.0;",
+"\tzeroTranslation.y = 0.0;",
+"\tzeroTranslation.z = 0.0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"MountGrenadier",
+                                      "@directOutput":true,
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"mountedState",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"translation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"zeroTranslation",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"routeLoaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"routeUnloaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"thisNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountGrenadier"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"fromNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "EspduTransform":
+                                              {
+                                                "@USE":"NancyTeamAddRoutes_EspduTransform"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"toNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@USE":"GrenadierTransform"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"",
+"function mountedState ( mState, timeStamp )",
+"{",
+"\t// 0=unmounted, 1=mounted",
+"\tif (mState == 0)",
+"\t{",
+"\t\tif (!routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.deleteRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = true;",
+"\t\t\tBrowser.print ('Just deleted Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t\tif (!routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = true;",
+"\t\t\tBrowser.print ('Just added Espdu Translation Routes. routeLoaded =' + routeLoaded);",
+"\t\t}",
+"\t}",
+"\telse",
+"\t{",
+"\t\tif (routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = false;",
+"\t\t\tBrowser.print ('Just deleted Espdu Translation Routes. routeLoaded = ' + routeLoaded);",
+"\t\t}",
+"\t\tif (routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.addRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = false;",
+"\t\t\tBrowser.print ('Just added Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t}",
+"}",
+"function translation (trans, timeStamp)",
+"{",
+"\tzeroTranslation.x = 0.0;",
+"\tzeroTranslation.y = 0.0;",
+"\tzeroTranslation.z = 0.0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "Script":
+                                    {
+                                      "@DEF":"MountHuey",
+                                      "@directOutput":true,
+                                      "@mustEvaluate":true,
+                                      "field": [
+                                        {
+                                          "@name":"mountedState",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFFloat"
+                                        },
+                                        {
+                                          "@name":"translation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"zeroTranslation",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"routeLoaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"routeUnloaded",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFBool",
+                                          "@value":true
+                                        },
+                                        {
+                                          "@name":"thisNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Script":
+                                              {
+                                                "@USE":"MountHuey"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"fromNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "EspduTransform":
+                                              {
+                                                "@USE":"NancyTeamAddRoutes_EspduTransform"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"toNode",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "Transform":
+                                              {
+                                                "@USE":"HueyTransform"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"ecmascript:",
+"",
+"function mountedState ( mState, timeStamp )",
+"{",
+"\t// 0=unmounted, 1=mounted",
+"\tif (mState == 0)",
+"\t{",
+"\t\tif (!routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.deleteRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = true;",
+"\t\t\tBrowser.print ('Just deleted Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t\tif (!routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = true;",
+"\t\t\tBrowser.print ('Just added Espdu Translation Routes. routeLoaded =' + routeLoaded);",
+"\t\t}",
+"\t}",
+"\telse",
+"\t{",
+"\t\tif (routeLoaded)",
+"\t\t{",
+"\t\t\tBrowser.deleteRoute ( fromNode, 'translation_changed', toNode, 'set_translation' );",
+"\t\t\trouteLoaded = false;",
+"\t\t\tBrowser.print ('Just deleted Espdu Translation Routes. routeLoaded = ' + routeLoaded);",
+"\t\t}",
+"\t\tif (routeUnloaded)",
+"\t\t{",
+"\t\t\tBrowser.addRoute ( fromNode, 'translation_changed', thisNode, 'translation' );",
+"\t\t\tBrowser.addRoute ( thisNode, 'zeroTranslation', toNode, 'set_translation' );",
+"\t\t\trouteUnloaded = false;",
+"\t\t\tBrowser.print ('Just added Local Translation Routes. routeUnloaded = ' + routeUnloaded);",
+"\t\t}",
+"\t}",
+"}",
+"function translation (trans, timeStamp)",
+"{",
+"\tzeroTranslation.x = 0.0;",
+"\tzeroTranslation.y = 0.0;",
+"\tzeroTranslation.z = 0.0;",
+"}"
+]
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue0",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"set_Visible",
+                                      "@toNode":"NancyTeamVisible"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"Visible_changed",
+                                      "@fromNode":"NancyTeamVisible",
+                                      "@toField":"set_whichChoice",
+                                      "@toNode":"NancyTeamSwap"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue1",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"mountedState",
+                                      "@toNode":"MountLeader"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"translation_changed",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"translation",
+                                      "@toNode":"LeaderTransform"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue2",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"mountedState",
+                                      "@toNode":"MountRifle1"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"translation_changed",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"translation",
+                                      "@toNode":"Rifle1Transform"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue3",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"mountedState",
+                                      "@toNode":"MountRifle2"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"translation_changed",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"translation",
+                                      "@toNode":"Rifle2Transform"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue4",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"mountedState",
+                                      "@toNode":"MountAutogun"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"translation_changed",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"translation",
+                                      "@toNode":"AutogunTransform"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue5",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"mountedState",
+                                      "@toNode":"MountGrenadier"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"translation_changed",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"translation",
+                                      "@toNode":"GrenadierTransform"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"articulationParameterValue6",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"mountedState",
+                                      "@toNode":"MountHuey"
+                                    }
+                                  },
+                                  { "ROUTE":
+                                    {
+                                      "@fromField":"translation_changed",
+                                      "@fromNode":"NancyTeamAddRoutes_EspduTransform",
+                                      "@toField":"translation",
+                                      "@toNode":"HueyTransform"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,409 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SolarSystem.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Perry"
+          },
+          {
+            "@name":"created",
+            "@content":"8 August 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Nine Planet Solar system"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Space/SolarSystem/SolarSystem.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Sun",
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@DEF":"SUN",
+                          "@radius":1.3
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["sun.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/sun.jpg"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[3.0,0.4,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Mercury",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.1
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["mercury.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/mercury.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[4.2,0.2,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Venus",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.18
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.2,0.9]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[6,-0.1,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Earth",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.19
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["earth-topo-small.gif","https://savage.nps.edu/Savage/Space/SolarSystem/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[5.8,-0.3,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"moon",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.01
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["mercury.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/mercury.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[7.0,0.3,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Mars",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.16
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["mars.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/mars.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[8.0,0.3,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Jupiter",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.17
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["jupiter.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/jupiter.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[8.8,0.24,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Saturn",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.13
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["saturn.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/saturn.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.585],
+                    "@translation":[8.8,0.24,1.0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"rings",
+                          "-geometry":
+                            { "Cone":
+                              {
+                                "@bottomRadius":0.35,
+                                "@height":0.01
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["mars.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/mars.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[9.9,0.24,0.89],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Neptune",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.1
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["neptune.jpg","https://savage.nps.edu/Savage/Space/SolarSystem/neptune.jpg"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[10.4,0.24,0.89],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Pluto",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.03
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[9.3,0.0,0.79],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Uranus",
+                          "-geometry":
+                            { "Sphere":
+                              {
+                                "@radius":0.07
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.8,1.0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

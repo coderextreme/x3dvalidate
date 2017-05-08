@@ -1,0 +1,118 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Fog5.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Fog example: linear fog with a background - do not do this!"
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau, John L. Moreland, Michael M. Heck"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/fog5.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0331.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Fog5.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Fog":
+            {
+              "@visibilityRange":30.0
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/mountns.png"],
+              "@frontUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/mountns.png"],
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0.1,0.1,0.0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@leftUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/mountns.png"],
+              "@rightUrl":["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/mountns.png"],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0.0,0.2,0.7,0.0,0.5,1.0,1.0,1.0,1.0]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["FogWorld.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/FogWorld.x3d","FogWorld.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/FogWorld.wrl"]
+            }
+          }
+        ]
+    }
+  }
+}

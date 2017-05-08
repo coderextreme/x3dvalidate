@@ -1,0 +1,100 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExampleExternProto-1.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"26 June 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Show example ExternProto syntax for a nonexistent prototype with simple-type fields."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/ExampleExternProto-1.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"MyExternProtoName",
+              "@appinfo":"Show example ExternProto syntax for a nonexistent prototype with simple-type fields",
+              "@url":["ExampleExternProto-1.x3d#MyExternProtoName","http://www.web3d.org/x3d/content/examples/Basic/development/ExampleExternProto-1.x3d#MyExternProtoName","ExampleExternProto-1.wrl#MyExternProtoName","http://www.web3d.org/x3d/content/examples/Basic/development/ExampleExternProto-1.wrl#MyExternProtoName"],
+              "field": [
+                {
+                  "@name":"field1",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"field2",
+                  "@accessType":"outputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"field3",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"field4",
+                  "@accessType":"inputOutput",
+                  "@type":"SFString"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"MyExternProtoName",
+              "fieldValue": [
+                {
+                  "@name":"field3",
+                  "@value":3
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

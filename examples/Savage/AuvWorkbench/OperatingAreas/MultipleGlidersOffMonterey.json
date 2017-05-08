@@ -1,0 +1,179 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"DIS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MultipleGlidersOffMonterey.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Four Gliders operating in Monterey Bay, CA"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey D. Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"15 February 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Sea Diver UUV, AUV, AUV Workbench"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/MultipleGlidersOffMonterey.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"BathymetryAndTerrain",
+              "-children":[
+                { "Inline":
+                  {
+                    "@url":["MontereyBayOpArea.x3d","https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/MontereyBayOpArea.x3d","MontereyBayOpArea.wrl","https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/MontereyBayOpArea.wrl"]
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,1000,0]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"Vehicles",
+              "-children":[
+                { "EspduTransform":
+                  {
+                    "@address":"239.255.5.8",
+                    "@marking":"SeaDiver-1",
+                    "@networkMode":"networkReader",
+                    "@readInterval":0.25,
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"SeaDiver",
+                          "@url":["../../../Savage/Robots/UnmannedUnderwaterVehicles/SeaDiver.x3d","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/SeaDiver.x3d","../../../Savage/Robots/UnmannedUnderwaterVehicles/SeaDiver.wrl","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/SeaDiver.wrl"]
+                        }
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Sea Diver 1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "EspduTransform":
+                  {
+                    "@address":"239.255.5.8",
+                    "@entityID":1,
+                    "@marking":"SeaDiver-2",
+                    "@networkMode":"networkReader",
+                    "@readInterval":0.25,
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"SeaDiver"
+                        }
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Sea Diver 2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "EspduTransform":
+                  {
+                    "@address":"239.255.5.8",
+                    "@entityID":2,
+                    "@marking":"SeaDiver-3",
+                    "@networkMode":"networkReader",
+                    "@readInterval":0.25,
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"SeaDiver"
+                        }
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Sea Diver 3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "EspduTransform":
+                  {
+                    "@address":"239.255.5.8",
+                    "@applicationID":3,
+                    "@entityID":3,
+                    "@marking":"SeaDiver-4",
+                    "@networkMode":"networkReader",
+                    "@readInterval":0.25,
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@USE":"SeaDiver"
+                        }
+                      },
+                      { "Viewpoint":
+                        {
+                          "@description":"Sea Diver 4"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

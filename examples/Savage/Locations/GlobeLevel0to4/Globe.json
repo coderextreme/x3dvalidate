@@ -1,0 +1,128 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Globe.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Quadtree globe of LOD level 0 to 4, generated with Rez"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo"
+          },
+          {
+            "@name":"created",
+            "@content":"20 May 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"7 March 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://www.rez3d.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/GlobeLevel0to4/Globe.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "PointLight":
+                  {
+                    "@location":[10000000000,0,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[-10000000000,0,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,10000000000,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,-10000000000,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,0,10000000000],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,0,-10000000000],
+                    "@radius":100000000000000
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"Default Viewpoint",
+                    "@orientation":[-1,0,0,1.57],
+                    "@position":[-0.041663984490980965,-0.04166130228196607,2.9970000893175602E7],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[0.0,0.0,-6378137.0],
+                          "@geoSystem":["GD"]
+                        }
+                      }
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["./tiles/0/world0-0.x3d","https://savage.nps.edu/Savage/Locations/GlobeLevel0to4/tiles/0/world0-0.x3d","./tiles/0/world0-0.wrl","https://savage.nps.edu/Savage/Locations/GlobeLevel0to4/tiles/0/world0-0.wrl"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

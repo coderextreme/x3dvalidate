@@ -1,0 +1,606 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AriesInOpenWater.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Contains 3 DIS-enabled Aries AUVs in an open-ocean environment. Notional bottom represented as an elevation grid corresponding to the fixed model in the AUV Dynamics module in the AUV Workbench. 4 mission tracks correspond to openWaterMission1, 2, 3, and 4 included with the workbench distribution."
+          },
+          {
+            "@name":"creator",
+            "@content":"Duane Davis, Naval Postgraduate School (included Aries model authored by Jeff Weekley), Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"18 April 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 June 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"AuvInBeachTanks.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"aries auv dis"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesInOpenWater.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"AriesEspdu",
+              "@appinfo":"Aries unmanned underwater vehicle with IEEE DIS EspduTransform wrapper bundled together in a single prototype",
+              "@url":["AriesEspduPrototype.x3d#AriesEspdu","../../Robots/UnmannedUnderwaterVehicles/AriesEspduPrototype.x3d#AriesEspdu","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesEspduPrototype.x3d#AriesEspdu","AriesEspduPrototype.wrl#AriesEspdu","../../Robots/UnmannedUnderwaterVehicles/AriesEspduPrototype.wrl#AriesEspdu","https://savage.nps.edu/Savage/Robots/UnmannedUnderwaterVehicles/AriesEspduPrototype.wrl#AriesEspdu"],
+              "field": [
+                {
+                  "@name":"hullName",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"up to 11 characters maps to EspduTransform marking",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"hullColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"color for this Aries instance",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"siteID",
+                  "@accessType":"inputOutput",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"applicationID",
+                  "@accessType":"inputOutput",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"entityID",
+                  "@accessType":"inputOutput",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"readInterval",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"network read periodicity",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"writeInterval",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"network write periodicity",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"networkMode",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Override default EspduTransform value so that listening occurs by default",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"address",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"multicast address",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"port",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"multicast port",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"initial position prior to first ESPDU receipt",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"rotation",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"initial orientation prior to first ESPDU receipt",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"traceNodeEnabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Set to 0 to activate EspduTransformTrace",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"GridXZ",
+              "@appinfo":"Line grid authoring tool to enable precise measurement of objects in 3D space - fixed position. Oriented along XZ plane size 20m by 20m.",
+              "@url":["../../../Savage/Tools/Authoring/GridXZPrototype.x3d#GridXZ","https://savage.nps.edu/Savage/Tools/Authoring/GridXZPrototype.x3d#GridXZ","../../../Savage/Tools/Authoring/GridXZPrototype.wrl#GridXZ","https://savage.nps.edu/Savage/Tools/Authoring/GridXZPrototype.wrl#GridXZ"],
+              "field": [
+                {
+                  "@name":"description",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Purpose of this grid displayed for overall Viewpoint",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"labelColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"color for descriptive labels at grid edges and corners",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"default unscaled size: 10m by 10m",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"originLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"WestLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"-X axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"NorthWestLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"NorthLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"-Z axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"NorthEastLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"EastLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"+X axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"SouthEastLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"SouthLabel",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"+Z axis",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"SouthWestLabel",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"labelsOffset",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"label location offset (in meters) to improve readability",
+                  "@type":"SFVec3f"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoInstance":
+            {
+              "@name":"GridXZ",
+              "fieldValue": [
+                {
+                  "@name":"description",
+                  "@value":"GridXZ for AUV in Open Ocean"
+                },
+                {
+                  "@name":"labelColor",
+                  "@value":[1,1,1]
+                },
+                {
+                  "@name":"scale",
+                  "@value":[50,50,50]
+                },
+                {
+                  "@name":"originLabel",
+                  "@value":["origin","0 0 0"]
+                },
+                {
+                  "@name":"WestLabel",
+                  "@value":["West","-Y"]
+                },
+                {
+                  "@name":"NorthWestLabel",
+                  "@value":["500 0 -500"]
+                },
+                {
+                  "@name":"NorthLabel",
+                  "@value":["North","+X"]
+                },
+                {
+                  "@name":"NorthEastLabel",
+                  "@value":["500 0 500"]
+                },
+                {
+                  "@name":"EastLabel",
+                  "@value":["East","+Y"]
+                },
+                {
+                  "@name":"SouthEastLabel",
+                  "@value":["-500 0 500"]
+                },
+                {
+                  "@name":"SouthLabel",
+                  "@value":["South","-X"]
+                },
+                {
+                  "@name":"SouthWestLabel",
+                  "@value":["-500 0 -500"]
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"AriesEspdu",
+                    "@DEF":"AUV1",
+                    "fieldValue": [
+                      {
+                        "@name":"hullName",
+                        "@value":"AUV-1"
+                      },
+                      {
+                        "@name":"siteID",
+                        "@value":0
+                      },
+                      {
+                        "@name":"applicationID",
+                        "@value":1
+                      },
+                      {
+                        "@name":"entityID",
+                        "@value":0
+                      },
+                      {
+                        "@name":"networkMode",
+                        "@value":"networkReader"
+                      },
+                      {
+                        "@name":"readInterval",
+                        "@value":0.1
+                      },
+                      {
+                        "@name":"translation",
+                        "@value":[750,-2,750]
+                      },
+                      {
+                        "@name":"traceNodeEnabled",
+                        "@value":0
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"AriesEspdu",
+                    "@DEF":"AUV2",
+                    "fieldValue": [
+                      {
+                        "@name":"hullName",
+                        "@value":"AUV-2"
+                      },
+                      {
+                        "@name":"siteID",
+                        "@value":0
+                      },
+                      {
+                        "@name":"applicationID",
+                        "@value":1
+                      },
+                      {
+                        "@name":"entityID",
+                        "@value":1
+                      },
+                      {
+                        "@name":"networkMode",
+                        "@value":"networkReader"
+                      },
+                      {
+                        "@name":"readInterval",
+                        "@value":0.1
+                      },
+                      {
+                        "@name":"translation",
+                        "@value":[750,-4,750]
+                      },
+                      {
+                        "@name":"traceNodeEnabled",
+                        "@value":0
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"AriesEspdu",
+                    "@DEF":"AUV3",
+                    "fieldValue": [
+                      {
+                        "@name":"hullName",
+                        "@value":"AUV-3"
+                      },
+                      {
+                        "@name":"siteID",
+                        "@value":0
+                      },
+                      {
+                        "@name":"applicationID",
+                        "@value":1
+                      },
+                      {
+                        "@name":"entityID",
+                        "@value":2
+                      },
+                      {
+                        "@name":"networkMode",
+                        "@value":"networkReader"
+                      },
+                      {
+                        "@name":"readInterval",
+                        "@value":0.1
+                      },
+                      {
+                        "@name":"translation",
+                        "@value":[750,-6,750]
+                      },
+                      {
+                        "@name":"traceNodeEnabled",
+                        "@value":0
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"AriesEspdu",
+                    "@DEF":"AUV4",
+                    "fieldValue": [
+                      {
+                        "@name":"hullName",
+                        "@value":"AUV-4"
+                      },
+                      {
+                        "@name":"siteID",
+                        "@value":0
+                      },
+                      {
+                        "@name":"applicationID",
+                        "@value":1
+                      },
+                      {
+                        "@name":"entityID",
+                        "@value":3
+                      },
+                      {
+                        "@name":"networkMode",
+                        "@value":"networkReader"
+                      },
+                      {
+                        "@name":"readInterval",
+                        "@value":0.1
+                      },
+                      {
+                        "@name":"translation",
+                        "@value":[750,-8,750]
+                      },
+                      {
+                        "@name":"traceNodeEnabled",
+                        "@value":0
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TERRAINTRANSFORM",
+              "@translation":[-750,0,-750],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,0.5,0.0],
+                                "@emissiveColor":[0.1,0.1,0]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["../../../Savage/AuvWorkbench/OperatingAreas/dirt4.gif","https://savage.nps.edu/Savage/AuvWorkbench/OperatingAreas/dirt4.gif"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "ElevationGrid":
+                        {
+                          "@creaseAngle":3.14,
+                          "@height":[-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50,-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50,-50,-75,-50,-50,-75,-100,-125,-100,-75,-50,-25,-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50,-100,-125,-100,-100,-125,-150,-175,-150,-125,-100,-75,-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50,-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50,-50,-75,-50,-50,-75,-100,-125,-100,-75,-50,-25,-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50,-100,-125,-100,-100,-125,-150,-175,-150,-125,-100,-75,-75,-100,-75,-75,-100,-125,-150,-125,-100,-75,-50],
+                          "@xDimension":11,
+                          "@xSpacing":150,
+                          "@zDimension":11,
+                          "@zSpacing":150,
+                          "-texCoord":
+                            { "TextureCoordinate":
+                              {
+                                "@point":[1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,10,1,11,2,1,2,2,2,3,2,4,2,5,2,6,2,7,2,8,2,9,2,10,2,11,3,1,3,2,3,3,3,4,3,5,3,6,3,7,3,8,3,9,3,10,3,11,4,1,4,2,4,3,4,4,4,5,4,6,4,7,4,8,4,9,4,10,4,11,5,1,5,2,5,3,5,4,5,5,5,6,5,7,5,8,5,9,5,10,5,11,6,1,6,2,6,3,6,4,6,5,6,6,6,7,6,8,6,9,6,10,6,11,7,1,7,2,7,3,7,4,7,5,7,6,7,7,7,8,7,9,7,10,7,11,8,1,8,2,8,3,8,4,8,5,8,6,8,7,8,8,8,9,8,10,8,11,9,1,9,2,9,3,9,4,9,5,9,6,9,7,9,8,9,9,9,10,9,11,10,1,10,2,10,3,10,4,10,5,10,6,10,7,10,8,10,9,10,10,10,11,11,1,11,2,11,3,11,4,11,5,11,6,11,7,11,8,11,9,11,10,11,11]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"MISSIONPATHS",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"TRACKMATERIAL",
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[0,1,2,3,4,5,6,7,8,9,10,1,0],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,-100,-45,-100,-500,-45,-100,-500,-45,-200,-100,-45,-200,-100,-45,-300,-500,-45,-300,-500,-45,-400,-100,-45,-400,-100,-45,-500,-500,-45,-500]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"TRACKMATERIAL"
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[0,1,2,3,4,5,6,7,8,9,10,1,0],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,100,-45,-100,500,-45,-100,500,-45,-200,100,-45,-200,100,-45,-300,500,-45,-300,500,-45,-400,100,-45,-400,100,-45,-500,500,-45,-500]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"TRACKMATERIAL"
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[0,1,2,3,4,5,6,7,8,9,10,1,0],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,100,-45,100,500,-45,100,500,-45,200,100,-45,200,100,-45,300,500,-45,300,500,-45,400,100,-45,400,100,-45,500,500,-45,500]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"TRACKMATERIAL"
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[0,1,2,3,4,5,6,7,8,9,10,1,0],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0,-100,-45,100,-500,-45,100,-500,-45,200,-100,-45,200,-100,-45,300,-500,-45,300,-500,-45,400,-100,-45,400,-100,-45,500,-500,-45,500]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

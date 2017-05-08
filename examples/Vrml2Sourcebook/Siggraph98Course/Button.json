@@ -1,0 +1,350 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Button.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple button: this file contains a Prototype declaration to manage a button that, when clicked, rotates 90 degrees and sends a URL. This button is used in \"loader.wrl\"."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 October 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"Loader.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/button.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0469.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Button.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1998, David R. Nadeau"],
+              "@title":"Simple Button"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Button",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"url",
+                      "@accessType":"inputOutput",
+                      "@type":"MFString",
+                      "@value":[""]
+                    },
+                    {
+                      "@name":"textureUrl",
+                      "@accessType":"inputOutput",
+                      "@type":"MFString",
+                      "@value":[""]
+                    },
+                    {
+                      "@name":"url_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"MFString"
+                    },
+                    {
+                      "@name":"translation",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"Trans",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"translation"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1.0,1.0,1.0]
+                                        }
+                                      },
+                                    "-texture":
+                                      { "ImageTexture":
+                                        {
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"url",
+                                                  "@protoField":"textureUrl"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                  }
+                                },
+                              "-geometry":
+                                { "Box":
+                                  {
+                                    "@size":[1.0,1.0,1.0]
+                                  }
+                                }
+                            }
+                          },
+                          { "TouchSensor":
+                            {
+                              "@DEF":"Touch",
+                              "@description":"Select to initiate button spin and scene loading"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"Timer",
+                        "@stopTime":1.0
+                      }
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"Rotator",
+                        "@key":[0.0,1.0],
+                        "@keyValue":[0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.571]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"SendUrl",
+                        "field": [
+                          {
+                            "@name":"sendUrl",
+                            "@accessType":"initializeOnly",
+                            "@type":"MFString"
+                          },
+                          {
+                            "@name":"set_touchTime",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"url_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"MFString"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"sendUrl",
+                                "@protoField":"url"
+                              },
+                              {
+                                "@nodeField":"url_changed",
+                                "@protoField":"url_changed"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"\tfunction set_touchTime( tm, ts ) {",
+"\t\turl_changed = sendUrl;",
+"\t}"
+]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"touchTime",
+                        "@fromNode":"Touch",
+                        "@toField":"set_startTime",
+                        "@toNode":"Timer"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"fraction_changed",
+                        "@fromNode":"Timer",
+                        "@toField":"set_fraction",
+                        "@toNode":"Rotator"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"value_changed",
+                        "@fromNode":"Rotator",
+                        "@toField":"set_rotation",
+                        "@toNode":"Trans"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"touchTime",
+                        "@fromNode":"Touch",
+                        "@toField":"set_touchTime",
+                        "@toNode":"SendUrl"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Display scene instructions for viewing an example scene with a corresponding prototype instance"
+          },
+          { "Background":
+            {
+              "@skyColor":[0,0.333333,0.66667]
+            }
+          },
+          { "Anchor":
+            {
+              "@description":"select text to view parent scene",
+              "@url":["Loader.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Loader.x3d","Loader.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Loader.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Button.x3d scene holds","a prototype declaration","","Select this text to view example","use in Loader.x3d scene"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0.9,0.4]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Selectable text: invisible box behind text makes selection easier"
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[12,5,0.1]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":1
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

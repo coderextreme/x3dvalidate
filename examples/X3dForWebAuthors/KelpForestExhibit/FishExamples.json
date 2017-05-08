@@ -1,0 +1,188 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"FishExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Example instances of the Fish prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"Ildeniz Duman"
+          },
+          {
+            "@name":"translator",
+            "@content":"Scott Tufts"
+          },
+          {
+            "@name":"created",
+            "@content":"1 June 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"8 December 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"17 December 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/FishExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"Fish",
+              "@url":["FishPrototype.wrl#Fish","http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/FishPrototype.wrl#Fish","FishPrototype.x3d#Fish","http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/FishPrototype.x3d#Fish"],
+              "field": [
+                {
+                  "@name":"skinTextureUrl",
+                  "@accessType":"inputOutput",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"fishScale",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"fishColor",
+                  "@accessType":"inputOutput",
+                  "@type":"SFColor"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Fish"
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,-1.57],
+              "@translation":[0,2,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Fish",
+                    "fieldValue": [
+                      {
+                        "@name":"fishScale",
+                        "@value":[0.5,0.5,0.5]
+                      },
+                      {
+                        "@name":"fishColor",
+                        "@value":[1,0,0]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,-3.14],
+              "@translation":[0,1,-4],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Fish",
+                    "fieldValue": [
+                      {
+                        "@name":"fishScale",
+                        "@value":[1,0.5,0.5]
+                      },
+                      {
+                        "@name":"fishColor",
+                        "@value":[1,1,0]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,1.57],
+              "@translation":[0,1,-4],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Fish",
+                    "fieldValue": [
+                      {
+                        "@name":"fishScale",
+                        "@value":[0.5,1,0.5]
+                      },
+                      {
+                        "@name":"fishColor",
+                        "@value":[0,0,1]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0,1,0,-0.872],
+              "@translation":[-1,-2,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"Fish",
+                    "fieldValue": [
+                      {
+                        "@name":"fishScale",
+                        "@value":[0.5,0.5,1]
+                      },
+                      {
+                        "@name":"fishColor",
+                        "@value":[1,1,0]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TCylinderRaydome.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Kevin Anderson"
+          },
+          {
+            "@name":"created",
+            "@content":"1 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 November 2002"
+          },
+          {
+            "@name":"description",
+            "@content":"TCylinderRaydome for use with Sovremennny and/or other Russian Warships. Designed to photos supplied by Janes Online."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Destroyer-Sovremenny-Russia/TCylinderRaydome.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"T Shaped Cylinder Raydome"
+          },
+          { "Group":
+            {
+              "@DEF":"Base",
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":0.7,
+                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                          "@scale":[0.6,0.6,0.4,0.4],
+                          "@spine":[0,0,0,0,0.2,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"Gray",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.55,0.53,0.5]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,0.5,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Gray"
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":0.65,
+                                "@radius":0.15
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"T-RayDome",
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,1.4],
+                    "@translation":[0,1.1,0.6],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"White",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":1.2,
+                                "@radius":0.6
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@scale":[1,0.4,1],
+                          "@translation":[0,0.6,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"DomeEnd",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"White"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.6
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,0,1,1.57],
+                          "@scale":[1,0.4,1],
+                          "@translation":[0,-0.6,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"White"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@height":3.2,
+                                      "@radius":0.6
+                                    }
+                                  }
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,1.6,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"DomeEnd"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@translation":[0,-1.6,0],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "@USE":"DomeEnd"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

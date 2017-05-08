@@ -1,0 +1,194 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"LaserTargetTrackSupport.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Support leg for target track rail."
+          },
+          {
+            "@name":"creator",
+            "@content":"Brian Kibel"
+          },
+          {
+            "@name":"created",
+            "@content":"4 September 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"22 February 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Space/SatelliteLab/LaserTargetTrackSupport.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"TrackSupport",
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,1.5707],
+                    "@scale":[0.2,2.5,0.05],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SupportBeam",
+                          "-geometry":
+                            { "Box":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.8,0.6,0]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,-0.523],
+                    "@scale":[0.2,2.5,0.05],
+                    "@translation":[0,2.25,1.25],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,0.523],
+                    "@scale":[0.2,2.5,0.05],
+                    "@translation":[0,2.25,-1.25],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.3,0.2,0.2],
+                    "@translation":[0,0,2.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@scale":[0.3,0.2,0.2],
+                    "@translation":[0,0,-2.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SupportBeam"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,1.5707],
+                    "@scale":[0.2,0.1,0.2],
+                    "@translation":[0,-0.3,2.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Wheel",
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.1,0.1,0.1]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,1.5707],
+                    "@scale":[0.2,0.1,0.2],
+                    "@translation":[0,-0.3,-2.5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"Wheel"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

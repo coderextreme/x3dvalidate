@@ -1,0 +1,140 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Octahedron.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Octahedron is an 8-sided polyhedron with 6 vertices, 8 triangular faces and 12 edges. A regular octahedron contains equilateral triangles and is a Platonic solid. An Octahedron is equivalent to two contiguous Pyramids. The dual of the Octahedron is the cube."
+          },
+          {
+            "@name":"created",
+            "@content":"26 September 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"28 September 2014"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"Octahedron.ply"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://en.wikipedia.org/wiki/Octahedron"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://en.wiktionary.org/wiki/octahedron"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://en.wikipedia.org/wiki/Platonic_solid"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://polyhedra.org/poly/show/2/octahedron"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.mathsisfun.com/geometry/octahedron.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.kjmaclean.com/Geometry/Octahedron.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.georgehart.com/virtual-polyhedra/vp.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.georgehart.com/virtual-polyhedra/vrml/octahedron.wrl"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/Octahedron.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Meshlab X3D Exported, http://meshlab.sourceforge.net"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.5,1,0.9]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Octahedron",
+              "@position":[0,0,4]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"Octahedron",
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@coordIndex":[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,1,4,-1,5,4,3,-1,5,3,2,-1,5,2,1,-1],
+                    "@solid":false,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[1,0,0,0,1,0,0,0,1,0,-1,0,0,0,-1,-1,0,0]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.2,0.5,0.8]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

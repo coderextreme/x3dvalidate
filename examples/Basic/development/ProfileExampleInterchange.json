@@ -1,0 +1,453 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ProfileExampleInterchange.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"6 January 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"22 December 2011"
+          },
+          {
+            "@name":"description",
+            "@content":"List of nodes available in a strictly compliant Interchange profile scene. Only Background renders in this example, other nodes have null values."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/spec_editors/abstract/Part01/interchange.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"ProfileExampleInterchange.png"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/ProfileExampleInterchange.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["earth-topo.png","earth-topo.gif","http://www.web3d.org/x3d/content/examples/Basic/development/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/development/earth-topo.gif"]
+                              }
+                            },
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            },
+                          "-textureTransform":
+                            { "TextureTransform":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@creaseAngle":3.14159,
+                          "-color":
+                            { "Color":
+                              {
+                                "@color":[1,1,1]
+                              }
+                            },
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0]
+                              }
+                            },
+                          "-texCoord":
+                            { "MultiTextureCoordinate":
+                              {
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "-color":
+                            { "ColorRGBA":
+                              {
+                                "@color":[1,1,1,1]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cone":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Cylinder":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedTriangleFanSet":
+                        {
+                          "-texCoord":
+                            { "TextureCoordinate":
+                              {
+                                "@point":[0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedTriangleSet":
+                        {
+                          "-texCoord":
+                            { "TextureCoordinateGenerator":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedTriangleStripSet":
+                        {
+                          "-normal":
+                            { "Normal":
+                              {
+                                "@vector":[0,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "MultiTexture":
+                              {
+                              }
+                            },
+                          "-textureTransform":
+                            { "MultiTextureTransform":
+                              {
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-texture":
+                            { "PixelTexture":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "PointSet":
+                        {
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "TriangleFanSet":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "TriangleSet":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "TriangleStripSet":
+                        {
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"SilenceWarnings"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0,0,0],
+              "@skyColor":[0.0,0.2,0.7]
+            }
+          },
+          { "CoordinateInterpolator":
+            {
+              "@DEF":"CI"
+            }
+          },
+          { "DirectionalLight":
+            {
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "NormalInterpolator":
+            {
+              "@DEF":"NI",
+              "@key":[0,1],
+              "@keyValue":[0,1,0,0,1,0]
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"OI",
+              "@key":[0,1],
+              "@keyValue":[0,1,0,0,0,1,0,0]
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"PI",
+              "@key":[0,1],
+              "@keyValue":[0,0,0,0,0,0]
+            }
+          },
+          { "ScalarInterpolator":
+            {
+              "@DEF":"SI",
+              "@key":[0,1],
+              "@keyValue":[0,0]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TS",
+              "@enabled":false
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"NI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"OI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"PI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"SI"
+            }
+          },
+          { "Transform":
+            {
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"InterchangeProfileExample"
+            }
+          },
+          { "WorldInfo":
+            {
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TS",
+              "@toField":"set_fraction",
+              "@toNode":"PI"
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,422 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MissileCompartment.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Trident Missile Compartment for Ohio Class SSBN or SSGN"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"19 September 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"7 April 2012"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/nuke/guide/usa/slbm/ssbn-726.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.chinfo.navy.mil/navpalib/cno/n87/usw/issue_6/ssgn.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"SsgnSecondCareer.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.chinfo.navy.mil/navpalib/cno/n87/future/ssgn.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.ohio.navy.mil/html/conversion.htm"
+          },
+          {
+            "@name":"subject",
+            "@content":"Missile Compartment Ohio Class Nuclear Submarine"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Submarines/SSGN-Ohio-UnitedStates/MissileCompartment.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"TridentMissileTube",
+              "@appinfo":"Builds a Trident missile tube for Ohio Class Submarine.",
+              "@url":["TridentMissileTubePrototype.x3d#TridentMissileTube","https://savage.nps.edu/Savage/Submarines/SSGN-Ohio-UnitedStates/TridentMissileTubePrototype.x3d#TridentMissileTube","TridentMissileTubePrototype.wrl#TridentMissileTube","https://savage.nps.edu/Savage/Submarines/SSGN-Ohio-UnitedStates/TridentMissileTubePrototype.wrl#TridentMissileTube"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Missile Compartment",
+              "@position":[0,2.5,35]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.309,1.570796],
+              "@groundColor":[0,0.2,0.4,0.05,0.25,0.6,0.1,0.2,0.4],
+              "@skyAngle":[1.309,1.571],
+              "@skyColor":[0.1,0.1,0.4,0.1,0.125,0.4,0.1,0.1,0.3]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"StarboardTridentMissileHatches",
+              "-children":[
+                {
+                  "#comment":"Don't use DEF/USE since each tube is independently controlled geometry"
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,0],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,2.2],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,4.4],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,6.6],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,8.8],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,11],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,13.2],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,15.4],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,17.6],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,19.8],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,22],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[1.1,0,24.2],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"PortTridentMissileHatches",
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,0],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,2.2],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,4.4],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,6.6],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,8.8],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,11],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,13.2],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,15.4],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,17.6],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,19.8],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,22],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3.14],
+                    "@translation":[-1.1,0,24.2],
+                    "-children":[
+                      { "ProtoInstance":
+                        {
+                          "@name":"TridentMissileTube"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

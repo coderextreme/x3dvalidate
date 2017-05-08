@@ -1,0 +1,357 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ExtrusionPentagon.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple regular pentagon extruded vertically."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"organization",
+            "@content":"Naval Postgraduate School"
+          },
+          {
+            "@name":"created",
+            "@content":"3 September 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"Extrusion pentagon"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter06-GeometryPointsLinesPolygons/ExtrusionPentagon.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@DEF":"ExamineMode"
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@DEF":"FlyPanNavigation",
+              "@type":["FLY","ANY"]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[1,1,1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Extrusion Pentagon",
+              "@orientation":[-1,0,0,0.2],
+              "@position":[0,3.17,12.85]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Oblique view from above",
+              "@orientation":[-1,0.015,-0.006,0.78],
+              "@position":[0.25,8.98,8.99]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Overhead view",
+              "@orientation":[1,0,0,-1.57],
+              "@position":[0,13.15,0]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0.9,0.9,0.9],
+              "@skyColor":[0.9,0.9,0.9]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-4,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-children":[
+                      {
+                        "#comment":"be sure to order cross-section points so that normal is upward"
+                      }
+                    ],
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@crossSection":[-3.5,-1,-2.1,2.9,2.2,2.9,3.6,-1,0,-3.5,-3.5,-1],
+                          "@scale":[1,1,1,1,0.2,0.2],
+                          "@spine":[0,0,0,0,1,0,0,1.6,0]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.2,0.6,0.5]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"Utilize ExtrusionCrossSection ProtoInstance as a Shape node (with containerField=\"children\") rather than an Extrusion node (with containerField=\"geometry\")."
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ExtrusionCrossSection",
+              "@appinfo":"Shape prototype for Extrusion node that also draws spine line plus oriented scaled cross sections at each spine point",
+              "@documentation":"http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionPrototype.x3d",
+              "@url":["../../Basic/course/ExtrusionCrossSectionPrototype.x3d#ExtrusionCrossSection","http://www.web3d.org/x3d/content/examples/course/ExtrusionCrossSectionPrototype.x3d#ExtrusionCrossSection","../../Basic/course/ExtrusionCrossSectionPrototype.wrl#ExtrusionCrossSection","http://www.web3d.org/x3d/content/examples/course/ExtrusionCrossSectionPrototype.wrl#ExtrusionCrossSection"],
+              "-children":[
+                {
+                  "#comment":"run-time eventIn Extrusion-modification interfaces for VRML 97 compatibility"
+                }
+              ],
+              "field": [
+                {
+                  "@name":"name",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion name",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"crossSection",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"spine",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"orientation",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFRotation"
+                },
+                {
+                  "@name":"beginCap",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"endCap",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"ccw",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"convex",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"creaseAngle",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"extrusionImageTexture",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Image to apply to Extrusion",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"extrusionTextureTransform",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"TextureTransform coordinates of image applied to Extrusion",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"set_crossSection",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"set_spine",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"set_scale",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFVec2f"
+                },
+                {
+                  "@name":"set_orientation",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"Extrusion field",
+                  "@type":"MFRotation"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Whether to provide initialization trace statements showing node construction",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"spineColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"emissiveColor of spine",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"crossSectionColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"diffuseColor of crossSection",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"crossSectionTransparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"transparency of crossSection",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"extrusionColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"diffuseColor of extrusion hull",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"extrusionTransparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"transparency of extrusion hull",
+                  "@type":"SFFloat"
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[4,0,0],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"ExtrusionCrossSection",
+                    "@DEF":"PentagonExtrusion",
+                    "fieldValue": [
+                      {
+                        "@name":"name",
+                        "@value":"PentagonExtrusion"
+                      },
+                      {
+                        "@name":"crossSection",
+                        "@value":[-3.5,-1,-2.1,2.9,2.2,2.9,3.6,-1,0,-3.5,-3.5,-1]
+                      },
+                      {
+                        "@name":"spine",
+                        "@value":[0,0,0,0,1,0,0,1.6,0]
+                      },
+                      {
+                        "@name":"scale",
+                        "@value":[1,1,1,1,0.2,0.2]
+                      },
+                      {
+                        "@name":"ccw",
+                        "@value":true
+                      },
+                      {
+                        "@name":"spineColor",
+                        "@value":[0.7,0.7,0]
+                      },
+                      {
+                        "@name":"crossSectionColor",
+                        "@value":[0.6,0.6,0.2]
+                      },
+                      {
+                        "@name":"extrusionColor",
+                        "@value":[0.3,0.6,0.6]
+                      },
+                      {
+                        "@name":"extrusionTransparency",
+                        "@value":0.6
+                      },
+                      {
+                        "@name":"traceEnabled",
+                        "@value":false
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

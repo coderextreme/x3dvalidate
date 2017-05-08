@@ -1,0 +1,148 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RearWindow.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Rear window from the balck midsize truck"
+          },
+          {
+            "@name":"creator",
+            "@content":"Donald Coomes"
+          },
+          {
+            "@name":"created",
+            "@content":"25 August 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, Wings3d, and Flux Studio"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/GroundVehicles/Truck/RearWindow.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"WindowRear",
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"RearWindow",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"ClearGlass",
+                                      "@diffuseColor":[0,0,0.25],
+                                      "@transparency":0.5
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@colorIndex":[0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1],
+                                "@coordIndex":[0,5,16,-1,0,16,19,-1,0,19,18,-1,0,18,3,-1,1,2,11,-1,1,11,10,-1,1,10,9,-1,1,9,4,-1,2,7,8,-1,2,8,11,-1,3,18,17,-1,3,17,6,-1,4,7,15,-1,4,15,14,-1,4,9,8,-1,4,8,7,-1,4,14,13,-1,4,13,5,-1,5,6,17,-1,5,17,16,-1,5,13,12,-1,5,12,6,-1,6,12,15,-1,6,15,7,-1,8,9,10,-1,8,10,11,-1,12,13,14,-1,12,14,15,-1,16,17,18,-1,16,18,19,-1],
+                                "@creaseAngle":0.524,
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-1.9369,1.57058,-2.11829,1.91838,1.5812,-2.11852,1.83455,1.58097,-2.08952,-1.85159,1.57081,-2.08979,1.76023,1.69121,-2.11851,-1.75893,1.68151,-2.1183,-1.73,1.68159,-2.08964,1.73278,1.69113,-2.08967,1.7344,0.99762,-2.08967,1.76185,0.99769,-2.11851,1.92,0.88768,-2.11852,1.83617,0.88745,-2.08952,-1.72838,0.98808,-2.08964,-1.75731,0.988,-2.1183,1.76185,0.99769,-2.11851,1.7344,0.99762,-2.08967,-1.75731,0.988,-2.1183,-1.72838,0.98808,-2.08964,-1.84997,0.8773,-2.08979,-1.93528,0.87706,-2.11829]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"RearWindowClock",
+                    "@cycleInterval":8.000
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"RearWindowSensor",
+                    "@description":"Touch to roll down rear window"
+                  }
+                }
+              ]
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"RearWindowPI",
+              "@key":[0,0.25,0.49997,0.75,1],
+              "@keyValue":[0,0,0,0,-0.4,0,0,-0.65,0,0,-0.4,0,0,0,0]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"RearWindowClock",
+              "@toField":"set_fraction",
+              "@toNode":"RearWindowPI"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"RearWindowPI",
+              "@toField":"set_translation",
+              "@toNode":"RearWindow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"RearWindowSensor",
+              "@toField":"startTime",
+              "@toNode":"RearWindowClock"
+            }
+          }
+        ]
+    }
+  }
+}

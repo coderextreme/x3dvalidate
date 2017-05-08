@@ -1,0 +1,228 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"XvlShellExternProtoDeclare.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This is a development scene used to generate the ExternProtoDeclaration for the X3dToVrml97 stylesheet."
+          },
+          {
+            "@name":"warning",
+            "@content":"This scene is not for example use, instead it is a development scene used during X3D design."
+          },
+          {
+            "@name":"creator",
+            "@content":"Marc Jablonski"
+          },
+          {
+            "@name":"created",
+            "@content":"22 November 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 March 2016"
+          },
+          {
+            "@name":"error",
+            "@content":"Test X3D DTD experimental extensions mechanisms, the XVL nodes are not legal X3D"
+          },
+          {
+            "@name":"reference",
+            "@content":"readme.txt"
+          },
+          {
+            "@name":"info",
+            "@content":".wrl url links intentionally precede .x3d links, X3D-Edit stylesheet X3dToVrml97.xslt automatically inserts VRML97 translations of these external prototype declarations upon encountering any XvlShell nodes."
+          },
+          {
+            "@name":"reference",
+            "@content":"docs/LatticeXVL/LatticeXvlOverview.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/docs/LatticeXVL/LatticeXvlOverview.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.xvl3d.com"
+          },
+          {
+            "@name":"subject",
+            "@content":"Lattice XVL parametric geometry X3D VRML"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellExternProtoDeclare.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"XvlShell",
+              "@url":["XvlShellProtoDeclare.wrl#XvlShell","http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellProtoDeclare.wrl#XvlShell","XvlShellProtoDeclare.x3d#XvlShell","http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellProtoDeclare.x3d#XvlShell"],
+              "-children":[
+                {
+                  "#comment":"Allowable children of XvlShell: a single Coordinate node (required for rendering) and a single TextureCoordinate node (optional)"
+                }
+              ],
+              "field": [
+                {
+                  "@name":"shellType",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"numberOfDivisions",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"coord",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"texCoord",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"vertexRound",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"edgeBeginCoordIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"edgeEndCoordIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"edgeRound",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFFloat"
+                },
+                {
+                  "@name":"edgeBeginVector",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"edgeEndVector",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"faceCoordIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"faceTexCoordIndex",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"faceEmpty",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFBool"
+                },
+                {
+                  "@name":"faceHidden",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFBool"
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[0,0.1,0.2],
+              "@skyColor":[0,0.1,0.2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"XvlShell ExternProtoDeclare",
+              "@position":[0,0,8]
+            }
+          },
+          {
+            "#comment":"Redirection text in case a user examines this PROTO file via a 3D browser:"
+          },
+          { "Anchor":
+            {
+              "@description":"XvlShellAttributeAll",
+              "@parameter":["target=_blank"],
+              "@url":["XvlShellAttributeAll.x3d","http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellAttributeAll.x3d","XvlShellAttributeAll.wrl","http://www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellAttributeAll.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,1],
+                                "@emissiveColor":[0,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["XvlShellExternProtoDeclare.wrl","is an ExternProtoDeclare definition file.","","To see an example scene using this new node,","click this text and view XvlShellAttributeAll"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.5
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

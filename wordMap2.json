@@ -1,0 +1,30 @@
+{ "should" : { "be" :     { "" : 							{"en":"needs to be"}
+			    ,"equal" : { "to" : { "constant" : 				{"en":"needs to be equal to the constant"}
+                                             ,"one of the allowed values" : 		{"en":"needs to be equal to one of the allowed values"}
+                                           }
+                                  }
+                                         
+                            ,"multiple of" : 						{"en":"needs to be multiple of"}
+			  }
+               ,"have" :  { "" : 							{"en":"needs to have"}
+                            ,"property matching pattern" : 				{"en":"needs to have property matching pattern"}
+                          }
+               ,"match" : { "exactly one schema in oneOf" : 				{"en":"needs to match exactly one schema in oneOf"}
+			    ,"format" : 						{"en":"needs to match format"}
+			    ,"pattern" : 						{"en":"needs to match the pattern"}
+			    ,"some schema in anyOf" : 					{"en":"needs to match some of the schema in anyOf"}
+			  }
+	       ,"NOT" :   {  "be" : 							{"en":"must NOT be"}
+			     ,"be valid": 						{"en":"must NOT be valid"}
+			     ,"have" : { "" : 						{"en":"must NOT have"}
+					 , "additional properties" : 			{"en":"must NOT have additional json properties"}
+					 , "duplicate items (items ## ..." : 		{"en":"must NOT have duplicate items (items ## ..."}
+					 , "... than ..." : 				{"en":"must NOT have ... than ..."}
+					 , "more than ..." : 				{"en":"must NOT have more than ..."}
+                                       }
+			  }
+		,"pass" : {  "... keyword validation" :					{"en":"needs to pass ... keyword validation"}
+			    ,"\"switch\" keyword validation" : 				{"en":"needs to pass \"switch\" keyword validation"}
+			  }
+	     }
+}

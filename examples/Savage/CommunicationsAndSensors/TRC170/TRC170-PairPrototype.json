@@ -1,0 +1,1244 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TRC170-PairPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"A Pair of TRC-170s. A TRC-170 is a long-range SHF communication system. It operates in 3 modes. 1)Direct point-to-point link (< 30 miles). 2) Tropospheric shot (up to 100 or 150 miles, depending on system version). 3) Defraction shot over an a terrain feature or object in the path ( < 50 miles)."
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"8 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 December 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-PairPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamCylinder",
+              "@appinfo":"Produce wireframe or transparent beam cylinders. Typical uses include propeller/thruster water flow or line-of-sight sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: beam with apex at (0 0 0) and base of radius 1 in x-z plane at (1 0 0).",
+              "@url":["../../CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.x3d#BeamCylinder","../../CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamCylinderPrototype.wrl#BeamCylinder"],
+              "field": [
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamHeight",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across vertical y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"beamWidth",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"meters across horizontal z axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"name",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Assigning a name to a BeamCylinder aids tracing",
+                  "@type":"SFString"
+                }
+              ]
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BeamCone",
+              "@appinfo":"Produce wireframe or transparent beam cones. Typical uses include propeller/thruster water flow or line-of-sight sonar/radar/light beams. Negative range values invert base and apex at same relative location. Default: beam with apex at (0 0 0) and base of radius 1 in x-z plane at (1 0 0).",
+              "@url":["../../CommunicationsAndSensors/Beam/BeamConePrototype.x3d#BeamCone","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamConePrototype.x3d#BeamCone","../../CommunicationsAndSensors/Beam/BeamConePrototype.wrl#BeamCone","https://savage.nps.edu/Savage/CommunicationsAndSensors/Beam/BeamConePrototype.wrl#BeamCone"],
+              "field": [
+                {
+                  "@name":"contact",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"(communications) is transmitted signal in contact with receiver or (sensor) is a target return detected?",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"range",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"distance in meters along x axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"defaultRange",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"distance in meters used until eventIn range sent",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"wireframe",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether wireframe beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"whether solid beam is drawn",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"beamHeightDegrees",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"degrees across vertical y axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"beamWidthDegrees",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"degrees across horizontal z axis",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"contactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=true",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"noContactColor",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"rendering color when contact=false",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"transparency",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"1 = fully transparent wireframe only",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"name",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"BeamCone name aids in node identification and tracing",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"flag to turn on Script tracing",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"ExternProtoDeclare definitions must be included verbatim"
+          },
+          {
+            "#comment":"PROTO consists of two TRC170 for long range (up to 100 mile) point-to-point communication. TRC170s can be used in 3 different settings. The first is a direct link of up to 30 miles. The second is a defraction setting over an obstruction in the path. The third is a tropospheric scatter shot of up to 100 miles in which the signal is bounced off the troposphere. This PROTO allows specification for the initial placement of each TSSR. It automatically calculates the correct angle to complete the link."
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"TRC170Pair",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"TRC1Location",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[1,1,1]
+                    },
+                    {
+                      "@name":"TRC2Location",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"OperatingMode",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFString",
+                      "@value":"DIRECT"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"HighAboveXZTranslation",
+                              "-children":[
+                                { "Viewpoint":
+                                  {
+                                    "@DEF":"HighAbove",
+                                    "@description":"High Above TRC170",
+                                    "@orientation":[1,0,0,-1.4],
+                                    "@position":[0,0,0]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"TRC1Viewpoint",
+                              "@description":"TRC170 #1"
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"TRC2Viewpoint",
+                              "@description":"TRC170 #2"
+                            }
+                          },
+                          { "LOD":
+                            {
+                              "@range":[200000],
+                              "-children":[
+                                {
+                                  "#comment":"TRC 1 Two Transforms. One in the XZ plane, the second in the XY plane. Inlines for the TRC body, stand, and the dome pattern."
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"TRC1_TRANSFORM",
+                                    "@translation":[-2,0,0],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"translation",
+                                            "@protoField":"TRC1Location"
+                                          }
+                                        ]
+                                    },
+                                    "-children":[
+                                      { "Transform":
+                                        {
+                                          "@DEF":"TRC1_XY_TRANSFORM",
+                                          "@translation":[1,5,0],
+                                          "-children":[
+                                            { "Inline":
+                                              {
+                                                "@DEF":"TRCBody",
+                                                "@url":["TRC170-Dish.x3d","../../CommunicationsAndSensors/TRC170/TRC170-Dish.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-Dish.x3d","TRC170-Dish.wrl","../../CommunicationsAndSensors/TRC170/TRC170-Dish.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-Dish.wrl"]
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"TRC1Cone",
+                                                "@translation":[2,0,0],
+                                                "-children":[
+                                                  { "Switch":
+                                                    {
+                                                      "@DEF":"BeamSwitch",
+                                                      "@whichChoice":0,
+                                                      "-children":[
+                                                        { "Group":
+                                                          {
+                                                            "-children":[
+                                                              { "ProtoInstance":
+                                                                {
+                                                                  "@name":"BeamCylinder",
+                                                                  "@DEF":"TRC1_BEAMCYLINDER",
+                                                                  "fieldValue": [
+                                                                    {
+                                                                      "@name":"defaultRange",
+                                                                      "@value":10
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamHeight",
+                                                                      "@value":1.5
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamWidth",
+                                                                      "@value":1.5
+                                                                    },
+                                                                    {
+                                                                      "@name":"transparency",
+                                                                      "@value":0.2
+                                                                    },
+                                                                    {
+                                                                      "@name":"wireframe",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"solid",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"contactColor",
+                                                                      "@value":[0.3,0.5,0.5]
+                                                                    },
+                                                                    {
+                                                                      "@name":"noContactColor",
+                                                                      "@value":[0.8,0.1,0.1]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        },
+                                                        { "Group":
+                                                          {
+                                                            "-children":[
+                                                              { "ProtoInstance":
+                                                                {
+                                                                  "@name":"BeamCone",
+                                                                  "@DEF":"TRC1_BEAMCONE",
+                                                                  "fieldValue": [
+                                                                    {
+                                                                      "@name":"defaultRange",
+                                                                      "@value":10
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamHeightDegrees",
+                                                                      "@value":2
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamWidthDegrees",
+                                                                      "@value":2
+                                                                    },
+                                                                    {
+                                                                      "@name":"transparency",
+                                                                      "@value":0.2
+                                                                    },
+                                                                    {
+                                                                      "@name":"wireframe",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"solid",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"noContactColor",
+                                                                      "@value":[0.8,0.1,0.1]
+                                                                    },
+                                                                    {
+                                                                      "@name":"contactColor",
+                                                                      "@value":[0.3,0.5,0.5]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "-children":[
+                                            { "Inline":
+                                              {
+                                                "@DEF":"TRCStand",
+                                                "@url":["TRC170-Tripod.x3d","../../CommunicationsAndSensors/TRC170/TRC170-Tripod.x3d","https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-Tripod.x3d","../../CommunicationsAndSensors/TRC170/TRC170-Tripod.wrl","TRC170-Tripod.wrl","https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-Tripod.wrl"]
+                                              }
+                                            },
+                                            { "LOD":
+                                              {
+                                                "@range":[500],
+                                                "-children":[
+                                                  { "Viewpoint":
+                                                    {
+                                                      "@description":"TRC170 Side View",
+                                                      "@position":[0,5,40]
+                                                    }
+                                                  },
+                                                  { "WorldInfo":
+                                                    {
+                                                      "@info":["null node for no rendering when distant"]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "WorldInfo":
+                                  {
+                                    "@info":["null node for no rendering when distant"]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "LOD":
+                            {
+                              "@range":[200000],
+                              "-children":[
+                                {
+                                  "#comment":"TRC 2 Two Transforms. One in the XZ plane, the second in the XY plane. Inlines for the TRC body, stand, and the dome pattern."
+                                },
+                                { "Transform":
+                                  {
+                                    "@DEF":"TRC2_TRANSFORM",
+                                    "@translation":[-2,0,0],
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"translation",
+                                            "@protoField":"TRC2Location"
+                                          }
+                                        ]
+                                    },
+                                    "-children":[
+                                      { "Transform":
+                                        {
+                                          "@DEF":"TRC2_XY_TRANSFORM",
+                                          "@translation":[1,5,0],
+                                          "-children":[
+                                            { "Inline":
+                                              {
+                                                "@USE":"TRCBody"
+                                              }
+                                            },
+                                            { "Transform":
+                                              {
+                                                "@DEF":"TRC2Cone",
+                                                "@translation":[2,0,0],
+                                                "-children":[
+                                                  { "Switch":
+                                                    {
+                                                      "@DEF":"BeamSwitch2",
+                                                      "@whichChoice":0,
+                                                      "-children":[
+                                                        { "Group":
+                                                          {
+                                                            "-children":[
+                                                              { "ProtoInstance":
+                                                                {
+                                                                  "@name":"BeamCylinder",
+                                                                  "@DEF":"TRC2_BEAMCYLINDER",
+                                                                  "fieldValue": [
+                                                                    {
+                                                                      "@name":"defaultRange",
+                                                                      "@value":10
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamHeight",
+                                                                      "@value":1.5
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamWidth",
+                                                                      "@value":1.5
+                                                                    },
+                                                                    {
+                                                                      "@name":"transparency",
+                                                                      "@value":0.2
+                                                                    },
+                                                                    {
+                                                                      "@name":"wireframe",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"solid",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"contactColor",
+                                                                      "@value":[0.3,0.5,0.5]
+                                                                    },
+                                                                    {
+                                                                      "@name":"noContactColor",
+                                                                      "@value":[0.8,0.1,0.1]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        },
+                                                        { "Group":
+                                                          {
+                                                            "-children":[
+                                                              { "ProtoInstance":
+                                                                {
+                                                                  "@name":"BeamCone",
+                                                                  "@DEF":"TRC2_BEAMCONE",
+                                                                  "fieldValue": [
+                                                                    {
+                                                                      "@name":"defaultRange",
+                                                                      "@value":10
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamHeightDegrees",
+                                                                      "@value":2
+                                                                    },
+                                                                    {
+                                                                      "@name":"beamWidthDegrees",
+                                                                      "@value":2
+                                                                    },
+                                                                    {
+                                                                      "@name":"transparency",
+                                                                      "@value":0.2
+                                                                    },
+                                                                    {
+                                                                      "@name":"wireframe",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"solid",
+                                                                      "@value":true
+                                                                    },
+                                                                    {
+                                                                      "@name":"noContactColor",
+                                                                      "@value":[0.8,0.1,0.1]
+                                                                    },
+                                                                    {
+                                                                      "@name":"contactColor",
+                                                                      "@value":[0.3,0.5,0.5]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "Transform":
+                                        {
+                                          "-children":[
+                                            { "Inline":
+                                              {
+                                                "@USE":"TRCStand"
+                                              }
+                                            },
+                                            { "LOD":
+                                              {
+                                                "@range":[500],
+                                                "-children":[
+                                                  { "Transform":
+                                                    {
+                                                      "-children":[
+                                                        { "Viewpoint":
+                                                          {
+                                                            "@description":"TRC170 Side View",
+                                                            "@position":[0,5,40]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  { "Transform":
+                                                    {
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "WorldInfo":
+                                  {
+                                    "@info":["null node"]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"TransmitScript",
+                              "field": [
+                                {
+                                  "@name":"transState",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFInt32"
+                                },
+                                {
+                                  "@name":"size",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                }
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tsize = new SFVec3f(100, 100, 100) ;",
+"\tBrowser.print ('TransmitScript initialize() complete' + '\n') ;",
+"}",
+"",
+"// function name matches eventIn variable name ('hour')",
+"// hourValue captures the new value of the ROUTE hour event",
+"// minutes is just the current field value",
+"",
+"function transState (newValue, timestamp)",
+"{",
+"\ttransmitState = newValue ;",
+"\tif (transmitState == 3) {",
+"\t\tsize = new SFVec3f(10, 10, 10) ;",
+"\t}",
+"\telse {",
+"\t\tsize = new SFVec3f(100, 100, 100) ;",
+"\t}",
+"\tBrowser.print ('size\t= ' + size + '\n') ;",
+"}"
+]
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"TransmitScript2",
+                              "field": [
+                                {
+                                  "@name":"transState",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFInt32"
+                                },
+                                {
+                                  "@name":"size",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                }
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tsize = new SFVec3f(100, 100, 100) ;",
+"\tBrowser.print ('TransmitScript initialize() complete' + '\n') ;",
+"}",
+"",
+"// function name matches eventIn variable name ('hour')",
+"// hourValue captures the new value of the ROUTE hour event",
+"// minutes is just the current field value",
+"",
+"function transState (newValue, timestamp)",
+"{",
+"\ttransmitState = newValue ;",
+"\tif (transmitState == 3) {",
+"\t\tsize = new SFVec3f(10, 10, 10) ;",
+"\t}",
+"\telse {",
+"\t\tsize = new SFVec3f(100, 100, 100) ;",
+"\t}",
+"\tBrowser.print ('size\t= ' + size + '\n') ;",
+"}"
+]
+                            }
+                          },
+                          {
+                            "#comment":"This script is used to calculate the corresponding rotation angles so the TSSRs will be pointed at each other"
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"CalculateAngleScript",
+                              "field": [
+                                {
+                                  "@name":"TRC1Location",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"TRC2Location",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"OperatingMode",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFString"
+                                },
+                                {
+                                  "@name":"TRC1_XZangle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"TRC2_XZangle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"beamScale",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"TRC1_beamLength",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"TRC2_beamLength",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFFloat"
+                                },
+                                {
+                                  "@name":"TRC1_XYangle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"TRC2_XYangle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"LinkEstablished",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFBool"
+                                },
+                                {
+                                  "@name":"TRC1_Viewpoint",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"TRC2_Viewpoint",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"TRC1_ViewpointAngle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"TRC2_ViewpointAngle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"HighAboveViewpoint",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"HighAboveTranslationAngle",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFRotation"
+                                },
+                                {
+                                  "@name":"WhichBeam",
+                                  "@accessType":"outputOnly",
+                                  "@type":"SFInt32"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"TRC1Location",
+                                      "@protoField":"TRC1Location"
+                                    },
+                                    {
+                                      "@nodeField":"TRC2Location",
+                                      "@protoField":"TRC2Location"
+                                    },
+                                    {
+                                      "@nodeField":"OperatingMode",
+                                      "@protoField":"OperatingMode"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize ()",
+"{",
+"\tBrowser.print ('TRC1\t=' + TRC1Location + '\n') ;",
+"\tBrowser.print ('TRC2\t=' + TRC2Location + '\n') ;",
+"\tBrowser.print ('TransmitScript initialize() complete' + '\n') ;",
+"\tactive = true ;",
+"\tTRC1_XZangle\t= new SFRotation(0, 1, 0, 0) ;",
+"\tTRC2_XZangle\t= new SFRotation(0, 1, 0, 0) ;",
+"\tTRC1_XYangle\t= new SFRotation(0, 0, 1, 0) ;",
+"\tTRC2_XYangle\t= new SFRotation(0, 0, 1, 0) ;",
+"\tXZangle\t= new SFRotation(0, 1, 0, 0) ;",
+"\tXYangle\t= new SFRotation(0, 0, 1, 0) ;",
+"\tTRC1_ViewpointAngle\t= new SFRotation(0, 1, 0, 0) ;",
+"\tTRC2_ViewpointAngle\t= new SFRotation(0, 1, 0, 0) ;",
+"\tHighAboveViewpointAngle\t= new SFRotation(1, 0, 0, 0) ;",
+"\tHighAboveTranslationAngle\t= new SFRotation(0, 1, 0, 0) ;",
+"",
+"\tbeamScale\t\t= new SFVec3f ( ) ;",
+"\tcenter\t\t= new SFVec3f ( ) ;",
+"\tTRC1_Viewpoint\t= new SFVec3f ( ) ;",
+"\tTRC2_Viewpoint\t= new SFVec3f ( ) ;",
+"\tHighAboveViewpoint\t= new SFVec3f ( ) ;",
+"\tLinkEstablished\t= true;",
+"\tBrowser.print ('OperatingMode\t=' + OperatingMode + '\n') ;",
+"",
+"\tcompute(active) ;",
+"}",
+"",
+"",
+"function compute ( )",
+"{",
+"\tif (OperatingMode == 'DIRECT') {",
+"\t\tWhichBeam = 0 ;",
+"\t\tcomputeDistance( ) ;",
+"\t\tcomputeXZangle( );",
+"\t\tcomputeXYangle( ) ;",
+"",
+"\t}",
+"",
+"\tif (OperatingMode == 'TROPOSCATTER') {",
+"\t\tWhichBeam = 1 ;",
+"\t\tcenterX \t= (TRC2Location[0] - TRC1Location[0])/2 ;",
+"\t\tcenterZ \t= (TRC2Location[2] - TRC1Location[2])/2 ;",
+"\t\tXZDistance\t= Math.sqrt(centerX * centerX + centerZ * centerZ);",
+"\t\tcenter[0]\t= TRC1Location[0] + centerX;",
+"\t\tcenter[1]\t= 15000 ;  // vertical height of troposphere",
+"\t\tcenter[2]\t= TRC1Location[2] + centerZ;",
+"                Browser.print ('TRC1\t= ' + TRC1Location + '\n') ;",
+"                Browser.print ('center\t= ' + center + '\n') ;",
+"                Browser.print ('TRC2\t= ' + TRC2Location + '\n') ;",
+"",
+"\t\tcomputeTropoDistance(TRC1Location, center) ;",
+"\t\tcomputeTropoXZangle( );",
+"\t\tcomputeTropoXYangle( ) ;",
+"\t\tTRC1_beamLength \t= tropoDistance-2;",
+"\t\tTRC1_XZangle\t\t= XZangle;",
+"\t\tTRC1_XYangle\t\t= XYangle;",
+"",
+"\t\tcomputeTropoDistance(TRC2Location, center) ;",
+"\t\tcomputeTropoXZangle( );",
+"\t\tcomputeTropoXYangle( ) ;",
+"\t\tTRC2_beamLength \t= tropoDistance-2;",
+"\t\tTRC2_XZangle\t\t= XZangle;",
+"\t\tTRC2_XYangle\t\t= XYangle;",
+"\t}",
+"",
+"\tTRC1_Viewpoint[0]\t= TRC1Location[0] + Math.sin(TRC1_XZangle[3] - 1.57)*40;",
+"\tTRC1_Viewpoint[1]\t= TRC1Location[1] + 10;",
+"\tTRC1_Viewpoint[2]\t= TRC1Location[2] +Math.cos(TRC1_XZangle[3] - 1.57)*40;",
+"\tBrowser.print ('TRC1_Viewpoint\t'+ TRC1_Viewpoint + '\n') ;",
+"\tTRC1_ViewpointAngle[3]\t= TRC1_XZangle[3] - 1.57 ;",
+"",
+"\tTRC2_Viewpoint[0]\t= TRC2Location[0] + Math.sin(TRC2_XZangle[3] - 1.57)*40 ;",
+"\tTRC2_Viewpoint[1]\t= TRC2Location[1] + 10;",
+"\tTRC2_Viewpoint[2]\t= TRC2Location[2] + Math.cos(TRC2_XZangle[3] - 1.57)*40;",
+"\tTRC2_ViewpointAngle[3]\t= TRC2_XZangle[3] - 1.57 ;",
+"\tBrowser.print ('TRC2_Viewpoint\t'+ TRC2_Viewpoint + '\n') ;",
+"",
+"\tHighAboveViewpoint[0]\t= center[0] + Math.sin(TRC1_XZangle[3])*3000 ;",
+"\tHighAboveViewpoint[1]\t= center[1]  + 5000;",
+"\tHighAboveViewpoint[2]\t= center[2] + Math.cos(TRC1_XZangle[3])*3000 ;",
+"\tBrowser.print ('HighAboveViewpoint\t'+ HighAboveViewpoint + '\n') ;",
+"//\tHighAboveViewpointAngle[3]\t= Math.cos(TRC1_XZangle[3]) ;",
+"\tHighAboveTranslationAngle[3]\t= TRC1_XZangle[3] ;",
+"//\tBrowser.print ('HighAboveTranslationle\t\t'+ HighAboveViewpointAngle + '\n') ;",
+"\tBrowser.print ('HighAboveXZTranslationAngle\t'+HighAboveTranslationAngle + '\n') ;",
+"",
+"",
+"",
+"}",
+"",
+"function computeTropoDistance(loc1, loc2 )",
+"{",
+"\ttropoDeltaX \t= (loc2[0] - loc1[0]) ;",
+"\ttropoDeltaY \t= (loc2[1] - loc1[1]) ;",
+"\ttropoDeltaZ \t= (loc2[2] - loc1[2]) ;",
+"\ttropoDistanceSquared\t= tropoDeltaX * tropoDeltaX + tropoDeltaY * tropoDeltaY + tropoDeltaZ * tropoDeltaZ ;",
+"\tBrowser.print ('Distance Squared\t=' + tropoDistanceSquared + '\n') ;",
+"\ttropoDistance \t= Math.sqrt(tropoDistanceSquared) ;",
+"\tBrowser.print ('Distance\t=' + tropoDistance + '\n') ;",
+"",
+"\tif (XZDistance > 100/.6*1000) {",
+"\t\tLinkEstablished = false;",
+"\t\t//TRC1_beamLength = 5000 ;",
+"\t\t//TRC2_beamLength = 5000 ;",
+"\t}",
+"}",
+"",
+"function computeTropoXZangle( )",
+"{",
+"\tif (tropoDeltaZ == 0) {",
+"\t\ttropoDeltaZ = .00000001 ;",
+"\t}",
+"",
+"\tangle \t= Math.atan(tropoDeltaX/tropoDeltaZ) ;",
+"\tif (tropoDeltaZ < 0) {",
+"\t\tXZangle[3] = angle + Math.PI/2;",
+"\t}",
+"\telse {",
+"\t\tXZangle[3] = angle -  Math.PI/2;",
+"\t}",
+"\tBrowser.print ('Angle\t=' + XZangle[3] + '\n') ;",
+"//\tBrowser.print ('Angle2\t=' + TRC2_XZangle[3] + '\n') ;",
+"}",
+"",
+"",
+"function computeTropoXYangle( )",
+"{",
+"\tBrowser.print ('tropoDeltaY\t=' + tropoDeltaY + '\n');",
+"\tangle \t= Math.asin(tropoDeltaY/tropoDistance) ;",
+"\tXYangle[3] = angle ;",
+"\t//XYangle[3]  = - TRC1_XYangle[3];",
+"",
+"\tBrowser.print ('AngleXY\t=' +XYangle[3] + '\n') ;",
+"//\tBrowser.print ('Angle2XY\t=' + TRC2_XYangle[3] + '\n') ;",
+"}",
+"",
+"function computeDistance( )",
+"{",
+"\tBrowser.print ('TRC1\t=' + TRC1Location + '\n') ;",
+"\tBrowser.print ('TRC2\t=' + TRC2Location + '\n') ;",
+"\tdeltaX \t= (TRC2Location[0] - TRC1Location[0]) ;",
+"\tdeltaY \t= (TRC2Location[1] - TRC1Location[1]) ;",
+"\tdeltaZ \t= (TRC2Location[2] - TRC1Location[2]) ;",
+"\tdistanceSquared\t= deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ ;",
+"\tBrowser.print ('Distance Squared\t=' + distanceSquared + '\n') ;",
+"\tdistance \t= Math.sqrt(distanceSquared) ;",
+"\tBrowser.print ('Distance\t=' + distance + '\n') ;",
+"",
+"\tbeamScale[0] \t= distance/10;",
+"\tbeamScale[1]\t= 10;",
+"\tbeamScale[2]\t= 10;",
+"\tBrowser.print ('BeamScale\t=' + beamScale + '\n') ;",
+"\tTRC1_beamLength \t= distance -2;",
+"\tTRC2_beamLength \t= distance -2;",
+"\tif (distance > 5/.6*1000) {",
+"\t\tLinkEstablished = false;",
+"\t\tTRC1_beamLength = 5000/.6 ;",
+"\t\tTRC2_beamLength = 5000/.6 ;",
+"\t}",
+"}",
+"",
+"function computeXZangle( )",
+"{",
+"\tif (deltaZ == 0) {",
+"\t\tdeltaZ = .00000001 ;",
+"\t}",
+"",
+"\tangle \t= Math.atan(deltaX/deltaZ) ;",
+"\tif (deltaZ < 0) {",
+"\t\tTRC1_XZangle[3] = angle + Math.PI/2;",
+"\t}",
+"\telse {",
+"\t\tTRC1_XZangle[3] = angle -  Math.PI/2;",
+"\t}",
+"\tTRC2_XZangle[3]  = TRC1_XZangle[3] +  Math.PI;",
+"",
+"\tBrowser.print ('Angle\t=' + TRC1_XZangle[3] + '\n') ;",
+"\tBrowser.print ('Angle2\t=' + TRC2_XZangle[3] + '\n') ;",
+"}",
+"",
+"",
+"",
+"function computeXYangle( )",
+"{",
+"\tangle \t= Math.asin(deltaY/distance) ;",
+"\tTRC1_XYangle[3] = angle ;",
+"\tTRC2_XYangle[3]  = - TRC1_XYangle[3];",
+"",
+"\tBrowser.print ('AngleXY\t=' + TRC1_XYangle[3] + '\n') ;",
+"\tBrowser.print ('Angle2XY\t=' + TRC2_XYangle[3] + '\n') ;",
+"}"
+]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_XZangle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"rotation",
+                        "@toNode":"TRC1_TRANSFORM"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC2_XZangle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"rotation",
+                        "@toNode":"TRC2_TRANSFORM"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_beamLength",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"range",
+                        "@toNode":"TRC1_BEAMCYLINDER"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_beamLength",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"range",
+                        "@toNode":"TRC1_BEAMCONE"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC2_beamLength",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"range",
+                        "@toNode":"TRC2_BEAMCYLINDER"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_beamLength",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"range",
+                        "@toNode":"TRC2_BEAMCONE"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_XYangle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"rotation",
+                        "@toNode":"TRC1_XY_TRANSFORM"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC2_XYangle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"rotation",
+                        "@toNode":"TRC2_XY_TRANSFORM"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"LinkEstablished",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"contact",
+                        "@toNode":"TRC1_BEAMCYLINDER"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"LinkEstablished",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"contact",
+                        "@toNode":"TRC1_BEAMCONE"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"LinkEstablished",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"contact",
+                        "@toNode":"TRC2_BEAMCYLINDER"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"LinkEstablished",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"contact",
+                        "@toNode":"TRC2_BEAMCONE"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_Viewpoint",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"position",
+                        "@toNode":"TRC1Viewpoint"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC2_Viewpoint",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"position",
+                        "@toNode":"TRC2Viewpoint"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC1_ViewpointAngle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"orientation",
+                        "@toNode":"TRC1Viewpoint"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"TRC2_ViewpointAngle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"orientation",
+                        "@toNode":"TRC2Viewpoint"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"HighAboveViewpoint",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"translation",
+                        "@toNode":"HighAboveXZTranslation"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"HighAboveTranslationAngle",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"rotation",
+                        "@toNode":"HighAboveXZTranslation"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"WhichBeam",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"whichChoice",
+                        "@toNode":"BeamSwitch"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"WhichBeam",
+                        "@fromNode":"CalculateAngleScript",
+                        "@toField":"whichChoice",
+                        "@toNode":"BeamSwitch2"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "WorldInfo":
+            {
+              "@info":["Authors: Mike Hunsberger","Revised: 30 April 2001","Purpose: Pair of TSSRs","Browser: CosmoPlayer"],
+              "@title":"AntennaWorld"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TRC170Pair",
+              "fieldValue": [
+                {
+                  "@name":"TRC1Location",
+                  "@value":[0,0,0]
+                },
+                {
+                  "@name":"TRC2Location",
+                  "@value":[-20000,0,-20000]
+                },
+                {
+                  "@name":"OperatingMode",
+                  "@value":"TROPOSCATTER"
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.57079],
+              "@groundColor":[1,0.8,0.6,0.6,0.4,0.2],
+              "@skyAngle":[0.2],
+              "@skyColor":[1,1,1,0.2,0.2,1]
+            }
+          }
+        ]
+    }
+  }
+}

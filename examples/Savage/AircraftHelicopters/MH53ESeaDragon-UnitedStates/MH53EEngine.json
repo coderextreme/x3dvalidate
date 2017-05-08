@@ -1,0 +1,100 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MH53EEngine.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"MH-53E Sea Dragon T64-GE-416 engine outline constructed by extrusion."
+          },
+          {
+            "@name":"creator",
+            "@content":"LT Terry D. Norbraten, USN"
+          },
+          {
+            "@name":"created",
+            "@content":"23 March 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"24 March 2012"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/h-53.htm"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.fas.org/man/dod-101/sys/ac/mh-53e-wasp-dr5.jpg http://images.google.com/imgres?imgurl=gra.midco.net/mlgould/Helicopters/MH-53E%2520Sea%2520Dragon.jpg&imgrefurl=http://gra.midco.net/mlgould/M-R.html&h=226&w=332&sz=32&tbnid=ICDN8Yoa8mAJ:&tbnh=78&tbnw=114&prev=/images%3Fq%3DMH-53E%26hl%3Den%26lr%3D%26ie%3DUTF-8%26oe%3DUTF-8%26c2coff%3D1 http://www.history.navy.mil/planes/mh-53e.jpg http://digilander.libero.it/31ATSG/MH-53E%20163057-41.jpg http://www.ndu.edu/nwc/nwcCLIPART/US_NAVY/Equipment/Helicopters/MH-53E(Sea-Dragon)/MH53ESeaDragon01.jpg"
+          },
+          {
+            "@name":"subject",
+            "@content":"MH-53E Sea Dragon T64-GE-416 turboshaft engine outline."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/MH53ESeaDragon-UnitedStates/MH53EEngine.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3d.org/x3d/translation/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Shape":
+            {
+              "@DEF":"EngineNacelle",
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.208,0.388,0.463],
+                          "@emissiveColor":[0.0471,0.0863,0]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@creaseAngle":1.05,
+                    "@crossSection":[0,-0.2,-0.191342,-0.16194,-0.353553,-0.053553,-0.46194,0.108658,-0.5,0.3,-0.46194,0.491342,-0.353553,0.653553,-0.191342,0.76194,0,0.8,0.191342,0.76194,0.353553,0.653553,0.46194,0.491342,0.5,0.3,0.46194,0.108658,0.353553,-0.053553,0.191342,-0.16194,0,-0.2],
+                    "@endCap":false,
+                    "@scale":[0.7,0.7,0.707,0.707,0.7,0.7,0.6809,0.6809,0.6143,0.6143,0.6,0.6,0.595,0.595,0.589,0.589,0.5798,0.5798,0.5583,0.5583,0.5435,0.5435,0.5285,0.5285,0.5081,0.5081,0.5,0.5],
+                    "@solid":false,
+                    "@spine":[0.1,1.25,1.15,0.1,1.16348,0.336915,0.1,1.15,0.05,0.1,1.16587,-0.19166,0.1,1.24417,-0.72152,0.1,1.24721,-0.85279,0.1,1.24021,-0.867751,0.1,1.23408,-0.879653,0.1,1.22614,-0.892959,0.1,1.20518,-0.922078,0.1,1.18412,-0.950637,0.1,1.15328,-0.994224,0.1,1.08783,-1.09169,0.1,1.05,-1.15]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

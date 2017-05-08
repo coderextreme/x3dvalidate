@@ -1,0 +1,124 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HarpoonExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"RGM-84D, Harpoon Anti-Ship Cruise missile example use of prototype with built-in animation."
+          },
+          {
+            "@name":"creator",
+            "@content":"James Harney"
+          },
+          {
+            "@name":"created",
+            "@content":"13 October 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 April 2009"
+          },
+          {
+            "@name":"warning",
+            "@content":"needs to be realigned with X-axis nose and Y-axis up."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/smart/agm-84.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/man/dod-101/sys/smart/agm-84.gif"
+          },
+          {
+            "@name":"reference",
+            "@content":"AGM-84 Harpoon-SLAM - Smart Weapons.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"agm-84.gif"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Cruiser-UnitedStates/Cruiser.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.specialoperations.com/multimedia/sounds.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"See url \"soundpermissions.html\" for copyright info and use on missile1.au and exp03.au that are converted to missile1.wav and exp03.wav for use in this file/model"
+          },
+          {
+            "@name":"accessRights",
+            "@content":"soundpermissions.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/Missiles/HarpoonExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"RGM-84D",
+              "@url":["HarpoonPrototype.x3d#RGM-84D","https://savage.nps.edu/Savage/Weapons/Missiles/HarpoonPrototype.x3d#RGM-84D","HarpoonPrototype.wrl#RGM-84D","https://savage.nps.edu/Savage/Weapons/Missiles/HarpoonPrototype.wrl#RGM-84D"],
+              "field": [
+                {
+                  "@name":"STARTLAUNCH",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"THETIME",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "Background":
+            {
+              "@skyColor":[0.604,0.753,0.804]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"RGM-84D"
+            }
+          }
+        ]
+    }
+  }
+}

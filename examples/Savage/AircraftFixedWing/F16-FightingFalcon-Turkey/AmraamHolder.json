@@ -1,0 +1,119 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AmraamHolder.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"F16, Fighting Falcon, Turkish Air Force (TUAF) AIM120 AMRAAM missile holder"
+          },
+          {
+            "@name":"creator",
+            "@content":"Murat ONDER, LTJG, Turkish Navy"
+          },
+          {
+            "@name":"created",
+            "@content":"13 July 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 February 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Transform":
+            {
+              "@scale":[1,0.9,1.5],
+              "@translation":[0,-0.75,1],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@creaseAngle":1.00,
+                          "@crossSection":[0.5,0,0.45,0.5,0.40,0.6,0.35,0.7,0.3,0.72,0,0.75,-0.3,0.72,-0.35,0.7,-0.40,0.6,-0.45,0.5,-0.5,0,-0.45,-0.5,-0.40,-0.6,-0.35,-0.7,-0.3,-0.72,0,-0.75,0.3,-0.72,0.35,-0.7,0.40,-0.6,0.45,-0.5,0.5,0],
+                          "@scale":[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],
+                          "@solid":false,
+                          "@spine":[0,0,0,0,0,-1,0,0,-2,0,0,-3.5]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.5,0.5,0.5],
+                                "@shininess":0.5
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-0.2,-2],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.25,0.25,0.25],
+                                "@shininess":0.5
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[0.1,0.75,1.5]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

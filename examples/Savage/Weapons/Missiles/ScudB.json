@@ -1,0 +1,256 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ScudB.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"SCUD-B Missile Used by Iraq, North Korea and Iran"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jeffrey D. Weekley"
+          },
+          {
+            "@name":"created",
+            "@content":"6 November 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"16 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.fas.org/nuke/guide/iran/missile/shahab-1.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cdiss.org/scudnt3.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cdiss.org/btablea.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.duxford.org/exhibits/279/"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.duxford.org/exhibits/images/iwm_soviet_maz_543p_01.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"iwm_soviet_maz_543p_01.jpg"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.pbs.org/wgbh/pages/frontline/gulf/weapons/scud.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"SCUD-B Missile, aka Shahab-1, aka Tae-po Dong"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/Missiles/ScudB.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Scud B missile",
+              "@position":[0,0,15]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":8,
+                                "@radius":0.4425,
+                                "@top":false
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"Cammi",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.45,0.55,0.55]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,4.9,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.4425,
+                                      "@height":1.8
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Cammi"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,-4.1,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Cone":
+                                    {
+                                      "@bottomRadius":0.2,
+                                      "@height":0.66
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.15,0.15,0.15],
+                                            "@shininess":0.66,
+                                            "@specularColor":[0.22,0.22,0.22]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@DEF":"TailFin",
+                          "@translation":[0.175,-4.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "IndexedFaceSet":
+                                    {
+                                      "@coordIndex":[0,1,2,3,4,5,-1],
+                                      "@solid":false,
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[0,0.4,0,0.25,0,0,0.75,0,0,0.75,1,0,0,1.65,0,0,0.4,0]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Cammi"
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"TailFin"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,3.14],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"TailFin"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@rotation":[0,1,0,-1.57],
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@USE":"TailFin"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

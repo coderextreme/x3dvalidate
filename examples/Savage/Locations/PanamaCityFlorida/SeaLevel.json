@@ -1,0 +1,100 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SeaLevel.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"SeaLevel for bathymetry and terrain model of Panama City, Florida"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo"
+          },
+          {
+            "@name":"created",
+            "@content":"4 June 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 June 2007"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://planet-earth.org/Rez/RezIndex.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/PanamaCityFlorida/SeaLevel.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundColor":[0,0,0],
+              "@skyAngle":[1.57],
+              "@skyColor":[0,0.2,0.3]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2550,0,1970],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5100,0.1,3940]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0,0.7],
+                                "@transparency":0.7
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

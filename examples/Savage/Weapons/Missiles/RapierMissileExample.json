@@ -1,0 +1,109 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RapierMissileExample.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Oliver Tan"
+          },
+          {
+            "@name":"created",
+            "@content":"12 February 2004"
+          },
+          {
+            "@name":"modified",
+            "@content":"2 September 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Rapier Missile."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Weapons/Missiles/RapierMissileExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.army-technology.com/projects/jernas/jernas1.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"Rapier, Rapier missile, missile"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"RapierMissile",
+              "@url":["RapierMissilePrototype.x3d#RapierMissile","https://savage.nps.edu/Savage/Weapons/Missiles/RapierMissilePrototype.x3d#RapierMissile","RapierMissilePrototype.wrl#RapierMissile","https://savage.nps.edu/Savage/Weapons/Missiles/RapierMissilePrototype.wrl#RapierMissile"],
+              "field": [
+                {
+                  "@name":"rocketAppearance",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"RapierMissile",
+              "fieldValue": [
+                {
+                  "@name":"rocketAppearance",
+                  "-children":[
+                    { "Appearance":
+                      {
+                        "-material":
+                          { "Material":
+                            {
+                              "@diffuseColor":[0.3,0.6,0.9]
+                            }
+                          },
+                        "-texture":
+                          { "ImageTexture":
+                            {
+                              "@url":["cammie1.jpg","https://savage.nps.edu/Savage/AircraftFixedWing/AV8B-Harrier-UnitedStates/cammie1.jpg"]
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

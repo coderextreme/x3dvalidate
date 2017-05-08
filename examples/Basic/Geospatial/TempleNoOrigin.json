@@ -1,0 +1,1196 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TempleNoOrigin.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Temple without GeoOrigin results in jittery locations due to floating-point roundoff error of geospatial position values."
+          },
+          {
+            "@name":"creator",
+            "@content":"Martin Reddy SRI authored the original temple scene."
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"translated",
+            "@content":"22 April 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 December 2011"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.geovrml.org/examples"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D geospatial example"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/TempleNoOrigin.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@avatarSize":[1.0E-6,1.0E-6,1.0E-6],
+              "@speed":1.0E-4
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "@description":"Temple",
+              "@geoSystem":["UTM","Z11"],
+              "@orientation":[1.0,0.0,0.0,-1.57],
+              "@position":[8167782.0,258125.0,45]
+            }
+          },
+          { "Background":
+            {
+              "@groundColor":[1.0,1.0,1.0],
+              "@skyColor":[1.0,1.0,1.0]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"COLUMN",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,0.9,0.8]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"stone6",
+                                      "@url":["images/stone6.png","images/stone6.gif","http://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/stone6.png","http://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/stone6.gif","http://www.ai.sri.com/~reddy/geovrml/examples/temple/stone6.gif"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":5.0,
+                                "@radius":0.6
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167773.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167775.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167777.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167781.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167783.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167785.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258115.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167773.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167775.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167777.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167781.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167783.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167785.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258117.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258119.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258119.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258119.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258119.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258121.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258121.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258121.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258121.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258123.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258123.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258123.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258123.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258125.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258125.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258125.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258125.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258127.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258127.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258127.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258127.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258129.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258129.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258129.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258129.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258131.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258131.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258131.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258131.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167773.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167775.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167777.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167781.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167783.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167785.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258133.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167769.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167771.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167773.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167775.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167777.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167781.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167783.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167785.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167787.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167789.0,258135.0,2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"COLUMN"
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258125.0,-0.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,0.13],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,1.0]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"stone5",
+                                      "@url":["images/stone5.png","images/stone5.gif","http://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/stone5.png","http://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/stone5.gif","http://www.ai.sri.com/~reddy/geovrml/examples/temple/stone5.gif"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[22.0,1.0,22.0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258125.0,-1.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,0.13],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,1.0]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"stone5"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[24.0,1.0,24.0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "GeoLocation":
+            {
+              "@geoCoords":[8167779.0,258125.0,-2.5],
+              "@geoSystem":["UTM","Z11"],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0.0,1.0,0.0,0.13],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,1.0]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@USE":"stone5"
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[26.0,1.0,26.0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

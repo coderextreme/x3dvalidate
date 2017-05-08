@@ -1,0 +1,497 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"EventUtilityExamples.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Event utility node examples for boolean filtering and other event utility nodes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"3 November 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"subject",
+            "@content":"BooleanFilter BooleanToggle BooleanTrigger IntegerTrigger TimeTrigger"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityExamples.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"========================================"
+          },
+          {
+            "#comment":"ExternProtoDeclare definitions are used here only for language development - do not copy into other scenes!"
+          },
+          {
+            "#comment":"ExternProtoDeclare node support is provided either by X3D-compliant browser or X3dToVrml97.xslt ExternProtoDeclare definitions."
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BooleanFilter",
+              "@appinfo":"Selectively pass only true or false events.",
+              "@url":["EventUtilityPrototypes.wrl#BooleanFilter","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#BooleanFilter","EventUtilityPrototypes.x3d#BooleanFilter","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#BooleanFilter"],
+              "field": [
+                {
+                  "@name":"set_boolean",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"inputTrue",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"inputFalse",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"inputNegate",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BooleanToggle",
+              "@appinfo":"Negate or reset prior boolean state output result.",
+              "@url":["EventUtilityPrototypes.wrl#BooleanToggle","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#BooleanToggle","EventUtilityPrototypes.x3d#BooleanToggle","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#BooleanToggle"],
+              "-children":[
+                {
+                  "#comment":"warning: toggle depends on exposedField functionality in Script node, not compatible with VRML 97. implemented as inputOnly/initializeOnly/outputOnly triplet."
+                }
+              ],
+              "field": [
+                {
+                  "@name":"set_boolean",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_toggle",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toggle",
+                  "@accessType":"inputOutput",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toggle_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"BooleanTrigger",
+              "@appinfo":"Convert time events to boolean true events.",
+              "@url":["EventUtilityPrototypes.wrl#BooleanTrigger","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#BooleanTrigger","EventUtilityPrototypes.x3d#BooleanTrigger","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#BooleanTrigger"],
+              "field": [
+                {
+                  "@name":"set_triggerTime",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"triggerTrue",
+                  "@accessType":"outputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"IntegerTrigger",
+              "@appinfo":"Convert boolean true or time input events to integer value (suitable for Switch node).",
+              "@url":["EventUtilityPrototypes.wrl#IntegerTrigger","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#IntegerTrigger","EventUtilityPrototypes.x3d#IntegerTrigger","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#IntegerTrigger"],
+              "field": [
+                {
+                  "@name":"set_boolean",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_integerKey",
+                  "@accessType":"inputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"integerKey",
+                  "@accessType":"inputOutput",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"integerKey_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"triggerValue",
+                  "@accessType":"outputOnly",
+                  "@type":"SFInt32"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"TimeTrigger",
+              "@appinfo":"Convert boolean true events to time events.",
+              "@url":["EventUtilityPrototypes.wrl#TimeTrigger","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#TimeTrigger","EventUtilityPrototypes.x3d#TimeTrigger","http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#TimeTrigger"],
+              "field": [
+                {
+                  "@name":"set_boolean",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"triggerTime",
+                  "@accessType":"outputOnly",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[0,3,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for BooleanFilter example",
+                          "@parameter":["target=_blank"],
+                          "@url":["../../Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d","../../Savage/Tools/HeadsUpDisplays/CrossHairExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["BooleanFilter example"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@DEF":"TextFont",
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.8,
+                                            "@style":"BOLD"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,1.5,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for BooleanToggle example",
+                          "@parameter":["target=_blank"],
+                          "@url":["../../Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d","../../Savage/Tools/HeadsUpDisplays/CrossHairExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["BooleanToggle example"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"TextFont"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for BooleanTrigger example",
+                          "@parameter":["target=_blank"],
+                          "@url":["../../Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.x3d","../../Savage/Tools/HeadsUpDisplays/CrossHairExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairExample.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["BooleanTrigger example"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"TextFont"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0,-1.5,0],
+                    "-children":[
+                      { "Anchor":
+                        {
+                          "@description":"Click for IntegerTrigger example",
+                          "@parameter":["target=_blank"],
+                          "@url":["../../Savage/Tools/Animation/MaterialChoiceExample.x3d","https://savage.nps.edu/Savage/Tools/Animation/MaterialChoiceExample.x3d","../../Savage/Tools/Animation/MaterialChoiceExample.wrl","https://savage.nps.edu/Savage/Tools/Animation/MaterialChoiceExample.wrl"],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.6,0.6,0.2]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["IntegerTrigger example"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@USE":"TextFont"
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TimeTriggerTransform",
+                    "@translation":[0,-3,0],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TimeTriggerTouchSensor",
+                          "@description":"Click forTimeTrigger example"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.6,0.6,0.2]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["TimeTrigger example"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"TextFont"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeTrigger":
+                  {
+                    "@DEF":"TimeTriggerNode"
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"TimeTriggerTimeSensor",
+                    "@cycleInterval":2
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"TimeTriggerOrientationInterpolator",
+                    "@key":[0,0.5,1],
+                    "@keyValue":[0,1,0,0,0,1,0,3.14159,0,1,0,6.2432]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"TimeTriggerTouchSensor",
+                    "@toField":"set_boolean",
+                    "@toNode":"TimeTriggerNode"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"triggerTime",
+                    "@fromNode":"TimeTriggerNode",
+                    "@toField":"startTime",
+                    "@toNode":"TimeTriggerTimeSensor"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"TimeTriggerTimeSensor",
+                    "@toField":"set_fraction",
+                    "@toNode":"TimeTriggerOrientationInterpolator"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"TimeTriggerOrientationInterpolator",
+                    "@toField":"set_rotation",
+                    "@toNode":"TimeTriggerTransform"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

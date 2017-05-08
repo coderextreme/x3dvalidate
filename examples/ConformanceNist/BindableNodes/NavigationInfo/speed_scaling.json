@@ -1,0 +1,660 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"speed_scaling.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.nist.gov/vrml.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"
+          },
+          {
+            "@name":"creator",
+            "@content":"http://www.itl.nist.gov/div897/ctg/vrml/members.html"
+          },
+          {
+            "@name":"disclaimer",
+            "@content":"This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."
+          },
+          {
+            "@name":"info",
+            "@content":"Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"
+          },
+          {
+            "@name":"translator",
+            "@content":"Michael Kass NIST, Don Brutzman NPS"
+          },
+          {
+            "@name":"translated",
+            "@content":"21 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"15 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Test speed scaling. Three Viewpoint node, children in three different Transform node, with three different scale values are used to determine if scaling of Transform node properly affect the speed of a NavigationInfo node. Indicating the top (red) Box changes the current Viewpoints parent Transform scale to (0.01 0.01 0.01). The result should be, the \"normal\" speed of navigation should be 10 times slower than default navigation speed. Selecting the middle (yellow) Box sets the Transform scale to 1 1 1. Navigation speed should be 1 meter per second when set to \"normal\" on the browser speed control. Indicating the bottom (green) Box sets the Transform scale to 10 10 10. The result should be, the \"normal\" speed of navigation for the right indicated text should be 10 times faster than default navigation speed."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/speed_scaling.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.57],
+              "@groundColor":[0,0.5,0,0,0.5,0],
+              "@skyColor":[0,0,1]
+            }
+          },
+          { "ProximitySensor":
+            {
+              "@DEF":"PROX_SENSOR",
+              "@size":[100000,100000,100000]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"ROOT_TRANS",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"VIEW0",
+                    "@description":"initial view"
+                  }
+                },
+                { "NavigationInfo":
+                  {
+                    "@DEF":"NAV0"
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TIME",
+              "@loop":true
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TRANS0",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-7,5,-15],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"TYPESTRING0",
+                                "@string":["scripted instructions go here"]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TRANS1",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-5,-4,-10],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0,0,0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"TYPESTRING1",
+                                "@string":["current speed = 0"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TRANS2",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-4,0,-10],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TOUCH1",
+                          "@description":"touch for speed factor 1"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["1x.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/1x.jpg"]
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[2,1.5,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TRANS3",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-4,2,-10],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TOUCH2",
+                          "@description":"touch for speed factor 1/100th"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["hundredthx.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/hundredthx.jpg"]
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[2,1.5,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"TRANS4",
+              "-children":[
+                { "Transform":
+                  {
+                    "@translation":[-4,-2,-10],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@DEF":"TOUCH3",
+                          "@description":"touch for speed factor 100x"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["100x.jpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/100x.jpg"]
+                                    }
+                                  },
+                                "-material":
+                                  { "Material":
+                                    {
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[2,1.5,0.1]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"CHANGEVIEW",
+              "@directOutput":true,
+              "@url":["speed_scaling.js","http://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/speed_scaling.js"],
+              "field": [
+                {
+                  "@name":"proxSensor",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "ProximitySensor":
+                      {
+                        "@USE":"PROX_SENSOR"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"rootTrans",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"ROOT_TRANS"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"typestring0",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Text":
+                      {
+                        "@USE":"TYPESTRING0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"typestring1",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Text":
+                      {
+                        "@USE":"TYPESTRING1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"previousTime",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFTime",
+                  "@value":0
+                },
+                {
+                  "@name":"previousLoc",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0,0,100]
+                },
+                {
+                  "@name":"currentLoc",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0,0,10]
+                },
+                {
+                  "@name":"emptyString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"zero",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["current speed = 0"]
+                },
+                {
+                  "@name":"setSmallScaleString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Click to set Transform scale to .01 .01 .01"]
+                },
+                {
+                  "@name":"smallScaleSetString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Tranform scale set to .01 .01 .01"]
+                },
+                {
+                  "@name":"setNormalScaleString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Click to set Transform scale to 1 1 1"]
+                },
+                {
+                  "@name":"normalScaleSetString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Transform scale set to 1 1 1"]
+                },
+                {
+                  "@name":"setLargeScaleString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Click to set Transform scale to 100 100 100"]
+                },
+                {
+                  "@name":"largeScaleSetString",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFString",
+                  "@value":["Transform scale set to 100 100 100"]
+                },
+                {
+                  "@name":"small",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0.010000,0.010000,0.010000]
+                },
+                {
+                  "@name":"normal",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[1,1,1]
+                },
+                {
+                  "@name":"large",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[100,100,100]
+                },
+                {
+                  "@name":"printSpeed",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"printZero",
+                  "@accessType":"inputOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"smallScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"largeScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"normalScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"printSmallScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"printLargeScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"printNormalScale",
+                  "@accessType":"inputOnly",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TOUCH1",
+              "@toField":"normalScale",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"TOUCH1",
+              "@toField":"printNormalScale",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TOUCH2",
+              "@toField":"smallScale",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"TOUCH2",
+              "@toField":"printSmallScale",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isActive",
+              "@fromNode":"TOUCH3",
+              "@toField":"largeScale",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"isOver",
+              "@fromNode":"TOUCH3",
+              "@toField":"printLargeScale",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"printSpeed",
+              "@toNode":"CHANGEVIEW"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_translation",
+              "@toNode":"TRANS0"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_rotation",
+              "@toNode":"TRANS0"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_translation",
+              "@toNode":"TRANS1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_rotation",
+              "@toNode":"TRANS1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_translation",
+              "@toNode":"TRANS2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_rotation",
+              "@toNode":"TRANS2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_translation",
+              "@toNode":"TRANS3"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_rotation",
+              "@toNode":"TRANS3"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_translation",
+              "@toNode":"TRANS4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"PROX_SENSOR",
+              "@toField":"set_rotation",
+              "@toNode":"TRANS4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"cycleTime",
+              "@fromNode":"TIME",
+              "@toField":"printZero",
+              "@toNode":"CHANGEVIEW"
+            }
+          }
+        ]
+    }
+  }
+}

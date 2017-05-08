@@ -1,0 +1,119 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TRC170-PairExample.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Instantiatio of the TRC-170 Pair Prototype. A TRC-170 is a long-range SHF communication system. It operates in 3 modes. 1)Direct point-to-point link (< 30 miles). 2) Tropospheric shot (up to 100 or 150 miles, depending on system version). 3) Defraction shot over an a terrain feature or object in the path ( < 50 miles)."
+          },
+          {
+            "@name":"creator",
+            "@content":"Mike Hunsberger"
+          },
+          {
+            "@name":"created",
+            "@content":"7 May 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"21 February 2010"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-PairExample.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"ExternProtoDeclare definitions must be included verbatim"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"TRC170Pair",
+              "@url":["TRC170-PairPrototype.x3d#TRC170Pair","https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-PairPrototype.x3d#TRC170Pair","TRC170-PairPrototype.wrl#TRC170Pair","https://savage.nps.edu/Savage/CommunicationsAndSensors/TRC170/TRC170-PairPrototype.wrl#TRC170Pair"],
+              "field": [
+                {
+                  "@name":"TRC1Location",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"TRC2Location",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"OperatingMode",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFString"
+                }
+              ]
+            }
+          },
+          { "WorldInfo":
+            {
+              "@info":["Authors: Mike Hunsberger","Revised: 30 April 2001","Purpose: Pair of TSSRs","Script: none","Browser: CosmoPlayer"],
+              "@title":"AntennaWorld"
+            }
+          },
+          { "Background":
+            {
+              "@groundAngle":[1.57079],
+              "@groundColor":[1,0.8,0.6,0.6,0.4,0.2],
+              "@skyAngle":[0.2],
+              "@skyColor":[1,1,1,0.2,0.2,1]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TRC170Pair",
+              "fieldValue": [
+                {
+                  "@name":"TRC1Location",
+                  "@value":[15000,0,15000]
+                },
+                {
+                  "@name":"TRC2Location",
+                  "@value":[0,0,0]
+                },
+                {
+                  "@name":"OperatingMode",
+                  "@value":"TROPOSCATTER"
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

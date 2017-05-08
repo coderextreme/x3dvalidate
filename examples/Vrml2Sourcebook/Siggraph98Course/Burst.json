@@ -1,0 +1,171 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Burst.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Burst of lines: illustrate the use of an IndexedLineSet to build a 3D star-burst."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/burst.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0230.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Burst.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, Andrea L. Ames, David R. Nadeau, John L. Moreland"],
+              "@title":"Burst of lines"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Entry view",
+              "@position":[0.0,0.0,3.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"Burst",
+              "-geometry":
+                { "IndexedLineSet":
+                  {
+                    "@coordIndex":[0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1,0,6,-1,0,7,-1,0,8,-1,0,9,-1,0,10,-1,0,11,-1,0,12,-1,0,13,-1,0,14,-1,0,15,-1,0,16,-1],
+                    "-color":
+                      { "Color":
+                        {
+                          "@color":[1.0,1.0,0.0,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3,1.0,0.3,0.3]
+                        }
+                      },
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[0.0,0.0,0.0,1.0,0.0,0.0,0.92,0.38,0.0,0.71,0.71,0.0,0.38,0.92,0.0,0.0,1.0,0.0,-0.38,0.92,0.0,-0.71,0.71,0.0,-0.92,0.38,0.0,-1.0,0.0,0.0,-0.92,-0.38,0.0,-0.71,-0.71,0.0,-0.38,-0.92,0.0,0.0,-1.0,0.0,0.38,-0.92,0.0,0.71,-0.71,0.0,0.92,-0.38,0.0]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0.0,1.0,0.0,0.785],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Burst"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0.0,1.0,0.0,1.57],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Burst"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@rotation":[0.0,1.0,0.0,2.355],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Burst"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

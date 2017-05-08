@@ -1,0 +1,184 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"EntryGate.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Entry gate for soccer complex"
+          },
+          {
+            "@name":"creator",
+            "@content":"Capt Beth Welliver"
+          },
+          {
+            "@name":"created",
+            "@content":"18 March 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/SoccerComplex/EntryGate.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"EntryGate",
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"WholePole",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"Pole",
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@bottom":false,
+                                "@height":4,
+                                "@radius":0.3,
+                                "@solid":false
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@ambientIntensity":0.249999,
+                                      "@diffuseColor":[0,0,0.04254],
+                                      "@shininess":0.1,
+                                      "@specularColor":[0.632653,0.627312,0.609747]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@scale":[0.55,0.55,0.55],
+                          "@translation":[0,2.1,0],
+                          "-children":[
+                            { "Inline":
+                              {
+                                "@url":["../SoccerStadium/SoccerBall.x3d","https://savage.nps.edu/Savage/Buildings/SoccerStadium/SoccerBall.x3d"]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[5,0,0],
+                    "-children":[
+                      { "Group":
+                        {
+                          "@USE":"WholePole"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[2.5,1.4,0],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.058824,0.098039,1],
+                                      "@emissiveColor":[0.078431,0.090196,1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[4.4,1.2,0.2]
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0,0,0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@url":["WelcomeSign.jpg","https://savage.nps.edu/Savage/Buildings/SoccerComplex/WelcomeSign.jpg"]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[4.38,1.18,0.05]
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

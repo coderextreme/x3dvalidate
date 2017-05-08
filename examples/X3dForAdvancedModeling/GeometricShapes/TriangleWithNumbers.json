@@ -1,0 +1,312 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TriangleWithNumbers.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple Triangle with labeled points, where labels always face the user and stay in place with the triangle."
+          },
+          {
+            "@name":"creator",
+            "@content":"Chad R. Hutchins, Michele Foti and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"31 January 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 July 2016"
+          },
+          {
+            "@name":"Image",
+            "@content":"TriangleWithNumbers.png"
+          },
+          {
+            "@name":"TODO",
+            "@content":"Can we build a prototype that automates generation of this type of model from any IFS or ILS?"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/TriangleWithNumbers.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.3,0.3,0.45]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Triangle annotated with coordinate indices",
+              "@position":[0,0,4]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"PolygonGroup0",
+              "-children":[
+                { "TouchSensor":
+                  {
+                    "@description":"Polygon 0"
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedLineSet":
+                        {
+                          "@coordIndex":[0,1,2,0,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"TriangleCoordinatePoints",
+                                "@point":[-1,-1,0,1,-1,0,0,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0.1254902035,1,0.0784313753]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@colorIndex":[0],
+                          "@colorPerVertex":false,
+                          "@coordIndex":[0,1,2,0,-1],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@USE":"TriangleCoordinatePoints"
+                              }
+                            },
+                          "-color":
+                            { "ColorRGBA":
+                              {
+                                "@color":[0,0,0,0]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"VertexGroup0",
+              "@translation":[-1.1,-1.1,0],
+              "-children":[
+                { "Billboard":
+                  {
+                    "@axisOfRotation":[0,0,0],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@description":"Vertex 0"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"LABEL_APPEARANCE",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,0.3],
+                                      "@emissiveColor":[0.33,0.33,0.1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["0"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@DEF":"LABEL_FONT",
+                                      "@family":["SANS"],
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.2
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@DEF":"TransparentBox",
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.2,0.2,0.01]
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"TransparentAppearance",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@transparency":1
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"VertexGroup1",
+              "@translation":[1.1,-1.1,0],
+              "-children":[
+                { "Billboard":
+                  {
+                    "@axisOfRotation":[0,0,0],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@description":"Vertex 1"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"LABEL_APPEARANCE"
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["1"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"LABEL_FONT"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@USE":"TransparentBox"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"VertexGroup2",
+              "@translation":[0,1.1,0],
+              "-children":[
+                { "Billboard":
+                  {
+                    "@axisOfRotation":[0,0,0],
+                    "-children":[
+                      { "TouchSensor":
+                        {
+                          "@description":"Vertex 2"
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"LABEL_APPEARANCE"
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["2"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@USE":"LABEL_FONT"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "@USE":"TransparentBox"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

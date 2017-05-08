@@ -1,0 +1,195 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloX3dAuthorsAnimationChain.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"5 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"description",
+            "@content":"Fully developed animation-chain example showing spinning globe and text: Hello!"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter07-EventAnimationInterpolation/HelloX3dAuthorsAnimationChain.x3d"
+          },
+          {
+            "@name":"resource",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/course/HelloX3dAuthorsAnimationChain.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["an introductory scene"],
+              "@title":"Hello X3D Authors Animation Chain"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Hello, world",
+              "@orientation":[0,1,0,3.14159],
+              "@position":[0,0,-8]
+            }
+          },
+          {
+            "#comment":"change TimeSensor loop='true' to enable automatic animation when loaded, rather than TouchSensor trigger to start"
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"OrbitalTimeInterval",
+              "@cycleInterval":12
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"SpinThoseThings",
+              "@key":[0.00,0.25,0.50,0.75,1.00],
+              "@keyValue":[0,1,0,0,0,1,0,1.57079,0,1,0,3.14159,0,1,0,4.7123889,0,1,0,6.2831852]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"OrbitalTimeInterval",
+              "@toField":"set_fraction",
+              "@toNode":"SpinThoseThings"
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"EarthCoordinateSystem",
+              "-children":[
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"SpinThoseThings",
+                    "@toField":"set_rotation",
+                    "@toNode":"EarthCoordinateSystem"
+                  }
+                },
+                { "Group":
+                  {
+                    "@DEF":"MiniWorld",
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["../../earth-topo.png","../../earth-topo.gif","../../earth-topo-small.gif","http://X3dGraphics.com/examples/X3dForWebAuthors/earth-topo.png","http://X3dGraphics.com/examples/X3dForWebAuthors/earth-topo.gif","http://X3dGraphics.com/examples/X3dForWebAuthors/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"SimpleGeoStationarySatellite",
+                    "@rotation":[1,0,0,0.3],
+                    "@scale":[0.1,0.3,0.1],
+                    "@translation":[0,0,5],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.1,0.1],
+                                      "@emissiveColor":[0.9,0.2,0.1]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Hello X3D Authors !!"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@size":3
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TouchSensor":
+                  {
+                    "@DEF":"ClickTriggerTouchSensor",
+                    "@description":"Click to start animation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"touchTime",
+                    "@fromNode":"ClickTriggerTouchSensor",
+                    "@toField":"startTime",
+                    "@toNode":"OrbitalTimeInterval"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

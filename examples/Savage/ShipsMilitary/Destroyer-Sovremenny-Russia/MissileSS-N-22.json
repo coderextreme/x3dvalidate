@@ -1,0 +1,281 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"MissileSS-N-22.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Kevin Anderson, Mike Whitecar"
+          },
+          {
+            "@name":"created",
+            "@content":"27 September 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 November 2002"
+          },
+          {
+            "@name":"description",
+            "@content":"SS-N-22 Missile for use with Sovremennny and/or other Russian Warships. Designed to specifications and photos supplied by Janes Online."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/ShipsMilitary/Destroyer-Sovremenny-Russia/MissileSS-N-22.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"SS-N-22 Missile Launcher"
+          },
+          { "Transform":
+            {
+              "@translation":[0,-0.4,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"Gray",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.62,0.63,0.61]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[5,2,2.8]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.5,1.25,0.65],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"MissileTube",
+                    "@rotation":[0,0,1,-1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@height":9,
+                                "@radius":0.65
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"Gray"
+                              }
+                            }
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@scale":[1,0.35,1],
+                          "@translation":[0,4.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"TubeEnd",
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"Gray"
+                                    }
+                                  },
+                                "-geometry":
+                                  { "Sphere":
+                                    {
+                                      "@radius":0.65
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@scale":[1,0.35,1],
+                          "@translation":[0,-4.5,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@USE":"TubeEnd"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.5,1.25,-0.65],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"MissileTube"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.5,2.55,0.65],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"MissileTube"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.5,2.55,-0.65],
+              "-children":[
+                { "Transform":
+                  {
+                    "@USE":"MissileTube"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0.5,1.9,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[8.8,2.6,1.3]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Gray"
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,1.9,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"Beam",
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"Gray"
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[0.2,0.6,2.6]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,1.9,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Beam"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,0.6,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Beam"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,0.6,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"Beam"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

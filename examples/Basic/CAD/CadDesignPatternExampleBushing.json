@@ -1,0 +1,292 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"CADInterchange",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"CADGeometry",
+            "@level":2
+          },
+          {
+            "@name":"Geometry2D",
+            "@level":2
+          },
+          {
+            "@name":"EnvironmentalEffects",
+            "@level":1
+          },
+          {
+            "@name":"Shape",
+            "@level":4
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CadDesignPatternExampleBushing.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Design pattern examples demonstrating proper hierarchy of CAD nodes: CADLayer, CADAssembly, CADPart, and then CADFace."
+          },
+          {
+            "@name":"creator",
+            "@content":"Vince Marchetti, Don Brutzman"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xj3D, http://www.xj3d.org"
+          },
+          {
+            "@name":"created",
+            "@content":"24 June 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"5 March 2017"
+          },
+          {
+            "@name":"warning",
+            "@content":"Only InstantReality, X3DOM, OctagaVs and Xj3D are properly handling geometry of Disk2D end caps"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingBsContact.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingCobweb.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingFreeX3d.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingInstantReality.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingOctagaVs.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingView3dscene.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingX3dom.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"CadDesignPatternExampleBushingXj3d.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/member-only/mantis/view.php?id=528"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/CADGeometry.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D CAD CADInterchange profile"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/CAD/CadDesignPatternExampleBushing.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.9607843,1,0.9607843]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Hello CAD bushing",
+              "@orientation":[1,0,0,-0.321751],
+              "@position":[0,5,15]
+            }
+          },
+          { "CADAssembly":
+            {
+              "@name":"DesignPatternAssembly",
+              "-children":[
+                { "CADPart":
+                  {
+                    "@name":"CADPartSides",
+                    "-children":[
+                      {
+                        "#comment":"the rotation and translation attributes serve to position the bushing within the assembly"
+                      },
+                      { "CADFace":
+                        {
+                          "@name":"outerSurface",
+                          "-shape":
+                            { "Shape":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"note solid='true' and so one-sided external rendering only"
+                                  }
+                                ],
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":3,
+                                      "@radius":2,
+                                      "@top":false
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@DEF":"AppearanceGrey",
+                                      "-material":
+                                        { "Material":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                      { "CADFace":
+                        {
+                          "@name":"innerSurface",
+                          "-shape":
+                            { "Shape":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"note solid='false' and so two-sided internal + external rendering"
+                                  }
+                                ],
+                                "-geometry":
+                                  { "Cylinder":
+                                    {
+                                      "@bottom":false,
+                                      "@height":3,
+                                      "@solid":false,
+                                      "@top":false
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AppearanceGrey"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "CADPart":
+                  {
+                    "@name":"CADPartTop",
+                    "@rotation":[1,0,0,1.5708],
+                    "@translation":[0,1.5,0],
+                    "-children":[
+                      { "CADFace":
+                        {
+                          "@name":"topCap",
+                          "-shape":
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Disk2D":
+                                    {
+                                      "@innerRadius":1,
+                                      "@outerRadius":2
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AppearanceGrey"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "CADPart":
+                  {
+                    "@name":"CADPartBottom",
+                    "@rotation":[-1,0,0,1.5708],
+                    "@translation":[0,-1.5,0],
+                    "-children":[
+                      { "CADFace":
+                        {
+                          "@name":"bottomCap",
+                          "-shape":
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Disk2D":
+                                    {
+                                      "@innerRadius":1,
+                                      "@outerRadius":2
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "@USE":"AppearanceGrey"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

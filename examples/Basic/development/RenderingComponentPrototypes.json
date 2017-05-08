@@ -1,0 +1,2506 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"RenderingComponentPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Prototype implementations of X3D Rendering component nodes (IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet LineSet TriangleFanSet TriangleSet TriangleStripSet) implemented as prototypes for backwards compatibility with VRML 97."
+          },
+          {
+            "@name":"info",
+            "@content":"X3dToVrml97.xslt translation stylesheet automatically invokes these prototypes upon encountering any new Rendering nodes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman, George Dabrowski, Ken Curtin, Duane Davis, Christos Kalogrias"
+          },
+          {
+            "@name":"created",
+            "@content":"17 November 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"9 October 2015"
+          },
+          {
+            "@name":"reference",
+            "@content":"RenderingComponentExamples.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"RenderingComponentExternProtoDefinitions.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Vrml2Sourcebook/Chapter13-PointsLinesFaces/Figure13.11IndexedLineSetBoxWireframe.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D Rendering component nodes (IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet LineSet TriangleFanSet TriangleSet TriangleStripSet)"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ColorRGBA",
+              "@appinfo":"ColorRGBA defines a set of RGBA colors. Warning: VRML 97 support does not include alpha values.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"locally override MFColorRGBA type (which is not supported in VRML 97) in order to downgrade to Color RGB",
+                      "@type":"MFRotation",
+                      "-children":[
+                        {
+                          "#comment":"The color field is a 4-tuple float array, and so we map it to an MFOrientation for backwards compatibility with VRML 97."
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Color":
+                      {
+                        "@DEF":"ColorRGB",
+                        "@color":[0.8,0.8,0.8]
+                      }
+                    },
+                    {
+                      "#comment":"remaining nodes are not rendered"
+                    },
+                    { "OrientationInterpolator":
+                      {
+                        "@DEF":"ColorRGBAholder",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"keyValue",
+                                "@protoField":"color"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"ConvertColorRGBAtoRGB",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"colorRGBAnode",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "OrientationInterpolator":
+                                {
+                                  "@USE":"ColorRGBAholder"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"colorRGBnode",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Color":
+                                {
+                                  "@USE":"ColorRGB"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "#sourceText":[
+"ecmascript:",
+"",
+"function initialize () ",
+"{",
+"//\tBrowser.print ('colorRGBAnode.keyValue.length=' + colorRGBAnode.keyValue.length);",
+"\tfor (i=0; i<=colorRGBAnode.keyValue.length-1; i++)",
+"\t{",
+"\t\t// type conversion of each array element",
+"\t\t// specifically, colorRGBAnode.keyValue[i] is an SFRotation",
+"\t\t// and individual element values are then extracted from that",
+"\t\tnextColor = new SFColor (",
+"\t\t\tcolorRGBAnode.keyValue[i].x,",
+"\t\t\tcolorRGBAnode.keyValue[i].y,",
+"\t\t\tcolorRGBAnode.keyValue[i].z);",
+"\t\t// note colorRGBAnode.keyValue[i].angle holds the alpha value; ignored ",
+"//\t\tBrowser.print ('color[' + i + ']=' + nextColor);",
+"\t\tcolorRGBnode.color[i] = nextColor;",
+"\t}",
+"}"
+]
+                      }
+                    },
+                    { "Group":
+                      {
+                        "-metadata":
+                          { "MetadataSet":
+                            {
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"metadata",
+                                      "@protoField":"metadata"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"IndexedTriangleFanSet",
+              "@appinfo":"IndexedTriangleFanSet represents a 3D shape composed of triangles that form a fan shape around the first vertex declared in each fan.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"set_index",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"[0 infinity] or -1",
+                      "@type":"MFInt32"
+                    },
+                    {
+                      "@name":"index",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0 infinity] or -1",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL array [] to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Normal node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"TextureCoordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedITFS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"UnrenderedITFS",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-children":[
+                                {
+                                  "#comment":"is this really needed at all??"
+                                }
+                              ],
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"NodesHolderITFS",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"color",
+                                            "@protoField":"color"
+                                          },
+                                          {
+                                            "@nodeField":"coord",
+                                            "@protoField":"coord"
+                                          },
+                                          {
+                                            "@nodeField":"normal",
+                                            "@protoField":"normal"
+                                          },
+                                          {
+                                            "@nodeField":"texCoord",
+                                            "@protoField":"texCoord"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"IndexedTriangleFanSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"index",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"set_index",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"renderedITFS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedITFS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"nodesHolder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"NodesHolderITFS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"index",
+                                      "@protoField":"index"
+                                    },
+                                    {
+                                      "@nodeField":"set_index",
+                                      "@protoField":"set_index"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\t// index is an array of triangle indices that form a fan shape",
+"\t// around the first vertex declared in each fan. The ordering of",
+"\t// the vertices is ccw (counter-clockwise).",
+"",
+"\t// ensure terminated by -1",
+"\tif (index[index.length-1] != -1) index[index.length] = -1;",
+"",
+"\t// ensure legal index values",
+"\tfor (i=0; i <= index.length-1; i++)",
+"\t{",
+"\t  if (index[i] < -1)",
+"\t  {",
+"\t\talwaysPrint ('error, index[' + i + ']=' + index[i] +",
+"' is illegal value, treated as -1');",
+"\t\tindex[i] = -1;",
+"\t  }",
+"\t}",
+"\ttracePrint ('index.length=' + index.length);",
+"\ttracePrint ('index=' + index);",
+"",
+"\tif (index.length < 4) ",
+"\t{",
+"\t\talwaysPrint ('warning, index.length=' + index.length + ",
+"' insufficient to construct a triangle, ITFS ignored');",
+"\t\treturn;",
+"\t}",
+"\tj = 0; // coordIndexNew counter",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\t// i walks through index array,",
+"\t// goal is to initialize coordIndexNew list to match triangles",
+"\tfor (i=2; i <= index.length-1; i++)",
+"\t{",
+"\t\tif ((index[i] == index[i-1]) || (index[i] == index[i-2]) || (index[i-1] == index[i-2]))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, pair of equal indices in triangle');",
+"\t\t\treturn;",
+"\t\t}",
+"\t  if (index[i] >= 0) ",
+"\t  {",
+"\t\t// add another triangle from latest 3 points of fan set to IFS",
+"\t\t// swap order to ensure normal is ccw, i.e. in correct halfplane direction",
+"\t\tcoordIndexNew [coordIndexNew.length] = 0;",
+"\t\tcoordIndexNew [coordIndexNew.length] = index[i];",
+"\t\tcoordIndexNew [coordIndexNew.length] = index[i-1];",
+"\t\tcoordIndexNew [coordIndexNew.length] = -1; // terminate",
+"\t  }",
+"\t  else if (index[i] == -1) // finish current triangle, fan",
+"\t  {",
+"\t\t// ensure done, or sufficient points remain to build another triangle",
+"\t\tif (\t(i!=index.length-1) && (index.length - i < 2))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, insufficient index values after' +",
+"\t'index[' + i + ']=-1');",
+"\t\t\treturn;",
+"\t\t}",
+"\t\t// ensure done, or enough legal index values remain to build another triangle",
+"\t\tif (\t(i!=index.length-1) &&",
+"\t\t\t((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, insufficient non-negative-one index values after' +",
+"\t'index[' + i + ']=-1');",
+"\t\t\treturn;",
+"\t\t}",
+"\t\ttracePrint ('encountered -1 in index array');",
+"\t\t// skip ahead to build next fan set, no effect if done",
+"\t\tif (i!=index.length-1) i = i + 2; ",
+"\t  }",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t}",
+"\trenderedITFS.set_coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedITFS.coordIndex=' + renderedITFS.coordIndex);",
+"\t// match colorIndex if any Color node exists",
+"\tif (nodesHolder.color)",
+"\t{",
+"\t  if (nodesHolder.color.color.length > 0)",
+"\t  {",
+"\t\trenderedITFS.set_colorIndex = coordIndexNew;",
+"\t\ttracePrint ('set_colorIndex=' + coordIndexNew);",
+"\t  }",
+"\t}",
+"}",
+"function set_index (value, timestamp)",
+"{",
+"\tindex = value;",
+"\tinitialize ();",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[IndexedTriangleFanSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[IndexedTriangleFanSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"IndexedTriangleSet",
+              "@appinfo":"IndexedTriangleSet represents a 3D shape composed of a collection of individual triangles.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"set_index",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"[0 infinity] or -1",
+                      "@type":"MFInt32"
+                    },
+                    {
+                      "@name":"index",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"[0 infinity] or -1",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL array [] to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Normal node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"TextureCoordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedITS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"UnrenderedITS",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-children":[
+                                {
+                                  "#comment":"is this really needed at all??"
+                                }
+                              ],
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"NodesHolderITS",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"color",
+                                            "@protoField":"color"
+                                          },
+                                          {
+                                            "@nodeField":"coord",
+                                            "@protoField":"coord"
+                                          },
+                                          {
+                                            "@nodeField":"normal",
+                                            "@protoField":"normal"
+                                          },
+                                          {
+                                            "@nodeField":"texCoord",
+                                            "@protoField":"texCoord"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"IndexedTriangleSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"index",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"set_index",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"renderedITS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedITS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"nodesHolder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"NodesHolderITS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"index",
+                                      "@protoField":"index"
+                                    },
+                                    {
+                                      "@nodeField":"set_index",
+                                      "@protoField":"set_index"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\t// index is an array of triangle indices. The ordering of",
+"\t// the vertices is ccw (counter-clockwise).",
+"",
+"\t// ensure legal index values",
+"\tfor (ii=0; ii <= index.length-1; ii++)",
+"\t{",
+"\t  if (index[ii] < -1)",
+"\t  {",
+"\t\talwaysPrint ('error, index[' + ii + ']=' + index[ii] +",
+"' is illegal value');",
+"\t\treturn;",
+"\t  }",
+"\t}",
+"\ttracePrint ('index.length=' + index.length);",
+"\ttracePrint ('index=' + index);",
+"",
+"\tif (index.length < 3) ",
+"\t{",
+"\t\talwaysPrint ('warning, index.length=' + index.length + ",
+"' insufficient to construct a triangle, ITS ignored');",
+"\t\treturn;",
+"\t}",
+"",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\t// ii walks through index array,",
+"\t// goal is to initialize coordIndexNew list to match triangles",
+"\tfor (ii=0; ii <= index.length-1; ii+=3)",
+"\t{",
+"\t\tif ((index[ii] == index[ii+1]) || (index[ii] == index[ii+2]) || (index[ii+1] == index[ii+2]))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, pair of equal indices in triangle');",
+"\t\t\treturn;",
+"\t\t}",
+"\t  ",
+"\t\tif (index[ii] >= 0) ",
+"\t\t{",
+"\t\t\t// add another triangle from latest 3 points of fan set to ITS",
+"\t\t\t// order is ccw, i.e. in correct halfplane direction",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+1];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+2];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = -1;",
+"\t\t}",
+"",
+"\t\tif (index.length % 3 != 0) {",
+"\t\t\talwaysPrint ('error, index field does not contain a multiple' +",
+"\t\t'of three coordinate values.');",
+"\t\t\talwaysPrint ('The remaining vertices shall be ignored');",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"",
+"\t\t// ensure done, or sufficient points remain to build another triangle",
+"//\t\tif (\t(i!=index.length-1) && (index.length - i < 2))",
+"//\t\t{",
+"//\t\t\talwaysPrint ('index=' + index);",
+"//\t\t\talwaysPrint ('error, insufficient index values after' +",
+"//\t'index[' + i + ']=-1');",
+"//\t\t\treturn;",
+"//\t\t}",
+"\t\t// ensure done, or enough legal index values remain to build another triangle",
+"//\t\tif (\t(i!=index.length-1) &&",
+"//\t\t\t((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))",
+"//\t\t{",
+"//\t\t\talwaysPrint ('index=' + index);",
+"//\t\t\talwaysPrint ('error, insufficient non-negative-one index values after' +",
+"//\t'index[' + i + ']=-1');",
+"//\t\t\treturn;",
+"//\t\t}",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t}",
+"\trenderedITS.coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedITS.coordIndex=' + renderedITS.coordIndex);",
+"",
+"\t// match colorIndex if any Color node exists",
+"\tif (nodesHolder.color)",
+"\t{",
+"\t  if (nodesHolder.color.color.length > 0)",
+"\t  {",
+"\t\trenderedITS.set_colorIndex = coordIndexNew;",
+"\t\ttracePrint ('set_colorIndex=' + coordIndexNew);",
+"\t  }",
+"\t}",
+"}",
+"function set_index (value, timestamp)",
+"{",
+"\tindex = value;",
+"\tinitialize ();",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\t  Browser.print ('[IndexedTriangleSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[IndexedTriangleSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"IndexedTriangleStripSet",
+              "@appinfo":"IndexedTriangleStripSet represents a 3D shape composed of strips of triangles.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"set_index",
+                      "@accessType":"inputOnly",
+                      "@type":"MFInt32"
+                    },
+                    {
+                      "@name":"index",
+                      "@accessType":"initializeOnly",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL array [] to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Normal node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"TextureCoordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedTSS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-children":[
+                                {
+                                  "#comment":"is this really needed at all??"
+                                }
+                              ],
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"NodesHolderTSS",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"color",
+                                            "@protoField":"color"
+                                          },
+                                          {
+                                            "@nodeField":"coord",
+                                            "@protoField":"coord"
+                                          },
+                                          {
+                                            "@nodeField":"normal",
+                                            "@protoField":"normal"
+                                          },
+                                          {
+                                            "@nodeField":"texCoord",
+                                            "@protoField":"texCoord"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"IndexedTriangleStripSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"index",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"set_index",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"renderedTSS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedTSS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"nodesHolder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"NodesHolderTSS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"index",
+                                      "@protoField":"index"
+                                    },
+                                    {
+                                      "@nodeField":"set_index",
+                                      "@protoField":"set_index"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\t// index is an array of triangle indices. The ordering of",
+"\t// the vertices is ccw (counter-clockwise).",
+"",
+"\t// ensure legal index values",
+"\tfor (ii=0; ii <= index.length-1; ii++)",
+"\t{",
+"\t  if (index[ii] < -1)",
+"\t  {",
+"\t\talwaysPrint ('error, index[' + ii + ']=' + index[ii] +",
+"' is illegal value');",
+"\t\treturn;",
+"\t  }",
+"\t}",
+"\ttracePrint ('index.length=' + index.length);",
+"\ttracePrint ('index=' + index);",
+"",
+"\tif (index.length < 3) ",
+"\t{",
+"\t\talwaysPrint ('warning, index.length=' + index.length + ",
+"' insufficient to construct a triangle, ITS ignored');",
+"\t\treturn;",
+"\t}",
+"",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\t// ii walks through index array,",
+"\t// goal is to initialize coordIndexNew list to match triangles",
+"\tfor (ii=2; ii <= index.length-1; ii++)",
+"\t{",
+"\t\tif ((index[ii] == index[ii-1]) || (index[ii] == index[ii-2]) || (index[ii-1] == index[ii-2]))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, pair of equal indices in triangle');",
+"\t\t\treturn;",
+"\t\t}",
+"\t  ",
+"\t\tif (index[ii] >= 0) ",
+"\t  {",
+"\t\t\t// add another triangle from latest 3 points of fan set to ITS",
+"\t\t\t// order is ccw, i.e. in correct halfplane direction",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii-2];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii-1];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = -1;",
+"\t  }",
+"",
+"\t\t// ensure done, or sufficient points remain to build another triangle",
+"//\t\tif (\t(i!=index.length-1) && (index.length - i < 2))",
+"//\t\t{",
+"//\t\t\talwaysPrint ('index=' + index);",
+"//\t\t\talwaysPrint ('error, insufficient index values after' +",
+"//\t'index[' + i + ']=-1');",
+"//\t\t\treturn;",
+"//\t\t}",
+"\t\t// ensure done, or enough legal index values remain to build another triangle",
+"//\t\tif (\t(i!=index.length-1) &&",
+"//\t\t\t((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))",
+"//\t\t{",
+"//\t\t\talwaysPrint ('index=' + index);",
+"//\t\t\talwaysPrint ('error, insufficient non-negative-one index values after' +",
+"//\t'index[' + i + ']=-1');",
+"//\t\t\treturn;",
+"//\t\t}",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('TSScoordIndexNew=' + coordIndexNew);",
+"\t}",
+"\trenderedTSS.set_coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedTSS.coordIndex=' + renderedTSS.coordIndex);",
+"\t// match colorIndex if any Color node exists",
+"\tif (nodesHolder.color)",
+"\t{",
+"\t  if (nodesHolder.color.color.length > 0)",
+"\t  {",
+"\t\trenderedTSS.set_colorIndex = coordIndexNew;",
+"\t\ttracePrint ('set_colorIndex=' + coordIndexNew);",
+"\t  }",
+"\t}",
+"}",
+"function set_index (value, timestamp)",
+"{",
+"\tindex = value;",
+"\tinitialize ();",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\t  Browser.print ('[IndexedTriangleStripSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\t  Browser.print ('[IndexedTriangleStripSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"LineSet",
+              "@appinfo":"LineSet represents a 3D geometry formed by constructing polylines from 3D vertices.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"vertexCount",
+                      "@accessType":"inputOutput",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL array [] to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedLineSet":
+                      {
+                        "@DEF":"RenderedILS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "IndexedLineSet":
+                                  {
+                                    "@DEF":"NodesHolderILS",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"color",
+                                            "@protoField":"color"
+                                          },
+                                          {
+                                            "@nodeField":"coord",
+                                            "@protoField":"coord"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "@DEF":"UnusedAppearance",
+                                    "-material":
+                                      { "Material":
+                                        {
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"LineSetToIndexedLineSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"vertexCount",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"default initialization is NULL array [] to match X3D specification"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"renderedILS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedLineSet":
+                                      {
+                                        "@USE":"RenderedILS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"nodesHolder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedLineSet":
+                                      {
+                                        "@USE":"NodesHolderILS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"vertexCount",
+                                      "@protoField":"vertexCount"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\tvertexCountSum = 0;",
+"\ttracePrint ('vertexCount=' + vertexCount);",
+"\tfor (i=0; i < vertexCount.length; i++)",
+"\t{",
+"\t\tif (vertexCount[i] < 2)",
+"\t\t{",
+"\t\t\talwaysPrint ('error, vertexCount[' + i + ']=' + vertexCount[i] +",
+"\t' is illegal value, must be >= 2');",
+"\t\t\treturn;",
+"\t\t}",
+"\t\tvertexCountSum = vertexCountSum + vertexCountSum[i];",
+"\t}",
+"\ttracePrint ('vertexCountSum=' + vertexCountSum);",
+"\tnumberPoints = nodesHolder.coord.point.length;",
+"",
+"\tif (numberPoints < vertexCountSum) ",
+"\t{",
+"\t\talwaysPrint ('warning, Coordinate.point.length=' + numberPoints  + ",
+"' is less than vertexCountSum=' + vertexCountSum + ', LS ignored');",
+"\t\treturn;",
+"\t}",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\tnumberSegments = vertexCountSum.length;  // need validity check",
+"",
+"\t// i walks through array of points to build line-segment indices",
+"\ti = 0;",
+"\tfor (seg=0; seg < numberSegments; seg++)",
+"\t{",
+"\t  for (j=0; j < vertexCount[seg]; j++)",
+"\t  {",
+"\t\tcoordIndexNew [coordIndexNew.length] = i;",
+"\t\ti++;",
+"\t  }",
+"\t  coordIndexNew [coordIndexNew.length] = -1; // terminate current fan",
+"",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t} // repeat for all vertices",
+"",
+"\trenderedILS.coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedILS.coordIndex=' + renderedILS.coordIndex);",
+"",
+"\t// match colorIndex if any Color node exists",
+"\tif (nodesHolder.color)",
+"\t{",
+"\t  if (nodesHolder.color.color.length > 0)",
+"\t  {",
+"\t\trenderedILS.colorIndex = coordIndexNew;",
+"\t\ttracePrint ('set_colorIndex=' + coordIndexNew);",
+"\t  }",
+"\t}",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[TriangleFanSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[TriangleFanSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"TriangleFanSet",
+              "@appinfo":"TriangleFanSet represents a 3D shape composed of triangles that form a fan shape around the first vertex declared in each fan.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"fanCount",
+                      "@accessType":"inputOutput",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL array [] to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Normal node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"TextureCoordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedTFS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"colorPerVertex",
+                                "@protoField":"colorPerVertex"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"UnrenderedTFS",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-children":[
+                                {
+                                  "#comment":"is this really needed at all??"
+                                }
+                              ],
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"NodesHolderTFS",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"color",
+                                            "@protoField":"color"
+                                          },
+                                          {
+                                            "@nodeField":"coord",
+                                            "@protoField":"coord"
+                                          },
+                                          {
+                                            "@nodeField":"normal",
+                                            "@protoField":"normal"
+                                          },
+                                          {
+                                            "@nodeField":"texCoord",
+                                            "@protoField":"texCoord"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"TriangleFanSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"fanCount",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"default initialization is NULL array [] to match X3D specification"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"renderedTFS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedTFS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"nodesHolder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"NodesHolderTFS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"fanCount",
+                                      "@protoField":"fanCount"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\tfanCountSum = 0;",
+"\ttracePrint ('fanCount=' + fanCount);",
+"\tfor (i=0; i < fanCount.length; i++)",
+"\t{",
+"\t\tif (fanCount[i] < 3)",
+"\t\t{",
+"\t\t\talwaysPrint ('error, fanCount[' + i + ']=' + fanCount[i] +",
+"\t' is illegal value, must be >= 3');",
+"\t\t\treturn;",
+"\t\t}",
+"\t\tfanCountSum = fanCountSum + fanCount[i];",
+"\t}",
+"\ttracePrint ('fanCountSum=' + fanCountSum);",
+"\tnumberPoints = nodesHolder.coord.point.length;",
+"",
+"\tif (numberPoints < fanCountSum) ",
+"\t{",
+"\t\talwaysPrint ('warning, Coordinate.point.length=' + numberPoints  + ",
+"' is less than fanCountSum=' + fanCountSum + ', TFS ignored');",
+"\t\treturn;",
+"\t}",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\tnumberFans = fanCount.length;  // need validity check",
+"",
+"\t// i walks through array of points to build polygon indices",
+"\ti = 0;",
+"\tfor (fan=0; fan < numberFans; fan++)",
+"\t{",
+"\t  for (j=0; j < fanCount[fan]; j++)",
+"\t  {",
+"\t\tcoordIndexNew [coordIndexNew.length] = i;",
+"\t\ti++;",
+"\t  }",
+"\t  coordIndexNew [coordIndexNew.length] = -1; // terminate current fan",
+"",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t} // repeat for all fans",
+"",
+"\trenderedTFS.coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedTFS.coordIndex=' + renderedTFS.coordIndex);",
+"",
+"\t// match colorIndex if any Color node exists",
+"\tif (nodesHolder.color)",
+"\t{",
+"\t  if (nodesHolder.color.color.length > 0)",
+"\t  {",
+"\t\trenderedTFS.set_colorIndex = coordIndexNew;",
+"\t\ttracePrint ('set_colorIndex=' + coordIndexNew);",
+"\t  }",
+"\t}",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print ('[TriangleFanSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[TriangleFanSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"TriangleSet",
+              "@appinfo":"TriangleSet represents a 3D shape that represents a collection of individual triangles.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Normal node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"TextureCoordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedTS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"UnrenderedTS",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-children":[
+                                {
+                                  "#comment":"is this really needed at all??"
+                                }
+                              ],
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"NodesHolderTS",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"color",
+                                            "@protoField":"color"
+                                          },
+                                          {
+                                            "@nodeField":"coord",
+                                            "@protoField":"coord"
+                                          },
+                                          {
+                                            "@nodeField":"normal",
+                                            "@protoField":"normal"
+                                          },
+                                          {
+                                            "@nodeField":"texCoord",
+                                            "@protoField":"texCoord"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"TriangleSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"index",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"default initialization is NULL"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"set_index",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"renderedTS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedTS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"nodesHolder",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"NodesHolderTS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\t// index is an array of triangle indices. The ordering of",
+"\t// the vertices is ccw (counter-clockwise).",
+"",
+"\t// ensure legal index values",
+"\tfor (ii=0; ii <= index.length-1; ii++)",
+"\t{",
+"\t  if (index[ii] < -1)",
+"\t  {",
+"\t\talwaysPrint ('error, index[' + ii + ']=' + index[ii] +",
+"' is illegal value');",
+"\t\treturn;",
+"\t  }",
+"\t}",
+"\ttracePrint ('index.length=' + index.length);",
+"\ttracePrint ('index=' + index);",
+"",
+"\tif (index.length < 3) ",
+"\t{",
+"\t\talwaysPrint ('warning, index.length=' + index.length + ",
+"' insufficient to construct a triangle, ITS ignored');",
+"\t\treturn;",
+"\t}",
+"",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\t// ii walks through index array,",
+"\t// goal is to initialize coordIndexNew list to match triangles",
+"\tfor (ii=0; ii <= index.length-1; ii+=3)",
+"\t{",
+"\t\tif ((index[ii] == index[ii+1]) || (index[ii] == index[ii+2]) || (index[ii+1] == index[ii+2]))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, pair of equal indices in triangle');",
+"\t\t\treturn;",
+"\t\t}",
+"\t  ",
+"\t\tif (index[ii] >= 0) ",
+"\t\t{",
+"\t\t\t// add another triangle from latest 3 points of fan set to ITS",
+"\t\t\t// order is ccw, i.e. in correct halfplane direction",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+1];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+2];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = -1;",
+"\t\t}",
+"",
+"\t\tif (index.length % 3 != 0) {",
+"\t\t\talwaysPrint ('error, index field does not contain a multiple' +",
+"\t\t'of three coordinate values.');",
+"\t\t\talwaysPrint ('The remaining vertices shall be ignored');",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"",
+"\t\t// ensure done, or sufficient points remain to build another triangle",
+"//\t\tif (\t(i!=index.length-1) && (index.length - i < 2))",
+"//\t\t{",
+"//\t\t\talwaysPrint ('index=' + index);",
+"//\t\t\talwaysPrint ('error, insufficient index values after' +",
+"//\t'index[' + i + ']=-1');",
+"//\t\t\treturn;",
+"//\t\t}",
+"\t\t// ensure done, or enough legal index values remain to build another triangle",
+"//\t\tif (\t(i!=index.length-1) &&",
+"//\t\t\t((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))",
+"//\t\t{",
+"//\t\t\talwaysPrint ('index=' + index);",
+"//\t\t\talwaysPrint ('error, insufficient non-negative-one index values after' +",
+"//\t'index[' + i + ']=-1');",
+"//\t\t\treturn;",
+"//\t\t}",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t}",
+"\trenderedITS.set_coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedITS.coordIndex=' + renderedITS.coordIndex);",
+"\t// match colorIndex if any Color node exists",
+"\tif (nodesHolder.color)",
+"\t{",
+"\t  if (nodesHolder.color.color.length > 0)",
+"\t  {",
+"\t\trenderedITS.set_colorIndex = coordIndexNew;",
+"\t\ttracePrint ('set_colorIndex=' + coordIndexNew);",
+"\t  }",
+"\t}",
+"}",
+"function set_index (value, timestamp)",
+"{",
+"\tindex = value;",
+"\tinitialize ();",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\tBrowser.print('[IndexedTriangleSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print('[IndexedTriangleSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"TriangleStripSet",
+              "@appinfo":"TriangleStripSet represents a 3D shape composed of strips of triangles.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"stripCount",
+                      "@accessType":"inputOutput",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL array [] to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Color ColorRGBA node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Coordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Normal node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"TextureCoordinate node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"Metadata node only",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"default initialization is NULL node to match X3D specification"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          {
+            "#comment":"ProtoInstance examples are found in RenderingComponentExamples.x3d"
+          },
+          { "Background":
+            {
+              "@groundColor":[0.2,0.2,0.2],
+              "@skyColor":[0.2,0.2,0.2]
+            }
+          },
+          { "Anchor":
+            {
+              "@DEF":"LinkToExamples",
+              "@description":"link to examples",
+              "@url":["RenderingComponentExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.x3d","RenderingComponentExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["RenderingComponentPrototypes","is a developmental file.","Click this text to view","RenderingComponentExamples"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"]
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                {
+                  "#comment":"Selectable Text has transparent Box and TouchSensor description as a tooltip"
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[12,5,0.001]
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@transparency":0.8
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

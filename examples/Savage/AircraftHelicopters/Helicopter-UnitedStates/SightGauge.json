@@ -1,0 +1,227 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"SightGauge.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This file defines a sight gauge that is inlined to create the cockpit console of a helicopter"
+          },
+          {
+            "@name":"creator",
+            "@content":"Jane Wu (adapted from the original Sight.wrl created for vrtp demo helicopter)"
+          },
+          {
+            "@name":"created",
+            "@content":"9 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"27 September 2002"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/AircraftHelicopters/Helicopter-UnitedStates/SightGauge.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"TRANSPARENT_OFF_WHITE",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.9,0.9,0.9],
+                                "@transparency":0.8
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[0.2,0.2,0.03]
+                        }
+                      }
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[1.0,0.0,0.0,1.57],
+                    "@translation":[0.0,0.0,0.015],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"TRANSPARENT_WHITE",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,1.0],
+                                      "@transparency":0.8
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@bottom":false,
+                                "@height":0.008,
+                                "@radius":0.1
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.0,0.0,0.018],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"RETICLE",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@DEF":"WHITE",
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1.0,1.0,1.0]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.002,0.2,0.003]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-0.06,0.0,0.018],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"SHORT_RETICLE",
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "@USE":"WHITE"
+                              }
+                            },
+                          "-geometry":
+                            { "Box":
+                              {
+                                "@size":[0.002,0.05,0.003]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[0.06,0.0,0.018],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SHORT_RETICLE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,0.0,1.0,1.57],
+                    "@translation":[0.0,0.0,0.018],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"RETICLE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,0.0,1.0,1.57],
+                    "@translation":[0.0,0.06,0.018],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SHORT_RETICLE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0.0,0.0,1.0,1.57],
+                    "@translation":[0.0,-0.06,0.018],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@USE":"SHORT_RETICLE"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NarragansettBaySmall.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Small-Area Terrain model of Narragansett Bay, Rhode Island with no bathymetry"
+          },
+          {
+            "@name":"creator",
+            "@content":"Byounghyun Yoo"
+          },
+          {
+            "@name":"created",
+            "@content":"15 April 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://www.rez3d.com"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/NarragansettBayRhodeIslandSmall/NarragansettBaySmall.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "GeoViewpoint":
+                  {
+                    "@description":"Default Viewpoint NarragansettBaySmall",
+                    "@orientation":[-1,0,0,1.57],
+                    "@position":[41.56722223554018,-71.30572987125981,28667.68682572001],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[41.5,-71.5,0],
+                          "@geoSystem":["GD"]
+                        }
+                      }
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["./tiles/0/newport0-0.x3d"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

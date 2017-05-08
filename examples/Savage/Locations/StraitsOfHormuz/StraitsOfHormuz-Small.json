@@ -1,0 +1,132 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"StraitsOfHormuz-Small.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Straits of Hormuz, Persian Gulf"
+          },
+          {
+            "@name":"creator",
+            "@content":"LCDR Mike Milliken"
+          },
+          {
+            "@name":"created",
+            "@content":"14 December 2007"
+          },
+          {
+            "@name":"modified",
+            "@content":"14 January 2014"
+          },
+          {
+            "@name":"warning",
+            "@content":"too many lights! they are very expensive"
+          },
+          {
+            "@name":"generator",
+            "@content":"Rez, http://planet-earth.org/Rez/RezIndex.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Locations/StraitsOfHormuz/StraitsOfHormuz-Small.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "PointLight":
+                  {
+                    "@location":[10000000000,0,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[-10000000000,0,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,10000000000,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,-10000000000,0],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,0,10000000000],
+                    "@radius":100000000000000
+                  }
+                },
+                { "PointLight":
+                  {
+                    "@location":[0,0,-10000000000],
+                    "@radius":100000000000000
+                  }
+                },
+                { "GeoViewpoint":
+                  {
+                    "@description":"Default Viewpoint",
+                    "@orientation":[-1,0,0,1.57],
+                    "@position":[26.3456597347756,56.33160427093061,233309.5324695896],
+                    "-geoOrigin":
+                      { "GeoOrigin":
+                        {
+                          "@DEF":"ORIGIN",
+                          "@geoCoords":[26.3456597347756,56.33160427093061,0],
+                          "@geoSystem":["GD"]
+                        }
+                      }
+                  }
+                },
+                { "Inline":
+                  {
+                    "@url":["./tiles/0/StraitsOfHormuz-Small0-0.x3d"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

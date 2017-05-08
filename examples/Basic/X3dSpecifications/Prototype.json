@@ -1,0 +1,260 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Prototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"X3D encodings example: defining a Prototype, demonstration of IS/connect definitions."
+          },
+          {
+            "@name":"creators",
+            "@content":"Don Brutzman and Joe Williams"
+          },
+          {
+            "@name":"created",
+            "@content":"1 June 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 November 2015"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, Annex C.4 Prototype example"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/examples.html#PrototypeExample"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/Prototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"TwoColorTable",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"legColor",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0.8,0.4,0.7]
+                    },
+                    {
+                      "@name":"topColor",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0.6,0.6,0.1]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@translation":[0.0,0.6,0.0],
+                              "-children":[
+                                {
+                                  "#comment":"table top"
+                                },
+                                { "Shape":
+                                  {
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@DEF":"TableTopMaterial",
+                                                "IS": {
+                                                    "connect": [
+                                                      {
+                                                        "@nodeField":"diffuseColor",
+                                                        "@protoField":"topColor"
+                                                      }
+                                                    ]
+                                                }
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "Box":
+                                        {
+                                          "@size":[1.2,0.2,1.2]
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[-0.5,0.0,-0.5],
+                              "-children":[
+                                {
+                                  "#comment":"first table leg"
+                                },
+                                { "Shape":
+                                  {
+                                    "@DEF":"Leg",
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@DEF":"LegMaterial",
+                                                "@diffuseColor":[1.0,0.0,0.0],
+                                                "IS": {
+                                                    "connect": [
+                                                      {
+                                                        "@nodeField":"diffuseColor",
+                                                        "@protoField":"legColor"
+                                                      }
+                                                    ]
+                                                }
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "Cylinder":
+                                        {
+                                          "@height":1.0,
+                                          "@radius":0.1
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[0.5,0.0,-0.5],
+                              "-children":[
+                                {
+                                  "#comment":"another table leg"
+                                },
+                                { "Shape":
+                                  {
+                                    "@USE":"Leg"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[-0.5,0.0,0.5],
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "@USE":"Leg"
+                                  }
+                                },
+                                {
+                                  "#comment":"another table leg"
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[0.5,0.0,0.5],
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "@USE":"Leg"
+                                  }
+                                },
+                                {
+                                  "#comment":"another table leg"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "#comment":"End of root Transform's children"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment":"End of root Transform"
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"End of prototype"
+          },
+          {
+            "#comment":"The prototype is now defined. Although it contains a number of nodes, only the legColor and topColor fields are public. Instead of using the default legColor and topColor, this instance of the table has red legs and a green top:"
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TwoColorTable",
+              "fieldValue": [
+                {
+                  "@name":"legColor",
+                  "@value":[1,0,0]
+                },
+                {
+                  "@name":"topColor",
+                  "@value":[0,1,0]
+                }
+              ]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE"]
+            }
+          },
+          {
+            "#comment":"Use the Examine viewer"
+          }
+        ]
+    }
+  }
+}

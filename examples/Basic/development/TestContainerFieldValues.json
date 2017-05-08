@@ -1,0 +1,139 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestContainerFieldValues.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Test default and improperly overridden containerField values."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"translator",
+            "@content":"Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+          },
+          {
+            "@name":"created",
+            "@content":"23 May 2003"
+          },
+          {
+            "@name":"translated",
+            "@content":"10 September 2003"
+          },
+          {
+            "@name":"modified",
+            "@content":"4 May 2005"
+          },
+          {
+            "@name":"reference",
+            "@content":"TestContainerFieldValues.original.wrl"
+          },
+          {
+            "@name":"Image",
+            "@content":"TestContainerFieldValues.png"
+          },
+          {
+            "@name":"error",
+            "@content":"Intentional error for testing: Transform containerField='level' is illegal, use 'children' instead."
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestContainerFieldValues.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Test containerField values"
+            }
+          },
+          { "LOD":
+            {
+              "@DEF":"parentLOD",
+              "-children":[
+                {
+                  "#comment":"containterField is not validatable by DTD. Default LOD child containterField=\"children\""
+                },
+                { "Transform":
+                  {
+                  }
+                },
+                {
+                  "#comment":"X3dToVrml97.xslt detects improper use of containerField=\"level\" beneath an LOD node."
+                }
+              ],
+              "-level":[
+                { "Transform":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "Text":
+                  {
+                    "@string":["This scene tests error checking","for proper containerField values.","","View source for details."],
+                    "-fontStyle":
+                      { "FontStyle":
+                        {
+                          "@justify":["MIDDLE","MIDDLE"]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[0.7,0.35,0]
+                        }
+                      }
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}

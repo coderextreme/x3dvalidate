@@ -1,0 +1,330 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Three.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Tumbling Spheres: this world builds a batch of perpetually tumbling spheres."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 February 2016"
+          },
+          {
+            "@name":"reference",
+            "@content":"Loader.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/three.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0465.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0469.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Three.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1998, David R. Nadeau"],
+              "@title":"Tumbling Spheres"
+            }
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"TumbleGroup",
+              "@url":["TumbleGroup.x3d#TumbleGroup","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/TumbleGroup.x3d#TumbleGroup","TumbleGroup.wrl#TumbleGroup","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/TumbleGroup.wrl#TumbleGroup"],
+              "field": [
+                {
+                  "@name":"xTumbleInterval",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"children",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"zTumbleInterval",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"yTumbleInterval",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TumbleGroup",
+              "fieldValue": [
+                {
+                  "@name":"xTumbleInterval",
+                  "@value":27.0
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "@DEF":"Block",
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                  }
+                                },
+                              "-texture":
+                                { "ImageTexture":
+                                  {
+                                    "@url":["bluesat.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/bluesat.jpg"]
+                                  }
+                                }
+                            }
+                          },
+                        "-geometry":
+                          { "Sphere":
+                            {
+                              "@radius":2.0
+                            }
+                          }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"zTumbleInterval",
+                  "@value":45.0
+                },
+                {
+                  "@name":"yTumbleInterval",
+                  "@value":13.0
+                },
+                {
+                  "@name":"translation",
+                  "@value":[0.0,0.0,0.0]
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TumbleGroup",
+              "fieldValue": [
+                {
+                  "@name":"xTumbleInterval",
+                  "@value":29.0
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "@USE":"Block"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"zTumbleInterval",
+                  "@value":25.0
+                },
+                {
+                  "@name":"yTumbleInterval",
+                  "@value":31.0
+                },
+                {
+                  "@name":"translation",
+                  "@value":[0.0,0.5,0.0]
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TumbleGroup",
+              "fieldValue": [
+                {
+                  "@name":"xTumbleInterval",
+                  "@value":38.0
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "@USE":"Block"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"zTumbleInterval",
+                  "@value":43.0
+                },
+                {
+                  "@name":"yTumbleInterval",
+                  "@value":27.0
+                },
+                {
+                  "@name":"translation",
+                  "@value":[0.5,1.0,0.0]
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TumbleGroup",
+              "fieldValue": [
+                {
+                  "@name":"xTumbleInterval",
+                  "@value":32.0
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "@USE":"Block"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"zTumbleInterval",
+                  "@value":41.0
+                },
+                {
+                  "@name":"yTumbleInterval",
+                  "@value":23.0
+                },
+                {
+                  "@name":"translation",
+                  "@value":[0.0,-0.5,1.5]
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"TumbleGroup",
+              "fieldValue": [
+                {
+                  "@name":"xTumbleInterval",
+                  "@value":25.0
+                },
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "@USE":"Block"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"zTumbleInterval",
+                  "@value":39.0
+                },
+                {
+                  "@name":"yTumbleInterval",
+                  "@value":32.0
+                },
+                {
+                  "@name":"translation",
+                  "@value":[-1.0,0.0,-0.5]
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

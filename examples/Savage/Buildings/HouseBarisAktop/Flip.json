@@ -1,0 +1,98 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Flip.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Flip lid."
+          },
+          {
+            "@name":"creator",
+            "@content":"Baris AKTOP"
+          },
+          {
+            "@name":"created",
+            "@content":"12 September 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"12 January 2014"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://savage.nps.edu/Savage/Buildings/HouseBarisAktop/Flip.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,0,1,-1.57],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.95,0.95]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Extrusion":
+                              {
+                                "@creaseAngle":3.14,
+                                "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-1,1,-0.92,1.38,-0.71,1.71,-0.38,1.92,0,2,0.38,1.92,0.71,1.71,0.92,1.38,1,1,1,0.001,1.2,0.001,1.2,1,1.104,1.456,0.852,1.852,0.456,2.104,0,2.2,-0.456,2.104,-0.852,1.852,-1.104,1.456,-1.2,1,-1.2,0,-1.104,-0.456,-0.852,-0.852,-0.456,-1.104,0,-1.2,0.456,-1.104,0.852,-0.852,1.104,-0.456,1.2,0,1,0],
+                                "@scale":[1,1,0.95,0.95,0.9,0.9],
+                                "@solid":false,
+                                "@spine":[0,0,0,0,0.05,0,0,0.1,0]
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

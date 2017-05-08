@@ -1,0 +1,245 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.2",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"NURBS",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NurbsPatchSolid.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This scene contains a single NurbsPatchSurface rendering one-quarter of a cylindrical segment. The \"solid\" field of the surface is set true for single-sided rendering, and Nurbs coordinates are oriented so that the outer surface of the cylinder is visible. Surface has semi-transparent material appearance. Scene also contains unit-length line segments defining x-y-z coordinate axes. Defined Viewpoints show the inner and outer sides of the cylindrical surface"
+          },
+          {
+            "@name":"Image",
+            "@content":"NurbsPatchSolid1.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"NurbsPatchSolid2.jpg"
+          },
+          {
+            "@name":"creator",
+            "@content":"Vincent Marchetti"
+          },
+          {
+            "@name":"created",
+            "@content":"10 February 2012"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.kshell.com/pages/nurbs_surface_demo"
+          },
+          {
+            "@name":"TODO",
+            "@content":"confirm NurbsPatchSurface validation of Coordinate child? also containerField handling"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/NURBS/NurbsPatchSolid.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Python language scripting"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.8,0.8,0.8]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"view outer surface",
+              "@fieldOfView":1.6628e-01,
+              "@orientation":[0.166,0.465,0.870,2.538],
+              "@position":[1.0550e+01,1.2855e+01,1.1111e+01]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"view inner surface",
+              "@fieldOfView":1.6628e-01,
+              "@orientation":[0.797,-0.285,-0.533,1.182],
+              "@position":[-1.0550e+01,-1.2855e+01,1.1111e+01]
+            }
+          },
+          { "Shape":
+            {
+              "-geometry":
+                { "NurbsPatchSurface":
+                  {
+                    "@uDimension":5,
+                    "@uKnot":[0,0,0,0.5,0.5,1,1,1],
+                    "@vDimension":2,
+                    "@vKnot":[0,0,1,1],
+                    "@vOrder":2,
+                    "@weight":[1,0.923879181092,1,0.923879181092,1,1,0.923879181092,1,0.923879181092,1],
+                    "-controlPoint":
+                      { "Coordinate":
+                        {
+                          "@point":[1.0000e+00,0.0000e+00,0.0000e+00,9.2388e-01,3.8268e-01,0.0000e+00,7.0711e-01,7.0711e-01,0.0000e+00,3.8268e-01,9.2388e-01,0.0000e+00,0.0000e+00,1.0000e+00,0.0000e+00,1.0000e+00,0.0000e+00,1.0000e+00,9.2388e-01,3.8268e-01,9.2388e-01,7.0711e-01,7.0711e-01,1.0000e+00,3.8268e-01,9.2388e-01,9.2388e-01,0.0000e+00,1.0000e+00,1.0000e+00]
+                        }
+                      }
+                  }
+                },
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-material":
+                      { "Material":
+                        {
+                          "@diffuseColor":[1,1,0],
+                          "@transparency":0.2
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0.0,1,0,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[1,0,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0.0,0,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,1,0]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "LineSet":
+                        {
+                          "@vertexCount":[2],
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@point":[0,0,0.0,0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@emissiveColor":[0,0,1]
+                              }
+                            },
+                          "-lineProperties":
+                            { "LineProperties":
+                              {
+                                "@linewidthScaleFactor":2
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

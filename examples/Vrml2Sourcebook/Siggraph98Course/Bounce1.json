@@ -1,0 +1,525 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"Bounce1.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Bouncing beachball (JavaScript/VRMLscript version): this world illustrates the use of a Script node to create a computed animation path. In particular, the Script node uses a JavaScript (or VRMLScript) program script to compute translation values for a vertically bouncing beach ball."
+          },
+          {
+            "@name":"creator",
+            "@content":"David R. Nadeau"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 July 1998"
+          },
+          {
+            "@name":"translated",
+            "@content":"2 February 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"8 February 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/bounce1.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.siggraph.org/s98/conference/courses/18.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0407.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0426.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Bounce1.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 March 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/bounce1.htm"
+          },
+          {
+            "#comment":"This world illustrates the use of a Script node to create a computed animation path. In particular, the Script node uses a JavaScript (or VRMLScript) program script to compute translation values for a vertically bouncing beach ball."
+          },
+          {
+            "#comment":"The bounce path is based upon the projectile motion equation of physics, constrained to create a cyclic bouncing path with a user-selected maximum bounce height. Also, there is no friction, drag, or damping."
+          },
+          {
+            "#comment":"The equation is derived as follows:"
+          },
+          {
+            "#comment":"(1) Projectile motion computes a y(t) value (height as a function of time) based upon the gravitation constant, g, an initial y-direction velocity, v0, an initial y position, y0, and the current time, t:"
+          },
+          {
+            "#comment":"y(t) = 0.5 * g * t * t + v0 * t + y0"
+          },
+          {
+            "#comment":"(2) At time t=0, the ball should be on the ground with y=0. So, y0 = y(0) = 0. The equation in (1) simplifies to:"
+          },
+          {
+            "#comment":"y(t) = 0.5 * g * t * t + v0 * t"
+          },
+          {
+            "#comment":"(3) At time t=1, at the end of the TimeSensor's fractional time cycle, the ball should again be on the ground with y=0. So, y(1) = 0. Plugging this in to the equation in (2), we get:"
+          },
+          {
+            "#comment":"y(t) = 0.5 * g * t * t + v0 * t"
+          },
+          {
+            "#comment":"y(1) = 0.5 * g * 1 * 1 + v0 * 1"
+          },
+          {
+            "#comment":"0 = 0.5 * g + v0"
+          },
+          {
+            "#comment":"So v0 = -0.5 * g"
+          },
+          {
+            "#comment":"(4) At time t=0.5, the ball should be at the peak of its bounce at a user-selected maximum height, h. So, y(0.5) = h. Plugging this in to the equation in (2), we get:"
+          },
+          {
+            "#comment":"y(t) = 0.5 * g * t * t + v0 * t"
+          },
+          {
+            "#comment":"y(0.5) = 0.5 * g * 0.5 * 0.5 + v0 * 0.5"
+          },
+          {
+            "#comment":"h = g * 0.125 + v0 * 0.5"
+          },
+          {
+            "#comment":"And v0 = -0.5 * g from equation (3), so"
+          },
+          {
+            "#comment":"h = g * 0.125 - 0.5 * g * 0.5"
+          },
+          {
+            "#comment":"h = -g * 0.125"
+          },
+          {
+            "#comment":"So g = -8.0 * h"
+          },
+          {
+            "#comment":"(5) We can now simplify the equation in (2) using the results from (3) and (4) to get an equation that computes the ball height y(t) parameterized only by the maximum height, h, giving us:"
+          },
+          {
+            "#comment":"y(t) = 0.5 * g * t * t + v0 * t"
+          },
+          {
+            "#comment":"y(t) = 0.5 * (-8.0 * h) * t * t + (-0.5 * g) * t"
+          },
+          {
+            "#comment":"y(t) = 0.5 * (-8.0 * h) * t * t + (4.0 * h) * t"
+          },
+          {
+            "#comment":"y(t) = 4.0 * h * (-t * t + t)"
+          },
+          {
+            "#comment":"y(t) = 4.0 * h * t * (1.0 - t)"
+          },
+          {
+            "#comment":"In the program script, the maximum height, h, is given in the 'bounceHeight' field. The current time, t, is given in the 'set_fraction' eventIn and passed to the eventIn function as the 'frac' parameter. Using these names, the above equation becomes:"
+          },
+          {
+            "#comment":"y = 4.0 * bounceHeight * frac * (1.0 - frac)"
+          },
+          {
+            "#comment":"Things to experiment with"
+          },
+          {
+            "#comment":"- Encapsulate the ball, script, timer, and sensors within a PROTO for a new node named \"BouncingBall\". Then use that new BouncingBall node multiple times to create multiple bouncing balls. Your PROTO interface might look like this:"
+          },
+          {
+            "#comment":"PROTO BouncingBall [ field SFFloat bounceHeight 2.0 field SFTime cycleInterval 2.0 ] { . . . }"
+          },
+          {
+            "#comment":"See 'bounce3.wrl', which implements such a PROTO."
+          },
+          {
+            "#comment":"- Add a shadow under the bouncing ball. To do this, add a circular, semi-transparent, black shape that doesn't bounce. To make the shadow more realistic, scale the shadow in the X and Z directions, shrinking it as the ball goes up, and increasing it as the ball comes down. You'll need to add another eventOut for the Script node and send an XYZ scaling factor triple out that eventOut. Try the following values for the XYZ scale values:"
+          },
+          {
+            "#comment":"xzscale = 1.0 - 0.5 * y / bounceHeight;"
+          },
+          {
+            "#comment":"shadowScale_changed[0] = xzscale;"
+          },
+          {
+            "#comment":"shadowScale_changed[1] = 1.0;"
+          },
+          {
+            "#comment":"shadowScale_changed[2] = xzscale;"
+          },
+          {
+            "#comment":"See 'bounce4.wrl', which implements shadows using the above scale values."
+          },
+          {
+            "#comment":"- Add a sound to the PROTO so that each time the ball touches the ground, it makes a 'boing' sound."
+          },
+          {
+            "#comment":"- When the ball hits the ground, scale the ball slightly so that it appears to squish."
+          },
+          { "WorldInfo":
+            {
+              "@info":["Copyright (c) 1997, David R. Nadeau"],
+              "@title":"Bouncing beachball (JavaScript)"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Bouncing beachball, JavaScript version",
+              "@orientation":[1.0,0.0,0.0,0.1],
+              "@position":[0.0,0.6,8.0]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@headlight":false,
+              "@speed":2.0
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@ambientIntensity":0.5,
+              "@direction":[0.0,-1.0,-0.5]
+            }
+          },
+          { "Background":
+            {
+              "@skyAngle":[1.371,1.571],
+              "@skyColor":[0.0,0.0,1.0,0.0,0.5,1.0,0.7,0.7,1.0]
+            }
+          },
+          { "Shape":
+            {
+              "-appearance":
+                { "Appearance":
+                  {
+                    "-textureTransform":
+                      { "TextureTransform":
+                        {
+                          "@scale":[10.0,10.0]
+                        }
+                      },
+                    "-material":
+                      { "Material":
+                        {
+                        }
+                      },
+                    "-texture":
+                      { "ImageTexture":
+                        {
+                          "@url":["sand.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/sand.jpg"]
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "IndexedFaceSet":
+                  {
+                    "@coordIndex":[0,1,2,3],
+                    "@solid":false,
+                    "-coord":
+                      { "Coordinate":
+                        {
+                          "@point":[-50.0,-1.0,50.0,50.0,-1.0,50.0,50.0,-1.0,-50.0,-50.0,-1.0,-50.0]
+                        }
+                      }
+                  }
+                }
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3.0,-1.0,-10.0],
+              "-children":[
+                { "Group":
+                  {
+                    "@DEF":"Palm",
+                    "-children":[
+                      { "Billboard":
+                        {
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-texture":
+                                        { "ImageTexture":
+                                          {
+                                            "@url":["palm.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/palm.png"]
+                                          }
+                                        }
+                                    }
+                                  },
+                                "-geometry":
+                                  { "IndexedFaceSet":
+                                    {
+                                      "@coordIndex":[0,1,2,3],
+                                      "@solid":false,
+                                      "@texCoordIndex":[0,1,2,3],
+                                      "-texCoord":
+                                        { "TextureCoordinate":
+                                          {
+                                            "@point":[0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0]
+                                          }
+                                        },
+                                      "-coord":
+                                        { "Coordinate":
+                                          {
+                                            "@point":[-2.5,0.0,0.0,2.5,0.0,0.0,2.5,11.25,0.0,-2.5,11.25,0.0]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Shape":
+                        {
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.0,0.0,0.0],
+                                      "@transparency":0.5
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["palmsh.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/palmsh.png"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@coordIndex":[0,1,2,3],
+                                "@solid":false,
+                                "@texCoordIndex":[0,1,2,3],
+                                "-texCoord":
+                                  { "TextureCoordinate":
+                                    {
+                                      "@point":[0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0]
+                                    }
+                                  },
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-2.5,0.05,2.5,2.5,0.05,2.5,2.5,0.05,-2.5,-2.5,0.05,-2.5]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[0.6,0.6,0.6],
+              "@translation":[-5.0,-1.0,-6.0],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"Palm"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[5.0,-1.0,-9.0],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"Palm"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[10.0,-1.0,-15.0],
+              "-children":[
+                { "Group":
+                  {
+                    "@USE":"Palm"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Ball",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-textureTransform":
+                            { "TextureTransform":
+                              {
+                                "@scale":[2.0,1.0]
+                              }
+                            },
+                          "-material":
+                            { "Material":
+                              {
+                                "@ambientIntensity":0.5,
+                                "@diffuseColor":[1.0,1.0,1.0],
+                                "@shininess":0.4,
+                                "@specularColor":[0.7,0.7,0.7]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["beach.jpg","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/beach.jpg"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":2.0,
+              "@loop":true,
+              "@startTime":1.0
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"Bouncer",
+              "field": [
+                {
+                  "@name":"value_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"bounceHeight",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFFloat",
+                  "@value":3.0
+                },
+                {
+                  "@name":"set_fraction",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"        function set_fraction( frac, tm ) {",
+"            y = 4.0 * bounceHeight * frac * (1.0 - frac);",
+"            value_changed[0] = 0.0;",
+"            value_changed[1] = y;",
+"            value_changed[2] = 0.0;",
+"        }"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"Bouncer"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Bouncer",
+              "@toField":"set_translation",
+              "@toNode":"Ball"
+            }
+          }
+        ]
+    }
+  }
+}
