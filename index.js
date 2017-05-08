@@ -118,16 +118,34 @@ function exchangeajvmessage(msg) {
 	var newString="";
 	var object = json;
 	var k=0;
+	var flag=false;
+	var begin,value;
 	for (i=0; i < msg.length ; i++) {
 		newString+=msg[i];
+		if (object[newString]=="(*)" && !flag) {
+			object=object[newString];
+			flag=true;
+			value=newString;
+			newString="";
+			begin=i-3;
+		}
+		if (flag) {
+			if (msg[i]==' ') {
+				value+=newString;
+				newString="";
+			}
+			
+
+		}
 		if (object[newString]!=undefined) {
 			object=object[newString];
 			newString="";
 			i++;
 			k++;
+			flag=false;
 		}
 	}
-return object['en'];
+	return object['en'] + '' + ',to stand X3D json validation requirements.';
 }
 
 
