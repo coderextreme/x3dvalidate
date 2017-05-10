@@ -30,7 +30,7 @@ function doValidate(json, validated_version, file, success, failure) {
 					    if (typeof v2 === 'object') {
 						    for (var o in v2) {
 					    		if (typeof v2[o] === 'object') {
-								    v2[o] = "|elided|";
+								    v2[o] = "|omitted|";
 							}
 					            }
 					    }
@@ -43,7 +43,7 @@ function doValidate(json, validated_version, file, success, failure) {
 			}
 			failure(error);
 		} else {
-			if (success == 'function') {
+			if (typeof success == 'function') {
 				success();
 			} else {
 				failure("No success function");
