@@ -101,14 +101,20 @@ function validateJSON(files) {
 		if (typeof str === 'undefined') {
 			throw("Read nothing, or possbile error");
 		}
-		var json = jsonlint.parse(str);
-		var version = json.X3D["@version"];
-		loadSchema(json, file, doValidate, function() {
-			console.error("Success reading", file);
-		}, function(e) {
-			console.error("Error reading", file, e);
+		try {
+			var json = jsonlint.parse(str);
+			var version = json.X3D["@version"];
+			loadSchema(json, file, doValidate, function() {
+				console.error("Success reading", file);
+			}, function(e) {
+				console.error("Error reading", file, e);
 
-		});
+			});
+		} catch (e) {
+			console.error("================================================================================");
+			console.error("File:", file);
+			console.error(e);
+		}
 	}
 }
 function exchangeajvmessage(msg) {
@@ -119,7 +125,7 @@ function exchangeajvmessage(msg) {
         var k=0;
         var flag=false;
         var begin,value,values=[],m=0;
-        for (i=0; i < msg.length ; i++) {
+        for (var i=0; i < msg.length ; i++) {
                 newString+=msg[i];
                 if ( newString=="" && object[newString].prototype.keys()[0]=="(*)" && !flag) {
                         object=object[newString];
@@ -145,6 +151,6 @@ function exchangeajvmessage(msg) {
         return object['en'] + '' + ',to stand X3D json validation requirements.'+ values[0]+ ' ' + values[1];
 }
 //alx:
-console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
+//console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
 
 module.exports = validateJSON
