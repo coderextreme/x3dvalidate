@@ -1,0 +1,26 @@
+Höflichkeit oberes Gebot , nicht should shall etc, erklärung formulieren statt should, dabei verweis auf x3d
+dass json path ort ist sageni
+2 modi, ausführlich oder nicht
+"match" ausführlicher
+german
+quellcodestückchen mit text-fetzen zuletzt berücksichtigen
+
+
+wie das ganze Programmier-Technisch lösen?
+maps, in denen maps in denen maps sind, die entstehen bei stringerkennungsoperationen zB regex
+dazwischen jedesmal wortfetzenerkennung für bestandteile die im Ajv Code verteilt liegt, wo ich nicht die Zeit investiere die Programmlogik dazu zu erkennen
+
+als nächstes folgt ein detaillierter Plan dieser Konstruktionsgrundlage
+
+jedes mal wort fetzen: nehmen und lassen oder ausführlicher und einreihen
+should: wandeln in formulierung, wobei zunächst mehrere Formulierungen testweise, später bleibt es eine
+match: ausformulieren
+NOT,be: lassen
+alles andere lassen oder pro stück formulieren
+irgendwann später programmieren, dass spezielle stückfolgen vollständig umgeschrieben werden
+
+Loggen, wenn etwas kommt oder passiert, wenn nicht damit zu Rechnen ist mit diesen Wortfetzem Wörtern etc
+
+beim Programmieren, schauen, dass es Kreise geben könnte bzw. andere anfänge und zwischenschritte die die Programmierung konfus machen könnten
+
+Multilingualität zwar später einprogrammieren, aber schon hier vor-berücksichtigen!!! und gleichzeitig vor-berücksichtigen, dass es mehrere formale informale ausdrucksformen geben kann
