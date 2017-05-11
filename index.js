@@ -101,14 +101,20 @@ function validateJSON(files) {
 		if (typeof str === 'undefined') {
 			throw("Read nothing, or possbile error");
 		}
-		var json = jsonlint.parse(str);
-		var version = json.X3D["@version"];
-		loadSchema(json, file, doValidate, function() {
-			console.error("Success reading", file);
-		}, function(e) {
-			console.error("Error reading", file, e);
+		try {
+			var json = jsonlint.parse(str);
+			var version = json.X3D["@version"];
+			loadSchema(json, file, doValidate, function() {
+				console.error("Success reading", file);
+			}, function(e) {
+				console.error("Error reading", file, e);
 
-		});
+			});
+		} catch (e) {
+			console.error("================================================================================");
+			console.error("File:", file);
+			console.error("Error:", e);
+		}
 	}
 }
 function exchangeajvmessage(msg) {
@@ -145,6 +151,6 @@ function exchangeajvmessage(msg) {
         return object['en'] + '' + ',to stand X3D json validation requirements.'+ values[0]+ ' ' + values[1];
 }
 //alx:
-console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
+//console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
 
 module.exports = validateJSON
