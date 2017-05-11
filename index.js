@@ -119,7 +119,7 @@ function exchangeajvmessage(msg) {
         var k=0;
         var flag=false;
         var begin,value,values=[],m=0;
-        for (i=0; i < msg.length ; i++) {
+        for (var i=0; i < msg.length ; i++) {
                 newString+=msg[i];
                 if ( newString=="" && object[newString].prototype.keys()[0]=="(*)" && !flag) {
                         object=object[newString];
