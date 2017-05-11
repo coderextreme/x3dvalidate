@@ -1,0 +1,96 @@
+Das hier alles noch mal in Englisch und besser strukturriert in einem pdf
+
+
+erster Fehler:
+Error reading cobweb.output.json
+wo ist da der error?
+
+
+Warum sind die Fehlermeldungen in der Struktur selbst? Das verstehe ich nicht!
+Hat das irgendeine Bewandnis, dass der fehler in der struktur drin steht? Sehr merkwürdig.
+
+
+ Error reading FILE
+Also immer bei Dateien File dazu schreiben, ist zwar mehr text, aber verwirrt weniger
+Das Wort reading vielleicht weg lassen, weil das bedeuten könnte, dass es dateisystemfehler hardwarefehler oä sein könnten, was aber nicht der fall ist, das lesen ist ja nicht der fehler, sondern der inhalt
+also wenn dann eher da wort content statt reading verwenden
+
+
+Bei Pfadangaben kann es Sinn machen so zu schreiben: File Filename.bla in path /a/b/c statt /a/b/c/Filename.bla
+Wörter File und Path explizit noch ein mal hin schreiben ist zwar aufgebläht aber alles was gegen Irritationen und Unaufmerksamkeiten hilft ist gut
+
+
+und nach error reading FILE schreiben, welche kategorie fehler es ist und wo der fehler ist, Z.B. Char error oder strukture error in structure bla: ...
+
+
+wiederholende fehler, die nur marginale unterschiede haben abstrahieren auf dessen unterschiede und das besonders betonen, dass nur die unterschiede genannt werden
+vielleicht autoerkennung von instanz factories schaffen
+autoeinrückung, wie bei eclipse:format auch bei fehlerausgabe, dabei kleinere sachen nicht einrücken, um nicht unsinnig zu viel weißflächen zu haben
+statt autoeirückung bei gewissen mediumgrößeren so eine art zusammenklebfessung mit tabellenabständen, um nicht zu viel platz zu verschwenden
+beim einrücken berücksichtigen, was passieren soll, wenn zeile länger ist, als rein passt, und darauf reagieren mit einrückungsmethoden
+  wenn da dann die Zeile zu lang ist, dann ggf die "nicht einrücken wegen kleine bereiche" doch einrücken, und wenn das nicht genüg die sehr lange zeile über mehrere zeilen gleich einrücken
+
+Fehler verstehe ich nicht 100%: ,"message":"should match format \"uri\""
+
+
+Mit fettgedruckt und farben arbeiten: zB dateien eine farbe, datenstrukturen, fehlermeldung jeweils eine andere farbe
+Fehlermeldung mit Fehlerlement in der gleichen Farbe wie hervorhebung in der Datenstruktur
+
+
+verschiedene fehlermeldungsbestandteile auf zeilen trennen, also datenstruktur auf extra zeilen
+
+click auf fehlermeldung oder fehlermeldungselement springt zum fehlerelement in der struktur und lässt es kurz aufblinken
+
+
+?
+should NOT have additional properties
+{"additionalProperty":"@skyTransparency"}
+Wie geht das zusammen? Ist das eher Zufall, dass das fast das gleiche wort ist? Wahrscheinlich ja. Also auch bei einem anderen Wort als additionalProperty käme die fehlermeldung
+warum nicht should not have params und woher weiß der dass es additional properties sind?
+
+
+Unexpected token ' in JSON at position 40054
+Hier könnten noch die vorderen 10 und hinteren 10 Chars angezeigt werden, zur Orientierung, mit farbiger kenntlichmachung
+auf zahl clicken springt zum Fehler hin
+
+
+
+
+"additionalProperty":"-IllegalChildNodeFieldNameNotFound"
+
+"should match exactly one schema in oneOf" ist wohl also eine Fehlerartkategorie, diese Kategorie möglichst kurz auf den Punkt gebracht sollte oben gelistet werden, als welche Fehlerarten in der darauf folgenden struktur zu finden sind, 
+ggf. gleiche farbe wie dann in der struktur: 3 färbungen: Fehlerkategoriename + Fehlerberschreibung in der Struktur + Fehlerort in der Struktur = alles gleiche farbe
+
+
+
+
+
+bei Unexpected token könnte man eine KI machen, die errät, was der programmierer eigentlich wollte und sagt, ob er A oder B oder C wollte und was bei A oder C gemacht werden könnte.
+Irgendwann später könnte sogar der Parser eine Selbst-Auto-Korrektur vornehmen, wenn er schlauer wurde bei kleineren tippfehlern und syntaxfehlern
+
+Unexpected end of JSON input
+hier das gleiche aber mit starker einschränkung möglich, wei unexpected token
+
+
+
+so etwas:
+    at JSON.parse (<anonymous>)
+    at convertJSON (C:\Users\coderextreme\X3DJSONLD\convertJSON.js:38:20)
+    at Object.<anonymous> (C:\Users\coderextreme\X3DJSONLD\json2all.js:10:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.runMain (module.js:605:10)
+    at run (bootstrap_node.js:422:7)
+
+vielleicht eher nachträglich gut sichtbar aufklappbar machen, weil man das meiste davon meist nicht braucht
+alternativ dann ansonsten ausgrauen oder leicht durchsichtig machen
+
+
+"should have required property '@content'"
+könnte man als Fehlerkategorie so nennen: PropertyMissing Error
+
+
+maushover + farbaufleuchten oder sprechblasen bei mousehover sind auch denkbar in der fehleranzeige

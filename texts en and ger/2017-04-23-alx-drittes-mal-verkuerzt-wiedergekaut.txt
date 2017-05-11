@@ -1,0 +1,65 @@
+formulierungen ausführlicher
+anstelle klammern schreiben: objekt: array: etc: mit einrückungen je nach Bildschirmbreite
+zu arraystelle noch ggf. index dazu schreiben, auch wenn der normalerweise nicht mit dabei ist
+überprüfen, ob auto indention ggf schon da ist und html codes aus Whitespaces machen.
+anstelle error reading file schreiben was es in wirklichkeit ist: validation error reading file content
+einfärben
+wiederholungsarten von fehlerarten abkürzen
+Quelltextverweisungsrekursionslisten aufklappbar machen mit js
+unwichtigere texte eingrauen und sehr wenig transparent machen
+nur Hauptsätze verwenden und keine Schachtelsätze
+keine sehr kurzen Wortgruppen
+
+Fragen:
+? wie Bildschirmbreite herausfinden oder Zeichen pro Zeile? --> google
+Autoübersetzung von einzelnen wörtern in beliebige Sprachen? --> John fragen, was er darüber denkt - für wenig Englisch-Könner
+Komplexe Ideen: Semantik der X3D Schemen verstehen und in Fehlerarten einbeziehen bei Fehler (vielleicht ein wenig KI)
+?Das geht doch nur so, dass ich Avj direkt verändere?
+
+
+
+Vorschläge an John: Pfad mit Datei so machen: dateiname: dannach ordner wo nochmal dateiname drin ist dahinter
+messagefarbe genauso färben, wie fehlerstelle
+beim pfad die verschachtelungen machen pro stück pro zeile mit zwei leerzeilen einrückung
+dataPath: .X3D.Scene['-children'][1]. schreiben als "Typ: "x3D.Scene['-children'][1]" darin: Pfad-bla 
+oder ob das zu viel Platzverschwendung ist
+
+John informieren:
+mit 
+cat ajv.bundle.js | grep -e '.*\'.*\'.*'
+bekommt man alle strings gelistet
+cat ajv.bundle.js | grep -e '.*out.*=.*\'.*\'.*' | sed 's/.*=\s*\(\'.*\'\).*/\1/' | grep -e 'keyword:' -e 'message:' -e 'schema:'
+cat ajv.bundle.js | grep -e '.*out.*=.*\'.*\'.*' | sed 's/.*=\s*\(\'.*\'\).*/\1/' | grep -e 'message:'
+cat ajv.bundle.js | grep -e '.*out.*=.*\'.*\'.*' | sed 's/.*=\s*\(\'.*\'\).*\(\'.*\'\).*\(\'.*\'\).*/\1\2\3/' | grep -e 'message:' | sed 's/.*message: \(.*\)/\1/' | sort | uniq
+
+2017-04-28
+cat ajv.bundle.js  | awk '/=/,/;/'| awk '/ out/,/;/' | awk '/message/,/;/' | sed 's/[^=]*=\s*\'\s,\smessage:\([^;]*\)/\1/g'| sed 's/\\\\//g'  | sed 's/;//g'  | sort | uniq
+and
+cat ajv.bundle.js  | awk '/=/,/;/'| awk '/ out/,/;/' | sed 's/[^=]*=\s*\'\s,\smessage:\s*\([^;]*\)/\1/g'| sed 's/\\\\//g'  | sed 's/;//g'  | sort | uniq
+and
+cat ajv.bundle.js  | awk '/=/,/;/'| awk '/ out/,/;/' | sed 's/[^=]*=\s*\'\s,\smessage:\s*\([^;]*\)/\1/g'| sed 's/\\\\//g'  | sed 's/^\s*//g' | sed 's/;//g'  | sort | uniq
+
+
+
+John Aufgaben:
++ rephrase error messages to the better
++ translation good idea for later
++ file1 at /path/file1 is good
+[19:11:25] John Carlson: If we had a program which took json  path and produced the line number in the file
+[19:11:57] Alexander Kern: I think maybe I could get that by hacking Ajv
+[19:12:20] John Carlson: That could be appropriate
+
+[19:15:15] Alexander Kern: the end of the json path has the same color as the error message
+[19:15:26] Alexander Kern: and is bold
+[19:15:42] John Carlson: If you think so
+
+Line Number herausbekommen ist wichtig!
+in Ajv nach Zeilennummern suchen
+
+You may want to split off the jsonlint error messages from the Ajv messages
+so they aren't in the same try catch
+
+
+[19:37:40] … can we just ask the prople vom Ajv (warum es mit der neuen Version nicht geht)
+[19:38:13] John Carlson: Okay, as long as you think the changes are portable across versions and the changes are portable.   Yes, please communicate with them
+ich:  okay then I file an issue to Ajv
