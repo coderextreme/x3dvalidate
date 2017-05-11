@@ -1,3 +1,0 @@
-also es gibt formatfehler, längenfehler, regexfehler, anzahlfehler, bereichsfehler, zusammenhangsfehler mit werten in der struktur und nicht in den vorgaben, type, max, min, drüber, drunter, not in enum, schleifen zwischen strukturen
-
-erledigt: x3d schemas überfliegen
