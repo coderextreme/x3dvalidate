@@ -113,7 +113,7 @@ function validateJSON(files) {
 		} catch (e) {
 			console.error("================================================================================");
 			console.error("File:", file);
-			console.error("Error:", e);
+			console.error(e);
 		}
 	}
 }
