@@ -4,7 +4,7 @@ var fs = require('fs');
 var http = require('http');
 var jsonlint = require('jsonlint');
 var selectObjectFromJson = require('./selectObjectFromJson');
-
+var localize = require('ajv-i18n');
 
 var validate = function() { return false; }
 
@@ -15,6 +15,7 @@ function doValidate(json, validated_version, file, success, failure) {
 	if (typeof validated_version !== 'undefined') {
 		var valid = validated_version(json);
 		if (!valid) {
+			localize.de(validated_version.errors);
 			console.error("================================================================================");
 			console.error("File:", file);
 			var errs = validated_version.errors;
