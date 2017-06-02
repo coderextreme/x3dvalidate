@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "*",
-    "jsonlint": "*"
+    "jsonlint": "*",
+    "ajv-i18n": "*"
   }
 }
