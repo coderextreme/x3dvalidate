@@ -1,0 +1,26 @@
+cat ajv.bundle.js | grep -e '.*\'.*\'.*'
+bekommt man alle strings gelistet
+cat ajv.bundle.js | grep -e '.*out.*=.*\'.*\'.*' | sed 's/.*=\s*\(\'.*\'\).*/\1/' | grep -e 'keyword:' -e 'message:' -e 'schema:'
+cat ajv.bundle.js | grep -e '.*out.*=.*\'.*\'.*' | sed 's/.*=\s*\(\'.*\'\).*/\1/' | grep -e 'message:'
+cat ajv.bundle.js | grep -e '.*out.*=.*\'.*\'.*' | sed 's/.*=\s*\(\'.*\'\).*\(\'.*\'\).*\(\'.*\'\).*/\1\2\3/' | grep -e 'message:' | sed 's/.*message: \(.*\)/\1/' | sort | uniq
+
+2017-04-28
+cat ajv.bundle.js  | awk '/=/,/;/'| awk '/ out/,/;/' | awk '/message/,/;/' | sed 's/[^=]*=\s*\'\s,\smessage:\([^;]*\)/\1/g'| sed 's/\\\\//g'  | sed 's/;//g'  | sort | uniq
+and
+cat ajv.bundle.js  | awk '/=/,/;/'| awk '/ out/,/;/' | sed 's/[^=]*=\s*\'\s,\smessage:\s*\([^;]*\)/\1/g'| sed 's/\\\\//g'  | sed 's/;//g'  | sort | uniq
+and
+cat ajv.bundle.js  | awk '/=/,/;/'| awk '/ out/,/;/' | sed 's/[^=]*=\s*\'\s,\smessage:\s*\([^;]*\)/\1/g'| sed 's/\\\\//g'  | sed 's/^\s*//g' | sed 's/;//g'  | sort | uniq
+
+
+
+
+in vim:
+%s/\}\(\n\)/\1/g
+%s/\}\(\n\)/                                                                                       \1/g
+%s/\"\}\(\n\)/\"\}\1                                                                                       /g
+%s/\"\}\(\n\)/\"\}\1                                                                                       ,\"de\":""/g
+
+
+%s/\"\}\(\n\)/\"\1                                                                                       ,\"de\":""\}\n/g
+
+%s/\"\}\(\n\)/\"\1                                                                                        ,\"de\":""\}\1/g

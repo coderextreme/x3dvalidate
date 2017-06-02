@@ -1,0 +1,68 @@
+'' + ($exclusiveKeyword) + ' should be boolean' '
+out += 'less'
+out += 'longer
+out += 'more'
+out += ' properties' '
+out += 'self'
+out += 'shorter'
+out += 'should have required property '' + ($missingProperty) + '''
+out += ' than '
+out += 'this'
+out += ' when property ' + (it.util.escapeQuotes($property)) + ' is present' '
+'should be '
+'should be equal to constant' '
+'should be equal to one of the allowed values' '
+'should be multiple of '
+'should be ' + ($opStr) + ' '
+'should be ' + ($opStr) + ' "'
+'should have '
+'should have property matching pattern '' + ($missingPattern) + ''' '
+'should match exactly one schema in oneOf' '
+'should match format "'
+'should match pattern "'
+'should match some schema in anyOf' '
+'should NOT be '
+'should NOT be valid' '
+'should NOT have '
+'should NOT have additional properties' '
+'should NOT have duplicate items (items ## ' + j + ' and ' + i + ' are identical)' '
+'should NOT have ' + ($moreOrLess) + ' than ' + ($limit) + ' properties matching pattern "' + (it.util.escapeQuotes($pgProperty)) + '"' '
+'should NOT have more than ' + ($schema.length) + ' items' '
+'should pass "' + ($rule.keyword) + '" keyword validation' '
+'should pass "switch" keyword validation' '
+$reason = 'maximum',
+$reason = 'minimum'
+
+---------------------------------------------------------------------
+
+beispielausagen waren:
+"message":"should match format \"uri\""}
+"message":"should NOT have additional properties"
+"message":"should be equal to one of the allowed values"
+"message":"should have required property '@content'"}
+
+---------------------------------------------------------------------
+prinzpiell sagt die fehlermeldung alles, aber was man machen kann ist unklarheiten zu beseitigen
+als information anreichern werden wir noch die zeile und spalte des fehlers angeben 
+
+
+Vorschlag: eine Fehlerausgabe ähnlich wie gehabt, eine andere wo ausführlich alles formuliert ist für programmieranfänger, was normale programmierer als zu viel empfinden würden
+jetzt erst mal die ausführliche in deutsch:
+
+Das json Schema stimmt nicht mit der Vorgabe überein!
+anstelle should: laut json schema muss aber ...
+john fragen: warum das sein kann: 'should NOT be valid' '
+
+match: besser ausformulieren als nur match schreiben
+"laut Vorgabe soll der inhalt abc123 einem Format entsprechen oder soll dem Muster des Schemas folgen usw.
+statt should (ist zu weich) besser: needs to be
+oder bei x3d schema validation should: die x3d vorgabe verlangt: ...
+
+der Rest dahinter wie gehabt, nur eben davor weiter ausholen was phase ist
+praktisch so wie wenn ein Buch eine Einleitung hat (die ich meist überspringe)
+
+ggf noch mal betonen dass der fehler in dem pfad ist, auch wenn das klar sein müsste
+
+was bedeutet das? out += ' when property ' + (it.util.escapeQuotes($property)) + ' is present' '
+
+

@@ -1,0 +1,145 @@
++18779299843 code is 831186
+mit john sprechen wegen right intentions to join
+liste aller x3d techs for learning
+mailingliste reg
+
+To view this shared file, go to: jsonerrors.txt
+take this file and take the JSON errors out and make them more readable.  These are output from Ajv schema validation.  We just want the error messages more readable
+Let us know if JSON.stringify is good enough
+
+You'll have to use wordpad
+ 
+maybe try JSON.stringify and see what you get
+We can also perhaps sell to Ajv people
+
+
+make it just more readable and understandable
+read bookmarked web3d.... and join
+http://www.web3d.org/join
+http://www.web3d.org/community/public-mailing-lists
+
+https://github.com/epoberezkin/ajv
+x3d browser:
+http://titania.create3000.de/cobweb/
+https://github.com/coderextreme/x3dschema/
+
+you need to take the JSON and run it through a program to produce pretty printed errors
+ So you take the JSON, run it through Ajv, which produces JSON, which you run through your code to produce better messages, colored output etc
+ 
+
+we are converting the JSON to X3DOM and X3D XML (Cobweb)
+I wonder if we can sell this as an in app purchase
+
+
+A follow on task will be to create nicely formatted HTML5 popup for the errors (but I will probably do that :)
+An important thing is to NOT miss any errors as this may be an JavaScript injection issue, and we want the user to be forced to be notified of any JavaScript injection issues.
+so it may be interesting to create some test cases which show JavaScript injection
+we are converting the JSON to X3DOM and X3D XML (Cobweb)
+
+ If you do this task well, I may ask you to highlight or go to the place in the original json (not the error) where the error occured and perhaps provide a tooltip
+ Or list the errors on the page.   See jsonlint for an example.
+ 
+ highlighting errors would be more useful, and more of a product.
+I might be able to sell that
+but I think the first step is getting the JSON error in a form where we can process it
+1) location 2) offending operation 3) offending parameter or constraint
+
+https://json-schema-validator.herokuapp.com/
+http://www.jsonschemavalidator.net/
+https://jsonschemalint.com/#/version/draft-04/markup/json
+
+
+To see how messages appear now, go to http://coderextreme.net/X3DJSONLD/ and select force.json.   a pop-up will appear.  We want to do something better than that pop-up.   We probably don't want to show the JSON file until that pop-up is confirmed.
+
+http://coderextreme.net/X3DJSONLD/
+
+  I only want you to process the ....errors field, which is JavaScript or parsed JSON
+   You don't have to deal with JSON parsing errors, but they are intermixed unfortunately
+   So just focus on additional property, missing property, constraints, limits and values and JS path that includes the property
+
+    Ajv produces the ...errors field on one of the objects
+
+days ago when u gave me that task, u wrote I shall use wordpad and u also said that it is about json errors to make them more readable
+Is it that I shall process validation errors instead of parsing errors?
+why u said I shall use wordpad? thats why i wrote that many text when u said that would be to overcomplicated
+
+what if Ajv output changes with another verion? then the text processing would be needed to be rewritten
+which of my ideas in that big text would u recommend and which not
+
+
+
+
+
+
+
+[18:49:05] Alexander Kern: I Need a list of every x3d and whatever we work on - Technology, language, topicname
+[18:49:40] John Carlson: X3D/VRML -- extensible 3D graphics
+[18:49:56] Alexander Kern: XML JavaScript json
+[18:50:02] John Carlson: X3DJSAIL -- X3D Java Scene Authoring Library
+[18:50:04] Alexander Kern: validators
+[18:50:12] Alexander Kern: Java, maybe scala
+SAI - Scene Authoring Interface -- programmatic interface to X3D/VRML
+JSON schema -- a draft standard for schemas written in JSON
+JSON -- Java Script Object Notation
+OM4X3D -- Object Model for X3D.  An Object Model written in XML that Don and Roy have come up with for describing the X3D standard
+http://www.web3d.org/x3d/content/examples/X3dResources.html
+
+zum validieren:
+scenes from X3d resources examples
+http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
+What you should do is introduce errors in existing files
+
+schema files:
+https://github.com/coderextreme/x3dvalidate/blob/master/x3d-3.3-JSONSchema.json
+
+Don't worry, the task is still there.  Did you check out the x3dvalidate project, or are you unable to?
+$ git clone https://github.com/coderextreme/x3dvalidate
+cd x3dvalidate$ npm install
+
+
+meteor project, so you can run it under cmd?
+
+meteor is a javascript building and dev tool for deploying new versions to the browser.  We don't have a browser in this case, but we could build a simple web page
+Like a textarea where you could paste and edit JSON, select a schema version, and press the validate button
+meteor takes the place of express
+
+-------------------------------
+2017-04-14
+
+function instead of extra program
+nicht den ganzen strom, sondern einzelne messages, nicht mehrere, z.B. 80 Chars
+ein mal für parser und ein mal für validator
+JSON.parse() and Ajv,  JSON.stringify
+There's also output from the JSON.parse which is separate and not JSON
+We can use jsonlint for good messages from a JSON parse
+
+Go ahead and fork this project: https://github.com/coderextreme/x3dvalidate
+The try catch in index.js should be split into two, one for JSON.parse and one for Ajv
+JSON examples are here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
+
+My web server is here: https://github.com/coderextreme/X3DJSONLD/blob/master/app.js
+------------------------------
+2017-04-21
+You'll have to try X3DJSONLD. Load flipper.json or force.json http://coderextreme.net/X3DJSONLD/ https://github.com/coderextreme/X3DJSONLD/
+
+There's a problem with the current version of ajv
+use 4.11.7
+
+
+you can look at Ajv for what it returns in errs[e]Gesendet am:19:56Von:John Carlsonin particular, you want to look at all the varieties of errs[e].message
+
+try out some stuffGesendet am:19:57Von:John Carlsontry a different schemaVon:John Carlsontry your own schemaVon:John Carlsonit has to satisfy draft04Von:John Carlsonfor now, until we upgrade
+
+you can look at Ajv for what it returns in errs[e]Gesendet am:19:56Von:John Carlsonin particular, you want to look at all the varieties of errs[e].message
+
+if jsonlint fails, JSON will work for a parser.
+I found a problem with jsonlint
+jsonlint has better messages
+
+You may want to split off the jsonlint error messages from the Ajv messages
+so they aren't in the same try catch
+
+go ahead and make the index.js an index.ts file if you like, but be sure to add instructions on how to run it
+It wasn't a bug in my code, it was that you were using node 4.
+
+root@neon /h/D/j/x3dvalidate# node x3dvalidate.js flipp.jsonroot@neon /h/D/j/x3dvalidate#Von:John Carlson yeah, coolGesendet am:20:16Von:John Carlsonit works
