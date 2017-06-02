@@ -6,6 +6,9 @@ var jsonlint = require('jsonlint');
 var selectObjectFromJson = require('./selectObjectFromJson');
 var localize = require('ajv-i18n');
 
+var validate = function() { return false; }
+
+
 var chosenLanguage = localize.de;
 
 function doValidate(json, validated_version, file, success, failure) {
