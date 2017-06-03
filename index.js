@@ -9,7 +9,14 @@ var localize = require('ajv-i18n');
 var validate = function() { return false; }
 
 
-var chosenLanguage = localize.de;
+var language = "en";
+
+var languages = {
+	"en" : localize.en,
+	"de" : localize.de
+}
+
+var chosenLanguage = languages[language];
 
 function doValidate(json, validated_version, file, success, failure) {
 	var retval = false;
