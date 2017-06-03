@@ -18,7 +18,9 @@ process.argv.shift();
 process.argv.shift();
 var files = process.argv;
 
-validate(files);
+var language = "de";
+
+validate(language, files);
 
 ```
 

@@ -9,19 +9,16 @@ var localize = require('ajv-i18n');
 var validate = function() { return false; }
 
 
-var language = "en";
-
 var languages = {
 	"en" : localize.en,
 	"de" : localize.de
 }
 
-var chosenLanguage = languages[language];
-
-function doValidate(json, validated_version, file, success, failure) {
+function doValidate(json, validated_version, file, success, failure, language) {
 	var retval = false;
 	var version = json.X3D["@version"];
 	var error = ""
+	var chosenLanguage = languages[language];
 	if (typeof validated_version !== 'undefined') {
 		var valid = validated_version(json);
 		if (!valid) {
@@ -65,7 +62,7 @@ function doValidate(json, validated_version, file, success, failure) {
 	}
 }
 
-function loadSchema(json, file, doValidate, success, failure) {
+function loadSchema(json, file, doValidate, success, failure, language) {
 	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true, "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
@@ -98,13 +95,13 @@ function loadSchema(json, file, doValidate, success, failure) {
 		} else {
 			console.error("Schema", version, "compiled");
 		}
-		doValidate(json, validated_version, file, success, failure);
+		doValidate(json, validated_version, file, success, failure, language);
 	} else {
-		doValidate(json, validated_version, file, success, failure);
+		doValidate(json, validated_version, file, success, failure, language);
 	}
 }
 
-function validateJSON(files) {
+function validateJSON(language, files) {
 
 	for (var f in files) {
 		var file = files[f];
@@ -120,7 +117,7 @@ function validateJSON(files) {
 			}, function(e) {
 				console.error("Error reading", file, e);
 
-			});
+			}, language);
 		} catch (e) {
 			console.error("================================================================================");
 			console.error("File:", file);
