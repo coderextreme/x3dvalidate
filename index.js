@@ -64,7 +64,7 @@ function doValidate(json, validated_version, file, success, failure, language) {
 
 function loadSchema(json, file, doValidate, success, failure, language) {
 	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"4.0":true }
-	var version = "4.0"; // json.X3D["@version"];
+	var version = json.X3D["@version"];
 	if (!versions[version]) {
 		console.error("Can only validate version 3.0-4.0 presently. Switching version to 3.3.");
 		version = "3.3";
