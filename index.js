@@ -71,7 +71,7 @@ function loadSchema(json, file, doValidate, success, failure, language) {
 	}
 	var validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
-		var ajv = new Ajv({ allErrors:true});
+		var ajv = new Ajv();
 
 		
 		/*

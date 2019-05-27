@@ -1064,6 +1064,9 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "-pointProperties": {
+              "$ref": "#/definitions/-PointPropertiesSFNode"
+            },
             "-shaders": {
               "$ref": "#/definitions/-X3DShaderNodeMFNode"
             },
@@ -1553,6 +1556,17 @@
             "@forceOutput": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -2344,7 +2358,7 @@
               "type": "string"
             },
             "-shape": {
-              "$ref": "#/definitions/-Shape|LOD|TransformSFNode"
+              "$ref": "#/definitions/-Shape-LOD-TransformSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -3178,6 +3192,17 @@
             "@appliedParameters": {
               "type": "array",
               "items": {
+                "enum": [
+                  "BOUNCE",
+                  "USER_FRICTION",
+                  "FRICTION_COEFFICIENT-2",
+                  "ERROR_REDUCTION",
+                  "CONSTANT_FORCE",
+                  "SPEED-1",
+                  "SPEED-2",
+                  "SLIP-1",
+                  "SLIP-2"
+                ],
                 "default": "BOUNCE",
                 "type": "string"
               }
@@ -3189,7 +3214,7 @@
               "type": "number"
             },
             "-collidables": {
-              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNodeMFNode"
+              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode-X3DNBodyCollidableNodeMFNode"
             },
             "@enabled": {
               "default": true,
@@ -3378,7 +3403,7 @@
               }
             },
             "-collidables": {
-              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNodeMFNode"
+              "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode-X3DNBodyCollidableNodeMFNode"
             },
             "@enabled": {
               "default": true,
@@ -3974,6 +3999,18 @@
               "type": "boolean"
             },
             "@language": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "Cg",
+                    "GLSL",
+                    "HLSL"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "type": "string"
             },
             "-metadata": {
@@ -4347,6 +4384,17 @@
             "@appliedParameters": {
               "type": "array",
               "items": {
+                "enum": [
+                  "BOUNCE",
+                  "USER_FRICTION",
+                  "FRICTION_COEFFICIENT-2",
+                  "ERROR_REDUCTION",
+                  "CONSTANT_FORCE",
+                  "SPEED-1",
+                  "SPEED-2",
+                  "SLIP-1",
+                  "SLIP-2"
+                ],
                 "default": "BOUNCE",
                 "type": "string"
               }
@@ -4517,7 +4565,7 @@
               "$ref": "#/definitions/IS"
             },
             "-children": {
-              "$ref": "#/definitions/-NurbsCurve2D|ContourPolyline2DMFNode"
+              "$ref": "#/definitions/-NurbsCurve2D-ContourPolyline2DMFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -5717,6 +5765,17 @@
             "@forceOutput": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -7184,6 +7243,18 @@
             "@family": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "SANS",
+                      "SERIF",
+                      "TYPEWRITER"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "SERIF",
                 "type": "string"
               }
@@ -8694,6 +8765,9 @@
                 "type": "integer"
               }
             },
+            "@description": {
+              "type": "string"
+            },
             "@displacements": {
               "type": "array",
               "minItems": 3,
@@ -8705,83 +8779,132 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "enum": [
-                "sellion",
-                "r_infraorbitale",
-                "l_infraorbitale",
-                "supramenton",
-                "r_tragion",
-                "r_gonion",
-                "l_tragion",
-                "l_gonion",
-                "nuchale",
-                "r_clavicale",
-                "suprasternale",
-                "l_clavicale",
-                "r_thelion",
-                "l_thelion",
-                "substernale",
-                "r_rib10",
-                "r_asis",
-                "l_rib10",
-                "l_asis",
-                "r_iliocristale",
-                "r_trochanterion",
-                "l_iliocristale",
-                "l_trochanterion",
-                "cervicale",
-                "rib10_midspine",
-                "r_psis",
-                "l_psis",
-                "waist_preferred_post",
-                "r_acromion",
-                "r_axilla_ant",
-                "r_radial_styloid",
-                "r_axilla_post",
-                "r_olecranon",
-                "r_humeral_lateral_epicn",
-                "r_humeral_medial_epicn",
-                "r_radiale",
-                "r_metacarpal_pha2",
-                "r_dactylion",
-                "r_ulnar_styloid",
-                "r_metacarpal_pha5",
-                "l_acromion",
-                "l_axilla_ant",
-                "l_radial_styloid",
-                "l_axilla_post",
-                "l_olecranon",
-                "l_humeral_lateral_epicn",
-                "l_humeral_medial_epicn",
-                "l_radiale",
-                "l_metacarpal_pha2",
-                "l_dactylion",
-                "l_ulnar_styloid",
-                "l_metacarpal_pha5",
-                "r_knee_crease",
-                "r_femoral_lateral_epicn",
-                "r_femoral_medial_epicn",
-                "r_metatarsal_pha5",
-                "r_lateral_malleolus",
-                "r_medial_malleolus",
-                "r_sphyrion",
-                "r_metatarsal_pha1",
-                "r_calcaneous_post",
-                "r_digit2",
-                "l_knee_crease",
-                "l_femoral_lateral_epicn",
-                "l_femoral_medial_epicn",
-                "l_metatarsal_pha5",
-                "l_lateral_malleolus",
-                "l_medial_malleolus",
-                "l_sphyrion",
-                "l_metatarsal_pha1",
-                "l_calcaneous_post",
-                "l_digit2",
-                "crotch",
-                "r_neck_base",
-                "l_neck_base",
-                "navel"
+              "anyOf": [
+                {
+                  "enum": [
+                    "skull_vertex",
+                    "glabella",
+                    "sellion",
+                    "l_infraorbitale",
+                    "l_tragion",
+                    "l_gonion",
+                    "r_infraorbitale",
+                    "r_tragion",
+                    "r_gonion",
+                    "supramenton",
+                    "cervicale",
+                    "adams_apple",
+                    "suprasternale",
+                    "substernale",
+                    "l_clavicle",
+                    "l_acromion",
+                    "l_axilla_proximal",
+                    "l_axilla_distal",
+                    "l_axilla_posterior_folds",
+                    "r_clavicle",
+                    "r_acromion",
+                    "r_axilla_proximal",
+                    "r_axilla_distal",
+                    "r_axilla_posterior_folds",
+                    "spine_1_middle_back",
+                    "spine_2_lower_back",
+                    "waist_preferred_anterior",
+                    "waist_preferred_posterior",
+                    "l_rib10",
+                    "l_thelion",
+                    "r_rib10",
+                    "r_thelion",
+                    "l_asis",
+                    "l_iliocristale",
+                    "l_psis",
+                    "r_asis",
+                    "r_iliocristale",
+                    "r_psis",
+                    "crotch",
+                    "l_femoral_lateral_epicondyle",
+                    "l_femoral_medial_epicondyle",
+                    "l_suprapatella",
+                    "l_trochanterion",
+                    "r_femoral_lateral_epicondyle",
+                    "r_femoral_medial_epicondyle",
+                    "r_suprapatella",
+                    "r_trochanterion",
+                    "l_tibiale",
+                    "l_medial_malleolus",
+                    "l_lateral_malleolus",
+                    "l_sphyrion",
+                    "r_tibiale",
+                    "r_medial_malleolus",
+                    "r_lateral_malleolus",
+                    "r_sphyrion",
+                    "l_metatarsal_phalanx_1",
+                    "l_metatarsal_phalanx_5",
+                    "l_dactylion",
+                    "l_calcaneus_posterior",
+                    "r_metatarsal_phalanx_1",
+                    "r_metatarsal_phalanx_5",
+                    "r_dactylion",
+                    "r_calcaneus_posterior",
+                    "l_humeral_lateral_epicondyle",
+                    "l_humeral_medial_epicondyle",
+                    "l_olecranon",
+                    "r_humeral_lateral_epicondyle",
+                    "r_humeral_medial_epicondyle",
+                    "r_olecranon",
+                    "l_radiale",
+                    "l_ulnar_styloid",
+                    "l_radial_styloid",
+                    "r_radiale",
+                    "r_ulnar_styloid",
+                    "r_radial_styloid",
+                    "l_metacarpal_phalanx_2",
+                    "l_metacarpal_phalanx_3",
+                    "l_metacarpal_phalanx_5",
+                    "r_metacarpal_phalanx_2",
+                    "r_metacarpal_phalanx_3",
+                    "r_metacarpal_phalanx_5",
+                    "nuchale",
+                    "l_neck_base",
+                    "r_neck_base",
+                    "navel",
+                    "l_ectocanthus",
+                    "r_ectocanthus",
+                    "menton",
+                    "mesosternale",
+                    "opisthocranion",
+                    "l_knee_crease",
+                    "r_knee_crease",
+                    "rear_center_midsagittal_plane",
+                    "buttocks_standing_wall_contact_point",
+                    "l_chest_midsagittal_plane",
+                    "r_chest_midsagittal_plane",
+                    "l_bideltoid",
+                    "r_bideltoid",
+                    "l_carpal_distal_phalanx_1",
+                    "l_carpal_distal_phalanx_2",
+                    "l_carpal_distal_phalanx_3",
+                    "l_carpal_distal_phalanx_4",
+                    "l_carpal_distal_phalanx_5",
+                    "r_carpal_distal_phalanx_1",
+                    "r_carpal_distal_phalanx_2",
+                    "r_carpal_distal_phalanx_3",
+                    "r_carpal_distal_phalanx_4",
+                    "r_carpal_distal_phalanx_5",
+                    "l_tarsal_distal_phalanx_1",
+                    "l_tarsal_distal_phalanx_2",
+                    "l_tarsal_distal_phalanx_3",
+                    "l_tarsal_distal_phalanx_4",
+                    "l_tarsal_distal_phalanx_5",
+                    "r_tarsal_distal_phalanx_1",
+                    "r_tarsal_distal_phalanx_2",
+                    "r_tarsal_distal_phalanx_3",
+                    "r_tarsal_distal_phalanx_4",
+                    "r_tarsal_distal_phalanx_5"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
               ],
               "type": "string"
             },
@@ -8864,10 +8987,54 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "type": "string"
+            },
             "@info": {
               "type": "array",
               "items": {
                 "type": "string"
+              }
+            },
+            "@jointBindingPositions": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "@jointBindingRotations": {
+              "type": "array",
+              "minItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": {
+                "type": "number"
+              }
+            },
+            "@jointBindingScales": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
               }
             },
             "-joints": {
@@ -8881,6 +9048,9 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "-motions": {
+              "$ref": "#/definitions/-HAnimMotionMFNode"
             },
             "@name": {
               "type": "string"
@@ -8950,11 +9120,21 @@
             "-sites": {
               "$ref": "#/definitions/-HAnimSiteMFNode"
             },
+            "@skeletalConfiguration": {
+              "default": "BASIC",
+              "type": "string"
+            },
             "-skeleton": {
-              "$ref": "#/definitions/-HAnimJoint|HAnimSiteMFNode"
+              "$ref": "#/definitions/-HAnimJoint-HAnimSiteMFNode"
             },
             "-skin": {
-              "$ref": "#/definitions/-Group|Transform|Shape|IndexedFaceSetMFNode"
+              "$ref": "#/definitions/-Group-Transform-Shape-IndexedFaceSetMFNode"
+            },
+            "-skinBindingCoords": {
+              "$ref": "#/definitions/-X3DCoordinateNodeMFNode"
+            },
+            "-skinBindingNormals": {
+              "$ref": "#/definitions/-X3DNormalNodeMFNode"
             },
             "-skinCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
@@ -8972,7 +9152,12 @@
               }
             },
             "@version": {
-              "default": "2.2",
+              "enum": [
+                "1.0",
+                "1.1",
+                "2.0"
+              ],
+              "default": "2.0",
               "type": "string"
             },
             "-viewpoints": {
@@ -9020,9 +9205,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
             "IS": {
               "$ref": "#/definitions/IS"
             },
@@ -9053,9 +9235,14 @@
                 "type": "number"
               }
             },
-            "@frameCount": {
-              "minimum": 0,
-              "type": "integer"
+            "-children": {
+              "$ref": "#/definitions/-HAnimJoint-HAnimSegment-HAnimSiteMFNode"
+            },
+            "@description": {
+              "type": "string"
+            },
+            "-displacers": {
+              "$ref": "#/definitions/-HAnimDisplacerMFNode"
             },
             "@limitOrientation": {
               "type": "array",
@@ -9084,7 +9271,9 @@
             "@llimit": {
               "type": "array",
               "minItems": 3,
+              "maxItems": 3,
               "items": {
+                "default": 0,
                 "type": "number"
               }
             },
@@ -9092,6 +9281,161 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@name": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "humanoid_root",
+                    "sacroiliac",
+                    "l_hip",
+                    "l_knee",
+                    "l_talocrural",
+                    "l_talocalcaneonavicular",
+                    "l_cuneonavicular_1",
+                    "l_tarsometatarsal_1",
+                    "l_metatarsophalangeal_1",
+                    "l_tarsal_interphalangeal_1",
+                    "l_cuneonavicular_2",
+                    "l_tarsometatarsal_2",
+                    "l_metatarsophalangeal_2",
+                    "l_tarsal_proximal_interphalangeal_2",
+                    "l_tarsal_distal_interphalangeal_2",
+                    "l_cuneonavicular_3",
+                    "l_tarsometatarsal_3",
+                    "l_metatarsophalangeal_3",
+                    "l_tarsal_proximal_interphalangeal_3",
+                    "l_tarsal_distal_interphalangeal_3",
+                    "l_calcaneocuboid",
+                    "l_transversetarsal",
+                    "l_tarsometatarsal_4",
+                    "l_metatarsophalangeal_4",
+                    "l_tarsal_proximal_interphalangeal_4",
+                    "l_tarsal_distal_interphalangeal_4",
+                    "l_tarsometatarsal_5",
+                    "l_metatarsophalangeal_5",
+                    "l_tarsal_proximal_interphalangeal_5",
+                    "l_tarsal_distal_interphalangeal_5",
+                    "r_hip",
+                    "r_knee",
+                    "r_talocrural",
+                    "r_talocalcaneonavicular",
+                    "r_cuneonavicular_1",
+                    "r_tarsometatarsal_1",
+                    "r_metatarsophalangeal_1",
+                    "r_tarsal_interphalangeal_1",
+                    "r_cuneonavicular_2",
+                    "r_tarsometatarsal_2",
+                    "r_metatarsophalangeal_2",
+                    "r_tarsal_proximal_interphalangeal_2",
+                    "r_tarsal_distal_interphalangeal_2",
+                    "r_cuneonavicular_3",
+                    "r_tarsometatarsal_3",
+                    "r_metatarsophalangeal_3",
+                    "r_tarsal_proximal_interphalangeal_3",
+                    "r_tarsal_distal_interphalangeal_3",
+                    "r_calcaneocuboid",
+                    "r_transversetarsal",
+                    "r_tarsometatarsal_4",
+                    "r_metatarsophalangeal_4",
+                    "r_tarsal_proximal_interphalangeal_4",
+                    "r_tarsal_distal_interphalangeal_4",
+                    "r_tarsometatarsal_5",
+                    "r_metatarsophalangeal_5",
+                    "r_tarsal_proximal_interphalangeal_5",
+                    "r_tarsal_distal_interphalangeal_5",
+                    "vl5",
+                    "vl4",
+                    "vl3",
+                    "vl2",
+                    "vl1",
+                    "vt12",
+                    "vt11",
+                    "vt10",
+                    "vt9",
+                    "vt8",
+                    "vt7",
+                    "vt6",
+                    "vt5",
+                    "vt4",
+                    "vt3",
+                    "vt2",
+                    "vt1",
+                    "vc7",
+                    "vc6",
+                    "vc5",
+                    "vc4",
+                    "vc3",
+                    "vc2",
+                    "vc1",
+                    "skullbase",
+                    "l_eyelid_joint",
+                    "r_eyelid_joint",
+                    "l_eyeball_joint",
+                    "r_eyeball_joint",
+                    "l_eyebrow_joint",
+                    "r_eyebrow_joint",
+                    "temporomandibular",
+                    "l_sternoclavicular",
+                    "l_acromioclavicular",
+                    "l_shoulder",
+                    "l_elbow",
+                    "l_radiocarpal",
+                    "l_midcarpal_1",
+                    "l_carpometacarpal_1",
+                    "l_metacarpophalangeal_1",
+                    "l_carpal_interphalangeal_1",
+                    "l_midcarpal_2",
+                    "l_carpometacarpal_2",
+                    "l_metacarpophalangeal_2",
+                    "l_carpal_proximal_interphalangeal_2",
+                    "l_carpal_distal_interphalangeal_2",
+                    "l_midcarpal_3",
+                    "l_carpometacarpal_3",
+                    "l_metacarpophalangeal_3",
+                    "l_carpal_proximal_interphalangeal_3",
+                    "l_carpal_distal_interphalangeal_3",
+                    "l_midcarpal_4_5",
+                    "l_carpometacarpal_4",
+                    "l_metacarpophalangeal_4",
+                    "l_carpal_proximal_interphalangeal_4",
+                    "l_carpal_distal_interphalangeal_4",
+                    "l_carpometacarpal_5",
+                    "l_metacarpophalangeal_5",
+                    "l_carpal_proximal_interphalangeal_5",
+                    "l_carpal_distal_interphalangeal_5",
+                    "r_sternoclavicular",
+                    "r_acromioclavicular",
+                    "r_shoulder",
+                    "r_elbow",
+                    "r_radiocarpal",
+                    "r_midcarpal_1",
+                    "r_carpometacarpal_1",
+                    "r_metacarpophalangeal_1",
+                    "r_carpal_interphalangeal_1",
+                    "r_midcarpal_2",
+                    "r_carpometacarpal_2",
+                    "r_metacarpophalangeal_2",
+                    "r_carpal_proximal_interphalangeal_2",
+                    "r_carpal_distal_interphalangeal_2",
+                    "r_midcarpal_3",
+                    "r_carpometacarpal_3",
+                    "r_metacarpophalangeal_3",
+                    "r_carpal_proximal_interphalangeal_3",
+                    "r_carpal_distal_interphalangeal_3",
+                    "r_midcarpal_4_5",
+                    "r_carpometacarpal_4",
+                    "r_metacarpophalangeal_4",
+                    "r_carpal_proximal_interphalangeal_4",
+                    "r_carpal_distal_interphalangeal_4",
+                    "r_carpometacarpal_5",
+                    "r_metacarpophalangeal_5",
+                    "r_carpal_proximal_interphalangeal_5",
+                    "r_carpal_distal_interphalangeal_5"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "type": "string"
             },
             "@rotation": {
@@ -9167,7 +9511,11 @@
               }
             },
             "@stiffness": {
+              "maximum": 1,
+              "minimum": 0,
               "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
               "items": {
                 "default": 1,
                 "maximum": 1,
@@ -9187,7 +9535,9 @@
             "@ulimit": {
               "type": "array",
               "minItems": 3,
+              "maxItems": 3,
               "items": {
+                "default": 0,
                 "type": "number"
               }
             },
@@ -9251,20 +9601,42 @@
                 "type": "boolean"
               }
             },
+            "@cycleTime": {
+              "minimum": 0,
+              "type": "number"
+            },
             "@description": {
               "type": "string"
+            },
+            "@elapsedTime": {
+              "minimum": 0,
+              "type": "number"
             },
             "@enabled": {
               "default": false,
               "type": "boolean"
+            },
+            "@endFrame": {
+              "minimum": -1,
+              "default": -1,
+              "type": "integer"
+            },
+            "@frameCount": {
+              "minimum": 0,
+              "type": "integer"
             },
             "@frameDuration": {
               "exclusiveMinimum": 0,
               "default": 0.1,
               "type": "number"
             },
-            "@frameNumber": {
+            "@frameIncrement": {
+              "default": 1,
+              "type": "integer"
+            },
+            "@frameIndex": {
               "minimum": 0,
+              "default": 0,
               "type": "integer"
             },
             "@joints": {
@@ -9279,8 +9651,17 @@
               "default": -1,
               "type": "integer"
             },
+            "@loop": {
+              "default": false,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@startFrame": {
+              "minimum": 0,
+              "default": 0,
+              "type": "integer"
             },
             "@values": {
               "type": "array",
@@ -9366,6 +9747,9 @@
             "-coord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
             },
+            "@description": {
+              "type": "string"
+            },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
             },
@@ -9386,156 +9770,160 @@
               }
             },
             "@name": {
-              "enum": [
-                "sacrum",
-                "pelvis",
-                "l_thigh",
-                "l_calf",
-                "l_hindfoot",
-                "l_midproximal",
-                "l_middistal",
-                "l_forefoot",
-                "r_thigh",
-                "r_calf",
-                "r_hindfoot",
-                "r_midproximal",
-                "r_middistal",
-                "r_forefoot",
-                "l5",
-                "l4",
-                "l3",
-                "l2",
-                "l1",
-                "t12",
-                "t11",
-                "t10",
-                "t9",
-                "t8",
-                "t7",
-                "t6",
-                "t5",
-                "t4",
-                "t3",
-                "t2",
-                "t1",
-                "c7",
-                "c6",
-                "c5",
-                "c4",
-                "c3",
-                "c2",
-                "c1",
-                "skull",
-                "l_eyelid",
-                "r_eyelid",
-                "l_eyeball",
-                "r_eyeball",
-                "l_eyebrow",
-                "r_eyebrow",
-                "jaw",
-                "l_clavicle",
-                "l_scapula",
-                "l_upperarm",
-                "l_forearm",
-                "l_hand",
-                "l_thumb_metacarpal",
-                "l_thumb_proximal",
-                "l_thumb_distal",
-                "l_index_metacarpal",
-                "l_index_proximal",
-                "l_index_middle",
-                "l_index_distal",
-                "l_middle_metacarpal",
-                "l_middle_proximal",
-                "l_middle_middle",
-                "l_middle_distal",
-                "l_ring_metacarpal",
-                "l_ring_proximal",
-                "l_ring_middle",
-                "l_ring_distal",
-                "l_pinky_metacarpal",
-                "l_pinky_proximal",
-                "l_pinky_middle",
-                "l_pinky_distal",
-                "r_clavicle",
-                "r_scapula",
-                "r_upperarm",
-                "r_forearm",
-                "r_hand",
-                "r_thumb_metacarpal",
-                "r_thumb_proximal",
-                "r_thumb_distal",
-                "r_index_metacarpal",
-                "r_index_proximal",
-                "r_index_middle",
-                "r_index_distal",
-                "r_middle_metacarpal",
-                "r_middle_proximal",
-                "r_middle_middle",
-                "r_middle_distal",
-                "r_ring_metacarpal",
-                "r_ring_proximal",
-                "r_ring_middle",
-                "r_ring_distal",
-                "r_pinky_metacarpal",
-                "r_pinky_proximal",
-                "r_pinky_middle",
-                "r_pinky_distal",
-                "l_carpal",
-                "",
-                "l_trapezoid",
-                "l_metacarpal_1",
-                "l_carpal_proximal_phalanx_1",
-                "l_carpal_distal_phalanx_1",
-                "l_metacarpal_2",
-                "l_carpal_proximal_phalanx_2",
-                "l_carpal_middle_phalanx_2",
-                "l_carpal_distal_phalanx_2",
-                "l_capitate",
-                "l_metacarpal_3",
-                "l_carpal_proximal_phalanx_3",
-                "l_carpal_middle_phalanx_3",
-                "l_carpal_distal_phalanx_3",
-                "l_hamate",
-                "l_metacarpal_4",
-                "l_carpal_proximal_phalanx_4",
-                "l_carpal_middle_phalanx_4",
-                "l_carpal_distal_phalanx_4",
-                "l_metacarpal_5",
-                "l_carpal_proximal_phalanx_5",
-                "l_carpal_middle_phalanx_5",
-                "l_carpal_distal_phalanx_5",
-                "r_carpal",
-                "r_trapezoid",
-                "r_metacarpal_1",
-                "r_carpal_proximal_phalanx_1",
-                "r_carpal_distal_phalanx_1",
-                "r_metacarpal_2",
-                "r_carpal_proximal_phalanx_2",
-                "r_carpal_middle_phalanx_2",
-                "r_carpal_distal_phalanx_2",
-                "r_capitate",
-                "r_metacarpal_3",
-                "r_carpal_proximal_phalanx_3",
-                "r_carpal_middle_phalanx_3",
-                "r_carpal_distal_phalanx_3",
-                "r_hamate",
-                "r_metacarpal_4",
-                "r_carpal_proximal_phalanx_4",
-                "r_carpal_middle_phalanx_4",
-                "r_carpal_distal_phalanx_4",
-                "r_metacarpal_5",
-                "r_carpal_proximal_phalanx_5",
-                "r_carpal_middle_phalanx_5",
-                "r_carpal_distal_phalanx_5",
-                "l_talus",
-                "l_metatarsal",
-                "l_tarsal_proximal_phalanx",
-                "l_tarsal_distal_phalanx",
-                "r_talus",
-                "r_metatarsal",
-                "r_tarsal_proximal_phalanx",
-                "r_tarsal_distal_phalanx"
+              "anyOf": [
+                {
+                  "enum": [
+                    "sacrum",
+                    "pelvis",
+                    "l_thigh",
+                    "l_calf",
+                    "l_talus",
+                    "l_navicular",
+                    "l_cuneiform_1",
+                    "l_metatarsal_1",
+                    "l_tarsal_proximal_phalanx_1",
+                    "l_tarsal_distal_phalanx_1",
+                    "l_cuneiform_2",
+                    "l_metatarsal_2",
+                    "l_tarsal_proximal_phalanx_2",
+                    "l_tarsal_middle_phalanx_2",
+                    "l_tarsal_distal_phalanx_2",
+                    "l_cuneiform_3",
+                    "l_metatarsal_3",
+                    "l_tarsal_proximal_phalanx_3",
+                    "l_tarsal_middle_phalanx_3",
+                    "l_tarsal_distal_phalanx_3",
+                    "l_calcaneus",
+                    "l_cuboid",
+                    "l_metatarsal_4",
+                    "l_tarsal_proximal_phalanx_4",
+                    "l_tarsal_middle_phalanx_4",
+                    "l_tarsal_distal_phalanx_4",
+                    "l_metatarsal_5",
+                    "l_tarsal_proximal_phalanx_5",
+                    "l_tarsal_middle_phalanx_5",
+                    "l_tarsal_distal_phalanx_5",
+                    "r_thigh",
+                    "r_calf",
+                    "r_talus",
+                    "r_navicular",
+                    "r_cuneiform_1",
+                    "r_metatarsal_1",
+                    "r_tarsal_proximal_phalanx_1",
+                    "r_tarsal_distal_phalanx_1",
+                    "r_cuneiform_2",
+                    "r_metatarsal_2",
+                    "r_tarsal_proximal_phalanx_2",
+                    "r_tarsal_middle_phalanx_2",
+                    "r_tarsal_distal_phalanx_2",
+                    "r_cuneiform_3",
+                    "r_metatarsal_3",
+                    "r_tarsal_proximal_phalanx_3",
+                    "r_tarsal_middle_phalanx_3",
+                    "r_tarsal_distal_phalanx_3",
+                    "r_calcaneus",
+                    "r_cuboid",
+                    "r_metatarsal_4",
+                    "r_tarsal_proximal_phalanx_4",
+                    "r_tarsal_middle_phalanx_4",
+                    "r_tarsal_distal_phalanx_4",
+                    "r_metatarsal_5",
+                    "r_tarsal_proximal_phalanx_5",
+                    "r_tarsal_middle_phalanx_5",
+                    "r_tarsal_distal_phalanx_5",
+                    "l5",
+                    "l4",
+                    "l3",
+                    "l2",
+                    "l1",
+                    "t12",
+                    "t11",
+                    "t10",
+                    "t9",
+                    "t8",
+                    "t7",
+                    "t6",
+                    "t5",
+                    "t4",
+                    "t3",
+                    "t2",
+                    "t1",
+                    "c7",
+                    "c6",
+                    "c5",
+                    "c4",
+                    "c3",
+                    "c2",
+                    "c1",
+                    "skull",
+                    "l_eyelid",
+                    "r_eyelid",
+                    "l_eyeball",
+                    "r_eyeball",
+                    "l_eyebrow",
+                    "r_eyebrow",
+                    "jaw",
+                    "l_clavicle",
+                    "l_scapula",
+                    "l_upperarm",
+                    "l_forearm",
+                    "l_carpal",
+                    "l_trapezium",
+                    "l_metacarpal_1",
+                    "l_carpal_proximal_phalanx_1",
+                    "l_carpal_distal_phalanx_1",
+                    "l_trapezoid",
+                    "l_metacarpal_2",
+                    "l_carpal_proximal_phalanx_2",
+                    "l_carpal_middle_phalanx_2",
+                    "l_carpal_distal_phalanx_2",
+                    "l_capitate",
+                    "l_metacarpal_3",
+                    "l_carpal_proximal_phalanx_3",
+                    "l_carpal_middle_phalanx_3",
+                    "l_carpal_distal_phalanx_3",
+                    "l_hamate",
+                    "l_metacarpal_4",
+                    "l_carpal_proximal_phalanx_4",
+                    "l_carpal_middle_phalanx_4",
+                    "l_carpal_distal_phalanx_4",
+                    "l_metacarpal_5",
+                    "l_carpal_proximal_phalanx_5",
+                    "l_carpal_middle_phalanx_5",
+                    "l_carpal_distal_phalanx_5",
+                    "r_clavicle",
+                    "r_scapula",
+                    "r_upperarm",
+                    "r_forearm",
+                    "r_carpal",
+                    "r_trapezium",
+                    "r_metacarpal_1",
+                    "r_carpal_proximal_phalanx_1",
+                    "r_carpal_distal_phalanx_1",
+                    "r_trapezoid",
+                    "r_metacarpal_2",
+                    "r_carpal_proximal_phalanx_2",
+                    "r_carpal_middle_phalanx_2",
+                    "r_carpal_distal_phalanx_2",
+                    "r_capitate",
+                    "r_metacarpal_3",
+                    "r_carpal_proximal_phalanx_3",
+                    "r_carpal_middle_phalanx_3",
+                    "r_carpal_distal_phalanx_3",
+                    "r_hamate",
+                    "r_metacarpal_4",
+                    "r_carpal_proximal_phalanx_4",
+                    "r_carpal_middle_phalanx_4",
+                    "r_carpal_distal_phalanx_4",
+                    "r_metacarpal_5",
+                    "r_carpal_proximal_phalanx_5",
+                    "r_carpal_middle_phalanx_5",
+                    "r_carpal_distal_phalanx_5"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
               ],
               "type": "string"
             },
@@ -9614,102 +10002,139 @@
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
             },
+            "@description": {
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "enum": [
-                "cervicale",
-                "crotch",
-                "l_acromion",
-                "l_asis",
-                "l_axilla_ant",
-                "l_axilla_post",
-                "l_calcaneous_post",
-                "l_clavicale",
-                "l_dactylion",
-                "l_digit2",
-                "l_femoral_lateral_epicn",
-                "l_femoral_medial_epicn",
-                "l_forefoot_tip",
-                "l_gonion",
-                "l_hand_tip",
-                "l_humeral_lateral_epicn",
-                "l_humeral_medial_epicn",
-                "l_iliocristale",
-                "l_index_distal_tip",
-                "l_infraorbitale",
-                "l_knee_crease",
-                "l_lateral_malleolus",
-                "l_medial_malleolus",
-                "l_metacarpal_pha2",
-                "l_metacarpal_pha5",
-                "l_metatarsal_pha1",
-                "l_metatarsal_pha5",
-                "l_middle_distal_tip",
-                "l_neck_base",
-                "l_olecranon",
-                "l_pinky_distal_tip",
-                "l_psis",
-                "l_radial_styloid",
-                "l_radiale",
-                "l_rib10",
-                "l_ring_distal_tip",
-                "l_sphyrion",
-                "l_thelion",
-                "l_thumb_distal_tip",
-                "l_tragion",
-                "l_trochanterion",
-                "l_ulnar_styloid",
-                "navel",
-                "nuchale",
-                "r_acromion",
-                "r_asis",
-                "r_axilla_ant",
-                "r_axilla_post",
-                "r_calcaneous_post",
-                "r_clavicale",
-                "r_dactylion",
-                "r_digit2",
-                "r_femoral_lateral_epicn",
-                "r_femoral_medial_epicn",
-                "r_forefoot_tip",
-                "r_gonion",
-                "r_hand_tip",
-                "r_humeral_lateral_epicn",
-                "r_humeral_medial_epicn",
-                "r_iliocristale",
-                "r_index_distal_tip",
-                "r_infraorbitale",
-                "r_knee_crease",
-                "r_lateral_malleolus",
-                "r_medial_malleolus",
-                "r_metacarpal_pha2",
-                "r_metacarpal_pha5",
-                "r_metatarsal_pha1",
-                "r_metatarsal_pha5",
-                "r_middle_distal_tip",
-                "r_neck_base",
-                "r_olecranon",
-                "r_pinky_distal_tip",
-                "r_psis",
-                "r_radial_styloid",
-                "r_radiale",
-                "r_rib10",
-                "r_ring_distal_tip",
-                "r_sphyrion",
-                "r_thelion",
-                "r_thumb_distal_tip",
-                "r_tragion",
-                "r_trochanterion",
-                "r_ulnar_styloid",
-                "rib10_midspine",
-                "sellion",
-                "skull_tip",
-                "substernale",
-                "supramenton",
-                "suprasternale",
-                "waist_preferred_post"
+              "anyOf": [
+                {
+                  "enum": [
+                    "skull_vertex",
+                    "glabella",
+                    "sellion",
+                    "l_infraorbitale",
+                    "l_tragion",
+                    "l_gonion",
+                    "r_infraorbitale",
+                    "r_tragion",
+                    "r_gonion",
+                    "supramenton",
+                    "cervicale",
+                    "adams_apple",
+                    "suprasternale",
+                    "substernale",
+                    "l_clavicle",
+                    "l_acromion",
+                    "l_axilla_proximal",
+                    "l_axilla_distal",
+                    "l_axilla_posterior_folds",
+                    "r_clavicle",
+                    "r_acromion",
+                    "r_axilla_proximal",
+                    "r_axilla_distal",
+                    "r_axilla_posterior_folds",
+                    "spine_1_middle_back",
+                    "spine_2_lower_back",
+                    "waist_preferred_anterior",
+                    "waist_preferred_posterior",
+                    "l_rib10",
+                    "l_thelion",
+                    "r_rib10",
+                    "r_thelion",
+                    "l_asis",
+                    "l_iliocristale",
+                    "l_psis",
+                    "r_asis",
+                    "r_iliocristale",
+                    "r_psis",
+                    "crotch",
+                    "l_femoral_lateral_epicondyle",
+                    "l_femoral_medial_epicondyle",
+                    "l_suprapatella",
+                    "l_trochanterion",
+                    "r_femoral_lateral_epicondyle",
+                    "r_femoral_medial_epicondyle",
+                    "r_suprapatella",
+                    "r_trochanterion",
+                    "l_tibiale",
+                    "l_medial_malleolus",
+                    "l_lateral_malleolus",
+                    "l_sphyrion",
+                    "r_tibiale",
+                    "r_medial_malleolus",
+                    "r_lateral_malleolus",
+                    "r_sphyrion",
+                    "l_metatarsal_phalanx_1",
+                    "l_metatarsal_phalanx_5",
+                    "l_dactylion",
+                    "l_calcaneus_posterior",
+                    "r_metatarsal_phalanx_1",
+                    "r_metatarsal_phalanx_5",
+                    "r_dactylion",
+                    "r_calcaneus_posterior",
+                    "l_humeral_lateral_epicondyle",
+                    "l_humeral_medial_epicondyle",
+                    "l_olecranon",
+                    "r_humeral_lateral_epicondyle",
+                    "r_humeral_medial_epicondyle",
+                    "r_olecranon",
+                    "l_radiale",
+                    "l_ulnar_styloid",
+                    "l_radial_styloid",
+                    "r_radiale",
+                    "r_ulnar_styloid",
+                    "r_radial_styloid",
+                    "l_metacarpal_phalanx_2",
+                    "l_metacarpal_phalanx_3",
+                    "l_metacarpal_phalanx_5",
+                    "r_metacarpal_phalanx_2",
+                    "r_metacarpal_phalanx_3",
+                    "r_metacarpal_phalanx_5",
+                    "nuchale",
+                    "l_neck_base",
+                    "r_neck_base",
+                    "navel",
+                    "l_ectocanthus",
+                    "r_ectocanthus",
+                    "menton",
+                    "mesosternale",
+                    "opisthocranion",
+                    "l_knee_crease",
+                    "r_knee_crease",
+                    "rear_center_midsagittal_plane",
+                    "buttocks_standing_wall_contact_point",
+                    "l_chest_midsagittal_plane",
+                    "r_chest_midsagittal_plane",
+                    "l_bideltoid",
+                    "r_bideltoid",
+                    "l_carpal_distal_phalanx_1",
+                    "l_carpal_distal_phalanx_2",
+                    "l_carpal_distal_phalanx_3",
+                    "l_carpal_distal_phalanx_4",
+                    "l_carpal_distal_phalanx_5",
+                    "r_carpal_distal_phalanx_1",
+                    "r_carpal_distal_phalanx_2",
+                    "r_carpal_distal_phalanx_3",
+                    "r_carpal_distal_phalanx_4",
+                    "r_carpal_distal_phalanx_5",
+                    "l_tarsal_distal_phalanx_1",
+                    "l_tarsal_distal_phalanx_2",
+                    "l_tarsal_distal_phalanx_3",
+                    "l_tarsal_distal_phalanx_4",
+                    "l_tarsal_distal_phalanx_5",
+                    "r_tarsal_distal_phalanx_1",
+                    "r_tarsal_distal_phalanx_2",
+                    "r_tarsal_distal_phalanx_3",
+                    "r_tarsal_distal_phalanx_4",
+                    "r_tarsal_distal_phalanx_5"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
               ],
               "type": "string"
             },
@@ -11205,7 +11630,6 @@
               "type": "array",
               "items": {
                 "enum": [
-                  "CENTER",
                   "\"LEFT\" \"BOTTOM\"",
                   "\"LEFT\" \"CENTER\"",
                   "\"LEFT\" \"TOP\"",
@@ -11234,14 +11658,12 @@
               "type": "array",
               "items": {
                 "enum": [
-                  "WORLD",
                   "\"WORLD\" \"WORLD\"",
+                  "\"WORLD\" \"FRACTION\"",
                   "\"WORLD\" \"PIXEL\"",
-                  "FRACTION",
                   "\"FRACTION\" \"WORLD\"",
                   "\"FRACTION\" \"FRACTION\"",
                   "\"FRACTION\" \"PIXEL\"",
-                  "PIXEL",
                   "\"PIXEL\" \"WORLD\"",
                   "\"PIXEL\" \"FRACTION\"",
                   "\"PIXEL\" \"PIXEL\""
@@ -11254,22 +11676,18 @@
               "type": "array",
               "items": {
                 "enum": [
-                  "NONE",
                   "\"NONE\" \"NONE\"",
                   "\"NONE\" \"FRACTION\"",
                   "\"NONE\" \"STRETCH\"",
                   "\"NONE\" \"PIXEL\"",
-                  "FRACTION",
                   "\"FRACTION\" \"NONE\"",
                   "\"FRACTION\" \"FRACTION\"",
                   "\"FRACTION\" \"STRETCH\"",
                   "\"FRACTION\" \"PIXEL\"",
-                  "STRETCH",
                   "\"STRETCH\" \"NONE\"",
                   "\"STRETCH\" \"FRACTION\"",
                   "\"STRETCH\" \"STRETCH\"",
                   "\"STRETCH\" \"PIXEL\"",
-                  "PIXEL",
                   "\"PIXEL\" \"NONE\"",
                   "\"PIXEL\" \"FRACTION\"",
                   "\"PIXEL\" \"STRETCH\"",
@@ -11290,15 +11708,12 @@
               "type": "array",
               "items": {
                 "enum": [
-                  "WORLD",
                   "\"WORLD\" \"WORLD\"",
                   "\"WORLD\" \"FRACTION\"",
                   "\"WORLD\" \"PIXEL\"",
-                  "FRACTION",
                   "\"FRACTION\" \"WORLD\"",
                   "\"FRACTION\" \"FRACTION\"",
                   "\"FRACTION\" \"PIXEL\"",
-                  "PIXEL",
                   "\"PIXEL\" \"WORLD\"",
                   "\"PIXEL\" \"FRACTION\"",
                   "\"PIXEL\" \"PIXEL\""
@@ -11496,6 +11911,17 @@
               "type": "boolean"
             },
             "@intersectionType": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BOUNDS",
+                    "GEOMETRY"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "BOUNDS",
               "type": "string"
             },
@@ -11517,6 +11943,18 @@
             "@objectType": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -11549,9 +11987,22 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode-X3DShapeNode-InlineMFNode"
             },
             "@sortOrder": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "ANY",
+                    "CLOSEST",
+                    "ALL",
+                    "ALL_SORTED"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -12631,6 +13082,17 @@
             "@forceOutput": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -12893,6 +13355,18 @@
             "@function": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "COMPLEMENT",
+                      "ALPHAREPLICATE",
+                      ""
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "type": "string"
               }
             },
@@ -12902,12 +13376,54 @@
             "@mode": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ADD",
+                      "ADDSIGNED",
+                      "ADDSIGNED2X",
+                      "ADDSMOOTH",
+                      "BLENDCURRENTALPHA",
+                      "BLENDDIFFUSEALPHA",
+                      "BLENDFACTORALPHA",
+                      "BLENDTEXTUREALPHA",
+                      "DOTPRODUCT3",
+                      "MODULATE",
+                      "MODULATE2X",
+                      "MODULATE4X",
+                      "MODULATEALPHA_ADDCOLOR",
+                      "MODULATEINVALPHA_ADDCOLOR",
+                      "MODULATEINVCOLOR_ADDALPHA",
+                      "OFF",
+                      "REPLACE",
+                      "SELECTARG1",
+                      "SELECTARG2",
+                      "SUBTRACT"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "type": "string"
               }
             },
             "@source": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "DIFFUSE",
+                      "FACTOR",
+                      "SPECULAR",
+                      ""
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "type": "string"
               }
             },
@@ -13126,6 +13642,18 @@
             "@transitionType": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "TELEPORT",
+                      "LINEAR",
+                      "ANIMATE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "LINEAR",
                 "type": "string"
               }
@@ -13134,10 +13662,28 @@
               "type": "array",
               "items": [
                 {
+                  "enum": [
+                    "ANY",
+                    "WALK",
+                    "EXAMINE",
+                    "FLY",
+                    "LOOKAT",
+                    "NONE",
+                    "EXPLORE"
+                  ],
                   "default": "EXAMINE",
                   "type": "string"
                 },
                 {
+                  "enum": [
+                    "ANY",
+                    "WALK",
+                    "EXAMINE",
+                    "FLY",
+                    "LOOKAT",
+                    "NONE",
+                    "EXPLORE"
+                  ],
                   "default": "ANY",
                   "type": "string"
                 }
@@ -13590,7 +14136,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode|NurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode"
             },
             "@uClosed": {
               "default": false,
@@ -14208,7 +14754,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode|NurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode"
             },
             "-trimmingContour": {
               "$ref": "#/definitions/-Contour2DMFNode"
@@ -14324,7 +14870,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-transferFunction": {
-              "$ref": "#/definitions/-X3DTexture2DNode|X3DTexture3DNodeSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-X3DTexture3DNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -14882,6 +15428,18 @@
               "type": "boolean"
             },
             "@language": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "Cg",
+                    "GLSL",
+                    "HLSL"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "type": "string"
             },
             "-metadata": {
@@ -14989,13 +15547,20 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "@geometryType": {
-              "enum": [
-                "LINE",
-                "POINT",
-                "QUAD",
-                "SPRITE",
-                "TRIANGLE",
-                "GEOMETRY"
+              "anyOf": [
+                {
+                  "enum": [
+                    "LINE",
+                    "POINT",
+                    "QUAD",
+                    "SPRITE",
+                    "TRIANGLE",
+                    "GEOMETRY"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
               ],
               "default": "QUAD",
               "type": "string"
@@ -15118,6 +15683,18 @@
             "@objectType": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -15678,6 +16255,17 @@
               "type": "boolean"
             },
             "@intersectionType": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BOUNDS",
+                    "GEOMETRY"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "BOUNDS",
               "type": "string"
             },
@@ -15699,6 +16287,18 @@
             "@objectType": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -15717,11 +16317,119 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode-X3DShapeNode-InlineMFNode"
             },
             "@sortOrder": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "ANY",
+                    "CLOSEST",
+                    "ALL",
+                    "ALL_SORTED"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "CLOSEST",
               "type": "string"
+            },
+            "@DEF": {
+              "type": "string"
+            },
+            "@class": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PointProperties": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@colorMode": {
+              "enum": [
+                "POINT_COLOR",
+                "TEXTURE_COLOR",
+                "TEXTURE_AND_POINT_COLOR"
+              ],
+              "default": "TEXTURE_AND_POINT_COLOR",
+              "type": "string"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pointSizeAttenuation": {
+              "type": "array",
+              "items": [
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": {
+                "type": "number"
+              }
+            },
+            "@pointSizeMaxValue": {
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@pointSizeMinValue": {
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@pointSizeScaleFactor": {
+              "minimum": 1,
+              "default": 1,
+              "type": "number"
             },
             "@DEF": {
               "type": "string"
@@ -16646,6 +17354,17 @@
               "type": "boolean"
             },
             "@intersectionType": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BOUNDS",
+                    "GEOMETRY"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "BOUNDS",
               "type": "string"
             },
@@ -16667,6 +17386,18 @@
             "@objectType": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -16678,9 +17409,22 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode-X3DShapeNode-InlineMFNode"
             },
             "@sortOrder": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "ANY",
+                    "CLOSEST",
+                    "ALL",
+                    "ALL_SORTED"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -16742,6 +17486,18 @@
               "type": "boolean"
             },
             "@language": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "Cg",
+                    "GLSL",
+                    "HLSL"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "type": "string"
             },
             "-metadata": {
@@ -17521,7 +18277,7 @@
               "type": "number"
             },
             "-massDensityModel": {
-              "$ref": "#/definitions/-Sphere|Box|ConeSFNode"
+              "$ref": "#/definitions/-Sphere-Box-ConeSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -17984,6 +18740,18 @@
             "@family": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "SANS",
+                      "SERIF",
+                      "TYPEWRITER"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "SERIF",
                 "type": "string"
               }
@@ -18359,6 +19127,17 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@phaseFunction": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "Henyey-Greenstein",
+                    "NONE"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "Henyey-Greenstein",
               "type": "string"
             },
@@ -18428,6 +19207,17 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@type": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "VERTEX",
+                    "FRAGMENT"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "VERTEX",
               "type": "string"
             },
@@ -18501,6 +19291,17 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@type": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "VERTEX",
+                    "FRAGMENT"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "VERTEX",
               "type": "string"
             },
@@ -18947,6 +19748,17 @@
             "@forceOutput": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -19047,6 +19859,17 @@
             "@forceOutput": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -20509,16 +21332,16 @@
               "$ref": "#/definitions/IS"
             },
             "-backTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "@bindTime": {
               "type": "number"
             },
             "-bottomTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "-frontTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "@groundAngle": {
               "type": "array",
@@ -20541,13 +21364,13 @@
               "type": "boolean"
             },
             "-leftTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-rightTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "@set_bind": {
               "type": "boolean"
@@ -20571,7 +21394,7 @@
               }
             },
             "-topTexture": {
-              "$ref": "#/definitions/-X3DTexture2DNode|MultiTextureSFNode"
+              "$ref": "#/definitions/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "@transparency": {
               "maximum": 1,
@@ -21907,7 +22730,7 @@
               }
             },
             "-targetObject": {
-              "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNodeSFNode"
+              "$ref": "#/definitions/-X3DGroupingNode-X3DShapeNodeSFNode"
             },
             "@DEF": {
               "type": "string"
@@ -22780,6 +23603,17 @@
             "@forceOutput": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "NONE",
                 "type": "string"
               }
@@ -22996,7 +23830,7 @@
               }
             },
             "-children": {
-              "$ref": "#/definitions/-X3DViewpointNode|ViewpointGroupMFNode"
+              "$ref": "#/definitions/-X3DViewpointNode-ViewpointGroupMFNode"
             },
             "@description": {
               "type": "string"
@@ -23468,6 +24302,17 @@
               "type": "boolean"
             },
             "@intersectionType": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BOUNDS",
+                    "GEOMETRY"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "BOUNDS",
               "type": "string"
             },
@@ -23489,6 +24334,18 @@
             "@objectType": {
               "type": "array",
               "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "ALL",
+                      "NONE",
+                      "TERRAIN"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
                 "default": "ALL",
                 "type": "string"
               }
@@ -23500,9 +24357,22 @@
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
             "-pickTarget": {
-              "$ref": "#/definitions/-X3DGroupingNode|X3DShapeNode|InlineMFNode"
+              "$ref": "#/definitions/-X3DGroupingNode-X3DShapeNode-InlineMFNode"
             },
             "@sortOrder": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "ANY",
+                    "CLOSEST",
+                    "ALL",
+                    "ALL_SORTED"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ],
               "default": "CLOSEST",
               "type": "string"
             },
@@ -23982,6 +24852,57 @@
             "type": "string"
           },
           "@name": {
+            "anyOf": [
+              {
+                "enum": [
+                  "accessRights",
+                  "author",
+                  "contributor",
+                  "created",
+                  "creator",
+                  "description",
+                  "disclaimer",
+                  "drawing",
+                  "error",
+                  "generator",
+                  "hint",
+                  "identifier",
+                  "Image",
+                  "info",
+                  "information",
+                  "isVersionOf",
+                  "keywords",
+                  "license",
+                  "mediator",
+                  "modified",
+                  "movie",
+                  "MovingImage",
+                  "original",
+                  "photo",
+                  "photograph",
+                  "publisher",
+                  "reference",
+                  "requires",
+                  "rights",
+                  "robots",
+                  "Sound",
+                  "source",
+                  "specificationSection",
+                  "specificationUrl",
+                  "subject",
+                  "Text",
+                  "title",
+                  "TODO",
+                  "translator",
+                  "translated",
+                  "version",
+                  "warning"
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ],
             "type": "string"
           },
           "@scheme": {
@@ -23989,7 +24910,8 @@
           }
         },
         "required": [
-          "@content"
+          "@content",
+          "@name"
         ],
         "additionalProperties": false
       }
@@ -24073,7 +24995,7 @@
       "type": "object",
       "properties": {
         "-children": {
-          "$ref": "#/definitions/-X3DChildNode|X3DMetadataObject|LayerSetMFNode"
+          "$ref": "#/definitions/-X3DChildNode-X3DMetadataObject-LayerSetMFNode"
         }
       },
       "additionalProperties": false
@@ -24618,6 +25540,18 @@
       },
       "additionalProperties": false
     },
+    "-PointPropertiesSFNode": {
+      "type": "object",
+      "properties": {
+        "PointProperties": {
+          "$ref": "#/definitions/PointProperties"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-X3DShaderNodeMFNode": {
       "type": "array",
       "minItems": 1,
@@ -24895,7 +25829,7 @@
       },
       "additionalProperties": false
     },
-    "-Shape|LOD|TransformSFNode": {
+    "-Shape-LOD-TransformSFNode": {
       "type": "object",
       "properties": {
         "Shape": {
@@ -25331,7 +26265,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNodeMFNode": {
+    "-X3DNBodyCollisionSpaceNode-X3DNBodyCollidableNodeMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -25508,7 +26442,7 @@
         "additionalProperties": false
       }
     },
-    "-NurbsCurve2D|ContourPolyline2DMFNode": {
+    "-NurbsCurve2D-ContourPolyline2DMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -25720,6 +26654,9 @@
           },
           "LineProperties": {
             "$ref": "#/definitions/LineProperties"
+          },
+          "PointProperties": {
+            "$ref": "#/definitions/PointProperties"
           },
           "Appearance": {
             "$ref": "#/definitions/Appearance"
@@ -26401,6 +27338,25 @@
         "additionalProperties": false
       }
     },
+    "-HAnimMotionMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "HAnimMotion": {
+            "$ref": "#/definitions/HAnimMotion"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-HAnimSegmentMFNode": {
       "type": "array",
       "minItems": 1,
@@ -26439,7 +27395,7 @@
         "additionalProperties": false
       }
     },
-    "-HAnimJoint|HAnimSiteMFNode": {
+    "-HAnimJoint-HAnimSiteMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26461,7 +27417,7 @@
         "additionalProperties": false
       }
     },
-    "-Group|Transform|Shape|IndexedFaceSetMFNode": {
+    "-Group-Transform-Shape-IndexedFaceSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26489,6 +27445,50 @@
         "additionalProperties": false
       }
     },
+    "-X3DCoordinateNodeMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "Coordinate": {
+            "$ref": "#/definitions/Coordinate"
+          },
+          "CoordinateDouble": {
+            "$ref": "#/definitions/CoordinateDouble"
+          },
+          "GeoCoordinate": {
+            "$ref": "#/definitions/GeoCoordinate"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "-X3DNormalNodeMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "Normal": {
+            "$ref": "#/definitions/Normal"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-X3DCoordinateNodeSFNode": {
       "type": "object",
       "properties": {
@@ -26506,6 +27506,31 @@
         }
       },
       "additionalProperties": false
+    },
+    "-HAnimJoint-HAnimSegment-HAnimSiteMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "HAnimJoint": {
+            "$ref": "#/definitions/HAnimJoint"
+          },
+          "HAnimSegment": {
+            "$ref": "#/definitions/HAnimSegment"
+          },
+          "HAnimSite": {
+            "$ref": "#/definitions/HAnimSite"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
     },
     "-HAnimDisplacerMFNode": {
       "type": "array",
@@ -26618,7 +27643,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DGroupingNode|X3DShapeNode|InlineMFNode": {
+    "-X3DGroupingNode-X3DShapeNode-InlineMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -26894,7 +27919,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureCoordinateNode|NurbsTextureCoordinateSFNode": {
+    "-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode": {
       "type": "object",
       "properties": {
         "MultiTextureCoordinate": {
@@ -26989,7 +28014,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTexture2DNode|X3DTexture3DNodeSFNode": {
+    "-X3DTexture2DNode-X3DTexture3DNodeSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -27111,7 +28136,7 @@
         "additionalProperties": false
       }
     },
-    "-Sphere|Box|ConeSFNode": {
+    "-Sphere-Box-ConeSFNode": {
       "type": "object",
       "properties": {
         "Sphere": {
@@ -27212,7 +28237,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DTexture2DNode|MultiTextureSFNode": {
+    "-X3DTexture2DNode-MultiTextureSFNode": {
       "type": "object",
       "properties": {
         "ImageTexture": {
@@ -27233,7 +28258,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DGroupingNode|X3DShapeNodeSFNode": {
+    "-X3DGroupingNode-X3DShapeNodeSFNode": {
       "type": "object",
       "properties": {
         "Viewport": {
@@ -27305,7 +28330,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DViewpointNode|ViewpointGroupMFNode": {
+    "-X3DViewpointNode-ViewpointGroupMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -27372,7 +28397,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DChildNode|X3DMetadataObject|LayerSetMFNode": {
+    "-X3DChildNode-X3DMetadataObject-LayerSetMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {

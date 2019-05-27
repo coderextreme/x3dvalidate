@@ -1,5 +1,5 @@
 var validate = require('./x3dvalidate')
 
-var files = ["flipper.json", "flipper.json", "flipper.json", "flipper.json", "flipper.json"];
+var files = ["flipper.json"];
 
 validate("en", files);
