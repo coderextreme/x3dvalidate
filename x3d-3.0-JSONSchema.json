@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "JSON Schema X3D V3.3",
-  "description": "Experimental JSON Schema for X3D V3.3 ",
+  "title": "JSON Schema X3D V4.0",
+  "description": "Experimental JSON Schema for X3D V4.0 ",
   "type": "object",
   "properties": {
     "X3D": {
@@ -13463,9 +13463,9 @@
               "SFImage",
               "MFImage",
               "SFInt32",
+              "MFInt32",
               "SFNode",
               "MFNode",
-              "MFInt32",
               "SFRotation",
               "MFRotation",
               "SFString",
@@ -13479,7 +13479,19 @@
               "SFVec3d",
               "MFVec3d",
               "SFVec3f",
-              "MFVec3f"
+              "MFVec3f",
+              "SFVec4d",
+              "MFVec4d",
+              "SFVec4f",
+              "MFVec4f",
+              "SFMatrix3d",
+              "MFMatrix3d",
+              "SFMatrix3f",
+              "MFMatrix3f",
+              "SFMatrix4d",
+              "MFMatrix4d",
+              "SFMatrix4f",
+              "MFMatrix4f"
             ],
             "type": "string"
           },
