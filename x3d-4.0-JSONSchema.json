@@ -929,12 +929,46 @@
         }
       ]
     },
+    "@rotation": {
+      "description": "Validates all four components",
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": [
+        {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 0
+        },
+        {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 0
+        },
+        {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 1
+        },
+        {
+          "type": "number",
+          "default": 0
+        }
+      ],
+      "additionalItems": false
+    },
     "AcousticProperties": {
       "type": "object",
       "oneOf": [
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1013,6 +1047,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1025,6 +1063,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1170,6 +1211,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1182,6 +1227,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1209,6 +1257,18 @@
           "properties": {
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
             },
             "@bboxCenter": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -1257,12 +1317,6 @@
                 "type": "string"
               }
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
               "type": "array",
@@ -1284,6 +1338,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1296,6 +1354,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1330,6 +1391,24 @@
             "-acousticProperties": {
               "$ref": "#/definitions/-AcousticPropertiesSFNode"
             },
+            "@alphaCutoff": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0.5,
+              "type": "number"
+            },
+            "@alphaMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "AUTO",
+                "OPAQUE",
+                "MASK",
+                "BLEND"
+              ],
+              "default": "AUTO",
+              "type": "string"
+            },
             "-fillProperties": {
               "$ref": "#/definitions/-FillPropertiesSFNode"
             },
@@ -1361,6 +1440,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1373,6 +1456,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1434,6 +1520,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1446,6 +1536,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1521,6 +1614,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1533,6 +1630,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1563,6 +1663,18 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
             },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
@@ -1620,12 +1732,6 @@
               "default": 1,
               "type": "number"
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@resumeTime": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": 0,
@@ -1657,6 +1763,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1669,6 +1779,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1765,6 +1878,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1777,6 +1894,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1930,6 +2050,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -1942,6 +2066,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2036,6 +2163,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2048,6 +2179,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2140,6 +2274,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2152,6 +2290,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2302,6 +2443,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2314,6 +2459,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2412,6 +2560,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2424,6 +2576,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2481,6 +2636,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2493,6 +2652,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2564,6 +2726,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2576,6 +2742,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2626,6 +2795,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2638,6 +2811,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2687,6 +2863,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2699,6 +2879,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2765,6 +2948,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2777,6 +2964,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2826,6 +3016,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2838,6 +3032,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2894,6 +3091,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -2906,6 +3107,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2933,6 +3137,18 @@
           "properties": {
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
             },
             "@buffer": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
@@ -3058,12 +3274,6 @@
               "default": 1,
               "type": "number"
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@resumeTime": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": 0,
@@ -3101,6 +3311,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3113,6 +3327,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3188,6 +3405,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3200,6 +3421,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3278,6 +3502,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3290,6 +3518,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3365,6 +3596,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3377,6 +3612,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3451,29 +3689,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -3532,6 +3748,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3544,6 +3764,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3649,6 +3872,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3661,6 +3888,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3739,6 +3969,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3751,6 +3985,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3835,6 +4072,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3847,6 +4088,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3928,6 +4172,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3940,6 +4188,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3987,6 +4238,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -3999,6 +4254,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4080,6 +4338,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4092,6 +4354,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4160,29 +4425,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@translation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -4206,6 +4449,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4218,6 +4465,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4283,29 +4533,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "-shape": {
               "$ref": "#/definitions/-ShapeSFNode"
@@ -4332,6 +4560,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4344,6 +4576,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4431,6 +4666,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4443,6 +4682,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4600,6 +4842,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4612,6 +4858,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4671,6 +4920,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4683,6 +4936,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4767,6 +5023,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4779,6 +5039,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4830,6 +5093,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4842,6 +5109,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4960,6 +5230,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -4972,6 +5246,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5102,6 +5379,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5114,6 +5395,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5189,6 +5473,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5201,6 +5489,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5252,6 +5543,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5264,6 +5559,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5295,29 +5593,29 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
-            "-back": {
+            "-backTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
-            "-bottom": {
+            "-bottomTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
-            "-front": {
+            "-frontTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
-            "-left": {
+            "-leftTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
-            "-right": {
+            "-rightTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
-            "-top": {
+            "-topTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "@DEF": {
@@ -5325,6 +5623,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -5339,6 +5641,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5414,6 +5719,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5426,6 +5735,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5492,6 +5804,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5504,6 +5820,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5553,6 +5872,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5565,6 +5888,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5633,6 +5959,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5645,6 +5975,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5756,6 +6089,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5768,6 +6105,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5956,6 +6296,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -5968,6 +6312,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6009,6 +6356,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6021,6 +6372,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6070,6 +6424,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6082,6 +6440,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6213,6 +6574,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6225,6 +6590,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6274,6 +6642,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6286,6 +6658,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6379,6 +6754,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6391,6 +6770,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6496,6 +6878,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6508,6 +6894,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6557,6 +6946,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6569,6 +6962,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6635,6 +7031,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -6649,6 +7049,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6717,6 +7120,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6729,6 +7136,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6802,6 +7212,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6814,6 +7228,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6946,6 +7363,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -6958,6 +7379,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7087,6 +7511,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7099,6 +7527,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7211,6 +7642,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7223,6 +7658,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7248,9 +7686,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
             "IS": {
               "$ref": "#/definitions/IS"
             },
@@ -7264,7 +7699,7 @@
               "default": 0,
               "type": "integer"
             },
-            "-mapping": {
+            "-children": {
               "$ref": "#/definitions/-DISEntityTypeMappingMFNode"
             },
             "-metadata": {
@@ -7287,6 +7722,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7299,6 +7738,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7329,6 +7771,18 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
             },
             "@category": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
@@ -7377,12 +7831,6 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@specific": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
               "maximum": 255,
@@ -7413,6 +7861,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7425,6 +7877,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7483,6 +7938,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7495,6 +7954,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7698,6 +8160,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7710,6 +8176,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7864,6 +8333,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7876,6 +8349,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7940,6 +8416,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -7952,6 +8432,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8043,6 +8526,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -8055,6 +8542,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8176,6 +8666,139 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "EnvironmentLight": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "type": "string"
+            },
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@ambientIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@color": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 1,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "-diffuse": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@diffuseCoefficients": {
+              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "-diffuseTexture": {
+              "$ref": "#/definitions/-X3DEnvironmentTextureNodeSFNode"
+            },
+            "@global": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@intensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@rotation": {
+              "$ref": "#/definitions/@rotation"
+            },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "-specularTexture": {
+              "$ref": "#/definitions/-X3DEnvironmentTextureNodeSFNode"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -8188,6 +8811,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8622,29 +9248,7 @@
               "type": "number"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@rtpHeaderExpected": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -8761,6 +9365,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -8773,6 +9381,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8848,6 +9459,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -8860,6 +9475,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9083,6 +9701,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9095,6 +9717,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9165,6 +9790,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9177,6 +9806,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9236,6 +9868,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9248,6 +9884,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9330,6 +9969,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9342,6 +9985,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9392,6 +10038,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9404,6 +10054,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9434,6 +10087,10 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@family": {
               "pattern": "^(\\s|\\S)*$",
@@ -9533,10 +10190,6 @@
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
-            },
-            "@class": {
-              "pattern": "^(\\s|\\S)*$",
-              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9549,6 +10202,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9616,6 +10272,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9628,6 +10288,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9745,6 +10408,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9757,6 +10424,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9821,6 +10491,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9833,6 +10507,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9888,6 +10565,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9900,6 +10581,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10037,6 +10721,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10049,6 +10737,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10136,6 +10827,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10148,6 +10843,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10295,6 +10993,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10307,6 +11009,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10338,6 +11043,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "-data": {
               "$ref": "#/definitions/-X3DNodeMFNode"
             },
@@ -10352,12 +11069,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "@summary": {
               "pattern": "^(\\s|\\S)*$",
@@ -10382,6 +11093,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10394,6 +11109,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10453,6 +11171,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10465,6 +11187,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10549,6 +11274,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10561,6 +11290,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10693,6 +11425,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10705,6 +11441,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10809,6 +11548,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10821,6 +11564,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10897,29 +11643,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -10980,6 +11704,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -10992,6 +11720,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11152,6 +11883,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -11164,6 +11899,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11235,6 +11973,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -11247,6 +11989,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11444,6 +12189,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -11456,6 +12205,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11598,29 +12350,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -11676,10 +12406,10 @@
             "-skin": {
               "$ref": "#/definitions/-Group-Transform-Shape-IndexedFaceSetMFNode"
             },
-            "-skinBindingCoords": {
+            "-skinBindingCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
             },
-            "-skinBindingNormals": {
+            "-skinBindingNormal": {
               "$ref": "#/definitions/-X3DNormalNodeSFNode"
             },
             "-skinCoord": {
@@ -11722,6 +12452,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -11734,6 +12468,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12005,29 +12742,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -12127,6 +12842,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -12139,6 +12858,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12274,6 +12996,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -12286,6 +13012,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12551,6 +13280,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -12563,6 +13296,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12768,29 +13504,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -12851,6 +13565,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -12863,6 +13581,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12894,6 +13615,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -12905,12 +13638,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "-textureProperties": {
               "$ref": "#/definitions/-TexturePropertiesSFNode"
@@ -12931,6 +13658,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -12943,6 +13674,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12974,6 +13708,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -12985,12 +13731,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "@repeatS": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -13021,6 +13761,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -13033,6 +13777,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13064,6 +13811,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -13075,12 +13834,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "@repeatR": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -13116,6 +13869,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -13128,6 +13885,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13282,6 +14042,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -13294,6 +14058,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13387,6 +14154,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -13399,6 +14170,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13492,6 +14266,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -13506,6 +14284,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13599,6 +14380,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -13613,6 +14398,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13706,6 +14494,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -13720,6 +14512,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13815,6 +14610,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -13827,6 +14626,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13857,6 +14659,18 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
             },
             "@bboxCenter": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -13887,6 +14701,11 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
+            "@global": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
             "@load": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
@@ -13894,12 +14713,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
@@ -13922,6 +14735,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -13934,6 +14751,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14005,6 +14825,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14017,6 +14841,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14071,6 +14898,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14083,6 +14914,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14193,6 +15027,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14205,6 +15043,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14283,6 +15124,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14295,6 +15140,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14369,6 +15217,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14381,6 +15233,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14440,6 +15295,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14452,6 +15311,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14592,6 +15454,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14604,6 +15470,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14681,6 +15550,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14693,6 +15566,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14770,6 +15646,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14782,6 +15662,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14929,6 +15812,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -14941,6 +15828,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14998,6 +15888,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15010,6 +15904,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15074,6 +15971,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15086,6 +15987,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15225,6 +16129,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15237,6 +16145,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15262,11 +16173,11 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "-children": {
+              "$ref": "#/definitions/-X3DUrlObjectMFNode"
             },
             "@enabled": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -15298,14 +16209,15 @@
               "default": 0,
               "type": "number"
             },
-            "-watchList": {
-              "$ref": "#/definitions/-X3DUrlObjectMFNode"
-            },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -15320,6 +16232,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15395,6 +16310,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15407,6 +16326,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15505,6 +16427,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15517,6 +16443,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15683,6 +16612,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15695,6 +16628,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15747,6 +16683,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15759,6 +16699,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15811,6 +16754,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15823,6 +16770,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15879,6 +16829,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -15891,6 +16845,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15945,6 +16902,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -15959,6 +16920,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16015,6 +16979,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16027,6 +16995,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16083,6 +17054,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16095,6 +17070,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16147,6 +17125,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16159,6 +17141,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16215,6 +17200,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16227,6 +17216,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16319,6 +17311,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16331,6 +17327,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16523,6 +17522,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16535,6 +17538,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16565,6 +17571,18 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
             },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
@@ -16622,12 +17640,6 @@
               "default": 1,
               "type": "number"
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@repeatS": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
@@ -16677,6 +17689,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16689,6 +17705,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16833,6 +17852,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16845,6 +17868,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16889,6 +17915,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16901,6 +17931,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16945,6 +17978,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -16957,6 +17994,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17117,6 +18157,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17129,6 +18173,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17180,6 +18227,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17192,6 +18243,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17260,6 +18314,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17272,6 +18330,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17347,6 +18408,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17359,6 +18424,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17439,6 +18507,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17451,6 +18523,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17528,6 +18603,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17540,6 +18619,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17658,6 +18740,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17670,6 +18756,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17747,6 +18836,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17759,6 +18852,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17839,6 +18935,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17851,6 +18951,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17967,6 +19070,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -17979,6 +19086,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18036,6 +19146,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18048,6 +19162,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18105,6 +19222,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18117,6 +19238,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18212,6 +19336,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18224,6 +19352,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18345,6 +19476,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18357,6 +19492,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18406,6 +19544,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18418,6 +19560,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18546,6 +19691,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18558,6 +19707,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18698,6 +19850,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18710,6 +19866,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18779,6 +19938,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18791,6 +19954,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18957,6 +20123,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -18969,6 +20139,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19069,6 +20242,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19081,6 +20258,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19119,6 +20299,18 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "type": "boolean"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -19155,12 +20347,6 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
               "type": "array",
@@ -19177,6 +20363,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19189,6 +20379,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19253,6 +20446,9 @@
               "default": true,
               "type": "boolean"
             },
+            "-color": {
+              "$ref": "#/definitions/-X3DColorNodeMFNode"
+            },
             "@colorKey": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
               "type": "array",
@@ -19260,9 +20456,6 @@
                 "minimum": 0,
                 "type": "number"
               }
-            },
-            "-colorRamp": {
-              "$ref": "#/definitions/-X3DColorNodeSFNode"
             },
             "@createParticles": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -19341,6 +20534,9 @@
             "-physics": {
               "$ref": "#/definitions/-X3DParticlePhysicsModelNodeMFNode"
             },
+            "-texCoord": {
+              "$ref": "#/definitions/-TextureCoordinate-TextureCoordinateGeneratorSFNode"
+            },
             "@texCoordKey": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
               "type": "array",
@@ -19348,9 +20544,6 @@
                 "minimum": 0,
                 "type": "number"
               }
-            },
-            "-texCoordRamp": {
-              "$ref": "#/definitions/-TextureCoordinateSFNode"
             },
             "@visible": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -19362,6 +20555,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -19376,6 +20573,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19452,6 +20652,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19464,6 +20668,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19602,6 +20809,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19614,6 +20825,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19710,6 +20924,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19722,6 +20940,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19788,6 +21009,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19800,6 +21025,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19871,6 +21099,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -19883,6 +21115,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20019,6 +21254,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20031,6 +21270,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20127,6 +21369,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20139,6 +21385,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20271,6 +21520,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20283,6 +21536,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20414,6 +21670,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20426,6 +21686,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20506,6 +21769,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20518,6 +21785,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20574,6 +21844,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20586,6 +21860,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20635,6 +21912,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20647,6 +21928,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20761,6 +22045,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20773,6 +22061,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20822,6 +22113,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -20834,6 +22129,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20930,6 +22228,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -20944,6 +22246,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21042,6 +22347,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21054,6 +22363,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21162,6 +22474,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -21176,6 +22492,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21286,6 +22605,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21298,6 +22621,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21367,6 +22693,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21379,6 +22709,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21448,6 +22781,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21460,6 +22797,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21583,6 +22923,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21595,6 +22939,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21667,6 +23014,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21679,6 +23030,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21742,6 +23096,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21754,6 +23112,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21812,6 +23173,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21824,6 +23189,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21931,6 +23299,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -21943,6 +23315,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22022,6 +23397,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22034,6 +23413,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22249,6 +23631,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22261,6 +23647,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22319,6 +23708,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22331,6 +23724,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22594,6 +23990,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22606,6 +24006,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22746,6 +24149,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22758,6 +24165,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22831,6 +24241,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22843,6 +24257,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22928,6 +24345,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -22940,6 +24361,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23003,6 +24427,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23015,6 +24443,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23045,6 +24476,10 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@family": {
               "pattern": "^(\\s|\\S)*$",
@@ -23144,10 +24579,6 @@
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
-            },
-            "@class": {
-              "pattern": "^(\\s|\\S)*$",
-              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23160,6 +24591,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23231,6 +24665,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23243,6 +24681,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23284,6 +24725,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -23306,12 +24759,6 @@
               "default": false,
               "type": "boolean"
             },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
               "type": "array",
@@ -23328,6 +24775,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23340,6 +24791,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23439,6 +24893,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23451,6 +24909,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23529,6 +24990,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23541,6 +25006,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23579,6 +25047,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -23590,12 +25070,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "@type": {
               "pattern": "^(\\s|\\S)*$",
@@ -23629,6 +25103,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23641,6 +25119,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23682,6 +25163,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@autoRefresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 3600,
+              "type": "number"
+            },
             "@description": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -23693,12 +25186,6 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
             },
             "@type": {
               "pattern": "^(\\s|\\S)*$",
@@ -23732,6 +25219,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23744,6 +25235,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23826,6 +25320,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -23838,6 +25336,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24055,6 +25556,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24067,6 +25572,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24136,6 +25644,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24148,6 +25660,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24280,6 +25795,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24292,6 +25811,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24412,6 +25934,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24424,6 +25950,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24551,6 +26080,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24563,6 +26096,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24725,6 +26261,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24737,6 +26277,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24789,6 +26332,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24801,6 +26348,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24907,6 +26457,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -24919,6 +26473,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25006,6 +26563,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25018,6 +26579,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25105,6 +26669,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25117,6 +26685,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25197,6 +26768,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25209,6 +26784,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25376,6 +26954,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25388,6 +26970,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25462,6 +27047,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25474,6 +27063,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25545,6 +27137,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25557,6 +27153,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25647,6 +27246,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25659,6 +27262,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25784,6 +27390,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25796,6 +27406,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25859,6 +27472,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25871,6 +27488,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -25956,6 +27576,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -25968,6 +27592,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26045,6 +27672,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26057,6 +27688,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26148,6 +27782,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26160,6 +27798,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26263,6 +27904,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26275,6 +27920,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26371,6 +28019,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26383,6 +28035,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26500,6 +28155,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26512,6 +28171,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26565,6 +28227,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26577,6 +28243,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26630,6 +28299,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26642,6 +28315,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26695,6 +28371,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26707,6 +28387,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26777,6 +28460,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26789,6 +28476,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -26963,6 +28653,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -26975,6 +28669,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27146,6 +28843,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27158,6 +28859,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27314,6 +29018,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27326,6 +29034,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27402,6 +29113,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27414,6 +29129,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27459,29 +29177,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -27510,6 +29206,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27522,6 +29222,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27634,6 +29337,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27646,6 +29353,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27754,6 +29464,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27766,6 +29480,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27815,6 +29532,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27827,6 +29548,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -27946,6 +29670,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -27958,6 +29686,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28047,6 +29778,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28059,6 +29794,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28129,29 +29867,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -28210,6 +29926,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28222,6 +29942,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28323,6 +30046,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28335,6 +30062,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28641,6 +30371,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28653,6 +30387,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28740,6 +30477,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28752,6 +30493,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28831,6 +30575,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28843,6 +30591,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28897,6 +30648,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -28909,6 +30664,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -28996,6 +30754,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29008,6 +30770,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29180,6 +30945,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29192,6 +30961,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29347,6 +31119,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29359,6 +31135,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29441,6 +31220,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29453,6 +31236,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29601,6 +31387,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29613,6 +31403,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29688,6 +31481,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29700,6 +31497,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29806,6 +31606,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29818,6 +31622,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29898,6 +31705,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -29910,6 +31721,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -29999,6 +31813,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -30011,6 +31829,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -30130,6 +31951,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -30142,6 +31967,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -30265,6 +32093,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -30277,6 +32109,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -30404,6 +32239,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -30416,6 +32255,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -30502,6 +32344,10 @@
             "@class": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -30514,6 +32360,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -30564,6 +32413,10 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             }
@@ -31145,7 +32998,7 @@
             "MPEG4Interactive",
             "Full"
           ],
-          "default": "Immersive",
+          "default": "Full",
           "type": "string"
         },
         "Scene": {
@@ -31481,6 +33334,9 @@
           },
           "DirectionalLight": {
             "$ref": "#/definitions/DirectionalLight"
+          },
+          "EnvironmentLight": {
+            "$ref": "#/definitions/EnvironmentLight"
           },
           "PointLight": {
             "$ref": "#/definitions/PointLight"
@@ -32398,6 +34254,9 @@
         "DirectionalLight": {
           "$ref": "#/definitions/DirectionalLight"
         },
+        "EnvironmentLight": {
+          "$ref": "#/definitions/EnvironmentLight"
+        },
         "PointLight": {
           "$ref": "#/definitions/PointLight"
         },
@@ -32941,6 +34800,42 @@
       },
       "additionalProperties": false
     },
+    "-X3DSingleTextureNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ImageTexture": {
+          "$ref": "#/definitions/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/definitions/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/definitions/PixelTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DEnvironmentTextureNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ComposedCubeMapTexture": {
+          "$ref": "#/definitions/ComposedCubeMapTexture"
+        },
+        "GeneratedCubeMapTexture": {
+          "$ref": "#/definitions/GeneratedCubeMapTexture"
+        },
+        "ImageCubeMapTexture": {
+          "$ref": "#/definitions/ImageCubeMapTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-GeoOriginSFNode": {
       "type": "object",
       "properties": {
@@ -33234,6 +35129,9 @@
           },
           "DirectionalLight": {
             "$ref": "#/definitions/DirectionalLight"
+          },
+          "EnvironmentLight": {
+            "$ref": "#/definitions/EnvironmentLight"
           },
           "PointLight": {
             "$ref": "#/definitions/PointLight"
@@ -34193,24 +36091,6 @@
         "additionalProperties": false
       }
     },
-    "-X3DSingleTextureNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/definitions/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/definitions/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/definitions/PixelTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-X3DMetadataObjectMFNode": {
       "type": "array",
       "minItems": 1,
@@ -34445,6 +36325,28 @@
       },
       "additionalProperties": false
     },
+    "-X3DColorNodeMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "Color": {
+            "$ref": "#/definitions/Color"
+          },
+          "ColorRGBA": {
+            "$ref": "#/definitions/ColorRGBA"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-X3DParticleEmitterNodeSFNode": {
       "type": "object",
       "properties": {
@@ -34497,11 +36399,14 @@
         "additionalProperties": false
       }
     },
-    "-TextureCoordinateSFNode": {
+    "-TextureCoordinate-TextureCoordinateGeneratorSFNode": {
       "type": "object",
       "properties": {
         "TextureCoordinate": {
           "$ref": "#/definitions/TextureCoordinate"
+        },
+        "TextureCoordinateGenerator": {
+          "$ref": "#/definitions/TextureCoordinateGenerator"
         },
         "ProtoInstance": {
           "$ref": "#/definitions/ProtoInstance"
@@ -35007,6 +36912,9 @@
           },
           "DirectionalLight": {
             "$ref": "#/definitions/DirectionalLight"
+          },
+          "EnvironmentLight": {
+            "$ref": "#/definitions/EnvironmentLight"
           },
           "PointLight": {
             "$ref": "#/definitions/PointLight"

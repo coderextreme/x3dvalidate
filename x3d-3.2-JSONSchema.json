@@ -929,12 +929,46 @@
         }
       ]
     },
+    "@rotation": {
+      "description": "Validates all four components",
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": [
+        {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 0
+        },
+        {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 0
+        },
+        {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "default": 1
+        },
+        {
+          "type": "number",
+          "default": 0
+        }
+      ],
+      "additionalItems": false
+    },
     "Anchor": {
       "type": "object",
       "oneOf": [
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1028,6 +1062,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1099,6 +1136,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1172,6 +1212,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1259,6 +1302,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1374,6 +1420,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1539,6 +1588,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1645,6 +1697,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1739,6 +1794,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1808,6 +1866,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1891,6 +1952,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1953,6 +2017,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2014,6 +2081,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2075,6 +2145,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2143,6 +2216,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2220,6 +2296,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2300,6 +2379,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2384,6 +2466,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2453,29 +2538,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -2541,6 +2604,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2600,6 +2666,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2693,6 +2762,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2756,29 +2828,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@translation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -2809,6 +2859,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2869,29 +2922,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "-shape": {
               "$ref": "#/definitions/-ShapeSFNode"
@@ -2925,6 +2956,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3014,6 +3048,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3173,6 +3210,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3244,6 +3284,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3330,6 +3373,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3393,6 +3439,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3535,6 +3584,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3622,6 +3674,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3685,6 +3740,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3756,6 +3814,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3843,6 +3904,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3917,6 +3981,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3997,6 +4064,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4120,6 +4190,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4320,6 +4393,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4373,6 +4449,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4434,6 +4513,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4495,6 +4577,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4612,6 +4697,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4673,6 +4761,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4753,6 +4844,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4833,6 +4927,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4918,6 +5015,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5062,6 +5162,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5174,6 +5277,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5250,6 +5356,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5361,6 +5470,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5431,6 +5543,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5646,6 +5761,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5722,6 +5840,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5855,6 +5976,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6284,29 +6408,7 @@
               "type": "number"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@rtpHeaderExpected": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -6430,6 +6532,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6517,6 +6622,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6752,6 +6860,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6834,6 +6945,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6905,6 +7019,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6999,6 +7116,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7061,6 +7181,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7206,6 +7329,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7285,6 +7411,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7357,6 +7486,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7424,6 +7556,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7573,6 +7708,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7662,6 +7800,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7811,6 +7952,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7883,6 +8027,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7954,6 +8101,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8050,6 +8200,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8194,6 +8347,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8310,6 +8466,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8381,29 +8540,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -8471,6 +8608,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8647,6 +8787,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8720,6 +8863,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8883,6 +9029,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8962,29 +9111,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -9082,6 +9209,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9292,29 +9422,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -9421,6 +9529,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9632,6 +9743,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9786,29 +9900,7 @@
               "type": "string"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -9876,6 +9968,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9941,6 +10036,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10016,6 +10114,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10096,6 +10197,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10262,6 +10366,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10364,6 +10471,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10471,6 +10581,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10578,6 +10691,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10685,6 +10801,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10792,6 +10911,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10879,6 +11001,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10962,6 +11087,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11028,6 +11156,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11118,6 +11249,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11179,6 +11313,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11250,6 +11387,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11402,6 +11542,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11481,6 +11624,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11545,6 +11691,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11704,6 +11853,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11773,6 +11925,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11846,6 +12001,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11929,6 +12087,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12016,6 +12177,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12116,6 +12280,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12232,6 +12399,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12296,6 +12466,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12360,6 +12533,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12428,6 +12604,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12496,6 +12675,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12564,6 +12746,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12628,6 +12813,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12696,6 +12884,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12900,6 +13091,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13033,6 +13227,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13185,6 +13382,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13241,6 +13441,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13297,6 +13500,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13469,6 +13675,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13532,6 +13741,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13612,6 +13824,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13699,6 +13914,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13791,6 +14009,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13880,6 +14101,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14010,6 +14234,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14099,6 +14326,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14181,6 +14411,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14309,6 +14542,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14378,6 +14614,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14447,6 +14686,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14554,6 +14796,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14687,6 +14932,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14827,6 +15075,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14979,6 +15230,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15060,6 +15314,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15220,6 +15477,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15313,6 +15573,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15485,6 +15748,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15583,6 +15849,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15657,6 +15926,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15736,6 +16008,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15884,6 +16159,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15992,6 +16270,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16124,6 +16405,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16267,6 +16551,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16332,6 +16619,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16393,6 +16683,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16519,6 +16812,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16580,6 +16876,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16690,6 +16989,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16800,6 +17102,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16922,6 +17227,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17044,6 +17352,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17125,6 +17436,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17206,6 +17520,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17341,6 +17658,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17425,6 +17745,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17495,6 +17818,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17614,6 +17940,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17705,6 +18034,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17922,6 +18254,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -17992,6 +18327,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18257,6 +18595,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18399,6 +18740,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18484,6 +18828,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18559,6 +18906,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18704,6 +19054,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18777,6 +19130,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18859,6 +19215,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -18944,6 +19303,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19032,6 +19394,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19111,6 +19476,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19330,6 +19698,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19474,6 +19845,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19606,6 +19980,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19736,6 +20113,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19800,6 +20180,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -19918,6 +20301,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20017,6 +20403,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20116,6 +20505,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20208,6 +20600,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20375,6 +20770,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20461,6 +20859,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20534,6 +20935,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20609,6 +21013,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20706,6 +21113,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20785,6 +21195,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -20900,6 +21313,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21008,6 +21424,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21137,6 +21556,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21198,6 +21620,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21259,6 +21684,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21320,6 +21748,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21398,6 +21829,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21566,6 +22000,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21654,6 +22091,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21699,29 +22139,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -21762,6 +22180,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -21886,6 +22307,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22002,6 +22426,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22063,6 +22490,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22164,6 +22594,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22229,29 +22662,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "additionalItems": false
+              "$ref": "#/definitions/@rotation"
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -22317,6 +22728,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22430,6 +22844,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22737,6 +23154,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22836,6 +23256,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22927,6 +23350,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -22993,6 +23419,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23092,6 +23521,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23276,6 +23708,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23443,6 +23878,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23585,6 +24023,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23672,6 +24113,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23780,6 +24224,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -23872,6 +24319,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24003,6 +24453,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24138,6 +24591,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -24236,6 +24692,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
