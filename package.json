@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "ajv": "*",
-    "jsonlint": "*",
-    "ajv-i18n": "*"
+    "ajv": "^6.12.6",
+    "ajv-i18n": "^3.6.0",
+    "jsonlint": "https://github.com/prantlf/jsonlint.git"
   }
 }
