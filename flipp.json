@@ -1,9 +1,9 @@
 { "X3D": {
     "encoding":"UTF-8",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
     "@profile":"Immersive",
-    "@version":"3.3",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@version":"4.0",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
         "meta": [
           {
