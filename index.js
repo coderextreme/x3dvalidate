@@ -34,6 +34,7 @@ function doValidate(json, validated_version, file, success, failure, language) {
 				var instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " instancePath: " + instancePath+ "\r\n";
+/*
 				var selectedObject = selectObjectFromJson(json, instancePath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
@@ -47,6 +48,7 @@ function doValidate(json, validated_version, file, success, failure, language) {
 					    }
 					    return v2;
 					}) + "\r\n";
+*/
 				error += " message: " + errs[e].message + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
