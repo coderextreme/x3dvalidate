@@ -1,5 +1,8 @@
 "use strict";
-var Ajv = require('ajv');
+const Ajv2020 = require("ajv/dist/2020");
+const addFormats = require("ajv-formats");
+var ajv = new Ajv2020({ strict: false });
+addFormats(ajv);
 var fs = require('fs');
 var http = require('http');
 var jsonlint = require('jsonlint');
@@ -28,10 +31,10 @@ function doValidate(json, validated_version, file, success, failure, language) {
 			var errs = validated_version.errors;
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
-				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
+				var instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
-				error += " dataPath: " + dataPath+ "\r\n";
-				var selectedObject = selectObjectFromJson(json, dataPath);
+				error += " instancePath: " + instancePath+ "\r\n";
+				var selectedObject = selectObjectFromJson(json, instancePath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = JSON.parse(JSON.stringify(v));
@@ -63,15 +66,14 @@ function doValidate(json, validated_version, file, success, failure, language) {
 }
 
 function loadSchema(json, file, doValidate, success, failure, language) {
-	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"4.0":true }
+	var versions = { "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
-		console.error("Can only validate version 3.0-4.0 presently. Switching version to 3.3.");
-		version = "3.3";
+		console.error("Can only validate version 4.0 presently. Switching version to 4.0.");
+		version = "4.0";
 	}
 	var validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
-		var ajv = new Ajv();
 
 		
 		/*
