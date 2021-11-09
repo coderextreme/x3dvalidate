@@ -88,6 +88,7 @@ function loadSchema(json, file, doValidate, success, failure, language) {
 		*/
 		console.error("Loading schema");
 		var schema = fs.readFileSync("x3d-"+version+"-JSONSchema.json");
+		// var schema = fs.readFileSync("X3dXml4.0SchemaConvertedToJson2020-12Schema.json");
 		console.error("Parsing schema");
 		var schemajson = JSON.parse(schema.toString());
 		console.error("Adding schema");
