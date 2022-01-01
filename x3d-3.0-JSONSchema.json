@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "x3d-3.0-JSONSchema.json",
+  "$id": "https://www.web3d.org/specifications/x3d-3.0-JSONSchema.json",
   "title": "JSON Schema X3D V3.0",
   "description": "Experimental JSON Schema for X3D V3.0",
   "type": "object",
@@ -6005,7 +6005,6 @@
               "minItems": 3,
               "maxItems": 3,
               "items": {
-                "default": 0,
                 "type": "number"
               }
             },
@@ -6196,10 +6195,8 @@
               }
             },
             "@stiffness": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "maximum": 1,
@@ -6223,7 +6220,6 @@
               "minItems": 3,
               "maxItems": 3,
               "items": {
-                "default": 0,
                 "type": "number"
               }
             },
