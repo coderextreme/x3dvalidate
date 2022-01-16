@@ -6887,11 +6887,10 @@
               "items": false
             },
             "@llimit": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
+                "default": 0,
                 "type": "number"
               }
             },
@@ -7102,11 +7101,10 @@
               }
             },
             "@ulimit": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
+                "default": 0,
                 "type": "number"
               }
             },
