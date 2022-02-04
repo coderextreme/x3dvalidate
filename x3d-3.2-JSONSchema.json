@@ -13353,38 +13353,7 @@
             },
             "@type": {
               "$comment": "MFString inputOutput",
-              "type": "array",
-              "prefixItems": [
-                {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
-                  "default": "EXAMINE",
-                  "type": "string"
-                },
-                {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
-                  "default": "ANY",
-                  "type": "string"
-                }
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "@visibilityLimit": {
               "default": 0,
@@ -18536,7 +18505,7 @@
         {
           "type": "object",
           "properties": {
-            "#sourceText": {
+            "#sourceCode": {
               "type": "array",
               "minItems": 1,
               "items": {
@@ -18622,7 +18591,7 @@
         {
           "type": "object",
           "properties": {
-            "#sourceText": {
+            "#sourceCode": {
               "type": "array",
               "minItems": 1,
               "items": {
@@ -18711,7 +18680,7 @@
         {
           "type": "object",
           "properties": {
-            "#sourceText": {
+            "#sourceCode": {
               "type": "array",
               "minItems": 1,
               "items": {

@@ -5,7 +5,7 @@
     "@style":"x3dModel.style",
     "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "-children":[
       {
         "#comment":"x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true"
@@ -100,7 +100,7 @@
           },
           {
             "@name":"modified",
-            "@content":"6 August 2021"
+            "@content":"18 January 2022"
           },
           {
             "@name":"generator",
@@ -112,7 +112,7 @@
           },
           {
             "@name":"generator",
-            "@content":"Netbeans http://www.netbeans.org"
+            "@content":"Netbeans https://www.netbeans.org"
           },
           {
             "@name":"creator",
@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 August 2021"
+            "@content":"18 January 2022"
           },
           {
             "@name":"generator",
@@ -198,7 +198,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","FLY","ANY"]
+              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
             }
           },
           { "WorldInfo":
@@ -373,7 +373,7 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-metadata":
+                          "-value":[
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
@@ -392,7 +392,8 @@
                                   }
                                 ]
                               }
-                            },
+                            }
+                          ],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -507,7 +508,7 @@
                         "@type":"MFColor"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -633,7 +634,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -784,7 +785,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -906,7 +907,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -950,14 +951,15 @@
               "-children":[
                 { "Shape":
                   {
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      },
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {
@@ -1453,7 +1455,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","FLY","ANY"]
+              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
             }
           },
           { "WorldInfo":
@@ -1628,7 +1630,7 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-metadata":
+                          "-value":[
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
@@ -1647,7 +1649,8 @@
                                   }
                                 ]
                               }
-                            },
+                            }
+                          ],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -1762,7 +1765,7 @@
                         "@type":"MFColor"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -1888,7 +1891,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -2039,7 +2042,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -2161,7 +2164,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -2205,14 +2208,15 @@
               "-children":[
                 { "Shape":
                   {
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      },
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {

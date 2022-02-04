@@ -7806,20 +7806,42 @@
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "@axis2": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "-body1": {
               "$ref": "#/$defs/-RigidBodySFNode"
@@ -16993,30 +17015,63 @@
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "@motor2Axis": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "@motor3Axis": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "@stop1Bounce": {
               "default": 0,
@@ -17626,38 +17681,7 @@
             },
             "@type": {
               "$comment": "MFString inputOutput",
-              "type": "array",
-              "prefixItems": [
-                {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
-                  "default": "EXAMINE",
-                  "type": "string"
-                },
-                {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
-                  "default": "ANY",
-                  "type": "string"
-                }
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "@visibilityLimit": {
               "default": 0,
@@ -23012,10 +23036,30 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
+            "@bboxCenter": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
             "@bboxDisplay": {
               "default": false,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "@bboxSize": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": -1,
+                "type": "number"
+              }
             },
             "@centerOfMass": {
               "$comment": "SFVec3f inputOutput",
@@ -23278,10 +23322,30 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
+            "@bboxCenter": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
             "@bboxDisplay": {
               "default": false,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "@bboxSize": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": -1,
+                "type": "number"
+              }
             },
             "-bodies": {
               "$ref": "#/$defs/-RigidBodyMFNode"
@@ -23925,7 +23989,7 @@
         {
           "type": "object",
           "properties": {
-            "#sourceText": {
+            "#sourceCode": {
               "type": "array",
               "minItems": 1,
               "items": {
@@ -23974,11 +24038,8 @@
               "type": "boolean"
             },
             "@sourceCode": {
-              "$comment": "xs:string inputOutput",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@url": {
               "$comment": "MFString inputOutput",
@@ -24269,7 +24330,7 @@
         {
           "type": "object",
           "properties": {
-            "#sourceText": {
+            "#sourceCode": {
               "type": "array",
               "minItems": 1,
               "items": {
@@ -24303,6 +24364,10 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@sourceCode": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@type": {
               "anyOf": [
@@ -24385,7 +24450,7 @@
         {
           "type": "object",
           "properties": {
-            "#sourceText": {
+            "#sourceCode": {
               "type": "array",
               "minItems": 1,
               "items": {
@@ -24422,6 +24487,10 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@sourceCode": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@type": {
               "anyOf": [
@@ -24933,10 +25002,21 @@
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "-body1": {
               "$ref": "#/$defs/-RigidBodySFNode"
@@ -29991,20 +30071,42 @@
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "@axis2": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
+              "prefixItems": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
             },
             "-body1": {
               "$ref": "#/$defs/-RigidBodySFNode"
