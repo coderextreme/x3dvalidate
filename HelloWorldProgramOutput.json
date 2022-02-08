@@ -100,7 +100,7 @@
           },
           {
             "@name":"modified",
-            "@content":"18 January 2022"
+            "@content":"9 January 2022"
           },
           {
             "@name":"generator",
@@ -112,7 +112,7 @@
           },
           {
             "@name":"generator",
-            "@content":"Netbeans https://www.netbeans.org"
+            "@content":"Netbeans http://www.netbeans.org"
           },
           {
             "@name":"creator",
@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 January 2022"
+            "@content":"07 February 2022"
           },
           {
             "@name":"generator",
@@ -634,7 +634,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -785,7 +785,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -1891,7 +1891,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -2042,7 +2042,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
