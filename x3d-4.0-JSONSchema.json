@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/02/11 18:55:34",
+  "title": "X3D V4.0 JSON Schema, generated 2022/04/09 17:47:41",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -3029,6 +3029,9 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
             },
@@ -3074,9 +3077,6 @@
               "default": "speakers",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -4604,6 +4604,10 @@
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -4860,6 +4864,10 @@
             },
             "-contacts": {
               "$ref": "#/$defs/-ContactMFNode"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -5956,6 +5964,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@position": {
               "$comment": "SFVec3f inputOutput",
@@ -8703,6 +8716,10 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@detonationLocation": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -9102,6 +9119,11 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "@position": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -9426,6 +9448,27 @@
               "type": "boolean"
             },
             "@hatchStyle": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19"
+              ],
               "default": 1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -10977,6 +11020,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -12007,14 +12054,14 @@
             "-skin": {
               "$ref": "#/$defs/-Group-Transform-Shape-IndexedFaceSetMFNode"
             },
-            "-skinBindingCoord": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            "-skinBindingCoords": {
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
-            "-skinBindingNormal": {
+            "-skinBindingNormals": {
               "$ref": "#/$defs/-X3DNormalNodeSFNode"
             },
             "-skinCoord": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-skinNormal": {
               "$ref": "#/$defs/-X3DNormalNodeSFNode"
@@ -12141,7 +12188,7 @@
               }
             },
             "-children": {
-              "$ref": "#/$defs/-HAnimJoint-HAnimSegment-HAnimSiteMFNode"
+              "$ref": "#/$defs/-HAnimJoint-HAnimSegmentMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -12694,7 +12741,7 @@
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "-coord": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -14669,6 +14716,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -15285,6 +15336,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -15434,6 +15489,24 @@
               "type": "boolean"
             },
             "@linetype": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16"
+              ],
               "default": 1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -15590,11 +15663,11 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -15747,6 +15820,10 @@
             },
             "-watchList": {
               "$ref": "#/$defs/-X3DUrlObjectMFNode"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -16833,11 +16910,11 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -17911,7 +17988,7 @@
               "type": "boolean"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -18107,7 +18184,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -18194,7 +18271,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18332,7 +18409,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -18522,7 +18599,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18908,7 +18985,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -19623,11 +19700,11 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -19644,7 +19721,7 @@
               "type": "boolean"
             },
             "@frequency": {
-              "default": 0,
+              "default": 440,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
@@ -20320,6 +20397,10 @@
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -20763,6 +20844,11 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "@position": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -20996,6 +21082,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -21159,6 +21249,39 @@
                 }
               ],
               "items": false
+            },
+            "@markerType": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "default": 1,
+              "$comment": "SFInt32 inputOutput",
+              "type": "integer"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -21439,6 +21562,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@speed": {
               "default": 0,
@@ -22130,6 +22258,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -22534,6 +22666,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -22752,6 +22888,10 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -24732,6 +24872,10 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -26083,7 +26227,7 @@
               "items": false
             },
             "@beamWidth": {
-              "default": 0.7854,
+              "default": 0.589049,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
@@ -26510,6 +26654,9 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
             },
@@ -26531,9 +26678,6 @@
               "default": "speakers",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -26643,6 +26787,10 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -26729,6 +26877,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@speed": {
               "default": 0,
@@ -29095,6 +29248,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -29243,6 +29400,10 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -30224,7 +30385,7 @@
               "minItems": 3,
               "maxItems": 3,
               "items": {
-                "default": 0,
+                "default": 1,
                 "maximum": 1,
                 "minimum": 0,
                 "type": "number"
@@ -30511,6 +30672,7 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -30715,6 +30877,10 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -30961,6 +31127,11 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "@speed": {
               "default": 0,
               "$comment": "SFFloat inputOutput",
@@ -31037,6 +31208,10 @@
             },
             "IS": {
               "$ref": "#/$defs/IS"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -32795,6 +32970,9 @@
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
           },
+          "RigidBody": {
+            "$ref": "#/$defs/RigidBody"
+          },
           "RigidBodyCollection": {
             "$ref": "#/$defs/RigidBodyCollection"
           },
@@ -33717,6 +33895,9 @@
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
         },
+        "RigidBody": {
+          "$ref": "#/$defs/RigidBody"
+        },
         "RigidBodyCollection": {
           "$ref": "#/$defs/RigidBodyCollection"
         },
@@ -34600,6 +34781,9 @@
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
           },
+          "RigidBody": {
+            "$ref": "#/$defs/RigidBody"
+          },
           "RigidBodyCollection": {
             "$ref": "#/$defs/RigidBodyCollection"
           },
@@ -34885,9 +35069,6 @@
           "NurbsTextureCoordinate": {
             "$ref": "#/$defs/NurbsTextureCoordinate"
           },
-          "RigidBody": {
-            "$ref": "#/$defs/RigidBody"
-          },
           "ShaderPart": {
             "$ref": "#/$defs/ShaderPart"
           },
@@ -35045,7 +35226,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DCoordinateNodeSFNode": {
+    "-Coordinate-CoordinateDoubleSFNode": {
       "type": "object",
       "properties": {
         "Coordinate": {
@@ -35054,16 +35235,13 @@
         "CoordinateDouble": {
           "$ref": "#/$defs/CoordinateDouble"
         },
-        "GeoCoordinate": {
-          "$ref": "#/$defs/GeoCoordinate"
-        },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
         }
       },
       "additionalProperties": false
     },
-    "-HAnimJoint-HAnimSegment-HAnimSiteMFNode": {
+    "-HAnimJoint-HAnimSegmentMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
       "minItems": 1,
@@ -35078,9 +35256,6 @@
           },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
-          },
-          "HAnimSite": {
-            "$ref": "#/$defs/HAnimSite"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -35108,6 +35283,24 @@
         },
         "additionalProperties": false
       }
+    },
+    "-X3DCoordinateNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "Coordinate": {
+          "$ref": "#/$defs/Coordinate"
+        },
+        "CoordinateDouble": {
+          "$ref": "#/$defs/CoordinateDouble"
+        },
+        "GeoCoordinate": {
+          "$ref": "#/$defs/GeoCoordinate"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     },
     "-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode": {
       "type": "object",
@@ -36434,6 +36627,9 @@
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
+          },
+          "RigidBody": {
+            "$ref": "#/$defs/RigidBody"
           },
           "RigidBodyCollection": {
             "$ref": "#/$defs/RigidBodyCollection"
