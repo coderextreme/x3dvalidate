@@ -100,7 +100,7 @@
           },
           {
             "@name":"modified",
-            "@content":"29 January 2023"
+            "@content":"9 June 2023"
           },
           {
             "@name":"generator",
@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 January 2023"
+            "@content":"09 June 2023"
           },
           {
             "@name":"generator",
@@ -950,14 +950,15 @@
               "-children":[
                 { "Shape":
                   {
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      },
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {
@@ -2205,14 +2206,15 @@
               "-children":[
                 { "Shape":
                   {
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      },
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {

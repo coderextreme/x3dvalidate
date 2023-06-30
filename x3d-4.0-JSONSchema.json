@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2023/03/22 04:48:53",
+  "title": "X3D V4.0 JSON Schema, generated 2023/06/30 00:18:43",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -8004,7 +8004,7 @@
             },
             "@attack": {
               "default": 0.003,
-              "$comment": "SFFloat inputOutput",
+              "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@channelCountMode": {
@@ -32485,6 +32485,9 @@
           "Group": {
             "$ref": "#/$defs/Group"
           },
+          "HAnimJoint": {
+            "$ref": "#/$defs/HAnimJoint"
+          },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
           },
@@ -32769,9 +32772,6 @@
           },
           "HAnimHumanoid": {
             "$ref": "#/$defs/HAnimHumanoid"
-          },
-          "HAnimJoint": {
-            "$ref": "#/$defs/HAnimJoint"
           },
           "HAnimMotion": {
             "$ref": "#/$defs/HAnimMotion"
@@ -33407,6 +33407,9 @@
         "Group": {
           "$ref": "#/$defs/Group"
         },
+        "HAnimJoint": {
+          "$ref": "#/$defs/HAnimJoint"
+        },
         "HAnimSegment": {
           "$ref": "#/$defs/HAnimSegment"
         },
@@ -33691,9 +33694,6 @@
         },
         "HAnimHumanoid": {
           "$ref": "#/$defs/HAnimHumanoid"
-        },
-        "HAnimJoint": {
-          "$ref": "#/$defs/HAnimJoint"
         },
         "HAnimMotion": {
           "$ref": "#/$defs/HAnimMotion"
@@ -34257,6 +34257,9 @@
           "Group": {
             "$ref": "#/$defs/Group"
           },
+          "HAnimJoint": {
+            "$ref": "#/$defs/HAnimJoint"
+          },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
           },
@@ -34538,9 +34541,6 @@
           },
           "HAnimHumanoid": {
             "$ref": "#/$defs/HAnimHumanoid"
-          },
-          "HAnimJoint": {
-            "$ref": "#/$defs/HAnimJoint"
           },
           "HAnimMotion": {
             "$ref": "#/$defs/HAnimMotion"
@@ -35248,6 +35248,9 @@
           "Group": {
             "$ref": "#/$defs/Group"
           },
+          "HAnimJoint": {
+            "$ref": "#/$defs/HAnimJoint"
+          },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
           },
@@ -35900,6 +35903,9 @@
         "Group": {
           "$ref": "#/$defs/Group"
         },
+        "HAnimJoint": {
+          "$ref": "#/$defs/HAnimJoint"
+        },
         "HAnimSegment": {
           "$ref": "#/$defs/HAnimSegment"
         },
@@ -36124,6 +36130,9 @@
           },
           "Group": {
             "$ref": "#/$defs/Group"
+          },
+          "HAnimJoint": {
+            "$ref": "#/$defs/HAnimJoint"
           },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
@@ -36409,9 +36418,6 @@
           },
           "HAnimHumanoid": {
             "$ref": "#/$defs/HAnimHumanoid"
-          },
-          "HAnimJoint": {
-            "$ref": "#/$defs/HAnimJoint"
           },
           "HAnimMotion": {
             "$ref": "#/$defs/HAnimMotion"
