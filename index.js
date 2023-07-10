@@ -5,7 +5,7 @@ var ajv = new Ajv2020({ strict: false });
 addFormats(ajv);
 var fs = require('fs');
 var http = require('http');
-var jsonlint = require('jsonlint');
+var jsonlint = require('@prantlf/jsonlint');
 var selectObjectFromJson = require('./selectObjectFromJson');
 var localize = require('ajv-i18n');
 

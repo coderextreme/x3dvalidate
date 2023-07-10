@@ -2,10 +2,16 @@
   "name": "x3dvalidate",
   "version": "1.0.0",
   "private": true,
+  "main": "x3dvalidate.js",
+  "module": "index.js",
   "dependencies": {
     "ajv": "*",
     "ajv-formats": "*",
     "ajv-i18n": "*",
-    "jsonlint": "https://github.com/prantlf/jsonlint.git"
+    "@prantlf/jsonlint": "*"
+
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
