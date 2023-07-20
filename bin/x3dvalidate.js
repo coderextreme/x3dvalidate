@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var validate = require('./index.js')
+var validate = require('../../x3dvalidate/src/index.js')
 
 process.argv.shift();
 process.argv.shift();
