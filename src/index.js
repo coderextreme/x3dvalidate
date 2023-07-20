@@ -110,7 +110,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 function validateJSON(files) {
 
 	if (files.length === 0) {
-		console.error("Please specify some files to validate on the command-line, or in the validate/validateJSON function call");
+		console.error("Please specify some .json or .x3dj JSON filenames (any filename path) to validate on the command-line, or in the validate/validateJSON function call.  Full help is available via the --help command line option.");
 		process.exit();
 	}
 	let file = "No file present in exception";
@@ -120,6 +120,14 @@ function validateJSON(files) {
 			if (file === "--fullreport") {
 				console.log("Toggling suppression in in files now.")
 				suppress = !suppress;
+				continue;
+			}
+			if (file === "--help") {
+				console.log("Help on x3dvalidate.js command.\n")
+				console.log("node x3dvalidate.js [ --fullreport] [ --help ] json_file ...\n")
+				console.log("Parameters to x3dvalidate are usually .json or .x3dj filenames on the filesystem")
+				console.log("--fullreport : toggles full Ajv reporting.  May be used more than once to togle the full report")
+				console.log("--help : returns this message")
 				continue;
 			}
 			let str = fs.readFileSync(file).toString();
