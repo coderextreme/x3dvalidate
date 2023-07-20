@@ -29,7 +29,8 @@
     "postinstall": "node src/index.js",
     "publish": "npm publish --access public",
     "localtest": "node test/app.js",
-    "test": "npx x3dvalidate examples.bad/abox.json examples/abox.json examples.bad/HelloWorldProgramOutput.json examples.bad/HelloWorldProgramOutput2.json"
+    "test": "node ./x3dvalidate.js examples/abox.json",
+    "failtest": "node ./x3dvalidate.js examples.bad/abox.json --fullreport examples.bad/HelloWorldProgramOutput.json --fullreport examples.bad/HelloWorldProgramOutput2.json"
   },
   "bugs": {
     "url": "https://github.com/coderextreme/x3dvalidate/issues"
