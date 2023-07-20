@@ -26,9 +26,9 @@
         "x3dvalidate": "x3dvalidate.js"
   },
   "scripts": {
-    "start": "node src/x3dvalidate.js",
+    "postinstall": "node src/index.js",
     "publish": "npm publish --access public",
-    "localtest": "node src/x3dvalidate.js flipp.json flipper.json",
+    "localtest": "node test/app.js",
     "test": "npx x3dvalidate flipp.json flipper.json"
 
   },
