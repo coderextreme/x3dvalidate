@@ -9,7 +9,7 @@ my $version = `npm pkg get version | sed 's/"//g'`;
 chomp $version;
 say "package.json version $version";
 
-my $online = `npm view x3d-tidy version`;
+my $online = `npm view x3dvalidate version`;
 chomp $online;
 say "NPM version $online";
 
