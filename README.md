@@ -1,5 +1,5 @@
 # x3dvalidate
-Validate JSON files (.x3dj) X3D JSON schema with Ajv
+Validate JSON files (.x3dj) against X3D JSON schema with Ajv
 
 ```bash
 git clone https://github.com/coderextreme/x3dvalidate
