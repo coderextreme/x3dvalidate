@@ -19,3 +19,11 @@ Example:
 ```bash
 find ./examples -type f -name "*.json" | xargs node x3dvalidate.js
 ```
+
+For MacOS, install node.js, homebrew and git.  Before running the commands above in Terminal, download and install install node.js from https://nodejs.org/, homebrew from https://brew.sh/, and then run:
+
+```zsh
+$ brew install git
+```
+
+in Terminal.  Or git should be available in developer command tools from Apple.
