@@ -15,8 +15,8 @@
             "@content":"John Carlson"
           },
           {
-            "name":"generator",
-            "content":"manual"
+            "@name":"generator",
+            "@content":"manual"
           },
           {
             "@name":"identifier",
@@ -45,6 +45,7 @@
           { "ProtoDeclare":
             {
               "@name":"anyShape",
+	      "@USE":"USE not allowed with other attributes besides name", 
               "ProtoInterface": {
                   "field": [
                     {

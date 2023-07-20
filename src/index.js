@@ -12,17 +12,24 @@ let selectObjectFromJson = require(__dirname+'/selectObjectFromJson');
 
 let validate = function() { return false; }
 
-let override = false;
+let suppress = true;
 
+
+
+function doOneErr(err, file, version) {
+	let error = "\r\n keyword: " + err.keyword + "\r\n";
+	error += " location in document: " + err.instancePath + "\r\n";
+	error += " message: " + err.message + "\r\n";
+	error += " params: " + JSON.stringify(err.params) + "\r\n";
+	error += " file: " + file + "\r\n";
+	error += " version: " + version + "\r\n";
+	return error
+}
 
 function doValidate(json, validated_version, file, success, failure) {
 	let retval = false;
 	let version = json.X3D["@version"];
 	let error = ""
-	if (file === "--override") {
-		console.log("overriding suppression in in files now.")
-		override = true;
-	}
 	if (typeof validated_version !== 'undefined') {
 		let valid = validated_version(json);
 		if (!valid) {
@@ -30,26 +37,21 @@ function doValidate(json, validated_version, file, success, failure) {
 			console.log("File:", file);
 			let errs = validated_version.errors;
 			for (let e in errs) {
-				let report = true;
-				if (!override && 'params' in errs[e] &&  'missingProperty' in errs[e].params) {
-					if (errs[e].params.missingProperty === '@USE') {
-						console.log("Suppressing @USE missing property");
-						report = false;
+				if ('params' in errs[e] && 'missingProperty' in errs[e].params && errs[e].params.missingProperty === '@USE') {
+					if (suppress) {
+						console.log("Suppressing @USE missing property.  Use --fullreport to reveal possibly confusing errors");
+					} else {
+						error += doOneErr(errs[e], file, version);
+
 					}
-				}
-				if (!override && 'params' in errs[e] &&  'passingSchemas' in errs[e].params) {
-					if (errs[e].params.passingSchemas === null) {
-						console.log("Suppressing null passingSchemas");
-						report = false;
+				} else if ('params' in errs[e] && 'passingSchemas' in errs[e].params && errs[e].params.passingSchemas === null) {
+					if (suppress) {
+						console.log("Suppressing null passingSchemas.  Use --fullreport to reveal possibly confusing errors");
+					} else {
+						error += doOneErr(errs[e], file, version);
 					}
-				}
-				if (report) {
-					error += "\r\n keyword: " + errs[e].keyword + "\r\n";
-					error += " location in document: " + errs[e].instancePath + "\r\n";
-					error += " message: " + errs[e].message + "\r\n";
-					error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
-					error += " file: " + file + "\r\n";
-					error += " version: " + version + "\r\n";
+				} else {
+					error += doOneErr(errs[e], file, version);
 				}
 			}
 			failure(error);
@@ -115,6 +117,11 @@ function validateJSON(files) {
 	for (let f in files) {
 		try {
 			file = files[f];
+			if (file === "--fullreport") {
+				console.log("Enabling suppression in in files now.")
+				suppress = false;
+				continue;
+			}
 			let str = fs.readFileSync(file).toString();
 			if (typeof str === 'undefined') {
 				throw("Read nothing, or possible error");
