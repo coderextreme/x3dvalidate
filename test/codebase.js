@@ -1,4 +1,4 @@
-
+#!/usr/bin/env node
 
 var validate = require(__dirname+'/../src/index.js')
 

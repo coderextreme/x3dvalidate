@@ -118,8 +118,8 @@ function validateJSON(files) {
 		try {
 			file = files[f];
 			if (file === "--fullreport") {
-				console.log("Enabling suppression in in files now.")
-				suppress = false;
+				console.log("Toggling suppression in in files now.")
+				suppress = !suppress;
 				continue;
 			}
 			let str = fs.readFileSync(file).toString();
