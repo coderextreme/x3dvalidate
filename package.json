@@ -1,6 +1,6 @@
 {
   "name": "x3dvalidate",
-  "version": "2.0.5",
+  "version": "2.0.23",
   "main": "x3dvalidate",
   "dependencies": {
     "ajv": "8.12.0",
@@ -8,7 +8,7 @@
   },
   "bin": {
         "x3dvalidate": "x3dvalidate.js"
-    },
+  },
   "scripts": {
     "start": "node index.js",
     "publish": "npm publish --access public",

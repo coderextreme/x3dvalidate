@@ -1,4 +1,5 @@
-#!node
+#!/usr/bin/env node
+
 "use strict";
 const Ajv2020 = require("ajv/dist/2020");
 const addFormats = require("ajv-formats");
