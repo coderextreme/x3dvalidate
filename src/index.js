@@ -8,7 +8,7 @@ addFormats(ajv);
 let fs = require('fs');
 let http = require('http');
 // let jsonlint = require('@prantlf/jsonlint');
-let selectObjectFromJson = require('./selectObjectFromJson');
+let selectObjectFromJson = require(__dirname+'/selectObjectFromJson');
 
 let validate = function() { return false; }
 
