@@ -1,0 +1,7 @@
+Some scripts in bin/ have the same copyright as electron.
+
+Installed npm packages have their own license
+
+I took build/publish.pl from the x3d-tidy build, covered by LICENSE.gpl
+
+The rest of the source is licensed under LICENSE or LICENSE.gpl

@@ -2,4 +2,10 @@
 
 var validate = require('./index.js')
 
-module.exports = validate;
+process.argv.shift();
+process.argv.shift();
+var files = process.argv;
+
+validate(files);
+
+process.exit()

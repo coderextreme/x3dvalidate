@@ -5,9 +5,8 @@ Validate JSON files (.x3dj) X3D JSON schema with Ajv
 git clone https://github.com/coderextreme/x3dvalidate
 cd x3dvalidate
 npm install
-node x3dvalidate.js flipper.json # more JSON files are allowed, or .x3dj
-node index.js flipper.json more JSON files are allowed, or .x3dj
-node app.js # simple test app
+node src/x3dvalidate.js ball.json # ball.json for example, other replacement JSON files are allowed, or .x3dj
+node test/app.js # simple test app
 ```
 
 JavaScript usage:
