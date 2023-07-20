@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var validate = require('./index.js')
+var validate = require('./src/index.js')
 
 process.argv.shift();
 process.argv.shift();
