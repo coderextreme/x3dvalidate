@@ -14,7 +14,7 @@ chomp $online;
 say "NPM version $online";
 
 system "npm version patch --no-git-tag-version --force" if $version eq $online;
-system "npm i x3dvalidate\@latest";
+# system "npm i x3dvalidate\@latest";  # NO, I don't want to install in local package.json
 
 system "git", "add", "-A";
 system "git", "commit", "-am", "Published version $version";
