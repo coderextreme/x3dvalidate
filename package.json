@@ -2,7 +2,7 @@
   "name": "x3dvalidate",
   "author": "John Carlson, Yottzumm, coderextreme",
   "license": "BSD 2-Clause License",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "main": "src/x3dvalidate.js",
   "description": "X3D JSON validation tool, uses Ajv and X3D JSON schema, use from command line with npx x3dvalidate JSON_file1 JSON_file2 ...",
   "repository": {
@@ -20,8 +20,7 @@
     "ajv": "8.12.0",
     "ajv-formats": "2.1.1",
     "console": "^0.7.2",
-    "electron": "^25.1.1",
-    "x_ite": "^8.10.1"
+    "electron": "^25.1.1"
   },
   "bin": {
     "x3dvalidate": "x3dvalidate.js"
@@ -30,7 +29,7 @@
     "postinstall": "node src/index.js",
     "publish": "npm publish --access public",
     "localtest": "node test/app.js",
-    "test": "npx x3dvalidate flipp.json flipper.json"
+    "test": "npx x3dvalidate examples/*.json"
   },
   "bugs": {
     "url": "https://github.com/coderextreme/x3dvalidate/issues"
