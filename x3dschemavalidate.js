@@ -4,6 +4,6 @@ process.argv.shift();
 process.argv.shift();
 var files = process.argv;
 
-validate("en", files);
+validate(files);
 
 module.exports = validate;

@@ -1,17 +1,19 @@
 {
   "name": "x3dvalidate",
-  "version": "1.0.0",
-  "private": true,
-  "main": "x3dvalidate.js",
-  "module": "index.js",
+  "version": "2.0.5",
+  "main": "x3dvalidate",
   "dependencies": {
-    "ajv": "*",
-    "ajv-formats": "*",
-    "ajv-i18n": "*",
-    "@prantlf/jsonlint": "*"
-
+    "ajv": "8.12.0",
+    "ajv-formats": "2.1.1"
   },
+  "bin": {
+        "x3dvalidate": "x3dvalidate.js"
+    },
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js",
+    "publish": "npm publish --access public",
+    "localtest": "node index.js flipp.json flipper.json",
+    "test": "npx x3dvalidate flipp.json flipper.json"
+
   }
 }
