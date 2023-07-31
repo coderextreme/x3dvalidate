@@ -12,7 +12,7 @@ npm install
 node x3dvalidate.js examples/*.json    # use your own .x3dj or .json files (any extension works)
 node test/app.js # simple test app
 
-We are working on an npx command, but presently we can't publish right now (tommorrow)
+We are working on publishing an npx command.  Presently, we have difficulty processing parameters.
 ```
 
 For folders, I recommend using find and xargs on Linux/MacOS/Git for Windows/Git Bash/WSL
