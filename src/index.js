@@ -4,7 +4,7 @@
 const Ajv2020 = require("ajv/dist/2020");
 const addFormats = require("ajv-formats");
 let ajv = new Ajv2020({ strict: false });
-addFormats(ajv);
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
 let fs = require('fs');
 let http = require('http');
 
