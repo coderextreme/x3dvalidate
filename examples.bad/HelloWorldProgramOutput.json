@@ -44,7 +44,7 @@
             "@level":2
           },
           {
-            "@name":"H-Anim",
+            "@name":"HAnim",
             "@level":1
           },
           {
@@ -100,7 +100,7 @@
           },
           {
             "@name":"modified",
-            "@content":"29 April 2023"
+            "@content":"30 July 2023"
           },
           {
             "@name":"generator",
@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 June 2023"
+            "@content":"30 July 2023"
           },
           {
             "@name":"generator",
@@ -198,7 +198,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE", "FLY", "ANY"]
+              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
             }
           },
           { "WorldInfo":
@@ -1454,7 +1454,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE", "FLY", "ANY"]
+              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
             }
           },
           { "WorldInfo":

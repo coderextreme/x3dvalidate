@@ -1,29 +1,31 @@
-var fs = require('fs');
-const Ajv2020 = require("ajv/dist/2020");
+let fs = require('fs');
+var selectObjectFromJson = require('./selectObjectFromJson');
+let loadSchema = require("./loadValidate");
+const Ajv2020 = require("ajv/dist/2020.js");
 const ajv = new Ajv2020({ strict: false });
 const addFormats = require("ajv-formats");
-var selectObjectFromJson = require('./selectObjectFromJson');
 
-addFormats(ajv);
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
 
 function parseErrors(errors) {
 	if (errors !== null) {
-		var errs = errors;
-		for (var e in errs) {
+		let errs = errors;
+		console.log(errs);
+		for (let e in errs) {
 			if (e == 0) {
 			    console.log(e, 'Ajv '+version+' Validation failed on', file);
 			}
-			var error = "";
+			let error = "";
 			error += "\r\n keyword: " + errs[e].keyword + "\r\n";
-			var instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
+			let instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 
 			error += " instancePath: " + instancePath+ "\r\n";
-			var selectedObject = selectObjectFromJson(json, instancePath);
+			let selectedObject = selectObjectFromJson(json, instancePath);
 			error += " value: " + JSON.stringify(selectedObject,
 				function(k, v) {
-				    var v2 = JSON.parse(JSON.stringify(v));
+				    let v2 = JSON.parse(JSON.stringify(v));
 				    if (typeof v2 === 'object') {
-					    for (var o in v2) {
+					    for (let o in v2) {
 						if (typeof v2[o] === 'object') {
 							    v2[o] = "|omitted|";
 						}
@@ -47,7 +49,14 @@ async function validateSchema() {
 	  let validate = ajv.compile(schema);
 	  let result = await validate(json);
 	  let valid = ajv.validate(schema, json);
-	  let errors = await parseErrors(validate.errors);
+	  parseErrors(validate.errors);
+		/*
+	  loadSchema(json, __dirname+"/examples.bad/HelloWorldProgramOutput2.json", function() {
+		console.log("Works");
+	  }, function(e) {
+		console.log("Failed");
+	  });
+	*/
 	} catch (e) {
 		console.error(e);
 	}
