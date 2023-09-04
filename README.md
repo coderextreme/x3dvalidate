@@ -8,7 +8,7 @@ First install node.js and git. Download and install node.js from https://nodejs.
 ```bash
 git clone https://github.com/coderextreme/x3dvalidate
 cd x3dvalidate
-npm install
+npm install -g x3dvalidate
 node x3dvalidate.js examples/*.json    # use your own .x3dj or .json files (any extension works)
 node test/app.js # simple test app
 
