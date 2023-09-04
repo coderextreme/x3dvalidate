@@ -85,7 +85,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 		ajv.addMetaSchema(metaschemajson);
 		*/
 		console.log("Loading schema");
-		let schema = fs.readFileSync(__dirname+"/../schemas/x3d-"+version+"-JSONSchema.json");
+		let schema = fs.readFileSync(__dirname+"/schemas/x3d-"+version+"-JSONSchema.json");
 		// let schema = fs.readFileSync("X3dXml4.0SchemaConvertedToJson2020-12Schema.json");
 		console.log("Parsing schema");
 		let schemajson = JSON.parse(schema.toString());
@@ -148,7 +148,19 @@ function validateJSON(files) {
 	}
 }
 
+module.exports = validateJSON
+
 //alx:
 //console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
 
-module.exports = validateJSON
+process.argv.shift();
+process.argv.shift();
+var files = process.argv;
+if (files.length === 0) {
+	console.log("I see", files.length, "parameters.  Is x3dvalidate installed properly?");
+}
+
+validateJSON(files);
+
+process.exit()
+
