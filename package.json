@@ -21,7 +21,7 @@
     "ajv-formats": "2.1.1"
   },
   "bin": {
-    "x3dvalidate": "index.js"
+    "x3dvalidate": "validate.js"
   },
   "scripts": {
     "postinstall": "node src/index.js",
