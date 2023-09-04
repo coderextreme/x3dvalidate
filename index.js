@@ -161,6 +161,3 @@ if (files.length === 0) {
 }
 
 validateJSON(files);
-
-process.exit()
-
