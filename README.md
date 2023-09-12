@@ -1,5 +1,5 @@
 # x3dvalidate
-Validate JSON files (.x3dj) against X3D JSON schema version 4.0 with Ajv
+Validate JSON files (.x3dj or .json) against X3D JSON schema version 4.0 with Ajv
 
 Node.js is a requirement: Download from https://nodejs.org/
 
