@@ -11,8 +11,11 @@ cd x3dvalidate
 npm install -g x3dvalidate
 node x3dvalidate.js examples/*.json    # use your own .x3dj or .json files (any extension works)
 node test/app.js # simple test app
+```
+x3dvalidate is a full npx program (an npm module), thus you can run:
 
-We are working on publishing an npx command.  Presently, we have difficulty processing parameters.
+```bash
+npx x3dvalidate file1.json file2.json ...
 ```
 
 For folders, I recommend using find and xargs on Linux/MacOS/Git for Windows/Git Bash/WSL
