@@ -22,7 +22,7 @@ For folders, I recommend using find and xargs on Linux/MacOS/Git for Windows/Git
 
 Example:
 ```bash
-find ./examples -type f -name "*.json" | xargs node x3dvalidate.js
+find ./examples -type f -name "*.json" | xargs npx x3dvalidate
 ```
 
 On Windows 10 (11?),
