@@ -1,5 +1,5 @@
 # x3dvalidate
-Validate JSON files (.x3dj) against X3D JSON schema version 4.0 with Ajv
+Validate JSON files (.x3dj or .json) against X3D JSON schema version 4.0 with Ajv
 
 Node.js is a requirement: Download from https://nodejs.org/
 
@@ -11,15 +11,18 @@ cd x3dvalidate
 npm install -g x3dvalidate
 node x3dvalidate.js examples/*.json    # use your own .x3dj or .json files (any extension works)
 node test/app.js # simple test app
+```
+x3dvalidate is a full npx program (an npm module), thus you can run:
 
-We are working on publishing an npx command.  Presently, we have difficulty processing parameters.
+```bash
+npx x3dvalidate file1.json file2.json ...
 ```
 
 For folders, I recommend using find and xargs on Linux/MacOS/Git for Windows/Git Bash/WSL
 
 Example:
 ```bash
-find ./examples -type f -name "*.json" | xargs node x3dvalidate.js
+find ./examples -type f -name "*.json" -print0 | xargs -0 npx x3dvalidate
 ```
 
 On Windows 10 (11?),
