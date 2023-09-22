@@ -15,6 +15,7 @@ node test/app.js # simple test app
 x3dvalidate is a full npx program (an npm module), thus you can run:
 
 ```bash
+# NOTE:  npx x3dvalidate is broken for me. I'd like to heard good reports
 npx x3dvalidate file1.json file2.json ...
 ```
 
