@@ -2,7 +2,7 @@
   "name": "x3dvalidate",
   "author": "John Carlson, Yottzumm, coderextreme",
   "license": "BSD 2-Clause License",
-  "version": "8.6.0",
+  "version": "8.7.0",
   "main": "x3dvalidate",
   "description": "X3D JSON validation tool, uses Ajv and X3D JSON schema, use from command line with npx x3dvalidate JSON_file1 JSON_file2 ...",
   "repository": {
