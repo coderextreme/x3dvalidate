@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2024/04/01 00:36:13",
+  "title": "X3D V4.0 JSON Schema, generated 2024/04/01 00:21:48",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -32190,7 +32190,7 @@
         "type": "object",
         "properties": {
           "@field": {
-            "$comment": "x-orderOf-StatementContentModel"
+            "$comment": "x-order-StatementContentModel"
           }
         }
       },
@@ -32379,17 +32379,17 @@
         "type": "object",
         "properties": {
           "@component": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0",
             "maxOccurs": "unbounded"
           },
           "@unit": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0",
             "maxOccurs": "unbounded"
           },
           "@meta": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0",
             "maxOccurs": "unbounded"
           }
@@ -32466,7 +32466,7 @@
         "type": "object",
         "properties": {
           "@connect": {
-            "$comment": "x-orderOf-StatementContentModel"
+            "$comment": "x-order-StatementContentModel"
           }
         }
       },
@@ -32606,7 +32606,7 @@
         "type": "object",
         "properties": {
           "@LayerSet": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0"
           }
         }
@@ -32636,11 +32636,11 @@
         "type": "object",
         "properties": {
           "@ProtoInterface": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0"
           },
           "@ProtoBody": {
-            "$comment": "x-orderOf-StatementContentModel"
+            "$comment": "x-order-StatementContentModel"
           }
         }
       },
@@ -32690,7 +32690,7 @@
         "type": "object",
         "properties": {
           "@field": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0",
             "maxOccurs": "unbounded"
           }
@@ -32767,7 +32767,7 @@
         "type": "object",
         "properties": {
           "@LayerSet": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0"
           }
         }
@@ -32845,14 +32845,14 @@
         "type": "object",
         "properties": {
           "@head": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0"
           },
           "@Scene": {
-            "$comment": "x-orderOf-StatementContentModel"
+            "$comment": "x-order-StatementContentModel"
           },
           "@ds:Signature": {
-            "$comment": "x-orderOf-StatementContentModel",
+            "$comment": "x-order-StatementContentModel",
             "minOccurs": "0"
           }
         }
