@@ -31,17 +31,16 @@
             "@level":1
           },
           {
+            "@name":"Shape",
+            "@level":4
+          },
+          {
             "@name":"Grouping",
             "@level":3
           },
           {
             "@name":"Core",
             "@level":1
-          }
-        ],
-        "-children":[
-          {
-            "#comment":"<component name='Shape' level='4'></component>"
           }
         ],
         "meta": [
@@ -67,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"01 March 2024"
           },
           {
             "@name":"generator",
@@ -151,42 +150,42 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "-backTexture":
+                                "-back":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"backShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
                                     }
                                   },
-                                "-bottomTexture":
+                                "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"bottomShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
                                     }
                                   },
-                                "-frontTexture":
+                                "-front":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"frontShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
                                     }
                                   },
-                                "-leftTexture":
+                                "-left":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"leftShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
                                     }
                                   },
-                                "-rightTexture":
+                                "-right":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"rightShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
                                     }
                                   },
-                                "-topTexture":
+                                "-top":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"topShader",
