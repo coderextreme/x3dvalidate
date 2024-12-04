@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var validate = require(__dirname+'/../src/index')
+var validate = require(__dirname+'/../index')
 
 var files = [
 __dirname+"/../examples/abox.json",
