@@ -1,7 +1,9 @@
 const Ajv2020 = require("ajv/dist/2020.js");
-const addFormats = require("ajv-formats");
+// const addFormats = require("ajv-formats");
 const ajv = new Ajv2020({ strict: true });
-addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
+// addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
+const apply = require('ajv-formats-draft2019');
+apply(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 
 var fs = require('fs');
 

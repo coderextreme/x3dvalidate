@@ -3,9 +3,11 @@ var selectObjectFromJson = require('./selectObjectFromJson');
 let loadSchema = require("./loadValidate");
 const Ajv2020 = require("ajv/dist/2020.js");
 const ajv = new Ajv2020({ strict: false });
-const addFormats = require("ajv-formats");
-
-addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
+// const addFormats = require("ajv-formats");
+// addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
+//
+const apply = require('ajv-formats-draft2019');
+apply(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 
 function parseErrors(errors) {
 	if (errors !== null) {
