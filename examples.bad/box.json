@@ -1,0 +1,63 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"box.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"generator",
+            "@content":"manual"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/box.json"
+          },
+          {
+            "@name":"description",
+            "@content":"a box"
+          },
+          {
+            "@name":"modified",
+            "@content":"09 August 2025"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+		{ "NavigationInfo":
+		    {
+		      "@type":["EXAMINE", 1]
+		    }
+		  },
+                    { "Shape":
+                      {
+                        "-geometry":
+                          { "Box":
+                            {
+                              "@size":["0",140,"-1"]
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+  }
+}

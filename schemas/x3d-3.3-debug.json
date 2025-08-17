@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-        "title": "X3D V3.3 JSON Schema, generated 2024/12/05 16:15:02",
+        "title": "X3D V3.3 JSON Schema, generated 2025/08/15 10:17:05",
         "description": "Experimental JSON Schema for X3D V3.3",
         "type": "object",
         "properties": {
@@ -975,7 +975,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1073,7 +1075,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1145,7 +1149,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1219,7 +1225,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1307,7 +1315,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1406,7 +1416,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1570,7 +1582,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1658,7 +1672,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1759,7 +1775,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1870,7 +1888,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1924,7 +1944,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -1994,7 +2016,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2053,7 +2077,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2112,7 +2138,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2191,7 +2219,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2253,7 +2283,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2323,7 +2355,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2403,7 +2437,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2486,7 +2522,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2574,7 +2612,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2747,7 +2787,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2871,7 +2913,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -2931,7 +2975,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3030,7 +3076,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3155,7 +3203,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3280,7 +3330,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3364,7 +3416,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3531,7 +3585,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3599,7 +3655,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3688,7 +3746,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3753,7 +3813,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3843,7 +3905,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -3945,7 +4009,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4018,7 +4084,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4152,7 +4220,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4224,7 +4294,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4299,7 +4371,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4374,7 +4448,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4436,7 +4512,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4517,7 +4595,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4674,7 +4754,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4889,7 +4971,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -4943,7 +5027,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5006,7 +5092,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5069,7 +5157,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5149,7 +5239,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5241,7 +5333,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5304,7 +5398,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5375,7 +5471,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5446,7 +5544,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5532,7 +5632,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5656,7 +5758,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5774,7 +5878,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5851,7 +5957,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -5964,7 +6072,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -6035,7 +6145,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -6200,7 +6312,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -6271,7 +6385,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -6380,7 +6496,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -6507,7 +6625,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7001,7 +7121,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7159,7 +7281,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7336,7 +7460,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7420,7 +7546,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7493,7 +7621,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7577,7 +7707,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7641,7 +7773,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7787,7 +7921,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7871,7 +8007,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -7944,7 +8082,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8013,7 +8153,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8158,7 +8300,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8251,7 +8395,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8403,7 +8549,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8478,7 +8626,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8551,7 +8701,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8628,7 +8780,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8726,7 +8880,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8795,7 +8951,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -8972,7 +9130,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -9125,7 +9285,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -9201,7 +9363,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -9362,7 +9526,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -9578,7 +9744,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -9931,7 +10099,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10143,7 +10313,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10421,7 +10593,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10488,7 +10662,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10565,7 +10741,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10676,7 +10854,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10815,7 +10995,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -10904,7 +11086,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11005,7 +11189,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11106,7 +11292,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11207,7 +11395,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11308,7 +11498,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11399,7 +11591,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11469,7 +11663,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11544,7 +11740,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11661,7 +11859,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11720,7 +11920,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11782,7 +11984,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11855,7 +12059,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -11869,22 +12075,29 @@
 						"type":"array",
 						"$comment":"MFString inputOutput",
 						"type":"array",
-						"items": {
-							"enum": [
-								"\"LEFT\" \"BOTTOM\"",
-								"\"LEFT\" \"CENTER\"",
-								"\"LEFT\" \"TOP\"",
-								"\"CENTER\" \"BOTTOM\"",
-								"\"CENTER\" \"CENTER\"",
-								"\"CENTER\" \"TOP\"",
-								"\"RIGHT\" \"BOTTOM\"",
-								"\"RIGHT\" \"CENTER\"",
-								"\"RIGHT\" \"TOP\""
-							]
-,
-							"default":"CENTER",
-						"type":"string"
-						}					},
+						"prefixItems": [
+							{
+								"enum": [
+									"CENTER",
+									"LEFT",
+									"RIGHT"
+								],
+								"default":"CENTER",
+								"type":"string"
+							}
+							,
+							{
+								"enum": [
+									"TOP",
+									"CENTER",
+									"BOTTOM"
+								],
+								"default":"CENTER",
+								"type":"string"
+							}
+						],
+						"items": false,						"minItems": 2,						"maxItems": 2
+					},
 					"IS" : {
 						"$ref":"#/$defs/IS"
 					},
@@ -11905,50 +12118,59 @@
 						"type":"array",
 						"$comment":"MFString inputOutput",
 						"type":"array",
-						"items": {
-							"enum": [
-								"\"WORLD\" \"WORLD\"",
-								"\"WORLD\" \"FRACTION\"",
-								"\"WORLD\" \"PIXEL\"",
-								"\"FRACTION\" \"WORLD\"",
-								"\"FRACTION\" \"FRACTION\"",
-								"\"FRACTION\" \"PIXEL\"",
-								"\"PIXEL\" \"WORLD\"",
-								"\"PIXEL\" \"FRACTION\"",
-								"\"PIXEL\" \"PIXEL\""
-							]
-,
-							"default":"WORLD",
-						"type":"string"
-						}					},
+						"prefixItems": [
+							{
+								"enum": [
+									"PIXEL",
+									"FRACTION",
+									"WORLD"
+								],
+								"default":"WORLD",
+								"type":"string"
+							}
+							,
+							{
+								"enum": [
+									"PIXEL",
+									"FRACTION",
+									"WORLD"
+								],
+								"default":"WORLD",
+								"type":"string"
+							}
+						],
+						"items": false,						"minItems": 2,						"maxItems": 2
+					},
 					"@scaleMode" : {
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
 						"type":"array",
-						"items": {
-							"enum": [
-								"\"NONE\" \"NONE\"",
-								"\"NONE\" \"FRACTION\"",
-								"\"NONE\" \"STRETCH\"",
-								"\"NONE\" \"PIXEL\"",
-								"\"FRACTION\" \"NONE\"",
-								"\"FRACTION\" \"FRACTION\"",
-								"\"FRACTION\" \"STRETCH\"",
-								"\"FRACTION\" \"PIXEL\"",
-								"\"STRETCH\" \"NONE\"",
-								"\"STRETCH\" \"FRACTION\"",
-								"\"STRETCH\" \"STRETCH\"",
-								"\"STRETCH\" \"PIXEL\"",
-								"\"PIXEL\" \"NONE\"",
-								"\"PIXEL\" \"FRACTION\"",
-								"\"PIXEL\" \"STRETCH\"",
-								"\"PIXEL\" \"PIXEL\""
-							]
-,
-							"default":"NONE",
-						"type":"string"
-						}					},
+						"prefixItems": [
+							{
+								"enum": [
+									"PIXEL",
+									"FRACTION",
+									"STRETCH",
+									"NONE"
+								],
+								"default":"NONE",
+								"type":"string"
+							}
+							,
+							{
+								"enum": [
+									"PIXEL",
+									"FRACTION",
+									"STRETCH",
+									"NONE"
+								],
+								"default":"NONE",
+								"type":"string"
+							}
+						],
+						"items": false,						"minItems": 2,						"maxItems": 2
+					},
 					"@size" : {
 						"$comment":"MFFloat initializeOnly",
 						"type":"array",
@@ -11963,22 +12185,29 @@
 						"type":"array",
 						"$comment":"MFString inputOutput",
 						"type":"array",
-						"items": {
-							"enum": [
-								"\"WORLD\" \"WORLD\"",
-								"\"WORLD\" \"FRACTION\"",
-								"\"WORLD\" \"PIXEL\"",
-								"\"FRACTION\" \"WORLD\"",
-								"\"FRACTION\" \"FRACTION\"",
-								"\"FRACTION\" \"PIXEL\"",
-								"\"PIXEL\" \"WORLD\"",
-								"\"PIXEL\" \"FRACTION\"",
-								"\"PIXEL\" \"PIXEL\""
-							]
-,
-							"default":"WORLD",
-						"type":"string"
-						}					},
+						"prefixItems": [
+							{
+								"enum": [
+									"PIXEL",
+									"FRACTION",
+									"WORLD"
+								],
+								"default":"WORLD",
+								"type":"string"
+							}
+							,
+							{
+								"enum": [
+									"PIXEL",
+									"FRACTION",
+									"WORLD"
+								],
+								"default":"WORLD",
+								"type":"string"
+							}
+						],
+						"items": false,						"minItems": 2,						"maxItems": 2
+					},
 					"@DEF" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
@@ -12018,7 +12247,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12100,7 +12331,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12165,7 +12398,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12287,7 +12522,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12357,7 +12594,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12432,7 +12671,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12500,7 +12741,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12589,7 +12832,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12689,7 +12934,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12809,7 +13056,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -12875,7 +13124,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13036,7 +13287,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13106,7 +13359,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13176,7 +13431,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13246,7 +13503,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13316,7 +13575,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13381,7 +13642,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13451,7 +13714,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13633,7 +13898,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13750,7 +14017,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13898,7 +14167,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -13955,7 +14226,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14012,7 +14285,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14098,29 +14373,18 @@
 						"prefixItems": [
 						{
 							"enum": [
-							"ANY",
 								"WALK",
-								"EXAMINE",
-								"FLY",
-								"LOOKAT",
+								"EXPLORE",
 								"NONE",
-								"EXPLORE"
+								"FLY",
+								"ANY",
+								"EXAMINE",
+								"LOOKAT"
 							],
 								"default":"EXAMINE",
 						"type":"string"
 						},
 						{
-							"enum": [
-							"ANY",
-								"WALK",
-								"EXAMINE",
-								"FLY",
-								"LOOKAT",
-								"NONE",
-								"EXPLORE"
-							],
-								"default":"ANY",
-						"type":"string"
 						}						],
 						"items": {
 						"type":"string"
@@ -14170,7 +14434,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14235,7 +14501,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14306,7 +14574,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14396,7 +14666,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14492,7 +14764,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14571,7 +14845,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14705,7 +14981,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14784,7 +15062,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14869,7 +15149,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -14974,7 +15256,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15044,7 +15328,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15114,7 +15400,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15226,7 +15514,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15363,7 +15653,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15425,7 +15717,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15545,7 +15839,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15677,7 +15973,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15748,7 +16046,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15911,7 +16211,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -15993,7 +16295,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16163,7 +16467,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16262,7 +16568,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16338,7 +16646,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16419,7 +16729,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16550,7 +16862,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16664,7 +16978,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16803,7 +17119,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16925,7 +17243,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -16991,7 +17311,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17054,7 +17376,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17178,7 +17502,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17241,7 +17567,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17323,7 +17651,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17405,7 +17735,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17499,7 +17831,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17593,7 +17927,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17664,7 +18000,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17735,7 +18073,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17857,7 +18197,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -17926,7 +18268,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18053,7 +18397,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18143,7 +18489,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18224,7 +18572,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18316,7 +18666,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18512,7 +18864,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18582,7 +18936,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -18873,7 +19229,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19055,7 +19413,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19125,7 +19485,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19207,7 +19569,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19290,7 +19654,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19436,7 +19802,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19512,7 +19880,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19599,7 +19969,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19705,7 +20077,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19792,7 +20166,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19875,7 +20251,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -19964,7 +20342,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20046,7 +20426,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20245,7 +20627,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20327,7 +20711,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20446,7 +20832,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20573,7 +20961,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20709,7 +21099,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20774,7 +21166,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20872,7 +21266,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -20962,7 +21358,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21052,7 +21450,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21140,7 +21540,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21318,7 +21720,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21394,7 +21798,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21470,7 +21876,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21534,7 +21942,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21615,7 +22025,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21697,7 +22109,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21775,7 +22189,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21865,7 +22281,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -21950,7 +22368,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22072,7 +22492,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22135,7 +22557,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22198,7 +22622,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22261,7 +22687,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22341,7 +22769,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22511,7 +22941,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22603,7 +23035,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22720,7 +23154,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22862,7 +23298,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -22952,7 +23390,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23006,7 +23446,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23148,7 +23590,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23211,7 +23655,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23380,7 +23826,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23464,7 +23912,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23752,7 +24202,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23853,7 +24305,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -23945,7 +24399,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24013,7 +24469,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24114,7 +24572,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24346,7 +24806,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24484,7 +24946,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24625,7 +25089,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24715,7 +25181,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24830,7 +25298,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -24911,7 +25381,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -25006,7 +25478,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -25135,7 +25609,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -25257,7 +25733,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
@@ -25360,7 +25838,9 @@
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{

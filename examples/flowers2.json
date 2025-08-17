@@ -21,16 +21,12 @@
             "@content":"John Carlson"
           },
           {
-            "@name":"transcriber",
-            "@content":"John Carlson"
-          },
-          {
             "@name":"created",
             "@content":"23 January 2005"
           },
           {
             "@name":"modified",
-            "@content":"21 March 2018"
+            "@content":"9 November 2024"
           },
           {
             "@name":"description",
@@ -50,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 April 2024"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
@@ -174,7 +170,7 @@
                                             },
                                           "-children":[
                                             {
-                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
                                             }
                                           ],
                                           "-geometry":
