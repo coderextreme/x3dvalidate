@@ -1,13 +1,17 @@
-let fs = require('fs');
-var selectObjectFromJson = require('./selectObjectFromJson');
-let loadSchema = require("./loadValidate");
-const Ajv2020 = require("ajv/dist/2020.js");
-const ajv = new Ajv2020({ strict: false });
-// const addFormats = require("ajv-formats");
-// addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
-//
-const apply = require('ajv-formats-draft2019');
-apply(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats-draft2019";
+var ajv = new Ajv2020({ strict: false });
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
+
+import fs from 'fs';
+import selectObjectFromJson from './selectObjectFromJson.js';
+import loadSchema from "./loadValidate.js";
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 function parseErrors(errors) {
 	if (errors !== null) {

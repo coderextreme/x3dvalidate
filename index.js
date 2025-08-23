@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 
 "use strict";
-const Ajv2020 = require("ajv/dist/2020");
-// const addFormats = require("ajv-formats");
-const apply = require('ajv-formats-draft2019');
-let ajv = new Ajv2020({ strict: false });
-// addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
-apply(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
-let fs = require('fs');
-let http = require('http');
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats-draft2019";
+import fs from 'fs';
+
+var ajv = new Ajv2020({ strict: false });
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
+
+import http from 'http';
 
 let validate = function() { return false; }
 
@@ -107,7 +113,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 	}
 }
 
-function validateJSON(files) {
+export default function validateJSON(files) {
 
 	if (files.length === 0) {
 		console.error("Please specify some .json or .x3dj JSON filenames (any filename path) to validate on the command-line, or in the validate/validateJSON function call.  Full help is available via the --help command line option.");
@@ -149,8 +155,6 @@ function validateJSON(files) {
 		}
 	}
 }
-
-module.exports = validateJSON
 
 //alx:
 //console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));

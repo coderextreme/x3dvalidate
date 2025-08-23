@@ -1,11 +1,15 @@
-const Ajv2020 = require("ajv/dist/2020.js");
-// const addFormats = require("ajv-formats");
-const ajv = new Ajv2020({ strict: true });
-// addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
-const apply = require('ajv-formats-draft2019');
-apply(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats-draft2019";
+import X3DJSONLD from './X3DJSONLD.js';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-var fs = require('fs');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+var ajv = new Ajv2020({ strict: false });
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 
 var CACHE = {};
 CACHE.validate = {};
@@ -88,7 +92,7 @@ async function loadSchemaJson(version) {
   }
 }
 
-loadSchema = async function loadSchema(json, file, success, failure) {
+export default async function loadSchema(json, file, success, failure) {
 	var versions = { "4.0":true };
 	var version = "4.0";
 	try {
@@ -118,4 +122,3 @@ loadSchema = async function loadSchema(json, file, success, failure) {
 	      doValidate(json, validated_version, file, success, undefined);
 	}
 }
-module.exports = loadSchema;

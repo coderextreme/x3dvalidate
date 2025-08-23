@@ -37,7 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
  * selectorField is a " > " separated list of properties in node.
  *
  */
-function selectObjectFromJson(node, selectorField) {
+export default function selectObjectFromJson(node, selectorField) {
 	var skipDescendants = 0; // number of descendents to skip
 	var selectedValue = node;
 	var higherValue = selectedValue;
@@ -54,5 +54,3 @@ function selectObjectFromJson(node, selectorField) {
 	}
 	return selectedValue;
 }
-
-module.exports = selectObjectFromJson;

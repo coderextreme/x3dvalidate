@@ -1,6 +1,6 @@
-let loadSchema = require("./loadValidate");
+import loadSchema from "./loadValidate.js";
 
-const validator = function validator() {
+epxort default const validator = function validator() {
 	try {
 		var json = JSON.parse(data);
 		loadSchema(json, "<unknown>", function() {
@@ -12,4 +12,3 @@ const validator = function validator() {
 		alert(je);
 	}
 }
-module.exports = validator;

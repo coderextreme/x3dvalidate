@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 "use strict"
-var validate = require('./index.js')
+
+import validate from './index.js'

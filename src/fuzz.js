@@ -1,4 +1,4 @@
-var fs = require('fs');
+import fs from 'fs';
 
 var schema = fs.readFileSync(__dirname+"/../schemas/x3d-4.0-JSONSchema.json");
 var root = JSON.parse(schema.toString());
