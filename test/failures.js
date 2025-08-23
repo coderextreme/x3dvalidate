@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 
-var validate = require(__dirname+'/../src/index');
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+import validateJSON from "../index.js";
 
 var files = [
 __dirname+"/../examples.bad/abox.json",
@@ -9,4 +15,4 @@ __dirname+"/../examples.bad/HelloWorldProgramOutput.json",
 __dirname+"/../examples.bad/HelloWorldProgramOutput2.json"
 ];
 
-validate(files);
+validateJSON(files);
