@@ -1,0 +1,864 @@
+{ "X3D":
+  {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.2, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "modified",
+          "@content": "Fri, 12 Sep 2025 01:51:23 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "HAnim",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "HAnimHumanoid":
+          {
+            "@DEF": "HAnim",
+            "@name": "humanoid",
+            "-skeleton": [
+              { "HAnimJoint":
+                {
+                  "@DEF": "hanim_sacroiliac",
+                  "@name": "sacroiliac",
+                  "@center": [ 0, 0.9, 0 ],
+                  "-children": [
+                    { "HAnimJoint":
+                      {
+                        "@DEF": "hanim_vt1",
+                        "@name": "vt1",
+                        "@center": [ 0, 1.15, 0 ],
+                        "-children": [
+                          { "HAnimSegment":
+                            {
+                              "-children": [
+                                { "HAnimSite":
+                                  {
+                                    "@translation": [ 0, 1.15, 0 ],
+                                    "@rotation": [ 1, 0, 0, 3.14159 ],
+                                    "-children": [
+                                      { "Shape":
+                                        {
+                                          "-appearance": { "Appearance":
+                                            {
+                                              "-material": { "Material":
+                                                {
+                                                  "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "-geometry": { "Cone":
+                                            {
+                                              "@height": 0.5,
+                                              "@bottomRadius": 0.25
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "HAnimJoint":
+                            {
+                              "@DEF": "hanim_skullbase",
+                              "@name": "skullbase",
+                              "@center": [ 0, 1.5, 0 ],
+                              "-children": [
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ 0, 1.5, 0 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Sphere":
+                                                  {
+                                                    "@radius": 0.15
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "HAnimJoint":
+                            {
+                              "@DEF": "hanim_l_shoulder",
+                              "@name": "l_shoulder",
+                              "@rotation": [ 1.00000000000035, 0, 0, 0.0472000122070145 ],
+                              "@center": [ 0.25, 1.35, 0 ],
+                              "-children": [
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ 0.25, 1.2, 0 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Cylinder":
+                                                  {
+                                                    "@height": 0.3,
+                                                    "@radius": 0.04
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "HAnimJoint":
+                                  {
+                                    "@DEF": "hanim_l_elbow",
+                                    "@name": "l_elbow",
+                                    "@rotation": [ 1, 0, 0, 5.98318530717959 ],
+                                    "@center": [ 0.25, 1.05, 0 ],
+                                    "-children": [
+                                      { "HAnimSegment":
+                                        {
+                                          "-children": [
+                                            { "HAnimSite":
+                                              {
+                                                "@translation": [ 0.25, 0.9, 0 ],
+                                                "-children": [
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance": { "Appearance":
+                                                        {
+                                                          "-material": { "Material":
+                                                            {
+                                                              "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "-geometry": { "Cylinder":
+                                                        {
+                                                          "@height": 0.3,
+                                                          "@radius": 0.04
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "HAnimJoint":
+                                        {
+                                          "@DEF": "hanim_l_wrist",
+                                          "@name": "l_wrist",
+                                          "@center": [ 0.25, 0.75, 0 ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "HAnimJoint":
+                            {
+                              "@DEF": "hanim_r_shoulder",
+                              "@name": "r_shoulder",
+                              "@rotation": [ -1.00000000000036, 0, 0, 0.0472000122070145 ],
+                              "@center": [ -0.25, 1.35, 0 ],
+                              "-children": [
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ -0.25, 1.2, 0 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Cylinder":
+                                                  {
+                                                    "@height": 0.3,
+                                                    "@radius": 0.04
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "HAnimJoint":
+                                  {
+                                    "@DEF": "hanim_r_elbow",
+                                    "@name": "r_elbow",
+                                    "@rotation": [ 1, 0, 0, 5.98318530717959 ],
+                                    "@center": [ -0.25, 1.05, 0 ],
+                                    "-children": [
+                                      { "HAnimSegment":
+                                        {
+                                          "-children": [
+                                            { "HAnimSite":
+                                              {
+                                                "@translation": [ -0.25, 0.9, 0 ],
+                                                "-children": [
+                                                  { "Shape":
+                                                    {
+                                                      "-appearance": { "Appearance":
+                                                        {
+                                                          "-material": { "Material":
+                                                            {
+                                                              "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "-geometry": { "Cylinder":
+                                                        {
+                                                          "@height": 0.3,
+                                                          "@radius": 0.04
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "HAnimJoint":
+                                        {
+                                          "@DEF": "hanim_r_wrist",
+                                          "@name": "r_wrist",
+                                          "@center": [ -0.25, 0.75, 0 ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "HAnimJoint":
+                      {
+                        "@DEF": "hanim_l_hip",
+                        "@name": "l_hip",
+                        "@rotation": [ -1.00000000000005, 0, 0, 0.0590000152587861 ],
+                        "@center": [ 0.15, 0.9, 0 ],
+                        "-children": [
+                          { "HAnimSegment":
+                            {
+                              "-children": [
+                                { "HAnimSite":
+                                  {
+                                    "@translation": [ 0.15, 0.7, 0 ],
+                                    "-children": [
+                                      { "Shape":
+                                        {
+                                          "-appearance": { "Appearance":
+                                            {
+                                              "-material": { "Material":
+                                                {
+                                                  "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "-geometry": { "Cylinder":
+                                            {
+                                              "@height": 0.4,
+                                              "@radius": 0.05
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "HAnimJoint":
+                            {
+                              "@DEF": "hanim_l_knee",
+                              "@name": "l_knee",
+                              "@center": [ 0.15, 0.5, 0 ],
+                              "-children": [
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ 0.15, 0.3, 0 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Cylinder":
+                                                  {
+                                                    "@height": 0.4,
+                                                    "@radius": 0.05
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ 0.15, 0.1, 0.05 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Sphere":
+                                                  {
+                                                    "@radius": 0.07
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "HAnimJoint":
+                                  {
+                                    "@DEF": "hanim_l_ankle",
+                                    "@name": "l_ankle",
+                                    "@center": [ 0.15, 0.1, 0 ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "HAnimJoint":
+                      {
+                        "@DEF": "hanim_r_hip",
+                        "@name": "r_hip",
+                        "@rotation": [ 1.00000000000005, 0, 0, 0.0590000152587861 ],
+                        "@center": [ -0.15, 0.9, 0 ],
+                        "-children": [
+                          { "HAnimSegment":
+                            {
+                              "-children": [
+                                { "HAnimSite":
+                                  {
+                                    "@translation": [ -0.15, 0.7, 0 ],
+                                    "-children": [
+                                      { "Shape":
+                                        {
+                                          "-appearance": { "Appearance":
+                                            {
+                                              "-material": { "Material":
+                                                {
+                                                  "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "-geometry": { "Cylinder":
+                                            {
+                                              "@height": 0.4,
+                                              "@radius": 0.05
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "HAnimJoint":
+                            {
+                              "@DEF": "hanim_r_knee",
+                              "@name": "r_knee",
+                              "@center": [ -0.15, 0.5, 0 ],
+                              "-children": [
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ -0.15, 0.3, 0 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Cylinder":
+                                                  {
+                                                    "@height": 0.4,
+                                                    "@radius": 0.05
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "HAnimSegment":
+                                  {
+                                    "-children": [
+                                      { "HAnimSite":
+                                        {
+                                          "@translation": [ -0.15, 0.1, 0.05 ],
+                                          "-children": [
+                                            { "Shape":
+                                              {
+                                                "-appearance": { "Appearance":
+                                                  {
+                                                    "-material": { "Material":
+                                                      {
+                                                        "@diffuseColor": [ 0.6, 0.6, 0.6 ]
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "-geometry": { "Sphere":
+                                                  {
+                                                    "@radius": 0.07
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "HAnimJoint":
+                                  {
+                                    "@DEF": "hanim_r_ankle",
+                                    "@name": "r_ankle",
+                                    "@center": [ -0.15, 0.1, 0 ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "-joints": [
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_sacroiliac"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_vt1"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_skullbase"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_l_shoulder"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_l_elbow"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_l_wrist"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_r_shoulder"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_r_elbow"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_r_wrist"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_l_hip"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_l_knee"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_l_ankle"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_r_hip"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_r_knee"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@USE": "hanim_r_ankle"
+                }
+              }
+            ]
+          }
+        },
+        { "TimeSensor":
+          {
+            "@DEF": "Clock",
+            "@cycleInterval": 2,
+            "@loop": true
+          }
+        },
+        { "OrientationInterpolator":
+          {
+            "@DEF": "LHipAnimator",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              1, 0, 0, -0.5,
+              1, 0, 0, 0,
+              1, 0, 0, 0.5,
+              1, 0, 0, 0,
+              1, 0, 0, -0.5
+            ]
+          }
+        },
+        { "OrientationInterpolator":
+          {
+            "@DEF": "RHipAnimator",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              1, 0, 0, 0.5,
+              1, 0, 0, 0,
+              1, 0, 0, -0.5,
+              1, 0, 0, 0,
+              1, 0, 0, 0.5
+            ]
+          }
+        },
+        { "OrientationInterpolator":
+          {
+            "@DEF": "KneeAnimator",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              1, 0, 0, 0,
+              1, 0, 0, 1.2,
+              1, 0, 0, 0,
+              1, 0, 0, 0,
+              1, 0, 0, 0
+            ]
+          }
+        },
+        { "OrientationInterpolator":
+          {
+            "@DEF": "LShoulderAnimator",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              1, 0, 0, 0.4,
+              1, 0, 0, 0,
+              1, 0, 0, -0.4,
+              1, 0, 0, 0,
+              1, 0, 0, 0.4
+            ]
+          }
+        },
+        { "OrientationInterpolator":
+          {
+            "@DEF": "RShoulderAnimator",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              1, 0, 0, -0.4,
+              1, 0, 0, 0,
+              1, 0, 0, 0.4,
+              1, 0, 0, 0,
+              1, 0, 0, -0.4
+            ]
+          }
+        },
+        { "OrientationInterpolator":
+          {
+            "@DEF": "ElbowAnimator",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              1, 0, 0, -0.3,
+              1, 0, 0, -0.8,
+              1, 0, 0, -0.3,
+              1, 0, 0, -0.3,
+              1, 0, 0, -0.3
+            ]
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "LHipAnimator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "LHipAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_l_hip",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "RHipAnimator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "RHipAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_r_hip",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "KneeAnimator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "KneeAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_l_knee",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "KneeAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_r_knee",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "LShoulderAnimator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "LShoulderAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_l_shoulder",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "RShoulderAnimator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "RShoulderAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_r_shoulder",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "ElbowAnimator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "ElbowAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_l_elbow",
+            "@toField": "set_rotation"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "ElbowAnimator",
+            "@fromField": "value_changed",
+            "@toNode": "hanim_r_elbow",
+            "@toField": "set_rotation"
+          }
+        }
+      ]
+    }
+  }
+}

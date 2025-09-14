@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2025/08/15 10:17:05",
+  "title": "X3D V4.0 JSON Schema, generated 2025/09/13 20:44:37",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -12252,12 +12252,14 @@
               "items": false
             },
             "@scale": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
               "items": {
                 "default": 1,
+                "exclusiveMinimum": 0,
                 "type": "number"
               }
             },
@@ -15300,18 +15302,18 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "LEFT",
                     "RIGHT",
-                    "CENTER"
+                    "CENTER",
+                    "LEFT"
                   ],
                   "default": "CENTER",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "CENTER",
                     "BOTTOM",
-                    "TOP",
-                    "CENTER"
+                    "TOP"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -15341,18 +15343,18 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "WORLD",
                     "PIXEL",
-                    "FRACTION",
-                    "WORLD"
+                    "FRACTION"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "WORLD",
                     "PIXEL",
-                    "FRACTION",
-                    "WORLD"
+                    "FRACTION"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -15368,20 +15370,20 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "PIXEL",
                     "FRACTION",
+                    "NONE",
                     "STRETCH",
-                    "NONE"
+                    "PIXEL"
                   ],
                   "default": "NONE",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "PIXEL",
                     "FRACTION",
+                    "NONE",
                     "STRETCH",
-                    "NONE"
+                    "PIXEL"
                   ],
                   "default": "NONE",
                   "type": "string"
@@ -15405,18 +15407,18 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "WORLD",
                     "PIXEL",
-                    "FRACTION",
-                    "WORLD"
+                    "FRACTION"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "WORLD",
                     "PIXEL",
-                    "FRACTION",
-                    "WORLD"
+                    "FRACTION"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -18207,13 +18209,13 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "EXPLORE",
-                    "LOOKAT",
                     "FLY",
                     "EXAMINE",
-                    "WALK",
                     "ANY",
-                    "NONE"
+                    "NONE",
+                    "LOOKAT",
+                    "WALK",
+                    "EXPLORE"
                   ],
                   "default": "EXAMINE",
                   "type": "string"
@@ -20267,6 +20269,9 @@
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
+            },
+            "-periodicWave": {
+              "$ref": "#/$defs/-PeriodicWaveSFNode"
             },
             "@resumeTime": {
               "default": 0,
@@ -27344,8 +27349,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@streamIdentifier": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -27468,8 +27476,11 @@
               "type": "number"
             },
             "@streamIdentifier": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -32327,6 +32338,13 @@
             "-children": {
               "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
+            "@curve": {
+              "$comment": "MFFloat inputOutput",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -35303,9 +35321,6 @@
     "-X3DTextureTransformNodeSFNode": {
       "type": "object",
       "properties": {
-        "MultiTextureTransform": {
-          "$ref": "#/$defs/MultiTextureTransform"
-        },
         "TextureTransform": {
           "$ref": "#/$defs/TextureTransform"
         },
@@ -35314,6 +35329,9 @@
         },
         "TextureTransformMatrix3D": {
           "$ref": "#/$defs/TextureTransformMatrix3D"
+        },
+        "MultiTextureTransform": {
+          "$ref": "#/$defs/MultiTextureTransform"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -36523,9 +36541,6 @@
           "MultiTexture": {
             "$ref": "#/$defs/MultiTexture"
           },
-          "MultiTextureTransform": {
-            "$ref": "#/$defs/MultiTextureTransform"
-          },
           "TextureTransform": {
             "$ref": "#/$defs/TextureTransform"
           },
@@ -36534,6 +36549,9 @@
           },
           "TextureTransformMatrix3D": {
             "$ref": "#/$defs/TextureTransformMatrix3D"
+          },
+          "MultiTextureTransform": {
+            "$ref": "#/$defs/MultiTextureTransform"
           },
           "AcousticProperties": {
             "$ref": "#/$defs/AcousticProperties"
@@ -37920,6 +37938,15 @@
           "#comment": {
             "type": "string"
           },
+          "TextureTransform": {
+            "$ref": "#/$defs/TextureTransform"
+          },
+          "TextureTransform3D": {
+            "$ref": "#/$defs/TextureTransform3D"
+          },
+          "TextureTransformMatrix3D": {
+            "$ref": "#/$defs/TextureTransformMatrix3D"
+          },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
           }
@@ -38053,6 +38080,18 @@
         },
         "ImageTextureAtlas": {
           "$ref": "#/$defs/ImageTextureAtlas"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-PeriodicWaveSFNode": {
+      "type": "object",
+      "properties": {
+        "PeriodicWave": {
+          "$ref": "#/$defs/PeriodicWave"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
