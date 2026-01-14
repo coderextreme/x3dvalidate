@@ -93,16 +93,16 @@ async function loadSchemaJson(version) {
 }
 
 export default async function loadSchema(json, file, success, failure) {
-	var versions = { "4.0":true };
-	var version = "4.0";
+	var versions = { "4.1":true };
+	var version = "4.1";
 	try {
 		version = json.X3D["@version"];
 	} catch {
-		console.log("No version found, defaulting to 4.0");
+		console.log("No version found, defaulting to 4.1");
 	}
 	if (!versions[version]) {
-		console.info("Can only validate version 4.0 presently. Switching version to 4.0.");
-		version = "4.0";
+		console.info("Can only validate version 4.1 presently. Switching version to 4.1.");
+		version = "4.1";
 	}
 	var validated_version = CACHE.validate[version];
         if (typeof validated_version === 'undefined') {

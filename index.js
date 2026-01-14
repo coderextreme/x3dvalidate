@@ -13,6 +13,7 @@ import fs from 'fs';
 
 var ajv = new Ajv2020({ strict: false });
 addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
+var schemaAdded = false;
 
 import http from 'http';
 
@@ -74,11 +75,11 @@ function doValidate(json, validated_version, file, success, failure) {
 }
 
 function loadSchema(json, file, doValidate, success, failure) {
-	let versions = { "4.0":true }
+	let versions = { "4.1":true }
 	let version = json.X3D["@version"];
 	if (!versions[version]) {
-		console.log("Can only validate version X3D 4.0 presently. Switching version to X3D 4.0.");
-		version = "4.0";
+		console.log("Can only validate version X3D 4.1 presently. Switching version to X3D 4.1.");
+		version = "4.1";
 	}
 	let validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
@@ -92,16 +93,19 @@ function loadSchema(json, file, doValidate, success, failure) {
 		console.log("Adding meta schema");
 		ajv.addMetaSchema(metaschemajson);
 		*/
-		console.log("Loading schema");
-		let schema = fs.readFileSync(__dirname+"/schemas/x3d-"+version+"-JSONSchema.json");
-		// let schema = fs.readFileSync("X3dXml4.0SchemaConvertedToJson2020-12Schema.json");
-		console.log("Parsing schema");
-		let schemajson = JSON.parse(schema.toString());
-		console.log("Adding schema");
-		ajv.addSchema(schemajson);
-		console.log("Schema", version, "added");
-		validated_version = ajv.compile(schemajson);
-		validate[version] = validated_version;
+		if (!schemaAdded) {
+			schemaAdded = true;
+			console.log("Loading schema");
+			let schema = fs.readFileSync(__dirname+"/schemas/x3d-"+version+"-JSONSchema.json");
+			// let schema = fs.readFileSync("X3dXml4.1SchemaConvertedToJson2020-12Schema.json");
+			console.log("Parsing schema");
+			let schemajson = JSON.parse(schema.toString());
+			console.log("Adding schema");
+			ajv.addSchema(schemajson);
+			console.log("Schema", version, "added");
+			validated_version = ajv.compile(schemajson);
+			validate[version] = validated_version;
+		}
 		if (typeof validated_version === 'undefined') {
 			console.log("Schema", version, "not compiled");
 		} else {

@@ -50,7 +50,7 @@ function parseErrors(errors) {
 
 async function validateSchema() {
 	try {
-	  let schema = JSON.parse(fs.readFileSync(__dirname+'/x3d-4.0-JSONSchema.json').toString());
+	  let schema = JSON.parse(fs.readFileSync(__dirname+'/x3d-4.1-JSONSchema.json').toString());
 	  let json = JSON.parse(fs.readFileSync(__dirname+"/examples.bad/HelloWorldProgramOutput2.json").toString());
 	  let validate = ajv.compile(schema);
 	  let result = await validate(json);
