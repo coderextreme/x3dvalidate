@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-  "title": "X3D V4.1 JSON Schema, generated 2026/01/14 01:44:18",
+  "title": "X3D V4.1 JSON Schema, generated 2026/01/14 01:59:01",
   "description": "Experimental JSON Schema for X3D V4.1",
   "license": "Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
@@ -2467,7 +2467,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@enabled": {
               "default": true,
@@ -2970,7 +2970,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@enabled": {
               "default": true,
@@ -3435,7 +3435,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Shape-LOD-Transform-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -3639,9 +3639,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-CADFaceMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -3676,6 +3673,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-CADFaceMFNode"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -3821,7 +3821,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@colorSteps": {
               "maximum": 64,
@@ -4441,7 +4441,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-CollidableOffset-CollidableShape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -4581,7 +4581,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Shape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -4830,7 +4830,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-CollidableOffset-CollidableShape-CollisionSpace-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@appliedParameters": {
               "$comment": "MFString inputOutput",
@@ -5017,7 +5017,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-CollisionCollection-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-collider": {
               "$ref": "#/$defs/-CollisionCollectionSFNode"
@@ -5102,7 +5102,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-CollidableOffset-CollidableShape-CollisionSpace-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -5664,7 +5664,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-PixelTexture-MovieTexture-ProtoInstance-TexturePropertiesMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-backTexture": {
               "$ref": "#/$defs/-X3DTexture2DNodeSFNode"
@@ -5777,7 +5777,7 @@
               "$ref": "#/$defs/field"
             },
             "-children": {
-              "$ref": "#/$defs/-ShaderPart-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -5863,7 +5863,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstance-ImageTexture-PixelTexture-MovieTextureMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -5955,7 +5955,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@enabled": {
               "default": true,
@@ -6266,7 +6266,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-RigidBody-CollidableOffset-CollidableShape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@appliedParameters": {
               "$comment": "MFString inputOutput",
@@ -7775,9 +7775,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-DISEntityTypeMappingMFNode"
-            },
             "@address": {
               "default": "localhost",
               "$comment": "SFString inputOutput",
@@ -7787,6 +7784,9 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "-children": {
+              "$ref": "#/$defs/-DISEntityTypeMappingMFNode"
             },
             "-mapping": {
               "$ref": "#/$defs/-DISEntityTypeMappingMFNode"
@@ -8535,7 +8535,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@edgeColor": {
               "maximum": 1,
@@ -8652,7 +8652,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-FloatVertexAttribute-Matrix3VertexAttribute-Matrix4VertexAttribute-Color-ColorRGBA-FogCoordinate-Normal-TextureCoordinate-TextureCoordinate3D-TextureCoordinate4D-TextureCoordinateGenerator-MultiTextureCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
@@ -8791,7 +8791,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ComposedCubeMapTexture-GeneratedCubeMapTexture-ImageCubeMapTexture-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ambientIntensity": {
               "maximum": 1,
@@ -10643,7 +10643,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -10733,7 +10733,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoOriginMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-geoOrigin": {
               "$ref": "#/$defs/-GeoOriginSFNode"
@@ -10814,7 +10814,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoOriginMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ccw": {
               "default": true,
@@ -10969,9 +10969,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-X3DChildNodeMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -10996,6 +10993,9 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "@geoCoords": {
               "$comment": "SFVec3d inputOutput",
@@ -11082,9 +11082,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-X3DChildNodeMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -11155,6 +11152,9 @@
                 "format": "iri-reference",
                 "type": "string"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "-geoOrigin": {
               "$ref": "#/$defs/-GeoOriginSFNode"
@@ -11250,7 +11250,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoCoordinate-GeoElevationGrid-GeoLocation-GeoLOD-GeoPositionInterpolator-GeoProximitySensor-GeoTouchSensor-GeoTransform-GeoViewpoint-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@autoRefresh": {
               "minimum": 0,
@@ -11442,7 +11442,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoOriginMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-geoOrigin": {
               "$ref": "#/$defs/-GeoOriginSFNode"
@@ -11530,7 +11530,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoOriginMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@center": {
               "$comment": "SFVec3d inputOutput",
@@ -11644,7 +11644,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoOriginMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -11725,9 +11725,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-X3DChildNodeMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -11752,6 +11749,9 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "@geoCenter": {
               "$comment": "SFVec3d inputOutput",
@@ -11909,7 +11909,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-GeoOrigin-NavigationInfoMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@centerOfRotation": {
               "$comment": "SFVec3d inputOutput",
@@ -12401,9 +12401,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-HAnimPoseMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -12438,6 +12435,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-HAnimPoseMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -12680,9 +12680,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-HAnimJoint-HAnimSegmentMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -12717,6 +12714,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-HAnimJoint-HAnimSegmentMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -13327,9 +13327,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-X3DChildNodeMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -13364,6 +13361,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "-coord": {
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
@@ -13933,7 +13933,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@autoRefresh": {
               "minimum": 0,
@@ -14033,7 +14033,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@autoRefresh": {
               "minimum": 0,
@@ -14148,7 +14148,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@autoRefresh": {
               "minimum": 0,
@@ -15266,7 +15266,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -15578,7 +15578,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Layer-LayoutLayer-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@activeLayer": {
               "minimum": 0,
@@ -15671,8 +15671,8 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "RIGHT",
                     "LEFT",
+                    "RIGHT",
                     "CENTER"
                   ],
                   "default": "CENTER",
@@ -15681,8 +15681,8 @@
                 {
                   "enum": [
                     "BOTTOM",
-                    "TOP",
-                    "CENTER"
+                    "CENTER",
+                    "TOP"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -15712,18 +15712,18 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "WORLD",
                     "FRACTION",
-                    "PIXEL",
-                    "WORLD"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "WORLD",
                     "FRACTION",
-                    "PIXEL",
-                    "WORLD"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -15739,9 +15739,9 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "FRACTION",
-                    "STRETCH",
                     "NONE",
+                    "STRETCH",
+                    "FRACTION",
                     "PIXEL"
                   ],
                   "default": "NONE",
@@ -15749,9 +15749,9 @@
                 },
                 {
                   "enum": [
-                    "FRACTION",
-                    "STRETCH",
                     "NONE",
+                    "STRETCH",
+                    "FRACTION",
                     "PIXEL"
                   ],
                   "default": "NONE",
@@ -15776,18 +15776,18 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "WORLD",
                     "FRACTION",
-                    "PIXEL",
-                    "WORLD"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "WORLD",
                     "FRACTION",
-                    "PIXEL",
-                    "WORLD"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -16062,7 +16062,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-LineSet-IndexedLineSet-Shape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -16859,7 +16859,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ambientIntensity": {
               "maximum": 1,
@@ -17541,7 +17541,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -18189,7 +18189,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ComposedCubeMapTexture-GeneratedCubeMapTexture-ImageCubeMapTexture-ComposedTexture3D-ImageTexture3D-PixelTexture3D-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@alpha": {
               "maximum": 1,
@@ -18359,7 +18359,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureCoordinate-TextureCoordinateGenerator-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -18429,7 +18429,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureTransform-TextureTransform3D-TextureTransformMatrix3D-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -18575,13 +18575,13 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "EXPLORE",
+                    "EXAMINE",
+                    "ANY",
                     "LOOKAT",
                     "WALK",
-                    "EXAMINE",
-                    "NONE",
-                    "EXPLORE",
                     "FLY",
-                    "ANY"
+                    "NONE"
                   ],
                   "default": "EXAMINE",
                   "type": "string"
@@ -18816,7 +18816,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@closed": {
               "default": false,
@@ -19023,7 +19023,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-controlPoint": {
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
@@ -19113,7 +19113,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-TextureCoordinate-TextureCoordinateGenerator-NurbsTextureCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-controlPoint": {
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
@@ -19257,7 +19257,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-controlPoint": {
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
@@ -19347,7 +19347,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-NurbsPatchSurface-NurbsSweptSurface-NurbsSwungSurface-NurbsTrimmedSurface-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -19453,7 +19453,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-controlPoint": {
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
@@ -19568,7 +19568,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ContourPolyline2D-NurbsCurve2D-NurbsCurve-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ccw": {
               "default": true,
@@ -19651,7 +19651,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ContourPolyline2D-NurbsCurve2D-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ccw": {
               "default": true,
@@ -19855,7 +19855,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Contour2D-Coordinate-CoordinateDouble-GeoCoordinate-TextureCoordinate-TextureCoordinateGenerator-NurbsTextureCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-controlPoint": {
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
@@ -20002,7 +20002,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@enabled": {
               "default": true,
@@ -20417,7 +20417,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-NavigationInfoMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@centerOfRotation": {
               "$comment": "SFVec3f inputOutput",
@@ -20597,7 +20597,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-PeriodicWaveMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -20829,7 +20829,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Color-ColorRGBA-ConeEmitter-ExplosionEmitter-PointEmitter-PolylineEmitter-SurfaceEmitter-VolumeEmitter-BoundedPhysicsModel-ForcePhysicsModel-WindPhysicsModel-ProtoInstance-TextureCoordinate-TextureCoordinateGeneratorMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-appearance": {
               "$ref": "#/$defs/-X3DAppearanceNodeSFNode"
@@ -21139,7 +21139,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@baseColor": {
               "maximum": 1,
@@ -21305,9 +21305,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-X3DChildNodeMFNode"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -21332,6 +21329,9 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -21432,7 +21432,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -21524,7 +21524,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-TextureProperties-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -22041,7 +22041,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-PointSet-Shape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -22453,7 +22453,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-coord": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
@@ -23225,7 +23225,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Box-Cone-Cylinder-Sphere-Shape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -23374,7 +23374,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ShaderProgramMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -25275,7 +25275,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -25400,7 +25400,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Material-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@enabled": {
               "default": true,
@@ -26090,7 +26090,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@enabled": {
               "default": true,
@@ -27984,7 +27984,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "IS": {
               "$ref": "#/$defs/IS"
@@ -29013,7 +29013,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ambientIntensity": {
               "maximum": 1,
@@ -29207,7 +29207,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@ambientIntensity": {
               "maximum": 1,
@@ -30149,7 +30149,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@coolColor": {
               "maximum": 1,
@@ -30547,7 +30547,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Anchor-Billboard-Collision-Group-LOD-Shape-StaticGroup-Switch-Transform-EspduTransform-ReceiverPdu-SignalPdu-TransmitterPdu-CADAssembly-CADLayer-CADPart-GeoLocation-GeoLOD-GeoTransform-HAnimJoint-HAnimSegment-HAnimSite-PickableGroup-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@center": {
               "$comment": "SFVec3f inputOutput",
@@ -31749,7 +31749,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ImageTexture-MovieTexture-PixelTexture-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@emissiveColor": {
               "maximum": 1,
@@ -31857,7 +31857,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-NavigationInfoMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@centerOfRotation": {
               "$comment": "SFVec3f inputOutput",
@@ -32018,9 +32018,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-X3DViewpointNode-ViewpointGroupMFNode"
-            },
             "@center": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -32030,6 +32027,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-X3DViewpointNode-ViewpointGroupMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -32350,7 +32350,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
@@ -32465,7 +32465,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "-coord": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
@@ -32607,7 +32607,7 @@
           "type": "object",
           "properties": {
             "-children": {
-              "$ref": "#/$defs/-Shape-ProtoInstanceMFNode"
+              "$ref": "#/$defs/-childStatements"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -35695,23 +35695,6 @@
       },
       "additionalProperties": false
     },
-    "-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DComposableVolumeRenderStyleNodeSFNode": {
       "type": "object",
       "properties": {
@@ -35895,32 +35878,6 @@
       },
       "additionalProperties": false
     },
-    "-Shape-LOD-Transform-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "LOD": {
-            "$ref": "#/$defs/LOD"
-          },
-          "Transform": {
-            "$ref": "#/$defs/Transform"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-Shape-LOD-TransformSFNode": {
       "type": "object",
       "properties": {
@@ -35938,26 +35895,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-CADFace-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "CADFace": {
-            "$ref": "#/$defs/CADFace"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-CADFaceMFNode": {
       "$comment": "MFNode inputOutput",
@@ -36047,29 +35984,6 @@
         "additionalProperties": false
       }
     },
-    "-CollidableOffset-CollidableShape-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "CollidableOffset": {
-            "$ref": "#/$defs/CollidableOffset"
-          },
-          "CollidableShape": {
-            "$ref": "#/$defs/CollidableShape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DNBodyCollidableNodeSFNode": {
       "type": "object",
       "properties": {
@@ -36084,26 +35998,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-Shape-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-ShapeSFNode": {
       "type": "object",
@@ -36570,32 +36464,6 @@
       },
       "additionalProperties": false
     },
-    "-CollidableOffset-CollidableShape-CollisionSpace-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "CollidableOffset": {
-            "$ref": "#/$defs/CollidableOffset"
-          },
-          "CollidableShape": {
-            "$ref": "#/$defs/CollidableShape"
-          },
-          "CollisionSpace": {
-            "$ref": "#/$defs/CollisionSpace"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DNBodyCollisionSpaceNode-X3DNBodyCollidableNodeMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -36614,26 +36482,6 @@
           },
           "CollidableShape": {
             "$ref": "#/$defs/CollidableShape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-CollisionCollection-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "CollisionCollection": {
-            "$ref": "#/$defs/CollisionCollection"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -36697,35 +36545,6 @@
         "additionalProperties": false
       }
     },
-    "-ImageTexture-PixelTexture-MovieTexture-ProtoInstance-TexturePropertiesMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ImageTexture": {
-            "$ref": "#/$defs/ImageTexture"
-          },
-          "PixelTexture": {
-            "$ref": "#/$defs/PixelTexture"
-          },
-          "MovieTexture": {
-            "$ref": "#/$defs/MovieTexture"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          },
-          "TextureProperties": {
-            "$ref": "#/$defs/TextureProperties"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-TexturePropertiesSFNode": {
       "type": "object",
       "properties": {
@@ -36737,26 +36556,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-ShaderPart-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ShaderPart": {
-            "$ref": "#/$defs/ShaderPart"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-ShaderPartMFNode": {
       "$comment": "MFNode inputOutput",
@@ -36773,35 +36572,6 @@
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-TextureProperties-ProtoInstance-ImageTexture-PixelTexture-MovieTextureMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "TextureProperties": {
-            "$ref": "#/$defs/TextureProperties"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          },
-          "ImageTexture": {
-            "$ref": "#/$defs/ImageTexture"
-          },
-          "PixelTexture": {
-            "$ref": "#/$defs/PixelTexture"
-          },
-          "MovieTexture": {
-            "$ref": "#/$defs/MovieTexture"
           }
         },
         "additionalProperties": false
@@ -36877,55 +36647,6 @@
         "additionalProperties": false
       }
     },
-    "-RigidBody-CollidableOffset-CollidableShape-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "RigidBody": {
-            "$ref": "#/$defs/RigidBody"
-          },
-          "CollidableOffset": {
-            "$ref": "#/$defs/CollidableOffset"
-          },
-          "CollidableShape": {
-            "$ref": "#/$defs/CollidableShape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-NurbsCurve2D-ContourPolyline2D-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "NurbsCurve2D": {
-            "$ref": "#/$defs/NurbsCurve2D"
-          },
-          "ContourPolyline2D": {
-            "$ref": "#/$defs/ContourPolyline2D"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-NurbsCurve2D-ContourPolyline2DMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -36949,26 +36670,6 @@
         "additionalProperties": false
       }
     },
-    "-DISEntityTypeMapping-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "DISEntityTypeMapping": {
-            "$ref": "#/$defs/DISEntityTypeMapping"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-DISEntityTypeMappingMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -36981,59 +36682,6 @@
           },
           "DISEntityTypeMapping": {
             "$ref": "#/$defs/DISEntityTypeMapping"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-FloatVertexAttribute-Matrix3VertexAttribute-Matrix4VertexAttribute-Color-ColorRGBA-FogCoordinate-Normal-TextureCoordinate-TextureCoordinate3D-TextureCoordinate4D-TextureCoordinateGenerator-MultiTextureCoordinate-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "FloatVertexAttribute": {
-            "$ref": "#/$defs/FloatVertexAttribute"
-          },
-          "Matrix3VertexAttribute": {
-            "$ref": "#/$defs/Matrix3VertexAttribute"
-          },
-          "Matrix4VertexAttribute": {
-            "$ref": "#/$defs/Matrix4VertexAttribute"
-          },
-          "Color": {
-            "$ref": "#/$defs/Color"
-          },
-          "ColorRGBA": {
-            "$ref": "#/$defs/ColorRGBA"
-          },
-          "FogCoordinate": {
-            "$ref": "#/$defs/FogCoordinate"
-          },
-          "Normal": {
-            "$ref": "#/$defs/Normal"
-          },
-          "TextureCoordinate": {
-            "$ref": "#/$defs/TextureCoordinate"
-          },
-          "TextureCoordinate3D": {
-            "$ref": "#/$defs/TextureCoordinate3D"
-          },
-          "TextureCoordinate4D": {
-            "$ref": "#/$defs/TextureCoordinate4D"
-          },
-          "TextureCoordinateGenerator": {
-            "$ref": "#/$defs/TextureCoordinateGenerator"
-          },
-          "MultiTextureCoordinate": {
-            "$ref": "#/$defs/MultiTextureCoordinate"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -37128,41 +36776,6 @@
       },
       "additionalProperties": false
     },
-    "-ImageTexture-MovieTexture-PixelTexture-ComposedCubeMapTexture-GeneratedCubeMapTexture-ImageCubeMapTexture-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ImageTexture": {
-            "$ref": "#/$defs/ImageTexture"
-          },
-          "MovieTexture": {
-            "$ref": "#/$defs/MovieTexture"
-          },
-          "PixelTexture": {
-            "$ref": "#/$defs/PixelTexture"
-          },
-          "ComposedCubeMapTexture": {
-            "$ref": "#/$defs/ComposedCubeMapTexture"
-          },
-          "GeneratedCubeMapTexture": {
-            "$ref": "#/$defs/GeneratedCubeMapTexture"
-          },
-          "ImageCubeMapTexture": {
-            "$ref": "#/$defs/ImageCubeMapTexture"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DSingleTextureNodeSFNode": {
       "type": "object",
       "properties": {
@@ -37199,46 +36812,6 @@
       },
       "additionalProperties": false
     },
-    "-TextureProperties-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "TextureProperties": {
-            "$ref": "#/$defs/TextureProperties"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-GeoOriginMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "GeoOrigin": {
-            "$ref": "#/$defs/GeoOrigin"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-GeoOriginSFNode": {
       "type": "object",
       "properties": {
@@ -37250,50 +36823,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-GeoCoordinate-GeoElevationGrid-GeoLocation-GeoLOD-GeoPositionInterpolator-GeoProximitySensor-GeoTouchSensor-GeoTransform-GeoViewpoint-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "GeoCoordinate": {
-            "$ref": "#/$defs/GeoCoordinate"
-          },
-          "GeoElevationGrid": {
-            "$ref": "#/$defs/GeoElevationGrid"
-          },
-          "GeoLocation": {
-            "$ref": "#/$defs/GeoLocation"
-          },
-          "GeoLOD": {
-            "$ref": "#/$defs/GeoLOD"
-          },
-          "GeoPositionInterpolator": {
-            "$ref": "#/$defs/GeoPositionInterpolator"
-          },
-          "GeoProximitySensor": {
-            "$ref": "#/$defs/GeoProximitySensor"
-          },
-          "GeoTouchSensor": {
-            "$ref": "#/$defs/GeoTouchSensor"
-          },
-          "GeoTransform": {
-            "$ref": "#/$defs/GeoTransform"
-          },
-          "GeoViewpoint": {
-            "$ref": "#/$defs/GeoViewpoint"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DNodeMFNode": {
       "$comment": "MFNode inputOutput",
@@ -38164,29 +37693,6 @@
         "additionalProperties": false
       }
     },
-    "-GeoOrigin-NavigationInfoMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "GeoOrigin": {
-            "$ref": "#/$defs/GeoOrigin"
-          },
-          "NavigationInfo": {
-            "$ref": "#/$defs/NavigationInfo"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-NavigationInfoSFNode": {
       "type": "object",
       "properties": {
@@ -38198,80 +37704,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-HAnimJoint-HAnimSegment-HAnimSite-HAnimMotion-HAnimPose-Shape-Group-LOD-Switch-Transform-IndexedFaceSet-IndexedLineSet-IndexedQuadSet-IndexedTriangleFanSet-IndexedTriangleSet-IndexedTriangleStripSet-Coordinate-CoordinateDouble-Normal-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "HAnimJoint": {
-            "$ref": "#/$defs/HAnimJoint"
-          },
-          "HAnimSegment": {
-            "$ref": "#/$defs/HAnimSegment"
-          },
-          "HAnimSite": {
-            "$ref": "#/$defs/HAnimSite"
-          },
-          "HAnimMotion": {
-            "$ref": "#/$defs/HAnimMotion"
-          },
-          "HAnimPose": {
-            "$ref": "#/$defs/HAnimPose"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "Group": {
-            "$ref": "#/$defs/Group"
-          },
-          "LOD": {
-            "$ref": "#/$defs/LOD"
-          },
-          "Switch": {
-            "$ref": "#/$defs/Switch"
-          },
-          "Transform": {
-            "$ref": "#/$defs/Transform"
-          },
-          "IndexedFaceSet": {
-            "$ref": "#/$defs/IndexedFaceSet"
-          },
-          "IndexedLineSet": {
-            "$ref": "#/$defs/IndexedLineSet"
-          },
-          "IndexedQuadSet": {
-            "$ref": "#/$defs/IndexedQuadSet"
-          },
-          "IndexedTriangleFanSet": {
-            "$ref": "#/$defs/IndexedTriangleFanSet"
-          },
-          "IndexedTriangleSet": {
-            "$ref": "#/$defs/IndexedTriangleSet"
-          },
-          "IndexedTriangleStripSet": {
-            "$ref": "#/$defs/IndexedTriangleStripSet"
-          },
-          "Coordinate": {
-            "$ref": "#/$defs/Coordinate"
-          },
-          "CoordinateDouble": {
-            "$ref": "#/$defs/CoordinateDouble"
-          },
-          "Normal": {
-            "$ref": "#/$defs/Normal"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-HAnimPoseMFNode": {
       "$comment": "MFNode inputOutput",
@@ -38294,7 +37726,7 @@
       }
     },
     "-HAnimJointMFNode": {
-      "$comment": "MFNode Unknown access type",
+      "$comment": "MFNode inputOutput",
       "type": "array",
       "minItems": 1,
       "items": {
@@ -38440,32 +37872,6 @@
       },
       "additionalProperties": false
     },
-    "-HAnimDisplacer-HAnimJoint-HAnimSegment-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "HAnimDisplacer": {
-            "$ref": "#/$defs/HAnimDisplacer"
-          },
-          "HAnimJoint": {
-            "$ref": "#/$defs/HAnimJoint"
-          },
-          "HAnimSegment": {
-            "$ref": "#/$defs/HAnimSegment"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-HAnimJoint-HAnimSegmentMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -38610,26 +38016,6 @@
         "additionalProperties": false
       }
     },
-    "-ViewportMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Viewport": {
-            "$ref": "#/$defs/Viewport"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DViewportNodeSFNode": {
       "type": "object",
       "properties": {
@@ -38641,29 +38027,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-Layer-LayoutLayer-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Layer": {
-            "$ref": "#/$defs/Layer"
-          },
-          "LayoutLayer": {
-            "$ref": "#/$defs/LayoutLayer"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DLayerNodeMFNode": {
       "$comment": "MFNode inputOutput",
@@ -38699,32 +38062,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-LineSet-IndexedLineSet-Shape-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "LineSet": {
-            "$ref": "#/$defs/LineSet"
-          },
-          "IndexedLineSet": {
-            "$ref": "#/$defs/IndexedLineSet"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DGroupingNode-X3DShapeNode-InlineMFNode": {
       "$comment": "MFNode inputOutput",
@@ -38874,32 +38211,6 @@
         "additionalProperties": false
       }
     },
-    "-ImageTexture-MovieTexture-PixelTexture-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ImageTexture": {
-            "$ref": "#/$defs/ImageTexture"
-          },
-          "MovieTexture": {
-            "$ref": "#/$defs/MovieTexture"
-          },
-          "PixelTexture": {
-            "$ref": "#/$defs/PixelTexture"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DMetadataObjectMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -38935,50 +38246,6 @@
         "additionalProperties": false
       }
     },
-    "-ImageTexture-MovieTexture-PixelTexture-ComposedCubeMapTexture-GeneratedCubeMapTexture-ImageCubeMapTexture-ComposedTexture3D-ImageTexture3D-PixelTexture3D-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ImageTexture": {
-            "$ref": "#/$defs/ImageTexture"
-          },
-          "MovieTexture": {
-            "$ref": "#/$defs/MovieTexture"
-          },
-          "PixelTexture": {
-            "$ref": "#/$defs/PixelTexture"
-          },
-          "ComposedCubeMapTexture": {
-            "$ref": "#/$defs/ComposedCubeMapTexture"
-          },
-          "GeneratedCubeMapTexture": {
-            "$ref": "#/$defs/GeneratedCubeMapTexture"
-          },
-          "ImageCubeMapTexture": {
-            "$ref": "#/$defs/ImageCubeMapTexture"
-          },
-          "ComposedTexture3D": {
-            "$ref": "#/$defs/ComposedTexture3D"
-          },
-          "ImageTexture3D": {
-            "$ref": "#/$defs/ImageTexture3D"
-          },
-          "PixelTexture3D": {
-            "$ref": "#/$defs/PixelTexture3D"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DSingleTextureNodeMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -38997,29 +38264,6 @@
           },
           "PixelTexture": {
             "$ref": "#/$defs/PixelTexture"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-TextureCoordinate-TextureCoordinateGenerator-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "TextureCoordinate": {
-            "$ref": "#/$defs/TextureCoordinate"
-          },
-          "TextureCoordinateGenerator": {
-            "$ref": "#/$defs/TextureCoordinateGenerator"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -39057,32 +38301,6 @@
         "additionalProperties": false
       }
     },
-    "-TextureTransform-TextureTransform3D-TextureTransformMatrix3D-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "TextureTransform": {
-            "$ref": "#/$defs/TextureTransform"
-          },
-          "TextureTransform3D": {
-            "$ref": "#/$defs/TextureTransform3D"
-          },
-          "TextureTransformMatrix3D": {
-            "$ref": "#/$defs/TextureTransformMatrix3D"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DSingleTextureTransformNodeMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -39101,67 +38319,6 @@
           },
           "TextureTransformMatrix3D": {
             "$ref": "#/$defs/TextureTransformMatrix3D"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-Coordinate-CoordinateDouble-GeoCoordinate-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Coordinate": {
-            "$ref": "#/$defs/Coordinate"
-          },
-          "CoordinateDouble": {
-            "$ref": "#/$defs/CoordinateDouble"
-          },
-          "GeoCoordinate": {
-            "$ref": "#/$defs/GeoCoordinate"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-Coordinate-CoordinateDouble-GeoCoordinate-TextureCoordinate-TextureCoordinateGenerator-NurbsTextureCoordinate-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Coordinate": {
-            "$ref": "#/$defs/Coordinate"
-          },
-          "CoordinateDouble": {
-            "$ref": "#/$defs/CoordinateDouble"
-          },
-          "GeoCoordinate": {
-            "$ref": "#/$defs/GeoCoordinate"
-          },
-          "TextureCoordinate": {
-            "$ref": "#/$defs/TextureCoordinate"
-          },
-          "TextureCoordinateGenerator": {
-            "$ref": "#/$defs/TextureCoordinateGenerator"
-          },
-          "NurbsTextureCoordinate": {
-            "$ref": "#/$defs/NurbsTextureCoordinate"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -39194,35 +38351,6 @@
       },
       "additionalProperties": false
     },
-    "-NurbsPatchSurface-NurbsSweptSurface-NurbsSwungSurface-NurbsTrimmedSurface-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "NurbsPatchSurface": {
-            "$ref": "#/$defs/NurbsPatchSurface"
-          },
-          "NurbsSweptSurface": {
-            "$ref": "#/$defs/NurbsSweptSurface"
-          },
-          "NurbsSwungSurface": {
-            "$ref": "#/$defs/NurbsSwungSurface"
-          },
-          "NurbsTrimmedSurface": {
-            "$ref": "#/$defs/NurbsTrimmedSurface"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DParametricGeometryNodeMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -39247,32 +38375,6 @@
           },
           "NurbsSwungSurface": {
             "$ref": "#/$defs/NurbsSwungSurface"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-ContourPolyline2D-NurbsCurve2D-NurbsCurve-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ContourPolyline2D": {
-            "$ref": "#/$defs/ContourPolyline2D"
-          },
-          "NurbsCurve2D": {
-            "$ref": "#/$defs/NurbsCurve2D"
-          },
-          "NurbsCurve": {
-            "$ref": "#/$defs/NurbsCurve"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -39307,67 +38409,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-ContourPolyline2D-NurbsCurve2D-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "ContourPolyline2D": {
-            "$ref": "#/$defs/ContourPolyline2D"
-          },
-          "NurbsCurve2D": {
-            "$ref": "#/$defs/NurbsCurve2D"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-Contour2D-Coordinate-CoordinateDouble-GeoCoordinate-TextureCoordinate-TextureCoordinateGenerator-NurbsTextureCoordinate-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Contour2D": {
-            "$ref": "#/$defs/Contour2D"
-          },
-          "Coordinate": {
-            "$ref": "#/$defs/Coordinate"
-          },
-          "CoordinateDouble": {
-            "$ref": "#/$defs/CoordinateDouble"
-          },
-          "GeoCoordinate": {
-            "$ref": "#/$defs/GeoCoordinate"
-          },
-          "TextureCoordinate": {
-            "$ref": "#/$defs/TextureCoordinate"
-          },
-          "TextureCoordinateGenerator": {
-            "$ref": "#/$defs/TextureCoordinateGenerator"
-          },
-          "NurbsTextureCoordinate": {
-            "$ref": "#/$defs/NurbsTextureCoordinate"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-Contour2DMFNode": {
       "$comment": "MFNode inputOutput",
@@ -39419,46 +38460,6 @@
       },
       "additionalProperties": false
     },
-    "-NavigationInfoMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "NavigationInfo": {
-            "$ref": "#/$defs/NavigationInfo"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-PeriodicWaveMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "PeriodicWave": {
-            "$ref": "#/$defs/PeriodicWave"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-PeriodicWaveSFNode": {
       "type": "object",
       "properties": {
@@ -39470,62 +38471,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-Color-ColorRGBA-ConeEmitter-ExplosionEmitter-PointEmitter-PolylineEmitter-SurfaceEmitter-VolumeEmitter-BoundedPhysicsModel-ForcePhysicsModel-WindPhysicsModel-ProtoInstance-TextureCoordinate-TextureCoordinateGeneratorMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Color": {
-            "$ref": "#/$defs/Color"
-          },
-          "ColorRGBA": {
-            "$ref": "#/$defs/ColorRGBA"
-          },
-          "ConeEmitter": {
-            "$ref": "#/$defs/ConeEmitter"
-          },
-          "ExplosionEmitter": {
-            "$ref": "#/$defs/ExplosionEmitter"
-          },
-          "PointEmitter": {
-            "$ref": "#/$defs/PointEmitter"
-          },
-          "PolylineEmitter": {
-            "$ref": "#/$defs/PolylineEmitter"
-          },
-          "SurfaceEmitter": {
-            "$ref": "#/$defs/SurfaceEmitter"
-          },
-          "VolumeEmitter": {
-            "$ref": "#/$defs/VolumeEmitter"
-          },
-          "BoundedPhysicsModel": {
-            "$ref": "#/$defs/BoundedPhysicsModel"
-          },
-          "ForcePhysicsModel": {
-            "$ref": "#/$defs/ForcePhysicsModel"
-          },
-          "WindPhysicsModel": {
-            "$ref": "#/$defs/WindPhysicsModel"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          },
-          "TextureCoordinate": {
-            "$ref": "#/$defs/TextureCoordinate"
-          },
-          "TextureCoordinateGenerator": {
-            "$ref": "#/$defs/TextureCoordinateGenerator"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DAppearanceNodeSFNode": {
       "type": "object",
@@ -39657,61 +38602,6 @@
         "additionalProperties": false
       }
     },
-    "-PointSet-Shape-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "PointSet": {
-            "$ref": "#/$defs/PointSet"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-Box-Cone-Cylinder-Sphere-Shape-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Box": {
-            "$ref": "#/$defs/Box"
-          },
-          "Cone": {
-            "$ref": "#/$defs/Cone"
-          },
-          "Cylinder": {
-            "$ref": "#/$defs/Cylinder"
-          },
-          "Sphere": {
-            "$ref": "#/$defs/Sphere"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-ShaderProgramMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -39724,26 +38614,6 @@
           },
           "ShaderProgram": {
             "$ref": "#/$defs/ShaderProgram"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-fieldValueMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "fieldValue": {
-            "$ref": "#/$defs/fieldValue"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -39825,26 +38695,6 @@
         "additionalProperties": false
       }
     },
-    "-Material-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Material": {
-            "$ref": "#/$defs/Material"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "-X3DSoundSourceNodeSFNode": {
       "type": "object",
       "properties": {
@@ -39910,92 +38760,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-Anchor-Billboard-Collision-Group-LOD-Shape-StaticGroup-Switch-Transform-EspduTransform-ReceiverPdu-SignalPdu-TransmitterPdu-CADAssembly-CADLayer-CADPart-GeoLocation-GeoLOD-GeoTransform-HAnimJoint-HAnimSegment-HAnimSite-PickableGroup-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Anchor": {
-            "$ref": "#/$defs/Anchor"
-          },
-          "Billboard": {
-            "$ref": "#/$defs/Billboard"
-          },
-          "Collision": {
-            "$ref": "#/$defs/Collision"
-          },
-          "Group": {
-            "$ref": "#/$defs/Group"
-          },
-          "LOD": {
-            "$ref": "#/$defs/LOD"
-          },
-          "Shape": {
-            "$ref": "#/$defs/Shape"
-          },
-          "StaticGroup": {
-            "$ref": "#/$defs/StaticGroup"
-          },
-          "Switch": {
-            "$ref": "#/$defs/Switch"
-          },
-          "Transform": {
-            "$ref": "#/$defs/Transform"
-          },
-          "EspduTransform": {
-            "$ref": "#/$defs/EspduTransform"
-          },
-          "ReceiverPdu": {
-            "$ref": "#/$defs/ReceiverPdu"
-          },
-          "SignalPdu": {
-            "$ref": "#/$defs/SignalPdu"
-          },
-          "TransmitterPdu": {
-            "$ref": "#/$defs/TransmitterPdu"
-          },
-          "CADAssembly": {
-            "$ref": "#/$defs/CADAssembly"
-          },
-          "CADLayer": {
-            "$ref": "#/$defs/CADLayer"
-          },
-          "CADPart": {
-            "$ref": "#/$defs/CADPart"
-          },
-          "GeoLocation": {
-            "$ref": "#/$defs/GeoLocation"
-          },
-          "GeoLOD": {
-            "$ref": "#/$defs/GeoLOD"
-          },
-          "GeoTransform": {
-            "$ref": "#/$defs/GeoTransform"
-          },
-          "HAnimJoint": {
-            "$ref": "#/$defs/HAnimJoint"
-          },
-          "HAnimSegment": {
-            "$ref": "#/$defs/HAnimSegment"
-          },
-          "HAnimSite": {
-            "$ref": "#/$defs/HAnimSite"
-          },
-          "PickableGroup": {
-            "$ref": "#/$defs/PickableGroup"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DGroupingNode-X3DShapeNodeSFNode": {
       "type": "object",
@@ -40071,35 +38835,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-Viewpoint-OrthoViewpoint-GeoViewpoint-ViewpointGroup-ProtoInstanceMFNode": {
-      "$comment": "MFNode Unknown access type",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Viewpoint": {
-            "$ref": "#/$defs/Viewpoint"
-          },
-          "OrthoViewpoint": {
-            "$ref": "#/$defs/OrthoViewpoint"
-          },
-          "GeoViewpoint": {
-            "$ref": "#/$defs/GeoViewpoint"
-          },
-          "ViewpointGroup": {
-            "$ref": "#/$defs/ViewpointGroup"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DViewpointNode-ViewpointGroupMFNode": {
       "$comment": "MFNode inputOutput",
