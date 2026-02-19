@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.1-JSONSchema.json",
-        "title": "X3D V3.1 JSON Schema, generated 2026/02/19 08:48:22",
+        "title": "X3D V3.1 JSON Schema, generated 2026/02/19 09:20:30",
         "description": "Experimental JSON Schema for X3D V3.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -1034,7 +1034,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1046,7 +1045,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1072,7 +1070,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@parameter" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1081,7 +1078,6 @@
 						"type":"string"
 						}					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1166,7 +1162,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@endAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 6.2832,
 						"exclusiveMinimum" : -6.2832,
 						"default":1.570796,
@@ -1180,14 +1175,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@startAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 6.2832,
 						"exclusiveMinimum" : -6.2832,
 						"default":0,
@@ -1230,7 +1223,6 @@
 						"type":"string"
 					},
 					"@endAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 6.2832,
 						"exclusiveMinimum" : -6.2832,
 						"default":1.570796,
@@ -1244,20 +1236,17 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@startAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 6.2832,
 						"exclusiveMinimum" : -6.2832,
 						"default":0,
@@ -1298,7 +1287,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@loop" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -1307,38 +1295,32 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@pauseTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@pitch" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@resumeTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@startTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@stopTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1374,7 +1356,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@backUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1385,7 +1366,6 @@
 						"type":"string"
 						}					},
 					"@bottomUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1396,7 +1376,6 @@
 						"type":"string"
 						}					},
 					"@frontUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1407,7 +1386,6 @@
 						"type":"string"
 						}					},
 					"@groundAngle" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -1418,7 +1396,6 @@
 						"type":"number"
 						}					},
 					"@groundColor" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColor inputOutput",
 						"type":"array",
 						"$comment":"MFColor inputOutput",
@@ -1433,7 +1410,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@leftUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1447,7 +1423,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@rightUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1458,7 +1433,6 @@
 						"type":"string"
 						}					},
 					"@skyAngle" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -1469,7 +1443,6 @@
 						"type":"number"
 						}					},
 					"@skyColor" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColor inputOutput",
 						"type":"array",
 						"$comment":"MFColor inputOutput",
@@ -1482,7 +1455,6 @@
 						"type":"number"
 						}					},
 					"@topUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -1493,7 +1465,6 @@
 						"type":"string"
 						}					},
 					"@transparency" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -1523,7 +1494,6 @@
                                  "type": "object",
                                  "properties": {
 					"@axisOfRotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -1549,7 +1519,6 @@
 						"items": false
 					},
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1561,7 +1530,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1641,7 +1609,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -1650,7 +1617,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((true|false)\\s*,?\\s*)*$",
 						"$comment":"MFBool inputOutput",
 						"type":"array",
 						"$comment":"MFBool inputOutput",
@@ -1693,7 +1659,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@toggle" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -1761,7 +1726,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1773,7 +1737,6 @@
 						"type":"number"
 						}					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -1801,7 +1764,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1813,7 +1775,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1864,7 +1825,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1876,7 +1836,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1924,7 +1883,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1936,7 +1894,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -1962,7 +1919,6 @@
 						"type":"string"
 					},
 					"@visible" : {
-						"pattern" : "^\\s*((true|false)\\s*,?\\s*)*$",
 						"$comment":"MFBool inputOutput",
 						"type":"array",
 						"$comment":"MFBool inputOutput",
@@ -1993,7 +1949,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -2005,7 +1960,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -2017,7 +1971,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -2043,7 +1996,6 @@
 						"type":"string"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -2074,7 +2026,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -2086,7 +2037,6 @@
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -2117,7 +2067,6 @@
 						"items": false
 					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -2160,7 +2109,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
@@ -2189,7 +2137,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -2201,7 +2148,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -2216,7 +2162,6 @@
 						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -2256,7 +2201,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@color" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColor inputOutput",
 						"type":"array",
 						"$comment":"MFColor inputOutput",
@@ -2302,7 +2246,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -2311,7 +2254,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColor inputOutput",
 						"type":"array",
 						"$comment":"MFColor inputOutput",
@@ -2351,7 +2293,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@color" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){3}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"MFColorRGBA inputOutput",
@@ -2399,7 +2340,6 @@
 						"type":"string"
 					},
 					"@level" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"maximum" : 5,
 						"minimum" : 1,
 						"default":1,
@@ -2568,19 +2508,16 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@repeatR" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatS" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatT" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -2614,20 +2551,17 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@bottom" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@bottomRadius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@height" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":2,
 						"$comment":"SFFloat initializeOnly",
@@ -2640,13 +2574,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@side" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -2741,7 +2673,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@controlPoint" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2d inputOutput",
 						"type":"array",
 						"$comment":"MFVec2d inputOutput",
@@ -2788,7 +2719,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -2829,7 +2759,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3d inputOutput",
 						"type":"array",
 						"$comment":"MFVec3d inputOutput",
@@ -2867,7 +2796,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -2876,7 +2804,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -2917,7 +2844,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -2926,7 +2852,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f inputOutput",
 						"type":"array",
 						"$comment":"MFVec2f inputOutput",
@@ -2964,13 +2889,11 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@bottom" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@height" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":2,
 						"$comment":"SFFloat initializeOnly",
@@ -2983,26 +2906,22 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@side" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@top" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -3033,13 +2952,11 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@autoOffset" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@axisRotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -3075,7 +2992,6 @@
 						"type":"string"
 					},
 					"@diskAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1.5708,
 						"minimum" : 0,
 						"default":0.26179167,
@@ -3083,7 +2999,6 @@
 						"type":"number"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -3092,7 +3007,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@maxAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 6.2832,
 						"exclusiveMinimum" : -6.2832,
 						"default":-1,
@@ -3103,7 +3017,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@minAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 6.2832,
 						"exclusiveMinimum" : -6.2832,
 						"default":0,
@@ -3111,7 +3024,6 @@
 						"type":"number"
 					},
 					"@offset" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
@@ -3142,7 +3054,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ambientIntensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -3150,7 +3061,6 @@
 						"type":"number"
 					},
 					"@color" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -3182,7 +3092,6 @@
 						"items": false
 					},
 					"@direction" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3208,13 +3117,11 @@
 						"items": false
 					},
 					"@global" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@intensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":1,
@@ -3228,7 +3135,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@on" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -3259,7 +3165,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@innerRadius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat initializeOnly",
@@ -3272,14 +3177,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@outerRadius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -3313,7 +3216,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -3322,13 +3224,11 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@creaseAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat initializeOnly",
@@ -3338,7 +3238,6 @@
 						"$ref":"#/$defs/-FogCoordinateSFNode"
 					},
 					"@height" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat initializeOnly",
 						"type":"array",
 						"$comment":"MFFloat initializeOnly",
@@ -3356,13 +3255,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -3371,28 +3268,24 @@
 						"$ref":"#/$defs/-X3DTextureCoordinateNodeSFNode"
 					},
 					"@xDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@xSpacing" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@zDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@zSpacing" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat initializeOnly",
@@ -3427,13 +3320,11 @@
 						"type":"string"
 					},
 					"@applicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@articulationParameterArray" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -3442,7 +3333,6 @@
 						"type":"number"
 						}					},
 					"@articulationParameterChangeIndicatorArray" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -3451,13 +3341,11 @@
 						"type":"integer"
 						}					},
 					"@articulationParameterCount" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@articulationParameterDesignatorArray" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -3466,7 +3354,6 @@
 						"type":"integer"
 						}					},
 					"@articulationParameterIdPartAttachedToArray" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -3475,7 +3362,6 @@
 						"type":"integer"
 						}					},
 					"@articulationParameterTypeArray" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -3484,7 +3370,6 @@
 						"type":"integer"
 						}					},
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -3496,7 +3381,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -3508,7 +3392,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3523,19 +3406,16 @@
 						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
 					"@collisionType" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@deadReckoning" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@detonationLocation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3547,7 +3427,6 @@
 						"type":"number"
 						}					},
 					"@detonationRelativeLocation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3559,133 +3438,111 @@
 						"type":"number"
 						}					},
 					"@detonationResult" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@entityCategory" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entityCountry" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entityDomain" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entityExtra" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entityKind" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entitySpecific" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entitySubcategory" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@eventApplicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@eventEntityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@eventNumber" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@eventSiteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@fired1" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@fired2" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@fireMissionIndex" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@firingRange" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@firingRate" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@forceID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@fuse" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@geoCoords" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -3703,7 +3560,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@linearAcceleration" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3715,7 +3571,6 @@
 						"type":"number"
 						}					},
 					"@linearVelocity" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3740,19 +3595,16 @@
 						"type":"string"
 					},
 					"@multicastRelayPort" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@munitionApplicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@munitionEndPoint" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3764,25 +3616,21 @@
 						"type":"number"
 						}					},
 					"@munitionEntityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@munitionQuantity" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@munitionSiteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@munitionStartPoint" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3805,20 +3653,17 @@
 						"type":"string"
 					},
 					"@port" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@readInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0.1,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -3849,13 +3694,11 @@
 						"items": false
 					},
 					"@rtpHeaderExpected" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3867,7 +3710,6 @@
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -3898,13 +3740,11 @@
 						"items": false
 					},
 					"@siteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3916,13 +3756,11 @@
 						"type":"number"
 						}					},
 					"@warhead" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@writeInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFTime inputOutput",
@@ -4007,7 +3845,6 @@
 						"type":"string"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -4041,7 +3878,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -4152,7 +3988,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^(\\s|\\S)*$"
 					}
 				},
 				"required": [
@@ -4184,7 +4019,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^(\\s|\\S)*$"
 					}
 				},
 				"required": [
@@ -4204,13 +4038,11 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@filled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@hatchColor" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -4242,13 +4074,11 @@
 						"items": false
 					},
 					"@hatched" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@hatchStyle" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":1,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -4296,7 +4126,6 @@
 						"type":"string"
 					},
 					"@numComponents" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"maximum" : 4,
 						"minimum" : 1,
 						"default":4,
@@ -4304,7 +4133,6 @@
 						"type":"integer"
 					},
 					"@value" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -4338,7 +4166,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@color" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -4386,7 +4213,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@visibilityRange" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
@@ -4418,7 +4244,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@depth" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -4460,7 +4285,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@family" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -4479,7 +4303,6 @@
 						"type":"string"
 						}					},
 					"@horizontal" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -4488,7 +4311,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@justify" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -4526,7 +4348,6 @@
 						"type":"string"
 					},
 					"@leftToRight" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -4535,14 +4356,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@spacing" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat initializeOnly",
@@ -4561,7 +4380,6 @@
 						"type":"string"
 					},
 					"@topToBottom" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -4598,7 +4416,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":128,
 						"$comment":"SFInt32 initializeOnly",
@@ -4653,7 +4470,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3d inputOutput",
 						"type":"array",
 						"$comment":"MFVec3d inputOutput",
@@ -4688,7 +4504,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -4697,20 +4512,17 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@creaseAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFDouble initializeOnly",
 						"type":"number"
 					},
 					"@geoGridOrigin" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3d initializeOnly",
@@ -4728,7 +4540,6 @@
 		"$ref": "#/$defs/@geoSystem"
             },
 					"@height" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -4747,13 +4558,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -4762,35 +4571,30 @@
 						"$ref":"#/$defs/-X3DTextureCoordinateNodeSFNode"
 					},
 					"@xDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@xSpacing" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFDouble initializeOnly",
 						"type":"number"
 					},
 					"@yScale" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@zDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@zSpacing" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFDouble initializeOnly",
@@ -4819,7 +4623,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -4831,7 +4634,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -4846,7 +4648,6 @@
 						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
 					"@geoCoords" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -4892,7 +4693,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -4904,7 +4704,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -4916,7 +4715,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3d initializeOnly",
@@ -4928,7 +4726,6 @@
 						"type":"number"
 						}					},
 					"@child1Url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -4939,7 +4736,6 @@
 						"type":"string"
 						}					},
 					"@child2Url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -4950,7 +4746,6 @@
 						"type":"string"
 						}					},
 					"@child3Url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -4961,7 +4756,6 @@
 						"type":"string"
 						}					},
 					"@child4Url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -4987,7 +4781,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@range" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":10,
 						"$comment":"SFFloat initializeOnly",
@@ -4997,7 +4790,6 @@
 						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
 					"@rootUrl" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString initializeOnly",
 						"type":"array",
 						"$comment":"MFString initializeOnly",
@@ -5042,7 +4834,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@summary" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -5051,7 +4842,6 @@
 						"type":"string"
 						}					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -5087,7 +4877,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@geoCoords" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -5108,7 +4897,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@rotateYUp" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -5148,7 +4936,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -5157,7 +4944,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3d inputOutput",
 						"type":"array",
 						"$comment":"MFVec3d inputOutput",
@@ -5200,7 +4986,6 @@
 						"type":"string"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -5243,7 +5028,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@centerOfRotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -5260,7 +5044,6 @@
 						"type":"string"
 					},
 					"@fieldOfView" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 3.1416,
 						"exclusiveMinimum" : 0,
 						"default":0.7854,
@@ -5274,7 +5057,6 @@
 		"$ref": "#/$defs/@geoSystem"
             },
 					"@headlight" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -5283,7 +5065,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@jump" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -5292,7 +5073,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@navType" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -5310,7 +5090,6 @@
 						"type":"string"
 						}					},
 					"@orientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -5341,7 +5120,6 @@
 						"items": false
 					},
 					"@position" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -5367,13 +5145,11 @@
 						"items": false
 					},
 					"@retainUserOffsets" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@speedFactor" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat initializeOnly",
@@ -5402,7 +5178,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -5414,7 +5189,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -5460,7 +5234,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@coordIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -5469,7 +5242,6 @@
 						"type":"integer"
 						}					},
 					"@displacements" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -5571,7 +5343,6 @@
 						"type":"string"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0.0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
@@ -5602,7 +5373,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -5614,7 +5384,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -5626,7 +5395,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -5638,7 +5406,6 @@
 						"type":"number"
 						}					},
 					"@info" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -5661,7 +5428,6 @@
 						"type":"string"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -5692,7 +5458,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
@@ -5706,7 +5471,6 @@
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -5755,7 +5519,6 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -5802,7 +5565,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -5814,7 +5576,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -5826,7 +5587,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -5847,7 +5607,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@limitOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -5878,7 +5637,6 @@
 						"items": false
 					},
 					"@llimit" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -5995,7 +5753,6 @@
 						"type":"string"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -6026,7 +5783,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
@@ -6040,7 +5796,6 @@
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -6071,7 +5826,6 @@
 						"items": false
 					},
 					"@skinCoordIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -6081,7 +5835,6 @@
 						"type":"integer"
 						}					},
 					"@skinCoordWeight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -6090,7 +5843,6 @@
 						"type":"number"
 						}					},
 					"@stiffness" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -6102,7 +5854,6 @@
 						"type":"number"
 						}					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -6114,7 +5865,6 @@
 						"type":"number"
 						}					},
 					"@ulimit" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -6146,7 +5896,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -6158,7 +5907,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -6170,7 +5918,6 @@
 						"type":"number"
 						}					},
 					"@centerOfMass" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -6194,7 +5941,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@mass" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
@@ -6204,7 +5950,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@momentsOfInertia" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -6341,7 +6086,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -6353,7 +6097,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -6365,7 +6108,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -6472,7 +6214,6 @@
 						"type":"string"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -6503,7 +6244,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
@@ -6517,7 +6257,6 @@
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -6548,7 +6287,6 @@
 						"items": false
 					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -6613,7 +6351,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -6655,19 +6392,16 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@repeatS" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatT" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -6709,25 +6443,21 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@repeatR" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatS" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatT" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -6801,7 +6531,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -6810,7 +6539,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -6820,13 +6548,11 @@
 						"type":"integer"
 						}					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@convex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -6835,7 +6561,6 @@
 						"$ref":"#/$defs/-X3DCoordinateNodeSFNode"
 					},
 					"@coordIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -6845,7 +6570,6 @@
 						"type":"integer"
 						}					},
 					"@creaseAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat initializeOnly",
@@ -6864,7 +6588,6 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -6874,13 +6597,11 @@
 						"type":"integer"
 						}					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -6889,7 +6610,6 @@
 						"$ref":"#/$defs/-X3DTextureCoordinateNodeSFNode"
 					},
 					"@texCoordIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -6930,7 +6650,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -6940,7 +6659,6 @@
 						"type":"integer"
 						}					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -6949,7 +6667,6 @@
 						"$ref":"#/$defs/-X3DCoordinateNodeSFNode"
 					},
 					"@coordIndex" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -6996,7 +6713,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7005,7 +6721,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7017,7 +6732,6 @@
 						"$ref":"#/$defs/-FogCoordinateSFNode"
 					},
 					"@index" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -7036,13 +6750,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7079,7 +6791,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7088,7 +6799,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7100,7 +6810,6 @@
 						"$ref":"#/$defs/-FogCoordinateSFNode"
 					},
 					"@index" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -7119,13 +6828,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7162,7 +6869,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7171,7 +6877,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7183,7 +6888,6 @@
 						"$ref":"#/$defs/-FogCoordinateSFNode"
 					},
 					"@index" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -7202,13 +6906,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7245,7 +6947,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7254,7 +6955,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7266,7 +6966,6 @@
 						"$ref":"#/$defs/-FogCoordinateSFNode"
 					},
 					"@index" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 initializeOnly",
 						"type":"array",
 						"$comment":"MFInt32 initializeOnly",
@@ -7285,13 +6984,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7325,7 +7022,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -7337,7 +7033,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -7352,7 +7047,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@load" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -7361,7 +7055,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -7400,7 +7093,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -7409,7 +7101,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -7446,7 +7137,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@integerKey" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":-1,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -7512,7 +7202,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -7549,7 +7238,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@applied" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -7558,14 +7246,12 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@linetype" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 1,
 						"default":1,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@linewidthScaleFactor" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
@@ -7617,7 +7303,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@vertexCount" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -7652,7 +7337,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -7664,7 +7348,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@timeOut" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFTime inputOutput",
@@ -7699,7 +7382,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@color" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -7731,7 +7413,6 @@
 						"items": false
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -7753,7 +7434,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@visibilityRange" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
@@ -7782,7 +7462,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -7794,7 +7473,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -7806,7 +7484,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -7821,7 +7498,6 @@
 						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
 					"@forceTransitions" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -7833,7 +7509,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@range" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat initializeOnly",
 						"type":"array",
 						"$comment":"MFFloat initializeOnly",
@@ -7867,7 +7542,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ambientIntensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0.2,
@@ -7875,7 +7549,6 @@
 						"type":"number"
 					},
 					"@diffuseColor" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -7907,7 +7580,6 @@
 						"items": false
 					},
 					"@emissiveColor" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -7945,7 +7617,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@shininess" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0.2,
@@ -7953,7 +7624,6 @@
 						"type":"number"
 					},
 					"@specularColor" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -7985,7 +7655,6 @@
 						"items": false
 					},
 					"@transparency" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -8029,7 +7698,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){8}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFMatrix3f inputOutput",
 						"type":"array",
 						"$comment":"MFMatrix3f inputOutput",
@@ -8074,7 +7742,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){15}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFMatrix4f inputOutput",
 						"type":"array",
 						"$comment":"MFMatrix4f inputOutput",
@@ -8228,7 +7895,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -8278,7 +7944,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -8328,7 +7993,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -8422,7 +8086,6 @@
 						"type":"string"
 					},
 					"@value" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8464,7 +8127,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@loop" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -8473,56 +8135,47 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@pauseTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@pitch" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@repeatS" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatT" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@resumeTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@speed" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":1.0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@startTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@stopTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8558,7 +8211,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@alpha" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":1,
@@ -8566,7 +8218,6 @@
 						"type":"number"
 					},
 					"@color" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -8598,7 +8249,6 @@
 						"items": false
 					},
 					"@function" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8622,7 +8272,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@mode" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8657,7 +8306,6 @@
 						"type":"string"
 						}					},
 					"@source" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8772,7 +8420,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@avatarSize" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -8801,7 +8448,6 @@
 						"type":"number"
 						}					},
 					"@headlight" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -8813,21 +8459,18 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@speed" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@transitionTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@transitionType" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8846,7 +8489,6 @@
 						"type":"string"
 						}					},
 					"@type" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -8855,12 +8497,12 @@
 						{
 							"enum": [
 								"NONE",
-								"LOOKAT",
 								"WALK",
 								"EXAMINE",
+								"ANY",
+								"LOOKAT",
 								"EXPLORE",
-								"FLY",
-								"ANY"
+								"FLY"
 							],
 								"default":"EXAMINE",
 						"type":"string"
@@ -8871,7 +8513,6 @@
 						"type":"string"
 						}					},
 					"@visibilityLimit" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
@@ -8909,7 +8550,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@vector" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -8949,7 +8589,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -8958,7 +8597,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -8996,7 +8634,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@closed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9008,7 +8645,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@knot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9020,20 +8656,17 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@order" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@tessellation" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9068,13 +8701,11 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@closed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@controlPoint" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2d inputOutput",
 						"type":"array",
 						"$comment":"MFVec2d inputOutput",
@@ -9087,7 +8718,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@knot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9099,20 +8729,17 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@order" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@tessellation" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9153,7 +8780,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@knot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9165,14 +8791,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@order" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9215,7 +8839,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9224,20 +8847,17 @@
 						"$ref":"#/$defs/-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode"
 					},
 					"@uClosed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@uDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@uKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9246,33 +8866,28 @@
 						"type":"number"
 						}					},
 					"@uOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@uTessellation" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@vClosed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@vDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9281,20 +8896,17 @@
 						"type":"number"
 						}					},
 					"@vOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vTessellation" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9335,7 +8947,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@knot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9347,14 +8958,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@order" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9388,7 +8997,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -9400,7 +9008,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -9421,7 +9028,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@tessellationScale" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1.0,
 						"$comment":"SFFloat inputOutput",
@@ -9462,14 +9068,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@uDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@uKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9478,21 +9082,18 @@
 						"type":"number"
 						}					},
 					"@uOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9501,14 +9102,12 @@
 						"type":"number"
 						}					},
 					"@vOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9542,7 +9141,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9557,7 +9155,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9591,7 +9188,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9606,7 +9202,6 @@
 						"$ref":"#/$defs/-X3DNurbsControlCurveNodeSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9640,7 +9235,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@controlPoint" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f inputOutput",
 						"type":"array",
 						"$comment":"MFVec2f inputOutput",
@@ -9656,14 +9250,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@uDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@uKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9672,21 +9264,18 @@
 						"type":"number"
 						}					},
 					"@uOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9695,14 +9284,12 @@
 						"type":"number"
 						}					},
 					"@vOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -9746,7 +9333,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -9758,20 +9344,17 @@
 						"$ref":"#/$defs/-Contour2DMFNode"
 					},
 					"@uClosed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@uDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@uKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9780,33 +9363,28 @@
 						"type":"number"
 						}					},
 					"@uOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@uTessellation" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@vClosed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@vDimension" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 0,
 						"default":0,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vKnot" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble initializeOnly",
 						"type":"array",
 						"$comment":"MFDouble initializeOnly",
@@ -9815,20 +9393,17 @@
 						"type":"number"
 						}					},
 					"@vOrder" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : 2,
 						"default":3,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
 					"@vTessellation" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@weight" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFDouble inputOutput",
 						"type":"array",
 						"$comment":"MFDouble inputOutput",
@@ -9866,7 +9441,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -9875,7 +9449,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFRotation inputOutput",
 						"type":"array",
 						"$comment":"MFRotation inputOutput",
@@ -9938,7 +9511,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -9974,7 +9546,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@image" : {
-						"pattern" : "^\\s*([+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?\\s+){2}[+]?[0-4](\\s+(0x[0-9a-fA-F]{1,16}|[+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?))*\\s*$",
 						"$comment":"SFImage inputOutput",
 						"type":"array",
 						"$comment":"SFImage inputOutput",
@@ -9990,13 +9561,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@repeatS" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatT" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -10027,7 +9596,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@image" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -10043,19 +9611,16 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@repeatR" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatS" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@repeatT" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -10086,13 +9651,11 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@autoOffset" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@axisRotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -10128,7 +9691,6 @@
 						"type":"string"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -10137,7 +9699,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@maxPosition" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -10152,7 +9713,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@minPosition" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -10164,7 +9724,6 @@
 						"type":"number"
 						}					},
 					"@offset" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -10201,7 +9760,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ambientIntensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -10209,7 +9767,6 @@
 						"type":"number"
 					},
 					"@attenuation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"minimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
@@ -10239,7 +9796,6 @@
 						"items": false
 					},
 					"@color" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -10271,13 +9827,11 @@
 						"items": false
 					},
 					"@global" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@intensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":1,
@@ -10288,7 +9842,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@location" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -10303,13 +9856,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@on" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":100,
 						"$comment":"SFFloat inputOutput",
@@ -10387,7 +9938,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@lineSegments" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f initializeOnly",
 						"type":"array",
 						"$comment":"MFVec2f initializeOnly",
@@ -10431,7 +9981,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f inputOutput",
 						"type":"array",
 						"$comment":"MFVec2f inputOutput",
@@ -10469,7 +10018,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -10478,7 +10026,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -10519,7 +10066,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -10528,7 +10074,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f inputOutput",
 						"type":"array",
 						"$comment":"MFVec2f inputOutput",
@@ -10740,7 +10285,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -10752,7 +10296,6 @@
 						"type":"number"
 						}					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -10764,7 +10307,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -10804,7 +10346,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -10813,7 +10354,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -10834,13 +10374,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -10880,13 +10418,11 @@
 						"type":"string"
 					},
 					"@applicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -10898,7 +10434,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -10910,19 +10445,16 @@
 						"type":"number"
 						}					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@entityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@geoCoords" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -10948,7 +10480,6 @@
 						"type":"string"
 					},
 					"@multicastRelayPort" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -10965,80 +10496,67 @@
 						"type":"string"
 					},
 					"@port" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@readInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0.1,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@receivedPower" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0.0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@receiverState" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@rtpHeaderExpected" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@siteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@transmitterApplicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@transmitterEntityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@transmitterRadioID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@transmitterSiteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@whichGeometry" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":1,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@writeInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFTime inputOutput",
@@ -11076,7 +10594,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec2f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec2f initializeOnly",
@@ -11088,7 +10605,6 @@
 						"type":"number"
 						}					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -11164,7 +10680,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@key" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -11173,7 +10688,6 @@
 						"type":"number"
 						}					},
 					"@keyValue" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -11236,7 +10750,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@directOutput" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -11251,13 +10764,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@mustEvaluate" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -11319,7 +10830,6 @@
 						"type":"string"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -11387,7 +10897,6 @@
 						"type":"string"
 					},
 					"@url" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -11426,7 +10935,6 @@
 						"$ref":"#/$defs/-X3DAppearanceNodeSFNode"
 					},
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -11438,7 +10946,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -11490,13 +10997,11 @@
 						"type":"string"
 					},
 					"@applicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -11508,7 +11013,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -11520,7 +11024,6 @@
 						"type":"number"
 						}					},
 					"@data" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -11529,31 +11032,26 @@
 						"type":"integer"
 						}					},
 					"@dataLength" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@encodingScheme" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@entityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@geoCoords" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -11579,7 +11077,6 @@
 						"type":"string"
 					},
 					"@multicastRelayPort" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -11596,62 +11093,52 @@
 						"type":"string"
 					},
 					"@port" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@readInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0.1,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@rtpHeaderExpected" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@sampleRate" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@samples" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@siteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@tdlType" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@whichGeometry" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":1,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@writeInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFTime inputOutput",
@@ -11683,7 +11170,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@direction" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -11709,7 +11195,6 @@
 						"items": false
 					},
 					"@intensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":1,
@@ -11720,7 +11205,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@location" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -11732,14 +11216,12 @@
 						"type":"number"
 						}					},
 					"@maxBack" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":10,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@maxFront" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":10,
 						"$comment":"SFFloat inputOutput",
@@ -11749,21 +11231,18 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@minBack" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@minFront" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@priority" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -11774,7 +11253,6 @@
 						"$ref":"#/$defs/-X3DSoundSourceNodeSFNode"
 					},
 					"@spatialize" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -11811,14 +11289,12 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMinimum" : 0,
 						"default":1,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -11849,7 +11325,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@autoOffset" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -11860,7 +11335,6 @@
 						"type":"string"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -11872,7 +11346,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@offset" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -11928,7 +11401,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@ambientIntensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -11936,7 +11408,6 @@
 						"type":"number"
 					},
 					"@attenuation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"minimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
@@ -11966,7 +11437,6 @@
 						"items": false
 					},
 					"@beamWidth" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1.570796,
 						"exclusiveMinimum" : 0,
 						"default":0.7854,
@@ -11974,7 +11444,6 @@
 						"type":"number"
 					},
 					"@color" : {
-						"pattern" : "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -12006,7 +11475,6 @@
 						"items": false
 					},
 					"@cutOffAngle" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1.570796,
 						"exclusiveMinimum" : 0,
 						"default":1.570796,
@@ -12014,7 +11482,6 @@
 						"type":"number"
 					},
 					"@direction" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -12040,13 +11507,11 @@
 						"items": false
 					},
 					"@global" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@intensity" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":1,
@@ -12057,7 +11522,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@location" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -12072,13 +11536,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@on" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@radius" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":100,
 						"$comment":"SFFloat inputOutput",
@@ -12107,7 +11569,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -12119,7 +11580,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -12165,13 +11625,11 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@deletionAllowed" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -12205,7 +11663,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -12217,7 +11674,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -12238,7 +11694,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@whichChoice" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"minimum" : -1,
 						"default":-1,
 						"$comment":"SFInt32 inputOutput",
@@ -12276,7 +11731,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@length" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -12286,7 +11740,6 @@
 						"type":"number"
 						}					},
 					"@maxExtent" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0.0,
 						"$comment":"SFFloat inputOutput",
@@ -12296,13 +11749,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@string" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
@@ -12345,7 +11796,6 @@
 						"$ref":"#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
 					},
 					"@groundAngle" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -12356,7 +11806,6 @@
 						"type":"number"
 						}					},
 					"@groundColor" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColor inputOutput",
 						"type":"array",
 						"$comment":"MFColor inputOutput",
@@ -12380,7 +11829,6 @@
 						"$ref":"#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
 					},
 					"@skyAngle" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -12391,7 +11839,6 @@
 						"type":"number"
 						}					},
 					"@skyColor" : {
-						"pattern" : "^(\\s)*((([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+-]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFColor inputOutput",
 						"type":"array",
 						"$comment":"MFColor inputOutput",
@@ -12407,7 +11854,6 @@
 						"$ref":"#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
 					},
 					"@transparency" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"maximum" : 1,
 						"minimum" : 0,
 						"default":0,
@@ -12446,7 +11892,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f inputOutput",
 						"type":"array",
 						"$comment":"MFVec2f inputOutput",
@@ -12487,7 +11932,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec3f inputOutput",
 						"type":"array",
 						"$comment":"MFVec3f inputOutput",
@@ -12528,7 +11972,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@point" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec4f inputOutput",
 						"type":"array",
 						"$comment":"MFVec4f inputOutput",
@@ -12588,7 +12031,6 @@
 						"type":"string"
 					},
 					"@parameter" : {
-						"pattern" : "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
@@ -12622,7 +12064,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -12640,13 +12081,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@rotation" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -12658,7 +12097,6 @@
 						"type":"number"
 						}					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -12695,7 +12133,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -12713,7 +12150,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -12744,7 +12180,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -12756,7 +12191,6 @@
 						"type":"number"
 						}					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -12796,7 +12230,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@matrix" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){15}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFMatrix4f inputOutput",
 						"type":"array",
 						"$comment":"SFMatrix4f inputOutput",
@@ -12915,14 +12348,12 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@cycleInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -12931,7 +12362,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@loop" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -12940,25 +12370,21 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@pauseTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@resumeTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@startTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@stopTime" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
@@ -13025,7 +12451,6 @@
 						"type":"string"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -13059,7 +12484,6 @@
                                  "type": "object",
                                  "properties": {
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -13071,7 +12495,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -13083,7 +12506,6 @@
 						"type":"number"
 						}					},
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13104,7 +12526,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@rotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -13135,7 +12556,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13147,7 +12567,6 @@
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -13178,7 +12597,6 @@
 						"items": false
 					},
 					"@translation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13221,7 +12639,6 @@
 						"type":"string"
 					},
 					"@antennaLocation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13233,25 +12650,21 @@
 						"type":"number"
 						}					},
 					"@antennaPatternLength" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@antennaPatternType" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@applicationID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@bboxCenter" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -13263,7 +12676,6 @@
 						"type":"number"
 						}					},
 					"@bboxSize" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -13275,37 +12687,31 @@
 						"type":"number"
 						}					},
 					"@cryptoKeyID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@cryptoSystem" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
 					"@entityID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@frequency" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@geoCoords" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3d inputOutput",
 						"type":"array",
 						"$comment":"SFVec3d inputOutput",
@@ -13320,7 +12726,6 @@
 		"$ref": "#/$defs/@geoSystem"
             },
 					"@inputSource" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -13329,7 +12734,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@lengthOfModulationParameters" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -13338,25 +12742,21 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@modulationTypeDetail" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@modulationTypeMajor" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@modulationTypeSpreadSpectrum" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@modulationTypeSystem" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -13367,7 +12767,6 @@
 						"type":"string"
 					},
 					"@multicastRelayPort" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
@@ -13384,68 +12783,57 @@
 						"type":"string"
 					},
 					"@port" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@power" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0.0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@radioEntityTypeCategory" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioEntityTypeCountry" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioEntityTypeDomain" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioEntityTypeKind" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioEntityTypeNomenclature" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioEntityTypeNomenclatureVersion" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@radioID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@readInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":0.1,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
 					},
 					"@relativeAntennaLocation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13457,37 +12845,31 @@
 						"type":"number"
 						}					},
 					"@rtpHeaderExpected" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@siteID" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@transmitFrequencyBandwidth" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
 					},
 					"@transmitState" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":0,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@whichGeometry" : {
-						"pattern" : "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
 						"default":1,
 						"$comment":"SFInt32 inputOutput",
 						"type":"integer"
 					},
 					"@writeInterval" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"minimum" : 0,
 						"default":1.0,
 						"$comment":"SFTime inputOutput",
@@ -13522,7 +12904,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13531,7 +12912,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13540,7 +12920,6 @@
 						"$ref":"#/$defs/-X3DCoordinateNodeSFNode"
 					},
 					"@fanCount" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -13562,13 +12941,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13605,7 +12982,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13614,7 +12990,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13635,13 +13010,11 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13681,13 +13054,11 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":false,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@vertices" : {
-						"pattern" : "^\\s*((([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
 						"$comment":"MFVec2f inputOutput",
 						"type":"array",
 						"$comment":"MFVec2f inputOutput",
@@ -13725,7 +13096,6 @@
 						"$ref":"#/$defs/-X3DVertexAttributeNodeMFNode"
 					},
 					"@ccw" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13734,7 +13104,6 @@
 						"$ref":"#/$defs/-X3DColorNodeSFNode"
 					},
 					"@colorPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
@@ -13755,19 +13124,16 @@
 						"$ref":"#/$defs/-X3DNormalNodeSFNode"
 					},
 					"@normalPerVertex" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@solid" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool initializeOnly",
 						"type":"boolean"
 					},
 					"@stripCount" : {
-						"pattern" : "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
 						"$comment":"MFInt32 inputOutput",
 						"type":"array",
 						"$comment":"MFInt32 inputOutput",
@@ -13805,7 +13171,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@centerOfRotation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13822,7 +13187,6 @@
 						"type":"string"
 					},
 					"@fieldOfView" : {
-						"pattern" : "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
 						"exclusiveMaximum" : 3.1416,
 						"exclusiveMinimum" : 0,
 						"default":0.7854,
@@ -13833,7 +13197,6 @@
 						"$ref":"#/$defs/IS"
 					},
 					"@jump" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -13842,7 +13205,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@orientation" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"$comment":"SFRotation inputOutput",
@@ -13873,7 +13235,6 @@
 						"items": false
 					},
 					"@position" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13924,7 +13285,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@center" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13936,7 +13296,6 @@
 						"type":"number"
 						}					},
 					"@enabled" : {
-						"pattern" : "^\\s*(true|false)\\s*$",
 						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
@@ -13948,7 +13307,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"pattern" : "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
 						"$comment":"SFVec3f initializeOnly",
 						"type":"array",
 						"$comment":"SFVec3f initializeOnly",
@@ -13985,7 +13343,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@info" : {
-						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
