@@ -747,7 +747,8 @@
                     "-material":
                       { "ProtoInstance":
                         {
-                          "@USE":"ArtDeco02MaterialDEF"
+                          "@USE":"ArtDeco02MaterialDEF",
+                          "@name":"ArtDeco02Material"
                         }
                       }
                   }
@@ -2002,6 +2003,7 @@
                     "-material":
                       { "ProtoInstance":
                         {
+                          "@name":"ArtDeco02Material",
                           "@USE":"ArtDeco02MaterialDEF"
                         }
                       }
