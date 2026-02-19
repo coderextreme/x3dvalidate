@@ -12,7 +12,7 @@ npm install -g x3dvalidate
 node x3dvalidate.js examples/*.json    # use your own .x3dj or .json files (any extension works)
 node test/app.js # simple test app
 ```
-x3dvalidate is a full npx program (an npm module), thus you can run:
+In production mode, x3dvalidate is a full npx program (an npm module), thus you can run:
 
 ```bash
 npx x3dvalidate file1.json file2.json ...
