@@ -11,7 +11,7 @@ import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats-draft2019";
 import fs from 'fs';
 
-var ajv = new Ajv2020({ strict: false });
+var ajv = new Ajv2020({ strict: true });
 addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 var schemaAdded = false;
 

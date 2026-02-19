@@ -1,9 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.0-JSONSchema.json",
-  "title": "X3D V3.0 JSON Schema, generated 2026/01/14 01:59:00",
-  "description": "Experimental JSON Schema for X3D V3.0",
-  "license": "Web3D Consortium License: https://www.web3d.org/license",
+  "title": "X3D V3.0 JSON Schema, generated 2026/02/19 03:47:19",
+  "description": "Experimental JSON Schema for X3D V3.0.  License: Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
     "X3D": {
@@ -45,6 +44,9 @@
       }
     },
     "@geoSystem": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
       "description": "Attempts to validate all possible combinations",
       "oneOf": [
         {
@@ -3194,8 +3196,6 @@
               "type": "number"
             },
             "@color": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -4223,8 +4223,6 @@
               "type": "boolean"
             },
             "@hatchColor": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -4306,8 +4304,6 @@
               "$ref": "#/$defs/-childStatements"
             },
             "@color": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -8007,8 +8003,6 @@
               "type": "number"
             },
             "@diffuseColor": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -8021,8 +8015,6 @@
               }
             },
             "@emissiveColor": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -8048,8 +8040,6 @@
               "type": "number"
             },
             "@specularColor": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -8712,8 +8702,6 @@
               "type": "number"
             },
             "@color": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -9060,13 +9048,13 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "EXAMINE",
-                    "NONE",
+                    "LOOKAT",
                     "FLY",
-                    "ANY",
                     "EXPLORE",
                     "WALK",
-                    "LOOKAT"
+                    "ANY",
+                    "NONE",
+                    "EXAMINE"
                   ],
                   "default": "EXAMINE",
                   "type": "string"
@@ -10679,8 +10667,6 @@
               "items": false
             },
             "@color": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -12463,8 +12449,6 @@
               "type": "number"
             },
             "@color": {
-              "maximum": 1,
-              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,

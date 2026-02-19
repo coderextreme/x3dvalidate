@@ -1,9 +1,8 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-        "title": "X3D V3.3 JSON Schema, generated 2026/01/14 01:59:01",
-        "description": "Experimental JSON Schema for X3D V3.3",
-        "license": "Web3D Consortium License: https://www.web3d.org/license",
+        "title": "X3D V3.3 JSON Schema, generated 2026/02/19 03:47:19",
+        "description": "Experimental JSON Schema for X3D V3.3.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
                 "X3D": {
@@ -45,6 +44,9 @@
                         }
                 },
 		"@geoSystem": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
 			"description": "Attempts to validate all possible combinations",
 			"oneOf": [
 				{
@@ -2818,8 +2820,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@orthogonalColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"SFColorRGBA inputOutput",
@@ -2833,8 +2833,6 @@
 						"type":"number"
 						}					},
 					"@parallelColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"SFColorRGBA inputOutput",
@@ -3832,8 +3830,6 @@
 						"type":"number"
 					},
 					"@initialDestination" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor initializeOnly",
 						"type":"array",
 						"$comment":"SFColor initializeOnly",
@@ -3847,8 +3843,6 @@
 						"type":"number"
 						}					},
 					"@initialValue" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor initializeOnly",
 						"type":"array",
 						"$comment":"SFColor initializeOnly",
@@ -3918,8 +3912,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@initialDestination" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor initializeOnly",
 						"type":"array",
 						"$comment":"SFColor initializeOnly",
@@ -3933,8 +3925,6 @@
 						"type":"number"
 						}					},
 					"@initialValue" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor initializeOnly",
 						"type":"array",
 						"$comment":"SFColor initializeOnly",
@@ -5778,8 +5768,6 @@
 						"type":"number"
 					},
 					"@color" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -6398,8 +6386,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@edgeColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"SFColorRGBA inputOutput",
@@ -7478,8 +7464,6 @@
 						"type":"boolean"
 					},
 					"@hatchColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -7634,8 +7618,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@color" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -12080,8 +12062,8 @@
 							{
 								"enum": [
 									"RIGHT",
-									"CENTER",
-									"LEFT"
+									"LEFT",
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12089,8 +12071,8 @@
 							,
 							{
 								"enum": [
-									"CENTER",
 									"BOTTOM",
+									"CENTER",
 									"TOP"
 								],
 								"default":"CENTER",
@@ -12122,9 +12104,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
+									"WORLD",
 									"FRACTION",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12132,9 +12114,9 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
+									"WORLD",
 									"FRACTION",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12151,9 +12133,9 @@
 							{
 								"enum": [
 									"PIXEL",
-									"STRETCH",
+									"NONE",
 									"FRACTION",
-									"NONE"
+									"STRETCH"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12162,9 +12144,9 @@
 							{
 								"enum": [
 									"PIXEL",
-									"STRETCH",
+									"NONE",
 									"FRACTION",
-									"NONE"
+									"STRETCH"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12189,9 +12171,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
+									"WORLD",
 									"FRACTION",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12199,9 +12181,9 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
+									"WORLD",
 									"FRACTION",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12754,8 +12736,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@color" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -12954,8 +12934,6 @@
 						"type":"number"
 					},
 					"@diffuseColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -12969,8 +12947,6 @@
 						"type":"number"
 						}					},
 					"@emissiveColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -12997,8 +12973,6 @@
 						"type":"number"
 					},
 					"@specularColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -14037,8 +14011,6 @@
 						"type":"number"
 					},
 					"@color" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -14374,13 +14346,13 @@
 						"prefixItems": [
 						{
 							"enum": [
-								"EXPLORE",
+								"NONE",
 								"EXAMINE",
-								"WALK",
+								"LOOKAT",
 								"FLY",
 								"ANY",
-								"LOOKAT",
-								"NONE"
+								"EXPLORE",
+								"WALK"
 							],
 								"default":"EXAMINE",
 						"type":"string"
@@ -17027,8 +16999,6 @@
 						"items": false
 					},
 					"@color" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -21596,8 +21566,6 @@
 						"type":"number"
 					},
 					"@color" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -22788,8 +22756,6 @@
 						"type":"number"
 					},
 					"@borderColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"SFColorRGBA inputOutput",
@@ -23174,6 +23140,8 @@
 						"type":"array",
 						"$comment":"SFMatrix4f inputOutput",
 						"type":"array",
+						"minItems" : 16,
+						"maxItems" : 16,
 						"prefixItems": [
 						{
 							"default":1,
@@ -23459,8 +23427,6 @@
                                         "$ref": "#/$defs/-childStatements"
                                 },
 					"@coolColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"SFColorRGBA inputOutput",
@@ -23513,8 +23479,6 @@
 						"$ref":"#/$defs/-X3DTexture3DNodeSFNode"
 					},
 					"@warmColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColorRGBA inputOutput",
 						"type":"array",
 						"$comment":"SFColorRGBA inputOutput",
@@ -24599,8 +24563,6 @@
 						"type":"number"
 					},
 					"@backDiffuseColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -24614,8 +24576,6 @@
 						"type":"number"
 						}					},
 					"@backEmissiveColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -24636,8 +24596,6 @@
 						"type":"number"
 					},
 					"@backSpecularColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -24658,8 +24616,6 @@
 						"type":"number"
 					},
 					"@diffuseColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -24673,8 +24629,6 @@
 						"type":"number"
 						}					},
 					"@emissiveColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
@@ -24706,8 +24660,6 @@
 						"type":"number"
 					},
 					"@specularColor" : {
-						"maximum" : 1,
-						"minimum" : 0,
 						"$comment":"SFColor inputOutput",
 						"type":"array",
 						"$comment":"SFColor inputOutput",
