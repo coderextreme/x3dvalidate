@@ -1,6 +1,6 @@
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats-draft2019";
-import X3DJSONLD from './X3DJSONLD.js';
+import selectObjectFromJson from './selectObjectFromJson.js';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -14,7 +14,7 @@ addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference"
 var CACHE = {};
 CACHE.validate = {};
 
-doValidate = function doValidate(json, validated_version, file, success, failure, e) {
+function doValidate(json, validated_version, file, success, failure, e) {
 	var retval = false;
 	if (e) {
 		if (typeof alert === 'function') {
@@ -32,7 +32,7 @@ doValidate = function doValidate(json, validated_version, file, success, failure
 				var instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " instancePath: " + instancePath+ "\n";
-				var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, instancePath);
+				var selectedObject = selectObjectFromJson(json, instancePath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = structuredClone(v);

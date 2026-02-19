@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-        "title": "X3D V3.3 JSON Schema, generated 2026/02/19 09:20:30",
+        "title": "X3D V3.3 JSON Schema, generated 2026/02/19 11:07:03",
         "description": "Experimental JSON Schema for X3D V3.3.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -117,899 +117,85 @@
             ],
 		    "additionalProperties": false
         },
-		"@geoSystem": {
+        "@geoSystem": {
+            "$comment": "Coordinate reference system identifier tokens. Exactly one of three systems: GD/GDC (geographic degrees), UTM (universal transverse mercator), or GC/GCC (geocentric).",
+            "oneOf": [
+                { "$ref": "#/$defs/@geoSystem-GD"  },
+                { "$ref": "#/$defs/@geoSystem-UTM" },
+                { "$ref": "#/$defs/@geoSystem-GC"  }
+            ]
+        },
+        "@geoSystem-GD": {
+            "title": "geoSystem GD/GDC — Geographic Degrees",
+            "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
             "type": "array",
-			"description": "Attempts to validate all possible combinations",
-			"oneOf": [
-				{
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 3,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"GD",
-								"GDC"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"AM",
-							"AN",
-							"BN",
-							"BR",
-							"CC",
-							"CD",
-							"EA",
-							"EB",
-							"EC",
-							"ED",
-							"EE",
-							"EF",
-							"FA",
-							"HE",
-							"HO",
-							"ID",
-							"IN",
-							"KA",
-							"RF",
-							"SA",
-							"WD",
-							"WE"
-						],
-						"default": "WE"
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 1,
-					"maxItems": 3,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"GD",
-								"GDC"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							],
-							"default": "WE"
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"WGS84"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 4,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"S",
-							"N"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 3,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"WGS84"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 4,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"S",
-							"N"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 3,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"AM",
-							"AN",
-							"BN",
-							"BR",
-							"CC",
-							"CD",
-							"EA",
-							"EB",
-							"EC",
-							"ED",
-							"EE",
-							"EF",
-							"FA",
-							"HE",
-							"HO",
-							"ID",
-							"IN",
-							"KA",
-							"RF",
-							"SA",
-							"WD",
-							"WE"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 4,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"AM",
-							"AN",
-							"BN",
-							"BR",
-							"CC",
-							"CD",
-							"EA",
-							"EB",
-							"EC",
-							"ED",
-							"EE",
-							"EF",
-							"FA",
-							"HE",
-							"HO",
-							"ID",
-							"IN",
-							"KA",
-							"RF",
-							"SA",
-							"WD",
-							"WE"
-						]
-					}
-				}, {
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"WGS84"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 1,
-					"maxItems": 1,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"GC",
-								"GCC"
-							],
-							"default": "GD"
-						}
-					],
-					"items": false
-				}
-			]
-		},
+            "minItems": 1,
+            "maxItems": 2,
+            "prefixItems": [
+                {
+                    "type": "string",
+                    "enum": ["GD", "GDC"],
+                    "default": "GD"
+                },
+                { "$ref": "#/$defs/@geoSystem-ellipsoid" }
+            ],
+            "items": false
+        },
+        "@geoSystem-UTM": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 5,
+            "prefixItems": [
+                {
+                    "type": "string",
+                    "const": "UTM"
+                },
+                { "$ref": "#/$defs/@geoSystem-UTM-zone" }
+            ],
+            "items": {
+                "type": "string",
+                "enum": ["N", "S", "WGS84",
+                     "AM", "AN", "BN", "BR", "CC", "CD", "EA", "EB",
+                     "EC", "ED", "EE", "EF", "FA", "HE", "HO", "ID",
+                     "IN", "KA", "RF", "SA", "WD", "WE"]
+            },
+            "if": {
+                "contains": { "const": "N" }
+            },
+            "then": {
+                "not": { "contains": { "const": "S" } }
+            }
+        },
+        "@geoSystem-GC": {
+            "title": "geoSystem GC/GCC — Geocentric",
+            "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "prefixItems": [
+                {
+                "type": "string",
+                "enum": ["GC", "GCC"]
+                }
+            ],
+            "items": false
+        },
+        "@geoSystem-ellipsoid": {
+            "title": "geoSystem ellipsoid datum",
+            "$comment": "Reference ellipsoid. WGS84 is the datum name; the 22 two-letter codes are ellipsoid identifiers. Defaults to WE.",
+            "type": "string",
+            "default": "WE",
+            "enum": ["WGS84",
+                "AM", "AN", "BN", "BR", "CC", "CD", "EA", "EB",
+                "EC", "ED", "EE", "EF", "FA", "HE", "HO", "ID",
+                "IN", "KA", "RF", "SA", "WD", "WE"]
+        },
+        "@geoSystem-UTM-zone": {
+            "title": "UTM zone number",
+            "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+            "type": "string",
+            "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
+        },
 		"SceneGraphStructureStatement" : {
 			"title" : "SceneGraphStructureStatement",
 			"description" : "SceneGraphStructureStatement is a marker interface that identifies statements relating to nonrenderable scene graph structure. SceneGraphStructureStatement does not extend from any other node type since it is not an explicit part of the X3D node interface hierarchy, and DEF/USE is not appropriate for such statements.",
@@ -1089,7 +275,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1138,7 +324,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1189,7 +375,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1255,7 +441,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1332,7 +518,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1473,7 +659,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1538,7 +724,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1616,7 +802,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1706,7 +892,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1737,7 +923,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1784,7 +970,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1820,7 +1006,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1856,7 +1042,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1912,7 +1098,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1951,7 +1137,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -1998,7 +1184,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2056,7 +1242,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2117,7 +1303,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2183,7 +1369,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2334,7 +1520,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2456,7 +1642,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2493,7 +1679,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2528,8 +1714,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@plane" : {
-						"maximum" : 1,
-						"minimum" : -1,
 						"$comment":"SFVec4f inputOutput",
 						"type":"array",
 						"$comment":"SFVec4f inputOutput",
@@ -2569,7 +1753,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2671,7 +1855,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2773,7 +1957,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2834,7 +2018,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -2916,7 +2100,6 @@
 						"type":"boolean"
 					},
 					"@frictionCoefficients" : {
-						"minimum" : 0,
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -2978,7 +2161,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3023,7 +2206,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3089,7 +2272,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3131,7 +2314,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3230,7 +2413,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3341,7 +2524,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3391,7 +2574,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3433,7 +2616,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3555,7 +2738,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3608,7 +2791,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3660,7 +2843,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3699,7 +2882,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3757,7 +2940,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3788,8 +2971,6 @@
 						"type":"number"
 					},
 					"@direction" : {
-						"maximum" : 1,
-						"minimum" : -1,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -3863,7 +3044,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -3984,7 +3165,6 @@
 						"type":"number"
 					},
 					"@frictionCoefficients" : {
-						"minimum" : 0,
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -4088,7 +3268,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4119,7 +3299,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4159,7 +3339,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4199,7 +3379,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4256,7 +3436,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4325,7 +3505,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4365,7 +3545,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4413,7 +3593,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4461,7 +3641,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4524,7 +3704,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4626,7 +3806,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4737,7 +3917,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4792,7 +3972,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4882,7 +4062,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -4930,7 +4110,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5072,7 +4252,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5120,7 +4300,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5204,7 +4384,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5308,7 +4488,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5783,7 +4963,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5849,7 +5029,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -5965,7 +5145,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6172,7 +5352,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6223,7 +5403,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6301,7 +5481,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6342,7 +5522,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6437,8 +5617,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"exclusiveMinimum" : 0,
-						"default":1.0,
 						"$comment":"SFFloat initializeOnly",
 						"type":"number"
 					},
@@ -6467,7 +5645,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6528,7 +5706,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6558,8 +5736,6 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@size" : {
-						"exclusiveMinimum" : 0,
-						"default":128,
 						"$comment":"SFInt32 initializeOnly",
 						"type":"integer"
 					},
@@ -6579,7 +5755,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6625,7 +5801,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6747,7 +5923,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6817,7 +5993,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6946,7 +6122,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -6998,7 +6174,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7048,7 +6224,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7102,7 +6278,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7177,7 +6353,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7224,7 +6400,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7323,7 +6499,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -7378,7 +6553,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7447,29 +6622,7 @@
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"minItems" : 4,
-						"maxItems" : 4,
-						"prefixItems": [
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-						],
-						"items": false
+						"maxItems" : 4
 					},
 					"@position" : {
 						"$comment":"SFVec3d inputOutput",
@@ -7509,7 +6662,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7562,7 +6715,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7701,7 +6854,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -7810,7 +6963,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -7896,7 +7048,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8135,7 +7287,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -8227,7 +7378,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8417,7 +7568,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8596,7 +7747,6 @@
 						"items": false
 					},
 					"@scale" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -8651,7 +7801,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8720,7 +7870,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8774,7 +7924,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8833,7 +7983,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -8984,7 +8134,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9050,7 +8200,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9128,7 +8278,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9206,7 +8356,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9284,7 +8434,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9362,7 +8512,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9430,7 +8580,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9477,7 +8627,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9513,7 +8663,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9593,7 +8743,6 @@
 						"type":"number"
 					},
 					"@dimensions" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -9636,7 +8785,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9672,7 +8821,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9711,7 +8860,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9761,7 +8910,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9792,8 +8941,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"CENTER",
 									"RIGHT",
+									"CENTER",
 									"LEFT"
 								],
 								"default":"CENTER",
@@ -9802,9 +8951,9 @@
 							,
 							{
 								"enum": [
-									"CENTER",
+									"TOP",
 									"BOTTOM",
-									"TOP"
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -9835,8 +8984,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"WORLD",
+									"PIXEL",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -9845,8 +8994,8 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"WORLD",
+									"PIXEL",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -9864,8 +9013,8 @@
 							{
 								"enum": [
 									"NONE",
-									"FRACTION",
 									"PIXEL",
+									"FRACTION",
 									"STRETCH"
 								],
 								"default":"NONE",
@@ -9875,8 +9024,8 @@
 							{
 								"enum": [
 									"NONE",
-									"FRACTION",
 									"PIXEL",
+									"FRACTION",
 									"STRETCH"
 								],
 								"default":"NONE",
@@ -9902,8 +9051,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"WORLD",
+									"PIXEL",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -9912,8 +9061,8 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"WORLD",
+									"PIXEL",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -9924,7 +9073,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -9983,7 +9132,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10025,7 +9174,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10127,7 +9276,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10174,7 +9323,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10226,7 +9375,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10271,7 +9420,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10354,7 +9503,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10431,7 +9580,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10576,7 +9725,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10620,7 +9769,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10664,7 +9813,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10817,7 +9966,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10866,7 +10015,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10915,7 +10064,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -10964,7 +10113,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11008,7 +10157,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11057,7 +10206,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11216,7 +10365,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11311,7 +10460,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11452,7 +10601,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11486,7 +10635,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11520,7 +10669,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11547,30 +10696,8 @@
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
-						"type":"array",
-						"prefixItems": [
-						{
-							"default":0.25,
-						"minimum" : 0,
-						"type":"number"
-						}
-,
-						{
-							"default":1.6,
-						"minimum" : 0,
-						"type":"number"
-						}
-,
-						{
-							"default":0.75,
-						"minimum" : 0,
-						"type":"number"
-						}
-						],
-						"items": {
-						"minimum" : 0,
-						"type":"number"
-						}					},
+						"type":"array"
+					},
 					"@headlight" : {
 						"default":true,
 						"$comment":"SFBool inputOutput",
@@ -11616,26 +10743,8 @@
 						"$comment":"MFString inputOutput",
 						"type":"array",
 						"$comment":"MFString inputOutput",
-						"type":"array",
-						"prefixItems": [
-						{
-							"enum": [
-								"WALK",
-								"NONE",
-								"ANY",
-								"EXAMINE",
-								"EXPLORE",
-								"LOOKAT",
-								"FLY"
-							],
-								"default":"EXAMINE",
-						"type":"string"
-						},
-						{
-						}						],
-						"items": {
-						"type":"string"
-						}					},
+						"type":"array"
+					},
 					"@visibilityLimit" : {
 						"minimum" : 0,
 						"default":0,
@@ -11644,7 +10753,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11686,7 +10795,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11734,7 +10843,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11801,7 +10910,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11874,7 +10983,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -11930,7 +11039,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12041,7 +11150,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12097,7 +11206,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12159,7 +11268,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12241,7 +11350,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12288,7 +11397,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12335,7 +11444,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12424,7 +11533,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12538,7 +11647,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12577,7 +11686,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12674,7 +11783,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12783,7 +11892,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12831,7 +11940,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -12874,31 +11983,8 @@
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
-						"type":"array",
-						"prefixItems": [
-						{
-							"default":-1,
-						"type":"number"
-						}
-,
-						{
-							"default":-1,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-						],
-						"items": {
-						"type":"number"
-						}					},
+						"type":"array"
+					},
 					"IS" : {
 						"$ref":"#/$defs/IS"
 					},
@@ -12916,29 +12002,7 @@
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"minItems" : 4,
-						"maxItems" : 4,
-						"prefixItems": [
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-						],
-						"items": false
+						"maxItems" : 4
 					},
 					"@position" : {
 						"$comment":"SFVec3f inputOutput",
@@ -12972,7 +12036,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13032,7 +12096,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13151,7 +12215,6 @@
 						"type":"number"
 					},
 					"@particleSize" : {
-						"minimum" : 0,
 						"$comment":"SFVec2f inputOutput",
 						"type":"array",
 						"$comment":"SFVec2f inputOutput",
@@ -13180,7 +12243,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13256,7 +12319,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13309,7 +12372,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13367,7 +12430,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13476,7 +12539,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13567,7 +12630,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13598,7 +12661,6 @@
 						"type":"number"
 					},
 					"@attenuation" : {
-						"minimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13699,7 +12761,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13801,7 +12863,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13844,7 +12906,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13884,7 +12946,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -13921,8 +12983,6 @@
 						"type":"integer"
 						}					},
 					"@direction" : {
-						"maximum" : 1,
-						"minimum" : -1,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -13985,7 +13045,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14025,7 +13085,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14084,7 +13144,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14143,7 +13203,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14214,7 +13274,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14285,7 +13345,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14333,7 +13393,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14381,7 +13441,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14483,7 +13543,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14530,7 +13590,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14584,7 +13644,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14689,7 +13749,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14769,7 +13829,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -14838,7 +13898,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15014,7 +14074,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15061,7 +14121,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15188,54 +14248,7 @@
 						"$comment":"SFMatrix3f inputOutput",
 						"type":"array",
 						"$comment":"SFMatrix3f inputOutput",
-						"type":"array",
-						"prefixItems": [
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-						],
-						"items": false
+						"type":"array"
 					},
 					"IS" : {
 						"$ref":"#/$defs/IS"
@@ -15273,29 +14286,7 @@
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"minItems" : 4,
-						"maxItems" : 4,
-						"prefixItems": [
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-						],
-						"items": false
+						"maxItems" : 4
 					},
 					"@position" : {
 						"$comment":"SFVec3f inputOutput",
@@ -15329,7 +14320,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15453,7 +14444,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15542,7 +14533,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15601,7 +14592,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15648,7 +14639,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15789,7 +14780,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15842,7 +14833,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15906,7 +14897,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -15952,7 +14943,6 @@
 						"type":"number"
 						}					},
 					"@dimensions" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -15989,7 +14979,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16054,7 +15044,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16115,7 +15105,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16182,7 +15172,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16241,7 +15231,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16420,7 +15410,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16479,7 +15469,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16575,7 +15565,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16679,7 +15669,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16792,7 +15782,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16834,7 +15824,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16910,7 +15900,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -16977,7 +15967,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17044,7 +16034,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17109,7 +16099,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17140,7 +16130,6 @@
 						"type":"number"
 					},
 					"@attenuation" : {
-						"minimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -17280,7 +16269,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17333,7 +16322,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17386,7 +16375,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17427,7 +16416,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17485,7 +16474,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17544,7 +16533,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17599,7 +16588,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17666,7 +16655,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17728,7 +16717,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17827,7 +16816,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17867,7 +16856,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17907,7 +16896,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -17947,7 +16936,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18005,7 +16994,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18181,7 +17170,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18250,7 +17239,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18344,7 +17333,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18465,7 +17454,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18532,7 +17521,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18563,7 +17552,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18678,7 +17667,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18719,7 +17708,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18865,7 +17854,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -18926,7 +17915,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19194,7 +18183,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19272,7 +18261,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19341,7 +18330,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19386,7 +18375,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19464,7 +18453,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19728,7 +18717,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19889,7 +18878,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -19952,29 +18941,7 @@
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
 						"minItems" : 4,
-						"maxItems" : 4,
-						"prefixItems": [
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"type":"number"
-						}
-						],
-						"items": false
+						"maxItems" : 4
 					},
 					"@position" : {
 						"$comment":"SFVec3f inputOutput",
@@ -20008,7 +18975,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20076,7 +19043,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20125,41 +19092,8 @@
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
 						"$comment":"MFFloat inputOutput",
-						"type":"array",
-						"prefixItems": [
-						{
-							"default":0,
-						"maximum" : 1,
-						"minimum" : 0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"maximum" : 1,
-						"minimum" : 0,
-						"type":"number"
-						}
-,
-						{
-							"default":0,
-						"maximum" : 1,
-						"minimum" : 0,
-						"type":"number"
-						}
-,
-						{
-							"default":1,
-						"maximum" : 1,
-						"minimum" : 0,
-						"type":"number"
-						}
-						],
-						"items": {
-						"maximum" : 1,
-						"minimum" : 0,
-						"type":"number"
-						}					},
+						"type":"array"
+					},
 					"IS" : {
 						"$ref":"#/$defs/IS"
 					},
@@ -20168,7 +19102,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20226,7 +19160,7 @@
 						}					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20272,7 +19206,6 @@
 						"type":"number"
 						}					},
 					"@dimensions" : {
-						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -20298,7 +19231,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20335,8 +19268,6 @@
 						"type":"integer"
 						}					},
 					"@direction" : {
-						"maximum" : 1,
-						"minimum" : -1,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -20404,7 +19335,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20506,7 +19437,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20586,7 +19517,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {
@@ -20630,7 +19561,7 @@
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
-						"$comment":"SFString inputOutput",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
 					"@class" : {

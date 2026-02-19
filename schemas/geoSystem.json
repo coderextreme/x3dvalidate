@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
+  "title": "X3D V4.1 JSON Schema, generated 2026/02/19 11:07:04",
+  "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
+  "type": "object",
+  "properties": {
+    "X3D": {
+      "$ref": "#/$defs/X3D"
+    }
+  },
+  "required": [
+    "X3D"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "@geoSystem": {
+      "$comment": "Coordinate reference system identifier tokens. Exactly one of three systems: GD/GDC (geographic degrees), UTM (universal transverse mercator).",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/@geoSystem-GD"
+        },
+        {
+          "$ref": "#/$defs/@geoSystem-UTM"
+        }
+      ]
+    },
+    "@geoSystem-GD": {
+      "title": "geoSystem GD/GDC &#x2013; Geographic Degrees",
+      "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "string",
+          "enum": [
+            "GD",
+            "GDC"
+          ],
+          "default": "GD"
+        }
+      ],
+      "items": {
+          "$ref": "#/$defs/@geoSystem-ellipsoid"
+      }
+    },
+    "@geoSystem-UTM": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5,
+      "prefixItems": [
+        {
+          "type": "string",
+          "const": "UTM"
+        },
+        {
+          "$ref": "#/$defs/@geoSystem-UTM-zone"
+        }
+      ],
+      "items": {
+        "type": "string",
+        "enum": [
+          "N",
+          "S",
+          "WGS84",
+          "AM",
+          "AN",
+          "BN",
+          "BR",
+          "CC",
+          "CD",
+          "EA",
+          "EB",
+          "EC",
+          "ED",
+          "EE",
+          "EF",
+          "FA",
+          "HE",
+          "HO",
+          "ID",
+          "IN",
+          "KA",
+          "RF",
+          "SA",
+          "WD",
+          "WE"
+        ]
+      },
+      "if": {
+        "contains": {
+          "const": "N"
+        }
+      },
+      "then": {
+        "not": {
+          "contains": {
+            "const": "S"
+          }
+        }
+      }
+    },
+    "@geoSystem-ellipsoid": {
+      "title": "geoSystem ellipsoid datum",
+      "$comment": "Reference ellipsoid. WGS84 is the datum name; the 22 two-letter codes are ellipsoid identifiers. Defaults to WE.",
+      "type": "string",
+      "default": "WE",
+      "enum": [
+        "WGS84",
+        "AM",
+        "AN",
+        "BN",
+        "BR",
+        "CC",
+        "CD",
+        "EA",
+        "EB",
+        "EC",
+        "ED",
+        "EE",
+        "EF",
+        "FA",
+        "HE",
+        "HO",
+        "ID",
+        "IN",
+        "KA",
+        "RF",
+        "SA",
+        "WD",
+        "WE"
+      ]
+    },
+    "@geoSystem-UTM-zone": {
+      "title": "UTM zone number",
+      "$comment": "Zone 1&#x2013;60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+      "type": "string",
+      "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
+    },
+    "X3D": {
+      "title": "X3D",
+      "description": "X3D is the root node for an Extensible 3D (X3D) Graphics model.",
+      "type": "object",
+      "properties": {
+        "@geoSystem": {
+          "$ref": "#/$defs/@geoSystem"
+        }
+      },
+      "required": [
+        "@geoSystem"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
