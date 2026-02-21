@@ -1,173 +1,103 @@
 #!/usr/bin/env node
-
 "use strict";
+
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-import Ajv2020 from "ajv/dist/2020.js";
-import addFormats from "ajv-formats-draft2019";
 import fs from 'fs';
+import selectObjectFromJson from './selectObjectFromJson.js';
+import { registerSchema, validate } from "@hyperjump/json-schema/draft-2020-12";
+import { BASIC } from "@hyperjump/json-schema/experimental";
 
-var ajv = new Ajv2020({ strict: true });
-addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
-var schemaAdded = false;
+let schemaUri = "https://x3d-4.1-JSONSchema.json";
+let schema = fs.readFileSync(__dirname+"/schemas/x3d-4.1-JSONSchema.json");
+let schemajson = JSON.parse(schema.toString());
+registerSchema(schemajson, schemaUri);
+console.log("Schema 4.1 added");
 
-import http from 'http';
-
-let validate = function() { return false; }
-
-let suppress = true;
-
-
-
-function doOneErr(err, file, version) {
-	let error = "\r\n keyword: " + err.keyword + "\r\n";
-	error += " location in document: " + err.instancePath + "\r\n";
-	error += " message: " + err.message + "\r\n";
-	error += " params: " + JSON.stringify(err.params) + "\r\n";
-	error += " file: " + file + "\r\n";
-	error += " version: " + version + "\r\n";
-	return error
-}
-
-function doValidate(json, validated_version, file, success, failure) {
-	let retval = false;
-	let version = json.X3D["@version"];
-	let error = ""
-	if (typeof validated_version !== 'undefined') {
-		let valid = validated_version(json);
-		if (!valid) {
-			console.log("================================================================================");
-			console.log("File:", file);
-			let errs = validated_version.errors;
-			for (let e in errs) {
-				if ('params' in errs[e] && 'missingProperty' in errs[e].params && errs[e].params.missingProperty === '@USE') {
-					if (suppress) {
-						console.log("Suppressing @USE missing property.  Use --fullreport to reveal possibly confusing errors");
-					} else {
-						error += doOneErr(errs[e], file, version);
-
-					}
-				} else if ('params' in errs[e] && 'passingSchemas' in errs[e].params && errs[e].params.passingSchemas === null) {
-					if (suppress) {
-						console.log("Suppressing null passingSchemas.  Use --fullreport to reveal possibly confusing errors");
-					} else {
-						error += doOneErr(errs[e], file, version);
-					}
-				} else {
-					error += doOneErr(errs[e], file, version);
-				}
-			}
-			failure(error);
-		} else {
-			if (typeof success == 'function') {
-				success();
-			} else {
-				failure("No success function");
-			}
-		}
-	} else {
-		failure("Schema not loaded");
-	}
-}
-
-function loadSchema(json, file, doValidate, success, failure) {
-	let versions = { "4.1":true }
-	let version = json.X3D["@version"];
-	if (!versions[version]) {
-		console.log("Can only validate version X3D 4.1 presently. Switching version to X3D 4.1.");
-		version = "4.1";
-	}
-	let validated_version = validate[version];
-        if (typeof validated_version === 'undefined') {
-
-		
-		/*
-		console.log("Loading meta schema");
-		let metaschema = fs.readFileSync('draft-07-JSONSchema.json');
-		console.log("Parsing meta schema");
-		let metaschemajson = JSON.parse(metaschema.toString());
-		console.log("Adding meta schema");
-		ajv.addMetaSchema(metaschemajson);
-		*/
-		if (!schemaAdded) {
-			schemaAdded = true;
-			console.log("Loading schema");
-			let schema = fs.readFileSync(__dirname+"/schemas/x3d-"+version+"-JSONSchema.json");
-			// let schema = fs.readFileSync("X3dXml4.1SchemaConvertedToJson2020-12Schema.json");
-			console.log("Parsing schema");
-			let schemajson = JSON.parse(schema.toString());
-			console.log("Adding schema");
-			ajv.addSchema(schemajson);
-			console.log("Schema", version, "added");
-			validated_version = ajv.compile(schemajson);
-			validate[version] = validated_version;
-		}
-		if (typeof validated_version === 'undefined') {
-			console.log("Schema", version, "not compiled");
-		} else {
-			console.log("Schema", version, "compiled");
-		}
-		doValidate(json, validated_version, file, success, failure);
-	} else {
-		doValidate(json, validated_version, file, success, failure);
-	}
-}
-
-export default function validateJSON(files) {
+export default async function validateJSON(files, schemaUri, schemajson) {
 
 	if (files.length === 0) {
-		console.error("Please specify some .json or .x3dj JSON filenames (any filename path) to validate on the command-line, or in the validate/validateJSON function call.  Full help is available via the --help command line option.");
+		console.error("Please specify some .json or .x3dj JSON filenames (any filename path) to validate on the command-line, or in the validate/validateJSON function call.");
 		process.exit();
 	}
 	let file = "No file present in exception";
 	for (let f in files) {
+		file = files[f];
+		let str = fs.readFileSync(file).toString();
+		if (typeof str === 'undefined') {
+			throw("Read nothing, or possible error");
+		}
 		try {
-			file = files[f];
-			if (file === "--fullreport") {
-				console.log("Toggling suppression in in files now.");
-				suppress = !suppress;
-				continue;
-			}
-			if (file === "--help") {
-				console.log("Help on x3dvalidate.js command.\n")
-				console.log("node x3dvalidate.js [ --fullreport] [ --help ] json_file ...\n")
-				console.log("Parameters to x3dvalidate are usually .json or .x3dj filenames on the filesystem")
-				console.log("--fullreport : toggles full Ajv reporting.  May be used more than once to togle the full report")
-				console.log("--help : returns this message")
-				continue;
-			}
-			let str = fs.readFileSync(file).toString();
-			if (typeof str === 'undefined') {
-				throw("Read nothing, or possible error");
-			}
-			let json = JSON.parse(str);
-			let version = json.X3D["@version"];
-			loadSchema(json, file, doValidate, function() {
-				console.log("Success validating file", file);
-			}, function(e) {
-				console.log("Error invalid file", file, e);
+		    let json = JSON.parse(str);
+		    await validate(schemaUri, json, BASIC)
+			.then(response => {
+				if (response.valid) {
+					console.log("Success validating file", file);
+				} else {
+					console.log("Error invalid file", file);
+					for (let e in response.errors) {
+						let error = response.errors[e];
+						if (!error.keyword.endsWith("validate")) {
+							console.log("keyword:", error.keyword.substr(error.keyword.lastIndexOf("/")+1));
+							////////////////////////////////////////////////////////
+							let schemaPath = error.absoluteKeywordLocation.substr(error.absoluteKeywordLocation.lastIndexOf("#")+2).replaceAll("/", " > ");
+							console.log("schema location:", schemaPath);
+							let schemaSelectedObject = selectObjectFromJson(schemajson, schemaPath);
+							console.log( "schema value:", JSON.stringify(schemaSelectedObject,
+								function(k, v) {
+								    let v2 = JSON.parse(JSON.stringify(v));
+								    if (typeof v2 === 'object') {
+									    for (let o in v2) {
+										    /*
+										if (typeof v2[o] === 'object') {
+											    v2[o] = "|omitted|";
+										}
+										*/
+									    }
+								    }
+								    return v2;
+								}));
 
+							////////////////////////////////////////////////////////
+							let instancePath = error.instanceLocation.substr(error.instanceLocation.lastIndexOf("#")+2).replaceAll("/", " > ");
+							console.log("instance location:", instancePath)
+							let instanceSelectedObject = selectObjectFromJson(json, instancePath);
+							console.log("instance value:", JSON.stringify(instanceSelectedObject));
+							console.log( "instance shorthand value:", JSON.stringify(instanceSelectedObject,
+								function(k, v) {
+								    let v2 = JSON.parse(JSON.stringify(v));
+								    if (typeof v2 === 'object') {
+									    for (let o in v2) {
+										if (typeof v2[o] === 'object') {
+											    v2[o] = "|omitted|";
+										}
+									    }
+								    }
+								    return v2;
+								}));
+							console.log();
+						}
+					}
+				}
+			})
+			.catch(error => {
+				console.log("Error caught problem with file", file, error);
 			});
-		} catch (e) {
-			console.log("================================================================================");
-			console.log("File:", file);
-			console.log(e);
+		} catch (err) {
+			console.log("Error caught syntax with file", file, err);
 		}
 	}
 }
 
-//alx:
-//console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
-
 process.argv.shift();
 process.argv.shift();
-var files = process.argv;
+let files = process.argv;
 if (files.length === 0) {
 	console.log("No parameters.  Assuming this is being used by import");
 } else {
-	validateJSON(files);
+	validateJSON(files, schemaUri, schemajson);
 }
