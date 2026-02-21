@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 February 2026"
+            "@content":"20 February 2026"
           },
           {
             "@name":"generator",
@@ -194,7 +194,7 @@
                                                               "@metallicRoughnessTextureMapping":"TEXCOORD_0",
                                                               "@normalTextureMapping":"TEXCOORD_0",
                                                               "@occlusionTextureMapping":"TEXCOORD_0",
-                                                              "-baseTexture":[
+                                                              "-baseTexture":
                                                                 { "ImageTexture":
                                                                   {
                                                                     "@url":["textures/lambert2_baseColor.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GltfSampleModels/textures/lambert2_baseColor.png"],
@@ -213,9 +213,8 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
-                                                              "-metallicRoughnessTexture":[
+                                                                },
+                                                              "-metallicRoughnessTexture":
                                                                 { "ImageTexture":
                                                                   {
                                                                     "@DEF":"MetallicRoughness",
@@ -232,9 +231,8 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
-                                                              "-normalTexture":[
+                                                                },
+                                                              "-normalTexture":
                                                                 { "ImageTexture":
                                                                   {
                                                                     "@url":["textures/lambert2_normal.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GltfSampleModels/textures/lambert2_normal.png"],
@@ -250,15 +248,13 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
-                                                              "-occlusionTexture":[
+                                                                },
+                                                              "-occlusionTexture":
                                                                 { "ImageTexture":
                                                                   {
                                                                     "@USE":"MetallicRoughness"
                                                                   }
                                                                 }
-                                                              ]
                                                             }
                                                           }
                                                       }
@@ -1751,7 +1747,7 @@
                                                                     "@baseTextureMapping":"TEXCOORD_0",
                                                                     "@metallicRoughnessTextureMapping":"TEXCOORD_0",
                                                                     "@normalTextureMapping":"TEXCOORD_0",
-                                                                    "-baseTexture":[
+                                                                    "-baseTexture":
                                                                       { "ImageTexture":
                                                                         {
                                                                           "@url":["textures/lambert3_baseColor.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GltfSampleModels/textures/lambert3_baseColor.png"],
@@ -1767,9 +1763,8 @@
                                                                               }
                                                                             }
                                                                         }
-                                                                      }
-                                                                    ],
-                                                                    "-metallicRoughnessTexture":[
+                                                                      },
+                                                                    "-metallicRoughnessTexture":
                                                                       { "ImageTexture":
                                                                         {
                                                                           "@url":["textures/lambert3_metallicRoughness.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GltfSampleModels/textures/lambert3_metallicRoughness.png"],
@@ -1785,9 +1780,8 @@
                                                                               }
                                                                             }
                                                                         }
-                                                                      }
-                                                                    ],
-                                                                    "-normalTexture":[
+                                                                      },
+                                                                    "-normalTexture":
                                                                       { "ImageTexture":
                                                                         {
                                                                           "@url":["textures/lambert3_normal.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GltfSampleModels/textures/lambert3_normal.png"],
@@ -1804,7 +1798,6 @@
                                                                             }
                                                                         }
                                                                       }
-                                                                    ]
                                                                   }
                                                                 }
                                                             }
