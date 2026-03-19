@@ -1,0 +1,655 @@
+{
+  "X3D": {
+    "encoding":"UTF-8",
+    "@version": "3.3",
+    "@profile": "Immersive",
+    "Scene": {
+      "-children": [
+        {
+          "Background": {
+            "@DEF": "MainBackground",
+            "@skyColor": [
+              0,
+              0.2,
+              0.7,
+              0,
+              0.5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "@skyAngle": [
+              1.309,
+              1.5708
+            ],
+            "@groundColor": [
+              0.1,
+              0.1,
+              0,
+              0.4,
+              0.25,
+              0.2,
+              0.6,
+              0.6,
+              0.6
+            ],
+            "@groundAngle": [
+              1.309,
+              1.5708
+            ]
+          }
+        },
+        {
+          "DirectionalLight": {
+            "@DEF": "SunLight",
+            "@direction": [
+              0,
+              -1,
+              -1
+            ],
+            "@color": [
+              1,
+              1,
+              0.9
+            ],
+            "@intensity": 0.8
+          }
+        },
+        {
+          "PointLight": {
+            "@DEF": "RedLight",
+            "@location": [
+              5,
+              3,
+              5
+            ],
+            "@color": [
+              1,
+              0.2,
+              0.2
+            ],
+            "@intensity": 0.6
+          }
+        },
+        {
+          "SpotLight": {
+            "@DEF": "SpotLight1",
+            "@location": [
+              -5,
+              5,
+              5
+            ],
+            "@direction": [
+              1,
+              -1,
+              -1
+            ],
+            "@color": [
+              0.2,
+              0.2,
+              1
+            ],
+            "@intensity": 0.7,
+            "@angle": 0.78
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "BoxTransform",
+            "@translation": [
+              -8,
+              1,
+              0
+            ],
+            "@rotation": [
+              0,
+              1,
+              0,
+              0.785
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Box": {
+                      "@size": [
+                        2,
+                        2,
+                        2
+                      ]
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@DEF": "RedMaterial",
+                          "@diffuseColor": [
+                            1,
+                            0.2,
+                            0.2
+                          ],
+                          "@specularColor": [
+                            1,
+                            1,
+                            1
+                          ],
+                          "@shininess": 0.8
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              -4,
+              1.5,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 1.5
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            1,
+                            0.2
+                          ],
+                          "@transparency": 0.3
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              1,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Cone": {
+                      "@height": 3,
+                      "@bottomRadius": 1.5
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.2,
+                            1
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              4,
+              1,
+              0
+            ],
+            "@rotation": [
+              1,
+              0,
+              0,
+              1.57
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Cylinder": {
+                      "@height": 3,
+                      "@radius": 1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            0.2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              8,
+              1,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Torus": {
+                      "@outerRadius": 1.5,
+                      "@innerRadius": 0.5
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0.5,
+                            0.2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              0,
+              -5
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "IndexedFaceSet": {
+                      "-coord": {
+                        "Coordinate": {
+                          "@point": [
+                            0,
+                            2,
+                            0,
+                            -1,
+                            0,
+                            1,
+                            1,
+                            0,
+                            1,
+                            1,
+                            0,
+                            -1,
+                            -1,
+                            0,
+                            -1
+                          ]
+                        }
+                      },
+                      "@coordIndex": [
+                        0,
+                        1,
+                        2,
+                        -1,
+                        0,
+                        2,
+                        3,
+                        -1,
+                        0,
+                        3,
+                        4,
+                        -1,
+                        0,
+                        4,
+                        1,
+                        -1,
+                        1,
+                        4,
+                        3,
+                        2,
+                        -1
+                      ],
+                      "-color": {
+                        "Color": {
+                          "@color": [
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            1,
+                            0,
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.8,
+                            0.8,
+                            0.8
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              3,
+              5
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "IndexedLineSet": {
+                      "-coord": {
+                        "Coordinate": {
+                          "@point": [
+                            -2,
+                            0,
+                            0,
+                            2,
+                            0,
+                            0,
+                            0,
+                            0,
+                            -2,
+                            0,
+                            0,
+                            2,
+                            0,
+                            -2,
+                            0,
+                            0,
+                            2,
+                            0
+                          ]
+                        }
+                      },
+                      "@coordIndex": [
+                        0,
+                        1,
+                        -1,
+                        2,
+                        3,
+                        -1,
+                        4,
+                        5,
+                        -1
+                      ],
+                      "-color": {
+                        "Color": {
+                          "@color": [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            1
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Billboard": {
+            "@DEF": "TextBillboard",
+            "-children": [
+              {
+                "Transform": {
+                  "@translation": [
+                    0,
+                    6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "X3D",
+                              "WebGPU"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 0.8
+                              }
+                            }
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  0
+                                ],
+                                "@emissiveColor": [
+                                  0.5,
+                                  0.5,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "Clock",
+            "@cycleInterval": 5,
+            "@loop": true,
+            "@enabled": true
+          }
+        },
+        {
+          "PositionInterpolator": {
+            "@DEF": "BoxMover",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              -8,
+              1,
+              0,
+              -8,
+              3,
+              0,
+              -8,
+              1,
+              0,
+              -8,
+              -1,
+              0,
+              -8,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "OrientationInterpolator": {
+            "@DEF": "BoxRotator",
+            "@key": [
+              0,
+              0.5,
+              1
+            ],
+            "@keyValue": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3.14159,
+              0,
+              1,
+              0,
+              6.28318
+            ]
+          }
+        },
+        {
+          "ColorInterpolator": {
+            "@DEF": "ColorChanger",
+            "@key": [
+              0,
+              0.33,
+              0.66,
+              1
+            ],
+            "@keyValue": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BoxMover",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BoxMover",
+            "@fromField": "value_changed",
+            "@toNode": "BoxTransform",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BoxRotator",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BoxRotator",
+            "@fromField": "value_changed",
+            "@toNode": "BoxTransform",
+            "@toField": "set_rotation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "ColorChanger",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "ColorChanger",
+            "@fromField": "value_changed",
+            "@toNode": "RedMaterial",
+            "@toField": "set_diffuseColor"
+          }
+        }
+      ]
+    }
+  }
+}
