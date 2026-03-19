@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-        "title": "X3D V4.1 JSON Schema, generated 2026/02/19 11:07:04",
+        "title": "X3D V4.1 JSON Schema, generated 2026/03/09 07:13:14",
         "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -6475,7 +6475,7 @@
 		},
 		"EnvironmentLight" : {
 			"title" : "EnvironmentLight",
-			"description" : "EnvironmentLight defines image-based lighting (IBL).",
+			"description" : "EnvironmentLight node uses an environment map to represent incident illumination around a point, and can be used to show reflections of distant objects.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -6521,9 +6521,6 @@
 						],
 						"items": false
 					},
-					"-diffuse" : {
-						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
-					},
 					"@diffuseCoefficients" : {
 						"$comment":"MFFloat inputOutput",
 						"type":"array",
@@ -6536,7 +6533,7 @@
 						"$ref":"#/$defs/-X3DEnvironmentTextureNodeSFNode"
 					},
 					"@global" : {
-						"default":false,
+						"default":true,
 						"$comment":"SFBool inputOutput",
 						"type":"boolean"
 					},
@@ -6549,7 +6546,15 @@
 					"IS" : {
 						"$ref":"#/$defs/IS"
 					},
-					"@location" : {
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@on" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@origin" : {
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -6560,14 +6565,6 @@
 							"default":0,
 						"type":"number"
 						}					},
-					"-metadata" : {
-						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
-					},
-					"@on" : {
-						"default":true,
-						"$comment":"SFBool inputOutput",
-						"type":"boolean"
-					},
 					"@rotation" : {
 						"$comment":"SFRotation inputOutput",
 						"type":"array",
@@ -7324,7 +7321,7 @@
 		},
 		"FillProperties" : {
 			"title" : "FillProperties",
-			"description" : "FillProperties indicates whether appearance is filled or hatched for associated geometry nodes inside the same Shape.",
+			"description" : "FillProperties indicates whether appearance is filled or hatched for associated geometry inside the same Shape.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -11828,6 +11825,79 @@
 			}
 		]
 		},
+		"InlineGeometry" : {
+			"title" : "InlineGeometry",
+			"description" : "InlineGeometry loads geometry from an external file.",
+			"oneOf": [
+{"$ref": "#/$defs/-USEField" },				{
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"@autoRefresh" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFTime inputOutput",
+						"type":"number"
+					},
+					"@autoRefreshTimeLimit" : {
+						"minimum" : 0,
+						"default":3600,
+						"$comment":"SFTime inputOutput",
+						"type":"number"
+					},
+					"@description" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"IS" : {
+						"$ref":"#/$defs/IS"
+					},
+					"@load" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@url" : {
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"minItems" : 1,
+						"items": {
+						"format":"iri-reference",
+						"type":"string"
+						}					},
+					"@DEF" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@class" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@id" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@style" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					}
+				},
+				"additionalProperties": false
+			}
+		]
+		},
 		"IntegerSequencer" : {
 			"title" : "IntegerSequencer",
 			"description" : "IntegerSequencer generates periodic discrete integer values.",
@@ -12246,8 +12316,8 @@
 							{
 								"enum": [
 									"CENTER",
-									"LEFT",
-									"RIGHT"
+									"RIGHT",
+									"LEFT"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12255,9 +12325,9 @@
 							,
 							{
 								"enum": [
+									"CENTER",
 									"BOTTOM",
-									"TOP",
-									"CENTER"
+									"TOP"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12288,8 +12358,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
+									"WORLD",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -12298,8 +12368,8 @@
 							,
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
+									"WORLD",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -12316,8 +12386,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"STRETCH",
 									"PIXEL",
+									"STRETCH",
 									"NONE",
 									"FRACTION"
 								],
@@ -12327,8 +12397,8 @@
 							,
 							{
 								"enum": [
-									"STRETCH",
 									"PIXEL",
+									"STRETCH",
 									"NONE",
 									"FRACTION"
 								],
@@ -12355,8 +12425,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
+									"WORLD",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -12365,8 +12435,8 @@
 							,
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
+									"WORLD",
 									"FRACTION"
 								],
 								"default":"WORLD",
@@ -12673,7 +12743,7 @@
 		},
 		"LineProperties" : {
 			"title" : "LineProperties",
-			"description" : "LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry nodes inside the same Shape.",
+			"description" : "LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry inside the same Shape.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -13174,7 +13244,7 @@
 		},
 		"Material" : {
 			"title" : "Material",
-			"description" : "Material specifies surface rendering properties for associated geometry nodes.",
+			"description" : "Material specifies surface rendering properties for associated geometry.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -16555,7 +16625,7 @@
 		},
 		"PhysicalMaterial" : {
 			"title" : "PhysicalMaterial",
-			"description" : "PhysicalMaterial specifies surface rendering properties for associated geometry nodes.",
+			"description" : "PhysicalMaterial specifies Physically Based Rendering (PBR) properties for associated geometry.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -19191,6 +19261,247 @@
 			}
 		]
 		},
+		"SoftBody" : {
+			"title" : "SoftBody",
+			"description" : "SoftBody describes a collection of shapes with a mass distribution that is affected by the physics model.",
+			"oneOf": [
+{"$ref": "#/$defs/-USEField" },				{
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"@angularDampingFactor" : {
+						"default":0.001,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@angularVelocity" : {
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@autoDamp" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@autoDisable" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@bboxCenter" : {
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@bboxDisplay" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@bboxSize" : {
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":-1,
+						"type":"number"
+						}					},
+					"@centerOfMass" : {
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@disableAngularSpeed" : {
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@disableLinearSpeed" : {
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@disableTime" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFTime inputOutput",
+						"type":"number"
+					},
+					"@enabled" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@finiteRotationAxis" : {
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"prefixItems": [
+						{
+							"default":0,
+						"type":"number"
+						}
+,
+						{
+							"default":1,
+						"type":"number"
+						}
+,
+						{
+							"default":0,
+						"type":"number"
+						}
+						],
+						"items": false
+					},
+					"@fixed" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@forces" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"-geometry" : {
+						"$ref":"#/$defs/-X3DNBodyCollidableNodeMFNode"
+					},
+					"@inertia" : {
+						"$comment":"SFMatrix3f inputOutput",
+						"type":"array",
+						"$comment":"SFMatrix3f inputOutput",
+						"type":"array"
+					},
+					"IS" : {
+						"$ref":"#/$defs/IS"
+					},
+					"@linearDampingFactor" : {
+						"default":0.001,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@linearVelocity" : {
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@mass" : {
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"-massDensityModel" : {
+						"$ref":"#/$defs/-Sphere-Box-ConeSFNode"
+					},
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@orientation" : {
+						"$comment":"SFRotation inputOutput",
+						"type":"array",
+						"$comment":"SFRotation inputOutput",
+						"type":"array",
+						"minItems" : 4,
+						"maxItems" : 4
+					},
+					"@position" : {
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"$comment":"SFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@torques" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@useFiniteRotation" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@useGlobalGravity" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@visible" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@DEF" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@class" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@id" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@style" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					}
+				},
+				"additionalProperties": false
+			}
+		]
+		},
 		"RigidBodyCollection" : {
 			"title" : "RigidBodyCollection",
 			"description" : "RigidBodyCollection represents a system of bodies that interact within a single physics model.",
@@ -19234,7 +19545,7 @@
 						"type":"number"
 						}					},
 					"-bodies" : {
-						"$ref":"#/$defs/-RigidBodyMFNode"
+						"$ref":"#/$defs/-RigidBody-SoftBodyMFNode"
 					},
 					"-collider" : {
 						"$ref":"#/$defs/-CollisionCollectionSFNode"
@@ -21810,6 +22121,58 @@
 			}
 		]
 		},
+		"Stitch" : {
+			"title" : "Stitch",
+			"description" : "Stitch node represents joints between a mesh and a rigid body (for now).",
+			"oneOf": [
+{"$ref": "#/$defs/-USEField" },				{
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"@DEF" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@body1Index" : {
+						"$comment":"MFInt32 inputOutput",
+						"type":"array",
+						"$comment":"MFInt32 inputOutput",
+						"type":"array",
+						"items": {
+						"minimum" : 0,
+						"type":"integer"
+						}					},
+					"@body2Index" : {
+						"$comment":"MFInt32 inputOutput",
+						"type":"array",
+						"$comment":"MFInt32 inputOutput",
+						"type":"array",
+						"items": {
+						"minimum" : 0,
+						"type":"integer"
+						}					},
+					"@weight" : {
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"items": {
+						"type":"number"
+						}					},
+					"-body1" : {
+						"$ref":"#/$defs/-RigidBody-SoftBodySFNode"
+					},
+					"-body2" : {
+						"$ref":"#/$defs/-RigidBody-SoftBodySFNode"
+					}
+				},
+				"additionalProperties": false
+			}
+		]
+		},
 		"StreamAudioDestination" : {
 			"title" : "StreamAudioDestination",
 			"description" : "StreamAudioDestination node represents the final audio destination via a media stream.",
@@ -22007,7 +22370,7 @@
 		},
 		"StringSensor" : {
 			"title" : "StringSensor",
-			"description" : "StringSensor generates events as the user presses keys on the keyboard.",
+			"description" : "StringSensor generates events as the user enters strings on the keyboard.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -24889,7 +25252,7 @@
 		},
 		"TwoSidedMaterial" : {
 			"title" : "TwoSidedMaterial",
-			"description" : "TwoSidedMaterial specifies surface rendering properties for associated geometry nodes, for outer (front) and inner (back) sides of polygons.",
+			"description" : "TwoSidedMaterial specifies surface rendering properties for associated geometry, for outer (front) and inner (back) sides of polygons.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -25316,7 +25679,7 @@
 		},
 		"UnlitMaterial" : {
 			"title" : "UnlitMaterial",
-			"description" : "UnlitMaterial specifies surface rendering properties for associated geometry nodes.",
+			"description" : "UnlitMaterial specifies surface rendering properties for associated geometry that is unaffected by scene lighting.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -27281,7 +27644,7 @@
 							"4.0",
 							"4.1"
 						],
-						"default":"4.1",
+						"default":"4.0",
 						"$comment":"SFString inputOutput",
 						"type":"string"
 					}
@@ -27850,6 +28213,9 @@
 								"RigidBody" : {
 									"$ref":"#/$defs/RigidBody"
 								},
+								"SoftBody" : {
+									"$ref":"#/$defs/SoftBody"
+								},
 								"RigidBodyCollection" : {
 									"$ref":"#/$defs/RigidBodyCollection"
 								},
@@ -28204,6 +28570,9 @@
 								},
 								"IndexedLineSet" : {
 									"$ref":"#/$defs/IndexedLineSet"
+								},
+								"InlineGeometry" : {
+									"$ref":"#/$defs/InlineGeometry"
 								},
 								"LineSet" : {
 									"$ref":"#/$defs/LineSet"
@@ -28816,6 +29185,9 @@
 								"RigidBody" : {
 									"$ref":"#/$defs/RigidBody"
 								},
+								"SoftBody" : {
+									"$ref":"#/$defs/SoftBody"
+								},
 								"RigidBodyCollection" : {
 									"$ref":"#/$defs/RigidBodyCollection"
 								},
@@ -29154,26 +29526,6 @@
 								},
 								"TextureCoordinateGenerator" : {
 									"$ref":"#/$defs/TextureCoordinateGenerator"
-								},
-								"ProtoInstance" : {
-									"$ref":"#/$defs/ProtoInstance"
-								}
-							},
-							"additionalProperties": false
-					},
-					"-X3DSingleTextureNodeSFNode" : {
-			"title" : "X3DSingleTextureNode",
-						"$comment":"SFNode inputOutput",
-							"type": "object",
-							"properties": {
-								"ImageTexture" : {
-									"$ref":"#/$defs/ImageTexture"
-								},
-								"MovieTexture" : {
-									"$ref":"#/$defs/MovieTexture"
-								},
-								"PixelTexture" : {
-									"$ref":"#/$defs/PixelTexture"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -29736,6 +30088,9 @@
 								"RigidBody" : {
 									"$ref":"#/$defs/RigidBody"
 								},
+								"SoftBody" : {
+									"$ref":"#/$defs/SoftBody"
+								},
 								"RigidBodyCollection" : {
 									"$ref":"#/$defs/RigidBodyCollection"
 								},
@@ -29877,6 +30232,9 @@
 								"IndexedLineSet" : {
 									"$ref":"#/$defs/IndexedLineSet"
 								},
+								"InlineGeometry" : {
+									"$ref":"#/$defs/InlineGeometry"
+								},
 								"LineSet" : {
 									"$ref":"#/$defs/LineSet"
 								},
@@ -29957,6 +30315,9 @@
 								},
 								"SliderJoint" : {
 									"$ref":"#/$defs/SliderJoint"
+								},
+								"Stitch" : {
+									"$ref":"#/$defs/Stitch"
 								},
 								"UniversalJoint" : {
 									"$ref":"#/$defs/UniversalJoint"
@@ -30560,6 +30921,9 @@
 								"Inline" : {
 									"$ref":"#/$defs/Inline"
 								},
+								"InlineGeometry" : {
+									"$ref":"#/$defs/InlineGeometry"
+								},
 								"MovieTexture" : {
 									"$ref":"#/$defs/MovieTexture"
 								},
@@ -30578,6 +30942,26 @@
 							},
 							"additionalProperties": false
 						}
+					},
+					"-X3DSingleTextureNodeSFNode" : {
+			"title" : "X3DSingleTextureNode",
+						"$comment":"SFNode inputOutput",
+							"type": "object",
+							"properties": {
+								"ImageTexture" : {
+									"$ref":"#/$defs/ImageTexture"
+								},
+								"MovieTexture" : {
+									"$ref":"#/$defs/MovieTexture"
+								},
+								"PixelTexture" : {
+									"$ref":"#/$defs/PixelTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
 					},
 					"-X3DMetadataObjectMFNode" : {
 			"title" : "X3DMetadataObject",
@@ -30981,8 +31365,8 @@
 							},
 							"additionalProperties": false
 					},
-					"-RigidBodyMFNode" : {
-			"title" : "RigidBody",
+					"-RigidBody-SoftBodyMFNode" : {
+			"title" : "RigidBody-SoftBody",
 						"$comment":"MFNode inputOutput",
 						"type": "array",
 						"minItems": 1,
@@ -30994,6 +31378,9 @@
 								},
 								"RigidBody" : {
 									"$ref":"#/$defs/RigidBody"
+								},
+								"SoftBody" : {
+									"$ref":"#/$defs/SoftBody"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -31027,6 +31414,9 @@
 								},
 								"SliderJoint" : {
 									"$ref":"#/$defs/SliderJoint"
+								},
+								"Stitch" : {
+									"$ref":"#/$defs/Stitch"
 								},
 								"UniversalJoint" : {
 									"$ref":"#/$defs/UniversalJoint"
@@ -31063,6 +31453,23 @@
 								},
 								"StreamAudioSource" : {
 									"$ref":"#/$defs/StreamAudioSource"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+					},
+					"-RigidBody-SoftBodySFNode" : {
+			"title" : "RigidBody-SoftBody",
+						"$comment":"SFNode inputOutput",
+							"type": "object",
+							"properties": {
+								"RigidBody" : {
+									"$ref":"#/$defs/RigidBody"
+								},
+								"SoftBody" : {
+									"$ref":"#/$defs/SoftBody"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -31700,6 +32107,9 @@
 								},
 								"RigidBody" : {
 									"$ref":"#/$defs/RigidBody"
+								},
+								"SoftBody" : {
+									"$ref":"#/$defs/SoftBody"
 								},
 								"RigidBodyCollection" : {
 									"$ref":"#/$defs/RigidBodyCollection"
