@@ -22,7 +22,8 @@
     "ajv": "8.18.0",
     "ajv-formats": "3.0.1",
     "ajv-formats-draft2019": "1.6.1",
-    "ajv-i18n": "4.2.0"
+    "ajv-i18n": "4.2.0",
+    "better-ajv-errors": "2.0.3"
   },
   "bin": {
     "x3dvalidate": "bin/x3dvalidate.js"
