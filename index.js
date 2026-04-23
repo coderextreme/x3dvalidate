@@ -160,9 +160,6 @@ export default function validateJSON(files) {
 	}
 }
 
-//alx:
-//console.log('alx: '+exchangeajvmessage('should NOT have 123 then abc'));
-
 process.argv.shift();
 process.argv.shift();
 var files = process.argv;
