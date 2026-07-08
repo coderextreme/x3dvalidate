@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-        "title": "X3D V4.1 JSON Schema, generated 2026/05/18 20:27:07",
+        "title": "X3D V4.1 JSON Schema, generated 2026/07/07 21:39:03",
         "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -126,7 +126,7 @@
             ]
         },
         "@geoSystem-GD": {
-            "title": "geoSystem GD/GDC â€” Geographic Degrees",
+            "title": "geoSystem GD/GDC — Geographic Degrees",
             "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
             "type": "array",
             "minItems": 1,
@@ -167,7 +167,7 @@
             }
         },
         "@geoSystem-GC": {
-            "title": "geoSystem GC/GCC â€” Geocentric",
+            "title": "geoSystem GC/GCC — Geocentric",
             "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
             "type": "array",
             "minItems": 1,
@@ -192,7 +192,7 @@
         },
         "@geoSystem-UTM-zone": {
             "title": "UTM zone number",
-            "$comment": "Zone 1â€“60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+            "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
             "type": "string",
             "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
         },
@@ -12368,9 +12368,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"FRACTION",
+									"PIXEL",
 									"WORLD",
-									"PIXEL"
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12378,9 +12378,9 @@
 							,
 							{
 								"enum": [
-									"FRACTION",
+									"PIXEL",
 									"WORLD",
-									"PIXEL"
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12396,10 +12396,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"NONE",
-									"FRACTION",
 									"STRETCH",
-									"PIXEL"
+									"NONE",
+									"PIXEL",
+									"FRACTION"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12407,10 +12407,10 @@
 							,
 							{
 								"enum": [
-									"NONE",
-									"FRACTION",
 									"STRETCH",
-									"PIXEL"
+									"NONE",
+									"PIXEL",
+									"FRACTION"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12435,9 +12435,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"FRACTION",
+									"PIXEL",
 									"WORLD",
-									"PIXEL"
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12445,9 +12445,9 @@
 							,
 							{
 								"enum": [
-									"FRACTION",
+									"PIXEL",
 									"WORLD",
-									"PIXEL"
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
