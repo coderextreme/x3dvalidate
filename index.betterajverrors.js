@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 
 import Ajv2020 from "ajv/dist/2020.js";
 import betterAjvErrors from 'better-ajv-errors';
-import addFormats from "ajv-formats-draft2019";
+import addFormats from "ajv-formats";
 import fs from 'fs';
 
 var ajv = new Ajv2020({ strict: false });

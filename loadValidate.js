@@ -1,5 +1,5 @@
 import Ajv2020 from "ajv/dist/2020.js";
-import addFormats from "ajv-formats-draft2019";
+import addFormats from "ajv-formats";
 import selectObjectFromJson from './selectObjectFromJson.js';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -8,7 +8,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-var ajv = new Ajv2020({ strict: true });
+var ajv = new Ajv2020({ strict: false });
 addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 
 var CACHE = {};
