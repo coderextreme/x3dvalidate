@@ -11,6 +11,17 @@ import fs from 'fs';
 import selectObjectFromJson from './selectObjectFromJson.js';
 import { registerSchema, validate } from "@hyperjump/json-schema/draft-2020-12";
 import { BASIC } from "@hyperjump/json-schema/experimental";
+import { jsonSchemaErrors } from "@hyperjump/json-schema-errors";
+import { setNormalizationHandler, evaluateSchema } from "@hyperjump/json-schema-errors";
+
+const KEYWORD_URI = "https://json-schema.org/keyword/allOf";
+
+setNormalizationHandler(KEYWORD_URI, {
+  evaluate(allOf, instance, context) {
+    return allOf.map((schemaLocation) => evaluateSchema(schemaLocation, instance, context));
+  },
+  simpleApplicator: true
+});
 
 let schemaUri = "https://x3d-4.1-JSONSchema.json";
 let schema = fs.readFileSync(__dirname+"/schemas/x3d-4.1-JSONSchema.json");
@@ -33,61 +44,9 @@ export default async function validateJSON(files, schemaUri, schemajson) {
 		}
 		try {
 		    let json = JSON.parse(str);
-		    await validate(schemaUri, json, BASIC)
-			.then(response => {
-				if (response.valid) {
-					console.log("Success validating file", file);
-				} else {
-					console.log("Error invalid file", file);
-					for (let e in response.errors) {
-						let error = response.errors[e];
-						// if (!error.keyword.endsWith("validate"))
-						{
-							console.log("keyword:", error.keyword.substr(error.keyword.lastIndexOf("/")+1));
-							////////////////////////////////////////////////////////
-							let schemaPath = error.absoluteKeywordLocation.substr(error.absoluteKeywordLocation.lastIndexOf("#")+2).replaceAll("/", " > ");
-							console.log("schema location:", schemaPath);
-							let schemaSelectedObject = selectObjectFromJson(schemajson, schemaPath);
-							console.log( "schema value:", JSON.stringify(schemaSelectedObject,
-								function(k, v) {
-								    let v2 = JSON.parse(JSON.stringify(v));
-								    if (typeof v2 === 'object') {
-									    for (let o in v2) {
-										    /*
-										if (typeof v2[o] === 'object') {
-											    v2[o] = "|omitted|";
-										}
-										*/
-									    }
-								    }
-								    return v2;
-								}));
-
-							////////////////////////////////////////////////////////
-							let instancePath = error.instanceLocation.substr(error.instanceLocation.lastIndexOf("#")+2).replaceAll("/", " > ");
-							console.log("instance location:", instancePath)
-							let instanceSelectedObject = selectObjectFromJson(json, instancePath);
-							console.log("instance value:", JSON.stringify(instanceSelectedObject));
-							console.log( "instance shorthand value:", JSON.stringify(instanceSelectedObject,
-								function(k, v) {
-								    let v2 = JSON.parse(JSON.stringify(v));
-								    if (typeof v2 === 'object') {
-									    for (let o in v2) {
-										if (typeof v2[o] === 'object') {
-											    v2[o] = "|omitted|";
-										}
-									    }
-								    }
-								    return v2;
-								}));
-							console.log();
-						}
-					}
-				}
-			})
-			.catch(error => {
-				console.log("Error caught problem with file", file, error);
-			});
+		    const output = await validate(schemaUri, json, BASIC);
+		    const errors = await jsonSchemaErrors(output, schemaUri, json);
+		    console.log(errors);
 		} catch (err) {
 			console.log("Error caught syntax with file", file, err);
 		}
