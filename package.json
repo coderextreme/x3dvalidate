@@ -18,7 +18,8 @@
     "X3D"
   ],
   "dependencies": {
-    "@hyperjump/json-schema": "1.17.6",
+    "@hyperjump/json-schema": "1.17.7",
+    "@hyperjump/json-schema-errors": "github:hyperjump-io/json-schema-errors",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "ajv-formats-draft2019": "1.6.1",
