@@ -198,7 +198,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
+              "@type":["EXAMINE", "FLY", "ANY"]
             }
           },
           { "WorldInfo":
@@ -1454,7 +1454,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
+              "@type":["EXAMINE", "FLY", "ANY"]
             }
           },
           { "WorldInfo":

@@ -62,7 +62,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":"\"EXAMINE\" \"FLY\" \"WALK\"",
+              "@type":["EXAMINE", "FLY", "WALK"],
               "@speed":3,
               "@avatarSize":[200,200,120]
             }
