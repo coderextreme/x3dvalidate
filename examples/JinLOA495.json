@@ -115,7 +115,7 @@
               "@DEF":"hanim_JinLOA4",
               "@loa":4,
               "@version":"2.0",
-              "-value":[
+              "-metadata":
                 { "MetadataSet":
                   {
                     "@name":"HAnimHumanoid.info",
@@ -159,8 +159,7 @@
                       }
                     ]
                   }
-                }
-              ],
+                },
               "-skeleton":[
                 { "HAnimJoint":
                   {

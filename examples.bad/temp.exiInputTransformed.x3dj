@@ -1,7 +1,7 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@class":"x3dModel.class",
-    "@p0:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
     "@profile":"Full",
     "@style":"x3dModel.style",
     "@version":"4.0",
@@ -902,15 +902,14 @@
               "-children":[
                 { "Shape":
                   {
-                    "-value":[
+                    "-metadata":
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      }
-                    ],
+                      },
                     "-appearance":
                       { "Appearance":
                         {
@@ -2118,15 +2117,14 @@
               "-children":[
                 { "Shape":
                   {
-                    "-value":[
+                    "-metadata":
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      }
-                    ],
+                      },
                     "-appearance":
                       { "Appearance":
                         {

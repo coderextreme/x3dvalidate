@@ -45,8 +45,23 @@ export default async function validateJSON(files, schemaUri, schemajson) {
 		try {
 		    let json = JSON.parse(str);
 		    const output = await validate(schemaUri, json, BASIC);
-		    const errors = await jsonSchemaErrors(output, schemaUri, json);
-		    console.log(errors);
+		    if (output.valid) {
+		        console.log(file, "is valid");
+		        continue;
+		    }
+		    try {
+		        const errors = await jsonSchemaErrors(output, schemaUri, json);
+		        console.log(file, errors);
+		    } catch (fmtErr) {
+		        // jsonSchemaErrors chokes on "#comment" in instance pointers (unencoded '#').
+		        // Fall back to the raw BASIC output so the real errors still show.
+		        console.log(file, "INVALID (friendly formatter failed:", fmtErr.message + ")");
+		        for (const e of output.errors ?? []) {
+		            console.log("  at", e.instanceLocation);
+		            console.log("    keyword:", e.keyword);
+		            console.log("    schema: ", e.absoluteKeywordLocation);
+		        }
+		    }
 		} catch (err) {
 			console.log("Error caught syntax with file", file, err);
 		}

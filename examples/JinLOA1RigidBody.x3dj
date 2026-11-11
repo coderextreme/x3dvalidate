@@ -1551,7 +1551,7 @@
                   {
                     "@DEF":"sphere_rb",
                     "@mass":0,
-                    "-geometry":
+                    "-geometry": [
                       { "CollidableShape":
                         {
                           "@DEF":"sphere_cs",
@@ -1580,6 +1580,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1587,7 +1588,7 @@
                     "@DEF":"hanim_r_radiocarpal_rb",
                     "@position":[-7.808,31.46,-0.0585],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry": [
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_carpal_cs",
@@ -1635,6 +1636,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1642,7 +1644,7 @@
                     "@DEF":"hanim_r_elbow_rb",
                     "@position":[-8.093,40.38,-0.2502],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_forearm_cs",
@@ -1690,6 +1692,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1697,7 +1700,7 @@
                     "@DEF":"hanim_l_radiocarpal_rb",
                     "@position":[7.808,31.46,-0.0585],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_carpal_cs",
@@ -1745,6 +1748,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1752,7 +1756,7 @@
                     "@DEF":"hanim_l_elbow_rb",
                     "@position":[8.093,40.38,-0.2502],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_forearm_cs",
@@ -1800,6 +1804,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1807,7 +1812,7 @@
                     "@DEF":"hanim_r_shoulder_rb",
                     "@position":[-5.975,52,-0.1452],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_upperarm_cs",
@@ -1855,6 +1860,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1862,7 +1868,7 @@
                     "@DEF":"hanim_l_shoulder_rb",
                     "@position":[5.975,52,-0.1452],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_upperarm_cs",
@@ -1910,6 +1916,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1917,7 +1924,7 @@
                     "@DEF":"hanim_skullbase_rb",
                     "@position":[0,57.43,-0.6863],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_skull_cs",
@@ -1965,6 +1972,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -1972,7 +1980,7 @@
                     "@DEF":"hanim_r_metatarsophalangeal_2_rb",
                     "@position":[-3.854,3.64,0.7402],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_tarsal_proximal_phalanx_2_cs",
@@ -2020,6 +2028,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2027,7 +2036,7 @@
                     "@DEF":"hanim_r_talocrural_rb",
                     "@position":[-3.854,3.939,-0.7038],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_talus_cs",
@@ -2075,6 +2084,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2082,7 +2092,7 @@
                     "@DEF":"hanim_r_knee_rb",
                     "@position":[-4.116,17.26,-0.8639],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_calf_cs",
@@ -2129,6 +2139,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2136,7 +2147,7 @@
                     "@DEF":"hanim_l_metatarsophalangeal_2_rb",
                     "@position":[3.854,3.64,0.7402],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_tarsal_proximal_phalanx_2_cs",
@@ -2184,6 +2195,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2191,7 +2203,7 @@
                     "@DEF":"hanim_l_talocrural_rb",
                     "@position":[3.854,3.939,-0.7038],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_talus_cs",
@@ -2239,6 +2251,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2246,7 +2259,7 @@
                     "@DEF":"hanim_l_knee_rb",
                     "@position":[4.116,17.26,-0.8639],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_calf_cs",
@@ -2293,6 +2306,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2300,7 +2314,7 @@
                     "@DEF":"hanim_r_hip_rb",
                     "@position":[-4.207,32.02,-0.8155],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_r_thigh_cs",
@@ -2348,6 +2362,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2355,7 +2370,7 @@
                     "@DEF":"hanim_l_hip_rb",
                     "@position":[4.207,32.02,-0.8155],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l_thigh_cs",
@@ -2403,6 +2418,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2410,7 +2426,7 @@
                     "@DEF":"hanim_vl5_rb",
                     "@position":[0,40.07,-0.8527],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_l5_cs",
@@ -2458,6 +2474,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2465,7 +2482,7 @@
                     "@DEF":"hanim_sacroiliac_rb",
                     "@position":[0,35.8,-0.7076],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_pelvis_cs",
@@ -2512,6 +2529,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 },
                 { "RigidBody":
@@ -2519,7 +2537,7 @@
                     "@DEF":"hanim_humanoid_root_rb",
                     "@position":[0,30.53,-0.7076],
                     "@mass":0.5,
-                    "-geometry":
+                    "-geometry":[
                       { "CollidableShape":
                         {
                           "@DEF":"hanim_sacrum_cs",
@@ -2566,6 +2584,7 @@
                             }
                         }
                       }
+		    ]
                   }
                 }
               ],
