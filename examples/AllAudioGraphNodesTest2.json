@@ -73,7 +73,7 @@
               "-appearance":
                 { "Appearance":
                   {
-                    "-acousticProperties":[
+                    "-acousticProperties":
                       { "AcousticProperties":
                         {
                           "@description":"Testing of X3D4 nodes demonstrating W3C Audio API in progress",
@@ -81,8 +81,7 @@
                           "@refraction":0.5,
                           "@specular":1
                         }
-                      }
-                    ],
+                      },
                     "-material":
                       { "Material":
                         {
